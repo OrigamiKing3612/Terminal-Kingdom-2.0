@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckldnctpmk68j"]
-
-[sub_resource type="Environment" id="Environment_f3sb7"]
-
-[node name="GridMap" type="GridMap"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_f3sb7")

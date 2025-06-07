@@ -227,6 +227,7 @@ mesh = SubResource("BoxMesh_miwp8")
 shape = SubResource("BoxShape3D_ie7ma")
 
 [node name="Workbench" type="Node3D" parent="."]
+visible = false
 
 [node name="Node" type="Node3D" parent="Workbench"]
 

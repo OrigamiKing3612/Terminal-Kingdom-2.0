@@ -15,6 +15,19 @@ run/main_scene="uid://c5kqetvj52hej"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneManager="*res://scripts/SceneManager.gd"
+
+[display]
+
+window/size/viewport_width=2304
+window/size/viewport_height=1296
+
+[global_group]
+
+can_use_doors=""
+
 [input]
 
 move_left={
