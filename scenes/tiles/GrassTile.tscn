@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8sd8pd62hq6y"]
+
+[ext_resource type="Texture2D" uid="uid://dfdbv0ac8no4f" path="res://assets/tiles/Grass.png" id="1_6u8su"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_38u2e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mkq3"]
+albedo_texture = ExtResource("1_6u8su")
+
+[sub_resource type="BoxMesh" id="BoxMesh_1nxe4"]
+material = SubResource("StandardMaterial3D_5mkq3")
+
+[node name="GrassTile" type="Node"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_38u2e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_1nxe4")

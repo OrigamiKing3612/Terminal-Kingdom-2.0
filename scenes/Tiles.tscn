@@ -1,0 +1,240 @@
+[gd_scene load_steps=40 format=4 uid="uid://b6vi2yjsymsnb"]
+
+[ext_resource type="Texture2D" uid="uid://dfdbv0ac8no4f" path="res://assets/tiles/Grass.png" id="1_ie7ma"]
+[ext_resource type="Texture2D" uid="uid://pb6s22yvkyyh" path="res://assets/tiles/Stone.png" id="2_3fjnk"]
+[ext_resource type="Texture2D" uid="uid://bl1hb3rxs1qeg" path="res://assets/tiles/Sand.png" id="2_av5mp"]
+[ext_resource type="Texture2D" uid="uid://cqu7e3eh4ajii" path="res://assets/tiles/Brick.png" id="3_m37wa"]
+[ext_resource type="Texture2D" uid="uid://dy2x4fuyyj8ti" path="res://assets/tiles/Ice.png" id="4_eynl6"]
+[ext_resource type="Texture2D" uid="uid://b1x10j41fey3d" path="res://assets/tiles/Lava.png" id="5_ttr18"]
+[ext_resource type="Texture2D" uid="uid://bktsse5wx54vv" path="res://assets/tiles/Marble.png" id="6_dj60d"]
+[ext_resource type="Texture2D" uid="uid://cyqwkxre3k2qy" path="res://assets/tiles/Mud.png" id="7_4cl3p"]
+[ext_resource type="Texture2D" uid="uid://1wt45i7bcpbu" path="res://assets/tiles/Snow.png" id="9_1p82w"]
+[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="10_40i2t"]
+[ext_resource type="Texture2D" uid="uid://b8xhmdwfdqsgf" path="res://assets/tiles/Wood.png" id="11_0h36a"]
+[ext_resource type="Texture2D" uid="uid://sbdm2n74bnt3" path="res://assets/models/Workbench_0.png" id="12_m37wa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mkq3"]
+albedo_texture = ExtResource("1_ie7ma")
+
+[sub_resource type="BoxMesh" id="BoxMesh_jp6wg"]
+material = SubResource("StandardMaterial3D_5mkq3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ie7ma"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lonx1"]
+albedo_texture = ExtResource("2_3fjnk")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mq7ra"]
+material = SubResource("StandardMaterial3D_lonx1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie7ky"]
+albedo_texture = ExtResource("3_m37wa")
+
+[sub_resource type="BoxMesh" id="BoxMesh_6yc12"]
+material = SubResource("StandardMaterial3D_ie7ky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukmx1"]
+albedo_texture = ExtResource("4_eynl6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_enf55"]
+material = SubResource("StandardMaterial3D_ukmx1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erh2u"]
+albedo_texture = ExtResource("5_ttr18")
+
+[sub_resource type="BoxMesh" id="BoxMesh_pj1vi"]
+material = SubResource("StandardMaterial3D_erh2u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72yv0"]
+albedo_texture = ExtResource("6_dj60d")
+
+[sub_resource type="BoxMesh" id="BoxMesh_um4xl"]
+material = SubResource("StandardMaterial3D_72yv0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iulo5"]
+albedo_texture = ExtResource("7_4cl3p")
+
+[sub_resource type="BoxMesh" id="BoxMesh_6363k"]
+material = SubResource("StandardMaterial3D_iulo5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exmxc"]
+albedo_texture = ExtResource("2_av5mp")
+
+[sub_resource type="BoxMesh" id="BoxMesh_huhqm"]
+material = SubResource("StandardMaterial3D_exmxc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4pkx"]
+albedo_texture = ExtResource("9_1p82w")
+
+[sub_resource type="BoxMesh" id="BoxMesh_k6w3x"]
+material = SubResource("StandardMaterial3D_e4pkx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6omec"]
+albedo_texture = ExtResource("10_40i2t")
+
+[sub_resource type="BoxMesh" id="BoxMesh_xcx1t"]
+material = SubResource("StandardMaterial3D_6omec")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo46t"]
+albedo_texture = ExtResource("11_0h36a")
+
+[sub_resource type="BoxMesh" id="BoxMesh_miwp8"]
+material = SubResource("StandardMaterial3D_eo46t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umsgj"]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("12_m37wa")
+texture_filter = 0
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jreix"]
+_surfaces = [{
+"aabb": AABB(-0.5, -0.5, -0.5, 1, 1.0625, 1),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEAAwACAAUAAQAFAAIAAAADAAYABgADAAUAAAAGAAQAAQAHAAUABgAFAAcABAAHAAEABAAGAAcACAAJAAoACwAIAAoACAAMAAkACwAKAA0ACQANAAoACAALAA4ADgALAA0ACAAOAAwACQAPAA0ADgANAA8ADAAPAAkADAAOAA8A"),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("//8AAAAAAAD///Dw//8AAP//8PAAAAAAAAAAAAAAAAD//wAA//8AAAAA8PAAAAAAAAAAAP//AAAAAPDw//8AAP9v8PD/TwAA/2/////PAAD/b////08AAP9f8PD/TwAA/2/w8P/PAAD/X////08AAP9f8PD/zwAA/1/////PAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p8nh2"]
+resource_name = "blockbench_export_mesh"
+_surfaces = [{
+"aabb": AABB(-0.5, -0.5, -0.5, 1, 1.0625, 1),
+"attribute_data": PackedByteArray("/z//fwAA/z//P/8/AAD/f/9//3//P/8//3//P/8//38AAP9//z//vwAA/7//P/9//3//P/+/AAD/fwAA/7//P/9//z//PwAA/38AAP8//z//P/8/AAAAAP8/AAAAAP8//2P/g/9D/3//Y/9//0P/g/9D/3//Y/+D/0P/g/9j/3//R/+n/0P/h/9H/4f/Q/+n/0P/h/9H/6f/Q/+n/0f/h/9D/4P/P/9//0P/f/8//4P/Q/+H/z//g/9D/4P/P/+H"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_umsgj"),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("//8AAAAA/7////Dw////v///8PAAAP+///8AAP///78AAAAA////vwAA8PAAAP+/AADw8P///78AAAAAAAD/v///8PD/////AADw8AAA//////DwAAD//wAA8PD///////8AAAAAAAAAAAAA//8AAP//AAD//wAAAAAAAAAAAAD//wAA//8AgAAA8PD//wCA///w8P//AIAAAAAA//8AgAAAAAAAAP/////w8AAA//8AAPDwAAD/////AAAAAP///2/w8P9P/7//b////8//v/9v////T/+//2/w8P/P/7//X/Dw/8////9f////T////1/////P////X/Dw/0////9v////z/+//1////9P/7//b////0//v/9f////z/+//2/w8P9P////X/Dw/8////9v8PD/z////1/w8P9P////b/Dw/88AgP9f////zwCA/2/////PAID/X/Dw/88AgP9f8PD/T////2////9P////X////0////9v8PD/T////38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f/+//3//v/9//7//f/+//3//P/9//z//f/8//3//P/9/////f////3////9/////f////3////9/////f////38AAP9/AAD/fwAA/38AAP8//3//P/9//z//f/8//3////9/////f////3////9//3//P/9//z//f/8//3//P/9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jreix")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m37wa"]
+
+[node name="Tiles" type="Node3D"]
+
+[node name="GrassTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_jp6wg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="WallTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_mq7ra")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WallTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="BrickTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_6yc12")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BrickTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BrickTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="IceTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_enf55")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="IceTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IceTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="LavaTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_pj1vi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LavaTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LavaTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="MarbleTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_um4xl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MarbleTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MarbleTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="MudTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_6363k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MudTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MudTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="SandTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_huhqm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SandTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SandTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="SnowTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_k6w3x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SnowTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SnowTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="WaterTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_xcx1t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WaterTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="WoodTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_miwp8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WoodTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WoodTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="Workbench" type="Node3D" parent="."]
+
+[node name="Node" type="Node3D" parent="Workbench"]
+
+[node name="Workbench" type="MeshInstance3D" parent="Workbench/Node"]
+mesh = SubResource("ArrayMesh_p8nh2")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Workbench/Node/Workbench"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Workbench/Node/Workbench/StaticBody3D"]
+shape = SubResource("BoxShape3D_m37wa")
