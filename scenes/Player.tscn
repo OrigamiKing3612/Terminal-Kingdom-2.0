@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://hpwvm5v2xwe1" path="res://scripts/player.gd" id="1_onrkg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_v6fml"]
+size = Vector3(0.8, 1, 0.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p0vlq"]
+size = Vector3(0.8, 1, 0.8)
 
 [node name="Player" type="CharacterBody3D" groups=["can_use_doors"]]
 script = ExtResource("1_onrkg")
@@ -16,8 +18,8 @@ script = ExtResource("1_onrkg")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Character"]
 mesh = SubResource("BoxMesh_v6fml")
 
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(0.866025, -0.25, 0.433013, 1.55017e-09, 0.866025, 0.500001, -0.5, -0.433013, 0.75, 1, 1.5, 2)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_p0vlq")
-
-[node name="Camera3D" type="Camera3D" parent="CollisionShape3D"]
-transform = Transform3D(0.866025, -0.250001, 0.433013, 1.55017e-09, 0.866025, 0.500001, -0.5, -0.433013, 0.749999, 2, 2, 3.75)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1423i0apxkoa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t77nq"]
+size = Vector3(0.5, 1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6iirc"]
+size = Vector3(0.5, 1, 0.5)
+
+[node name="LanternTile" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_t77nq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_6iirc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 5.0
+omni_range = 10.0

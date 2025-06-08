@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://b6vi2yjsymsnb"]
+[gd_scene load_steps=45 format=4 uid="uid://b6vi2yjsymsnb"]
 
 [ext_resource type="Texture2D" uid="uid://dfdbv0ac8no4f" path="res://assets/tiles/Grass.png" id="1_ie7ma"]
 [ext_resource type="Texture2D" uid="uid://pb6s22yvkyyh" path="res://assets/tiles/Stone.png" id="2_3fjnk"]
@@ -13,12 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://b8xhmdwfdqsgf" path="res://assets/tiles/Wood.png" id="11_0h36a"]
 [ext_resource type="Texture2D" uid="uid://de7dws1khnpvj" path="res://assets/tiles/Road.png" id="12_eynl6"]
 [ext_resource type="Texture2D" uid="uid://sbdm2n74bnt3" path="res://assets/models/Workbench_0.png" id="12_m37wa"]
+[ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/LanternTile.tscn" id="14_ttr18"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mkq3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dj60d"]
 albedo_texture = ExtResource("1_ie7ma")
 
 [sub_resource type="BoxMesh" id="BoxMesh_jp6wg"]
-material = SubResource("StandardMaterial3D_5mkq3")
+material = SubResource("StandardMaterial3D_dj60d")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ie7ma"]
 
@@ -266,3 +267,7 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Workbench/Node/Workbench/StaticBody3D"]
 shape = SubResource("BoxShape3D_m37wa")
+
+[node name="LanternTile" parent="." instance=ExtResource("14_ttr18")]
+visible = false
+skeleton = NodePath("../GrassTile")
