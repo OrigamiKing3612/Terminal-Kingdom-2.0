@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwtcawyqlenx0"]
+
+[sub_resource type="GDScript" id="GDScript_dml5r"]
+script/source = "#extends CanvasLayer
+#
+#@export var display_time := 2.0  # seconds
+#var show_timer := 0.0
+#
+##@onready var label: Label = $MarginContainer/MessageLabel
+#var label: Label
+#
+#func _ready():
+	#print($MarginContainer)
+	#var label_node = $MarginContainer.get_node(\"MessageLabel\")
+	#if label_node:
+		#print(\"Found label!\")
+	#else:
+		#print(\"Label node not found!\")
+#
+#func show_message(text: String) -> void:
+	#label.text = text
+	#show_timer = display_time
+	#visible = true
+#
+#func _process(delta: float) -> void:
+	#if show_timer > 0:
+		#show_timer -= delta
+		#if show_timer <= 0:
+			#label.text = \"\"
+			#visible = false
+"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = SubResource("GDScript_dml5r")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MessageLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2

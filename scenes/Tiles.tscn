@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://b6vi2yjsymsnb"]
+[gd_scene load_steps=44 format=4 uid="uid://b6vi2yjsymsnb"]
 
 [ext_resource type="Texture2D" uid="uid://dfdbv0ac8no4f" path="res://assets/tiles/Grass.png" id="1_ie7ma"]
 [ext_resource type="Texture2D" uid="uid://pb6s22yvkyyh" path="res://assets/tiles/Stone.png" id="2_3fjnk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://1wt45i7bcpbu" path="res://assets/tiles/Snow.png" id="9_1p82w"]
 [ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="10_40i2t"]
 [ext_resource type="Texture2D" uid="uid://b8xhmdwfdqsgf" path="res://assets/tiles/Wood.png" id="11_0h36a"]
+[ext_resource type="Texture2D" uid="uid://de7dws1khnpvj" path="res://assets/tiles/Road.png" id="12_eynl6"]
 [ext_resource type="Texture2D" uid="uid://sbdm2n74bnt3" path="res://assets/models/Workbench_0.png" id="12_m37wa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mkq3"]
@@ -80,6 +81,14 @@ albedo_texture = ExtResource("11_0h36a")
 
 [sub_resource type="BoxMesh" id="BoxMesh_miwp8"]
 material = SubResource("StandardMaterial3D_eo46t")
+
+[sub_resource type="BoxMesh" id="BoxMesh_m37wa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttr18"]
+albedo_texture = ExtResource("12_eynl6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_dj60d"]
+material = SubResource("StandardMaterial3D_ttr18")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umsgj"]
 resource_name = "material_0"
@@ -224,6 +233,24 @@ mesh = SubResource("BoxMesh_miwp8")
 [node name="StaticBody3D" type="StaticBody3D" parent="WoodTile"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WoodTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="FenceTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_m37wa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FenceTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceTile/StaticBody3D"]
+shape = SubResource("BoxShape3D_ie7ma")
+
+[node name="PathTile" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_dj60d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PathTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathTile/StaticBody3D"]
 shape = SubResource("BoxShape3D_ie7ma")
 
 [node name="Workbench" type="Node3D" parent="."]

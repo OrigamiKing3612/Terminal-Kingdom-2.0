@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://62u4temv1hah"]
 
 [ext_resource type="Texture2D" uid="uid://bko5ppkotg2gh" path="res://assets/tiles/WoodDoor.png" id="1_3ewxv"]
-[ext_resource type="Script" uid="uid://db14tdf6x5vpq" path="res://scenes/tiles/door_tile_a.gd" id="1_nxxoj"]
+[ext_resource type="Script" uid="uid://db14tdf6x5vpq" path="res://scripts/door_tile_a.gd" id="1_nxxoj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_om4rt"]
 

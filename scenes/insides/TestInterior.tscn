@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://clra0nv2hp4jb"]
 
-[ext_resource type="MeshLibrary" uid="uid://dkphx2vuxaye" path="res://assets/tiles.tres" id="1_c8m47"]
+[ext_resource type="MeshLibrary" uid="uid://b08kcrudi7c08" path="res://assets/tiles.tres" id="1_c8m47"]
 [ext_resource type="PackedScene" uid="uid://62u4temv1hah" path="res://scenes/tiles/DoorTile.tscn" id="2_6wg4u"]
 [ext_resource type="Script" uid="uid://d28a12fqgn72u" path="res://scripts/exit_building.gd" id="3_c8m47"]
 [ext_resource type="PackedScene" uid="uid://cpamh1gadlcks" path="res://scenes/Player.tscn" id="4_c8m47"]
