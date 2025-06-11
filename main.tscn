@@ -1,8 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5kqetvj52hej"]
 
-[ext_resource type="PackedScene" uid="uid://1gukb1yqks51" path="res://scenes/World.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c2qdrgemafodd" path="res://scenes/menus/main_menu.tscn" id="1_ig7tw"]
 
 [node name="Main" type="Node"]
 
-[node name="World" parent="." instance=ExtResource("1_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 2)
+[node name="Control" parent="." instance=ExtResource("1_ig7tw")]

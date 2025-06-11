@@ -1,10 +1,18 @@
 extends GridMap
 
-@export var dirt_block_id: int = 1
-@export var grass_block_id: int = 2
-@export var area_size: Vector3 = Vector3(16, 4, 16)
+@export var dirt_block_id := 1
+@export var grass_block_id := 2
+@export var area_size := Vector3(16, 4, 16)
 
 var noise := FastNoiseLite.new()
+
+func destroy_tile(world_coordinate):
+	var map_coordinate = local_to_map(world_coordinate)
+	set_cell_item(map_coordinate, -1)
+	
+func place_tile(world_coordinate, block_index: int):
+	var map_coordinate = local_to_map(world_coordinate)
+	set_cell_item(map_coordinate, block_index)
 
 func _ready():
 	noise.seed = randi()

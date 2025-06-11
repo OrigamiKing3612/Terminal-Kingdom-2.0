@@ -4,12 +4,14 @@
 [ext_resource type="Script" uid="uid://db14tdf6x5vpq" path="res://scripts/door_tile_a.gd" id="1_nxxoj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_om4rt"]
+size = Vector3(1, 2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttr18"]
 albedo_texture = ExtResource("1_3ewxv")
 
 [sub_resource type="BoxMesh" id="BoxMesh_nxxoj"]
 material = SubResource("StandardMaterial3D_ttr18")
+size = Vector3(1, 2, 1)
 
 [node name="DoorTile" type="Area3D"]
 script = ExtResource("1_nxxoj")

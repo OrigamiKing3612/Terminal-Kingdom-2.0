@@ -6,6 +6,12 @@ func go_to_scene(new_scene: PackedScene):
 	previous_scene = get_tree().current_scene.scene_file_path
 	get_tree().change_scene_to_packed(new_scene)
 
+func free_cursor(): 
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func steal_cursor():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 func go_back():
 	if previous_scene:
 		get_tree().change_scene_to_file(previous_scene)

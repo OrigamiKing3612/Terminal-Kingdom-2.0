@@ -18,8 +18,16 @@ script = ExtResource("1_onrkg")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Character"]
 mesh = SubResource("BoxMesh_v6fml")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot/Character"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.5, 0.5, -0.5)
+mesh = SubResource("BoxMesh_v6fml")
+
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(0.866025, -0.25, 0.433013, 1.55017e-09, 0.866025, 0.500001, -0.5, -0.433013, 0.75, 1, 1.5, 2)
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 1.5, 2, 1.5)
+
+[node name="RayCast3D" type="RayCast3D" parent="Pivot/Camera3D"]
+transform = Transform3D(1, -4.4409e-15, -1.49012e-07, 0, 1, -2.98023e-08, 1.49012e-07, 2.98023e-08, 0.999999, 1.19209e-07, -1.78814e-07, -4.76837e-07)
+target_position = Vector3(0, 1, -5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_p0vlq")

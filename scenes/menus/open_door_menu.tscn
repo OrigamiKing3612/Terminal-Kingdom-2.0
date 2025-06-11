@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://0w3s57jpp1py"]
+
+[ext_resource type="Script" uid="uid://7rm078y2nh7f" path="res://scripts/menus/open_door_menu.gd" id="1_eos7t"]
+
+[node name="Popup" type="Popup"]
+size = Vector2i(237, 100)
+visible = true
+script = ExtResource("1_eos7t")
+
+[node name="GoInsideButton" type="Button" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 237.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 50
+text = "Go Inside"
+
+[connection signal="door_menu_choice" from="." to="." method="_on_door_menu_choice"]
+[connection signal="pressed" from="GoInsideButton" to="." method="_on_go_inside_button_pressed"]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cmlw85vo2evlb"
-path="res://.godot/imported/player.glb-03f8f9d85e4dfa04a5794367d8ef5969.scn"
+uid="uid://bx70nhaojgmip"
+path="res://.godot/imported/StaticTiles.glb-ade5491030c3e86c7f65c20fbe3fcc24.scn"
 
 [deps]
 
-source_file="res://assets/player.glb"
-dest_files=["res://.godot/imported/player.glb-03f8f9d85e4dfa04a5794367d8ef5969.scn"]
+source_file="res://assets/models/StaticTiles.glb"
+dest_files=["res://.godot/imported/StaticTiles.glb-ade5491030c3e86c7f65c20fbe3fcc24.scn"]
 
 [params]
 
