@@ -7,7 +7,7 @@ class Player:
 	var items: Array[Item] = []
 	var position := Vector3.ZERO
 	var quests: Array[Quest] = []
-	var canBuild := false
+	var canBuild := true
 	#var unlockedDoors: Array[String]
 	#var stats := Stats.new()
 	

@@ -1,15 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=8 format=3 uid="uid://dptgi81hyimlb"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_t62y5"]
-size = Vector3(0.8, 1, 0.8)
+[ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
-size = Vector3(0.8, 1, 0.8)
+size = Vector3(1.6, 2, 1.6)
 
-[node name="NPC" type="MeshInstance3D"]
-mesh = SubResource("BoxMesh_t62y5")
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ak68"]
+size = Vector3(10, 2, 10)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[sub_resource type="BoxMesh" id="BoxMesh_yq5wv"]
+size = Vector3(1.6, 2, 1.6)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_k75in"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k75in"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yq5wv"]
+material = SubResource("StandardMaterial3D_k75in")
+
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("1_k75in")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_mhefn")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_3ak68")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh"]
+mesh = SubResource("BoxMesh_yq5wv")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 1.5, 0.5)
+mesh = SubResource("CapsuleMesh_k75in")
+
+[node name="Marker" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 2.5, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_yq5wv")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]
