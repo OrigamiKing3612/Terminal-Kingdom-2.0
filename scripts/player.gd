@@ -65,8 +65,12 @@ extends CharacterBody3D
 				#ray_cast_3d.get_collider().destroy_tile(gridmap_position)
 #
 	#move_and_slide()
+signal pressed_jump()
 signal set_movement_state(_movement_state: MovementState)
 signal set_movement_direction(_movement_state: Vector3)
+
+@export var max_air_jump : int = 1
+var air_jump_counter : int = 0
 
 @export var movement_states: Dictionary
 var movement_direction: Vector3
@@ -75,7 +79,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("movement") or event.is_action_released("movement"):
 		movement_direction.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
 		movement_direction.z = Input.get_action_strength("move_forward") - Input.get_action_strength("move_back")
-		print("md: ", movement_direction)
 		
 		if is_movement_ongoing():
 			if Input.is_action_pressed("sprint"):
@@ -87,6 +90,16 @@ func _input(event: InputEvent) -> void:
 					change_movement_state("run")
 		else:
 			change_movement_state("stand")
+	if event.is_action_pressed("jump"):
+		if air_jump_counter <= max_air_jump:
+			var jump_name = "ground_jump"
+			
+			if air_jump_counter > 0:
+				jump_name = "air_jump"
+			
+			pressed_jump.emit()
+			# uncomment to enable double jump
+			#air_jump_counter += 1
 
 func _ready() -> void:
 	change_movement_state("stand")
@@ -94,6 +107,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if is_movement_ongoing():
 		set_movement_direction.emit(movement_direction)
+		
+	if is_on_floor():
+		air_jump_counter = 0
+	elif air_jump_counter == 0:
+		air_jump_counter = 1
 	
 func is_movement_ongoing() -> bool:
 	return abs(movement_direction.x) > 0 or abs(movement_direction.z) > 0

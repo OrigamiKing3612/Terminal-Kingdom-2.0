@@ -18,7 +18,7 @@ size = Vector3(1.6, 2, 1.6)
 radius = 0.07
 
 [node name="Player" type="CharacterBody3D" groups=["can_use_doors"]]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
 floor_snap_length = 0.0
 script = ExtResource("1_onrkg")
 movement_states = {
@@ -40,14 +40,15 @@ shape = SubResource("BoxShape3D_p0vlq")
 [node name="Mesh" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("BoxMesh_v6fml")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.914214, 1, 0.914214)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.98023e-08, 1, 0.5)
 mesh = SubResource("BoxMesh_v6fml")
 
 [node name="Camera" type="Node3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 1.75, 0)
+transform = Transform3D(-1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, -1, 0, 1.75, 0)
 script = ExtResource("2_v6fml")
 player = NodePath("..")
 
@@ -61,7 +62,8 @@ spring_length = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D"]
 
+[connection signal="pressed_jump" from="." to="MovementController" method="_jump"]
 [connection signal="set_movement_direction" from="." to="MovementController" method="_on_set_movement_direction"]
 [connection signal="set_movement_state" from="." to="MovementController" method="_on_set_movement_state"]
 [connection signal="set_movement_state" from="." to="Camera" method="_on_set_movement_state"]
-[connection signal="set_camera_rotation" from="Camera" to="MovementController" method="_on_set_cam_rotation"]
+[connection signal="set_camera_rotation" from="Camera" to="MovementController" method="_on_set_camera_rotation"]

@@ -31,12 +31,15 @@ func _physics_process(delta: float) -> void:
 	var target_rotation = atan2(direction.x, direction.z) - player_init_rotation
 	mesh.rotation.y = lerp_angle(mesh.rotation.y, target_rotation, rotation_speed * delta)
 
-func _on_set_movement_state(_movement_state : MovementState):
+func _jump():
+	velocity.y = 20
+
+func _on_set_movement_state(_movement_state: MovementState):
 	speed = _movement_state.movement_speed
 	acceleration =  _movement_state.acceleration
 
-func _on_set_movement_direction(_movement_direction : Vector3):
+func _on_set_movement_direction(_movement_direction: Vector3):
 	direction = _movement_direction.rotated(Vector3.UP, camera_rotation + player_init_rotation)
 
-func _on_set_camera_rotation(_camera_rotation : float):
+func _on_set_camera_rotation(_camera_rotation: float):
 	camera_rotation = _camera_rotation
