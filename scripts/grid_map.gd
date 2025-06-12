@@ -9,6 +9,8 @@ var noise := FastNoiseLite.new()
 func destroy_tile(world_coordinate):
 	print("destory_tile")
 	var map_coordinate = local_to_map(world_coordinate)
+	if map_coordinate.y == -2:
+		return
 	set_cell_item(map_coordinate, -1)
 	
 func place_tile(world_coordinate, block_index: int):

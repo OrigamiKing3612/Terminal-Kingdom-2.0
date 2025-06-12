@@ -75,6 +75,8 @@ var air_jump_counter : int = 0
 @export var movement_states: Dictionary
 var movement_direction: Vector3
 
+@onready var ray_cast_3d: RayCast3D = $Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D/RayCast3D
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("movement") or event.is_action_released("movement"):
 		movement_direction.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
@@ -93,13 +95,17 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
 		if air_jump_counter <= max_air_jump:
 			var jump_name = "ground_jump"
-			
 			if air_jump_counter > 0:
 				jump_name = "air_jump"
-			
 			pressed_jump.emit()
 			# uncomment to enable double jump
 			#air_jump_counter += 1
+
+	if Input.is_action_pressed("intract") && GameData.player.canBuild:
+		if ray_cast_3d.is_colliding():
+			var gridmap_position = ray_cast_3d.get_collision_point() - ray_cast_3d.get_collision_normal()
+			if ray_cast_3d.get_collider().has_method("destroy_tile"):
+				ray_cast_3d.get_collider().destroy_tile(gridmap_position)
 
 func _ready() -> void:
 	change_movement_state("stand")

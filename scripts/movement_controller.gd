@@ -5,6 +5,7 @@ extends Node
 @export var rotation_speed: float = 8
 @export var fall_gravity: float = 45
 var jump_gravity: float = fall_gravity
+var jump_distance: float = 15
 var direction: Vector3
 var velocity: Vector3
 var acceleration: float
@@ -32,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	mesh.rotation.y = lerp_angle(mesh.rotation.y, target_rotation, rotation_speed * delta)
 
 func _jump():
-	velocity.y = 20
+	velocity.y = jump_distance
 
 func _on_set_movement_state(_movement_state: MovementState):
 	speed = _movement_state.movement_speed

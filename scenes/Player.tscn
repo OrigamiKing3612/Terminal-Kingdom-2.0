@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://blbm6fm2s14i4" path="res://scripts/movement_controller.gd" id="5_qu4a1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p0vlq"]
-size = Vector3(0.8, 1, 0.8)
+size = Vector3(0.6, 1, 0.6)
 
 [sub_resource type="BoxMesh" id="BoxMesh_v6fml"]
 size = Vector3(1.6, 2, 1.6)
@@ -61,6 +61,10 @@ shape = SubResource("SphereShape3D_v6fml")
 spring_length = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D"]
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, 3.57628e-07)
+target_position = Vector3(0, -1, -12)
 
 [connection signal="pressed_jump" from="." to="MovementController" method="_jump"]
 [connection signal="set_movement_direction" from="." to="MovementController" method="_on_set_movement_direction"]
