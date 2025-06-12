@@ -72,20 +72,21 @@ signal set_movement_direction(_movement_state: Vector3)
 var movement_direction: Vector3
 
 func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("movement") or event.is_action_released("movement"):
+	if event.is_action_pressed("movement") or event.is_action_released("movement"):
 		movement_direction.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
 		movement_direction.z = Input.get_action_strength("move_forward") - Input.get_action_strength("move_back")
+		print("md: ", movement_direction)
 		
-		#if is_movement_ongoing():
-			#if Input.is_action_pressed("sprint"):
-				#change_movement_state("sprint")
-			#else:
-				#if Input.is_action_pressed("walk"):
-					#change_movement_state("walk")
-				#else:
-					#change_movement_state("run")
-		#else:
-			#change_movement_state("stand")
+		if is_movement_ongoing():
+			if Input.is_action_pressed("sprint"):
+				change_movement_state("sprint")
+			else:
+				if Input.is_action_pressed("walk"):
+					change_movement_state("walk")
+				else:
+					change_movement_state("run")
+		else:
+			change_movement_state("stand")
 
 func _ready() -> void:
 	change_movement_state("stand")

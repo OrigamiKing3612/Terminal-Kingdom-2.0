@@ -19,6 +19,7 @@ radius = 0.07
 
 [node name="Player" type="CharacterBody3D" groups=["can_use_doors"]]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+floor_snap_length = 0.0
 script = ExtResource("1_onrkg")
 movement_states = {
 "run": ExtResource("4_70d11"),
