@@ -22,7 +22,7 @@ func _ready() -> void:
 	SceneManager.steal_cursor()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and GameManager.move:
 		yaw += -event.relative.x * yaw_sensitivity
 		pitch += event.relative.y * pitch_sensitivity
 

@@ -8,9 +8,11 @@ func go_to_scene(new_scene: PackedScene):
 	get_tree().change_scene_to_packed(new_scene)
 
 func free_cursor(): 
+	GameManager.move = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func steal_cursor():
+	GameManager.move = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func show_popup(popup: Control):

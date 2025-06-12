@@ -4,7 +4,6 @@ class_name QuestManager extends Node
 @onready var QuestTitle: RichTextLabel = GameManager.get_node("QuestBox").get_node("QuestTitle")
 @onready var QuestDescription: RichTextLabel = GameManager.get_node("QuestBox").get_node("QuestDescription")
 
-@export_group("Quest Settings")
 @export var quest_name: String = ""
 @export var quest_description: String = ""
 @export var quest_status: QuestStatus = QuestStatus.available
