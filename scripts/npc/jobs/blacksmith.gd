@@ -1,12 +1,36 @@
 extends Node
 
-const TALK_MENU = preload("res://scenes/menus/dialog.tscn")
 
-func talk():
-	#var popup = TALK_MENU.instantiate()
-	#SceneManager.show_popup(popup)
-	#popup.show_dialog("Text!")
-	#popup.add_button("Button", button_text)
-	#SceneManager.free_cursor()
+func _ready() -> void:
+	QuestManager.register_quest("blacksmith1", $Stage1Quest)
+
+func talk(data: NPCData):
+		getStage()
 	
-	print("Called from blacksmith")
+func getStage():
+	match GameData.player.skill.blacksmithing.stage:
+		0:
+			var TALK_MENU = load("res://scenes/menus/dialog.tscn")
+			var popup = TALK_MENU.instantiate()
+			SceneManager.show_popup(popup)
+			popup.show_dialog("Hello "+ GameData.player.name + "! Would you like to learn how to be a blacksmith?")
+			popup.set_yes_or_no(stage1)
+			SceneManager.free_cursor()
+		1:
+			stage1()
+		_:
+			print("Unknown Stage")
+
+func stage1():
+	var quest = QuestManager.get_quest("blacksmith1")
+	if quest == null:
+		return
+	if quest.quest_status == quest.QuestStatus.available:
+		GameData.player.skill.blacksmithing.stage = 1
+		quest.start_quest()
+
+	if quest.quest_status == quest.QuestStatus.reached_goal:
+		GameData.player.skill.blacksmithing.stage = 2
+		quest.finish_quest()
+	
+	QuestManager.update_quest("blacksmith1", quest)

@@ -21,14 +21,13 @@ func talk() -> void:
 func talk_to_starting_village_npc():
 	match data.job:
 		NPCEnums.JOB.NONE:
-			jobs.none.talk()
+			jobs.none.talk(data)
 		NPCEnums.JOB.BLACKSMITH:
-			jobs.blacksmith.talk()
+			jobs.blacksmith.talk(data)
+		NPCEnums.JOB.MINER:
+			jobs.miner.talk()
 		_:
 			print("Unknown job: ", data.job)
-
-func button_text():
-	print("button_text")
 
 func _on_body_entered(body: Node3D) -> void:
 	if not body.is_in_group("Player"):

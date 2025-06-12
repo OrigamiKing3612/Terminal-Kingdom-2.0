@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=13 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
 [ext_resource type="Script" uid="uid://du5mtwnmpjcs2" path="res://scripts/npc/jobs/blacksmith.gd" id="2_yq5wv"]
+[ext_resource type="Script" uid="uid://vb40usgxql0s" path="res://scripts/quests/get_something_quest.gd" id="4_i3n4k"]
 [ext_resource type="Script" uid="uid://d3yh5vbtrdxp0" path="res://scripts/npc/none.gd" id="4_se8i8"]
+[ext_resource type="Script" uid="uid://6ldywjhmi7eq" path="res://scripts/npc/jobs/miner.gd" id="6_fnw6m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
 size = Vector3(1.6, 2, 1.6)
@@ -56,8 +58,18 @@ script = ExtResource("2_3ak68")
 [node name="Blacksmith" type="Node" parent="Jobs"]
 script = ExtResource("2_yq5wv")
 
+[node name="Stage1Quest" type="Node3D" parent="Jobs/Blacksmith"]
+script = ExtResource("4_i3n4k")
+quest_name = "Get iron from the mine"
+quest_description = "Talk to the Miner"
+reached_goal_text = "Return the Blacksmith!"
+metadata/_custom_type_script = "uid://vb40usgxql0s"
+
 [node name="None" type="Node" parent="Jobs"]
 script = ExtResource("4_se8i8")
+
+[node name="Miner" type="Node" parent="Jobs"]
+script = ExtResource("6_fnw6m")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]

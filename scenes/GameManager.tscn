@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://1xr5qopgm57i"]
+
+[ext_resource type="Script" uid="uid://ndmr52dllwad" path="res://scripts/global/GameManager.gd" id="1_34tde"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_34tde")
+
+[node name="QuestBox" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="QuestTitle" type="RichTextLabel" parent="QuestBox"]
+offset_right = 339.0
+offset_bottom = 25.0
+text = "QuestTitle"
+
+[node name="QuestDescription" type="RichTextLabel" parent="QuestBox"]
+offset_left = 1.0
+offset_top = 24.0
+offset_right = 319.0
+offset_bottom = 47.0
+text = "Quest Description"

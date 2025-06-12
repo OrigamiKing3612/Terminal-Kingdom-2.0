@@ -21,6 +21,11 @@ func add_button(text: String, action: Callable):
 	)
 	v_box_container.add_child(button)
 	
+func set_yes_or_no(yes: Callable):
+	close_button.visible = false
+	add_button("Yes", yes)
+	add_button("No", func():)
+	
 func close():
 	self.queue_free()
 	SceneManager.steal_cursor()
