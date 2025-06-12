@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://0w3s57jpp1py"]
+[gd_scene load_steps=3 format=3 uid="uid://0w3s57jpp1py"]
 
 [ext_resource type="Script" uid="uid://7rm078y2nh7f" path="res://scripts/menus/open_door_menu.gd" id="1_eos7t"]
+[ext_resource type="Theme" uid="uid://ssbhgf25fdh8" path="res://assets/resources/ui/themes/button/button_theme.tres" id="2_0wgs1"]
 
 [node name="Popup" type="Popup"]
 size = Vector2i(237, 100)
@@ -12,7 +13,7 @@ offset_left = 4.0
 offset_top = 4.0
 offset_right = 237.0
 offset_bottom = 96.0
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("2_0wgs1")
 text = "Go Inside"
 
 [connection signal="door_menu_choice" from="." to="." method="_on_door_menu_choice"]

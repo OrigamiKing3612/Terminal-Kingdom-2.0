@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://1gukb1yqks51"]
+[gd_scene load_steps=10 format=3 uid="uid://1gukb1yqks51"]
 
 [ext_resource type="MeshLibrary" uid="uid://kiq3vm8qcqlp" path="res://assets/tiles.tres" id="1_kqs1s"]
 [ext_resource type="PackedScene" uid="uid://62u4temv1hah" path="res://scenes/tiles/DoorTile.tscn" id="2_7g83o"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cpamh1gadlcks" path="res://scenes/Player.tscn" id="5_1lgw5"]
 [ext_resource type="PackedScene" uid="uid://boebyhdvrqnq6" path="res://scenes/insides/FarmInterior.tscn" id="5_hlk0d"]
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="7_0uv0p"]
+[ext_resource type="Resource" uid="uid://dg6f8v5gbgg70" path="res://assets/resources/npcs/blacksmith_npc.tres" id="8_b3faq"]
 
 [sub_resource type="Environment" id="Environment_kqs1s"]
 background_mode = 1
@@ -28,7 +29,7 @@ script = ExtResource("3_d1c63")
 target_scene = ExtResource("5_hlk0d")
 
 [node name="Player" parent="." instance=ExtResource("5_1lgw5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 7, 28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 3, 28)
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
@@ -39,9 +40,8 @@ data = {
 script = ExtResource("2_hlk0d")
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="NPC" parent="." instance=ExtResource("7_0uv0p")]
+[node name="BlacksmithNPC" parent="." instance=ExtResource("7_0uv0p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.5, 3.5, 21.25)
-starting_village_npc = true
-job = "blacksmith"
+data = ExtResource("8_b3faq")
 
 [connection signal="body_entered" from="FarmDoor" to="FarmDoor" method="_on_body_entered"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2qdrgemafodd"]
+[gd_scene load_steps=3 format=3 uid="uid://c2qdrgemafodd"]
 
 [ext_resource type="Script" uid="uid://o6uatjefk7ev" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
+[ext_resource type="Theme" uid="uid://ssbhgf25fdh8" path="res://assets/resources/ui/themes/button/button_theme.tres" id="2_ovrgc"]
 
 [node name="VBoxContainer" type="VBoxContainer"]
 anchors_preset = 8
@@ -18,29 +19,34 @@ script = ExtResource("1_xqga4")
 
 [node name="NewGameButton" type="Button" parent="."]
 layout_mode = 2
+theme = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 50
 text = "New Game
 "
 
 [node name="LoadGameButton" type="Button" parent="."]
 layout_mode = 2
+theme = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 50
 text = "Load Game"
 
 [node name="HelpButton" type="Button" parent="."]
 layout_mode = 2
+theme = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 50
 text = "Help
 "
 
 [node name="SettingsButton" type="Button" parent="."]
 layout_mode = 2
+theme = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 50
 text = "Settings
 "
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 2
+theme = ExtResource("2_ovrgc")
 theme_override_font_sizes/font_size = 50
 text = "Quit
 "
