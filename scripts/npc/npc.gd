@@ -4,6 +4,7 @@ extends CharacterBody3D
 
 @onready var marker: MeshInstance3D = $Mesh/Marker
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
+@onready var jobs: Node = $Jobs
 
 func _ready() -> void:
 	if data != null:
@@ -17,15 +18,14 @@ func talk() -> void:
 	
 	print("Talk!")
 
-const TALK_MENU = preload("res://scenes/menus/dialog.tscn")
-
 func talk_to_starting_village_npc():
-	var popup = TALK_MENU.instantiate()
-	SceneManager.show_popup(popup)
-	popup.show_dialog("Text!")
-	popup.add_button("Button", button_text)
-	SceneManager.free_cursor()
-	#popup.popup_centered()
+	match data.job:
+		NPCEnums.JOB.NONE:
+			jobs.none.talk()
+		NPCEnums.JOB.BLACKSMITH:
+			jobs.blacksmith.talk()
+		_:
+			print("Unknown job: ", data.job)
 
 func button_text():
 	print("button_text")

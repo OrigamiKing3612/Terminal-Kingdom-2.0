@@ -1,6 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=11 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
+[ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
+[ext_resource type="Script" uid="uid://du5mtwnmpjcs2" path="res://scripts/npc/jobs/blacksmith.gd" id="2_yq5wv"]
+[ext_resource type="Script" uid="uid://d3yh5vbtrdxp0" path="res://scripts/npc/none.gd" id="4_se8i8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
 size = Vector3(1.6, 2, 1.6)
@@ -46,6 +49,15 @@ visible = false
 mesh = SubResource("CapsuleMesh_yq5wv")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Jobs" type="Node" parent="."]
+script = ExtResource("2_3ak68")
+
+[node name="Blacksmith" type="Node" parent="Jobs"]
+script = ExtResource("2_yq5wv")
+
+[node name="None" type="Node" parent="Jobs"]
+script = ExtResource("4_se8i8")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]

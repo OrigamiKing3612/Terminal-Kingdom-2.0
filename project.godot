@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneManager="*res://scripts/SceneManager.gd"
 GameData="*res://scripts/GameData.gd"
+NPCEnums="*res://scripts/global/NPCEnums.gd"
 
 [display]
 

@@ -6,14 +6,14 @@
 script = ExtResource("1_3b76q")
 name = "Blacksmith"
 is_starting_village_npc = true
-job = 0
+job = 1
 skill_level = 0
 experience = 0.0
 workplace = Vector3(0, 0, 0)
 behavior_type = 0
 hasTalkedToBefore = false
 age = 18
-gender = "male"
+gender = 0
 hunger = 100.0
 happiness = 100.0
 positionToWalkTo = Vector3(0, 0, 0)
