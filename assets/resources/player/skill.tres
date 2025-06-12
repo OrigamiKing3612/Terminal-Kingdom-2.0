@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://1150jny3axqx"]
+
+[ext_resource type="Resource" uid="uid://b0m23aoykkwa7" path="res://assets/resources/player/skill/default_skill_progress.tres" id="1_pmfbq"]
+[ext_resource type="Script" uid="uid://di73pft3tur7l" path="res://scripts/resources/data/skill.gd" id="2_0pgp7"]
+
+[resource]
+script = ExtResource("2_0pgp7")
+blacksmithing = ExtResource("1_pmfbq")
+mining = ExtResource("1_pmfbq")
+carpentry = ExtResource("1_pmfbq")
+farming = ExtResource("1_pmfbq")
+building = ExtResource("1_pmfbq")
+sales = ExtResource("1_pmfbq")
+hunting = ExtResource("1_pmfbq")
+inventing = ExtResource("1_pmfbq")
+caretaking = ExtResource("1_pmfbq")
+medicine = ExtResource("1_pmfbq")
+cooking = ExtResource("1_pmfbq")
+metadata/_custom_type_script = "uid://di73pft3tur7l"

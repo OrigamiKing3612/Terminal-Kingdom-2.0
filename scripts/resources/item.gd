@@ -1,6 +1,5 @@
 class_name Item extends Resource
 
-@export_group("Item Settings")
 @export var name: String = ""
 @export var price: int = 10
 @export var can_be_sold: bool = true

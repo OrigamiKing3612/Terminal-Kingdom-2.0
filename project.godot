@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameData="*res://scripts/GameData.gd"
 NPCEnums="*res://scripts/global/NPCEnums.gd"
 SceneManager="*res://scripts/global/SceneManager.gd"
 GameManager="*res://scenes/GameManager.tscn"

@@ -41,4 +41,4 @@ func _on_body_exited(body: Node3D) -> void:
 	
 func _physics_process(delta: float) -> void:
 	if marker.visible:
-		look_at(GameData.player.position, Vector3.UP)
+		look_at(GameManager.player.position, Vector3.UP)

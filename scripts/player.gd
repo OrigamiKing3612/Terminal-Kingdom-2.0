@@ -36,7 +36,7 @@ func _input(event: InputEvent) -> void:
 			# uncomment to enable double jump
 			#air_jump_counter += 1
 
-	if Input.is_action_pressed("left_click") && GameData.player.canBuild:
+	if Input.is_action_pressed("left_click") && GameManager.player.can_build:
 		if ray_cast_3d.is_colliding():
 			var gridmap_position = ray_cast_3d.get_collision_point() - ray_cast_3d.get_collision_normal()
 			if ray_cast_3d.get_collider().has_method("destroy_tile"):
