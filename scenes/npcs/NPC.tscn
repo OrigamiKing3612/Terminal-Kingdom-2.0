@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=15 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
 [ext_resource type="Script" uid="uid://du5mtwnmpjcs2" path="res://scripts/npc/jobs/blacksmith.gd" id="2_yq5wv"]
 [ext_resource type="Script" uid="uid://vb40usgxql0s" path="res://scripts/quests/get_something_quest.gd" id="4_i3n4k"]
 [ext_resource type="Script" uid="uid://d3yh5vbtrdxp0" path="res://scripts/npc/none.gd" id="4_se8i8"]
+[ext_resource type="Script" uid="uid://c7pim11lbdqyc" path="res://scripts/quests/collect_items_quest.gd" id="5_3egug"]
+[ext_resource type="Script" uid="uid://0gx1d8pnmjgd" path="res://scripts/quests/use_station_quest.gd" id="6_cmg02"]
 [ext_resource type="Script" uid="uid://6ldywjhmi7eq" path="res://scripts/npc/jobs/miner.gd" id="6_fnw6m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
@@ -58,12 +60,40 @@ script = ExtResource("2_3ak68")
 [node name="Blacksmith" type="Node" parent="Jobs"]
 script = ExtResource("2_yq5wv")
 
-[node name="Stage1Quest" type="Node3D" parent="Jobs/Blacksmith"]
+[node name="Stage1Quest" type="Node" parent="Jobs/Blacksmith"]
 script = ExtResource("4_i3n4k")
 quest_name = "Get iron from the mine"
 quest_description = "Talk to the Miner"
 reached_goal_text = "Return the Blacksmith!"
 metadata/_custom_type_script = "uid://vb40usgxql0s"
+
+[node name="Stage2Quest" type="Node" parent="Jobs/Blacksmith"]
+script = ExtResource("5_3egug")
+quest_name = "Collect 20 Lumber"
+quest_description = "Collect 20 Lumber for the Blacksmith"
+reached_goal_text = "Return to the Blacksmith"
+metadata/_custom_type_script = "uid://c7pim11lbdqyc"
+
+[node name="Stage3Quest" type="Node" parent="Jobs/Blacksmith"]
+script = ExtResource("4_i3n4k")
+quest_name = "Give lumber to the Carpenter"
+quest_description = "Bring 20 lumber to the Carpenter"
+reached_goal_text = "Bring the sticks back to the Blacksmith"
+metadata/_custom_type_script = "uid://vb40usgxql0s"
+
+[node name="Stage4Quest" type="Node" parent="Jobs/Blacksmith"]
+script = ExtResource("4_i3n4k")
+quest_name = "Get coal from the Miner"
+quest_description = "Get 5 coal from the Miner"
+reached_goal_text = "Return to the Blacksmith"
+metadata/_custom_type_script = "uid://vb40usgxql0s"
+
+[node name="Stage5Quest" type="Node" parent="Jobs/Blacksmith"]
+script = ExtResource("6_cmg02")
+quest_name = "Use the Furnace"
+quest_description = "Use the Furnace to create Steel"
+reached_goal_text = "Return to the Blacksmith"
+metadata/_custom_type_script = "uid://0gx1d8pnmjgd"
 
 [node name="None" type="Node" parent="Jobs"]
 script = ExtResource("4_se8i8")

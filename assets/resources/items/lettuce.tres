@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bi1w54ay3vh0i"]
+
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_yl8y4"]
+
+[resource]
+script = ExtResource("1_yl8y4")
+name = "Lettuce"
+price = 1
+can_be_sold = true
+is_buildable = false
+metadata/_custom_type_script = "uid://cn074wlyew4kj"

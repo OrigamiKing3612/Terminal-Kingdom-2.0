@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://wca0tefrivgq"]
+
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_grxhd"]
+
+[resource]
+script = ExtResource("1_grxhd")
+name = "Weat"
+price = 1
+can_be_sold = true
+is_buildable = false
+metadata/_custom_type_script = "uid://cn074wlyew4kj"

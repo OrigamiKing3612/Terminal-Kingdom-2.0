@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PickaxeItem" load_steps=2 format=3 uid="uid://c0ko03jxrrqa1"]
+
+[ext_resource type="Script" uid="uid://cju6s3sghlnxp" path="res://scripts/resources/items/pickaxe_item.gd" id="1_c1rbj"]
+
+[resource]
+script = ExtResource("1_c1rbj")
+durability = 50
+name = ""
+price = 10
+can_be_sold = true
+is_buildable = false
+metadata/_custom_type_script = "uid://cju6s3sghlnxp"

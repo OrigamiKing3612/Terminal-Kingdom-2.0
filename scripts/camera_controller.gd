@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	pitch = clamp(pitch, pitch_min, pitch_max)
 	
 	camera_yaw.rotation_degrees.y = lerp(camera_yaw.rotation_degrees.y, yaw, yaw_acceleration * delta)
-	camera_pitch.rotation_degrees.x = lerp(camera_pitch.rotation_degrees.x, pitch, pitch_acceleration * delta)
+	camera_pitch.rotation_degrees.x = -lerp(camera_pitch.rotation_degrees.x, pitch, pitch_acceleration * delta)
 	
 	#camera_yaw.rotation_degrees.y = yaw
 	#camera_pitch.rotation_degrees.x = pitch

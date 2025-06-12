@@ -35,39 +35,6 @@ class Player:
 class SkillProgress:
 	var stage := 0
 	var level := NPCEnums.SKILL_LEVEL.NONE
-
-class Item:
-	var type: ItemType
-	var canBeSold: bool
-	
-	func _init(type: ItemType, canBeSold: bool):
-		canBeSold = canBeSold
-	
-enum ItemType{
-	sword, axe, pickaxe, boomerang, # bow? net? dagger?
-	backpack,
-	lumber,
-	iron,
-	coal,
-	gold,
-	stone,
-	clay,
-	tree_seed,
-	stick,
-	steel,
-	door,
-	fence,
-	gate,
-	chest,
-	bed,
-	desk,
-	coin,
-	carrot,
-	potato,
-	wheat,
-	lettuce,
-	pot,
-}
 	
 enum Quest{
 	

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cdwawmkibul0y"]
+
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_pqfmk"]
+
+[resource]
+script = ExtResource("1_pqfmk")
+name = "Iron"
+price = 5
+can_be_sold = true
+is_buildable = false
+metadata/_custom_type_script = "uid://cn074wlyew4kj"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cks46e1silgmv"]
+
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_g06bi"]
+
+[resource]
+script = ExtResource("1_g06bi")
+name = "Bed"
+price = 0
+can_be_sold = false
+is_buildable = true
+metadata/_custom_type_script = "uid://cn074wlyew4kj"
