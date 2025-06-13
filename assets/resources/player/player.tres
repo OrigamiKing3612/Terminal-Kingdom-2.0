@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_kflsk")
-player_name = "DEFAULT_NAME"
+name = "DEFAULT_NAME"
 can_build = true
 position = Vector3(0, 0, 0)
 items = Array[ExtResource("1_mddin")]([])

@@ -5,8 +5,8 @@ extends CanvasLayer
 @onready var inventory_label: RichTextLabel = $VBoxContainer/InventoryLabel
 
 func show_item(item: String, count: int) -> RichTextLabel:
-	var label = RichTextLabel.new()
-	label.text = "%s x%d" % [name, count]
+	var label = inventory_label.duplicate() as RichTextLabel
+	label.text = "%s x%d" % [item, count]
 	return label
 
 func _on_show_inventory() -> void:
@@ -18,7 +18,7 @@ func _on_show_inventory() -> void:
 		else:
 			inventory_items[item.name] = 1
 	
-	for name in inventory_items:
+	for name in inventory_items.keys():
 		var label = show_item(name, inventory_items[name])
 		v_box_container.add_child(label)
 
