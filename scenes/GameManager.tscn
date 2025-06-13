@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://ndmr52dllwad" path="res://scripts/global/GameManager.gd" id="1_34tde"]
 [ext_resource type="Resource" uid="uid://v0x75ukrrln7" path="res://assets/resources/player/player.tres" id="2_3dus2"]
 [ext_resource type="Theme" uid="uid://ssbhgf25fdh8" path="res://assets/resources/ui/themes/button/button_theme.tres" id="2_qppyr"]
-[ext_resource type="Script" uid="uid://dmmt046g5n2t" path="res://scripts/menus/inventory_box.gd" id="3_4dhvd"]
+[ext_resource type="Script" uid="uid://dmmt046g5n2t" path="res://scripts/ui/inventory_box.gd" id="3_4dhvd"]
 [ext_resource type="Texture2D" uid="uid://bqsqxj72w87cb" path="res://assets/ui/inventory.png" id="5_rtub8"]
-[ext_resource type="Script" uid="uid://emqvl3xrerc8" path="res://scripts/menus/buildable_items.gd" id="6_jg7te"]
+[ext_resource type="Script" uid="uid://emqvl3xrerc8" path="res://scripts/ui/buildable_items.gd" id="6_jg7te"]
 [ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="7_2uts2"]
 [ext_resource type="Texture2D" uid="uid://c7im14pt3acjp" path="res://assets/models/icons/dirt_slope_preview.tres" id="8_2chjq"]
-[ext_resource type="PackedScene" uid="uid://cstkdjjdwrtap" path="res://scenes/menus/hotbar/hotbar.tscn" id="9_2chjq"]
+[ext_resource type="PackedScene" uid="uid://cstkdjjdwrtap" path="res://scenes/ui/hotbar/hotbar.tscn" id="9_2chjq"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1jauj"]
 blend_mode = 4

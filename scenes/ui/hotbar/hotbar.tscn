@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cstkdjjdwrtap"]
+
+[ext_resource type="Script" uid="uid://bmpiy7pk1owfs" path="res://scripts/ui/hotbar/hotbar.gd" id="1_1inmx"]
+
+[node name="HotBar" type="Panel"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -640.0
+offset_right = 128.0
+grow_vertical = 0
+mouse_filter = 1
+script = ExtResource("1_1inmx")
+metadata/_custom_type_script = "uid://bmpiy7pk1owfs"
+
+[node name="Items" type="Node" parent="."]

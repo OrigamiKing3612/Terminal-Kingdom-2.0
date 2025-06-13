@@ -42,7 +42,6 @@ func run():
 		print("Saved: ", save_path)
 	print("Done! Time: ", Time.get_datetime_string_from_system())
 
-# fix this it just makes black images
 func generate_preview(mesh: Mesh, item: Item, size: Vector2 = Vector2(128, 128)) -> Texture2D:
 	print("Generating Preview for ", item.name)
 	
@@ -65,23 +64,20 @@ func generate_preview(mesh: Mesh, item: Item, size: Vector2 = Vector2(128, 128))
 	
 	var aabb := mesh.get_aabb()
 	var max_dim = max(aabb.size.x, aabb.size.y, aabb.size.z)
-	var distance = max_dim * 1
-	var pos = Vector3(distance, 1.3, distance)
+	var distance = max_dim * 3
+	var pos = Vector3(distance, 1.6, distance)
 	var rotate = Vector3(0, 0, 0)
-	#var mesh_center := aabb.position + aabb.size
-	#mesh_instance_3d.tras = -mesh_center
 	
 	var light := DirectionalLight3D.new()
-	light.light_energy = 2.0
+	light.light_energy = 1.0
 	light.rotation_degrees = Vector3(-45, -45, 0)
 	light.look_at_from_position(pos, Vector3.ZERO, Vector3.UP)
 	light.translate(Vector3(0, 0, 2))
 	root.add_child(light)
 	
 	var camera := Camera3D.new()
-	#camera.translation = Vector3(0, 0, distance)
 	camera.look_at_from_position(pos, Vector3.ZERO, Vector3.UP)
-	#camera.rotation_degrees = rotate
+	camera.fov = 20
 	root.add_child(camera)
 	camera.make_current()
 

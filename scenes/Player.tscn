@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://cpamh1gadlcks"]
 
-[ext_resource type="Script" uid="uid://hpwvm5v2xwe1" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://hpwvm5v2xwe1" path="res://scripts/player/player.gd" id="1_onrkg"]
 [ext_resource type="Resource" uid="uid://c00pgu5buionk" path="res://assets/resources/movement_states/walk.tres" id="2_cw2d6"]
 [ext_resource type="Resource" uid="uid://dlb2bsv8aw60t" path="res://assets/resources/movement_states/stand.tres" id="2_mdl7e"]
-[ext_resource type="Script" uid="uid://c81ryhihtvhrq" path="res://scripts/camera_controller.gd" id="2_v6fml"]
+[ext_resource type="Script" uid="uid://c81ryhihtvhrq" path="res://scripts/player/camera_controller.gd" id="2_v6fml"]
 [ext_resource type="Resource" uid="uid://cejp3n82mvcbv" path="res://assets/resources/movement_states/sprint.tres" id="3_qu4a1"]
 [ext_resource type="Resource" uid="uid://5pep0pjlel1w" path="res://assets/resources/movement_states/run.tres" id="4_70d11"]
-[ext_resource type="Script" uid="uid://blbm6fm2s14i4" path="res://scripts/movement_controller.gd" id="5_qu4a1"]
+[ext_resource type="Script" uid="uid://blbm6fm2s14i4" path="res://scripts/player/movement_controller.gd" id="5_qu4a1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p0vlq"]
 size = Vector3(0.6, 1, 0.6)
