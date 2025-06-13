@@ -76,6 +76,7 @@ offset_right = 419.0
 offset_bottom = 262.0
 
 [node name="BuildingBox" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("6_jg7te")
 
 [node name="BuildableItems" type="ItemList" parent="BuildingBox"]

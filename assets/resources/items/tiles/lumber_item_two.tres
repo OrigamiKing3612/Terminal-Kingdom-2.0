@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c2yjrjo4mu2ii"]
+
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_wnmcq"]
+[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="2_3x18h"]
+
+[resource]
+script = ExtResource("1_wnmcq")
+name = "Lumber Item Two"
+price = 0
+can_be_sold = false
+is_buildable = true
+texture_2d = ExtResource("2_3x18h")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 48

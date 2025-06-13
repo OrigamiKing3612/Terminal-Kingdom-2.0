@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ckd5tw1bsm77o"]
+
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_fxu04"]
+[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="2_2lopg"]
+
+[resource]
+script = ExtResource("1_fxu04")
+name = "Dirt Stair Interior Corner"
+price = 0
+can_be_sold = false
+is_buildable = true
+texture_2d = ExtResource("2_2lopg")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 2

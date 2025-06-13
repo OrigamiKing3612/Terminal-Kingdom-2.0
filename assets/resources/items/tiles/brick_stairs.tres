@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cj6movgksubrp"]
+
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_kceju"]
+[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="2_dwr58"]
+
+[resource]
+script = ExtResource("1_kceju")
+name = "Brick Stairs"
+price = 0
+can_be_sold = false
+is_buildable = true
+texture_2d = ExtResource("2_dwr58")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 10

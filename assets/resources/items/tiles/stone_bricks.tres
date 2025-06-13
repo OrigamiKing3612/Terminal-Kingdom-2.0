@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dq326o0517fgv"]
+
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_bcy0y"]
+[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="2_n15ne"]
+
+[resource]
+script = ExtResource("1_bcy0y")
+name = "Stone Bricks"
+price = 0
+can_be_sold = false
+is_buildable = true
+texture_2d = ExtResource("2_n15ne")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 37
