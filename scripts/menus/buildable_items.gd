@@ -4,6 +4,10 @@ extends CanvasLayer
 
 func _on_show_building() -> void:
 	hot_bar.items = GameManager.player.items
+	hot_bar.buildable_items = []
+	for item in hot_bar.items:
+		if item.is_buildable:
+			hot_bar.buildable_items.append(item) 
 	hot_bar.show_hot_bar()
 
 func _on_hide_building() -> void:

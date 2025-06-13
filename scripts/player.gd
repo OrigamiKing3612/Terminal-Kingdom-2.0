@@ -48,7 +48,7 @@ func _input(event: InputEvent) -> void:
 			if ray_cast_3d.get_collider().has_method("talk") and GameManager.build_mode == false:
 				ray_cast_3d.get_collider().talk()
 			if ray_cast_3d.get_collider().has_method("place_tile") and GameManager.build_mode:
-				ray_cast_3d.get_collider().place_tile(gridmap_position, GameManager.selected_tile)
+				ray_cast_3d.get_collider().place_tile(gridmap_position, GameManager.selected_gridmap_id)
 
 
 func _ready() -> void:
