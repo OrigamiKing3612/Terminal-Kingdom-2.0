@@ -14,6 +14,7 @@ func destroy_tile(world_coordinate):
 	
 func place_tile(world_coordinate, block_index: int):
 	var map_coordinate = local_to_map(world_coordinate)
+	#if get_cell_item(map_coordinate) == -1:
 	set_cell_item(map_coordinate, block_index)
 
 func _ready():

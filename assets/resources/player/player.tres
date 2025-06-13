@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=7 format=3 uid="uid://v0x75ukrrln7"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=9 format=3 uid="uid://v0x75ukrrln7"]
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_mddin"]
 [ext_resource type="Script" uid="uid://c65bq1qpv6cyp" path="res://scripts/resources/data/player.gd" id="2_kflsk"]
@@ -6,12 +6,14 @@
 [ext_resource type="Resource" uid="uid://b7i1hvxw5klvn" path="res://assets/resources/items/tiles/dirt.tres" id="3_4ec3n"]
 [ext_resource type="Resource" uid="uid://1150jny3axqx" path="res://assets/resources/player/skill.tres" id="3_pomgq"]
 [ext_resource type="Resource" uid="uid://c51j81mglvb55" path="res://assets/resources/items/tiles/dirt_slope.tres" id="4_sn836"]
+[ext_resource type="Resource" uid="uid://8vryhpju410v" path="res://assets/resources/items/axe.tres" id="5_nx8ai"]
+[ext_resource type="Resource" uid="uid://dqt1sx7cc3njo" path="res://assets/resources/items/tiles/marble.tres" id="6_r4jm1"]
 
 [resource]
 script = ExtResource("2_kflsk")
 name = "DEFAULT_NAME"
 can_build = true
 position = Vector3(0, 0, 0)
-items = Array[ExtResource("1_mddin")]([ExtResource("2_sn836"), ExtResource("3_4ec3n"), ExtResource("4_sn836")])
+items = Array[ExtResource("1_mddin")]([ExtResource("2_sn836"), ExtResource("3_4ec3n"), ExtResource("4_sn836"), ExtResource("5_nx8ai"), ExtResource("6_r4jm1"), ExtResource("2_sn836")])
 skill = ExtResource("3_pomgq")
 metadata/_custom_type_script = "uid://c65bq1qpv6cyp"

@@ -13,4 +13,7 @@ is_buildable = false
 texture_2d = ExtResource("2_f7884")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 0
+generate_item = true
+generate_preview = false
+preview_file = ""
 metadata/_custom_type_script = "uid://ddcib8jdewq8d"

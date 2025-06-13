@@ -21,21 +21,15 @@ func update_display() -> void:
 	show_item()
 
 func show_item():
-	label.visible = true
-	icon.visible = true
-	count_label.visible = true
+	self.visible = true
 	
 func hide_item():
-	label.visible = false
-	icon.visible = false
-	count_label.visible = false
+	self.visible = false
 
 func selected(): 
 	label.visible = true
+	self.modulate.a = 0.8
 	
 func deselected():
 	label.visible = false
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	self.modulate.a = 0.2

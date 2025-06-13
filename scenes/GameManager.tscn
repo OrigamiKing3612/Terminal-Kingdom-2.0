@@ -106,7 +106,10 @@ item_1/icon = ExtResource("8_2chjq")
 
 [node name="HotBar" parent="BuildingBox" instance=ExtResource("9_2chjq")]
 
+[connection signal="build_back" from="." to="BuildingBox/HotBar" method="_on_build_back"]
+[connection signal="build_next" from="." to="BuildingBox/HotBar" method="_on_build_next"]
 [connection signal="hide_building" from="." to="BuildingBox" method="_on_hide_building"]
 [connection signal="hide_inventory" from="." to="InventoryBox" method="_on_hide_inventory"]
+[connection signal="inventory_update" from="." to="BuildingBox/HotBar" method="_on_game_manager_inventory_update"]
 [connection signal="show_building" from="." to="BuildingBox" method="_on_show_building"]
 [connection signal="show_inventory" from="." to="InventoryBox" method="_on_show_inventory"]
