@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://d2fgn7hftxltc"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d2fgn7hftxltc"]
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_1m6gv"]
+[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="2_ohxip"]
 
 [resource]
 script = ExtResource("1_1m6gv")
@@ -8,4 +9,7 @@ name = "Pot"
 price = 0
 can_be_sold = false
 is_buildable = true
+texture_2d = ExtResource("2_ohxip")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 0
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

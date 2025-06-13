@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 NPCEnums="*res://scripts/global/NPCEnums.gd"
 SceneManager="*res://scripts/global/SceneManager.gd"
 GameManager="*res://scenes/GameManager.tscn"
+Loader="*res://scripts/tools/loader.gd"
 
 [display]
 

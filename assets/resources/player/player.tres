@@ -1,20 +1,66 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=10 format=3 uid="uid://v0x75ukrrln7"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=11 format=3 uid="uid://v0x75ukrrln7"]
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_mddin"]
 [ext_resource type="Script" uid="uid://c65bq1qpv6cyp" path="res://scripts/resources/data/player.gd" id="2_kflsk"]
-[ext_resource type="Resource" uid="uid://g2flkgk03w5d" path="res://assets/resources/items/tiles/marble_brick_stairs.tres" id="2_r4jm1"]
-[ext_resource type="Resource" uid="uid://spqnga0u7878" path="res://assets/resources/items/tiles/marble.tres" id="3_1xyqr"]
+[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="2_pomgq"]
 [ext_resource type="Resource" uid="uid://1150jny3axqx" path="res://assets/resources/player/skill.tres" id="3_pomgq"]
-[ext_resource type="Resource" uid="uid://cd4vo1vwnseil" path="res://assets/resources/items/tiles/stone_brick_stairs.tres" id="4_hiujl"]
-[ext_resource type="Resource" uid="uid://chy5cp6pqrhwk" path="res://assets/resources/items/tiles/stone_stairs.tres" id="5_vq6pv"]
 [ext_resource type="Resource" uid="uid://cxq0s5prgh160" path="res://assets/resources/items/steel.tres" id="6_mmprl"]
-[ext_resource type="Resource" uid="uid://uf65ggvamxln" path="res://assets/resources/items/tiles/coal_item.tres" id="7_7vk3q"]
+
+[sub_resource type="Resource" id="Resource_sn836"]
+script = ExtResource("1_mddin")
+name = "Marble Brick Stairs"
+price = 0
+can_be_sold = false
+is_buildable = true
+texture_2d = ExtResource("2_pomgq")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 22
+
+[sub_resource type="Resource" id="Resource_4ec3n"]
+script = ExtResource("1_mddin")
+name = "Marble"
+price = 0
+can_be_sold = false
+is_buildable = true
+texture_2d = ExtResource("2_pomgq")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 17
+
+[sub_resource type="Resource" id="Resource_nx8ai"]
+script = ExtResource("1_mddin")
+name = "Stone Brick Stairs"
+price = 0
+can_be_sold = false
+is_buildable = true
+texture_2d = ExtResource("2_pomgq")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 36
+
+[sub_resource type="Resource" id="Resource_r4jm1"]
+script = ExtResource("1_mddin")
+name = "Stone Stairs"
+price = 0
+can_be_sold = false
+is_buildable = true
+texture_2d = ExtResource("2_pomgq")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 30
+
+[sub_resource type="Resource" id="Resource_1xyqr"]
+script = ExtResource("1_mddin")
+name = "Coal Item"
+price = 0
+can_be_sold = false
+is_buildable = true
+texture_2d = ExtResource("2_pomgq")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 43
 
 [resource]
 script = ExtResource("2_kflsk")
 name = "DEFAULT_NAME"
 can_build = true
 position = Vector3(0, 0, 0)
-items = Array[ExtResource("1_mddin")]([ExtResource("2_r4jm1"), ExtResource("3_1xyqr"), ExtResource("4_hiujl"), ExtResource("5_vq6pv"), ExtResource("6_mmprl"), ExtResource("7_7vk3q")])
+items = Array[ExtResource("1_mddin")]([SubResource("Resource_sn836"), SubResource("Resource_4ec3n"), SubResource("Resource_nx8ai"), SubResource("Resource_r4jm1"), ExtResource("6_mmprl"), SubResource("Resource_1xyqr")])
 skill = ExtResource("3_pomgq")
 metadata/_custom_type_script = "uid://c65bq1qpv6cyp"
