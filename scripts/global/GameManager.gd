@@ -14,7 +14,7 @@ var build_mode: bool:
 	get:
 		return building_box.visible
 
-@export var selected_tile: int = 0
+@export var selected_tile_index: int = 0
 @export var player: PlayerData
 
 func _ready() -> void:

@@ -7,7 +7,6 @@ extends GridMap
 var noise := FastNoiseLite.new()
 
 func destroy_tile(world_coordinate):
-	print("destory_tile")
 	var map_coordinate = local_to_map(world_coordinate)
 	if map_coordinate.y == -2:
 		return
