@@ -56,7 +56,8 @@ func hide_hot_bar():
 
 func clear_children():
 	for child in container.get_children():
-		child.queue_free()
+		container.remove_child(child)
+		child.free()
 
 func refresh_buildable_items():
 	buildable_items.clear()

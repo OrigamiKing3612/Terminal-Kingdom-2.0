@@ -27,9 +27,11 @@ func hide_item():
 	self.visible = false
 
 func selected(): 
+	#icon.visible = true
 	label.visible = true
 	self.modulate.a = 0.8
 	
 func deselected():
+	#icon.visible = false
 	label.visible = false
 	self.modulate.a = 0.2
