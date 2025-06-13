@@ -5,3 +5,13 @@
 [node name="Main" type="Node"]
 
 [node name="Control" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_top = 78.0
+offset_right = 2304.0
+offset_bottom = 278.0
+theme_override_font_sizes/normal_font_size = 100
+text = "Terminal Kingdom 2.0"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

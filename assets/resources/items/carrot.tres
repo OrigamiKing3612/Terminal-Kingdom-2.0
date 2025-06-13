@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c7dvn2ccwaomi"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c7dvn2ccwaomi"]
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_nkho3"]
+[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="2_kn64k"]
 
 [resource]
 script = ExtResource("1_nkho3")
@@ -8,4 +9,5 @@ name = "Carrot"
 price = 1
 can_be_sold = true
 is_buildable = false
+texture_2d = ExtResource("2_kn64k")
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

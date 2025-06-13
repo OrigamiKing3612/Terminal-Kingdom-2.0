@@ -1,29 +1,26 @@
 extends CanvasLayer
 
-@onready var v_box_container: VBoxContainer = $VBoxContainer
-@onready var sprite_2d: Sprite2D = $VBoxContainer/Sprite2D
-@onready var inventory_label: RichTextLabel = $VBoxContainer/InventoryLabel
+@onready var texture_rect: TextureRect = $Control/TextureRect
+@onready var inventory_label: RichTextLabel = $Control/InventoryLabel
+@onready var items: Control = $Control/Items
 
-func show_item(item: String, count: int) -> RichTextLabel:
-	var label = inventory_label.duplicate() as RichTextLabel
-	label.text = "%s x%d" % [item, count]
-	return label
+func show_item(item: Item) -> TextureButton:
+	var button := TextureButton.new()
+	button.texture_normal = item.texture_2d
+	button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+	button.custom_minimum_size = Vector2(32, 32)
+	button.position = item.position_in_inventory
+	button.tooltip_text = item.name
+	
+	button.set_script(preload("res://scripts/menus/DraggableItem.gd"))
+
+	return button
 
 func _on_show_inventory() -> void:
-	var inventory_items: Dictionary = {}
-	
 	for item in GameManager.player.items:
-		if inventory_items.has(item.name):
-			inventory_items[item.name] += 1
-		else:
-			inventory_items[item.name] = 1
-	
-	for name in inventory_items.keys():
-		var label = show_item(name, inventory_items[name])
-		v_box_container.add_child(label)
+		var button = show_item(item)
+		items.add_child(button)
 
 func _on_hide_inventory() -> void:
-	var keep = [sprite_2d, inventory_label]
-	for child in v_box_container.get_children():
-		if child not in keep:
-			child.queue_free()
+	for child in items.get_children():
+		child.queue_free()

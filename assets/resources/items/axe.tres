@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="AxeItem" load_steps=2 format=3 uid="uid://8vryhpju410v"]
+[gd_resource type="Resource" script_class="AxeItem" load_steps=3 format=3 uid="uid://8vryhpju410v"]
 
 [ext_resource type="Script" uid="uid://ddcib8jdewq8d" path="res://scripts/resources/items/axe_item.gd" id="1_1os1f"]
+[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="2_f7884"]
 
 [resource]
 script = ExtResource("1_1os1f")
@@ -9,4 +10,7 @@ name = "Axe"
 price = 10
 can_be_sold = true
 is_buildable = false
+texture_2d = ExtResource("2_f7884")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 0
 metadata/_custom_type_script = "uid://ddcib8jdewq8d"
