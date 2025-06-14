@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhxcn1qb5pfpe"
-path.s3tc="res://.godot/imported/StaticTiles_handy_noise.png-3031dd5c6c1e1661c82eaa1c69583356.s3tc.ctex"
+uid="uid://ixu48brlgs7c"
+path.s3tc="res://.godot/imported/StaticTiles_mud-albedo.png-bc79a1bd538669129cd97d1b57676d1e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b92c51fd77138c37ae4042fce6f54465"
+"md5": "c3c9d72f7c68bc57004be4217b2a34bc"
 }
 
 [deps]
 
-source_file="res://assets/models/StaticTiles_handy_noise.png"
-dest_files=["res://.godot/imported/StaticTiles_handy_noise.png-3031dd5c6c1e1661c82eaa1c69583356.s3tc.ctex"]
+source_file="res://assets/models/StaticTiles_mud-albedo.png"
+dest_files=["res://.godot/imported/StaticTiles_mud-albedo.png-bc79a1bd538669129cd97d1b57676d1e.s3tc.ctex"]
 
 [params]
 

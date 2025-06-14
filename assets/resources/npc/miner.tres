@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_n06wh")
-name = "King"
-job = 2
+name = "Miner"
+job = 3
 skill_level = 0
 experience = 0.0
 workplace = Vector3(0, 0, 0)

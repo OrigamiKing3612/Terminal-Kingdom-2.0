@@ -1,12 +1,13 @@
 @tool
 extends Button 
 
-@export var mesh_library: MeshLibrary = preload("res://assets/tiles.tres")
+@export var mesh_library: MeshLibrary = preload("res://assets/tiles_new.tres")
 @export var output_path: String = "res://assets/resources/items/tiles/"
 @export var preview_image_path: String = "res://assets/models/icons/"
 
 func _ready() -> void:
-	self.pressed.connect(_on_pressed)
+	#self.pressed.connect(_on_pressed)
+	pass
 
 func run():
 	if not mesh_library:

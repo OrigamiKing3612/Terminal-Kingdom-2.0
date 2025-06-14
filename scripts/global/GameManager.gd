@@ -9,6 +9,9 @@ signal show_building
 signal hide_building
 signal inventory_update
 
+signal right_click
+signal left_click
+
 signal build_next
 signal build_back
 
@@ -33,13 +36,18 @@ func _input(event: InputEvent) -> void:
 		SceneManager.steal_cursor()
 	if Input.is_action_just_pressed("esc"):
 		SceneManager.free_cursor()
+	if mode != Mode.Inventory:
+		if Input.is_action_pressed("left_click") && player.can_build:
+			left_click.emit()
+		if Input.is_action_pressed("right_click"):
+			right_click.emit()
 
 	match mode:
 		Mode.Normal:
 			if Input.is_action_just_released("inventory"):
 				if inventory_box.visible == false:
 					show_inventory_box()
-					inventory_update.emit()
+					#inventory_update.emit()
 			if player.can_build && Input.is_action_just_released("build"):
 				if player.items.size() < 0:
 					return

@@ -2,20 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhxcn1qb5pfpe"
-path.s3tc="res://.godot/imported/StaticTiles_handy_noise.png-3031dd5c6c1e1661c82eaa1c69583356.s3tc.ctex"
+uid="uid://wcfm20wvn7ml"
+path.s3tc="res://.godot/imported/dirt-normal.001.png-26cc370b49ef3fa16560a309a073a836.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "b92c51fd77138c37ae4042fce6f54465"
-}
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/models/StaticTiles_handy_noise.png"
-dest_files=["res://.godot/imported/StaticTiles_handy_noise.png-3031dd5c6c1e1661c82eaa1c69583356.s3tc.ctex"]
+source_file="res://assets/models/textures/dirt-normal.001.png"
+dest_files=["res://.godot/imported/dirt-normal.001.png-26cc370b49ef3fa16560a309a073a836.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +21,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://assets/models/textures/dirt-normal.001.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

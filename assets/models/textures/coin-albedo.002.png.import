@@ -2,20 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhxcn1qb5pfpe"
-path.s3tc="res://.godot/imported/StaticTiles_handy_noise.png-3031dd5c6c1e1661c82eaa1c69583356.s3tc.ctex"
+uid="uid://dr6yws474uvp6"
+path.s3tc="res://.godot/imported/coin-albedo.002.png-b29d6bd455f327b1e28b5d3ff4f4442b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "b92c51fd77138c37ae4042fce6f54465"
-}
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/models/StaticTiles_handy_noise.png"
-dest_files=["res://.godot/imported/StaticTiles_handy_noise.png-3031dd5c6c1e1661c82eaa1c69583356.s3tc.ctex"]
+source_file="res://assets/models/textures/coin-albedo.002.png"
+dest_files=["res://.godot/imported/coin-albedo.002.png-b29d6bd455f327b1e28b5d3ff4f4442b.s3tc.ctex"]
 
 [params]
 

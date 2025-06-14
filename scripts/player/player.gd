@@ -36,23 +36,11 @@ func _input(event: InputEvent) -> void:
 			# uncomment to enable double jump
 			#air_jump_counter += 1
 
-	if Input.is_action_pressed("left_click") && GameManager.player.can_build:
-		if ray_cast_3d.is_colliding():
-			var gridmap_position = ray_cast_3d.get_collision_point() - ray_cast_3d.get_collision_normal()
-			if ray_cast_3d.get_collider().has_method("destroy_tile"):
-				ray_cast_3d.get_collider().destroy_tile(gridmap_position)
-
-	if Input.is_action_pressed("right_click"):
-		if ray_cast_3d.is_colliding():
-			var gridmap_position = ray_cast_3d.get_collision_point() - ray_cast_3d.get_collision_normal()
-			if ray_cast_3d.get_collider().has_method("talk") and GameManager.mode == GameManager.Mode.Normal:
-				ray_cast_3d.get_collider().talk()
-			if ray_cast_3d.get_collider().has_method("place_tile") and GameManager.mode == GameManager.Mode.Build:
-				ray_cast_3d.get_collider().place_tile(gridmap_position, GameManager.selected_gridmap_id)
-
 
 func _ready() -> void:
 	change_movement_state("stand")
+	GameManager.left_click.connect(_on_left_click)
+	GameManager.right_click.connect(_on_right_click)
 	
 func _physics_process(delta: float) -> void:
 	if is_movement_ongoing():
@@ -68,3 +56,19 @@ func is_movement_ongoing() -> bool:
 	
 func change_movement_state(state: String) -> void:
 	set_movement_state.emit(movement_states[state])
+	
+func _on_left_click():
+	if ray_cast_3d.is_colliding():
+		var gridmap_position = ray_cast_3d.get_collision_point() - ray_cast_3d.get_collision_normal()
+		if ray_cast_3d.get_collider().has_method("destroy_tile"):
+			ray_cast_3d.get_collider().destroy_tile(gridmap_position)
+			
+func _on_right_click():
+	if ray_cast_3d.is_colliding():
+		var gridmap_position = ray_cast_3d.get_collision_point() - ray_cast_3d.get_collision_normal()
+		if ray_cast_3d.get_collider().has_method("interact") and GameManager.mode == GameManager.Mode.Normal:
+			print("interact")
+			ray_cast_3d.get_collider().interact()
+		elif ray_cast_3d.get_collider().has_method("place_tile") and GameManager.mode == GameManager.Mode.Build:
+			ray_cast_3d.get_collider().place_tile(gridmap_position, GameManager.selected_gridmap_id)
+	

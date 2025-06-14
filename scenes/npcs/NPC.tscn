@@ -101,6 +101,12 @@ metadata/_custom_type_script = "uid://0gx1d8pnmjgd"
 [node name="Miner" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("6_fnw6m")
 
+[node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Miner"]
+script = ExtResource("4_i3n4k")
+quest_name = "Get a pickaxe from the Blacksmith"
+quest_description = "Get a pickaxe from the Blacksmith and bring it to the miner"
+metadata/_custom_type_script = "uid://vb40usgxql0s"
+
 [node name="King" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("10_t7167")
 dialogue = ExtResource("11_3j6ye")

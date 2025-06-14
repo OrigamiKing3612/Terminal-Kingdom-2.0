@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3fc7stx78m1"]
+
+[ext_resource type="Script" uid="uid://p8fbaohmhf2c" path="res://scripts/tiles/MineEntranceTile.gd" id="1_lov8x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kneda"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lov8x"]
+material = SubResource("StandardMaterial3D_kneda")
+size = Vector3(2, 4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6rtxt"]
+size = Vector3(2, 4, 2)
+
+[node name="MineEntranceTile" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_lov8x")
+script = ExtResource("1_lov8x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_6rtxt")

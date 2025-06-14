@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d25heoa7aocns"
-path="res://.godot/imported/small-log.png-673daaaefbba34a261ac3ba98aa799e4.ctex"
+uid="uid://cs7hubtkevpd8"
+path="res://.godot/imported/handy_noise.003.png-b52d238b6c8d16d3268769200a8761a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/models/textures/small_log/small-log.png"
-dest_files=["res://.godot/imported/small-log.png-673daaaefbba34a261ac3ba98aa799e4.ctex"]
+source_file="res://assets/models/textures/handy_noise.003.png"
+dest_files=["res://.godot/imported/handy_noise.003.png-b52d238b6c8d16d3268769200a8761a0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d25heoa7aocns"
-path="res://.godot/imported/small-log.png-673daaaefbba34a261ac3ba98aa799e4.ctex"
+uid="uid://d02askbte5oww"
+path="res://.godot/imported/coin-albedo.001.png-3b077689d7b630c815c655ecc9aaa8ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/models/textures/small_log/small-log.png"
-dest_files=["res://.godot/imported/small-log.png-673daaaefbba34a261ac3ba98aa799e4.ctex"]
+source_file="res://assets/models/textures/coin-albedo.001.png"
+dest_files=["res://.godot/imported/coin-albedo.001.png-3b077689d7b630c815c655ecc9aaa8ab.ctex"]
 
 [params]
 

@@ -2,20 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhxcn1qb5pfpe"
-path.s3tc="res://.godot/imported/StaticTiles_handy_noise.png-3031dd5c6c1e1661c82eaa1c69583356.s3tc.ctex"
+uid="uid://dk2mkiiwgc0nt"
+path.s3tc="res://.godot/imported/handy_noise.004.png-180775edc209ab456d3cb25c8420ba9e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "b92c51fd77138c37ae4042fce6f54465"
-}
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/models/StaticTiles_handy_noise.png"
-dest_files=["res://.godot/imported/StaticTiles_handy_noise.png-3031dd5c6c1e1661c82eaa1c69583356.s3tc.ctex"]
+source_file="res://assets/models/textures/handy_noise.004.png"
+dest_files=["res://.godot/imported/handy_noise.004.png-180775edc209ab456d3cb25c8420ba9e.s3tc.ctex"]
 
 [params]
 

@@ -18,7 +18,7 @@ func _ready() -> void:
 	shape.size = talkable_area
 	collision_shape_3d.shape = shape
 
-func talk() -> void:
+func interact() -> void:
 	if data.is_starting_village_npc:
 		talk_to_starting_village_npc()
 		return
