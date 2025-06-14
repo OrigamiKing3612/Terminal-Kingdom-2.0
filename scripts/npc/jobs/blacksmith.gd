@@ -16,7 +16,7 @@ func _ready() -> void:
 	QuestManager.register_quest(stage4_ID, $Stage4Quest)
 	QuestManager.register_quest(stage5_ID, $Stage5Quest)
 
-func talk(data: NPCData):
+func talk(_data: NPCData):
 	getStage()
 	
 func getStage():
