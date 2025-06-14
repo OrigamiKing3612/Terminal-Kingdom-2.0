@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ca60ph2lskf52"
+path="res://.godot/imported/builder.dialogue-225ed92a0812233ca24682cc14ee2669.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/starting_village/builder.dialogue"
+dest_files=["res://.godot/imported/builder.dialogue-225ed92a0812233ca24682cc14ee2669.tres"]
+
+[params]
+
+defaults=true

@@ -1,7 +1,7 @@
 @tool
 extends Button 
 
-@export var mesh_library: MeshLibrary = preload("res://assets/tiles.tres")
+@export var mesh_library: MeshLibrary
 @export var output_path: String = "res://assets/resources/items/tiles/"
 @export var preview_image_path: String = "res://assets/models/icons/"
 
@@ -88,10 +88,11 @@ func generate_preview(mesh: Mesh, item: Item, size: Vector2 = Vector2(128, 128))
 	var img = sub_viewport.get_texture().get_image()
 	var texure = ImageTexture.create_from_image(img)
 
-	var preview_path = preview_image_path + item.name.to_lower().replace(" ", "_") + "_preview.tres"
+	var image_name = item.name.to_lower().replace(" ", "_") + "_preview.tres"
+	var preview_path = preview_image_path + image_name
 	#img.save_png(ProjectSettings.globalize_path(preview_path))
 	
-	print("Saved preview: ", preview_path)
+	print("Saved preview: ", image_name)
 	ResourceSaver.save(texure, preview_path)
 	
 	sub_viewport.queue_free()

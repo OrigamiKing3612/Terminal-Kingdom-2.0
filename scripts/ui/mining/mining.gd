@@ -6,7 +6,3 @@ extends Node3D
 func _ready() -> void:
 	(player.camera as Camera3D).make_current()
 	player.light.visible = true
-
-
-func _process(delta: float) -> void:
-	pass

@@ -1,0 +1,19 @@
+~ mine_stage9
+Salesman: Oooh 3 steel! Can buy that for {{price}} coins!
+- Yes
+	set data = "yes"
+	Salesman: Thank you!
+- No
+	set data = "no"
+	Salesman: Oh ok
+=> END
+
+~ mine_stage10
+Salesman: Oooh 5 gold! Can buy that for 10 coins! Would you like to sell the 5 gold?
+- Yes
+	set data = "yes"
+	Salesman: Thank you!
+- No
+	set data = "no"
+	Salesman: Oh ok
+=> END

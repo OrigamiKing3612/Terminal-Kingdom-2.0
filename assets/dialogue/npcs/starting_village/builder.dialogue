@@ -1,0 +1,104 @@
+~ first_time
+Builder: Hello {{GameManager.player.name}}! Would you like to learn how to build?
+- Yes
+	set GameManager.player.skill.building.stage = 1
+- No
+=> END
+
+~ stage0_available
+Builder: Before I can teach you how to build, you need to learn how to chop lumber.
+Builder: Hello {{GameManager.player.name}}! Looks like you already know how to chop lumber.
+=> END
+
+~ stage1_available
+Builder: Before we can start building, we need materials. Can you go collect 20 stone and 10 iron from the mine and bring it back to me?
+=> END
+~ stage1_started
+Builder: You haven't gone to the mine yet.
+Builder: You still need to collect the materials.
+=> END
+~ stage1_reached_goal
+Builder: Great, You have collected the materials!
+=> END
+
+~ stage2_available
+Builder: Now, we need some lumber. Can you get 20 of it? Here is an axe.
+=> END
+~ stage2_started
+Builder: Uh oh, looks like you lost your axe. Here is a new one.
+Builder: You are almost there, but you still need to get {{20}} lumber.
+=> END
+~ stage2_reached_goal
+Builder: Great, You have collected the lumber! Now we can start building.
+=> END
+
+~ stage3_available
+Builder: Now that we have the materials, we can start building. Can you make a door at the workstation. Here are the materials you will need.
+=> END
+~ stage3_started
+Builder: You haven't made the door yet.
+=> END
+~ stage3_reached_goal
+Builder: Great, You have made the door!
+=> END
+
+~ stage4_available
+Builder: Now that we have the door, we can start building. Can you go talk to the king and ask him for permission to build a house?
+=> END
+~ stage4_started
+Builder: You haven't talked to the king yet.
+=> END
+~ stage4_reached_goal
+Builder: I see that you've talked to the king. What did he say?
+{{GameManager.player.name}}: He said we can build a new house!
+Builder: Nice! Let's get started right away!
+=> END
+
+~ stage5_available
+Builder: Now that we have permission, we can start building immediately! Can you begin building the house?
+=> stage5_intructions
+=> END
+~ stage5_started
+Builder: You haven't built the house yet. Do you want to hear the instructions again?
+- Yes
+	=> stage5_intructions
+- No
+=> END
+~ stage5_reached_goal
+Builder: Nice, you have built the house!
+=> END
+~ stage5_intructions
+Builder: This is what you need to do: Go pick an area and press 'b'. This will put you in "build mode" Then press enter, as long as you have 5 lumber you will build a building tile. Place the buildings next to each other. Then place the door in a small area. If you are unsure, look at the other buildings in this village. If you want to see all the controls press ? in build mode.
+=> END
+
+~ stage6_available
+Builder: Now that we have a house, we need to decorate the interior. Can you collect 30 lumber and bring it back to me?
+=> END
+~ stage6_started
+Builder: Uh oh, looks like you lost your axe, here is a new one.
+Builder: You are almost there, you you still need to get {{30}} lumber.
+=> END
+~ stage6_reached_goal
+Builder: Great! You have collected the lumber! Now we can start decorating the inside.
+=> END
+
+~ stage7_available
+Builder: Can you take these decorations and organize them inside of the house? You can decorate it however you want!
+=> END
+~ stage7_started
+Builder: You haven't decorated the interior of your house yet.
+=> END
+~ stage7_reached_goal
+Builder: Looks like you are done!
+=> END
+
+~ stage8_available
+Builder: You can now build when ever you want! But remember that you can only break pieces that you place. Also we don't accually need that that house; since you built it, why don't you keep it!
+Builder: (Check for stats)
+Builder: I also think you are ready to make your own village! Come back to me when you are ready.
+=> END
+
+~ stage9_available
+Builder: So, you are ready to go create your own kingdom! You will need this. 
+Builder: Go and have fun!!
+=> END

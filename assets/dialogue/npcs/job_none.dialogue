@@ -1,6 +1,5 @@
 ~ start
-% {{data.name}}: Hello
-% {{data.name}}: Hi
+% {{data.name}}: [[Hi|Hello|Howdy|Yo]]
 % {{data.name}}: Why are you talking to me?
 % {{data.name}}: I don't have a job
 % {{data.name}}: I'm unemployed

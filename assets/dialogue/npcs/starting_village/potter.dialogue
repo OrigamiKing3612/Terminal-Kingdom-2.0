@@ -1,0 +1,8 @@
+~ start
+Potter: Hello {{GameManager.player.name}}! What would you like to do?
+- Buy a pot for 2 clay
+	set option = "clay"
+- Buy a pot for 5 coins
+	set option = "coins"
+Potter: I hope to see you again!
+=> END
