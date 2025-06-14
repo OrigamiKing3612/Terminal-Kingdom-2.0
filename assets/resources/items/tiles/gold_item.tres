@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_r276d"]
+[sub_resource type="ImageTexture" id="ImageTexture_0tv6f"]
 image = SubResource("Image_bj6d5")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Gold Item"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_r276d")
+texture_2d = SubResource("ImageTexture_0tv6f")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 44
 generate_item = true

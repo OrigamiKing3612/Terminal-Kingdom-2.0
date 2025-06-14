@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_vkax0"]
 [ext_resource type="Resource" uid="uid://cbto4o8wytoxs" path="res://assets/resources/npc/blacksmith.tres" id="2_rknaw"]
-[ext_resource type="MeshLibrary" uid="uid://u7ap1ykuy0kv" path="res://assets/tiles_new.tres" id="3_mc6ss"]
+[ext_resource type="MeshLibrary" uid="uid://bn6semb8jgtu2" path="res://assets/tiles.tres" id="3_vkax0"]
 
 [node name="Blacksmith" type="Node3D"]
 
@@ -10,4 +10,4 @@
 data = ExtResource("2_rknaw")
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("3_mc6ss")
+mesh_library = ExtResource("3_vkax0")

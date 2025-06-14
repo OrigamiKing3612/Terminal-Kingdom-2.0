@@ -1,7 +1,7 @@
 @tool
 extends Button 
 
-@export var mesh_library: MeshLibrary = preload("res://assets/tiles_new.tres")
+@export var mesh_library: MeshLibrary = preload("res://assets/tiles.tres")
 @export var output_path: String = "res://assets/resources/items/tiles/"
 @export var preview_image_path: String = "res://assets/models/icons/"
 

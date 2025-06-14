@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_5oswp"]
+[sub_resource type="ImageTexture" id="ImageTexture_5drl2"]
 image = SubResource("Image_ypxek")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Stone Brick Stair Interior Corner"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_5oswp")
+texture_2d = SubResource("ImageTexture_5drl2")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 35
 generate_item = true

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_fiueb"]
 [ext_resource type="Resource" uid="uid://djjk3okjgb42q" path="res://assets/resources/npc/farmer.tres" id="2_fdgc7"]
-[ext_resource type="MeshLibrary" uid="uid://u7ap1ykuy0kv" path="res://assets/tiles_new.tres" id="3_x5wys"]
+[ext_resource type="MeshLibrary" uid="uid://bn6semb8jgtu2" path="res://assets/tiles.tres" id="3_fiueb"]
 
 [node name="Farm" type="Node3D"]
 
@@ -10,4 +10,4 @@
 data = ExtResource("2_fdgc7")
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("3_x5wys")
+mesh_library = ExtResource("3_fiueb")

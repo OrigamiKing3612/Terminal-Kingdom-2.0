@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_uqua4"]
+[sub_resource type="ImageTexture" id="ImageTexture_g78pn"]
 image = SubResource("Image_6tqxd")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Log Slope"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_uqua4")
+texture_2d = SubResource("ImageTexture_g78pn")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 25
 generate_item = true

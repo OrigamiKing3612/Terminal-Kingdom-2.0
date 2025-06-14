@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_kwe3i"]
 [ext_resource type="Resource" uid="uid://bmgtij1tv55dc" path="res://assets/resources/npc/carpenter.tres" id="2_tfhhj"]
-[ext_resource type="MeshLibrary" uid="uid://u7ap1ykuy0kv" path="res://assets/tiles_new.tres" id="3_gaysg"]
+[ext_resource type="MeshLibrary" uid="uid://bn6semb8jgtu2" path="res://assets/tiles.tres" id="3_kwe3i"]
 
 [node name="Carpentery" type="Node3D"]
 
@@ -10,4 +10,4 @@
 data = ExtResource("2_tfhhj")
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("3_gaysg")
+mesh_library = ExtResource("3_kwe3i")

@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_bifjm"]
+[sub_resource type="ImageTexture" id="ImageTexture_6h41u"]
 image = SubResource("Image_4g32b")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Sand Slope"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_bifjm")
+texture_2d = SubResource("ImageTexture_6h41u")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 40
 generate_item = true

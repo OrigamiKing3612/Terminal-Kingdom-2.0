@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_7y8ww"]
+[sub_resource type="ImageTexture" id="ImageTexture_pmyul"]
 image = SubResource("Image_wl23i")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Grass Slope"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_7y8ww")
+texture_2d = SubResource("ImageTexture_pmyul")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 5
 generate_item = true

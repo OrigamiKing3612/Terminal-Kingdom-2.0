@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_4aoqg"]
+[sub_resource type="ImageTexture" id="ImageTexture_r4gin"]
 image = SubResource("Image_g0ery")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Marble Wall"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_4aoqg")
+texture_2d = SubResource("ImageTexture_r4gin")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 18
 generate_item = true

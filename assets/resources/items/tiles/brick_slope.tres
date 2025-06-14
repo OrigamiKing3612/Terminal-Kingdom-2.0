@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_0htsu"]
+[sub_resource type="ImageTexture" id="ImageTexture_rrr1n"]
 image = SubResource("Image_5dc1v")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Brick Slope"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_0htsu")
+texture_2d = SubResource("ImageTexture_rrr1n")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 7
 generate_item = true

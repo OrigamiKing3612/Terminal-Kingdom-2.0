@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_w56tw"]
+[sub_resource type="ImageTexture" id="ImageTexture_fxu04"]
 image = SubResource("Image_tff0w")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Dirt Stair Interior Corner"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_w56tw")
+texture_2d = SubResource("ImageTexture_fxu04")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 2
 generate_item = true

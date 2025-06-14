@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_plqw8"]
+[sub_resource type="ImageTexture" id="ImageTexture_tckpp"]
 image = SubResource("Image_20toa")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Marble Brick Stair Interior Corner"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_plqw8")
+texture_2d = SubResource("ImageTexture_tckpp")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 21
 generate_item = true

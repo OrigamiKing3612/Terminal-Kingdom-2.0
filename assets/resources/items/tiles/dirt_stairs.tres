@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_70kbi"]
+[sub_resource type="ImageTexture" id="ImageTexture_oj0lv"]
 image = SubResource("Image_7ig85")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Dirt Stairs"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_70kbi")
+texture_2d = SubResource("ImageTexture_oj0lv")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 3
 generate_item = true

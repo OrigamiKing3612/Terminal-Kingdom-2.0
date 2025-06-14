@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_fd5yr"]
+[sub_resource type="ImageTexture" id="ImageTexture_2rwyc"]
 image = SubResource("Image_gkou0")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Water"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_fd5yr")
+texture_2d = SubResource("ImageTexture_2rwyc")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 41
 generate_item = true

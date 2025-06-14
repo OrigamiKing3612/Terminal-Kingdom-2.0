@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_xp0dm"]
+[sub_resource type="ImageTexture" id="ImageTexture_nra1i"]
 image = SubResource("Image_bp6ap")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Brick Stair Exterior Corner"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_xp0dm")
+texture_2d = SubResource("ImageTexture_nra1i")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 8
 generate_item = true

@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_eii3n"]
+[sub_resource type="ImageTexture" id="ImageTexture_x7774"]
 image = SubResource("Image_hlfo1")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Grass"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_eii3n")
+texture_2d = SubResource("ImageTexture_x7774")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 6
 generate_item = true

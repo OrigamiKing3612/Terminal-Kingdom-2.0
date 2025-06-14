@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_qung3"]
+[sub_resource type="ImageTexture" id="ImageTexture_wosro"]
 image = SubResource("Image_sqdtg")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Marble Stairs"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_qung3")
+texture_2d = SubResource("ImageTexture_wosro")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 16
 generate_item = true

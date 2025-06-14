@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_nnr56"]
+[sub_resource type="ImageTexture" id="ImageTexture_mkfsu"]
 image = SubResource("Image_ji4w2")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Sand"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_nnr56")
+texture_2d = SubResource("ImageTexture_mkfsu")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 39
 generate_item = true

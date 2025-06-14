@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_hd6gd"]
+[sub_resource type="ImageTexture" id="ImageTexture_207sn"]
 image = SubResource("Image_3wjje")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Marble Stair Interior Corner"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_hd6gd")
+texture_2d = SubResource("ImageTexture_207sn")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 15
 generate_item = true

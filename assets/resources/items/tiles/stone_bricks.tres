@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_l4lfe"]
+[sub_resource type="ImageTexture" id="ImageTexture_bcy0y"]
 image = SubResource("Image_h7m5x")
 
 [resource]
@@ -20,7 +20,7 @@ name = "Stone Bricks"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_l4lfe")
+texture_2d = SubResource("ImageTexture_bcy0y")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 37
 generate_item = true
