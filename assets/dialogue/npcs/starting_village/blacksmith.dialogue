@@ -40,11 +40,9 @@ Blacksmith: Thank you!
 ~ stage4_available
 Blacksmith: I need you to get 5 coal from the miner. We need the iron, lumber and this coal, because I want to show you how to make a pickaxe.
 => END
-
 ~ stage4_started
 Blacksmith: You haven't gotten the coal yet.
 => END
-
 ~ stage4_reached_goal
 Blacksmith: Thank you!
 => END
@@ -52,11 +50,9 @@ Blacksmith: Thank you!
 ~ stage5_available
 Blacksmith: Now you get to do the fun stuff. I need to you make some steel. Go over to the furnace.
 => END
-
 ~ stage5_started
 Blacksmith: You haven't gone to the furnace yet.
 => END
-
 ~ stage5_reached_goal
 Blacksmith: Thank you!
 => END
@@ -102,4 +98,20 @@ Blacksmith: You haven't gone to the salesman yet.
 => END
 ~ stage9_reached_goal
 Blacksmith: I want you to keep these coins. I have one more thing I want to give you.
+=> END
+
+~ mine_stage1
+Blacksmith: Ah, here you are. Here is your pickaxe.
+=> END
+
+~ mine_stage4
+Blacksmith: Here you are. Here is your pickaxe.
+=> END
+
+~ mine_stage6
+Blacksmith: Here you are. Here is your axe.
+=> END
+
+~ mine_stage8
+Blacksmith: Here you are. Here is your gift.
 => END

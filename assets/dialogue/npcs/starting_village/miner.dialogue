@@ -1,0 +1,139 @@
+~ first_time
+Miner: Hello {{GameManager.player.name}}! Would you like to learn how to mine?
+- Yes
+	set GameManager.player.skill.mining.stage = 1
+- No
+=> END
+
+~ stage0_available
+Miner: Before I can teach you how to mine, you need to learn how to chop lumber.
+Miner: Hello {{GameManager.player.name}}! Looks like you already know how to chop lumber.
+=> END
+
+~ stage1_available
+Miner: To mine, you need a pickaxe. Go get one from the Blacksmith, he will have one for you.
+=> END
+~ stage1_started
+Miner: It doesn't look like you got a pickaxe. from the Blacksmith.
+=> END
+~ stage1_reached_goal
+Miner: Thank you for getting the pickaxe!
+=> END
+
+~ stage2_available
+Miner: I need you to mine 20 clay. You can do this by mining. The mine entrance the 'M' above and below me. is Here is a pickaxe. Be careful, it can only be used 50 times.[next=auto]
+Miner: Oh also, press 'L' to leave the mine.
+=> END
+~ stage2_started
+Miner: Uh oh, looks like you lost your pickaxe, here is a new one.
+Miner: You are almost there, you you still need to get {{20}} clay.
+=> END
+~ stage2_reached_goal
+Miner: Yay thank you! You have collected enough clay.
+=> END
+
+~ stage3_available
+Miner: We need 50 lumber to upgrade the mine to be able to mine more stuff. Can you please go get 50 lumber and bring it back to me?
+=> END
+~ stage3_started
+Miner: Uh oh, looks like you lost your axe, here is a new one.
+Miner: You are almost there, you you still need to get {{50}} lumber
+=> END
+~ stage3_reached_goal
+Miner: Thank you for getting the lumber! Now we can upgrade the mine.
+=> END
+
+~ stage4_available
+Miner: Now that we have upgraded the mine, you can go to level 2! There you can find things like stone, coal, and iron.
+=> END
+~ stage4_started
+Miner: Uh oh, looks like you lost your pickaxe, here is a new one.
+Miner: You are almost there, you you still need to get {{20}} iron.
+=> END
+~ stage4_reached_goal
+Miner: Thank you for getting the iron!
+=> END
+
+~ stage5_available
+Miner: To mine, you need a pickaxe. Go get one from the Blacksmith, he will have one for you.
+=> END
+~ stage5_started
+Miner: It doesn't look like you got a pickaxe. from the Blacksmith.
+=> END
+~ stage5_reached_goal
+Miner: Thank you for getting the pickaxe!
+=> END
+
+~ stage6_available
+Miner: I haven't told you why you need to get all of this stuff yet. We are going to upgrade the mine again. Every time the items required to do so increase. So this time we need 100 lumber to upgrade. You are almost there to being a professional Miner!
+=> END
+~ stage6_started
+Miner: Oh, also, I don't have an axe for you. The Blacksmith can give you one.
+Miner: Uh oh, looks like you lost your axe, here is a new one. (DONT DO THIS, player needs to get their own)
+Miner: You are almost there, you you still need to get {{100}} lumber.
+=> END
+~ stage6_reached_goal
+Miner: Thank you for getting the lumber!
+=> END
+
+~ stage7_available
+Miner: Ok, now that we have the suppilies, we can upgrade the mine. This time I will let you do it! All you have to do is have the materials and go up to the door. There will be an option to upgrade, do that! Then come back to me.
+=> END
+~ stage7_started
+Miner: You haven't gotten the gift from the blacksmith yet.
+=> END
+~ stage7_reached_goal
+Miner: Thank you for getting the gift from the blacksmith! I hope you like it. It should help you in the future.
+=> END
+
+~ stage8_available
+Miner: I asked the blacksmith to make a special gift for you. Go collect it from the blacksmith. Then come talk to me.
+=> END
+~ stage8_started
+Miner: You haven't gotten the gift from the blacksmith yet.
+=> END
+~ stage8_reached_goal
+Miner: Thank you for getting the gift from the blacksmith! I hope you like it. It should help you in the future.
+=> END
+
+~ stage9_available
+Miner: I want to teach you one more thing, but to do that I need to go get 5 gold from level 3 of the mine.
+=> END
+~ stage9_started
+Miner: Uh oh, looks like you lost your pickaxe, here is a new one.
+Miner: You are almost there, you you still need to get {{5}} gold.
+=> END
+~ stage9_reached_goal
+Miner: Thank you for getting the gold!
+=> END
+
+~ stage10_available
+Miner: "I have one more thing for you to do. I need you to take this gold to the Salesman and sell it for coins. Then come back to me.
+=> END
+~ stage10_started
+Miner: You haven't sold the gold to the Salesman yet.
+=> END
+~ stage10_reached_goal
+Miner: Thank you for selling the gold to the Salesman. I want you to keep the coins! Thank you for being a good apprentice!
+=> END
+
+~ blacksmith_stage1
+Miner: Ah, here you are. This is the iron the Blacksmith needs.
+=> END
+
+~ blacksmith_stage4
+Miner: Yes let me get that for you
+=> END
+
+~ blacksmith_stage8
+Miner: Yes let me get that for you
+=> END
+
+~ builder_stage1
+Miner: Yes let me get that for you
+=> END
+
+~ farm_stage4
+Miner: You know how to do it, I'll let you practice this time. Take this pickaxe and go get it from the mine.
+Miner: Yes let me get that for you
+=> END

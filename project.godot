@@ -145,7 +145,7 @@ build={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://untitled.dialogue", "res://assets/dialogue/npcs/starting_village/blacksmith.dialogue", "res://assets/dialogue/npcs/starting_village/king.dialogue", "res://assets/dialogue/npcs/job_none.dialogue")
+locale/translations_pot_files=PackedStringArray("res://untitled.dialogue", "res://assets/dialogue/npcs/starting_village/blacksmith.dialogue", "res://assets/dialogue/npcs/starting_village/king.dialogue", "res://assets/dialogue/npcs/job_none.dialogue", "res://assets/dialogue/npcs/starting_village/miner.dialogue", "res://assets/dialogue/npcs/starting_village/farmer.dialogue")
 
 [layer_names]
 

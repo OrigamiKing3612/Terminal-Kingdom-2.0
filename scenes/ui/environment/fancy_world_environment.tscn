@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://biu1p5h05ydq5"]
+
+[ext_resource type="Texture2D" uid="uid://cyuk7iqeo77lx" path="res://assets/environment/autumn_field_puresky_4k.hdr" id="1_vfqrt"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gv3vk"]
+panorama = ExtResource("1_vfqrt")
+
+[sub_resource type="Sky" id="Sky_i4b1j"]
+sky_material = SubResource("PanoramaSkyMaterial_gv3vk")
+
+[sub_resource type="Environment" id="Environment_yh0i2"]
+background_mode = 2
+sky = SubResource("Sky_i4b1j")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.003
+
+[node name="FancyWorldEnvrionment" type="Node3D"]
+
+[node name="Fancy" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yh0i2")

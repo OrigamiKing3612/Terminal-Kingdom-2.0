@@ -1,0 +1,67 @@
+~ first_time
+Farmer: Hello {{GameManager.player.name}}! Would you like to learn how to be a farmer?
+- Yes
+	set GameManager.player.skill.farming.stage = 1
+- No
+=> END
+
+~ stage1_available
+Farmer: We need some seeds to plant. Can you go chop down a tree and get a tree seed?
+=> END
+~ stage1_started
+Farmer: Uh oh, looks like you lost your axe. Here is a new one.
+Farmer: You are almost there, but you still need to get a tree seed.
+=> END
+~ stage1_reached_goal
+Farmer: Great job!
+=> END
+
+~ stage2_available
+Farmer: Now that we have seeds, we need to plant them. There is a pot in the room under me, go plant it in there.
+=> END
+~ stage2_started
+Farmer: You haven't planted the seed yet.
+=> END
+~ stage2_reached_goal
+Farmer: Great job! Now it can start growing!
+=> END
+
+~ stage3_available
+Farmer: Now we need to wait for the tree to grow. After it has grown, collect it and bring it to me.
+=> END
+~ stage3_started
+Farmer: You haven't collected the tree yet.
+=> END
+~ stage3_reached_goal
+Farmer: Great job!
+=> END
+
+~ stage4_available
+Farmer: Now I want to teach you how to get a pot to plant your own stuff. Can you go get 10 clay from the mine?
+=> END
+~ stage4_started
+Farmer: You haven't collected the clay from the mine(r) yet.
+=> END
+~ stage4_reached_goal
+Farmer: You don't have the clay from the mine(r).
+=> END
+
+~ stage5_available
+Farmer: Now that you have the clay, you can take it to the potter and get 5 pots.
+=> END
+~ stage5_started
+Farmer: You haven't gotten the pot yet.
+=> END
+~ stage5_reached_goal
+Farmer: Great job!
+=> END
+
+~ stage6_available
+Farmer: I wanted to tell you that you can use the backyard part of my farm to plant your own stuff!
+=> END
+~ stage6_started
+Farmer: Hello
+=> END
+~ stage6_reached_goal
+Farmer: I wanted to tell you that you can use the backyard part of my farm to plant your own stuff!
+=> END

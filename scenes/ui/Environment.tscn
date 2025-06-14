@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt8p520js50i3"]
+
+[ext_resource type="PackedScene" uid="uid://c1cq10cflk7kj" path="res://scenes/ui/environment/normal_world_environment.tscn" id="1_g7k3l"]
+
+[node name="Environment" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.690116, 0.695262, -0.200875, -0.342202, -0.0689234, 0.937095, 0.637682, 0.715444, 0.285485, 64, 32, -15)
+light_indirect_energy = 0.5
+shadow_enabled = true
+
+[node name="NormalWorldEnvironment" parent="." instance=ExtResource("1_g7k3l")]
