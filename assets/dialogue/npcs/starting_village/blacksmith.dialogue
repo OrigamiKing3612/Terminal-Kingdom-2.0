@@ -1,0 +1,105 @@
+~ first_time
+Blacksmith: Hello {{GameManager.player.name}}! Would you like to learn how to be a blacksmith?
+- Yes
+	set GameManager.player.skill.blacksmithing.stage = 1
+- No
+=> END
+
+~ stage1_available
+Blacksmith: I need you to go get some iron from the mine. Then bring it back to me.
+=> END
+~ stage1_started
+Blacksmith: You haven't talked to the Miner yet.
+=> END
+~ stage1_reached_goal
+Blacksmith: Thank you!
+=> END
+
+~ stage2_available
+Blacksmith: Now I need you to get 20 lumber. Here is an axe.
+=> END
+~ stage2_started
+Blacksmith: {{has_axe}}
+Blacksmith: Uh oh, looks like you lost your axe, here is a new one.
+Blacksmith: You are almost there, you still need to get {{20}} clay.
+=> END
+~ stage2_reached_goal
+Blacksmith: Thank you!
+=> END
+
+~ stage3_available
+Blacksmith: Now I need you to give this lumber to the carpenter to get sticksd.
+=> END
+~ stage3_started
+Blacksmith: You haven't gone to the carpenter yet.
+=> END
+~ stage3_reached_goal
+Blacksmith: Thank you!
+=> END
+
+~ stage4_available
+Blacksmith: I need you to get 5 coal from the miner. We need the iron, lumber and this coal, because I want to show you how to make a pickaxe.
+=> END
+
+~ stage4_started
+Blacksmith: You haven't gotten the coal yet.
+=> END
+
+~ stage4_reached_goal
+Blacksmith: Thank you!
+=> END
+
+~ stage5_available
+Blacksmith: Now you get to do the fun stuff. I need to you make some steel. Go over to the furnace.
+=> END
+
+~ stage5_started
+Blacksmith: You haven't gone to the furnace yet.
+=> END
+
+~ stage5_reached_goal
+Blacksmith: Thank you!
+=> END
+
+
+~ stage6_available
+Blacksmith: I need you to make a pickaxe. Go over to the anvil and make a pickaxe. Here is all of the things you will need.
+=> END
+~ stage6_started
+Blacksmith: You haven't gone to the anvil yet.
+=> END
+~ stage6_reached_goal
+Blacksmith: Yay! You made your first Pickaxe!
+=> END
+
+~ stage7_available
+Blacksmith: The hunter asked me to make him a sword. Why don't you do that? Here is the stuff you need. Make a sword on the anvil and then bring it to the Hunter in the Hunting Area
+=> END
+~ stage7_started
+Blacksmith: You haven't gone to the anvil yet.
+Blacksmith: You haven't brought the sword to the hunter yet.
+=> END
+~ stage7_reached_goal
+Blacksmith: Yay! You made your first sword!
+=> END
+
+~ stage8_available
+Blacksmith: You are almost there to becoming a blacksmith! I need you to get some materials from the mine. Then I need you to make some steel. Then come back to me.
+=> END
+~ stage8_started
+Blacksmith: You haven't gotten the materials yet.
+Blacksmith: You haven't made the steel at the furnace yet.
+=> END
+~ stage8_reached_goal
+Blacksmith: Yay!
+=> END
+
+~ stage9_available
+Blacksmith: Now I want you to sell this steel in the shop.
+=> END
+~ stage9_started
+Blacksmith: You haven't gone to the salesman yet.
+=> END
+~ stage9_reached_goal
+Blacksmith: I want you to keep these coins. I have one more thing I want to give you.
+=> END

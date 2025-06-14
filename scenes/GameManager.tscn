@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://1xr5qopgm57i"]
+[gd_scene load_steps=10 format=3 uid="uid://1xr5qopgm57i"]
 
 [ext_resource type="Script" uid="uid://ndmr52dllwad" path="res://scripts/global/GameManager.gd" id="1_34tde"]
 [ext_resource type="Resource" uid="uid://v0x75ukrrln7" path="res://assets/resources/player/player.tres" id="2_3dus2"]
-[ext_resource type="Theme" uid="uid://ssbhgf25fdh8" path="res://assets/resources/ui/themes/button/button_theme.tres" id="2_qppyr"]
 [ext_resource type="Script" uid="uid://dmmt046g5n2t" path="res://scripts/ui/inventory_box.gd" id="3_4dhvd"]
 [ext_resource type="Texture2D" uid="uid://bqsqxj72w87cb" path="res://assets/ui/inventory.png" id="5_rtub8"]
 [ext_resource type="Script" uid="uid://emqvl3xrerc8" path="res://scripts/ui/buildable_items.gd" id="6_jg7te"]
@@ -23,7 +22,6 @@ visible = false
 [node name="QuestTitle" type="RichTextLabel" parent="QuestBox"]
 offset_right = 339.0
 offset_bottom = 25.0
-theme = ExtResource("2_qppyr")
 text = "QuestTitle"
 
 [node name="QuestDescription" type="RichTextLabel" parent="QuestBox"]
@@ -31,7 +29,6 @@ offset_left = 1.0
 offset_top = 24.0
 offset_right = 319.0
 offset_bottom = 47.0
-theme = ExtResource("2_qppyr")
 text = "Quest Description"
 
 [node name="InventoryBox" type="CanvasLayer" parent="."]

@@ -4,7 +4,7 @@ extends CharacterBody3D
 
 @onready var marker: MeshInstance3D = $Mesh/Marker
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
-@onready var jobs: Node = $Jobs
+@onready var svjobs: Node = $StartingVillageJobs
 
 func _ready() -> void:
 	if data != null:
@@ -20,12 +20,12 @@ func talk() -> void:
 
 func talk_to_starting_village_npc():
 	match data.job:
-		NPCEnums.JOB.NONE:
-			jobs.none.talk(data)
-		NPCEnums.JOB.BLACKSMITH:
-			jobs.blacksmith.talk(data)
-		NPCEnums.JOB.MINER:
-			jobs.miner.talk()
+		NPCEnums.Job.None:
+			svjobs.none.talk(data)
+		NPCEnums.Job.Blacksmith:
+			svjobs.blacksmith.talk(data)
+		NPCEnums.Job.Miner:
+			svjobs.miner.talk()
 		_:
 			print("Unknown job: ", data.job)
 

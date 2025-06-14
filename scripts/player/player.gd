@@ -45,7 +45,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("right_click"):
 		if ray_cast_3d.is_colliding():
 			var gridmap_position = ray_cast_3d.get_collision_point() - ray_cast_3d.get_collision_normal()
-			if ray_cast_3d.get_collider().has_method("talk") and GameManager.mode == GameManager.Mode.Build:
+			if ray_cast_3d.get_collider().has_method("talk") and GameManager.mode == GameManager.Mode.Normal:
 				ray_cast_3d.get_collider().talk()
 			if ray_cast_3d.get_collider().has_method("place_tile") and GameManager.mode == GameManager.Mode.Build:
 				ray_cast_3d.get_collider().place_tile(gridmap_position, GameManager.selected_gridmap_id)

@@ -63,7 +63,7 @@ spring_length = 3.0
 [node name="Camera3D" type="Camera3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D"]
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, 3.57628e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47383e-19, 0.25, 8.2423e-13)
 target_position = Vector3(0, -1, -12)
 
 [connection signal="pressed_jump" from="." to="MovementController" method="_jump"]

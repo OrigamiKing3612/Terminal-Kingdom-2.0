@@ -1,6 +1,6 @@
 extends Node
 
-enum JOB{NONE, BLACKSMITH, KING, MINER, FARMER, DOCTER, SALESMAN, POTTER, STABLEMASTER, CARPENTER, BUILDER, HUNTER, INVENTOR, CHEF}
-enum SKILL_LEVEL{NONE, NOVICE, APPRENTICE, JOURNEYMAN, EXPERT, MASTER}
-enum BEHAVIOR_TYPE{IDLE, WANDER, STAND, WORK}
-enum GENDER{MALE,FEMALE}
+enum Job{None, Blacksmith, King, Miner, Farmer, Docter, Salesman, Potter, Stablemaster, Carpenter, Builder, Hunter, Inventor, Chef}
+enum SkillLevel{None, Novice, Apprentice, Journeyman, Expert, Master}
+enum BehaviorType{Idle, Wander, Stand, Work}
+enum Gender{Male,Female}
