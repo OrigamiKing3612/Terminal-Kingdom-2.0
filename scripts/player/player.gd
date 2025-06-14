@@ -10,7 +10,9 @@ var air_jump_counter : int = 0
 @export var movement_states: Dictionary
 var movement_direction: Vector3
 
+@onready var camera: Camera3D = $Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D
 @onready var ray_cast_3d: RayCast3D = $Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D/RayCast3D
+@onready var light: DirectionalLight3D = $Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D/DirectionalLight3D
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("movement") or event.is_action_released("movement")) and GameManager.move:
