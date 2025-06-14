@@ -1,0 +1,8 @@
+~ start
+% {{data.name}}: Hello
+% {{data.name}}: Hi
+% {{data.name}}: Why are you talking to me?
+% {{data.name}}: I don't have a job
+% {{data.name}}: I'm unemployed
+% {{data.name}}: I don't do anything
+=> END

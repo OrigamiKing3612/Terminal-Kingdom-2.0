@@ -2,7 +2,15 @@ extends Node
 
 
 func talk() -> void:
-	var blacksmith_1_quest = QuestManager.get_quest("blacksmith1")
-	if blacksmith_1_quest.quest_status == blacksmith_1_quest.QuestStatus.started:
-		blacksmith_1_quest.reached_goal()
-		QuestManager.update_quest("blacksmith1", blacksmith_1_quest)
+	if GameManager.player.skill.blacksmithing.stage == 1:
+		var quest = QuestManager.get_quest("blacksmith1")
+		if quest.quest_status == quest.QuestStatus.started:
+			quest.reached_goal()
+			QuestManager.update_quest("blacksmith1", quest)
+			
+	elif GameManager.player.skill.blacksmithing.stage == 4:
+		var quest = QuestManager.get_quest("blacksmith4")
+		if quest.quest_status == quest.QuestStatus.started:
+			quest.reached_goal()
+			QuestManager.update_quest("blacksmith1", quest)
+		

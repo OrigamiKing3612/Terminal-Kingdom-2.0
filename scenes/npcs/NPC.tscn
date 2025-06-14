@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=21 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -9,9 +9,11 @@
 [ext_resource type="Script" uid="uid://c7pim11lbdqyc" path="res://scripts/quests/collect_items_quest.gd" id="5_3egug"]
 [ext_resource type="Script" uid="uid://0gx1d8pnmjgd" path="res://scripts/quests/use_station_quest.gd" id="6_cmg02"]
 [ext_resource type="Script" uid="uid://6ldywjhmi7eq" path="res://scripts/npc/jobs/miner.gd" id="6_fnw6m"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
-size = Vector3(1.6, 2, 1.6)
+[ext_resource type="Script" uid="uid://djgnsr3pi86wr" path="res://scripts/npc/jobs/king.gd" id="10_t7167"]
+[ext_resource type="Resource" uid="uid://bcpb4yg01b5v6" path="res://assets/dialogue/npcs/starting_village/king.dialogue" id="11_3j6ye"]
+[ext_resource type="Script" uid="uid://c87ocgpcffw31" path="res://scripts/npc/jobs/famer.gd" id="12_qvc14"]
+[ext_resource type="Resource" uid="uid://cgbisd8hfm3m2" path="res://assets/dialogue/npcs/job_none.dialogue" id="13_iu6wm"]
+[ext_resource type="Script" uid="uid://cs84rjkgogot4" path="res://scripts/npc/jobs/carpenter.gd" id="14_47yep"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ak68"]
 size = Vector3(10, 2, 10)
@@ -27,11 +29,12 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yq5wv"]
 material = SubResource("StandardMaterial3D_k75in")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
+size = Vector3(1.6, 2, 1.6)
+
 [node name="NPC" type="CharacterBody3D"]
 script = ExtResource("1_k75in")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_mhefn")
+metadata/_custom_type_script = "uid://b0t1cg5rsfjuu"
 
 [node name="Area3D" type="Area3D" parent="."]
 
@@ -42,7 +45,7 @@ shape = SubResource("BoxShape3D_3ak68")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh"]
 mesh = SubResource("BoxMesh_yq5wv")
-skeleton = NodePath("../..")
+skeleton = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh/MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 1.5, 0.5)
@@ -52,8 +55,6 @@ mesh = SubResource("CapsuleMesh_k75in")
 transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 2.5, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_yq5wv")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="StartingVillageJobs" type="Node" parent="."]
 script = ExtResource("2_3ak68")
@@ -97,11 +98,24 @@ quest_description = "Use the Furnace to create Steel"
 reached_goal_text = "Return to the Blacksmith"
 metadata/_custom_type_script = "uid://0gx1d8pnmjgd"
 
-[node name="None" type="Node" parent="StartingVillageJobs"]
-script = ExtResource("4_se8i8")
-
 [node name="Miner" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("6_fnw6m")
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]
+[node name="King" type="Node" parent="StartingVillageJobs"]
+script = ExtResource("10_t7167")
+dialogue = ExtResource("11_3j6ye")
+
+[node name="Famer" type="Node" parent="StartingVillageJobs"]
+script = ExtResource("12_qvc14")
+
+[node name="None" type="Node" parent="StartingVillageJobs"]
+script = ExtResource("4_se8i8")
+dialogue = ExtResource("13_iu6wm")
+
+[node name="Carpenter" type="Node" parent="StartingVillageJobs"]
+script = ExtResource("14_47yep")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_mhefn")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

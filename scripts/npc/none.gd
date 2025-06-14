@@ -1,4 +1,6 @@
 extends Node
 
-func talk() -> void:
-	print("No job talked to")
+@export var dialogue: DialogueResource
+
+func talk(data: NPCData) -> void:
+	DialogueManager.show_dialogue_balloon(dialogue, "start", [{"data": data}])

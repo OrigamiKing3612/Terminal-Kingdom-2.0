@@ -1,15 +1,22 @@
 extends CharacterBody3D
+class_name NPC
 
 @export var data: NPCData
+@export var talkable_area: Vector3 = Vector3(10, 2, 10)
 
 @onready var marker: MeshInstance3D = $Mesh/Marker
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
 @onready var svjobs: Node = $StartingVillageJobs
+@onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
 
 func _ready() -> void:
 	if data != null:
 		data = data.duplicate()
 	marker.visible = false
+	
+	var shape = BoxShape3D.new()
+	shape.size = talkable_area
+	collision_shape_3d.shape = shape
 
 func talk() -> void:
 	if data.is_starting_village_npc:
@@ -25,7 +32,13 @@ func talk_to_starting_village_npc():
 		NPCEnums.Job.Blacksmith:
 			svjobs.blacksmith.talk(data)
 		NPCEnums.Job.Miner:
-			svjobs.miner.talk()
+			svjobs.miner.talk(data)
+		NPCEnums.Job.King:
+			svjobs.king.talk(data)
+		NPCEnums.Job.Farmer:
+			svjobs.farmer.talk(data)
+		NPCEnums.Job.Carpenter:
+			svjobs.carpenter.talk(data)
 		_:
 			print("Unknown job: ", data.job)
 

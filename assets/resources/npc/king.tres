@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=2 format=3 uid="uid://8106ceomlnsr"]
+
+[ext_resource type="Script" uid="uid://nj3ok2spwf66" path="res://scripts/resources/npc_data.gd" id="1_ui45e"]
+
+[resource]
+script = ExtResource("1_ui45e")
+name = "King"
+job = 2
+skill_level = 0
+experience = 0.0
+workplace = Vector3(0, 0, 0)
+behavior_type = 0
+age = 30
+gender = 0
+hunger = 100.0
+happiness = 100.0
+positionToWalkTo = Vector3(0, 0, 0)
+home = Vector3(0, 0, 0)
+is_starting_village_npc = true
+metadata/_custom_type_script = "uid://nj3ok2spwf66"
