@@ -1,4 +1,4 @@
-[gd_scene load_steps=243 format=4 uid="uid://b6vi2yjsymsnb"]
+[gd_scene load_steps=245 format=4 uid="uid://b6vi2yjsymsnb"]
 
 [ext_resource type="Texture2D" uid="uid://larwa6sqj6vf" path="res://assets/models/StaticTiles_dirt-albedo.png" id="1_4cl3p"]
 [ext_resource type="Texture2D" uid="uid://bj5krawmsu4eq" path="res://assets/models/StaticTiles_dirt-normal.png" id="2_1p82w"]
@@ -28,6 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://dxu3wq4pmd5a5" path="res://assets/models/StaticTiles_polished-stone-normal.png" id="26_6363k"]
 [ext_resource type="Texture2D" uid="uid://ixu48brlgs7c" path="res://assets/models/StaticTiles_mud-albedo.png" id="27_exmxc"]
 [ext_resource type="Texture2D" uid="uid://5ohej22uan25" path="res://assets/models/StaticTiles_mud-normal.png" id="28_huhqm"]
+[ext_resource type="PackedScene" uid="uid://bojb85ywyi6u8" path="res://scenes/tiles/MeshLibrary/TreeTile.tscn" id="29_iulo5"]
+[ext_resource type="PackedScene" uid="uid://dmirg5mc3shwf" path="res://scenes/tiles/MeshLibrary/TreeSmallTile.tscn" id="30_6363k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pppdv"]
 resource_name = "DirtMaterial"
@@ -3223,3 +3225,9 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticTiles/MudTile/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5n4np")
+
+[node name="TreeTile" parent="StaticTiles" instance=ExtResource("29_iulo5")]
+visible = false
+
+[node name="TreeSmallTile" parent="StaticTiles" instance=ExtResource("30_6363k")]
+visible = false

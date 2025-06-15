@@ -26,3 +26,5 @@ gridmap_id = 43
 generate_item = true
 generate_preview = false
 preview_file = ""
+override_name = false
+overriden_name = ""

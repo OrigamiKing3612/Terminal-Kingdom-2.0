@@ -14,6 +14,8 @@ class_name Item extends Resource
 @export var generate_item: bool = true
 @export var generate_preview: bool = false
 @export var preview_file: String = ""
+@export var override_name: bool = false
+@export var overriden_name: String = ""
 
 #enum ItemType{
 	#sword, axe, pickaxe, boomerang, # bow? net? dagger?

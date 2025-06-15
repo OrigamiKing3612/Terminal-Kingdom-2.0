@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cv1ux7msxi1l3"
-path="res://.godot/imported/FurnaceTile.glb-f4ca0b04c546597e909c3574564957c4.scn"
+uid="uid://6wbjvuaw1gb1"
+path="res://.godot/imported/Tree.glb-1b54f41631df927717b4a3fb814d190b.scn"
 
 [deps]
 
-source_file="res://assets/models/FurnaceTile.glb"
-dest_files=["res://.godot/imported/FurnaceTile.glb-f4ca0b04c546597e909c3574564957c4.scn"]
+source_file="res://assets/models/glb/Tree.glb"
+dest_files=["res://.godot/imported/Tree.glb-1b54f41631df927717b4a3fb814d190b.scn"]
 
 [params]
 

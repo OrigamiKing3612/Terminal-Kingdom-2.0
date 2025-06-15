@@ -19,6 +19,8 @@ signal stop_mining
 signal mine_left_click
 signal mine_right_click
 
+signal show_message(text: String)
+
 var move: bool = true
 var has_popup: bool = false
 
@@ -28,12 +30,15 @@ var mode: Mode = Mode.Normal
 @export var selected_gridmap_id: int = 0
 
 @export var player: PlayerData
+var random: RandomNumberGenerator
 
 enum Mode{Normal, Inventory, Build, Mining}
 
 func _ready() -> void:
 	player = player.duplicate(true)
 	inventory_update.emit()
+	random = RandomNumberGenerator.new()
+	player.collect_item.connect(_on_collect_item)
 
 func _input(event: InputEvent) -> void:
 		if (event.is_action_pressed("left_click") or event.is_action_pressed("right_click")) and move == false and mode != Mode.Inventory and has_popup == false:
@@ -49,34 +54,32 @@ func _input(event: InputEvent) -> void:
 			
 		match mode:
 			Mode.Normal:
-				if Input.is_action_just_released("inventory"):
+				if event.is_action_released("inventory"):
 					if inventory_box.visible == false:
 						show_inventory_box()
 						#inventory_update.emit()
-				if player.can_build && Input.is_action_just_released("build"):
+				if player.can_build && event.is_action_released("build"):
 					if player.items.size() < 0:
 						return
 					if building_box.visible == false:
 						show_buildable_items()
 			Mode.Build:
-				if Input.is_action_just_released("back_option"):
+				if event.is_action_released("back_option"):
 					build_back.emit()
-				elif Input.is_action_just_released("next_option"):
+				elif event.is_action_released("next_option"):
 					build_next.emit()
-				elif Input.is_action_just_released("build"):
+				elif event.is_action_released("build"):
 					hide_buildable_items()
 			Mode.Inventory:
-				if Input.is_action_just_released("inventory"):
+				if event.is_action_released("inventory"):
 					hide_inventory_box()
 			Mode.Mining:
-				if Input.is_action_just_released("leave_mine"):
+				if event.is_action_released("leave_mine"):
 					stop_mining.emit()
-				elif Input.is_action_just_released("left_click"):
+				elif event.is_action_released("left_click"):
 					mine_left_click.emit()
-				elif Input.is_action_just_released("right_click"):
+				elif event.is_action_released("right_click"):
 					mine_right_click.emit()
-				
-			
 
 func hide_inventory_box() -> void:
 	hide_inventory.emit()
@@ -99,3 +102,7 @@ func hide_buildable_items() -> void:
 	hide_building.emit()
 	building_box.visible = false
 	mode = Mode.Normal
+	
+func _on_collect_item(item: Item, count: int) -> void:
+	var value := "+ " + item.name + " x" + str(count)
+	show_message.emit(value)

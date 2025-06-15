@@ -61,16 +61,25 @@ func change_movement_state(state: String) -> void:
 	
 func _on_left_click():
 	if ray_cast_3d.is_colliding():
-		var gridmap_position = ray_cast_3d.get_collision_point() - ray_cast_3d.get_collision_normal()
-		if ray_cast_3d.get_collider().has_method("destroy_tile"):
-			ray_cast_3d.get_collider().destroy_tile(gridmap_position)
+		var collider = ray_cast_3d.get_collider()
+		var path = collider.get_path()
+		var type = collider.get_class()
+		if collider is GridMap:
+			collider.destroy_tile(ray_cast_3d.get_collision_point())
+		elif collider.has_method("destroy"):
+			collider.destroy()
 			
 func _on_right_click():
 	if ray_cast_3d.is_colliding():
-		var gridmap_position = ray_cast_3d.get_collision_point() - ray_cast_3d.get_collision_normal()
 		var collider = ray_cast_3d.get_collider()
-		if collider.has_method("interact") and GameManager.mode == GameManager.Mode.Normal:
+		#var path = collider.get_path()
+		#var type = collider.get_class()
+		#print("> Ray hit: ", path, " (", type, ")")
+		if collider is GridMap:
+			var pos = ray_cast_3d.get_collision_point()
+			var normal = ray_cast_3d.get_collision_normal()
+			collider.place_tile(pos + normal * 0.5, GameManager.selected_gridmap_id)
+		elif collider.has_method("interact"):
 			collider.interact()
-		elif collider.has_method("place_tile") and GameManager.mode == GameManager.Mode.Build:
-			collider.place_tile(gridmap_position, GameManager.selected_gridmap_id)
+			
 	

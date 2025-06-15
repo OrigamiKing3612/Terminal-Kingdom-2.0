@@ -6,17 +6,6 @@ extends GridMap
 
 var noise := FastNoiseLite.new()
 
-func destroy_tile(world_coordinate):
-	var map_coordinate = local_to_map(world_coordinate)
-	if map_coordinate.y == -2:
-		return
-	set_cell_item(map_coordinate, -1)
-	
-func place_tile(world_coordinate, block_index: int):
-	var map_coordinate = local_to_map(world_coordinate)
-	#if get_cell_item(map_coordinate) == -1:
-	set_cell_item(map_coordinate, block_index)
-
 func _ready():
 	noise.seed = randi()
 	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX

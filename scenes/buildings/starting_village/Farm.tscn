@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://67y5cb0skn3k"]
+[gd_scene load_steps=5 format=3 uid="uid://67y5cb0skn3k"]
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_fiueb"]
 [ext_resource type="Resource" uid="uid://djjk3okjgb42q" path="res://assets/resources/npc/farmer.tres" id="2_fdgc7"]
-[ext_resource type="MeshLibrary" uid="uid://bn6semb8jgtu2" path="res://assets/tiles.tres" id="3_fiueb"]
+[ext_resource type="MeshLibrary" uid="uid://dukru3jyexwtq" path="res://assets/tiles.tres" id="3_fiueb"]
+[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_fdgc7"]
 
 [node name="Farm" type="Node3D"]
 
@@ -11,3 +12,4 @@ data = ExtResource("2_fdgc7")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("3_fiueb")
+script = ExtResource("4_fdgc7")

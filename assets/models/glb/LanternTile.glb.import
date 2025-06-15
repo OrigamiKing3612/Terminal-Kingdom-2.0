@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cs5r8oh212p83"
-path="res://.godot/imported/LanternTile.glb-d3e08800ff630359134f3a52eac42405.scn"
+path="res://.godot/imported/LanternTile.glb-20545a051b93520b5b6e7575e60ed39a.scn"
 
 [deps]
 
-source_file="res://assets/models/LanternTile.glb"
-dest_files=["res://.godot/imported/LanternTile.glb-d3e08800ff630359134f3a52eac42405.scn"]
+source_file="res://assets/models/glb/LanternTile.glb"
+dest_files=["res://.godot/imported/LanternTile.glb-20545a051b93520b5b6e7575e60ed39a.scn"]
 
 [params]
 
