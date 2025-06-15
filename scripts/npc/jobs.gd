@@ -1,4 +1,5 @@
 extends Node
+class_name StartingVillageJobs
 
 @onready var none: Node = $None
 @onready var blacksmith: Node = $Blacksmith

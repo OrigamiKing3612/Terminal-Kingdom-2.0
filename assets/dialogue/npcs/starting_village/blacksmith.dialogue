@@ -19,9 +19,10 @@ Blacksmith: Thank you!
 Blacksmith: Now I need you to get 20 lumber. Here is an axe.
 => END
 ~ stage2_started
-Blacksmith: {{has_axe}}
-Blacksmith: Uh oh, looks like you lost your axe, here is a new one.
-Blacksmith: You are almost there, you still need to get {{20}} clay.
+if not has_axe:
+	Blacksmith: Uh oh, looks like you lost your axe, here is a new one.
+else:
+	Blacksmith: You are almost there, you still need to get {{amount_left}} lumber.
 => END
 ~ stage2_reached_goal
 Blacksmith: Thank you!

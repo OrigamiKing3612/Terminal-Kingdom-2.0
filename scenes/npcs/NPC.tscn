@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=25 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -7,8 +7,10 @@
 [ext_resource type="Script" uid="uid://vb40usgxql0s" path="res://scripts/quests/get_something_quest.gd" id="4_i3n4k"]
 [ext_resource type="Script" uid="uid://d3yh5vbtrdxp0" path="res://scripts/npc/none.gd" id="4_se8i8"]
 [ext_resource type="Script" uid="uid://c7pim11lbdqyc" path="res://scripts/quests/collect_items_quest.gd" id="5_3egug"]
+[ext_resource type="Script" uid="uid://ddcib8jdewq8d" path="res://scripts/resources/items/axe_item.gd" id="5_bcgr0"]
 [ext_resource type="Script" uid="uid://0gx1d8pnmjgd" path="res://scripts/quests/use_station_quest.gd" id="6_cmg02"]
 [ext_resource type="Script" uid="uid://6ldywjhmi7eq" path="res://scripts/npc/jobs/miner.gd" id="6_fnw6m"]
+[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="6_hsw7l"]
 [ext_resource type="Resource" uid="uid://b8f3mjwiclhxv" path="res://assets/dialogue/npcs/starting_village/miner.dialogue" id="9_yh8il"]
 [ext_resource type="Script" uid="uid://djgnsr3pi86wr" path="res://scripts/npc/jobs/king.gd" id="10_t7167"]
 [ext_resource type="Resource" uid="uid://bcpb4yg01b5v6" path="res://assets/dialogue/npcs/starting_village/king.dialogue" id="11_3j6ye"]
@@ -29,6 +31,23 @@ albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yq5wv"]
 material = SubResource("StandardMaterial3D_k75in")
+
+[sub_resource type="Resource" id="Resource_1tn1w"]
+script = ExtResource("5_bcgr0")
+durability = 20
+name = "Blacksmith's Axe"
+price = 10
+can_be_sold = false
+is_buildable = false
+texture_2d = ExtResource("6_hsw7l")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 0
+generate_item = true
+generate_preview = false
+preview_file = ""
+override_name = false
+overriden_name = ""
+metadata/_custom_type_script = "uid://ddcib8jdewq8d"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
 size = Vector3(1.6, 2, 1.6)
@@ -63,6 +82,7 @@ script = ExtResource("2_3ak68")
 [node name="Blacksmith" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("2_yq5wv")
 dialogue = ExtResource("4_bycv4")
+stage2_axe = SubResource("Resource_1tn1w")
 
 [node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Blacksmith"]
 script = ExtResource("4_i3n4k")

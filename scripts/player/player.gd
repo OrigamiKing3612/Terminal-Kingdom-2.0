@@ -15,7 +15,7 @@ var movement_direction: Vector3
 @onready var light: DirectionalLight3D = $Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D/DirectionalLight3D
 
 func _input(event: InputEvent) -> void:
-	if (event.is_action_pressed("movement") or event.is_action_released("movement")) and GameManager.move:
+	if (event.is_action_pressed("movement") or event.is_action_released("movement")) and GameManager.move and GameManager.mode != GameManager.Mode.Speaking:
 		movement_direction.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
 		movement_direction.z = Input.get_action_strength("move_forward") - Input.get_action_strength("move_back")
 		
@@ -29,7 +29,7 @@ func _input(event: InputEvent) -> void:
 					change_movement_state("run")
 		else:
 			change_movement_state("stand")
-	if event.is_action_pressed("jump"):
+	if event.is_action_pressed("jump") and GameManager.mode != GameManager.Mode.Speaking:
 		if air_jump_counter <= max_air_jump:
 			var jump_name = "ground_jump"
 			if air_jump_counter > 0:

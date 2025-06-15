@@ -6,7 +6,7 @@ class_name NPC
 
 @onready var marker: MeshInstance3D = $Mesh/Marker
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
-@onready var svjobs: Node = $StartingVillageJobs
+@onready var svjobs: StartingVillageJobs = $StartingVillageJobs
 @onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
 
 func _ready() -> void:
