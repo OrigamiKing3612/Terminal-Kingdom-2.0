@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://rt35jrh3xbfd"]
+[gd_scene load_steps=6 format=3 uid="uid://rt35jrh3xbfd"]
 
 [ext_resource type="MeshLibrary" uid="uid://bn6semb8jgtu2" path="res://assets/tiles.tres" id="1_2jpfu"]
 [ext_resource type="Script" uid="uid://c0vk58gve7t2r" path="res://scripts/grid_map.gd" id="2_x2fju"]
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="3_2jpfu"]
 [ext_resource type="Resource" uid="uid://8106ceomlnsr" path="res://assets/resources/npc/king.tres" id="4_rgvqe"]
+[ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/LanternTile.tscn" id="5_rgvqe"]
 
 [node name="Castle" type="Node3D"]
 
@@ -20,3 +21,18 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110, 3, 52)
 data = ExtResource("4_rgvqe")
 talkable_area = Vector3(10, 4, 10)
+
+[node name="LanternTile" parent="." instance=ExtResource("5_rgvqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123, 12.5, 39)
+
+[node name="LanternTile2" parent="." instance=ExtResource("5_rgvqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97, 12.5, 39)
+
+[node name="LanternTile3" parent="." instance=ExtResource("5_rgvqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123, 12.5, 65)
+
+[node name="LanternTile4" parent="." instance=ExtResource("5_rgvqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97, 12.5, 65)
+
+[node name="LanternTile5" parent="." instance=ExtResource("5_rgvqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110, 31.5, 52)

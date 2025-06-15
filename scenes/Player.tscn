@@ -68,6 +68,7 @@ target_position = Vector3(0, -1, -12)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D"]
 transform = Transform3D(1, 1.04216e-14, -2.98023e-07, -1.04216e-14, 1, 1.42109e-14, 2.98023e-07, -1.42109e-14, 1, 8.94068e-08, -0.25, -0.5)
+visible = false
 light_indirect_energy = 0.5
 shadow_enabled = true
 sky_mode = 1

@@ -12,6 +12,16 @@ sky_material = SubResource("PanoramaSkyMaterial_bn363")
 background_mode = 2
 background_color = Color(0.456539, 0.737452, 0.985545, 1)
 sky = SubResource("Sky_7vi23")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.5
+reflected_light_source = 2
+tonemap_mode = 2
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+glow_levels/7 = 0.42
+glow_blend_mode = 1
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.003
 
