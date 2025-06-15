@@ -30,7 +30,7 @@ data = ExtResource("12_nrtoj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109, 0, -41)
 
 [node name="Blacksmith" parent="Buildings" instance=ExtResource("8_h1bdy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 2, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 2, 116)
 
 [node name="Farm" parent="Buildings" instance=ExtResource("10_nrtoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 4, -20)
@@ -38,6 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 4, -20)
 [node name="Carpentery" parent="Buildings" instance=ExtResource("10_h1bdy")]
 
 [node name="Builder" parent="Buildings" instance=ExtResource("5_h1bdy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222, 2, 6)
 
 [node name="Mine" parent="Buildings" instance=ExtResource("9_7c4bj")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 120, 2, 84)
