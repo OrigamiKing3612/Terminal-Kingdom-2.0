@@ -11,7 +11,7 @@ data = {
 "width": 128
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_n3oqi"]
+[sub_resource type="ImageTexture" id="ImageTexture_pglf6"]
 image = SubResource("Image_m501x")
 
 [resource]
@@ -20,9 +20,11 @@ name = "Dirt Slope"
 price = 0
 can_be_sold = false
 is_buildable = true
-texture_2d = SubResource("ImageTexture_n3oqi")
+texture_2d = SubResource("ImageTexture_pglf6")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 0
 generate_item = true
 generate_preview = false
 preview_file = ""
+override_name = false
+overriden_name = ""

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://8ochyecpefpf"]
 
 [ext_resource type="Script" uid="uid://djprjo3jie0lq" path="res://scripts/tools/CreateItemFromMeshLibrary.gd" id="1_lkbxe"]
-[ext_resource type="MeshLibrary" uid="uid://bn6semb8jgtu2" path="res://assets/tiles.tres" id="2_gv0fn"]
+[ext_resource type="MeshLibrary" uid="uid://dukru3jyexwtq" path="res://assets/tiles.tres" id="2_gv0fn"]
 
 [node name="Addons" type="VBoxContainer"]
 anchors_preset = 15
