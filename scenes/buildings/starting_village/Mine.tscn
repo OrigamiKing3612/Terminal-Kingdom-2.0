@@ -8,9 +8,6 @@
 
 [node name="Mine" type="Node3D"]
 
-[node name="LampTile" parent="." instance=ExtResource("5_56oy1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6.9, -46)
-
 [node name="MinerNPC" parent="." instance=ExtResource("1_y5v84")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96308, 3.06523, -74.7499)
 data = ExtResource("2_s1wi8")
@@ -27,3 +24,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9292, 3.92172, -74.8521)
 
 [node name="MineEntranceTile2" parent="." instance=ExtResource("4_s1wi8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1243, 4.01173, -74.9614)
+
+[node name="LanternTile" parent="." instance=ExtResource("5_56oy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 7.9, -45)
+
+[node name="LanternTile2" parent="." instance=ExtResource("5_56oy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 7.9, -45)
+
+[node name="LanternTile3" parent="." instance=ExtResource("5_56oy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 7.9, -38)
+
+[node name="LanternTile4" parent="." instance=ExtResource("5_56oy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 7.9, -57)

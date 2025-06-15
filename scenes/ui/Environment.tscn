@@ -6,7 +6,6 @@
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -644, 1376, 804)
-visible = false
 light_indirect_energy = 0.5
 shadow_enabled = true
 

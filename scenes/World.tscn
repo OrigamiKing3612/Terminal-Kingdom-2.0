@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b15ufnwgdjvf7" path="res://scenes/buildings/starting_village/Builder.tscn" id="5_h1bdy"]
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="7_0uv0p"]
 [ext_resource type="PackedScene" uid="uid://bxdpwrk0ydfqq" path="res://scenes/buildings/starting_village/Blacksmith.tscn" id="8_h1bdy"]
-[ext_resource type="PackedScene" uid="uid://ci33ie84bamvp" path="res://scenes/buildings/starting_village/Mine.tscn" id="9_7c4bj"]
+[ext_resource type="PackedScene" uid="uid://cofx01hlxmhcy" path="res://scenes/buildings/starting_village/Mine.tscn" id="9_7c4bj"]
 [ext_resource type="PackedScene" uid="uid://bd4cyrf8vo2sb" path="res://scenes/buildings/starting_village/Carpentery.tscn" id="10_h1bdy"]
 [ext_resource type="PackedScene" uid="uid://67y5cb0skn3k" path="res://scenes/buildings/starting_village/Farm.tscn" id="10_nrtoj"]
 [ext_resource type="MeshLibrary" uid="uid://bn6semb8jgtu2" path="res://assets/tiles.tres" id="10_pdh0q"]
@@ -30,7 +30,7 @@ data = ExtResource("12_nrtoj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109, 0, -41)
 
 [node name="Blacksmith" parent="Buildings" instance=ExtResource("8_h1bdy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 2, -4)
 
 [node name="Farm" parent="Buildings" instance=ExtResource("10_nrtoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 4, -20)
