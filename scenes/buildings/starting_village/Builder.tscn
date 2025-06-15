@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b15ufnwgdjvf7"]
+[gd_scene load_steps=5 format=3 uid="uid://b15ufnwgdjvf7"]
 
 [ext_resource type="MeshLibrary" uid="uid://bn6semb8jgtu2" path="res://assets/tiles.tres" id="1_ekqpq"]
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="3_4qvxm"]
 [ext_resource type="Resource" uid="uid://di5s55nhjp0e5" path="res://assets/resources/npc/builder.tres" id="4_ekqpq"]
+[ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/LanternTile.tscn" id="4_mu1hj"]
 
 [node name="Builder" type="Node3D"]
 
@@ -13,3 +14,6 @@ talkable_area = Vector3(10, 4, 10)
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_ekqpq")
+
+[node name="LanternTile" parent="." instance=ExtResource("4_mu1hj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123, 12.5, 121)
