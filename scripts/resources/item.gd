@@ -2,8 +2,7 @@ class_name Item extends Resource
 
 # Every tile must have an item resource to be in inventory
 var id: String
-
-@export var name: String = ""
+@export var name: StringName = ""
 @export var price: int = 10
 @export var can_be_sold: bool = true
 @export var is_buildable: bool = false

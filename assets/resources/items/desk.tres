@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_25bte")
-name = "Desk"
+name = &""
 price = 0
 can_be_sold = false
 is_buildable = true

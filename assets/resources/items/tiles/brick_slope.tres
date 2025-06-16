@@ -16,7 +16,7 @@ image = SubResource("Image_0htsu")
 
 [resource]
 script = ExtResource("1_0htsu")
-name = "Brick Slope"
+name = &"Brick Slope"
 price = 0
 can_be_sold = false
 is_buildable = true

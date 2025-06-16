@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_crdpy")
-name = "Potato"
+name = &""
 price = 1
 can_be_sold = true
 is_buildable = false

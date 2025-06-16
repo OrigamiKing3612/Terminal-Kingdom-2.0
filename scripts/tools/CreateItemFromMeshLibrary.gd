@@ -17,10 +17,9 @@ func run():
 
 	print("\nRunning!")
 	
-	clear_directory(output_path)
-	clear_directory(preview_image_path)
+	#clear_directory(preview_image_path)
 	
-	print("Cleared paths")
+	#print("Cleared paths")
 	
 	var mesh_ids := mesh_library.get_item_list()
 	for id in mesh_ids:
@@ -31,9 +30,9 @@ func run():
 		var mesh = mesh_library.get_item_mesh(id)
 		var save_path = output_path + name.to_lower().replace(" ", "_") + ".tres"
 		
-		if FileAccess.file_exists(save_path):
-			print("Skipping existing item: ", save_path)
-			continue
+		#if FileAccess.file_exists(save_path):
+			#print("Skipping existing item: ", save_path)
+			#continue
 
 		var item = Item.new()
 		item.name = name
@@ -49,7 +48,6 @@ func run():
 		
 		print("Saved: ", save_path)
 	print("Done! Time: ", Time.get_datetime_string_from_system())
-	print("CHECK THAT THE LUMBER ITEM IS STILL THERE! then remove this")
 
 func generate_preview(mesh: Mesh, item: Item, size: Vector2 = Vector2(128, 128)) -> Texture2D:
 	print("Generating Preview for ", item.name)

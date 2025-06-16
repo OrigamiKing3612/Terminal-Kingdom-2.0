@@ -16,7 +16,7 @@ image = SubResource("Image_ar632")
 
 [resource]
 script = ExtResource("1_ar632")
-name = "Coin Item"
+name = &"Coin Item"
 price = 0
 can_be_sold = false
 is_buildable = true

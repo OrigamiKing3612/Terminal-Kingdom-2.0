@@ -16,8 +16,7 @@ image = SubResource("Image_tg40k")
 
 [resource]
 script = ExtResource("1_tg40k")
-id = null
-name = "Bricks"
+name = &"Bricks"
 price = 0
 can_be_sold = false
 is_buildable = true
