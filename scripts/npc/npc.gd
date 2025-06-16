@@ -27,17 +27,17 @@ func interact() -> void:
 
 func talk_to_starting_village_npc():
 	match data.job:
-		NPCEnums.Job.None:
+		Utils.Job.None:
 			svjobs.none.talk(data)
-		NPCEnums.Job.Blacksmith:
+		Utils.Job.Blacksmith:
 			svjobs.blacksmith.talk(data)
-		NPCEnums.Job.Miner:
+		Utils.Job.Miner:
 			svjobs.miner.talk(data)
-		NPCEnums.Job.King:
+		Utils.Job.King:
 			svjobs.king.talk(data)
-		NPCEnums.Job.Farmer:
+		Utils.Job.Farmer:
 			svjobs.farmer.talk(data)
-		NPCEnums.Job.Carpenter:
+		Utils.Job.Carpenter:
 			svjobs.carpenter.talk(data)
 		_:
 			print("Unknown job: ", data.job)

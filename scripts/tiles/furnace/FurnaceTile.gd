@@ -1,0 +1,37 @@
+extends Node3D
+
+@onready var fire: MeshInstance3D = $LightmapGI/Fire
+@export var furnace_screen: PackedScene
+
+@export var recipes: Array[FurnaceRecipe]
+@export var state: FurnaceState = FurnaceState.unused:
+	set(value):
+		state = value
+		if fire:
+			match state:
+				FurnaceState.unused:
+					fire.hide()
+				FurnaceState.running:
+					fire.show()
+
+func _ready() -> void:
+	var recipes: Array[FurnaceRecipe] = []
+	for resource in Utils.load_all_from_path("res://scripts/resources/recipes/furnace/"):
+		if resource is FurnaceRecipe:
+			recipes.append(resource)
+	fire.hide()
+
+func _on_interacted() -> void:
+	#if state == FurnaceState.unused:
+		#state = FurnaceState.running
+	#else:
+		#state = FurnaceState.unused
+	#print("furnace: " + str(state))
+	var popup = furnace_screen.instantiate()
+	popup.recipes = recipes
+	SceneManager.show_popup(popup)
+
+enum FurnaceState{
+	unused,
+	running
+}

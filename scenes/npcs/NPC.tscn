@@ -40,6 +40,7 @@ size = Vector3(1.6, 2, 1.6)
 
 [node name="NPC" type="CharacterBody3D"]
 script = ExtResource("1_k75in")
+talkable_area = null
 metadata/_custom_type_script = "uid://b0t1cg5rsfjuu"
 
 [node name="Area3D" type="Area3D" parent="."]

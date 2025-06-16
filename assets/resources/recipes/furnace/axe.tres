@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="FurnaceRecipe" load_steps=11 format=3 uid="uid://b1hnb8ybj6dra"]
+
+[ext_resource type="Script" uid="uid://211derjh3jig" path="res://scripts/resources/recipes/RecipeItem.gd" id="1_hmen7"]
+[ext_resource type="Script" uid="uid://cch7usyguax67" path="res://scripts/resources/recipes/FurnaceRecipe.gd" id="2_vt42d"]
+[ext_resource type="Resource" uid="uid://83niltrh6tky" path="res://assets/resources/items/stick.tres" id="2_xoqk5"]
+[ext_resource type="Resource" uid="uid://bu7fdkkvvrka3" path="res://assets/resources/items/tiles/iron_item.tres" id="3_drfcn"]
+[ext_resource type="Script" uid="uid://cqsvdpbt83m3i" path="res://scripts/resources/items/tool_item.gd" id="4_n37ym"]
+[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="5_db5s6"]
+
+[sub_resource type="Resource" id="Resource_tbog6"]
+script = ExtResource("1_hmen7")
+item = ExtResource("2_xoqk5")
+count = 1
+metadata/_custom_type_script = "uid://211derjh3jig"
+
+[sub_resource type="Resource" id="Resource_3tsv7"]
+script = ExtResource("1_hmen7")
+item = ExtResource("3_drfcn")
+count = 1
+metadata/_custom_type_script = "uid://211derjh3jig"
+
+[sub_resource type="Resource" id="Resource_1j882"]
+script = ExtResource("4_n37ym")
+durability = 100
+name = "Pickaxe"
+price = 10
+can_be_sold = true
+is_buildable = false
+texture_2d = ExtResource("5_db5s6")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 0
+generate_item = true
+generate_preview = false
+preview_file = ""
+override_name = false
+overriden_name = ""
+metadata/_custom_type_script = "uid://cqsvdpbt83m3i"
+
+[sub_resource type="Resource" id="Resource_htov3"]
+script = ExtResource("1_hmen7")
+item = SubResource("Resource_1j882")
+count = 1
+metadata/_custom_type_script = "uid://211derjh3jig"
+
+[resource]
+script = ExtResource("2_vt42d")
+seconds = 10
+inputs = Array[ExtResource("1_hmen7")]([SubResource("Resource_tbog6"), SubResource("Resource_3tsv7")])
+outputs = Array[ExtResource("1_hmen7")]([SubResource("Resource_htov3")])
+metadata/_custom_type_script = "uid://cch7usyguax67"

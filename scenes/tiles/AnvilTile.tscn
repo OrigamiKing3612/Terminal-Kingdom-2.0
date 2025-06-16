@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd7248mgtv2gu"]
+
+[ext_resource type="Script" uid="uid://nxqftwtkwxy" path="res://scripts/tiles/anvil/anvil_tile.gd" id="1_dyo5c"]
+[ext_resource type="Script" uid="uid://dyqd354fmav1a" path="res://scripts/tiles/anvil/AnvilTile.gd" id="1_qgmwl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_48esm"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dyo5c"]
+size = Vector3(2, 2, 2)
+
+[node name="AnvilTile" type="Node3D"]
+script = ExtResource("1_qgmwl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_48esm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+script = ExtResource("1_dyo5c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_dyo5c")
+
+[connection signal="interacted" from="MeshInstance3D/StaticBody3D" to="." method="_on_interacted"]

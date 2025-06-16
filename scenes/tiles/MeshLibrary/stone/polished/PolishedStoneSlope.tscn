@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=4 uid="uid://cksydgy3jmn37"]
+
+[ext_resource type="Texture2D" uid="uid://b3d7jha35salb" path="res://assets/models/StaticTiles_polished-stone-albedo.png" id="1_uvrcn"]
+[ext_resource type="Texture2D" uid="uid://dxu3wq4pmd5a5" path="res://assets/models/StaticTiles_polished-stone-normal.png" id="2_tilo2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo46t"]
+resource_name = "PolishedStoneMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_uvrcn")
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("2_tilo2")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jgbfr"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAgAAAAIAAQACAAEAAQACAAIAAwAAAAIAAQADAAIAAAADAAMAAAAEAAEABAAAAAMABAABAAEABAAFAAEAAQAFAAMABAADAAUABQAEAAUABQADAAMABQADAAUA"),
+"name": "PolishedStoneMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAA//8AAP//AAAAAAAAAAAAAP//AAAAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yvbmn"]
+resource_name = "StaticTiles_Cube_067"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("AAD/////AAAAAAAA/////wAA/////////////wAAAAAAAAAAAAD//wAAAAAAAAAA//////////8AAAAA////////AAAAAP///////wAA////////AAD/////AAAAAP//AAAAAP////8AAAAAAAD//wAAAAAAAP//"),
+"format": 34896613399,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABwAEAAgACQAKAAsACQAMAAoADAAJAA0ADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsA"),
+"material": SubResource("StandardMaterial3D_eo46t"),
+"name": "PolishedStoneMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAAAAAAA//8AgP//AAD//wCA//8AAP//AIAAAP////8AgAAA/////wCAAAAAAAAAAAAAAP//AAAAAAAA//8AAAAA//8AAAAAAAD//wAAAAAAAAAAAAAAAP8///8AAP///z///wAAAAD/PwAAAAD///8///8AAAAA/7///wAA////v///AAAAAP+///8AAP///78AAP//AAD8xf//AAD///zFAAD//////MX//wAAAAD8xQAA//8AAP+/AAD//////78AAP//AAD/vwAA//////+//z//f/8//3//P/9//z//f/9/////f////3////9/////f///////f////3////9/////f////38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f/25/xz9uf8c/bn/HP25/xz///9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jgbfr")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jpxfd"]
+data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, 1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, 1, -1, -1, 1, -1, 1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -1, 1, 1)
+
+[node name="PolishedStoneSlope" type="Node3D"]
+
+[node name="PolishedStoneSlopeTile" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_yvbmn")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PolishedStoneSlopeTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PolishedStoneSlopeTile/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_jpxfd")

@@ -1,4 +1,4 @@
 class_name SkillProgress extends Resource
 
 @export var stage := 0
-@export var level := NPCEnums.SkillLevel.None
+@export var level := Utils.SkillLevel.None

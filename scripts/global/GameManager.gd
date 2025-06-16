@@ -32,11 +32,11 @@ signal mine_right_click
 signal show_message(text: String)
 
 var move: bool = true
-var has_popup: bool = false
+#var has_popup: bool = false
 var mode: Mode = Mode.Normal
 var random: RandomNumberGenerator
 
-enum Mode{Normal, Inventory, Build, Mining, Speaking}
+enum Mode{Normal, Inventory, Build, Mining, Speaking, InPopUp}
 
 func _ready() -> void:
 	player = player.duplicate(true)
@@ -49,9 +49,9 @@ func _ready() -> void:
 	inventory_box.hide()
 
 func _input(event: InputEvent) -> void:
-	if (event.is_action_pressed("left_click") or event.is_action_pressed("right_click")) and move == false and mode != Mode.Inventory and has_popup == false:
+	if (event.is_action_pressed("left_click") or event.is_action_pressed("right_click")) and move == false and mode != Mode.Inventory and mode != Mode.InPopUp:
 		SceneManager.steal_cursor()
-	if event.is_action_pressed("esc"):
+	if event.is_action_pressed("esc") and mode != Mode.InPopUp:
 		SceneManager.free_cursor()
 		
 	if mode == Mode.Normal or mode == Mode.Build:
@@ -93,6 +93,11 @@ func _input(event: InputEvent) -> void:
 				mine_left_click.emit()
 			elif event.is_action_released("right_click"):
 				mine_right_click.emit()
+		Mode.InPopUp:
+			if event.is_action_pressed("esc"):
+				SceneManager.hide_popup()
+	#get_viewport().set_input_as_handled()
+
 
 func hide_inventory_box() -> void:
 	hide_inventory.emit()

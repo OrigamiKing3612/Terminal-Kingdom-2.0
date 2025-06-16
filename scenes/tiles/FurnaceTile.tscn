@@ -1,7 +1,12 @@
-[gd_scene load_steps=10 format=4 uid="uid://biusngccco6e0"]
+[gd_scene load_steps=15 format=4 uid="uid://biusngccco6e0"]
 
 [ext_resource type="Texture2D" uid="uid://dduxon30vpfg2" path="res://assets/models/FurnaceTile_small-log.png" id="1_0bckp"]
+[ext_resource type="Script" uid="uid://7dggtv6j2chd" path="res://scripts/tiles/furnace/furnace_tile.gd" id="1_2vxjl"]
+[ext_resource type="Script" uid="uid://d0nfaymvottcp" path="res://scripts/tiles/furnace/FurnaceTile.gd" id="1_a25ud"]
+[ext_resource type="PackedScene" uid="uid://cpv5n40r1pw6o" path="res://scenes/ui/workstations/FurnaceScreen.tscn" id="2_1oifx"]
 [ext_resource type="LightmapGIData" uid="uid://b0qj435gi7d6s" path="res://assets/resources/lightmaps/FurnaceTile.lmbake" id="2_f0fk0"]
+[ext_resource type="Script" uid="uid://cch7usyguax67" path="res://scripts/resources/recipes/FurnaceRecipe.gd" id="2_rqlwd"]
+[ext_resource type="Resource" uid="uid://fyc5n63q7cgj" path="res://assets/resources/recipes/furnace/pickaxe.tres" id="3_1oifx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cg444"]
 size = Vector3(2, 4, 2)
@@ -86,8 +91,31 @@ material = SubResource("StandardMaterial3D_tyc2l")
 add_uv2 = true
 
 [node name="FurnaceTile" type="Node3D"]
+script = ExtResource("1_a25ud")
+furnace_screen = ExtResource("2_1oifx")
+recipes = Array[ExtResource("2_rqlwd")]([ExtResource("3_1oifx")])
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="LightmapGI" type="LightmapGI" parent="."]
+light_data = ExtResource("2_f0fk0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LightmapGI"]
+script = ExtResource("1_2vxjl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightmapGI/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_cg444")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LightmapGI"]
+mesh = SubResource("ArrayMesh_xtewt")
+skeleton = NodePath("")
+
+[node name="Fire" type="MeshInstance3D" parent="LightmapGI"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_f0fk0")
+skeleton = NodePath("../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LightmapGI/Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(0.889269, 0.396086, 0, 1)
 light_energy = 3.0
 light_indirect_energy = 0.5
@@ -95,19 +123,4 @@ light_specular = 5.0
 omni_range = 6.0
 omni_attenuation = 2.0
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_cg444")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("ArrayMesh_xtewt")
-skeleton = NodePath("")
-
-[node name="Fire" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-mesh = SubResource("BoxMesh_f0fk0")
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-light_data = ExtResource("2_f0fk0")
+[connection signal="interacted" from="LightmapGI/StaticBody3D" to="." method="_on_interacted"]
