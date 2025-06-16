@@ -10,10 +10,8 @@ static func givePlayerCountOfItem(itemToDuplicate: Item, count: int) -> Array[St
 	var items: Array[Item] = []
 	var ids: Array[String] = []
 	for i in range(count):
-		var id := UUID.string()
-		var item := itemToDuplicate.duplicate()
-		item.id = id
-		ids.append(id)
+		var item := itemToDuplicate.copy()
+		ids.append(item.id)
 		items.append(item)
 	GameManager.player.collectItems(items)
 	return ids

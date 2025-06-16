@@ -13,7 +13,7 @@ extends Node
 @export var stage2_axe: ToolItem
 
 @export_group("Stage 3")
-@export var stage3_lumber_item: Item
+@export var stage3_lumber_item: Item = null
 
 func _ready() -> void:
 	QuestManager.register_quest(stage1_ID, $Stage1Quest)
@@ -71,7 +71,7 @@ func stage2():
 		return
 	if quest.quest_status == quest.QuestStatus.available:
 		DialogueManager.show_dialogue_balloon(dialogue, "stage2_available")
-		GameManager.player.collectItem(stage2_axe)
+		GameManager.player.collectItem(stage2_axe.copy())
 		quest.start_quest()
 		QuestManager.update_quest(stage2_ID, quest)
 		return
@@ -104,7 +104,7 @@ func stage3():
 	match quest.quest_status:
 		quest.QuestStatus.available:
 			DialogueManager.show_dialogue_balloon(dialogue, "stage3_available")
-			quest.data["lumber_ids"] = Utils.givePlayerCountOfItem(stage3_lumber_item, 5)
+			quest.data["lumber_ids"] = Utils.givePlayerCountOfItem(stage3_lumber_item.copy(), 5)
 			quest.start_quest()
 			QuestManager.update_quest(stage3_ID, quest)
 		quest.QuestStatus.started:

@@ -1,7 +1,7 @@
 class_name PlayerData extends Resource
 
 signal collect_item(item: Item, count: int)
-signal remove_item(id: String)
+signal remove_item(item: Item)
 
 @export var name: String = "DEFAULT_NAME"
 @export var can_build: bool = true
@@ -22,8 +22,13 @@ func collectItems(items: Array[Item]) -> void:
 		collect_item.emit(item, 1)
 
 func removeItem(id: String) -> void:
-	items = items.filter(func(item): return item.id != id)
-	remove_item.emit(id)
+	var removed: Item
+	items = items.filter(func(i): 
+		if i.id == id:
+			removed = i
+			return false
+		return true)
+	remove_item.emit(removed)
 		
 func removeItems(ids: Array[String]) -> void:
 	for id in ids:

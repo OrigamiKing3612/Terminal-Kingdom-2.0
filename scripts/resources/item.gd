@@ -1,7 +1,8 @@
 class_name Item extends Resource
 
 # Every tile must have an item resource to be in inventory
-var id: String = UUID.string()
+var id: String
+
 @export var name: String = ""
 @export var price: int = 10
 @export var can_be_sold: bool = true
@@ -18,3 +19,11 @@ var id: String = UUID.string()
 @export var preview_file: String = ""
 @export var override_name: bool = false
 @export var overriden_name: String = ""
+
+func _init():
+	id = UUID.string()
+	
+func copy() -> Item:
+	var new = duplicate()
+	new.id = UUID.string()
+	return new

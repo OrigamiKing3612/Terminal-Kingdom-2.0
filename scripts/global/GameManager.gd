@@ -43,6 +43,7 @@ func _ready() -> void:
 	inventory_update.emit()
 	random = RandomNumberGenerator.new()
 	player.collect_item.connect(_on_collect_item)
+	player.remove_item.connect(_on_remove_item)
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	inventory_box.hide()
@@ -117,6 +118,11 @@ func hide_buildable_items() -> void:
 	
 func _on_collect_item(item: Item, count: int) -> void:
 	var value := "+ " + item.name + " x" + str(count)
+	show_message.emit(value)
+	inventory_update.emit()	
+	
+func _on_remove_item(item: Item) -> void:
+	var value := "-" + item.name 
 	show_message.emit(value)
 	inventory_update.emit()
 	

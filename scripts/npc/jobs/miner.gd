@@ -1,7 +1,7 @@
 extends Node
 
 @export var dialogue: DialogueResource
-@export var blacksmith_stage1_item: Item
+@export var blacksmith_stage1_iron: Item  = null
 
 @export_group("Quest IDs")
 @export var stage1_ID: String = "miner1"
@@ -15,7 +15,7 @@ func talk(data: NPCData) -> void:
 		var quest = QuestManager.get_quest("blacksmith1")
 		if quest.quest_status == quest.QuestStatus.started:
 			DialogueManager.show_dialogue_balloon(dialogue, "blacksmith_stage1")
-			quest.data["iron_ids"] = Utils.givePlayerCountOfItem(blacksmith_stage1_item, 5)
+			quest.data["iron_ids"] = Utils.givePlayerCountOfItem(blacksmith_stage1_iron.copy(), 5)
 			quest.reached_goal()
 			QuestManager.update_quest("blacksmith1", quest)
 			
