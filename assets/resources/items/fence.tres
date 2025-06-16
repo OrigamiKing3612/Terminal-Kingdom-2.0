@@ -15,4 +15,6 @@ gridmap_id = 0
 generate_item = true
 generate_preview = false
 preview_file = ""
+override_name = false
+overriden_name = ""
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

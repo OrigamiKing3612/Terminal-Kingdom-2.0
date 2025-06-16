@@ -18,29 +18,3 @@ var id: String = UUID.string()
 @export var preview_file: String = ""
 @export var override_name: bool = false
 @export var overriden_name: String = ""
-
-#enum ItemType{
-	#sword, axe, pickaxe, boomerang, # bow? net? dagger?
-	#backpack,
-	#lumber,
-	#iron,
-	#coal,
-	#gold,
-	#stone,
-	#clay,
-	#tree_seed,
-	#stick,
-	#steel,
-	#door,
-	#fence,
-	#gate,
-	#chest,
-	#bed,
-	#desk,
-	#coin,
-	#carrot,
-	#potato,
-	#wheat,
-	#lettuce,
-	#pot,
-#}

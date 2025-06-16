@@ -4,6 +4,7 @@ extends Button
 @export var mesh_library: MeshLibrary
 @export var output_path: String = "res://assets/resources/items/tiles/"
 @export var preview_image_path: String = "res://assets/models/icons/"
+@export var ids_to_ignore: Array[int] = [46,47,48]
 
 func _ready() -> void:
 	#self.pressed.connect(_on_pressed)
@@ -23,9 +24,16 @@ func run():
 	
 	var mesh_ids := mesh_library.get_item_list()
 	for id in mesh_ids:
+		if ids_to_ignore.has(id):
+			continue
 		var raw_name = mesh_library.get_item_name(id)
 		var name = add_spaces_to_camel_case(raw_name)
 		var mesh = mesh_library.get_item_mesh(id)
+		var save_path = output_path + name.to_lower().replace(" ", "_") + ".tres"
+		
+		if FileAccess.file_exists(save_path):
+			print("Skipping existing item: ", save_path)
+			continue
 
 		var item = Item.new()
 		item.name = name
@@ -37,11 +45,11 @@ func run():
 		if mesh is ArrayMesh:
 			item.texture_2d = await generate_preview(mesh, item)
 
-		var save_path = output_path + name.to_lower().replace(" ", "_") + ".tres"
 		ResourceSaver.save(item, save_path)
 		
 		print("Saved: ", save_path)
 	print("Done! Time: ", Time.get_datetime_string_from_system())
+	print("CHECK THAT THE LUMBER ITEM IS STILL THERE! then remove this")
 
 func generate_preview(mesh: Mesh, item: Item, size: Vector2 = Vector2(128, 128)) -> Texture2D:
 	print("Generating Preview for ", item.name)

@@ -1,6 +1,6 @@
 extends GridMap
 class_name BreakableGridMap
-@export var drop: Item = preload("res://assets/resources/items/tiles/lumber_item_one.tres")
+@export var drop: Item = preload("res://assets/resources/items/tiles/lumber.tres")
 
 func destroy_tile(collision_point: Vector3) -> void:
 	var local_point = to_local(collision_point)

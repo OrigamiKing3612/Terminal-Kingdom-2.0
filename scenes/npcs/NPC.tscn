@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://vb40usgxql0s" path="res://scripts/quests/get_something_quest.gd" id="4_i3n4k"]
 [ext_resource type="Script" uid="uid://d3yh5vbtrdxp0" path="res://scripts/npc/none.gd" id="4_se8i8"]
 [ext_resource type="Script" uid="uid://c7pim11lbdqyc" path="res://scripts/quests/collect_items_quest.gd" id="5_3egug"]
-[ext_resource type="Script" uid="uid://ddcib8jdewq8d" path="res://scripts/resources/items/axe_item.gd" id="5_bcgr0"]
 [ext_resource type="Script" uid="uid://0gx1d8pnmjgd" path="res://scripts/quests/use_station_quest.gd" id="6_cmg02"]
 [ext_resource type="Script" uid="uid://6ldywjhmi7eq" path="res://scripts/npc/jobs/miner.gd" id="6_fnw6m"]
 [ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="6_hsw7l"]
@@ -33,10 +32,17 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yq5wv"]
 material = SubResource("StandardMaterial3D_k75in")
 
+[sub_resource type="GDScript" id="GDScript_bcgr0"]
+script/source = "class_name AxeItem extends Item
+
+@export_group(\"Axe Settings\")
+@export var durability: int = 55
+"
+
 [sub_resource type="Resource" id="Resource_1tn1w"]
-script = ExtResource("5_bcgr0")
+script = SubResource("GDScript_bcgr0")
 durability = 20
-name = "Blacksmith's Axe"
+name = ""
 price = 10
 can_be_sold = false
 is_buildable = false
@@ -52,7 +58,7 @@ metadata/_custom_type_script = "uid://ddcib8jdewq8d"
 
 [sub_resource type="Resource" id="Resource_e8lh1"]
 script = ExtResource("12_hsw7l")
-name = "Iron"
+name = ""
 price = 0
 can_be_sold = false
 is_buildable = false

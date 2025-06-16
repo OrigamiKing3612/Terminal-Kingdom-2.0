@@ -1,12 +1,21 @@
-[gd_resource type="Resource" script_class="PickaxeItem" load_steps=2 format=3 uid="uid://c0ko03jxrrqa1"]
+[gd_resource type="Resource" script_class="ToolItem" load_steps=3 format=3 uid="uid://d0p5yutbxrj38"]
 
-[ext_resource type="Script" uid="uid://cju6s3sghlnxp" path="res://scripts/resources/items/pickaxe_item.gd" id="1_c1rbj"]
+[ext_resource type="Script" uid="uid://cqsvdpbt83m3i" path="res://scripts/resources/items/tool_item.gd" id="1_twced"]
+[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="2_abey6"]
 
 [resource]
-script = ExtResource("1_c1rbj")
-durability = 50
-name = ""
+script = ExtResource("1_twced")
+durability = 55
+name = "Pickaxe"
 price = 10
 can_be_sold = true
 is_buildable = false
-metadata/_custom_type_script = "uid://cju6s3sghlnxp"
+texture_2d = ExtResource("2_abey6")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 0
+generate_item = true
+generate_preview = false
+preview_file = ""
+override_name = false
+overriden_name = ""
+metadata/_custom_type_script = "uid://cqsvdpbt83m3i"

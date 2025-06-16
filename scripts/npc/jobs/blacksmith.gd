@@ -10,7 +10,7 @@ extends Node
 @export var stage5_ID: String = "blacksmith5"
 
 @export_group("Stage 2")
-@export var stage2_axe: Item
+@export var stage2_axe: ToolItem
 
 func _ready() -> void:
 	QuestManager.register_quest(stage1_ID, $Stage1Quest)
@@ -77,7 +77,7 @@ func stage2():
 		QuestManager.update_quest(stage2_ID, quest)
 		return
 
-	var _hasCount = GameManager.player.hasCount("Lumber Item One", 1)
+	var _hasCount = GameManager.player.hasCount("Lumber", 20)
 	var has_enough: bool  = _hasCount[0]
 	var actual_count: int = _hasCount[1]
 
