@@ -11,6 +11,9 @@ Blacksmith: I need you to go get some iron from the mine. Then bring it back to 
 ~ stage1_started
 Blacksmith: You haven't talked to the Miner yet.
 => END
+~ stage1_error
+Blacksmith: Somehow you don't have iron (BUG)
+=> END
 ~ stage1_reached_goal
 Blacksmith: Thank you!
 => END

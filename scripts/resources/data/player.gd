@@ -1,6 +1,7 @@
 class_name PlayerData extends Resource
 
 signal collect_item(item: Item, count: int)
+signal remove_item(id: String)
 
 @export var name: String = "DEFAULT_NAME"
 @export var can_build: bool = true
@@ -16,8 +17,16 @@ func collectItem(item: Item, count: int = 1) -> void:
 		
 func collectItems(items: Array[Item]) -> void:
 	for item in items:
-		items.append(item)
+		self.items.append(item)
 		collect_item.emit(item, 1)
+
+func removeItem(id: String) -> void:
+	items = items.filter(func(item): return item.id != id)
+	remove_item.emit(id)
+		
+func removeItems(ids: Array[String]) -> void:
+	for id in ids:
+		removeItem(id)
 
 func has(name: String) -> bool:
 	for item in items:
@@ -25,6 +34,18 @@ func has(name: String) -> bool:
 			return true
 	return false
 	
+func hasID(id: String) -> bool:
+	for item in items:
+		if item.id == id:
+			return true
+	return false
+	
+func hasIDs(ids: Array[String]) -> bool:
+	for id in ids:
+		if not hasID(id):
+			return false
+	return true
+
 ## Returns: [has_enough: bool, amount: int]
 func hasCount(name: String, count: int) -> Array:
 	var _count := 0

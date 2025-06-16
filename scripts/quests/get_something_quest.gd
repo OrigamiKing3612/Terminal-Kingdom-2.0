@@ -1,5 +1,7 @@
 class_name GetSomethingQuest extends QuestManager
 
+@export var data: Dictionary = {}
+
 func start_quest() -> void:
 	if not quest_status == QuestStatus.available:
 		return

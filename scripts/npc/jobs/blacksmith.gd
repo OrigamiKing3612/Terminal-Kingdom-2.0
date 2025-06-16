@@ -53,12 +53,16 @@ func stage1():
 		DialogueManager.show_dialogue_balloon(dialogue, "stage1_started")
 		QuestManager.update_quest(stage1_ID, quest)
 		return
-
 	if quest.quest_status == quest.QuestStatus.reached_goal:
-		DialogueManager.show_dialogue_balloon(dialogue, "stage1_reached_goal")
-		quest.finish_quest()
-		QuestManager.update_quest(stage1_ID, quest)
-		GameManager.player.skill.blacksmithing.stage = 2
+		var ids = quest.data["iron_ids"]
+		if GameManager.player.hasIDs(ids):
+			DialogueManager.show_dialogue_balloon(dialogue, "stage1_reached_goal")	
+			quest.finish_quest()
+			QuestManager.update_quest(stage1_ID, quest)
+			GameManager.player.removeItems(ids)
+			GameManager.player.skill.blacksmithing.stage = 2
+		else:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage1_error")
 		return
 	
 	

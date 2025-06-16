@@ -1,6 +1,7 @@
 extends Node
 
 @export var dialogue: DialogueResource
+@export var blacksmith_stage1_item: Item
 
 @export_group("Quest IDs")
 @export var stage1_ID: String = "miner1"
@@ -10,10 +11,29 @@ extends Node
 @export var stage5_ID: String = "miner5"
 
 func talk(data: NPCData) -> void:
+	print("Miner talk")
 	if GameManager.player.skill.blacksmithing.stage == 1:
+		print("Blacksmith1")
 		var quest = QuestManager.get_quest("blacksmith1")
 		if quest.quest_status == quest.QuestStatus.started:
+			print("started")
 			DialogueManager.show_dialogue_balloon(dialogue, "blacksmith_stage1")
+			var items: Array[Item] = []
+			var ids: Array[String] = []
+			for i in range(5):
+				print("i")
+				var id := UUID.string()
+				var item := blacksmith_stage1_item.duplicate()
+				print("item")
+				item.id = id
+				print("id")
+				ids.append(id)
+				items.append(item)
+				print("Appended")
+			GameManager.player.collectItems(items)
+			print("Collected")
+			quest.data["iron_ids"] = ids
+			print("setting data")
 			quest.reached_goal()
 			QuestManager.update_quest("blacksmith1", quest)
 			
