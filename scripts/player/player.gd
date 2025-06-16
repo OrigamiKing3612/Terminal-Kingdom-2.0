@@ -35,8 +35,7 @@ func _input(event: InputEvent) -> void:
 			if air_jump_counter > 0:
 				jump_name = "air_jump"
 			pressed_jump.emit()
-			# uncomment to enable double jump
-			#air_jump_counter += 1
+			air_jump_counter += 1
 
 
 func _ready() -> void:

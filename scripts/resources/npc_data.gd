@@ -1,6 +1,8 @@
 extends Resource
 class_name NPCData
 
+var id = UUID.string()
+
 @export_group("NPC Settings")
 @export var name: String = ""
 @export var job: NPCEnums.Job = NPCEnums.Job.None

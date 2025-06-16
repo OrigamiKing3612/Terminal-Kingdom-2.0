@@ -6,6 +6,9 @@ extends Node
 @export var selected_item_index: int = 0
 @export var selected_gridmap_id: int = 0
 @export var player: PlayerData
+@export var kingdom: Kingdom
+
+@export var testing_items: Array[Item] = []
 
 signal show_inventory
 signal hide_inventory
@@ -18,6 +21,9 @@ signal left_click
 
 signal build_next
 signal build_back
+
+signal tool_next
+signal tool_back
 
 signal stop_mining
 signal mine_left_click
@@ -58,12 +64,17 @@ func _input(event: InputEvent) -> void:
 			if event.is_action_released("inventory"):
 				if inventory_box.visible == false:
 					show_inventory_box()
-					#inventory_update.emit()
-			if player.can_build && event.is_action_released("build"):
+			elif player.can_build && event.is_action_released("build"):
 				if player.items.size() < 0:
 					return
 				if building_box.visible == false:
 					show_buildable_items()
+			elif event.is_action_released("back_option"):
+				tool_back.emit()
+			elif event.is_action_released("next_option"):
+				tool_next.emit()
+			elif event.is_action_pressed("testing"):
+				player.collectItems(testing_items as Array[Item])
 		Mode.Build:
 			if event.is_action_released("back_option"):
 				build_back.emit()
@@ -107,6 +118,7 @@ func hide_buildable_items() -> void:
 func _on_collect_item(item: Item, count: int) -> void:
 	var value := "+ " + item.name + " x" + str(count)
 	show_message.emit(value)
+	inventory_update.emit()
 	
 func _on_dialogue_started(resource: DialogueResource):
 	mode = Mode.Speaking

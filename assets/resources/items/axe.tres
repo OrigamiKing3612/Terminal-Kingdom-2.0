@@ -7,7 +7,7 @@
 script = ExtResource("1_f7884")
 durability = 55
 name = "Axe"
-price = 2
+price = 10
 can_be_sold = true
 is_buildable = false
 texture_2d = ExtResource("2_jmyko")

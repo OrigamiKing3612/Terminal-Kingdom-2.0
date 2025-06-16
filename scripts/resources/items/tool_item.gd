@@ -1,4 +1,5 @@
-class_name ToolItem extends Item
+extends Item
+class_name ToolItem 
 
 #@export_group("Tool Settings")
 @export var durability: int = 55

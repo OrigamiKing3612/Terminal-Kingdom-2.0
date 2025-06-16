@@ -16,6 +16,7 @@ func collectItem(item: Item, count: int = 1) -> void:
 	collect_item.emit(item, count)
 		
 func collectItems(items: Array[Item]) -> void:
+	var messages: Dictionary[Item, int] = {}
 	for item in items:
 		self.items.append(item)
 		collect_item.emit(item, 1)
