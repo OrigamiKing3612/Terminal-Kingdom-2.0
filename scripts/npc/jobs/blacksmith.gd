@@ -12,6 +12,9 @@ extends Node
 @export_group("Stage 2")
 @export var stage2_axe: ToolItem
 
+@export_group("Stage 3")
+@export var stage3_lumber_item: Item
+
 func _ready() -> void:
 	QuestManager.register_quest(stage1_ID, $Stage1Quest)
 	QuestManager.register_quest(stage2_ID, $Stage2Quest)
@@ -42,28 +45,24 @@ func stage1():
 	var quest = QuestManager.get_quest(stage1_ID)
 	if quest == null:
 		return
-	if quest.quest_status == quest.QuestStatus.available:
-		GameManager.player.skill.blacksmithing.stage = 1
-		quest.start_quest()
-		DialogueManager.show_dialogue_balloon(dialogue, "stage1_available")
-		QuestManager.update_quest(stage1_ID, quest)
-		return
-		
-	if quest.quest_status == quest.QuestStatus.started:
-		DialogueManager.show_dialogue_balloon(dialogue, "stage1_started")
-		QuestManager.update_quest(stage1_ID, quest)
-		return
-	if quest.quest_status == quest.QuestStatus.reached_goal:
-		var ids = quest.data["iron_ids"]
-		if GameManager.player.hasIDs(ids):
-			DialogueManager.show_dialogue_balloon(dialogue, "stage1_reached_goal")	
-			quest.finish_quest()
+	match quest.quest_status:
+		quest.QuestStatus.available:
+			GameManager.player.skill.blacksmithing.stage = 1
+			quest.start_quest()
+			DialogueManager.show_dialogue_balloon(dialogue, "stage1_available")
 			QuestManager.update_quest(stage1_ID, quest)
-			GameManager.player.removeItems(ids)
-			GameManager.player.skill.blacksmithing.stage = 2
-		else:
-			DialogueManager.show_dialogue_balloon(dialogue, "stage1_error")
-		return
+		quest.QuestStatus.started:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage1_started")
+		quest.QuestStatus.reached_goal:
+			var ids = quest.data["iron_ids"]
+			if GameManager.player.hasIDs(ids):
+				DialogueManager.show_dialogue_balloon(dialogue, "stage1_reached_goal")	
+				quest.finish_quest()
+				QuestManager.update_quest(stage1_ID, quest)
+				GameManager.player.removeItems(ids)
+				GameManager.player.skill.blacksmithing.stage = 2
+			else:
+				DialogueManager.show_dialogue_balloon(dialogue, "stage1_error")
 	
 	
 func stage2():
@@ -102,43 +101,34 @@ func stage3():
 	var quest = QuestManager.get_quest(stage3_ID)
 	if quest == null:
 		return
-	if quest.quest_status == quest.QuestStatus.available:
-		DialogueManager.show_dialogue_balloon(dialogue, "stage3_available")
-		quest.start_quest()
-		QuestManager.update_quest(stage3_ID, quest)
-		return
-		 
-	if quest.quest_status == quest.QuestStatus.started:
-		DialogueManager.show_dialogue_balloon(dialogue, "stage3_started")
-		QuestManager.update_quest(stage3_ID, quest)
-		return
-
-	if quest.quest_status == quest.QuestStatus.reached_goal:
-		GameManager.player.skill.blacksmithing.stage = 4
-		DialogueManager.show_dialogue_balloon(dialogue, "stage3_reached_goal")
-		quest.finish_quest()
-		QuestManager.update_quest(stage3_ID, quest)
-		return
+	match quest.quest_status:
+		quest.QuestStatus.available:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage3_available")
+			quest.data["lumber_ids"] = Utils.givePlayerCountOfItem(stage3_lumber_item, 5)
+			quest.start_quest()
+			QuestManager.update_quest(stage3_ID, quest)
+		quest.QuestStatus.started:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage3_started")
+		quest.QuestStatus.reached_goal:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage3_reached_goal")
+			quest.finish_quest()
+			QuestManager.update_quest(stage3_ID, quest)
+			GameManager.player.skill.blacksmithing.stage = 4
 
 func stage4():
 	var quest = QuestManager.get_quest(stage4_ID)
 	if quest == null:
 		return
-	if quest.quest_status == quest.QuestStatus.available:
-		DialogueManager.show_dialogue_balloon(dialogue, "stage4_available")
-		quest.start_quest()
-		QuestManager.update_quest(stage4_ID, quest)
-		return
-
-	if quest.quest_status == quest.QuestStatus.started:
-		DialogueManager.show_dialogue_balloon(dialogue, "stage4_started")
-		QuestManager.update_quest(stage4_ID, quest)
-		return
-
-	if quest.quest_status == quest.QuestStatus.reached_goal:
-		GameManager.player.skill.blacksmithing.stage = 5
-		DialogueManager.show_dialogue_balloon(dialogue, "stage4_reached_goal")
-		quest.finish_quest()
-		QuestManager.update_quest(stage4_ID, quest)
-		return
+	match quest.quest_status:
+		quest.QuestStatus.available:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage4_available")
+			quest.start_quest()
+			QuestManager.update_quest(stage4_ID, quest)
+		quest.QuestStatus.started:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage4_started")
+		quest.QuestStatus.reached_goal:
+			GameManager.player.skill.blacksmithing.stage = 5
+			DialogueManager.show_dialogue_balloon(dialogue, "stage4_reached_goal")
+			quest.finish_quest()
+			QuestManager.update_quest(stage4_ID, quest)
 	

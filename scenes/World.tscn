@@ -37,6 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 2, 116)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 4, -20)
 
 [node name="Carpentery" parent="Buildings" instance=ExtResource("10_h1bdy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.75, 3, 0)
 
 [node name="Builder" parent="Buildings" instance=ExtResource("5_h1bdy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222, 2, 6)

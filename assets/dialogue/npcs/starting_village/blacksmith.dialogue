@@ -32,7 +32,7 @@ Blacksmith: Thank you!
 => END
 
 ~ stage3_available
-Blacksmith: Now I need you to give this lumber to the carpenter to get sticksd.
+Blacksmith: Now I need you to give this lumber to the carpenter to get sticks.
 => END
 ~ stage3_started
 Blacksmith: You haven't gone to the carpenter yet.

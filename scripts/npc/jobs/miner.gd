@@ -15,16 +15,7 @@ func talk(data: NPCData) -> void:
 		var quest = QuestManager.get_quest("blacksmith1")
 		if quest.quest_status == quest.QuestStatus.started:
 			DialogueManager.show_dialogue_balloon(dialogue, "blacksmith_stage1")
-			var items: Array[Item] = []
-			var ids: Array[String] = []
-			for i in range(5):
-				var id := UUID.string()
-				var item := blacksmith_stage1_item.duplicate()
-				item.id = id
-				ids.append(id)
-				items.append(item)
-			GameManager.player.collectItems(items)
-			quest.data["iron_ids"] = ids
+			quest.data["iron_ids"] = Utils.givePlayerCountOfItem(blacksmith_stage1_item, 5)
 			quest.reached_goal()
 			QuestManager.update_quest("blacksmith1", quest)
 			
