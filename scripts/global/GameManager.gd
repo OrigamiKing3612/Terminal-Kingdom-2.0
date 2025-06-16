@@ -3,6 +3,10 @@ extends Node
 @onready var inventory_box: CanvasLayer = $InventoryBox
 @onready var building_box: CanvasLayer = $BuildingBox
 
+@export var selected_item_index: int = 0
+@export var selected_gridmap_id: int = 0
+@export var player: PlayerData
+
 signal show_inventory
 signal hide_inventory
 signal show_building
@@ -23,13 +27,7 @@ signal show_message(text: String)
 
 var move: bool = true
 var has_popup: bool = false
-
 var mode: Mode = Mode.Normal
-
-@export var selected_item_index: int = 0
-@export var selected_gridmap_id: int = 0
-
-@export var player: PlayerData
 var random: RandomNumberGenerator
 
 enum Mode{Normal, Inventory, Build, Mining, Speaking}
@@ -41,6 +39,7 @@ func _ready() -> void:
 	player.collect_item.connect(_on_collect_item)
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+	inventory_box.hide()
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("left_click") or event.is_action_pressed("right_click")) and move == false and mode != Mode.Inventory and has_popup == false:

@@ -5,11 +5,17 @@
 
 [resource]
 script = ExtResource("1_8qmsh")
+id = null
 name = "Basket"
 price = 0
 can_be_sold = false
 is_buildable = true
 texture_2d = ExtResource("2_y4pd2")
-position_in_inventory = Vector2(100, 100)
-gridmap_id = 0
+position_in_inventory = null
+gridmap_id = null
+generate_item = null
+generate_preview = null
+preview_file = null
+override_name = null
+overriden_name = null
 metadata/_custom_type_script = "uid://cn074wlyew4kj"
