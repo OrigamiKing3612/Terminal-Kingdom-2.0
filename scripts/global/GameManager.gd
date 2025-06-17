@@ -130,6 +130,9 @@ func _on_collect_item(item: Item, count: int) -> void:
 	inventory_update.emit()	
 	
 func _on_remove_item(item: Item) -> void:
+	if not item:
+		push_warning("Tried to emit message with null item")
+		return
 	var value := "-" + item.name 
 	show_message.emit(value)
 	inventory_update.emit()

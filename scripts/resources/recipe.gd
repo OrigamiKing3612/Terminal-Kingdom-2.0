@@ -8,7 +8,7 @@ func _init():
 	if self.get_script() == Recipe:
 		push_error("Recipe cannot be instantiated directly. Please extend it.")
 
-func create(recipe: Recipe) -> bool:
+func create() -> bool:
 	Utils._push_must_override_error("create")
 	return false
 

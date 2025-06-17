@@ -67,6 +67,8 @@ func refresh_tool_items():
 			tool_items.append(item)
 	if tool_items.size() > 0:
 		show_equipment_bar()
+	else:
+		hide_equipment_bar()
 
 
 func _on_game_manager_inventory_update() -> void:

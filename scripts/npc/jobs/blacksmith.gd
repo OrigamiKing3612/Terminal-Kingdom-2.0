@@ -56,6 +56,8 @@ func getStage():
 			stage5()
 		6: 
 			stage6()
+		7: 
+			stage7()
 		_:
 			print("Unknown Stage")
 			

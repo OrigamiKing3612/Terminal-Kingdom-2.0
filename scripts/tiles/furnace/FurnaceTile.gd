@@ -15,11 +15,14 @@ extends Node3D
 					fire.show()
 
 func _ready() -> void:
+	fire.hide()
+	if GameManager.player.skill.blacksmithing.stage == 5:
+		recipes = [load("res://assets/resources/recipes/furnace/steel.tres") as FurnaceRecipe]
+		return
 	var _recipes: Array[FurnaceRecipe] = []
 	for resource in Utils.load_all_from_path("res://assets/resources/recipes/furnace"):
 		if resource is FurnaceRecipe:
 			recipes.append(resource)
-	fire.hide()
 
 func _on_interacted() -> void:
 	#if state == FurnaceState.unused:
@@ -41,12 +44,6 @@ func _on_start_creating(recipe: Recipe) -> void:
 		return
 	state = FurnaceState.running
 	await get_tree().create_timer(recipe.seconds).timeout
-	
-	if GameManager.player.skill.blacksmithing.stage == 5:
-		var quest = QuestManager.get_quest("blacksmith5")
-		if quest and quest.quest_status == quest.QuestStatus.started:
-			quest.reached_goal()
-			QuestManager.update_quest("blacksmith5", quest)
 
-	recipe.create(recipe)
+	recipe.create()
 	state = FurnaceState.unused

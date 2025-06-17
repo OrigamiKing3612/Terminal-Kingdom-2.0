@@ -19,6 +19,8 @@ func _ready() -> void:
 	collision_shape_3d.shape = shape
 
 func interact() -> void:
+	if data == null:
+		push_error("NPC with null data")
 	if data.is_starting_village_npc:
 		talk_to_starting_village_npc()
 		return

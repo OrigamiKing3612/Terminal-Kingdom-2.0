@@ -39,16 +39,21 @@ func removeItem(id: String) -> void:
 func removeItems(ids: Array[String]) -> void:
 	for id in ids:
 		removeItem(id)
-		
-func removeItemItem(item: Item) -> void:
+
+func removeItemItem(item: Item, count: int = 1) -> void:
 	if not item:
 		push_warning("Tried to remove null item")
 		return
-	items = items.filter(func(i): 
-		if i.name == name:
-			return false
-		return true)
-	remove_item.emit(item)
+	var removed := 0
+	var new_items: Array[Item] = []
+	for i in items:
+		if i.name == item.name and removed < count:
+			removed += 1
+			remove_item.emit(i)
+		else:
+			new_items.append(i)
+
+	items = new_items
 
 func has(name: String) -> bool:
 	for item in items:
