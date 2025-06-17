@@ -50,8 +50,8 @@ func _ready():
 	tiles[36] = FOLDER_PATH + "stone_brick_stairs_drop.tres"
 	tiles[37] = FOLDER_PATH + "stone_bricks_drop.tres"
 	tiles[38] = FOLDER_PATH + "stone_brick_wall_drop.tres"
-	tiles[39] = FOLDER_PATH + "sand_slope_drop.tres"
-	tiles[40] = FOLDER_PATH + "sand_drop.tres"
+	tiles[39] = FOLDER_PATH + "sand_drop.tres"
+	tiles[40] = FOLDER_PATH + "sand_slope_drop.tres"
 	#tiles[41] = null # Water Tile
 	tiles[42] = FOLDER_PATH + "coin_item_drop.tres"
 	tiles[43] = FOLDER_PATH + "coal_item_drop.tres"

@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=4 uid="uid://bl0qt73ryudtp"]
+
+[ext_resource type="Texture2D" uid="uid://badrjulfrt51w" path="res://assets/models/StaticTiles_small-log.png" id="1_u0ixm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a806r"]
+resource_name = "wood log.003"
+cull_mode = 2
+albedo_texture = ExtResource("1_u0ixm")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m81ir"]
+_surfaces = [{
+"aabb": AABB(-0.375, -0.375, -1, 0.75, 0.75, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "wood log.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP7/AAD//wAA/v//////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qnwlj"]
+resource_name = "StaticTiles_Cube_004"
+_surfaces = [{
+"aabb": AABB(-0.375, -0.375, -1, 0.75, 0.75, 2),
+"attribute_data": PackedByteArray("/3////+/qer/v////3+p6v9/qer/v1TV/7+p6v9/VNX/f1TV/79Ulf+/VNX/f1SV/39Ulf+//3//v1SV/3//f/8/VNX/f1SV/39U1f8/VJX/v1TV//9Ulf//VNX/v1SV"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_a806r"),
+"name": "wood log.003",
+"primitive": 3,
+"uv_scale": Vector4(4, 3, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV/v//////VNX/////AABU1f7/AAD//1TV/v8AAP///78AAP//////v/7///////+/AAAAAP///78AAAAAAAD/v/7/AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD///7/////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_m81ir")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_er1c4"]
+data = PackedVector3Array(-0.375, -0.375, 0.999999, -0.375, 0.375, -1, -0.375, 0.375, 0.999999, -0.375, -0.375, 0.999999, -0.375, -0.375, -1, -0.375, 0.375, -1, -0.375, -0.375, -1, 0.375, 0.375, -1, -0.375, 0.375, -1, -0.375, -0.375, -1, 0.375, -0.375, -1, 0.375, 0.375, -1, 0.375, -0.375, -1, 0.375, 0.375, 0.999999, 0.375, 0.375, -1, 0.375, -0.375, -1, 0.375, -0.375, 0.999999, 0.375, 0.375, 0.999999, 0.375, -0.375, 0.999999, -0.375, 0.375, 0.999999, 0.375, 0.375, 0.999999, 0.375, -0.375, 0.999999, -0.375, -0.375, 0.999999, -0.375, 0.375, 0.999999, -0.375, -0.375, -1, 0.375, -0.375, 0.999999, 0.375, -0.375, -1, -0.375, -0.375, -1, -0.375, -0.375, 0.999999, 0.375, -0.375, 0.999999, 0.375, 0.375, -1, -0.375, 0.375, 0.999999, -0.375, 0.375, -1, 0.375, 0.375, -1, 0.375, 0.375, 0.999999, -0.375, 0.375, 0.999999)
+
+[node name="LumberItemTileOne" type="Node3D"]
+
+[node name="LumberItemTileOne" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.981602, 0, -0.190938, 0, 1, 0, 0.190938, 0, 0.981602, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnwlj")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LumberItemTileOne"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LumberItemTileOne/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_er1c4")

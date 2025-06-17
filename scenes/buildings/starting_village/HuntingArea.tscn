@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bcm8bqqo5jyy1"]
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_jms1m"]
-[ext_resource type="MeshLibrary" uid="uid://dukru3jyexwtq" path="res://assets/tiles.tres" id="2_apxlc"]
 [ext_resource type="Resource" uid="uid://fojnpcn5sobk" path="res://assets/resources/npc/hunter.tres" id="2_b0vrp"]
+[ext_resource type="MeshLibrary" uid="uid://bg77eu6w4exqp" path="res://assets/tiles.tres" id="3_415s6"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="3_b0vrp"]
 
 [node name="HuntingArea" type="Node3D"]
@@ -11,5 +11,5 @@
 data = ExtResource("2_b0vrp")
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("2_apxlc")
+mesh_library = ExtResource("3_415s6")
 script = ExtResource("3_b0vrp")
