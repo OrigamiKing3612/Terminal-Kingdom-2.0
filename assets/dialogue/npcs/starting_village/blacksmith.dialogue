@@ -77,6 +77,8 @@ Blacksmith: The hunter asked me to make him a sword. Why don't you do that? Here
 => END
 ~ stage7_started
 Blacksmith: You haven't gone to the anvil yet.
+=> END
+~ stage7_step_two
 Blacksmith: You haven't brought the sword to the hunter yet.
 => END
 ~ stage7_reached_goal

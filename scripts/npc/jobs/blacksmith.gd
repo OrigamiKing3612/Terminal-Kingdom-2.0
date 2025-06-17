@@ -9,6 +9,9 @@ extends Node
 @export var stage4_ID: String = "blacksmith4"
 @export var stage5_ID: String = "blacksmith5"
 @export var stage6_ID: String = "blacksmith6"
+@export var stage7_ID: String = "blacksmith7"
+@export var stage8_ID: String = "blacksmith8"
+@export var stage9_ID: String = "blacksmith9"
 
 @export_group("Stage 2")
 @export var stage2_axe: ToolItem
@@ -31,6 +34,7 @@ func _ready() -> void:
 	QuestManager.register_quest(stage4_ID, $Stage4Quest)
 	QuestManager.register_quest(stage5_ID, $Stage5Quest)
 	QuestManager.register_quest(stage6_ID, $Stage6Quest)
+	QuestManager.register_quest(stage7_ID, $Stage7Quest)
 
 func talk(_data: NPCData):
 	getStage()
@@ -181,3 +185,23 @@ func stage6():
 			DialogueManager.show_dialogue_balloon(dialogue, "stage6_reached_goal")
 			quest.finish_quest()
 			QuestManager.update_quest(stage6_ID, quest)
+			
+func stage7():
+	var quest = QuestManager.get_quest(stage7_ID)
+	if quest == null:
+		return
+	match quest.quest_status:
+		quest.QuestStatus.available:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage7_available")
+			quest.start_quest()
+			GameManager.player.collectItems([stage6_steel_item.copy(), stage6_stick_item.copy()])
+			QuestManager.update_quest(stage7_ID, quest)
+		quest.QuestStatus.started:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage7_started")
+		quest.QuestStatus.step_two:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage7_step_two")
+		quest.QuestStatus.reached_goal:
+			GameManager.player.skill.blacksmithing.stage = 8
+			DialogueManager.show_dialogue_balloon(dialogue, "stage7_reached_goal")
+			quest.finish_quest()
+			QuestManager.update_quest(stage7_ID, quest)

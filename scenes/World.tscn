@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://1gukb1yqks51"]
+[gd_scene load_steps=14 format=3 uid="uid://1gukb1yqks51"]
 
 [ext_resource type="PackedScene" uid="uid://bt8p520js50i3" path="res://scenes/ui/Environment.tscn" id="1_7c4bj"]
 [ext_resource type="PackedScene" uid="uid://cpamh1gadlcks" path="res://scenes/Player.tscn" id="5_1lgw5"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://67y5cb0skn3k" path="res://scenes/buildings/starting_village/Farm.tscn" id="10_nrtoj"]
 [ext_resource type="MeshLibrary" uid="uid://dukru3jyexwtq" path="res://assets/tiles.tres" id="10_pdh0q"]
 [ext_resource type="PackedScene" uid="uid://rt35jrh3xbfd" path="res://scenes/buildings/starting_village/Castle.tscn" id="11_7c4bj"]
+[ext_resource type="PackedScene" uid="uid://bcm8bqqo5jyy1" path="res://scenes/buildings/starting_village/HuntingArea.tscn" id="11_nrtoj"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="12_7c4bj"]
 [ext_resource type="Resource" uid="uid://bddkrgugao34a" path="res://assets/resources/npc/no_job.tres" id="12_nrtoj"]
 
@@ -44,6 +45,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222, 2, 6)
 
 [node name="Mine" parent="Buildings" instance=ExtResource("9_7c4bj")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 120, 2, 84)
+
+[node name="HuntingArea" parent="Buildings" instance=ExtResource("11_nrtoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.25, 3, 0)
 
 [node name="Ground" type="GridMap" parent="."]
 mesh_library = ExtResource("10_pdh0q")

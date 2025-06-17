@@ -1,0 +1,10 @@
+~ first_time
+Hunter: Hello {{GameManager.player.name}}! Would you like to learn how to hunt?
+- Yes
+	set GameManager.player.skill.hunting.stage = 1
+- No
+=> END
+
+~ blacksmith_stage7
+Hunter: Hello {{Game.shared.player.name}}! Thank you for this sword!!
+=> END

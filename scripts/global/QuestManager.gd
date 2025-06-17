@@ -9,7 +9,7 @@ class_name QuestManager extends Node
 @export var quest_status: QuestStatus = QuestStatus.available
 @export_multiline var reached_goal_text: String = ""
 
-enum QuestStatus{available, started, reached_goal, finished}
+enum QuestStatus{available, started, reached_goal, finished, step_two}
 
 static var _active_quests: Dictionary = {}
 
