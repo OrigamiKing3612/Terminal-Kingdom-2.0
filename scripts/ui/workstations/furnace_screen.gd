@@ -10,8 +10,11 @@ extends Control
 @onready var inputs_label: RichTextLabel = $InputsContainer/InputsLabel
 @onready var outputs_label: RichTextLabel = $OutputsContainer/OutputsLabel
 
+signal start_creating(Recipe)
+
 var recipes: Dictionary[String, FurnaceRecipe] = {}
 var selected_recipe: FurnaceRecipe
+var seleceted_id: String
 
 func _ready() -> void:
 	template_button.hide()
@@ -31,6 +34,7 @@ func set_recipes(rs: Array[FurnaceRecipe]):
 func _on_button_press(id: String) -> void:
 	create_button.hide()
 	selected_recipe = recipes[id]
+	seleceted_id = id
 	for c in inputs_container.get_children():
 		if c != inputs_label:
 			c.queue_free()
@@ -43,6 +47,7 @@ func _on_button_press(id: String) -> void:
 		input_button.text = "%s x%d" % [input.item.name, input.count]
 		inputs_container.add_child(input_button)
 		input_button.show()
+		
 	for output in selected_recipe.outputs:
 		var output_button = text_template.duplicate()
 		output_button.text = "%s x%d" % [output.item.name, output.count]
@@ -53,4 +58,6 @@ func _on_button_press(id: String) -> void:
 		create_button.show()
 
 func _on_create_button_pressed() -> void:
-	selected_recipe.create(selected_recipe)
+	create_button.disabled = true
+	start_creating.emit(selected_recipe)
+	queue_free()
