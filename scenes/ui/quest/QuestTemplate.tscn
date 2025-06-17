@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba7uw5pycgxnx"]
+
+[ext_resource type="Script" uid="uid://b2b7782tw6dep" path="res://scripts/ui/quest/quest_template.gd" id="1_w6q8j"]
+
+[node name="QuestTemplate" type="Panel"]
+offset_right = 144.0
+offset_bottom = 48.0
+script = ExtResource("1_w6q8j")
+metadata/_custom_type_script = "uid://b2b7782tw6dep"
+
+[node name="QuestTitle" type="RichTextLabel" parent="."]
+offset_right = 339.0
+offset_bottom = 25.0
+text = "QuestTitle"
+
+[node name="QuestDescription" type="RichTextLabel" parent="."]
+offset_left = 1.0
+offset_top = 24.0
+offset_right = 319.0
+offset_bottom = 47.0
+text = "Quest Description"

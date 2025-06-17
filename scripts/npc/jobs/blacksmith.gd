@@ -47,8 +47,8 @@ func talk(_data: NPCData):
 			quest.data["pickaxe_id"] = Utils.givePlayerCountOfItem(mine_stage1_pickaxe.copy(), 1)
 			quest.reached_goal()
 			QuestManager.update_quest("mine1", quest)
-	else:
-		getStage()
+			return
+	getStage()
 	
 func getStage():
 	match GameManager.player.skill.blacksmithing.stage:

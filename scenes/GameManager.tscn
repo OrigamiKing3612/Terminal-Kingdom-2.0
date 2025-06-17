@@ -26,19 +26,10 @@ kingdom = ExtResource("3_1jauj")
 testing_items = Array[ExtResource("4_55cbs")]([ExtResource("5_r03xe"), ExtResource("6_440lp")])
 
 [node name="QuestBox" type="CanvasLayer" parent="."]
-visible = false
 
-[node name="QuestTitle" type="RichTextLabel" parent="QuestBox"]
-offset_right = 339.0
-offset_bottom = 25.0
-text = "QuestTitle"
-
-[node name="QuestDescription" type="RichTextLabel" parent="QuestBox"]
-offset_left = 1.0
-offset_top = 24.0
-offset_right = 319.0
-offset_bottom = 47.0
-text = "Quest Description"
+[node name="QuestContainer" type="VBoxContainer" parent="QuestBox"]
+offset_right = 552.0
+offset_bottom = 660.0
 
 [node name="InventoryBox" type="CanvasLayer" parent="."]
 visible = false

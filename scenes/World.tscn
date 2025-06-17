@@ -19,7 +19,7 @@
 [node name="Environment" parent="." instance=ExtResource("1_7c4bj")]
 
 [node name="Player" parent="." instance=ExtResource("5_1lgw5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5, 3, 97.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.25, 3, 71.25)
 
 [node name="NoJobNPC" parent="." instance=ExtResource("7_0uv0p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160, 3, 23)
@@ -35,7 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -41)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 2, 116)
 
 [node name="Farm" parent="Buildings" instance=ExtResource("10_nrtoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 4, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.5, 4.75, -103.5)
 
 [node name="Carpentery" parent="Buildings" instance=ExtResource("10_h1bdy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.75, 3, 0)
