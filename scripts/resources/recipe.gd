@@ -8,5 +8,12 @@ func _init():
 	if self.get_script() == Recipe:
 		push_error("Recipe cannot be instantiated directly. Please extend it.")
 
-func create(recipe: Recipe) -> void:
+func create(recipe: Recipe) -> bool:
 	Utils._push_must_override_error("create")
+	return false
+
+func can_create() -> bool:
+	for input in inputs:
+		if not GameManager.player.hasCount(input.item.name, input.count)[0]:
+			return false
+	return true

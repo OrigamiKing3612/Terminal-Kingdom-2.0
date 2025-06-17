@@ -44,6 +44,7 @@ metadata/_custom_type_script = "uid://211derjh3jig"
 
 [resource]
 script = ExtResource("1_jtsbg")
+seconds = 10
 inputs = Array[ExtResource("1_i1elw")]([SubResource("Resource_tbog6"), SubResource("Resource_3tsv7")])
 outputs = Array[ExtResource("1_i1elw")]([SubResource("Resource_htov3")])
 metadata/_custom_type_script = "uid://cch7usyguax67"

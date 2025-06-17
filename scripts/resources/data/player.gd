@@ -11,11 +11,17 @@ signal remove_item(item: Item)
 @export var skill: Skill
 
 func collectItem(item: Item, count: int = 1) -> void:
+	if not item:
+		push_warning("Tried to collect null item")
+		return
 	for i in count:
 		items.append(item)
 	collect_item.emit(item, count)
 		
 func collectItems(items: Array[Item]) -> void:
+	if not items:
+		push_warning("Tried to collect null items")
+		return
 	var messages: Dictionary[Item, int] = {}
 	for item in items:
 		self.items.append(item)
@@ -33,6 +39,16 @@ func removeItem(id: String) -> void:
 func removeItems(ids: Array[String]) -> void:
 	for id in ids:
 		removeItem(id)
+		
+func removeItemItem(item: Item) -> void:
+	if not item:
+		push_warning("Tried to remove null item")
+		return
+	items = items.filter(func(i): 
+		if i.name == name:
+			return false
+		return true)
+	remove_item.emit(item)
 
 func has(name: String) -> bool:
 	for item in items:

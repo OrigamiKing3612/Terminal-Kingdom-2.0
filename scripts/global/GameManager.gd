@@ -75,7 +75,10 @@ func _input(event: InputEvent) -> void:
 			elif event.is_action_released("next_option"):
 				tool_next.emit()
 			elif event.is_action_pressed("testing"):
-				player.collectItems(testing_items as Array[Item])
+				var items: Array[Item] = []
+				for ti in testing_items:
+					items.append(ti.copy() as Item)
+				player.collectItems(items)
 		Mode.Build:
 			if event.is_action_released("back_option"):
 				build_back.emit()

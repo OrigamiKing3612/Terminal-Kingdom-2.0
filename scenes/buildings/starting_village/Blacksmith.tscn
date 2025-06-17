@@ -324,7 +324,6 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="FurnaceTile" parent="LightmapGI" instance=ExtResource("4_rknaw")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.5, 3.1, 14.8)
-state = 0
 
 [node name="LanternTile" parent="LightmapGI" instance=ExtResource("5_mc6ss")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 9.9, 21)

@@ -16,7 +16,7 @@ extends Node3D
 
 func _ready() -> void:
 	var recipes: Array[FurnaceRecipe] = []
-	for resource in Utils.load_all_from_path("res://scripts/resources/recipes/furnace/"):
+	for resource in Utils.load_all_from_path("res://assets/resources/recipes/furnace/"):
 		if resource is FurnaceRecipe:
 			recipes.append(resource)
 	fire.hide()
@@ -28,7 +28,7 @@ func _on_interacted() -> void:
 		#state = FurnaceState.unused
 	#print("furnace: " + str(state))
 	var popup = furnace_screen.instantiate()
-	popup.recipes = recipes
+	popup.set_recipes(recipes)
 	SceneManager.show_popup(popup)
 
 enum FurnaceState{
