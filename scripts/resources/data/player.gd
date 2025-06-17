@@ -9,6 +9,7 @@ signal remove_item(item: Item)
 @export var items: Array[Item] = []
 
 @export var skill: Skill
+@export var mining_level: int = 1
 
 func collectItem(item: Item, count: int = 1) -> void:
 	if not item:

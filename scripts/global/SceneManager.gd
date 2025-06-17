@@ -1,17 +1,36 @@
 extends Node
 
-var previous_scene: String
+#var world_scene: Node = null
+var overlay_scene: Node = null
+
 var current_popup: Control = null
 
+#func _ready():
+	#world_scene = 
+
 func go_to_scene(new_scene: PackedScene):
-	previous_scene = get_tree().current_scene.scene_file_path
-	get_tree().change_scene_to_packed(new_scene)
+	#if world_scene and world_scene.visible:
+	get_tree().root.get_node("Game").hide()
+
+	if overlay_scene:
+		overlay_scene.queue_free()
+
+	overlay_scene = new_scene.instantiate()
+	
+	if overlay_scene is Node3D:
+		overlay_scene.transform.origin = Vector3(0, -80, 0)
+	
+	get_tree().root.add_child(overlay_scene)
 
 func go_back():
-	if previous_scene:
-		get_tree().change_scene_to_file(previous_scene)
-	else:
-		print("No previous scene to go back to.")
+	if overlay_scene:
+		overlay_scene.queue_free()
+		overlay_scene = null
+
+	#if world_scene:
+	get_tree().root.get_node("Game").show()
+	#else:
+		#print("No world scene to show.")
 
 func free_cursor(): 
 	GameManager.move = false

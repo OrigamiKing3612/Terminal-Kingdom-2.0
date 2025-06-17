@@ -1,6 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://d1423i0apxkoa"]
-
-[ext_resource type="LightmapGIData" uid="uid://2gr01ojbpsl8" path="res://assets/resources/lightmaps/LanternTile.lmbake" id="1_c7v3y"]
+[gd_scene load_steps=6 format=4 uid="uid://d1423i0apxkoa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv4si"]
 resource_name = "LampMetal"
@@ -92,6 +90,3 @@ light_indirect_energy = 0.5
 light_specular = 5.0
 omni_range = 20.0
 omni_attenuation = 1.5
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-light_data = ExtResource("1_c7v3y")

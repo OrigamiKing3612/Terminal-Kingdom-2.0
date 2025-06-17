@@ -1,6 +1,5 @@
-[gd_scene load_steps=27 format=4 uid="uid://bxdpwrk0ydfqq"]
+[gd_scene load_steps=26 format=4 uid="uid://bxdpwrk0ydfqq"]
 
-[ext_resource type="LightmapGIData" uid="uid://b723jyo680th2" path="res://assets/resources/lightmaps/buildings/Blacksmith.lmbake" id="1_hkro8"]
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_vkax0"]
 [ext_resource type="Resource" uid="uid://cbto4o8wytoxs" path="res://assets/resources/npc/blacksmith.tres" id="2_rknaw"]
 [ext_resource type="Texture2D" uid="uid://ctj6waod5a14c" path="res://assets/models/StaticTiles_rough-stone-albedo.png" id="3_rgilu"]
@@ -310,10 +309,11 @@ _surfaces = [{
 
 [node name="Blacksmith" type="Node3D"]
 
-[node name="LightmapGI" type="LightmapGI" parent="."]
-light_data = ExtResource("1_hkro8")
+[node name="BlacksmithNPC" parent="." instance=ExtResource("1_vkax0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.37507, 2.99887, 20.1607)
+data = ExtResource("2_rknaw")
 
-[node name="GridMap" type="GridMap" parent="LightmapGI"]
+[node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("3_vkax0")
 baked_meshes = [SubResource("ArrayMesh_uukfs"), SubResource("ArrayMesh_8cbx4"), SubResource("ArrayMesh_wdgxf"), SubResource("ArrayMesh_d65oq"), SubResource("ArrayMesh_lo0hq"), SubResource("ArrayMesh_fsfpe")]
 data = {
@@ -322,24 +322,20 @@ data = {
 script = ExtResource("4_2ijw6")
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="FurnaceTile" parent="LightmapGI" instance=ExtResource("4_rknaw")]
+[node name="FurnaceTile" parent="." instance=ExtResource("4_rknaw")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.5, 3.1, 14.8)
 
-[node name="LanternTile" parent="LightmapGI" instance=ExtResource("5_mc6ss")]
+[node name="LanternTile" parent="." instance=ExtResource("5_mc6ss")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 9.9, 21)
 
-[node name="LanternTile2" parent="LightmapGI" instance=ExtResource("5_mc6ss")]
+[node name="LanternTile2" parent="." instance=ExtResource("5_mc6ss")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 9.9, 29)
 
-[node name="AnvilTile" parent="LightmapGI" instance=ExtResource("5_64ga3")]
+[node name="AnvilTile" parent="." instance=ExtResource("5_64ga3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 39)
 
-[node name="AnvilTile2" parent="LightmapGI" instance=ExtResource("5_64ga3")]
+[node name="AnvilTile2" parent="." instance=ExtResource("5_64ga3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 39)
 
-[node name="AnvilTile3" parent="LightmapGI" instance=ExtResource("5_64ga3")]
+[node name="AnvilTile3" parent="." instance=ExtResource("5_64ga3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 3, 39)
-
-[node name="BlacksmithNPC" parent="." instance=ExtResource("1_vkax0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.37507, 2.99887, 20.1607)
-data = ExtResource("2_rknaw")

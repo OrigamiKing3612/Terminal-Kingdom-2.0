@@ -12,7 +12,7 @@ metadata/_custom_type_script = "uid://b2b7782tw6dep"
 [node name="QuestTitle" type="RichTextLabel" parent="."]
 offset_right = 288.0
 offset_bottom = 25.0
-text = "QuestTitle"
+text = "Quest Title"
 fit_content = true
 
 [node name="QuestDescription" type="RichTextLabel" parent="."]

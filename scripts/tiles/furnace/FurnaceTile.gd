@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var fire: MeshInstance3D = $LightmapGI/Fire
+@onready var fire: MeshInstance3D = $Fire
 @export var furnace_screen: PackedScene
 
 @export var recipes: Array[FurnaceRecipe]

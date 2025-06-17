@@ -1,7 +1,7 @@
 extends GridMap
 
 var noise := FastNoiseLite.new()
-var excluded_area := Vector3(3, 2, 3)
+var excluded_area := Vector3i(3, 2, 3)
 
 @export var dirt_tile: Item
 @export var stone_tile: Item
@@ -11,7 +11,13 @@ var excluded_area := Vector3(3, 2, 3)
 @export var clay_tile: Item
 
 func _ready() -> void:
-	generate_noise_area(Vector3(-32,0,-32), Vector3(64,15,64))
+	GameManager.stop_mining.connect(_on_stop_mining)
+	var size: Vector3i
+	if GameManager.player.mining_level == 1:
+		size = Vector3i(64,3,64)
+	else:
+		size = Vector3i(64,15,64)
+	generate_noise_area(Vector3i(-32,0,-32), size)
 	dirt_tile = dirt_tile.copy()
 	stone_tile = stone_tile.copy()
 	gold_ore = gold_ore.copy()
@@ -19,18 +25,22 @@ func _ready() -> void:
 	coal_ore = coal_ore.copy()
 	clay_tile = clay_tile.copy()
 
+func _on_stop_mining():
+	SceneManager.go_back()
+	GameManager.mode = GameManager.Mode.Normal
+
 func destroy_tile(world_coordinate):
 	var map_coordinate = local_to_map(world_coordinate)
 	if map_coordinate.y == 0:
 		return
 	set_cell_item(map_coordinate, -1)
 	
-func generate_noise_area(origin: Vector3, size: Vector3) -> void:
-	for x in range(int(origin.x), int(origin.x + size.x)):
-		for z in range(int(origin.z), int(origin.z + size.z)):
-			var height = int(noise.get_noise_2d(x, z) * 3) + size.y
+func generate_noise_area(origin: Vector3i, size: Vector3i) -> void:
+	for x in range(origin.x, origin.x + size.x):
+		for z in range(origin.z, origin.z + size.z):
+			var height = noise.get_noise_2d(x, z) * 3 + size.y
 
-			for y in range(int(origin.y), height):
+			for y in range(origin.y, height):
 				var pos = Vector3i(x, y, z)
 				#if is_in_excluded_area(pos):
 					#continue

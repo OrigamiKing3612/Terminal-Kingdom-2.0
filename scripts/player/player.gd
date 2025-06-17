@@ -40,8 +40,11 @@ func _input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	change_movement_state("stand")
-	GameManager.left_click.connect(_on_left_click)
-	GameManager.right_click.connect(_on_right_click)
+	if GameManager.mode == GameManager.Mode.Mining:
+		GameManager.mine_left_click.connect(_on_left_click)
+	else:
+		GameManager.left_click.connect(_on_left_click)
+		GameManager.right_click.connect(_on_right_click)
 	
 func _physics_process(delta: float) -> void:
 	if is_movement_ongoing():
