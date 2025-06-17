@@ -27,6 +27,9 @@ extends Node
 @export var stage6_steel_item: Item = null
 @export var stage6_stick_item: Item = null
 
+@export_group("Other")
+@export var mine_stage1_pickaxe: Item = null
+
 func _ready() -> void:
 	QuestManager.register_quest(stage1_ID, $Stage1Quest)
 	QuestManager.register_quest(stage2_ID, $Stage2Quest)
@@ -37,7 +40,15 @@ func _ready() -> void:
 	QuestManager.register_quest(stage7_ID, $Stage7Quest)
 
 func talk(_data: NPCData):
-	getStage()
+	if GameManager.player.skill.mining.stage == 1:
+		var quest = QuestManager.get_quest("mine1")
+		if quest.quest_status == quest.QuestStatus.started:
+			DialogueManager.show_dialogue_balloon(dialogue, "mine_stage1")
+			quest.data["pickaxe_id"] = Utils.givePlayerCountOfItem(mine_stage1_pickaxe.copy(), 1)
+			quest.reached_goal()
+			QuestManager.update_quest("mine1", quest)
+	else:
+		getStage()
 	
 func getStage():
 	match GameManager.player.skill.blacksmithing.stage:

@@ -19,11 +19,6 @@ func _ready() -> void:
 	coal_ore = coal_ore.copy()
 	clay_tile = clay_tile.copy()
 
-
-func _process(delta: float) -> void:
-	pass
-
-
 func destroy_tile(world_coordinate):
 	var map_coordinate = local_to_map(world_coordinate)
 	if map_coordinate.y == 0:
@@ -64,7 +59,7 @@ func generate_noise_area(origin: Vector3, size: Vector3) -> void:
 				set_cell_item(pos, block_id, 0)
 
 			# Top layer: grass
-			var pos = Vector3i(x, height, z)
+			#var pos = Vector3i(x, height, z)
 			#if not is_in_excluded_area(pos):
 				#set_cell_item(pos, dirt_block_id, 0)
 			

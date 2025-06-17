@@ -4,11 +4,14 @@ extends Node
 @export var blacksmith_stage1_iron: Item  = null
 
 @export_group("Quest IDs")
-@export var stage1_ID: String = "miner1"
-@export var stage2_ID: String = "miner2"
-@export var stage3_ID: String = "miner3"
-@export var stage4_ID: String = "miner4"
-@export var stage5_ID: String = "miner5"
+@export var stage1_ID: String = "mine1"
+@export var stage2_ID: String = "mine2"
+@export var stage3_ID: String = "mine3"
+@export var stage4_ID: String = "mine4"
+@export var stage5_ID: String = "mine5"
+
+func _ready() -> void:
+	QuestManager.register_quest(stage1_ID, $Stage1Quest)
 
 func talk(data: NPCData) -> void:
 	if GameManager.player.skill.blacksmithing.stage == 1:
@@ -18,7 +21,6 @@ func talk(data: NPCData) -> void:
 			quest.data["iron_ids"] = Utils.givePlayerCountOfItem(blacksmith_stage1_iron.copy(), 5)
 			quest.reached_goal()
 			QuestManager.update_quest("blacksmith1", quest)
-			
 	elif GameManager.player.skill.blacksmithing.stage == 4:
 		var quest = QuestManager.get_quest("blacksmith4")
 		if quest.quest_status == quest.QuestStatus.started:
@@ -28,7 +30,7 @@ func talk(data: NPCData) -> void:
 	else:
 		getStage()
 func getStage():
-	match GameManager.player.skill.blacksmithing.stage:
+	match GameManager.player.skill.mining.stage:
 		0:
 			DialogueManager.show_dialogue_balloon(dialogue, "first_time")
 			SceneManager.free_cursor()
@@ -60,9 +62,12 @@ func stage1():
 		return
 
 	if quest.quest_status == quest.QuestStatus.reached_goal:
-		GameManager.player.skill.blacksmithing.stage = 2
 		DialogueManager.show_dialogue_balloon(dialogue, "stage1_reached_goal")
+		var id = quest.data["pickaxe_id"]
+		GameManager.player.removeItems(id)
+		quest.data["pickaxe_id"] = []
 		quest.finish_quest()
 		QuestManager.update_quest(stage1_ID, quest)
+		GameManager.player.skill.mining.stage = 2
 		return
 	

@@ -7,7 +7,7 @@ func create() -> bool:
 		return false
 	for input in inputs:
 		GameManager.player.removeItemItem(input.item, input.count)
-			
+
 	var id_for_stages: Array[String] = []
 	for output in outputs:
 		var output_item := output.item
