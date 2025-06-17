@@ -52,7 +52,7 @@ Blacksmith: Thank you!
 => END
 
 ~ stage5_available
-Blacksmith: Now you get to do the fun stuff. I need to you make some steel. Go over to the furnace.
+Blacksmith: Now you get to do the fun stuff. I need to you make some steel. Go over to the furnace and create some!
 => END
 ~ stage5_started
 Blacksmith: You haven't gone to the furnace yet.

@@ -14,6 +14,6 @@ func create(recipe: Recipe) -> bool:
 
 func can_create() -> bool:
 	for input in inputs:
-		if not GameManager.player.hasCount(input.item.name, input.count)[0]:
+		if not GameManager.player.has_count(input.item.name, input.count)[0]:
 			return false
 	return true

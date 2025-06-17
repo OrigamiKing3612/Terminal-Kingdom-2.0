@@ -15,8 +15,8 @@ extends Node3D
 					fire.show()
 
 func _ready() -> void:
-	var recipes: Array[FurnaceRecipe] = []
-	for resource in Utils.load_all_from_path("res://assets/resources/recipes/furnace/"):
+	var _recipes: Array[FurnaceRecipe] = []
+	for resource in Utils.load_all_from_path("res://assets/resources/recipes/furnace"):
 		if resource is FurnaceRecipe:
 			recipes.append(resource)
 	fire.hide()
@@ -39,6 +39,11 @@ enum FurnaceState{
 func _on_start_creating(recipe: Recipe) -> void:
 	state = FurnaceState.running
 	await get_tree().create_timer(recipe.seconds).timeout
+	
+	var quest = QuestManager.get_quest("blacksmith5")
+	if quest:
+		quest.reached_goal()
+		QuestManager.update_quest("blacksmith5", quest)
 
 	recipe.create(recipe)
 	state = FurnaceState.unused

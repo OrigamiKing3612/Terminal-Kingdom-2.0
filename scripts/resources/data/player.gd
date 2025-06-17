@@ -68,12 +68,12 @@ func hasIDs(ids: Array[String]) -> bool:
 			return false
 	return true
 
-## Returns: [has_enough: bool, amount: int]
-func hasCount(name: String, count: int) -> Array:
-	var _count := 0
+## Returns [bool, int]: (has_enough, actual_count)
+func has_count(name: String, count: int) -> Array:
+	var current_count := 0
 	for item in items:
-		if _count == count:
-			return [true, _count]
 		if item.name == name:
-			_count += 1
-	return [false, _count]
+			current_count += 1
+			if current_count >= count:
+				return [true, current_count]
+	return [false, current_count]

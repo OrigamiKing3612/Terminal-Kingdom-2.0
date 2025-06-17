@@ -15,6 +15,11 @@ extends Node
 @export_group("Stage 3")
 @export var stage3_lumber_item: Item = null
 
+@export_group("Stage 5")
+@export var stage5_iron_item: Item = null
+@export var stage5_coal_item: Item = null
+
+
 func _ready() -> void:
 	QuestManager.register_quest(stage1_ID, $Stage1Quest)
 	QuestManager.register_quest(stage2_ID, $Stage2Quest)
@@ -38,6 +43,8 @@ func getStage():
 			stage3()
 		4: 
 			stage4()
+		5: 
+			stage5()
 		_:
 			print("Unknown Stage")
 			
@@ -76,7 +83,7 @@ func stage2():
 		QuestManager.update_quest(stage2_ID, quest)
 		return
 
-	var _hasCount = GameManager.player.hasCount("Lumber", 20)
+	var _hasCount = GameManager.player.has_count("Lumber", 20)
 	var has_enough: bool  = _hasCount[0]
 	var actual_count: int = _hasCount[1]
 
@@ -131,4 +138,21 @@ func stage4():
 			DialogueManager.show_dialogue_balloon(dialogue, "stage4_reached_goal")
 			quest.finish_quest()
 			QuestManager.update_quest(stage4_ID, quest)
-	
+
+func stage5():
+	var quest = QuestManager.get_quest(stage5_ID)
+	if quest == null:
+		return
+	match quest.quest_status:
+		quest.QuestStatus.available:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage5_available")
+			quest.start_quest()
+			GameManager.player.collectItems([stage5_coal_item.copy(), stage5_iron_item.copy()])
+			QuestManager.update_quest(stage5_ID, quest)
+		quest.QuestStatus.started:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage5_started")
+		quest.QuestStatus.reached_goal:
+			GameManager.player.skill.blacksmithing.stage = 6
+			DialogueManager.show_dialogue_balloon(dialogue, "stage5_reached_goal")
+			quest.finish_quest()
+			QuestManager.update_quest(stage5_ID, quest)

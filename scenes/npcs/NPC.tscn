@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=28 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://dgy27c0tsi8d2" path="res://assets/resources/items/tiles/lumber.tres" id="6_1tn1w"]
 [ext_resource type="Script" uid="uid://0gx1d8pnmjgd" path="res://scripts/quests/use_station_quest.gd" id="6_cmg02"]
 [ext_resource type="Script" uid="uid://6ldywjhmi7eq" path="res://scripts/npc/jobs/miner.gd" id="6_fnw6m"]
+[ext_resource type="Resource" uid="uid://bhaou6qgiqkhi" path="res://assets/resources/items/tiles/coal_item.tres" id="8_x2tpa"]
 [ext_resource type="Resource" uid="uid://b8f3mjwiclhxv" path="res://assets/dialogue/npcs/starting_village/miner.dialogue" id="9_yh8il"]
 [ext_resource type="Script" uid="uid://djgnsr3pi86wr" path="res://scripts/npc/jobs/king.gd" id="10_t7167"]
 [ext_resource type="Resource" uid="uid://bcpb4yg01b5v6" path="res://assets/dialogue/npcs/starting_village/king.dialogue" id="11_3j6ye"]
@@ -71,6 +72,8 @@ script = ExtResource("2_yq5wv")
 dialogue = ExtResource("4_bycv4")
 stage2_axe = ExtResource("5_hsw7l")
 stage3_lumber_item = ExtResource("6_1tn1w")
+stage5_iron_item = ExtResource("12_e8lh1")
+stage5_coal_item = ExtResource("8_x2tpa")
 
 [node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Blacksmith"]
 script = ExtResource("4_i3n4k")
@@ -104,7 +107,7 @@ metadata/_custom_type_script = "uid://vb40usgxql0s"
 script = ExtResource("6_cmg02")
 quest_name = "Use the Furnace"
 quest_description = "Use the Furnace to create Steel"
-reached_goal_text = "Return to the Blacksmith"
+reached_goal_text = "Wait for it to finish and return it to the Blacksmith"
 metadata/_custom_type_script = "uid://0gx1d8pnmjgd"
 
 [node name="Miner" type="Node" parent="StartingVillageJobs"]
