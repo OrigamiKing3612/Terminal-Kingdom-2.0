@@ -3,6 +3,7 @@ extends Button
 
 @export var mesh_library: MeshLibrary
 @export var output_path: String = "res://assets/resources/items/tiles/"
+@export var drop_output_path: String = "res://assets/resources/drops/"
 @export var preview_image_path: String = "res://assets/models/icons/"
 @export var ids_to_ignore: Array[int] = [46,47,48]
 
@@ -29,10 +30,7 @@ func run():
 		var name = add_spaces_to_camel_case(raw_name)
 		var mesh = mesh_library.get_item_mesh(id)
 		var save_path = output_path + name.to_lower().replace(" ", "_") + ".tres"
-		
-		#if FileAccess.file_exists(save_path):
-			#print("Skipping existing item: ", save_path)
-			#continue
+		var drop_save_path = drop_output_path + name.to_lower().replace(" ", "_") + "_drop.tres"
 
 		var item = Item.new()
 		item.name = name
@@ -41,12 +39,27 @@ func run():
 		item.is_buildable = true
 		item.gridmap_id = id
 
-		if mesh is ArrayMesh:
-			item.texture_2d = await generate_preview(mesh, item)
-
-		ResourceSaver.save(item, save_path)
+		if FileAccess.file_exists(save_path):
+			print("Skipping existing item: ", save_path)
+		else:
+			if mesh is ArrayMesh:
+				item.texture_2d = await generate_preview(mesh, item)
+			ResourceSaver.save(item, save_path)
+			print("Saved Item: ", save_path)
+			
+		var drop = TileDropData.new()
+		drop.id = id
+		drop.drop_item = load(save_path)
+		drop.min_drop_count = 1
+		drop.max_drop_count = 1
+		drop.tool_required = Utils.ToolType.Pickaxe
 		
-		print("Saved: ", save_path)
+		if FileAccess.file_exists(drop_save_path):
+			print("Skipping existing drop item: ", drop_save_path)
+		else:
+			ResourceSaver.save(drop, drop_save_path)
+			print("Saved Item Drop: ", save_path)
+		
 	print("Done! Time: ", Time.get_datetime_string_from_system())
 
 func generate_preview(mesh: Mesh, item: Item, size: Vector2 = Vector2(128, 128)) -> Texture2D:

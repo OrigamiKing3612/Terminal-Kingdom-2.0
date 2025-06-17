@@ -6,6 +6,7 @@ enum SkillLevel{None, Novice, Apprentice, Journeyman, Expert, Master}
 enum BehaviorType{Idle, Wander, Stand, Work}
 enum Gender{Male, Female}
 enum StationTypes{Anvil, Furnace, Workbench}
+enum ToolType{None, Axe, Pickaxe}
 
 ## Returns ids of the items
 static func givePlayerCountOfItem(itemToDuplicate: Item, count: int) -> Array[String]:
@@ -19,18 +20,39 @@ static func givePlayerCountOfItem(itemToDuplicate: Item, count: int) -> Array[St
 	return ids
 	
 static func break_tile(id: int) -> bool:
-	if id == 65 or id == 66:
-		if not GameManager.player.has("Axe"):
-			return false
-		var item := Item.new()
-		item.id = UUID.string()
-		item.name = "Lumber"
-		item.price = 2
-		var count = 1
-		if id == 65:
-			count = GameManager.random.randi_range(1, 3)
-		GameManager.player.collectItem(item, count)
+	var tile_data := TileDB.get_tile(id)
+	if tile_data == null:
+		push_error("No tile data for ID: %s" % id)
+		return false
+
+	if not GameManager.player.hasTool(tile_data.tool_required):
+		return false
+
+	var item = tile_data.drop_item.copy()
+	
+	var count: int 
+	if tile_data.min_drop_count != tile_data.max_drop_count:
+		count = GameManager.random.randi_range(
+			tile_data.min_drop_count, 
+			tile_data.max_drop_count
+		)
+	else: 
+		count = tile_data.max_drop_count
+
+	GameManager.player.collectItem(item, count)
 	return true
+	#if id == 65 or id == 66:
+		#if not GameManager.player.has("Axe"):
+			#return false
+		#var item := Item.new()
+		#item.id = UUID.string()
+		#item.name = "Lumber"
+		#item.price = 2
+		#var count = 1
+		#if id == 65:
+			#count = GameManager.random.randi_range(1, 3)
+		#GameManager.player.collectItem(item, count)
+	#return true
 	
 static func load_all_from_path(path: String) -> Array:
 	var recipes = []

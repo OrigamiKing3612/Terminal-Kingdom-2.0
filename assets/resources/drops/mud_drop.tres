@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=3 format=3 uid="uid://kn7vp57q6hp2"]
+
+[ext_resource type="Resource" uid="uid://53k0i3kh8dns" path="res://assets/resources/items/tiles/mud.tres" id="1_alea3"]
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/TileDropData.gd" id="2_6ev7r"]
+
+[resource]
+script = ExtResource("2_6ev7r")
+id = 64
+drop_item = ExtResource("1_alea3")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 2

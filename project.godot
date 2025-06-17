@@ -23,6 +23,7 @@ GameManager="*res://scenes/GameManager.tscn"
 Loader="*res://scripts/tools/loader.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 QuestManager="*res://scripts/global/QuestManager.gd"
+TileDB="*res://scripts/global/TileDB.gd"
 
 [dialogue_manager]
 

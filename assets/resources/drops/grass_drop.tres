@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=3 format=3 uid="uid://bi5yx0e2b4oul"]
+
+[ext_resource type="Resource" uid="uid://c7ja8v0qiulyq" path="res://assets/resources/items/tiles/grass.tres" id="1_u2qma"]
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/TileDropData.gd" id="2_0v42p"]
+
+[resource]
+script = ExtResource("2_0v42p")
+id = 6
+drop_item = ExtResource("1_u2qma")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 2

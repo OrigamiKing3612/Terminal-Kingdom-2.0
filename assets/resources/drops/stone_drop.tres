@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=3 format=3 uid="uid://dgmqvlqgsh1my"]
+
+[ext_resource type="Resource" uid="uid://b5xnrh116pxsg" path="res://assets/resources/items/tiles/stone.tres" id="1_l5w5u"]
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/TileDropData.gd" id="2_54t88"]
+
+[resource]
+script = ExtResource("2_54t88")
+id = 31
+drop_item = ExtResource("1_l5w5u")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 2

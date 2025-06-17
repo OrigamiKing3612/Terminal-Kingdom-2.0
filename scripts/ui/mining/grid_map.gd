@@ -29,11 +29,15 @@ func _on_stop_mining():
 	SceneManager.go_back()
 	GameManager.mode = GameManager.Mode.Normal
 
-func destroy_tile(world_coordinate):
-	var map_coordinate = local_to_map(world_coordinate)
-	if map_coordinate.y == 0:
+func destroy_tile(collision_point: Vector3) -> void:
+	var local_point = to_local(collision_point)
+	var grid_pos = local_to_map(local_point)
+	if grid_pos.y == 0:
 		return
-	set_cell_item(map_coordinate, -1)
+	var id = get_cell_item(grid_pos)
+	var can_replace = Utils.break_tile(id)
+	if can_replace:
+		set_cell_item(grid_pos, -1)
 	
 func generate_noise_area(origin: Vector3i, size: Vector3i) -> void:
 	for x in range(origin.x, origin.x + size.x):

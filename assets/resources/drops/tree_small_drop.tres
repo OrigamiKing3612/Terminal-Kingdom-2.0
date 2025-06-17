@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=3 format=3 uid="uid://bql0migba3e17"]
+
+[ext_resource type="Resource" uid="uid://dgy27c0tsi8d2" path="res://assets/resources/items/tiles/lumber.tres" id="1_45tor"]
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/TileDropData.gd" id="2_vh1dp"]
+
+[resource]
+script = ExtResource("2_vh1dp")
+id = 66
+drop_item = ExtResource("1_45tor")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 1

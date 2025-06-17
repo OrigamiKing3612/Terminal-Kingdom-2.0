@@ -11,4 +11,5 @@ can_build = true
 position = Vector3(0, 0, 0)
 items = Array[ExtResource("1_mddin")]([])
 skill = ExtResource("3_pomgq")
+mining_level = 1
 metadata/_custom_type_script = "uid://c65bq1qpv6cyp"
