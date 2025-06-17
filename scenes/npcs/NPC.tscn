@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=37 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://djgnsr3pi86wr" path="res://scripts/npc/jobs/king.gd" id="10_t7167"]
 [ext_resource type="Resource" uid="uid://bcpb4yg01b5v6" path="res://assets/dialogue/npcs/starting_village/king.dialogue" id="11_3j6ye"]
 [ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="11_4ofek"]
+[ext_resource type="Resource" uid="uid://d0p5yutbxrj38" path="res://assets/resources/items/pickaxe.tres" id="12_b34ur"]
 [ext_resource type="Resource" uid="uid://bu7fdkkvvrka3" path="res://assets/resources/items/tiles/iron_item.tres" id="12_e8lh1"]
 [ext_resource type="Script" uid="uid://c87ocgpcffw31" path="res://scripts/npc/jobs/famer.gd" id="12_qvc14"]
 [ext_resource type="Resource" uid="uid://cgbisd8hfm3m2" path="res://assets/dialogue/npcs/job_none.dialogue" id="13_iu6wm"]
@@ -113,6 +114,7 @@ stage5_iron_item = ExtResource("12_e8lh1")
 stage5_coal_item = ExtResource("8_x2tpa")
 stage6_steel_item = SubResource("Resource_al60k")
 stage6_stick_item = SubResource("Resource_nyq5k")
+mine_stage1_pickaxe = ExtResource("12_b34ur")
 
 [node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Blacksmith"]
 script = ExtResource("4_i3n4k")
@@ -171,8 +173,9 @@ blacksmith_stage1_iron = ExtResource("12_e8lh1")
 
 [node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Miner"]
 script = ExtResource("4_i3n4k")
-quest_name = "Get a pickaxe from the Blacksmith"
-quest_description = "Get a pickaxe from the Blacksmith and bring it to the miner"
+quest_name = "Get a Pickaxe"
+quest_description = "Get a pickaxe from the Blacksmith"
+reached_goal_text = "Return to the Miner"
 metadata/_custom_type_script = "uid://vb40usgxql0s"
 
 [node name="King" type="Node" parent="StartingVillageJobs"]
