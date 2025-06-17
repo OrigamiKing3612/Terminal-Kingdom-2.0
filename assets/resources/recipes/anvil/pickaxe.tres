@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="AnvilRecipe" load_steps=9 format=3 uid="uid://b5mtqpwt6r1q0"]
+
+[ext_resource type="Script" uid="uid://211derjh3jig" path="res://scripts/resources/recipes/RecipeItem.gd" id="1_y3v82"]
+[ext_resource type="Script" uid="uid://b7ge8id26jsbu" path="res://scripts/resources/recipes/AnvilRecipe.gd" id="2_1nvwu"]
+[ext_resource type="Resource" uid="uid://cxq0s5prgh160" path="res://assets/resources/items/steel.tres" id="2_1rdls"]
+[ext_resource type="Resource" uid="uid://83niltrh6tky" path="res://assets/resources/items/stick.tres" id="3_3yvxk"]
+[ext_resource type="Resource" uid="uid://d0p5yutbxrj38" path="res://assets/resources/items/pickaxe.tres" id="4_lley5"]
+
+[sub_resource type="Resource" id="Resource_c3twj"]
+script = ExtResource("1_y3v82")
+item = ExtResource("2_1rdls")
+count = 1
+metadata/_custom_type_script = "uid://211derjh3jig"
+
+[sub_resource type="Resource" id="Resource_v34j6"]
+script = ExtResource("1_y3v82")
+item = ExtResource("3_3yvxk")
+count = 1
+metadata/_custom_type_script = "uid://211derjh3jig"
+
+[sub_resource type="Resource" id="Resource_c0tdd"]
+script = ExtResource("1_y3v82")
+item = ExtResource("4_lley5")
+count = 1
+metadata/_custom_type_script = "uid://211derjh3jig"
+
+[resource]
+script = ExtResource("2_1nvwu")
+inputs = Array[ExtResource("1_y3v82")]([SubResource("Resource_c3twj"), SubResource("Resource_v34j6")])
+outputs = Array[ExtResource("1_y3v82")]([SubResource("Resource_c0tdd")])
+metadata/_custom_type_script = "uid://b7ge8id26jsbu"

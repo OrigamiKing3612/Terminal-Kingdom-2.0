@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_twced")
-durability = 55
+durability = 100
 name = "Pickaxe"
 price = 10
 can_be_sold = true

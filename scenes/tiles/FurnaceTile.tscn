@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dduxon30vpfg2" path="res://assets/models/FurnaceTile_small-log.png" id="1_0bckp"]
 [ext_resource type="Script" uid="uid://7dggtv6j2chd" path="res://scripts/tiles/furnace/furnace_tile.gd" id="1_2vxjl"]
 [ext_resource type="Script" uid="uid://d0nfaymvottcp" path="res://scripts/tiles/furnace/FurnaceTile.gd" id="1_a25ud"]
-[ext_resource type="PackedScene" uid="uid://cpv5n40r1pw6o" path="res://scenes/ui/workstations/FurnaceScreen.tscn" id="2_1oifx"]
 [ext_resource type="LightmapGIData" uid="uid://b0qj435gi7d6s" path="res://assets/resources/lightmaps/FurnaceTile.lmbake" id="2_f0fk0"]
+[ext_resource type="PackedScene" uid="uid://ctajdwqvt83xr" path="res://scenes/ui/workstations/WorkstationScreen.tscn" id="2_n8osn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cg444"]
 size = Vector3(2, 4, 2)
@@ -90,7 +90,7 @@ add_uv2 = true
 
 [node name="FurnaceTile" type="Node3D"]
 script = ExtResource("1_a25ud")
-furnace_screen = ExtResource("2_1oifx")
+furnace_screen = ExtResource("2_n8osn")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 light_data = ExtResource("2_f0fk0")

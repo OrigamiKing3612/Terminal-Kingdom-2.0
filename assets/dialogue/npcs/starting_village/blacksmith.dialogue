@@ -69,7 +69,7 @@ Blacksmith: I need you to make a pickaxe. Go over to the anvil and make a pickax
 Blacksmith: You haven't gone to the anvil yet.
 => END
 ~ stage6_reached_goal
-Blacksmith: Yay! You made your first Pickaxe!
+Blacksmith: Yay! You made your first pickaxe!
 => END
 
 ~ stage7_available

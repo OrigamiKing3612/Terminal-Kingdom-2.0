@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd7248mgtv2gu"]
+[gd_scene load_steps=6 format=3 uid="uid://dd7248mgtv2gu"]
 
 [ext_resource type="Script" uid="uid://nxqftwtkwxy" path="res://scripts/tiles/anvil/anvil_tile.gd" id="1_dyo5c"]
 [ext_resource type="Script" uid="uid://dyqd354fmav1a" path="res://scripts/tiles/anvil/AnvilTile.gd" id="1_qgmwl"]
+[ext_resource type="PackedScene" uid="uid://ctajdwqvt83xr" path="res://scenes/ui/workstations/WorkstationScreen.tscn" id="2_pvmdq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_48esm"]
 size = Vector3(2, 2, 2)
@@ -11,6 +12,7 @@ size = Vector3(2, 2, 2)
 
 [node name="AnvilTile" type="Node3D"]
 script = ExtResource("1_qgmwl")
+anvil_screen = ExtResource("2_pvmdq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_48esm")

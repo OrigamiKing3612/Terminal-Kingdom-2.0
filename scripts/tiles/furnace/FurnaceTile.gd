@@ -37,6 +37,8 @@ enum FurnaceState{
 	running
 }
 func _on_start_creating(recipe: Recipe) -> void:
+	if not recipe is FurnaceRecipe:
+		return
 	state = FurnaceState.running
 	await get_tree().create_timer(recipe.seconds).timeout
 	

@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpv5n40r1pw6o"]
+[gd_scene load_steps=3 format=3 uid="uid://ctajdwqvt83xr"]
 
-[ext_resource type="Script" uid="uid://bgtxuy8wodo58" path="res://scripts/ui/workstations/furnace_screen.gd" id="1_11n00"]
-[ext_resource type="Script" uid="uid://cplpb6eqaluqo" path="res://scripts/ui/workstations/recipe_button.gd" id="2_n3dkc"]
-[ext_resource type="Script" uid="uid://blsguui7ra4rl" path="res://scenes/ui/workstations/close_button.gd" id="3_kl47t"]
+[ext_resource type="Script" uid="uid://dis1nthb2r6hg" path="res://scripts/ui/workstations/workstation_screen.gd" id="1_7245u"]
+[ext_resource type="Script" uid="uid://cplpb6eqaluqo" path="res://scripts/ui/workstations/recipe_button.gd" id="2_8vtwp"]
 
-[node name="FurnaceScreen" type="Panel"]
+[node name="WorkstationScreen" type="Panel"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -16,7 +15,7 @@ offset_right = 750.0
 offset_bottom = 500.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_11n00")
+script = ExtResource("1_7245u")
 
 [node name="RecipesContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -38,7 +37,7 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Example Recipe"
-script = ExtResource("2_n3dkc")
+script = ExtResource("2_8vtwp")
 
 [node name="PreviewImage" type="TextureButton" parent="."]
 layout_mode = 1
@@ -90,6 +89,7 @@ vertical_alignment = 1
 
 [node name="InputOutputTextTemplate" type="RichTextLabel" parent="."]
 visible = false
+layout_mode = 0
 theme_override_font_sizes/normal_font_size = 25
 text = "Inputs
 "
@@ -107,7 +107,6 @@ offset_bottom = 31.0
 grow_horizontal = 0
 text = "Done
 "
-script = ExtResource("3_kl47t")
 
 [node name="CreateButton" type="Button" parent="."]
 layout_mode = 1
