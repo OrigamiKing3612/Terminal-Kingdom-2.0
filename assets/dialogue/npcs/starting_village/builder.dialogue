@@ -14,8 +14,10 @@ Builder: Hello {{GameManager.player.name}}! Looks like you already know how to c
 Builder: Before we can start building, we need materials. Can you go collect 20 stone and 10 iron from the mine and bring it back to me?
 => END
 ~ stage1_started
-Builder: You haven't gone to the mine yet.
 Builder: You still need to collect the materials.
+=> END
+~ stage1_error
+Builder: You haven't gone to the mine yet.
 => END
 ~ stage1_reached_goal
 Builder: Great, You have collected the materials!
@@ -25,8 +27,10 @@ Builder: Great, You have collected the materials!
 Builder: Now, we need some lumber. Can you get 20 of it? Here is an axe.
 => END
 ~ stage2_started
-Builder: Uh oh, looks like you lost your axe. Here is a new one.
-Builder: You are almost there, but you still need to get {{20}} lumber.
+if not has_axe:
+	Builder: Uh oh, looks like you lost your axe. Here is a new one.
+else:
+	Builder: You are almost there, but you still need to get {{amount_left}} lumber.
 => END
 ~ stage2_reached_goal
 Builder: Great, You have collected the lumber! Now we can start building.

@@ -55,22 +55,14 @@ func getStage():
 		0:
 			DialogueManager.show_dialogue_balloon(dialogue, "first_time")
 			SceneManager.free_cursor()
-		1:
-			stage1()
-		2:
-			stage2()
-		3: 
-			stage3()
-		4: 
-			stage4()
-		5: 
-			stage5()
-		6: 
-			stage6()
-		7: 
-			stage7()
-		_:
-			print("Unknown Stage")
+		1: stage1()
+		2: stage2()
+		3: stage3()
+		4: stage4()
+		5: stage5()
+		6: stage6()
+		7: stage7()
+		_: push_warning("Unknown Stage")
 			
 func stage1():
 	var quest = QuestManager.get_quest(stage1_ID)
@@ -102,7 +94,8 @@ func stage2():
 		return
 	if quest.quest_status == quest.QuestStatus.available:
 		DialogueManager.show_dialogue_balloon(dialogue, "stage2_available")
-		GameManager.player.collectItem(stage2_axe.copy())
+		var id = Utils.givePlayerCountOfItem(stage2_axe, 1)
+		quest.data["axe_id"] = id
 		quest.start_quest()
 		QuestManager.update_quest(stage2_ID, quest)
 		return
@@ -112,7 +105,8 @@ func stage2():
 	var actual_count: int = _hasCount[1]
 
 	if not has_enough:
-		var has_axe := GameManager.player.has(stage2_axe.name)
+		var axe_id = quest.data["axe_id"]
+		var has_axe := GameManager.player.hasID(axe_id)
 		var vars = [
 			{ "has_axe": has_axe },
 			{ "amount_left": (20 - actual_count) }

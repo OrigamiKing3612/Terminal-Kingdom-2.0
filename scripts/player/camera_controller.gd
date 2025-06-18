@@ -12,11 +12,9 @@ var yaw_sensitivity: float = 0.07
 var pitch_sensitivity: float = 0.07
 var yaw_acceleration: float = 15
 var pitch_acceleration: float = 15
-var pitch_max: float = 360
-var pitch_min: float = -360
+var pitch_max: float = 90
+var pitch_min: float = -90
 #var tween: Tween
-var position_offset: Vector3 = Vector3(0, 1.3, 0)
-var position_offset_target: Vector3 = Vector3(0, 1.3, 0)
 
 func _ready() -> void:
 	SceneManager.steal_cursor()
@@ -29,11 +27,11 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	pitch = clamp(pitch, pitch_min, pitch_max)
 	
-	camera_yaw.rotation_degrees.y = lerp(camera_yaw.rotation_degrees.y, yaw, yaw_acceleration * delta)
-	camera_pitch.rotation_degrees.x = -lerp(camera_pitch.rotation_degrees.x, pitch, pitch_acceleration * delta)
+	#camera_yaw.rotation_degrees.y = lerp(camera_yaw.rotation_degrees.y, yaw, yaw_acceleration * delta)
+	#camera_pitch.rotation_degrees.x = -lerp(camera_pitch.rotation_degrees.x, pitch, pitch_acceleration * delta)
 	
-	#camera_yaw.rotation_degrees.y = yaw
-	#camera_pitch.rotation_degrees.x = pitch
+	camera_yaw.rotation_degrees.y = yaw
+	camera_pitch.rotation_degrees.x = pitch
 	
 	set_camera_rotation.emit(camera_yaw.rotation.y)
 

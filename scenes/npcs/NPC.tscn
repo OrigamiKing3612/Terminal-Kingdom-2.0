@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=47 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -31,6 +31,7 @@
 [ext_resource type="Resource" uid="uid://dia1v0snlaxek" path="res://assets/dialogue/npcs/starting_village/hunter.dialogue" id="26_nyq5k"]
 [ext_resource type="Script" uid="uid://r5sgf6w7orpd" path="res://scripts/npc/jobs/builder.gd" id="29_arads"]
 [ext_resource type="Resource" uid="uid://ca60ph2lskf52" path="res://assets/dialogue/npcs/starting_village/builder.dialogue" id="30_o3k02"]
+[ext_resource type="Script" uid="uid://b2dlvmlibqar4" path="res://scripts/quests/build_quest.gd" id="32_e76qb"]
 [ext_resource type="Script" uid="uid://cv46cgy3p6l13" path="res://scripts/npc/state/npc_movement_controller.gd" id="32_fri4o"]
 [ext_resource type="Script" uid="uid://v7055c2ja111" path="res://scripts/npc/state/idle.gd" id="33_fri4o"]
 [ext_resource type="Script" uid="uid://ch1u477jtqff2" path="res://scripts/npc/state/wander.gd" id="34_jjats"]
@@ -219,6 +220,48 @@ quest_name = "Collect materials"
 quest_description = "Collect materials from the Mine"
 reached_goal_text = "Return the Miner!"
 metadata/_custom_type_script = "uid://vb40usgxql0s"
+
+[node name="Stage2Quest" type="Node" parent="StartingVillageJobs/Builder"]
+script = ExtResource("5_3egug")
+quest_name = "Collect lumber"
+quest_description = "Collect 20 lumber"
+reached_goal_text = "Return to the Builder!"
+metadata/_custom_type_script = "uid://c7pim11lbdqyc"
+
+[node name="Stage3Quest" type="Node" parent="StartingVillageJobs/Builder"]
+script = ExtResource("6_cmg02")
+quest_name = "Make a door"
+quest_description = "Make a door on the workbench"
+reached_goal_text = "Return to the builder"
+metadata/_custom_type_script = "uid://0gx1d8pnmjgd"
+
+[node name="Stage4Quest" type="Node" parent="StartingVillageJobs/Builder"]
+script = ExtResource("4_i3n4k")
+quest_name = "Talk to the King"
+quest_description = "Talk to the King about making a new house"
+reached_goal_text = "Return to the builder with the good news!"
+metadata/_custom_type_script = "uid://vb40usgxql0s"
+
+[node name="Stage5Quest" type="Node" parent="StartingVillageJobs/Builder"]
+script = ExtResource("32_e76qb")
+quest_name = "Build a House"
+quest_description = "Build the house following the builders intructions"
+reached_goal_text = "Return to the builder!"
+metadata/_custom_type_script = "uid://b2dlvmlibqar4"
+
+[node name="Stage6Quest" type="Node" parent="StartingVillageJobs/Builder"]
+script = ExtResource("5_3egug")
+quest_name = "Collect Lumber"
+quest_description = "Collect 30 Lumber for the builder"
+reached_goal_text = "Return to the builder"
+metadata/_custom_type_script = "uid://c7pim11lbdqyc"
+
+[node name="Stage7Quest" type="Node" parent="StartingVillageJobs/Builder"]
+script = ExtResource("32_e76qb")
+quest_name = "Decorate the house"
+quest_description = "Add the stuff to the house"
+reached_goal_text = "Return to the builder"
+metadata/_custom_type_script = "uid://b2dlvmlibqar4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_mhefn")

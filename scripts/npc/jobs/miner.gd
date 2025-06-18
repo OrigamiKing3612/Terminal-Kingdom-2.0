@@ -63,24 +63,20 @@ func stage1():
 	var quest = QuestManager.get_quest(stage1_ID)
 	if quest == null:
 		return
-	if quest.quest_status == quest.QuestStatus.available:
-		GameManager.player.skill.mining.stage = 1
-		quest.start_quest()
-		DialogueManager.show_dialogue_balloon(dialogue, "stage1_available")
-		QuestManager.update_quest(stage1_ID, quest)
-		return
-		
-	if quest.quest_status == quest.QuestStatus.started:
-		DialogueManager.show_dialogue_balloon(dialogue, "stage1_started")
-		QuestManager.update_quest(stage1_ID, quest)
-		return
-
-	if quest.quest_status == quest.QuestStatus.reached_goal:
-		DialogueManager.show_dialogue_balloon(dialogue, "stage1_reached_goal")
-		var id = quest.data["pickaxe_id"]
-		GameManager.player.removeItems(id)
-		quest.data["pickaxe_id"] = []
-		quest.finish_quest()
-		QuestManager.update_quest(stage1_ID, quest)
-		GameManager.player.skill.mining.stage = 2
-		return
+	match quest.quest_status:
+		quest.QuestStatus.available:
+			GameManager.player.skill.mining.stage = 1
+			quest.start_quest()
+			DialogueManager.show_dialogue_balloon(dialogue, "stage1_available")
+			QuestManager.update_quest(stage1_ID, quest)
+		quest.QuestStatus.started:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage1_started")
+			QuestManager.update_quest(stage1_ID, quest)
+		quest.QuestStatus.reached_goal:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage1_reached_goal")
+			var id = quest.data["pickaxe_id"]
+			GameManager.player.removeItems(id)
+			quest.data["pickaxe_id"] = []
+			quest.finish_quest()
+			QuestManager.update_quest(stage1_ID, quest)
+			GameManager.player.skill.mining.stage = 2
