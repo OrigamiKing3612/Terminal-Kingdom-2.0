@@ -12,8 +12,8 @@ var yaw_sensitivity: float = 0.07
 var pitch_sensitivity: float = 0.07
 var yaw_acceleration: float = 15
 var pitch_acceleration: float = 15
-var pitch_max: float = 90
-var pitch_min: float = -90
+var pitch_max: float = 45
+var pitch_min: float = -75
 #var tween: Tween
 
 func _ready() -> void:
