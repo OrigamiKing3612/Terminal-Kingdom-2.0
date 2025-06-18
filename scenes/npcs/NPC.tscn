@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=46 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -31,6 +31,12 @@
 [ext_resource type="Resource" uid="uid://dia1v0snlaxek" path="res://assets/dialogue/npcs/starting_village/hunter.dialogue" id="26_nyq5k"]
 [ext_resource type="Script" uid="uid://r5sgf6w7orpd" path="res://scripts/npc/jobs/builder.gd" id="29_arads"]
 [ext_resource type="Resource" uid="uid://ca60ph2lskf52" path="res://assets/dialogue/npcs/starting_village/builder.dialogue" id="30_o3k02"]
+[ext_resource type="Script" uid="uid://cv46cgy3p6l13" path="res://scripts/npc/state/npc_movement_controller.gd" id="32_fri4o"]
+[ext_resource type="Script" uid="uid://v7055c2ja111" path="res://scripts/npc/state/idle.gd" id="33_fri4o"]
+[ext_resource type="Script" uid="uid://ch1u477jtqff2" path="res://scripts/npc/state/wander.gd" id="34_jjats"]
+[ext_resource type="Script" uid="uid://gs16mgiour7u" path="res://scripts/npc/state/jump.gd" id="34_s3c0h"]
+[ext_resource type="Script" uid="uid://bvhyxu005gh5e" path="res://scripts/npc/state/fall.gd" id="35_5q6h2"]
+[ext_resource type="Script" uid="uid://dvhwvjh7so7u1" path="res://scripts/npc/movement/npc_movement.gd" id="36_kxny1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ak68"]
 size = Vector3(10, 2, 10)
@@ -218,3 +224,50 @@ metadata/_custom_type_script = "uid://vb40usgxql0s"
 shape = SubResource("BoxShape3D_mhefn")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="State" type="Node" parent="." node_paths=PackedStringArray("player", "mesh", "default_state", "movement")]
+script = ExtResource("32_fri4o")
+player = NodePath("..")
+mesh = NodePath("../Mesh")
+default_state = NodePath("Wander")
+movement = NodePath("../NPCMovementController")
+
+[node name="Idle" type="Node" parent="State" node_paths=PackedStringArray("fall_state", "idle_state", "jump_state")]
+script = ExtResource("33_fri4o")
+state_name = "Idle"
+fall_state = NodePath("../Fall")
+idle_state = NodePath(".")
+jump_state = NodePath("../Jump")
+
+[node name="Wander" type="Node" parent="State" node_paths=PackedStringArray("navigation", "fall_state", "idle_state", "jump_state")]
+script = ExtResource("34_jjats")
+navigation = NodePath("../../NavigationAgent3D")
+state_name = "Wander"
+fall_state = NodePath("../Fall")
+idle_state = NodePath("../Idle")
+jump_state = NodePath("../Jump")
+
+[node name="Work" type="Node" parent="State"]
+
+[node name="Defend" type="Node" parent="State"]
+
+[node name="Jump" type="Node" parent="State" node_paths=PackedStringArray("fall_state", "idle_state", "jump_state")]
+script = ExtResource("34_s3c0h")
+state_name = "Jump"
+fall_state = NodePath("../Fall")
+idle_state = NodePath("../Idle")
+jump_state = NodePath(".")
+
+[node name="Fall" type="Node" parent="State" node_paths=PackedStringArray("fall_state", "idle_state", "jump_state")]
+script = ExtResource("35_5q6h2")
+state_name = "Fall"
+fall_state = NodePath(".")
+idle_state = NodePath("../Idle")
+jump_state = NodePath("../Jump")
+
+[node name="NPCMovementController" type="Node" parent="."]
+script = ExtResource("36_kxny1")
+
+[connection signal="set_movement_direction" from="." to="State" method="_on_set_movement_direction"]
+[connection signal="set_movement_state" from="." to="State" method="_on_set_movement_state"]
+[connection signal="area_entered" from="Area3D" to="State/Wander" method="_on_area_3d_area_entered"]

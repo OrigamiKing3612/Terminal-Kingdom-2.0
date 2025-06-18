@@ -1,9 +1,14 @@
 extends CharacterBody3D
 class_name NPC
 
+signal pressed_jump()
+signal set_movement_state(_movement_state: MovementState)
+signal set_movement_direction(_movement_state: Vector3)
+
 @export var data: NPCData
 @export var talkable_area: Vector3 = Vector3(10, 2, 10)
 
+@onready var state: Node = $State
 @onready var marker: MeshInstance3D = $Mesh/Marker
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
 @onready var svjobs: StartingVillageJobs = $StartingVillageJobs
@@ -17,6 +22,7 @@ func _ready() -> void:
 	var shape = BoxShape3D.new()
 	shape.size = talkable_area
 	collision_shape_3d.shape = shape
+	state.init()
 
 func interact() -> void:
 	if data == null:
@@ -58,6 +64,13 @@ func _on_body_exited(body: Node3D) -> void:
 		return
 	marker.visible = false
 	
+	
+func _process(delta: float) -> void:
+	if not data.is_starting_village_npc:
+		state.current_state.process(delta)
+
 func _physics_process(delta: float) -> void:
+	if not data.is_starting_village_npc:
+		state.current_state.physics_process(delta)
 	if marker.visible:
 		look_at(GameManager.player.position, Vector3.UP)
