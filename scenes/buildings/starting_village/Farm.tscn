@@ -21,79 +21,79 @@ script = ExtResource("4_fdgc7")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="PotTile" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14764, 0.227058, -3.08774)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -3)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile2" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14764, 0.227058, -4.97834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -5)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile3" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14764, 0.227058, -6.98202)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -7)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile4" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14764, 0.227058, -9.03741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -9)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile5" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14764, 0.227058, -11.106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -11.0003)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile6" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14764, 0.227058, -13.0695)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -13)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile7" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14764, 0.227058, -14.9383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -15)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile8" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14764, 0.227058, -17.017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -17)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile9" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06994, 0.227058, -17.017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -17)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile10" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9734, 0.227058, -17.017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -17)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile11" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99289, 0.227058, -17.017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -17)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile12" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.00428, 0.227058, -17.017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, -17)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile13" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91144, 0.227058, -17.0182)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.5, -17)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile14" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9321, 0.227058, -17.0182)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.5, -17)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile15" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9883, 0.245829, -17.0346)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, -17)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile16" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.012, 0.245829, -14.9545)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, -15)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile20" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9597, 0.237106, -33.1688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, -33)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile21" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1436, 0.237113, -33.1777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0.5, -33)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile22" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0491, 0.237113, -33.1777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0.5, -33)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile23" parent="." instance=ExtResource("5_x5wys")]
@@ -101,33 +101,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0483, 0.237113, -33.1777)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile25" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09714, 0.237106, -33.1688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -33)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile26" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28108, 0.237113, -33.1777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -33)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile27" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18649, 0.237113, -33.1777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -33)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile28" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.814279, 0.237113, -33.1777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -33)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile24" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0683, 0.237114, -33.1748)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0.5, -33)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile17" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.012, 0.245829, -3.15931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, -3)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile18" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.012, 0.245829, -7.03979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, -7)
 skeleton = NodePath("../GridMap")
 
 [node name="PotTile19" parent="." instance=ExtResource("5_x5wys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.012, 0.245829, -10.9646)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, -11)
 skeleton = NodePath("../GridMap")

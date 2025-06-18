@@ -43,6 +43,8 @@ func talk_to_starting_village_npc():
 			svjobs.carpenter.talk(data)
 		Utils.Job.Hunter:
 			svjobs.hunter.talk(data)
+		Utils.Job.Builder:
+			svjobs.builder.talk(data)
 		_:
 			print("Unknown job: ", data.job)
 

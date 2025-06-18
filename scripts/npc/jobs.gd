@@ -8,3 +8,4 @@ class_name StartingVillageJobs
 @onready var famer: Node = $Famer
 @onready var carpenter: Node = $Carpenter
 @onready var hunter: Node = $Hunter
+@onready var builder: Node = $Builder

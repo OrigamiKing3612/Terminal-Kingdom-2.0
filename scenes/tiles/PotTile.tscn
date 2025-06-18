@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfkt11r6dih32"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_t77nq"]
-size = Vector3(1, 0.5, 1)
+size = Vector3(2, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6iirc"]
-size = Vector3(1, 0.5, 1)
+size = Vector3(2, 1, 2)
 
 [node name="PotTile" type="MeshInstance3D"]
 mesh = SubResource("BoxMesh_t77nq")

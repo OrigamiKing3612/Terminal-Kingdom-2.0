@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=40 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -26,8 +26,11 @@
 [ext_resource type="Script" uid="uid://dwu8ntdn6jefh" path="res://scripts/quests/two_step_quest.gd" id="15_cevaj"]
 [ext_resource type="Resource" uid="uid://bmsty40egoq0k" path="res://assets/dialogue/npcs/starting_village/farmer.dialogue" id="16_e8lh1"]
 [ext_resource type="Resource" uid="uid://b0u3phfaheom6" path="res://assets/dialogue/npcs/starting_village/carpenter.dialogue" id="19_1tn1w"]
+[ext_resource type="Resource" uid="uid://s487byr8tlmh" path="res://assets/resources/items/tiles/stone_item.tres" id="19_tvxlg"]
 [ext_resource type="Script" uid="uid://y66ehscqfnn8" path="res://scripts/npc/jobs/hunter.gd" id="25_al60k"]
 [ext_resource type="Resource" uid="uid://dia1v0snlaxek" path="res://assets/dialogue/npcs/starting_village/hunter.dialogue" id="26_nyq5k"]
+[ext_resource type="Script" uid="uid://r5sgf6w7orpd" path="res://scripts/npc/jobs/builder.gd" id="29_arads"]
+[ext_resource type="Resource" uid="uid://ca60ph2lskf52" path="res://assets/dialogue/npcs/starting_village/builder.dialogue" id="30_o3k02"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ak68"]
 size = Vector3(10, 2, 10)
@@ -170,6 +173,8 @@ metadata/_custom_type_script = "uid://dwu8ntdn6jefh"
 script = ExtResource("6_fnw6m")
 dialogue = ExtResource("9_yh8il")
 blacksmith_stage1_iron = ExtResource("12_e8lh1")
+miner_stage1_iron = ExtResource("12_e8lh1")
+miner_stage1_stone = ExtResource("19_tvxlg")
 
 [node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Miner"]
 script = ExtResource("4_i3n4k")
@@ -197,6 +202,17 @@ dialogue = ExtResource("19_1tn1w")
 [node name="Hunter" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("25_al60k")
 dialogue = ExtResource("26_nyq5k")
+
+[node name="Builder" type="Node" parent="StartingVillageJobs"]
+script = ExtResource("29_arads")
+dialogue = ExtResource("30_o3k02")
+
+[node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Builder"]
+script = ExtResource("4_i3n4k")
+quest_name = "Collect materials"
+quest_description = "Collect materials from the Mine"
+reached_goal_text = "Return the Miner!"
+metadata/_custom_type_script = "uid://vb40usgxql0s"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_mhefn")

@@ -1,5 +1,5 @@
 extends Node
-#class_name QuestManager
+class_name QuestManager
 
 @onready var quest_box: CanvasLayer = GameManager.get_node("QuestBox")
 @onready var quest_container: VBoxContainer = GameManager.get_node("QuestBox").get_node("QuestContainer")
