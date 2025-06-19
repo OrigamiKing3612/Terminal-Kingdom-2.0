@@ -114,3 +114,4 @@ vertical_alignment = 1
 [connection signal="show_message" from="." to="MessageBox" method="_on_show_message"]
 [connection signal="tool_back" from="." to="EquipmentBox/EquipmentBar" method="_on_tool_back"]
 [connection signal="tool_next" from="." to="EquipmentBox/EquipmentBar" method="_on_tool_next"]
+[connection signal="toolbelt_updated" from="InventoryBox/InventoryBox" to="." method="_on_inventory_box_toolbelt_updated"]

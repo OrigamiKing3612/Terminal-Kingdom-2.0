@@ -1,8 +1,11 @@
 extends Control
 class_name InventoryBox
 
-@onready var inventory_slot_template: InventorySlot = $InventorySlotTemplate
-@onready var grid_container: GridContainer = $GridContainer
+signal toolbelt_updated(number: int, inventory_item: InventoryItemSlot)
+
+@onready var inventory_grid_container: GridContainer = $Inventory/GridContainer
+@onready var toolbelt_grid_container: GridContainer = $Panel/GridContainer
+
 var slots: Array[InventorySlot]
 
 var itemInHand: InventoryItem
@@ -10,8 +13,13 @@ var itemInHand: InventoryItem
 const INVENTORY_ITEM = preload("res://scenes/ui/inventory/inventory_item.tscn")
 
 func _ready() -> void:
-	for child in $GridContainer.get_children(): 
+	for child in inventory_grid_container.get_children(): 
 		if child is InventorySlot:
+			slots.append(child)
+			
+	for child in toolbelt_grid_container.get_children(): 
+		if child is ToolbeltInventorySlot:
+			child.toolbelt_updated.connect(_on_toolbelt_update)
 			slots.append(child)
 	
 	connect_slots()
@@ -50,12 +58,10 @@ func _update():
 func _on_slot_clicked(slot: InventorySlot):
 	if slot.is_empty() && itemInHand:
 		insert_item_in_slot(slot)
-		print("Inserted")
 		return
 	
 	if not itemInHand:
 		take_item_from_slot(slot)
-		print("took")
 
 func take_item_from_slot(slot: InventorySlot):
 	itemInHand = slot.take_item()
@@ -75,3 +81,6 @@ func update_item_in_hand():
 	
 func _input(event: InputEvent) -> void:
 	update_item_in_hand()
+	
+func _on_toolbelt_update(number: int, item: InventoryItemSlot):
+	toolbelt_updated.emit(number, item)

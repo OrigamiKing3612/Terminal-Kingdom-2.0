@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1smga2djsboi"]
+
+[ext_resource type="Script" uid="uid://cq1ciws28thxk" path="res://scripts/ui/inventory/toolbelt_inventory_slot.gd" id="1_7auag"]
+[ext_resource type="Texture2D" uid="uid://mbbr4pif300s" path="res://assets/ui/inventory_slot.png" id="2_5jy8c"]
+
+[node name="ToolbeltInventorySlot" type="Button"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_7auag")
+metadata/_custom_type_script = "uid://cq1ciws28thxk"
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(50, 50)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("2_5jy8c")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 6
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2

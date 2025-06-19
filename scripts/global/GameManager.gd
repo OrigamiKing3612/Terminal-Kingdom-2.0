@@ -36,6 +36,12 @@ var move: bool = true
 var mode: Mode = Mode.Normal
 var random: RandomNumberGenerator
 
+var toolbelt_item_1: InventoryItemSlot
+var toolbelt_item_2: InventoryItemSlot
+var toolbelt_item_3: InventoryItemSlot
+var toolbelt_item_4: InventoryItemSlot
+var toolbelt_item_5: InventoryItemSlot
+
 enum Mode{Normal, Inventory, Build, Mining, Speaking, InPopUp}
 
 func _ready() -> void:
@@ -142,3 +148,12 @@ func _on_dialogue_started(resource: DialogueResource):
 	
 func _on_dialogue_ended(resource: DialogueResource):
 	mode = Mode.Normal
+
+
+func _on_inventory_box_toolbelt_updated(number: int, inventory_item: InventoryItemSlot) -> void:
+	match number:
+		1: toolbelt_item_1 = inventory_item
+		2: toolbelt_item_2 = inventory_item
+		3: toolbelt_item_3 = inventory_item
+		4: toolbelt_item_4 = inventory_item
+		5: toolbelt_item_5 = inventory_item
