@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=51 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -27,7 +27,10 @@
 [ext_resource type="Resource" uid="uid://bmsty40egoq0k" path="res://assets/dialogue/npcs/starting_village/farmer.dialogue" id="16_e8lh1"]
 [ext_resource type="Resource" uid="uid://b0u3phfaheom6" path="res://assets/dialogue/npcs/starting_village/carpenter.dialogue" id="19_1tn1w"]
 [ext_resource type="Resource" uid="uid://s487byr8tlmh" path="res://assets/resources/items/tiles/stone_item.tres" id="19_tvxlg"]
+[ext_resource type="Script" uid="uid://cqsvdpbt83m3i" path="res://scripts/resources/items/tool_item.gd" id="24_w1xlh"]
 [ext_resource type="Script" uid="uid://y66ehscqfnn8" path="res://scripts/npc/jobs/hunter.gd" id="25_al60k"]
+[ext_resource type="Resource" uid="uid://bd3lfkdnqrn35" path="res://assets/resources/items/plants/seeds/tree_seed.tres" id="25_jk6lc"]
+[ext_resource type="Script" uid="uid://yowyetbl3pg" path="res://scripts/quests/plant_quest.gd" id="26_d51r5"]
 [ext_resource type="Resource" uid="uid://dia1v0snlaxek" path="res://assets/dialogue/npcs/starting_village/hunter.dialogue" id="26_nyq5k"]
 [ext_resource type="Script" uid="uid://r5sgf6w7orpd" path="res://scripts/npc/jobs/builder.gd" id="29_arads"]
 [ext_resource type="Resource" uid="uid://ca60ph2lskf52" path="res://assets/dialogue/npcs/starting_village/builder.dialogue" id="30_o3k02"]
@@ -74,6 +77,18 @@ texture_2d = ExtResource("11_4ofek")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 0
 metadata/_custom_type_script = "uid://cn074wlyew4kj"
+
+[sub_resource type="Resource" id="Resource_jk6lc"]
+script = ExtResource("24_w1xlh")
+durability = 1
+name = "Axe"
+price = 10
+can_be_sold = true
+is_buildable = false
+texture_2d = ExtResource("11_4ofek")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 0
+metadata/_custom_type_script = "uid://cqsvdpbt83m3i"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
 size = Vector3(1.6, 2, 1.6)
@@ -187,6 +202,8 @@ dialogue = ExtResource("11_3j6ye")
 [node name="Famer" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("12_qvc14")
 dialogue = ExtResource("16_e8lh1")
+stage1_axe = SubResource("Resource_jk6lc")
+stage1_tree_seed = ExtResource("25_jk6lc")
 
 [node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Famer"]
 script = ExtResource("5_3egug")
@@ -194,6 +211,13 @@ quest_name = "Collect Seeds"
 quest_description = "Collect a seed for the Famer"
 reached_goal_text = "Return to the Famer"
 metadata/_custom_type_script = "uid://c7pim11lbdqyc"
+
+[node name="Stage2Quest" type="Node" parent="StartingVillageJobs/Famer"]
+script = ExtResource("26_d51r5")
+quest_name = "Plant the seed"
+quest_description = "Plant the seed in a pot"
+reached_goal_text = "Return to the Farmer"
+metadata/_custom_type_script = "uid://yowyetbl3pg"
 
 [node name="None" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("4_se8i8")

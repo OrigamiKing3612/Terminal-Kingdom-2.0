@@ -34,7 +34,6 @@ func plant_seed(seed: Plant):
 		growth_timer = 0.0
 
 func harvest() -> void:
-	print("harvest")
 	if plant.harvest_item:
 		var count := plant.max if (plant.max == plant.min) else randi_range(plant.min, plant.max)
 		Utils.givePlayerCountOfItem(plant.harvest_item, count)
@@ -47,5 +46,12 @@ func set_stage(new_stage: Plant.Stage):
 	plant_instance.stage = new_stage
 
 func _on_interacted() -> void:
+	if GameManager.player.skill.farming.stage == 2:
+		var quest = QuestManager.get_quest("farm1")
+		if quest.quest_status == quest.QuestStatus.started:
+			quest.reached_goal()
+			QuestManager.update_quest("farm1", quest)
+			return
+	# remove the seed
 	#plant_seed(load("res://assets/resources/plants/cabbage_plant.tres"))
 	pass

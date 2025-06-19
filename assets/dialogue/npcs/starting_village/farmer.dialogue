@@ -9,7 +9,6 @@ Farmer: Hello {{GameManager.player.name}}! Would you like to learn how to be a f
 Farmer: We need some seeds to plant. Can you go chop down a tree and get a tree seed?
 => END
 ~ stage1_started
-Farmer: Uh oh, looks like you lost your axe. Here is a new one.
 Farmer: You are almost there, but you still need to get a tree seed.
 => END
 ~ stage1_reached_goal
