@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://dmmt046g5n2t" path="res://scripts/ui/inventory_box.gd" id="3_4dhvd"]
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="4_55cbs"]
 [ext_resource type="Resource" uid="uid://83niltrh6tky" path="res://assets/resources/items/stick.tres" id="5_r03xe"]
-[ext_resource type="Texture2D" uid="uid://bqsqxj72w87cb" path="res://assets/ui/inventory.png" id="5_rtub8"]
 [ext_resource type="Resource" uid="uid://bu7fdkkvvrka3" path="res://assets/resources/items/tiles/iron_item.tres" id="6_440lp"]
 [ext_resource type="Script" uid="uid://emqvl3xrerc8" path="res://scripts/ui/buildable_items.gd" id="6_jg7te"]
 [ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="7_2uts2"]
@@ -14,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c7im14pt3acjp" path="res://assets/models/icons/dirt_slope_preview.tres" id="8_2chjq"]
 [ext_resource type="Script" uid="uid://bcjlebgfecmc6" path="res://scripts/ui/message_box.gd" id="9_1jauj"]
 [ext_resource type="PackedScene" uid="uid://cstkdjjdwrtap" path="res://scenes/ui/hotbar/hotbar.tscn" id="9_2chjq"]
+[ext_resource type="PackedScene" uid="uid://dvx3o21r0xrym" path="res://scenes/ui/inventory/inventory_box.tscn" id="9_440lp"]
 [ext_resource type="Script" uid="uid://fqsogyq7ugts" path="res://scripts/ui/equipment/equipment_box.gd" id="10_4arur"]
 [ext_resource type="PackedScene" uid="uid://odwppmv1aea3" path="res://scenes/ui/equipment/equipment_bar.tscn" id="10_biy4i"]
 
@@ -36,55 +36,7 @@ offset_bottom = 660.0
 visible = false
 script = ExtResource("3_4dhvd")
 
-[node name="Control" type="Control" parent="InventoryBox"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="InventoryBox/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -597.5
-offset_top = -447.5
-offset_right = 597.5
-offset_bottom = 447.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_rtub8")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="InventoryLabel" type="RichTextLabel" parent="InventoryBox/Control"]
-layout_mode = 0
-offset_left = -393.0
-offset_top = -386.0
-offset_right = 435.0
-offset_bottom = -311.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 40
-text = "Inventory"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Items" type="Control" parent="InventoryBox/Control"]
-anchors_preset = 0
-offset_left = -556.0
-offset_top = -312.0
-offset_right = 596.0
-offset_bottom = 376.0
+[node name="InventoryBox" parent="InventoryBox" instance=ExtResource("9_440lp")]
 
 [node name="BuildingBox" type="CanvasLayer" parent="."]
 visible = false
