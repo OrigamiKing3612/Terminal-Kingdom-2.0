@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cy31wax260wky"]
+
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_wimcb"]
+[ext_resource type="Texture2D" uid="uid://b6q010h46058g" path="res://assets/models/icons/seeds/beet.png" id="2_wimcb"]
+
+[resource]
+script = ExtResource("1_wimcb")
+name = &"Beet"
+price = 10
+can_be_sold = true
+is_buildable = false
+texture_2d = ExtResource("2_wimcb")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 0
+metadata/_custom_type_script = "uid://cn074wlyew4kj"

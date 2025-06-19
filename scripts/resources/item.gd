@@ -12,13 +12,6 @@ var id: String
 @export_group("Buildable Settings")
 @export var gridmap_id: int = 0
 
-@export_group("Generate Settings")
-@export var generate_item: bool = true
-@export var generate_preview: bool = false
-@export var preview_file: String = ""
-@export var override_name: bool = false
-@export var overriden_name: String = ""
-
 func _init():
 	id = UUID.string()
 	

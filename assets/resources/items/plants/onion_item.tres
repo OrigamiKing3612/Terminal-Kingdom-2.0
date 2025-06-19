@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b8is5w7b2wrs6"]
+
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_012dx"]
+[ext_resource type="Texture2D" uid="uid://bij3hqjpmxnum" path="res://assets/models/icons/seeds/onion.png" id="2_012dx"]
+
+[resource]
+script = ExtResource("1_012dx")
+name = &"Onion"
+price = 10
+can_be_sold = true
+is_buildable = false
+texture_2d = ExtResource("2_012dx")
+position_in_inventory = Vector2(100, 100)
+gridmap_id = 0
+metadata/_custom_type_script = "uid://cn074wlyew4kj"
