@@ -27,32 +27,20 @@ static func break_tile(id: int) -> bool:
 
 	if not GameManager.player.hasTool(tile_data.tool_required):
 		return false
-
-	var item = tile_data.drop_item.copy()
 	
-	var count: int 
-	if tile_data.min_drop_count != tile_data.max_drop_count:
-		count = GameManager.random.randi_range(
-			tile_data.min_drop_count, 
-			tile_data.max_drop_count
-		)
-	else: 
-		count = tile_data.max_drop_count
+	if tile_data.drop_item:
+		var count: int = tile_data.max_drop_count if tile_data.min_drop_count == tile_data.max_drop_count else GameManager.random.randi_range(
+				tile_data.min_drop_count, 
+				tile_data.max_drop_count)
+		GameManager.player.collectItem(tile_data.drop_item.copy(), count)
+	
+	if tile_data.second_drop_item:
+		var count2: int = tile_data.second_max_drop_count if tile_data.second_min_drop_count == tile_data.second_max_drop_count else GameManager.random.randi_range(
+				tile_data.second_min_drop_count, 
+				tile_data.second_max_drop_count)
+		GameManager.player.collectItem(tile_data.second_drop_item.copy(), count2)
 
-	GameManager.player.collectItem(item, count)
 	return true
-	#if id == 65 or id == 66:
-		#if not GameManager.player.has("Axe"):
-			#return false
-		#var item := Item.new()
-		#item.id = UUID.string()
-		#item.name = "Lumber"
-		#item.price = 2
-		#var count = 1
-		#if id == 65:
-			#count = GameManager.random.randi_range(1, 3)
-		#GameManager.player.collectItem(item, count)
-	#return true
 	
 static func load_all_from_path(path: String) -> Array:
 	var recipes = []
