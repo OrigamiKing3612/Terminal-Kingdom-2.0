@@ -12,4 +12,5 @@ func talk(data: NPCData) -> void:
 			quest.data["lumber_ids"] = []
 			quest.reached_goal()
 			QuestManager.update_quest("blacksmith3", quest)
-	
+			return
+	DialogueManager.show_dialogue_balloon(dialogue, "talk")

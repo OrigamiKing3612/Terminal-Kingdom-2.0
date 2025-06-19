@@ -62,27 +62,17 @@ is_buildable = false
 texture_2d = ExtResource("10_4ofek")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 0
-generate_item = true
-generate_preview = false
-preview_file = ""
-override_name = false
-overriden_name = ""
 metadata/_custom_type_script = "uid://cn074wlyew4kj"
 
 [sub_resource type="Resource" id="Resource_nyq5k"]
 script = ExtResource("9_slejn")
-name = "Stick"
+name = &""
 price = 1
 can_be_sold = false
 is_buildable = false
 texture_2d = ExtResource("11_4ofek")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 0
-generate_item = true
-generate_preview = false
-preview_file = ""
-override_name = false
-overriden_name = ""
 metadata/_custom_type_script = "uid://cn074wlyew4kj"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
@@ -197,6 +187,13 @@ dialogue = ExtResource("11_3j6ye")
 [node name="Famer" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("12_qvc14")
 dialogue = ExtResource("16_e8lh1")
+
+[node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Famer"]
+script = ExtResource("5_3egug")
+quest_name = "Collect Seeds"
+quest_description = "Collect a seed for the Famer"
+reached_goal_text = "Return to the Famer"
+metadata/_custom_type_script = "uid://c7pim11lbdqyc"
 
 [node name="None" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("4_se8i8")
