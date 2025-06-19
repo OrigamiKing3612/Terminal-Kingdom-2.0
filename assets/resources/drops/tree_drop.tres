@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="TileDropData" load_steps=4 format=3 uid="uid://b6cx33gbqw4ys"]
+[gd_resource type="Resource" script_class="TileDropData" load_steps=3 format=3 uid="uid://b6cx33gbqw4ys"]
 
 [ext_resource type="Resource" uid="uid://dgy27c0tsi8d2" path="res://assets/resources/items/tiles/lumber.tres" id="1_xhwfy"]
 [ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/TileDropData.gd" id="2_aa6vi"]
-[ext_resource type="Resource" uid="uid://bd3lfkdnqrn35" path="res://assets/resources/items/plants/seeds/tree_seed.tres" id="3_aa6vi"]
 
 [resource]
 script = ExtResource("2_aa6vi")
@@ -11,6 +10,5 @@ drop_item = ExtResource("1_xhwfy")
 min_drop_count = 1
 max_drop_count = 3
 tool_required = 1
-second_drop_item = ExtResource("3_aa6vi")
 second_min_drop_count = 1
-second_max_drop_count = 3
+second_max_drop_count = 1
