@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://67y5cb0skn3k"]
+[gd_scene load_steps=7 format=3 uid="uid://67y5cb0skn3k"]
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_fiueb"]
 [ext_resource type="Resource" uid="uid://djjk3okjgb42q" path="res://assets/resources/npc/farmer.tres" id="2_fdgc7"]
 [ext_resource type="MeshLibrary" uid="uid://bg77eu6w4exqp" path="res://assets/tiles.tres" id="3_x5wys"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_fdgc7"]
 [ext_resource type="PackedScene" uid="uid://dfkt11r6dih32" path="res://scenes/tiles/PotTile.tscn" id="5_x5wys"]
+[ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/LanternTile.tscn" id="6_v7s8p"]
 
 [node name="Farm" type="Node3D"]
 
@@ -20,114 +21,136 @@ data = {
 script = ExtResource("4_fdgc7")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="PotTile" parent="." instance=ExtResource("5_x5wys")]
+[node name="Pots" type="Node3D" parent="."]
+
+[node name="PotTile" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -3)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile2" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile2" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -5)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile3" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile3" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -7)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile4" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile4" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -9)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile5" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile5" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -11.0003)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile6" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile6" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -13)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile7" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile7" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -15)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile8" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile8" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -17)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile9" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile9" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -17)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile10" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile10" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -17)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile11" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile11" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -17)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile12" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile12" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, -17)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile13" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile13" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.5, -17)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile14" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile14" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.5, -17)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile15" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile15" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, -17)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile16" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile16" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, -15)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile20" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile20" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, -33)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile21" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile21" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0.5, -33)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile22" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile22" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0.5, -33)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile23" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile23" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0483, 0.237113, -33.1777)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile25" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile25" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -33)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile26" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile26" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -33)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile27" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile27" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -33)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile28" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile28" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -33)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile24" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile24" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0.5, -33)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile17" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile17" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, -3)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile18" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile18" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, -7)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
 
-[node name="PotTile19" parent="." instance=ExtResource("5_x5wys")]
+[node name="PotTile19" parent="Pots" instance=ExtResource("5_x5wys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, -11)
-skeleton = NodePath("../GridMap")
+skeleton = NodePath("../../GridMap")
+
+[node name="Lanterns" type="Node3D" parent="."]
+
+[node name="LanternTile" parent="Lanterns" instance=ExtResource("6_v7s8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 10, -3)
+
+[node name="LanternTile2" parent="Lanterns" instance=ExtResource("6_v7s8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, -27)
+
+[node name="LanternTile3" parent="Lanterns" instance=ExtResource("6_v7s8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 8, -27)
+
+[node name="LanternTile4" parent="Lanterns" instance=ExtResource("6_v7s8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 10, -3)
+
+[node name="LanternTile5" parent="Lanterns" instance=ExtResource("6_v7s8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 10, -17)
+
+[node name="LanternTile6" parent="Lanterns" instance=ExtResource("6_v7s8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 10, -17.5)
