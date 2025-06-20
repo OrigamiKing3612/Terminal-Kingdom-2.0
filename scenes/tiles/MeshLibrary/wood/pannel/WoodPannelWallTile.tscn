@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://cqt28hhg56t07"]
+
+[ext_resource type="Material" uid="uid://c536gj7nxdaqp" path="res://assets/resources/materials/WoodPannelMaterial.tres" id="1_63vmx"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xbueh"]
+_surfaces = [{
+"aabb": AABB(0, -1, -1, 1, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwACAAQABAACAAEABQAAAAMABQADAAQABQAGAAAAAAAGAAEAAQAGAAUAAQAFAAcABQAEAAcABAABAAcA"),
+"name": "WoodPannelMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAP//AAAAAP////8AAP///////wAA//8AAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAP//AAAAAP//AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pp28m"]
+resource_name = "StaticTiles_Cube_046"
+_surfaces = [{
+"aabb": AABB(0, -1, -1, 1, 2, 2),
+"attribute_data": PackedByteArray("//////9/AAD//wAA/3////9/AAD///////8AAP9/////f/////8AAP9/AAD//////////wAAAAD//wAAAAD//wAAAAD///////8AAAAA/////wAA/3////9/AAD/////"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("1_63vmx"),
+"name": "WoodPannelMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAP//AIAAAP////8AgP///////wCAAAAAAP//AIAAAAAAAAD/P///AAD///8///8AAAAA/z8AAAAA////PwAAAAAAAAAA/////wAAAAAAAP//AAAAAP//AAAAAAAA//8AAAAA/7//////////v/////8AAP+///8AAP///78AAP////8AAAAAAAAAAAAAAAD//wAAAAAAAAAA//8AAP////8AAP+/AAD//////78AAP//AAD/v/////////+//3////9/////f////3///wAA/38AAP9/AAD/fwAA/3////9/////f////3////9//38AAP9/AAD/fwAA/38AAP8//3//P/9//z//f/8//3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xbueh")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uwe63"]
+data = PackedVector3Array(1, -1, 1, 0, 1, 1, 1, 1, 1, 1, -1, 1, 0, -1, 1, 0, 1, 1, 0, -1, -1, 1, -1, 1, 1, -1, -1, 0, -1, -1, 0, -1, 1, 1, -1, 1, 0, -1, -1, 1, 1, -1, 0, 1, -1, 0, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, 1, 1, 0, -1, 1, 0, -1, -1, 1, 1, -1, 0, 1, 1, 0, 1, -1, 1, 1, -1, 1, 1, 1, 0, 1, 1)
+
+[node name="WoodPannelWallTile" type="Node3D"]
+
+[node name="WoodPannelWallTile" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_pp28m")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WoodPannelWallTile"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WoodPannelWallTile/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uwe63")

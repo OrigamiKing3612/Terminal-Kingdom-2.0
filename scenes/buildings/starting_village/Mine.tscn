@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_y5v84"]
 [ext_resource type="Resource" uid="uid://dhbvn8ylg7er0" path="res://assets/resources/npc/miner.tres" id="2_s1wi8"]
-[ext_resource type="MeshLibrary" uid="uid://bkoxs0vehultx" path="res://assets/tiles.tres" id="3_p8ruf"]
+[ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="3_p8ruf"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_p8ruf"]
 [ext_resource type="PackedScene" uid="uid://c3fc7stx78m1" path="res://scenes/tiles/MineEntranceTile.tscn" id="4_s1wi8"]
 [ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/LanternTile.tscn" id="5_56oy1"]

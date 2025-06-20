@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://rt35jrh3xbfd"]
 
-[ext_resource type="MeshLibrary" uid="uid://bkoxs0vehultx" path="res://assets/tiles.tres" id="1_rgvqe"]
+[ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="1_rgvqe"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="2_rgvqe"]
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="3_2jpfu"]
 [ext_resource type="Resource" uid="uid://8106ceomlnsr" path="res://assets/resources/npc/king.tres" id="4_rgvqe"]

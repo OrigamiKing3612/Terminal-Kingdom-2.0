@@ -46,7 +46,6 @@ mesh = SubResource("ArrayMesh_je7of")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CoalItemTile"]
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoalItemTile/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_iljo4")

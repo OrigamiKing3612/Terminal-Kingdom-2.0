@@ -40,6 +40,7 @@ data = PackedVector3Array(-0.375, -0.375, 1, -0.375, 0.375, -1, -0.375, 0.375, 1
 [node name="LumberItemTileTwo" type="Node3D"]
 
 [node name="LumberItemTileTwo" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("ArrayMesh_1tyl8")
 skeleton = NodePath("")
 

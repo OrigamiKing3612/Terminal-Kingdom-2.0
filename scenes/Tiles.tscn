@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b6vi2yjsymsnb"]
+[gd_scene load_steps=83 format=3 uid="uid://b6vi2yjsymsnb"]
 
 [ext_resource type="PackedScene" uid="uid://dcaxtrrv5km1d" path="res://scenes/tiles/MeshLibrary/dirt/DirtSlopeTile.tscn" id="1_17u1s"]
 [ext_resource type="PackedScene" uid="uid://car1pebfw4r3b" path="res://scenes/tiles/MeshLibrary/dirt/DirtStairExteriorCornerTile.tscn" id="2_t7arw"]
@@ -67,6 +67,21 @@
 [ext_resource type="PackedScene" uid="uid://bl0qt73ryudtp" path="res://scenes/tiles/MeshLibrary/item/LumberItemTileOne.tscn" id="30_he8u3"]
 [ext_resource type="PackedScene" uid="uid://7nfrcdt56yox" path="res://scenes/tiles/MeshLibrary/item/LumberItemTileThree.tscn" id="31_3sktu"]
 [ext_resource type="PackedScene" uid="uid://1xb13lwmkasr" path="res://scenes/tiles/MeshLibrary/item/LumberItemTileTwo.tscn" id="32_5cxou"]
+[ext_resource type="PackedScene" uid="uid://bwigciloy2dgo" path="res://scenes/tiles/MeshLibrary/wood/pannel/WoodPannelTile.tscn" id="68_it2dr"]
+[ext_resource type="PackedScene" uid="uid://dwty8q5cdxrbp" path="res://scenes/tiles/MeshLibrary/wood/pannel/WoodPannelSlopeTile.tscn" id="69_q507c"]
+[ext_resource type="PackedScene" uid="uid://dyrefch0gl188" path="res://scenes/tiles/MeshLibrary/wood/pannel/WoodPannelStairInteriorCornerTile.tscn" id="70_fnmj7"]
+[ext_resource type="PackedScene" uid="uid://crphnrbm7bv73" path="res://scenes/tiles/MeshLibrary/wood/pannel/WoodPannelStairTile.tscn" id="71_3jevm"]
+[ext_resource type="PackedScene" uid="uid://cf7yyuj5ajcsa" path="res://scenes/tiles/MeshLibrary/wood/pannel/WoodPannelStairExteriorCornerTile.tscn" id="72_ncbom"]
+[ext_resource type="PackedScene" uid="uid://cqt28hhg56t07" path="res://scenes/tiles/MeshLibrary/wood/pannel/WoodPannelWallTile.tscn" id="73_vpysd"]
+[ext_resource type="PackedScene" uid="uid://dt74f8i04f0t2" path="res://scenes/tiles/MeshLibrary/wood/pannel/WoodPannelPoleTile.tscn" id="74_48iks"]
+[ext_resource type="PackedScene" uid="uid://r27kby57liv4" path="res://scenes/tiles/MeshLibrary/decoration/fence/FenceCornerCurvedTile.tscn" id="75_4dgvg"]
+[ext_resource type="PackedScene" uid="uid://bwu162q8n6exf" path="res://scenes/tiles/MeshLibrary/decoration/fence/FenceCornerTile.tscn" id="76_itfvo"]
+[ext_resource type="PackedScene" uid="uid://bibcbfdacdg4u" path="res://scenes/tiles/MeshLibrary/decoration/fence/FenceStraightTile.tscn" id="77_cp5np"]
+[ext_resource type="PackedScene" uid="uid://ceof1oskkmfjs" path="res://scenes/tiles/MeshLibrary/decoration/hedge/HedgeCornerTile.tscn" id="78_aecj4"]
+[ext_resource type="PackedScene" uid="uid://qpp26ssn2e0q" path="res://scenes/tiles/MeshLibrary/decoration/hedge/HedgeTile.tscn" id="79_okn1m"]
+[ext_resource type="PackedScene" uid="uid://cb6rj8v73n4j7" path="res://scenes/tiles/MeshLibrary/decoration/FlowersTile.tscn" id="80_eqysm"]
+[ext_resource type="PackedScene" uid="uid://cbxhyjcol5pt5" path="res://scenes/tiles/MeshLibrary/decoration/RocksTile.tscn" id="81_yq66o"]
+[ext_resource type="PackedScene" uid="uid://tao4i7jriyw2" path="res://scenes/tiles/MeshLibrary/decoration/StonesTile.tscn" id="82_i1kll"]
 
 [node name="Tiles" type="Node3D"]
 
@@ -271,4 +286,49 @@ visible = false
 visible = false
 
 [node name="TreeSmallTile" parent="StaticTiles" instance=ExtResource("30_6363k")]
+visible = false
+
+[node name="WoodPannelTile" parent="StaticTiles" instance=ExtResource("68_it2dr")]
+visible = false
+
+[node name="WoodPannelSlopeTile" parent="StaticTiles" instance=ExtResource("69_q507c")]
+visible = false
+
+[node name="WoodPannelStairInteriorCornerTile" parent="StaticTiles" instance=ExtResource("70_fnmj7")]
+visible = false
+
+[node name="WoodPannelStairTile" parent="StaticTiles" instance=ExtResource("71_3jevm")]
+visible = false
+
+[node name="WoodPannelStairExteriorCornerTile" parent="StaticTiles" instance=ExtResource("72_ncbom")]
+visible = false
+
+[node name="WoodPannelWallTile" parent="StaticTiles" instance=ExtResource("73_vpysd")]
+visible = false
+
+[node name="WoodPannelPoleTile" parent="StaticTiles" instance=ExtResource("74_48iks")]
+visible = false
+
+[node name="FenceCornerCurvedTile" parent="StaticTiles" instance=ExtResource("75_4dgvg")]
+visible = false
+
+[node name="FenceCornerTile" parent="StaticTiles" instance=ExtResource("76_itfvo")]
+visible = false
+
+[node name="FenceStraightTile" parent="StaticTiles" instance=ExtResource("77_cp5np")]
+visible = false
+
+[node name="HedgeCornerTile" parent="StaticTiles" instance=ExtResource("78_aecj4")]
+visible = false
+
+[node name="HedgeTile" parent="StaticTiles" instance=ExtResource("79_okn1m")]
+visible = false
+
+[node name="FlowersTile" parent="StaticTiles" instance=ExtResource("80_eqysm")]
+visible = false
+
+[node name="RocksTile" parent="StaticTiles" instance=ExtResource("81_yq66o")]
+visible = false
+
+[node name="StonesTile" parent="StaticTiles" instance=ExtResource("82_i1kll")]
 visible = false

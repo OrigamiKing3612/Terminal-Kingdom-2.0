@@ -2,18 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6hu5oue0kx5m"
-path.s3tc="res://.godot/imported/Bricks.png-4ee1dbe902b515c19119491a7874a88c.s3tc.ctex"
+uid="uid://cqnosl1wefrja"
+path.s3tc="res://.godot/imported/woodpanel-albedo.png-2d091752c489e8a6a190203f081a8fa9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://assets/models/textures/Bricks.png"
-dest_files=["res://.godot/imported/Bricks.png-4ee1dbe902b515c19119491a7874a88c.s3tc.ctex"]
+source_file="res://assets/models/textures/wood_pannel/woodpanel-albedo.png"
+dest_files=["res://.godot/imported/woodpanel-albedo.png-2d091752c489e8a6a190203f081a8fa9.s3tc.ctex"]
 
 [params]
 
