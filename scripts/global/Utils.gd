@@ -21,6 +21,7 @@ static func givePlayerCountOfItem(itemToDuplicate: Item, count: int) -> Array[St
 	return ids
 	
 static func break_tile(id: int) -> bool:
+	if id < 0: return false
 	var tile_data := TileDB.get_tile(id)
 	if tile_data == null:
 		push_error("No tile data for ID: %s" % id)
