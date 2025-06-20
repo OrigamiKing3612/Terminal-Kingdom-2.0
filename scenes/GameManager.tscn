@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://1xr5qopgm57i"]
+[gd_scene load_steps=18 format=3 uid="uid://1xr5qopgm57i"]
 
 [ext_resource type="Script" uid="uid://ndmr52dllwad" path="res://scripts/global/GameManager.gd" id="1_34tde"]
 [ext_resource type="Resource" uid="uid://v0x75ukrrln7" path="res://assets/resources/player/player.tres" id="2_3dus2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="7_2uts2"]
 [ext_resource type="Resource" uid="uid://bl24ijs603hmr" path="res://assets/resources/items/axe.tres" id="7_440lp"]
 [ext_resource type="Texture2D" uid="uid://c7im14pt3acjp" path="res://assets/models/icons/dirt_slope_preview.tres" id="8_2chjq"]
+[ext_resource type="Resource" uid="uid://d0p5yutbxrj38" path="res://assets/resources/items/pickaxe.tres" id="8_440lp"]
 [ext_resource type="Script" uid="uid://bcjlebgfecmc6" path="res://scripts/ui/message_box.gd" id="9_1jauj"]
 [ext_resource type="PackedScene" uid="uid://cstkdjjdwrtap" path="res://scenes/ui/hotbar/hotbar.tscn" id="9_2chjq"]
 [ext_resource type="PackedScene" uid="uid://dvx3o21r0xrym" path="res://scenes/ui/inventory/inventory_box.tscn" id="9_440lp"]
@@ -23,7 +24,7 @@ blend_mode = 4
 script = ExtResource("1_34tde")
 player = ExtResource("2_3dus2")
 kingdom = ExtResource("3_1jauj")
-testing_items = Array[ExtResource("4_55cbs")]([ExtResource("5_r03xe"), ExtResource("6_440lp"), ExtResource("7_440lp")])
+testing_items = Array[ExtResource("4_55cbs")]([ExtResource("5_r03xe"), ExtResource("6_440lp"), ExtResource("7_440lp"), ExtResource("8_440lp")])
 
 [node name="QuestBox" type="CanvasLayer" parent="."]
 

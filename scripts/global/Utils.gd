@@ -6,7 +6,7 @@ enum SkillLevel{None, Novice, Apprentice, Journeyman, Expert, Master}
 enum BehaviorType{Idle, Wander, Stand, Work}
 enum Gender{Male, Female}
 enum StationTypes{Anvil, Furnace, Workbench}
-enum ToolType{None, Axe, Pickaxe}
+enum ToolType{None, Axe, Pickaxe, Sword}
 enum SeedType{None, Beet, Cabbage, Carrot, Onion, Pumpkin, TreeSeed}
 
 ## Returns ids of the items

@@ -35,6 +35,12 @@ func plant_seed(new_seed: Plant):
 	_stage = Plant.Stage.seed
 
 func harvest() -> void:
+	if GameManager.player.skill.farming.stage == 3:
+		var quest = QuestManager.get_quest("farm3")
+		if quest.quest_status == quest.QuestStatus.started:
+			quest.reached_goal()
+			QuestManager.update_quest("farm3", quest)
+
 	if plant.harvest_item:
 		var count := plant.max_amount if (plant.max_amount == plant.min_amount) else randi_range(plant.min_amount, plant.max_amount)
 		Utils.givePlayerCountOfItem(plant.harvest_item, count)
@@ -51,11 +57,10 @@ func set_stage(new_stage: Plant.Stage):
 
 func _on_interacted() -> void:
 	if GameManager.player.skill.farming.stage == 2:
-		var quest = QuestManager.get_quest("farm1")
+		var quest = QuestManager.get_quest("farm2")
 		if quest.quest_status == quest.QuestStatus.started:
 			quest.reached_goal()
-			QuestManager.update_quest("farm1", quest)
-			return
+			QuestManager.update_quest("farm2", quest)
 	
 	if plant != null:
 		if stage == Plant.Stage.mature:

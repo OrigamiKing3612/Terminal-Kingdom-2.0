@@ -25,8 +25,8 @@ func getStage():
 			stage1()
 		2:
 			stage2()
-		#3: 
-			#stage3()
+		3: 
+			stage3()
 		#4: 
 			#stage4()
 		_:
@@ -74,3 +74,21 @@ func stage2():
 			quest.finish_quest()
 			QuestManager.update_quest(stage2_ID, quest)
 			GameManager.player.skill.farming.stage = 3
+
+func stage3():
+	var quest = QuestManager.get_quest(stage3_ID)
+	if quest == null:
+		return
+	match quest.quest_status:
+		quest.QuestStatus.available:
+			quest.start_quest()
+			DialogueManager.show_dialogue_balloon(dialogue, "stage3_available")
+			QuestManager.update_quest(stage3_ID, quest)
+		quest.QuestStatus.started:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage3_started")
+			QuestManager.update_quest(stage3_ID, quest)
+		quest.QuestStatus.reached_goal:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage3_reached_goal")
+			quest.finish_quest()
+			QuestManager.update_quest(stage3_ID, quest)
+			GameManager.player.skill.farming.stage = 4

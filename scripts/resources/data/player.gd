@@ -63,13 +63,9 @@ func hasTool(tool: Utils.ToolType) -> bool:
 	if tool == Utils.ToolType.None:
 		return true
 	for item in items.values():
-		match tool:
-			Utils.ToolType.Axe:
-				if item.name == "Axe":
-					return true
-			Utils.ToolType.Pickaxe:
-				if item.name == "Pickaxe":
-					return true
+		if not item is ToolItem: continue
+		if item.tool_type == tool:
+			return true
 	return false
 	
 func hasID(id: String) -> bool:
