@@ -62,7 +62,7 @@ func _input(event: InputEvent) -> void:
 	if mode == Mode.Normal or mode == Mode.Build:
 		if Input.is_action_pressed("left_click") && player.can_build:
 			left_click.emit()
-		if Input.is_action_pressed("right_click"):
+		if Input.is_action_just_pressed("right_click"):
 			right_click.emit()
 		
 	match mode:
@@ -101,6 +101,10 @@ func _input(event: InputEvent) -> void:
 				mine_left_click.emit()
 			elif event.is_action_released("right_click"):
 				mine_right_click.emit()
+			elif event.is_action_released("back_option"):
+				toolbelt_back.emit()
+			elif event.is_action_released("next_option"):
+				toolbelt_next.emit()
 		Mode.InPopUp:
 			if event.is_action_pressed("esc"):
 				SceneManager.hide_popup()

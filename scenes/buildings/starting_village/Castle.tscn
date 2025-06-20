@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://vnwtd345uny0"
 metadata/_editor_floor_ = Vector3(0, 2, 0)
 
 [node name="KingNPC" parent="." instance=ExtResource("3_2jpfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110, 3, 52)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111, 3, 51)
 data = ExtResource("4_rgvqe")
 talkable_area = Vector3(10, 4, 10)
 

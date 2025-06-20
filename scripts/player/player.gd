@@ -29,7 +29,7 @@ func _input(event: InputEvent) -> void:
 					change_movement_state("run")
 		else:
 			change_movement_state("stand")
-	if event.is_action_pressed("jump") and GameManager.mode != GameManager.Mode.Speaking and GameManager.mode != GameManager.Mode.InPopUp:
+	if event.is_action_pressed("jump") and (GameManager.mode == GameManager.Mode.Normal or GameManager.mode == GameManager.Mode.Mining):
 		if air_jump_counter <= max_air_jump:
 			pressed_jump.emit()
 			air_jump_counter += 1
@@ -78,7 +78,8 @@ func _on_right_click():
 		if collider is GridMap:
 			var pos = ray_cast_3d.get_collision_point()
 			var normal = ray_cast_3d.get_collision_normal()
-			collider.place_tile(pos + normal * 0.5, GameManager.selected_gridmap_id)
+			if GameManager.mode == GameManager.Mode.Build:
+				collider.place_tile(pos + normal * 0.5, GameManager.selected_gridmap_id)
 		elif collider.has_method("interact"):
 			collider.interact()
 			

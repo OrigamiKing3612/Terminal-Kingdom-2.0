@@ -30,8 +30,8 @@ func _on_stop_mining():
 	GameManager.mode = GameManager.Mode.Normal
 
 func destroy_tile(collision_point: Vector3) -> void:
-	var local_point = to_local(collision_point)
-	var grid_pos = local_to_map(local_point)
+	#var local_point = to_local(collision_point)
+	var grid_pos = local_to_map(collision_point)
 	if grid_pos.y == 0:
 		return
 	var id = get_cell_item(grid_pos)

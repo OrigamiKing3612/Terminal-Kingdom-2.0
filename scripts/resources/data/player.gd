@@ -6,6 +6,7 @@ signal remove_item(item: Item)
 @export var name: String = "DEFAULT_NAME"
 @export var can_build: bool = true
 @export var position: Vector3 = Vector3.ZERO
+# [Item.id, Item]
 @export var items: Dictionary[String, Item] = {}
 
 @export var skill: Skill
