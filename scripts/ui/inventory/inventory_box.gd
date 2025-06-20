@@ -30,7 +30,7 @@ func connect_slots():
 	
 func _update():
 	var inventory_items: Dictionary[Item, int] = {}
-	for item in GameManager.player.items:
+	for item in GameManager.player.items.values():
 		if item in inventory_items:
 			inventory_items[item] += 1
 		else:
@@ -51,23 +51,23 @@ func _update():
 				slot.clear()
 			continue
 
-		var desired = inventory_item_slots[i]
+		var desired_item = inventory_item_slots[i]
 
 		if slot.inventory_item:
-			if slot.inventory_item.item_slot.item == desired.item:
-				slot.inventory_item.item_slot.count = desired.count
+			if slot.inventory_item.item_slot.item == desired_item.item:
+				slot.inventory_item.item_slot.count = desired_item.count
 				slot.inventory_item.update()
 			else:
 				if not slot is ToolbeltInventorySlot:
 					slot.clear()
 					var inventory_item = INVENTORY_ITEM.instantiate()
-					inventory_item.item_slot = desired
+					inventory_item.item_slot = desired_item
 					slot.insert(inventory_item)
 					inventory_item.update()
 		else:
 			if not slot is ToolbeltInventorySlot:
 				var inventory_item = INVENTORY_ITEM.instantiate()
-				inventory_item.item_slot = desired
+				inventory_item.item_slot = desired_item
 				slot.insert(inventory_item)
 				inventory_item.update()
 
