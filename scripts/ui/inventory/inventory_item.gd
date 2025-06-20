@@ -16,10 +16,8 @@ func update():
 			count_label.text = "x" + str(item_slot.count)
 		else:
 			count_label.text = ""
-		tooltip_text = item_slot.item.name
 		show()
 	else:
 		item_texture.texture = null
 		count_label.text = ""
-		tooltip_text = ""
 		hide()

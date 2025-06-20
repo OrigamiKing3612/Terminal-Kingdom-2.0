@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://1xr5qopgm57i"]
+[gd_scene load_steps=17 format=3 uid="uid://1xr5qopgm57i"]
 
 [ext_resource type="Script" uid="uid://ndmr52dllwad" path="res://scripts/global/GameManager.gd" id="1_34tde"]
 [ext_resource type="Resource" uid="uid://v0x75ukrrln7" path="res://assets/resources/player/player.tres" id="2_3dus2"]
 [ext_resource type="Resource" uid="uid://befliksktihyd" path="res://assets/resources/kingdom.tres" id="3_1jauj"]
-[ext_resource type="Script" uid="uid://dmmt046g5n2t" path="res://scripts/ui/inventory_box.gd" id="3_4dhvd"]
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="4_55cbs"]
 [ext_resource type="Resource" uid="uid://83niltrh6tky" path="res://assets/resources/items/stick.tres" id="5_r03xe"]
 [ext_resource type="Resource" uid="uid://bu7fdkkvvrka3" path="res://assets/resources/items/tiles/iron_item.tres" id="6_440lp"]
@@ -86,7 +85,6 @@ visible = false
 
 [node name="InventoryBox" type="CanvasLayer" parent="."]
 visible = false
-script = ExtResource("3_4dhvd")
 
 [node name="InventoryBox" parent="InventoryBox" node_paths=PackedStringArray("toolbelt") instance=ExtResource("9_440lp")]
 toolbelt = NodePath("../../ToolbeltBox/ToolbeltNode")
@@ -95,11 +93,9 @@ toolbelt = NodePath("../../ToolbeltBox/ToolbeltNode")
 [connection signal="build_next" from="." to="BuildingBox/HotBar" method="_on_build_next"]
 [connection signal="hide_building" from="." to="BuildingBox" method="_on_hide_building"]
 [connection signal="hide_inventory" from="." to="ToolbeltBox/ToolbeltNode" method="_on_hide_inventory"]
-[connection signal="hide_inventory" from="." to="InventoryBox" method="_on_hide_inventory"]
 [connection signal="inventory_update" from="." to="BuildingBox/HotBar" method="_on_game_manager_inventory_update"]
 [connection signal="show_building" from="." to="BuildingBox" method="_on_show_building"]
 [connection signal="show_inventory" from="." to="ToolbeltBox/ToolbeltNode" method="_on_show_inventory"]
-[connection signal="show_inventory" from="." to="InventoryBox" method="_on_show_inventory"]
 [connection signal="show_message" from="." to="MessageBox" method="_on_show_message"]
 [connection signal="toolbelt_back" from="." to="ToolbeltBox/ToolbeltNode" method="_on_toolbelt_back"]
 [connection signal="toolbelt_next" from="." to="ToolbeltBox/ToolbeltNode" method="_on_toolbelt_next"]
