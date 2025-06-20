@@ -1,10 +1,9 @@
 extends Control
 class_name InventoryBox
 
-signal toolbelt_updated(number: int, inventory_item: InventoryItemSlot)
+@export var toolbelt: ToolbeltNode
 
 @onready var inventory_grid_container: GridContainer = $Inventory/GridContainer
-@onready var toolbelt_grid_container: GridContainer = $Panel/GridContainer
 
 var slots: Array[InventorySlot]
 
@@ -13,15 +12,14 @@ var itemInHand: InventoryItem
 const INVENTORY_ITEM = preload("res://scenes/ui/inventory/inventory_item.tscn")
 
 func _ready() -> void:
-	for child in inventory_grid_container.get_children(): 
+	for child in inventory_grid_container.get_children():
 		if child is InventorySlot:
 			slots.append(child)
 			
-	for child in toolbelt_grid_container.get_children(): 
+	for child in toolbelt.grid_container.get_children(): 
 		if child is ToolbeltInventorySlot:
-			child.toolbelt_updated.connect(_on_toolbelt_update)
 			slots.append(child)
-	
+
 	connect_slots()
 	GameManager.inventory_update.connect(_update)
 	_update()
@@ -56,7 +54,8 @@ func _update():
 		inventory_item.update(slot)
 
 func _on_slot_clicked(slot: InventorySlot):
-	if slot.is_empty() && itemInHand:
+	if slot.is_empty():
+		if not itemInHand: return
 		insert_item_in_slot(slot)
 		return
 	
@@ -72,15 +71,11 @@ func insert_item_in_slot(slot: InventorySlot):
 	var item = itemInHand
 	remove_child(itemInHand)
 	itemInHand = null
-	
 	slot.insert(item)
 
 func update_item_in_hand():
 	if not itemInHand: return
-	itemInHand.global_position = get_global_mouse_position() - itemInHand.size / 2# - Vector2(0, -40)
+	itemInHand.global_position = get_global_mouse_position() - itemInHand.size / 2
 	
 func _input(event: InputEvent) -> void:
 	update_item_in_hand()
-	
-func _on_toolbelt_update(number: int, item: InventoryItemSlot):
-	toolbelt_updated.emit(number, item)

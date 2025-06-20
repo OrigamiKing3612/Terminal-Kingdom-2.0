@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://04xqp7ntm7b4"]
+
+[ext_resource type="PackedScene" uid="uid://c1smga2djsboi" path="res://scenes/ui/inventory/toolbelt_inventory_slot.tscn" id="1_ire23"]
+[ext_resource type="Script" uid="uid://ch34y4n1ubww1" path="res://scripts/ui/toolbelt/toolbelt.gd" id="1_xtro4"]
+
+[node name="ToolbeltNode" type="Control"]
+custom_minimum_size = Vector2(120, 632)
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -632.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_xtro4")
+metadata/_custom_type_script = "uid://ch34y4n1ubww1"
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(120, 632)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -632.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -316.0
+offset_bottom = 316.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ToolbeltInventorySlot1" parent="Panel/GridContainer" instance=ExtResource("1_ire23")]
+layout_mode = 2
+
+[node name="ToolbeltInventorySlot2" parent="Panel/GridContainer" instance=ExtResource("1_ire23")]
+layout_mode = 2
+
+[node name="ToolbeltInventorySlot3" parent="Panel/GridContainer" instance=ExtResource("1_ire23")]
+layout_mode = 2
+
+[node name="ToolbeltInventorySlot4" parent="Panel/GridContainer" instance=ExtResource("1_ire23")]
+layout_mode = 2
+
+[node name="ToolbeltInventorySlot5" parent="Panel/GridContainer" instance=ExtResource("1_ire23")]
+layout_mode = 2

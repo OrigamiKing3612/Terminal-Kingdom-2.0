@@ -2,6 +2,7 @@ extends Node
 
 @onready var inventory_box: CanvasLayer = $InventoryBox
 @onready var building_box: CanvasLayer = $BuildingBox
+@onready var toolbelt_box: CanvasLayer = $ToolbeltBox
 
 @export var selected_item_index: int = 0
 @export var selected_gridmap_id: int = 0
@@ -148,12 +149,3 @@ func _on_dialogue_started(resource: DialogueResource):
 	
 func _on_dialogue_ended(resource: DialogueResource):
 	mode = Mode.Normal
-
-
-func _on_inventory_box_toolbelt_updated(number: int, inventory_item: InventoryItemSlot) -> void:
-	match number:
-		1: toolbelt_item_1 = inventory_item
-		2: toolbelt_item_2 = inventory_item
-		3: toolbelt_item_3 = inventory_item
-		4: toolbelt_item_4 = inventory_item
-		5: toolbelt_item_5 = inventory_item
