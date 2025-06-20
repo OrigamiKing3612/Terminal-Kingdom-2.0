@@ -1,16 +1,19 @@
-[gd_resource type="Resource" script_class="ToolItem" load_steps=3 format=3 uid="uid://dtbikuwi2rvgv"]
+[gd_resource type="Resource" script_class="ToolItem" load_steps=4 format=3 uid="uid://dtbikuwi2rvgv"]
 
 [ext_resource type="Script" uid="uid://cqsvdpbt83m3i" path="res://scripts/resources/items/tool_item.gd" id="1_a06f2"]
+[ext_resource type="Texture2D" uid="uid://biewiprmkedkx" path="res://assets/models/icons/tools/sword_broken.png" id="1_u6m2m"]
 [ext_resource type="Texture2D" uid="uid://dimwxjqd6hima" path="res://assets/models/icons/tools/sword.png" id="2_a06f2"]
 
 [resource]
 script = ExtResource("1_a06f2")
 durability = 55
+broken_texture_2d = ExtResource("1_u6m2m")
 name = &"Sword"
 price = 5
 can_be_sold = true
 is_buildable = false
 texture_2d = ExtResource("2_a06f2")
-position_in_inventory = Vector2(100, 100)
+max_amount_per_stack = 50
 gridmap_id = 0
+seed = 0
 metadata/_custom_type_script = "uid://cqsvdpbt83m3i"

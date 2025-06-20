@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cxq0s5prgh160"]
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_x2wkf"]
-[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="2_ajbo0"]
+[ext_resource type="Texture2D" uid="uid://bh8p0w2jhfe78" path="res://assets/models/icons/items/steel.png" id="2_ajbo0"]
 
 [resource]
 script = ExtResource("1_x2wkf")
@@ -10,11 +10,7 @@ price = 3
 can_be_sold = true
 is_buildable = false
 texture_2d = ExtResource("2_ajbo0")
-position_in_inventory = Vector2(100, 100)
+max_amount_per_stack = 50
 gridmap_id = 0
-generate_item = true
-generate_preview = false
-preview_file = ""
-override_name = false
-overriden_name = ""
+seed = 0
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

@@ -1,16 +1,19 @@
-[gd_resource type="Resource" script_class="ToolItem" load_steps=3 format=3 uid="uid://d0p5yutbxrj38"]
+[gd_resource type="Resource" script_class="ToolItem" load_steps=4 format=3 uid="uid://d0p5yutbxrj38"]
 
+[ext_resource type="Texture2D" uid="uid://6s6k3txj6w0p" path="res://assets/models/icons/tools/pickaxe_broken.png" id="1_abey6"]
 [ext_resource type="Script" uid="uid://cqsvdpbt83m3i" path="res://scripts/resources/items/tool_item.gd" id="1_twced"]
 [ext_resource type="Texture2D" uid="uid://dtifrt6ayl6t" path="res://assets/models/icons/tools/pickaxe.png" id="2_twced"]
 
 [resource]
 script = ExtResource("1_twced")
 durability = 100
-name = "Pickaxe"
+broken_texture_2d = ExtResource("1_abey6")
+name = &""
 price = 10
 can_be_sold = true
 is_buildable = false
 texture_2d = ExtResource("2_twced")
-position_in_inventory = Vector2(100, 100)
+max_amount_per_stack = 50
 gridmap_id = 0
+seed = 0
 metadata/_custom_type_script = "uid://cqsvdpbt83m3i"
