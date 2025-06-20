@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkg8jtp0034k1"
 path.s3tc="res://.godot/imported/rough-stone-albedo.png-870952fd6d9bb37b2b813cff49f4e5e0.s3tc.ctex"
+path.etc2="res://.godot/imported/rough-stone-albedo.png-870952fd6d9bb37b2b813cff49f4e5e0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/textures/stone/rough/rough-stone-albedo.png"
-dest_files=["res://.godot/imported/rough-stone-albedo.png-870952fd6d9bb37b2b813cff49f4e5e0.s3tc.ctex"]
+dest_files=["res://.godot/imported/rough-stone-albedo.png-870952fd6d9bb37b2b813cff49f4e5e0.s3tc.ctex", "res://.godot/imported/rough-stone-albedo.png-870952fd6d9bb37b2b813cff49f4e5e0.etc2.ctex"]
 
 [params]
 

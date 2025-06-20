@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd7uhmf85egvq"
 path.s3tc="res://.godot/imported/coin-albedo.png-4581cc27605e68989037283a80e64a4d.s3tc.ctex"
+path.etc2="res://.godot/imported/coin-albedo.png-4581cc27605e68989037283a80e64a4d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/textures/coin/coin-albedo.png"
-dest_files=["res://.godot/imported/coin-albedo.png-4581cc27605e68989037283a80e64a4d.s3tc.ctex"]
+dest_files=["res://.godot/imported/coin-albedo.png-4581cc27605e68989037283a80e64a4d.s3tc.ctex", "res://.godot/imported/coin-albedo.png-4581cc27605e68989037283a80e64a4d.etc2.ctex"]
 
 [params]
 

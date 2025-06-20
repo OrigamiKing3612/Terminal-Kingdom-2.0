@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvtcb00dh3soh"
 path.s3tc="res://.godot/imported/marble-bricks-normal.png-7546a3cb561bd141a2de3e6887aa7491.s3tc.ctex"
+path.etc2="res://.godot/imported/marble-bricks-normal.png-7546a3cb561bd141a2de3e6887aa7491.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/textures/marble/bricks/marble-bricks-normal.png"
-dest_files=["res://.godot/imported/marble-bricks-normal.png-7546a3cb561bd141a2de3e6887aa7491.s3tc.ctex"]
+dest_files=["res://.godot/imported/marble-bricks-normal.png-7546a3cb561bd141a2de3e6887aa7491.s3tc.ctex", "res://.godot/imported/marble-bricks-normal.png-7546a3cb561bd141a2de3e6887aa7491.etc2.ctex"]
 
 [params]
 

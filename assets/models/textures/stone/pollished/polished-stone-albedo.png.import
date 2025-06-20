@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://kvqmi036po4f"
 path.s3tc="res://.godot/imported/polished-stone-albedo.png-85ec974de7aa6d33e91d9f566c50815e.s3tc.ctex"
+path.etc2="res://.godot/imported/polished-stone-albedo.png-85ec974de7aa6d33e91d9f566c50815e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/textures/stone/pollished/polished-stone-albedo.png"
-dest_files=["res://.godot/imported/polished-stone-albedo.png-85ec974de7aa6d33e91d9f566c50815e.s3tc.ctex"]
+dest_files=["res://.godot/imported/polished-stone-albedo.png-85ec974de7aa6d33e91d9f566c50815e.s3tc.ctex", "res://.godot/imported/polished-stone-albedo.png-85ec974de7aa6d33e91d9f566c50815e.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjafpyrf2jqdr"
 path.s3tc="res://.godot/imported/polished-stone-normal.png-2b9cb907e5f9852f956ef49ad0d26c00.s3tc.ctex"
+path.etc2="res://.godot/imported/polished-stone-normal.png-2b9cb907e5f9852f956ef49ad0d26c00.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/textures/stone/pollished/polished-stone-normal.png"
-dest_files=["res://.godot/imported/polished-stone-normal.png-2b9cb907e5f9852f956ef49ad0d26c00.s3tc.ctex"]
+dest_files=["res://.godot/imported/polished-stone-normal.png-2b9cb907e5f9852f956ef49ad0d26c00.s3tc.ctex", "res://.godot/imported/polished-stone-normal.png-2b9cb907e5f9852f956ef49ad0d26c00.etc2.ctex"]
 
 [params]
 

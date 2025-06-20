@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bko5ppkotg2gh"
 path.s3tc="res://.godot/imported/WoodDoor.png-45569591dedaa07375bcee4e7e7be8d6.s3tc.ctex"
+path.etc2="res://.godot/imported/WoodDoor.png-45569591dedaa07375bcee4e7e7be8d6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/tiles/WoodDoor.png"
-dest_files=["res://.godot/imported/WoodDoor.png-45569591dedaa07375bcee4e7e7be8d6.s3tc.ctex"]
+dest_files=["res://.godot/imported/WoodDoor.png-45569591dedaa07375bcee4e7e7be8d6.s3tc.ctex", "res://.godot/imported/WoodDoor.png-45569591dedaa07375bcee4e7e7be8d6.etc2.ctex"]
 
 [params]
 

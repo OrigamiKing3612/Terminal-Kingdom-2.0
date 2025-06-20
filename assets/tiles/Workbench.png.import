@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://mexsom7sypax"
 path.s3tc="res://.godot/imported/Workbench.png-ca9dd1fddf1b6cc911bf328f4427a22c.s3tc.ctex"
+path.etc2="res://.godot/imported/Workbench.png-ca9dd1fddf1b6cc911bf328f4427a22c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/tiles/Workbench.png"
-dest_files=["res://.godot/imported/Workbench.png-ca9dd1fddf1b6cc911bf328f4427a22c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Workbench.png-ca9dd1fddf1b6cc911bf328f4427a22c.s3tc.ctex", "res://.godot/imported/Workbench.png-ca9dd1fddf1b6cc911bf328f4427a22c.etc2.ctex"]
 
 [params]
 

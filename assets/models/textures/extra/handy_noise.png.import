@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c815oxfqa0bgf"
 path.s3tc="res://.godot/imported/handy_noise.png-0ea64188376bd8981e0ce93fdf373935.s3tc.ctex"
+path.etc2="res://.godot/imported/handy_noise.png-0ea64188376bd8981e0ce93fdf373935.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/textures/extra/handy_noise.png"
-dest_files=["res://.godot/imported/handy_noise.png-0ea64188376bd8981e0ce93fdf373935.s3tc.ctex"]
+dest_files=["res://.godot/imported/handy_noise.png-0ea64188376bd8981e0ce93fdf373935.s3tc.ctex", "res://.godot/imported/handy_noise.png-0ea64188376bd8981e0ce93fdf373935.etc2.ctex"]
 
 [params]
 

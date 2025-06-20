@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd2i2hjyfjna5"
 path.s3tc="res://.godot/imported/stonebricks-normal.png-a0b5fc781213dd99bae0e9cb211a5163.s3tc.ctex"
+path.etc2="res://.godot/imported/stonebricks-normal.png-a0b5fc781213dd99bae0e9cb211a5163.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/textures/stone/bricks/stonebricks-normal.png"
-dest_files=["res://.godot/imported/stonebricks-normal.png-a0b5fc781213dd99bae0e9cb211a5163.s3tc.ctex"]
+dest_files=["res://.godot/imported/stonebricks-normal.png-a0b5fc781213dd99bae0e9cb211a5163.s3tc.ctex", "res://.godot/imported/stonebricks-normal.png-a0b5fc781213dd99bae0e9cb211a5163.etc2.ctex"]
 
 [params]
 

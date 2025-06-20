@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmeimcfodnd1a"
 path.s3tc="res://.godot/imported/rough-stone-normal.png-d485cf2ff6d1aebf22ac6ca5c2b134bf.s3tc.ctex"
+path.etc2="res://.godot/imported/rough-stone-normal.png-d485cf2ff6d1aebf22ac6ca5c2b134bf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/textures/stone/rough/rough-stone-normal.png"
-dest_files=["res://.godot/imported/rough-stone-normal.png-d485cf2ff6d1aebf22ac6ca5c2b134bf.s3tc.ctex"]
+dest_files=["res://.godot/imported/rough-stone-normal.png-d485cf2ff6d1aebf22ac6ca5c2b134bf.s3tc.ctex", "res://.godot/imported/rough-stone-normal.png-d485cf2ff6d1aebf22ac6ca5c2b134bf.etc2.ctex"]
 
 [params]
 
