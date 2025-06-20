@@ -23,8 +23,8 @@ signal left_click
 signal build_next
 signal build_back
 
-signal tool_next
-signal tool_back
+signal toolbelt_next
+signal toolbelt_back
 
 signal stop_mining
 signal mine_left_click
@@ -33,15 +33,8 @@ signal mine_right_click
 signal show_message(text: String)
 
 var move: bool = true
-#var has_popup: bool = false
 var mode: Mode = Mode.Normal
 var random: RandomNumberGenerator
-
-var toolbelt_item_1: InventoryItemSlot
-var toolbelt_item_2: InventoryItemSlot
-var toolbelt_item_3: InventoryItemSlot
-var toolbelt_item_4: InventoryItemSlot
-var toolbelt_item_5: InventoryItemSlot
 
 enum Mode{Normal, Inventory, Build, Mining, Speaking, InPopUp}
 
@@ -78,9 +71,9 @@ func _input(event: InputEvent) -> void:
 				if building_box.visible == false:
 					show_buildable_items()
 			elif event.is_action_released("back_option"):
-				tool_back.emit()
+				toolbelt_back.emit()
 			elif event.is_action_released("next_option"):
-				tool_next.emit()
+				toolbelt_next.emit()
 			elif event.is_action_pressed("testing"):
 				var items: Array[Item] = []
 				for ti in testing_items:

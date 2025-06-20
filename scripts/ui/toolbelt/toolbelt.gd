@@ -5,6 +5,7 @@ const INVENTORY_ITEM = preload("res://scenes/ui/inventory/inventory_item.tscn")
 
 @onready var grid_container: GridContainer = $Panel/GridContainer
 
+var selected_toolbelt_slot: int = 0
 var toolbelt_slots: Array[ToolbeltInventorySlot] = []
 
 func _ready() -> void:
@@ -12,9 +13,10 @@ func _ready() -> void:
 		if child is ToolbeltInventorySlot:
 			toolbelt_slots.append(child)
 
+	_update_slots()
+
 func _on_show_inventory() -> void:
 	show()
-
 
 func _on_hide_inventory() -> void:
 	var all_empty := true
@@ -24,3 +26,24 @@ func _on_hide_inventory() -> void:
 			break
 	if all_empty:
 		hide()
+
+func _update_slots() -> void:
+	selected_toolbelt_slot = clamp(selected_toolbelt_slot, 0, toolbelt_slots.size() - 1)
+
+	for i in toolbelt_slots.size():
+		if i == selected_toolbelt_slot:
+			toolbelt_slots[i].selected()
+		else:
+			toolbelt_slots[i].deselected()
+
+func _on_toolbelt_next() -> void:
+	selected_toolbelt_slot += 1
+	if selected_toolbelt_slot >= toolbelt_slots.size():
+		selected_toolbelt_slot = 0
+	_update_slots()
+
+func _on_toolbelt_back() -> void:
+	selected_toolbelt_slot -= 1
+	if selected_toolbelt_slot < 0:
+		selected_toolbelt_slot = toolbelt_slots.size() - 1
+	_update_slots()

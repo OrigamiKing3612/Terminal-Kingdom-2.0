@@ -100,3 +100,5 @@ toolbelt = NodePath("../../ToolbeltBox/ToolbeltNode")
 [connection signal="show_inventory" from="." to="ToolbeltBox/ToolbeltNode" method="_on_show_inventory"]
 [connection signal="show_inventory" from="." to="InventoryBox" method="_on_show_inventory"]
 [connection signal="show_message" from="." to="MessageBox" method="_on_show_message"]
+[connection signal="toolbelt_back" from="." to="ToolbeltBox/ToolbeltNode" method="_on_toolbelt_back"]
+[connection signal="toolbelt_next" from="." to="ToolbeltBox/ToolbeltNode" method="_on_toolbelt_next"]

@@ -1,6 +1,7 @@
 extends InventorySlot
 class_name ToolbeltInventorySlot
 
+@onready var texture_rect: Sprite2D = $TextureRect
 
 func clear(): 
 	super()
@@ -10,3 +11,9 @@ func insert(item: InventoryItem):
 
 func take_item() -> InventoryItem:
 	return super()
+
+func selected():
+	texture_rect.frame = 0
+
+func deselected():
+	texture_rect.frame = 1

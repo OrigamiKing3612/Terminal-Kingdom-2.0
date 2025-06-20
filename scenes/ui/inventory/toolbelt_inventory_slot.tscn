@@ -1,21 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1smga2djsboi"]
 
 [ext_resource type="Script" uid="uid://cq1ciws28thxk" path="res://scripts/ui/inventory/toolbelt_inventory_slot.gd" id="1_7auag"]
-[ext_resource type="Texture2D" uid="uid://mbbr4pif300s" path="res://assets/ui/inventory_slot.png" id="2_5jy8c"]
+[ext_resource type="Texture2D" uid="uid://dq0umdnp2rt4e" path="res://assets/ui/toolbelt_slot.png" id="2_7auag"]
 
 [node name="ToolbeltInventorySlot" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 100)
-offset_right = 100.0
-offset_bottom = 100.0
+offset_right = 101.0
+offset_bottom = 101.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("1_7auag")
 metadata/_custom_type_script = "uid://cq1ciws28thxk"
 
 [node name="TextureRect" type="Sprite2D" parent="."]
-position = Vector2(50, 50)
+position = Vector2(51, 51)
 scale = Vector2(3.125, 3.125)
-texture = ExtResource("2_5jy8c")
+texture = ExtResource("2_7auag")
+vframes = 2
+frame = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(100, 100)
