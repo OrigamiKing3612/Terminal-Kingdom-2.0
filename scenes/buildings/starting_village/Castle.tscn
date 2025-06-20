@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://rt35jrh3xbfd"]
 
-[ext_resource type="MeshLibrary" uid="uid://bg77eu6w4exqp" path="res://assets/tiles.tres" id="1_rgvqe"]
+[ext_resource type="MeshLibrary" uid="uid://bkoxs0vehultx" path="res://assets/tiles.tres" id="1_rgvqe"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="2_rgvqe"]
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="3_2jpfu"]
 [ext_resource type="Resource" uid="uid://8106ceomlnsr" path="res://assets/resources/npc/king.tres" id="4_rgvqe"]
@@ -15,7 +15,7 @@ data = {
 }
 script = ExtResource("2_rgvqe")
 metadata/_custom_type_script = "uid://vnwtd345uny0"
-metadata/_editor_floor_ = Vector3(0, 2, 0)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="KingNPC" parent="." instance=ExtResource("3_2jpfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111, 3, 51)

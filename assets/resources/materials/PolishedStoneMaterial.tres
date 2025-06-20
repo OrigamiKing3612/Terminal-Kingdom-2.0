@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c7s8sqjilwof6"]
+
+[ext_resource type="Texture2D" uid="uid://kvqmi036po4f" path="res://assets/models/textures/stone/pollished/polished-stone-albedo.png" id="1_ufstg"]
+[ext_resource type="Texture2D" uid="uid://bjafpyrf2jqdr" path="res://assets/models/textures/stone/pollished/polished-stone-normal.png" id="2_8i1l1"]
+
+[resource]
+resource_name = "PolishedStoneMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_ufstg")
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("2_8i1l1")
+texture_filter = 2

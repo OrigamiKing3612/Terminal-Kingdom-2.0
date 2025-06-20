@@ -1,17 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://cl6nesvhm1yep"]
+[gd_scene load_steps=5 format=4 uid="uid://cl6nesvhm1yep"]
 
-[ext_resource type="Texture2D" uid="uid://ixu48brlgs7c" path="res://assets/models/StaticTiles_mud-albedo.png" id="1_m4hj3"]
-[ext_resource type="Texture2D" uid="uid://5ohej22uan25" path="res://assets/models/StaticTiles_mud-normal.png" id="2_5hbmm"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahhua"]
-resource_name = "MudMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_m4hj3")
-roughness = 0.8
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource("2_5hbmm")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://dndvw557xcjfo" path="res://assets/resources/materials/MudMaterial.tres" id="1_2lu7q"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_144j3"]
 _surfaces = [{
@@ -35,7 +24,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_ahhua"),
+"material": ExtResource("1_2lu7q"),
 "name": "MudMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

@@ -1,17 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://dft0hsgo4cokd"]
+[gd_scene load_steps=5 format=4 uid="uid://dft0hsgo4cokd"]
 
-[ext_resource type="Texture2D" uid="uid://fptbiv75etp4" path="res://assets/models/StaticTiles_marble-bricks-albedo.png" id="1_de8g3"]
-[ext_resource type="Texture2D" uid="uid://24hxk68766ac" path="res://assets/models/StaticTiles_marble-bricks-normal.png" id="2_ss0fe"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2lv3"]
-resource_name = "MarbleBricksMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_de8g3")
-roughness = 0.25
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource("2_ss0fe")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://cxlrbqxi41wnh" path="res://assets/resources/materials/MarbleBricksMaterial.tres" id="1_bkkx1"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rsvl4"]
 _surfaces = [{
@@ -35,7 +24,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_j2lv3"),
+"material": ExtResource("1_bkkx1"),
 "name": "MarbleBricksMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

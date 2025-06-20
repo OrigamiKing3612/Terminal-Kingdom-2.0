@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d28860csitmj4"]
+
+[ext_resource type="Texture2D" uid="uid://d25heoa7aocns" path="res://assets/models/textures/small_log/small-log.png" id="1_6rg6c"]
+
+[resource]
+resource_name = "wood log.003"
+cull_mode = 2
+albedo_texture = ExtResource("1_6rg6c")
+texture_filter = 2

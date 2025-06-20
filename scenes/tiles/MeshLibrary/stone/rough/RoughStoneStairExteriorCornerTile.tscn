@@ -1,15 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://blbo52d6srfrb"]
+[gd_scene load_steps=5 format=4 uid="uid://blbo52d6srfrb"]
 
-[ext_resource type="Texture2D" uid="uid://ctj6waod5a14c" path="res://assets/models/StaticTiles_rough-stone-albedo.png" id="1_g4gh2"]
-[ext_resource type="Texture2D" uid="uid://dfhd8xdbi78mt" path="res://assets/models/StaticTiles_rough-stone-normal.png" id="2_grqs5"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ywge"]
-resource_name = "RoughStoneMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_g4gh2")
-normal_enabled = true
-normal_texture = ExtResource("2_grqs5")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://5gc8ej7a8p7o" path="res://assets/resources/materials/RoughStoneMaterial.tres" id="1_tp4er"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_k6w3x"]
 _surfaces = [{
@@ -35,7 +26,7 @@ _surfaces = [{
 "index_count": 264,
 "index_data": PackedByteArray("NQA2AAwACwA2ADUANgALADcANwALACEANgA3ADgAOQA1AAwAOQAKADUADAA6ADkAOQA6AA0AOgAMADsAOwAMACIAOgA7ADwABQA9AD4ABQAEAD0APwAIAEAAPwBBAAgAQgA/AEAAQgBAAAkABgA/AEIABgBDAD8AQwBBAD8AQwAHAEEAAAAoAAIAAAAnACgAIAAeAEQAHQBEAB4AHQAeAEUAKQAeACAAHgAfAEUAHgApAEYARgApAEcAHgBGAEgAKgAfAB4AHwAqACsAKwAqAEkAHwArAEoALAAPABAALAAtAA8ASwAsABAASwAQAEwATQBOABAATQAQABYATwBQAFEATwAOAFAAEgBPAFEAEgBRAFIAGQBTADIAGQBUAFMAVAAzAFMAVAAaADMAVQABAFYAVQAlAAEAMAAVABMAMAAUABUAHABXABsAHABYAFcAWQBaAFgAWQBYABcAGABbADQAGABcAFsAXQBcABgAXQBeAFwAXwBgAGEAXwBiAGAAYwBkAGUAYwBmAGQAZwBoAGkAZwAjAGgAagBrACQAagBsAGsAJgBtAAMAJgBuAG0AbwBwAHEAbwByAHAAcwB0AHUAcwB2AHQAdwB2AHMAdwARAHYAeAB5AHoAeAB7AHkAfAB7AHgAfAAuAHsAfQB+AH8AfQCAAH4AgQCAAH0AgQAvAIAAggCDADEAggCEAIMA"),
 "lods": [0.371336, PackedByteArray("DAALACEACgALAAwADAANAAoADQAMACIABQAEACMAAwAjAAQAJAADAAQAJAAEACUAJAAlAAEAJAABACYAJgADACQAJgAnAAMAJgAoACcAAAAnACgAAAAoAAIAKQAeACAAHQAgAB4AHQAeAB8AKgAfAB4AHwAqACsABgAHAAgABgAIAAkALAAPABAALAAtAA8ALAAOAC0AEwAsABAALAARAA4AEwARACwAEQAuAA4ALgAvAA4AEgAOAC8AEwAQADAAMAAVABMAMAAUABUAFgAxABAAFgAXADEAFgAYABcAFgAyABgAGAAyADMAGQAzADIAGQAaADMAGAAzADQAHAAYADQAHAA0ABsA"), 0.86037, PackedByteArray("AAABAAIAAQAAAAMAAwAEAAEAAwAFAAQABgAHAAgABgAIAAkACgALAAwADAANAAoADgAPABAAEQASAA4AEwARAA4AEwAOABAAEwAQABQAFAAVABMAFgAXABAAFgAYABcAFgAZABgAGAAZABoAGAAaABsAHAAYABsAHQAeAB8AHQAgAB4A")],
-"material": SubResource("StandardMaterial3D_7ywge"),
+"material": ExtResource("1_tp4er"),
 "name": "RoughStoneMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

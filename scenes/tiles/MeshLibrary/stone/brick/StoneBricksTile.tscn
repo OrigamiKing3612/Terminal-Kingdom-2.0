@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://11f0okt6u3fe"]
 
-[ext_resource type="Texture2D" uid="uid://drw2v2tuey71q" path="res://assets/models/StaticTiles_stonebricks-albedo.png" id="1_cyrlk"]
-[ext_resource type="Texture2D" uid="uid://lckipwat1ov5" path="res://assets/models/StaticTiles_stonebricks-normal.png" id="2_kc6tj"]
+[ext_resource type="Texture2D" uid="uid://cu5uj6n4pcel2" path="res://assets/models/textures/stone/bricks/stonebricks-albedo.png" id="1_cyrlk"]
+[ext_resource type="Texture2D" uid="uid://dd2i2hjyfjna5" path="res://assets/models/textures/stone/bricks/stonebricks-normal.png" id="2_kc6tj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0jir"]
 resource_name = "WallMaterial"

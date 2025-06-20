@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bfoettti4yb7l"]
+
+[ext_resource type="Texture2D" uid="uid://2saq0g25b24" path="res://assets/models/textures/dirt/dirt-albedo.png" id="1_mmhuq"]
+[ext_resource type="Texture2D" uid="uid://dsc0fs6mg6dre" path="res://assets/models/textures/dirt/dirt-normal.png" id="2_luftc"]
+
+[resource]
+resource_name = "DirtMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_mmhuq")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("2_luftc")
+texture_filter = 2

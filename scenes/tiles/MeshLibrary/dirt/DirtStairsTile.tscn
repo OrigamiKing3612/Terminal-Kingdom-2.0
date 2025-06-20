@@ -1,16 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://d03hynu61hl5f"]
+[gd_scene load_steps=5 format=4 uid="uid://d03hynu61hl5f"]
 
-[ext_resource type="Texture2D" uid="uid://larwa6sqj6vf" path="res://assets/models/StaticTiles_dirt-albedo.png" id="1_kaw8w"]
-[ext_resource type="Texture2D" uid="uid://bj5krawmsu4eq" path="res://assets/models/StaticTiles_dirt-normal.png" id="2_vvtn5"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pppdv"]
-resource_name = "DirtMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_kaw8w")
-normal_enabled = true
-normal_scale = 0.1
-normal_texture = ExtResource("2_vvtn5")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://bfoettti4yb7l" path="res://assets/resources/materials/DirtMaterial.tres" id="1_5h1a6"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cb1ju"]
 _surfaces = [{
@@ -36,7 +26,7 @@ _surfaces = [{
 "index_count": 222,
 "index_data": PackedByteArray("OgA7ABYAOgA8ADsAPAAXADsAFAA8ADoAFAAVADwAPQAHAD4APQAaAAcAKgA9AD4AKgA+AAYAPwBAAAoAPwBBAEAAQQAJAEAACABBAD8ACAALAEEAQgBDAEQAQgAFAEMABABCAEQABABEAEUARgArAAEAAAArAEYAKwAAAC0ALQAAABwAKwAtABsARwBGAAEARwACAEYAAQAsAEcARwAsAAMALAABAC4ALgABAB4ALAAuAB0AEQASAEgAEABIABIAEAASAEkAHwASABEAEgATAEkAEgAfAC8ALwAfADEAEgAvADAAIAATABIAEwAgADIAMgAgADMAEwAyADQASgAPAEsASgAhAA8ANQBKAEsANQBLAA4ATABNAE4ATAANAE0ADABMAE4ADABOAE8AUAApAFEAUABSACkAUwBSAFAAUwAoAFIAVAAYAFUAVAAnABgAVgAnAFQAVgAmACcAVwAkAFgAVwAlACQAWQAlAFcAWQAZACUAWgA2AFsAWgBcADYAXQBcAFoAXQA3AFwAXgAiAF8AXgBgACIAYQBgAF4AYQA4AGAAYgA5AGMAYgBkADkAZQBkAGIAZQAjAGQA"),
 "lods": [0.000522893, PackedByteArray("BQAkACUABAAFACUABAAlABkAJgAZACUAJwAlACQAJgAlACcAJwAkABgAKAAmACcAKQAnABgAKAAnACkAKgAoACkAKgApABoAKgAaAAcAKgAHAAYAAgArAAEAAwACAAEAAAArAAIAAQAsAAMAKwAAAC0ALQAAABwAKwAtABsALAABAC4ALgABAB4ALAAuAB0AEgAvADAALwAfADEAEgAfAC8AHwASABEAEAARABIAEgATABAAIAATABIAEwAgADIAMgAgADMAEwAyADQACAAJAAoACAALAAkANQAPAA4ANQAhAA8ANQA2ACEANQA3ADYANwAiADYANwA4ACIAOAAjACIAIgAjADkADAA5ACMADAANADkAFAAVABYAFQAXABYA"), 0.371336, PackedByteArray("BQAYABkABAAFABkABgAZABgABgAYABoABgAaAAcAAgAbAAEAAAAbAAIAGwAAABwAAwACAAEAAQAdAAMAHQABAB4AHwASABEAEAARABIAEgATABAAIAATABIACAAJAAoACAALAAkADgAhAA8ADgAiACEADgAjACIADAAiACMADAANACIAFAAVABYAFQAXABYA"), 0.8158, PackedByteArray("AAABAAIAAwACAAEABAAFAAYABgAFAAcACAAJAAoACAALAAkADAANAA4ADgANAA8AEAARABIAEgATABAAFAAVABYAFQAXABYA")],
-"material": SubResource("StandardMaterial3D_pppdv"),
+"material": ExtResource("1_5h1a6"),
 "name": "DirtMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

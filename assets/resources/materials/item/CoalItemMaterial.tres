@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b2dihx8cdmw1g"]
+
+[ext_resource type="Texture2D" uid="uid://c815oxfqa0bgf" path="res://assets/models/textures/extra/handy_noise.png" id="1_tpxy5"]
+[ext_resource type="Texture2D" uid="uid://bt3dqfwpu32k" path="res://assets/models/textures/extra/dirt-normal.png" id="2_togtl"]
+
+[resource]
+resource_name = "coal.003"
+cull_mode = 2
+albedo_color = Color(0.10126, 0.10126, 0.10126, 1)
+metallic = 1.0
+metallic_texture = ExtResource("1_tpxy5")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_tpxy5")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("2_togtl")

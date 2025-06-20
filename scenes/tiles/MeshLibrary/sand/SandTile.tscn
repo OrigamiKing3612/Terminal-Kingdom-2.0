@@ -1,16 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://ds7hv2jn3asc0"]
+[gd_scene load_steps=5 format=4 uid="uid://ds7hv2jn3asc0"]
 
-[ext_resource type="Texture2D" uid="uid://c1lsoiycx4i42" path="res://assets/models/StaticTiles_sand-albedo.png" id="1_xibj8"]
-[ext_resource type="Texture2D" uid="uid://57g3ch6a4dj0" path="res://assets/models/StaticTiles_sand-normal.png" id="2_umj5p"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wj338"]
-resource_name = "SandMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_xibj8")
-normal_enabled = true
-normal_scale = 0.3
-normal_texture = ExtResource("2_umj5p")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://dfj5gyicikbq1" path="res://assets/resources/materials/SandMaterial.tres" id="1_67aut"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_uq0lk"]
 _surfaces = [{
@@ -34,7 +24,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_wj338"),
+"material": ExtResource("1_67aut"),
 "name": "SandMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dn0kmvohcngqx"]
+
+[ext_resource type="Texture2D" uid="uid://ngjbq1kw7p5t" path="res://assets/models/textures/marble/marble-albedo.png" id="1_juhmu"]
+[ext_resource type="Texture2D" uid="uid://dylgd4v0s5uv4" path="res://assets/models/textures/marble/marble-normal.png" id="2_wk5ck"]
+
+[resource]
+resource_name = "MarbleMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_juhmu")
+roughness = 0.25
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_wk5ck")
+texture_filter = 2

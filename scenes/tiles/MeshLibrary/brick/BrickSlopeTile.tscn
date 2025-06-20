@@ -1,17 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://dtif0rg45odps"]
+[gd_scene load_steps=5 format=4 uid="uid://dtif0rg45odps"]
 
-[ext_resource type="Texture2D" uid="uid://denix1pgj26uu" path="res://assets/models/StaticTiles_bricks-albedo.png" id="1_gkeea"]
-[ext_resource type="Texture2D" uid="uid://bknnpe6dinwyu" path="res://assets/models/StaticTiles_bricks-normal.png" id="2_ismrc"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wgpc"]
-resource_name = "BrickMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_gkeea")
-metallic = 0.0634921
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource("2_ismrc")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://dr1jxewab2gnp" path="res://assets/resources/materials/BrickMaterial.tres" id="1_qb404"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1bkbs"]
 _surfaces = [{
@@ -35,7 +24,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 48,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABwAEAAgACQAKAAsACQAMAAoADAAJAA0ADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsA"),
-"material": SubResource("StandardMaterial3D_3wgpc"),
+"material": ExtResource("1_qb404"),
 "name": "BrickMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://dsus6tvl7p1wm"]
 
-[ext_resource type="Texture2D" uid="uid://bcfqpwhnoqn1b" path="res://assets/models/StaticTiles_water-normal.png" id="1_ihf85"]
+[ext_resource type="Texture2D" uid="uid://io4q7f45r31x" path="res://assets/models/textures/water/water-normal.png" id="1_ihf85"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sl7n4"]
 resource_name = "WaterMaterial"

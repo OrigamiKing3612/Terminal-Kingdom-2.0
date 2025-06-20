@@ -1,16 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://lj1bt25kpr4y"]
+[gd_scene load_steps=5 format=4 uid="uid://lj1bt25kpr4y"]
 
-[ext_resource type="Texture2D" uid="uid://b3d7jha35salb" path="res://assets/models/StaticTiles_polished-stone-albedo.png" id="1_txpgx"]
-[ext_resource type="Texture2D" uid="uid://dxu3wq4pmd5a5" path="res://assets/models/StaticTiles_polished-stone-normal.png" id="2_dxakl"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo46t"]
-resource_name = "PolishedStoneMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_txpgx")
-normal_enabled = true
-normal_scale = 0.2
-normal_texture = ExtResource("2_dxakl")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://c7s8sqjilwof6" path="res://assets/resources/materials/PolishedStoneMaterial.tres" id="1_ghbgh"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_miwp8"]
 _surfaces = [{
@@ -34,7 +24,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_eo46t"),
+"material": ExtResource("1_ghbgh"),
 "name": "PolishedStoneMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

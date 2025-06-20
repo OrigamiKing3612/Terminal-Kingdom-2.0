@@ -1,20 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://fm65xw0rm2s2"]
+[gd_scene load_steps=5 format=4 uid="uid://fm65xw0rm2s2"]
 
-[ext_resource type="Texture2D" uid="uid://dhxcn1qb5pfpe" path="res://assets/models/StaticTiles_handy_noise.png" id="1_21kaq"]
-[ext_resource type="Texture2D" uid="uid://bj5krawmsu4eq" path="res://assets/models/StaticTiles_dirt-normal.png" id="2_sowlj"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsj03"]
-resource_name = "gold.006"
-cull_mode = 2
-albedo_color = Color(1, 0.749457, 0, 1)
-metallic = 1.0
-metallic_texture = ExtResource("1_21kaq")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("1_21kaq")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_scale = 0.3
-normal_texture = ExtResource("2_sowlj")
+[ext_resource type="Material" uid="uid://bho5aoyr4di2t" path="res://assets/resources/materials/item/GoldItemMaterial.tres" id="1_knt6n"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8xqwh"]
 _surfaces = [{
@@ -40,7 +26,7 @@ _surfaces = [{
 "index_count": 240,
 "index_data": PackedByteArray("AAAnACgAKAABAAAAJwAaACgAAAABACkAAQAEACkAKQAEACoAAAApACsAAAArACcAKQAqABkAKQAZACsAKgAFABkAKwAZABsAGQAsABsAKwAbAC0AKwAtACcAGwACAC0AAgAcAC0AJwAtAC4ALQAcAC4AJwAuABoALgAcAAMALgADABoALwAwADEAMQAdAC8AMAAGADEAMAAyAAYABgAyAAoAMAAIADIAMgAIADMANAAIADAALwA0ADAANAA1AAgAHQA2AC8ALwA2ADQABwA2AB0ANAA3ADUANgA3ADQANgA4ADcANwAeADUACQAeADcAOQA6ABMAOgA7ABMAEwA7ADwAPAA7ABQAOwA9ABQAFAA9ACEAPQA+ACEAOwAgAD0AOgAgADsAPwA+AD0AIAA/AD0APwARAD4AOgBAACAAQAA/ACAAEgBAADoAEgBBAEAAQQAfAEAAHwA/AEAAHwARAD8AEAARAB8AJABCABUAGABCACUAGAAiAEIAQgAjABUAQgAiACMAFQAjABcAIgBDACMAIwBEABcAQwBEACMAQwAWAEQARQAMAEYARwALAAwARwAMAEgASAAMAEUADQBHAEgADgBIAEUADgBFAEkAJgBIAA4AJgANAEgADwANACYA"),
 "lods": [0.373926, PackedByteArray("AAABABkAAQAEABkAGQAEAAUAAAAaAAEAAAAZABsAAAAbABoAGwAcABoAGgAcAAMAAgAcABsABgAHAAgAHQAHAAYABgAIAAoABwAJAAgACQAeAAgAEgAfACAAEgAgABMAEwAgABQAFAAgACEAHwAhACAAHwARACEAEAARAB8AIgAWACMAIwAWABcAFQAjABcAJAAjABUAJAAiACMAGAAiACQAGAAkACUACwAMAA0ADgANAAwAJgANAA4ADwANACYA"), 0.864863, PackedByteArray("CgAHAAkAEAARABMAEwARABQADgALAAwADwALAA4AGAAWABUAAgAEAAUAAgADAAQA"), 1.00711, PackedByteArray("AAABAAIAAAADAAEAAAACAAMAAQAEAAIAAgAEAAUABgAHAAgABwAJAAgABgAIAAoACwAMAA0ADgANAAwADwANAA4AEAARABIAEgARABMAEwARABQAFQAWABcAGAAWABUA")],
-"material": SubResource("StandardMaterial3D_qsj03"),
+"material": ExtResource("1_knt6n"),
 "name": "gold.006",
 "primitive": 3,
 "uv_scale": Vector4(4.43172, 4.15424, 0, 0),

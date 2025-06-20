@@ -5,10 +5,14 @@
 [node name="Main" type="Node"]
 
 [node name="Control" parent="." instance=ExtResource("1_ig7tw")]
-offset_left = -500.0
-offset_top = -200.5
-offset_right = 500.0
-offset_bottom = 200.5
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -531.0
+offset_top = -457.0
+offset_right = 531.0
+offset_bottom = 0.0
+grow_vertical = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchors_preset = 5

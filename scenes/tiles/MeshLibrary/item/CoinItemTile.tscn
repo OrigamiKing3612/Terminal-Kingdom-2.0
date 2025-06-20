@@ -1,21 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://dvdtvo8kfdq4o"]
+[gd_scene load_steps=5 format=4 uid="uid://dvdtvo8kfdq4o"]
 
-[ext_resource type="Texture2D" uid="uid://c4gwn8ux2vef4" path="res://assets/models/StaticTiles_coin-albedo.png" id="1_h8u2p"]
-[ext_resource type="Texture2D" uid="uid://dhxcn1qb5pfpe" path="res://assets/models/StaticTiles_handy_noise.png" id="2_a3rm4"]
-[ext_resource type="Texture2D" uid="uid://bj5krawmsu4eq" path="res://assets/models/StaticTiles_dirt-normal.png" id="3_v63qr"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6ybo"]
-resource_name = "coin.003"
-cull_mode = 2
-albedo_texture = ExtResource("1_h8u2p")
-metallic = 1.0
-metallic_texture = ExtResource("2_a3rm4")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("2_a3rm4")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("3_v63qr")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://bo16c1niu0ged" path="res://assets/resources/materials/item/CoinItemMaterial.tres" id="1_lk6k2"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hvlmj"]
 _surfaces = [{
@@ -41,7 +26,7 @@ _surfaces = [{
 "index_count": 192,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwASABEAEAAUABEAEwAVABIAFAAQABYAFgAVABMAFgAQABcAFgAXABUAGAAZABoAGwAYABoAHAAZABgAGwAdABgAGQAcAB4AHQAbAB4AGQAeAB8AHgAbAB8AMAAxADIAMQAgADIAMwAgADEAIAAzACIAMwAxADQAMAA0ADEAMwA0ADUANAAhADUAMAAhADQAIQAwACMANgA3ADgANwAkADgAOQAkADcAJAA5ACYAOQA3ADoANgA6ADcAOQA6ADsAOgAlADsANgAlADoAJQA2ACcAPAA9AD4APAA/AD0APgAoADwAPQA/ACkAKQA/ACsAPQApAEAAQAA+AD0AQABBAD4APgBBACgAKABBACoAQgBDAEQAQgBFAEMARAAsAEIAQwBFAC0ALQBFAC8AQwAtAEYARgBEAEMARgBHAEQARABHACwALABHAC4A"),
 "lods": [0.000301644, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwASABEAEAAUABEAEwAVABIAFAAQABYAFgAVABMAFgAQABcAFgAXABUAGAAZABoAGwAYABoAHAAZABgAGwAdABgAGQAcAB4AHQAbAB4AGQAeAB8AHgAbAB8AIAAhACIAIQAgACMAJAAlACYAJwAlACQAKAApACoAKAArACkALAAtAC4ALAAvAC0A")],
-"material": SubResource("StandardMaterial3D_u6ybo"),
+"material": ExtResource("1_lk6k2"),
 "name": "coin.003",
 "primitive": 3,
 "uv_scale": Vector4(3.33901, 4, 0, 0),

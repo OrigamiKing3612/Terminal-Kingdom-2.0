@@ -1,12 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://1xb13lwmkasr"]
+[gd_scene load_steps=5 format=4 uid="uid://1xb13lwmkasr"]
 
-[ext_resource type="Texture2D" uid="uid://badrjulfrt51w" path="res://assets/models/StaticTiles_small-log.png" id="1_i5w00"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a806r"]
-resource_name = "wood log.003"
-cull_mode = 2
-albedo_texture = ExtResource("1_i5w00")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://d28860csitmj4" path="res://assets/resources/materials/item/LumberItemMaterial.tres" id="1_i5w00"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h4dmc"]
 _surfaces = [{
@@ -30,7 +24,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 72,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
-"material": SubResource("StandardMaterial3D_a806r"),
+"material": ExtResource("1_i5w00"),
 "name": "wood log.003",
 "primitive": 3,
 "uv_scale": Vector4(4, 3, 0, 0),

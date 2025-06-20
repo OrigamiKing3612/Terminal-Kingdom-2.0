@@ -1,16 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://cytlaj2f0yuii"]
+[gd_scene load_steps=5 format=4 uid="uid://cytlaj2f0yuii"]
 
-[ext_resource type="Texture2D" uid="uid://bceo4a3wfdieb" path="res://assets/models/StaticTiles_grass-albedo.png" id="1_ah7hj"]
-[ext_resource type="Texture2D" uid="uid://dyu1ywi1hwhy" path="res://assets/models/StaticTiles_grass-normal.png" id="2_udgrl"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vat1a"]
-resource_name = "GrassMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_ah7hj")
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource("2_udgrl")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://dlubq0x1p521u" path="res://assets/resources/materials/GrassMaterial.tres" id="1_yqghf"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mgka8"]
 _surfaces = [{
@@ -34,7 +24,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_vat1a"),
+"material": ExtResource("1_yqghf"),
 "name": "GrassMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

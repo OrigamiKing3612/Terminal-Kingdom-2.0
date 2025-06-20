@@ -1,17 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://ca2evo3aqfnlj"]
+[gd_scene load_steps=5 format=4 uid="uid://ca2evo3aqfnlj"]
 
-[ext_resource type="Texture2D" uid="uid://b1uapv7jpid4k" path="res://assets/models/StaticTiles_marble-albedo.png" id="1_oh17q"]
-[ext_resource type="Texture2D" uid="uid://g0usgnc7o14v" path="res://assets/models/StaticTiles_marble-normal.png" id="2_koh0w"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skot7"]
-resource_name = "MarbleMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_oh17q")
-roughness = 0.25
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource("2_koh0w")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://dn0kmvohcngqx" path="res://assets/resources/materials/MarbleMaterial.tres" id="1_cdrmv"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_n4nkn"]
 _surfaces = [{
@@ -37,7 +26,7 @@ _surfaces = [{
 "index_count": 168,
 "index_data": PackedByteArray("MgABAAIAMgADAAEAMwARADQAMwA1ABEANgA0ABYANgA3ADQAOAA1ADcAOAAUADUACAA5AAUAOQAIADoAOgAIAAYAOQA6AAcAOwAKAAsACgA7AAwACgAMAA0APAA7AAsAPAAJADsADgA8AAsADgALAA8AFwAYABkAFwAaABgAHgAbAD0AHwAeAD0AHwA+AB4APgAgAB4APgAhACAAGwAeABwAGwAcAD8APwAcAEAAQAAcAB0AJQBBACIAQQAlAEIAQgAlACMAQQBCACQAJgAnACgAJgBDACcAQwAmAEQAQwBEACkARQBGAEcASABJAEoAKgArAEsASwArACwATABNAE4ATABPAE0AUABRAFIAUAAVAFEALQBTAC8ALQAuAFMAVABVABAAVABWAFUAVwATAFgAVwASABMAAABZAAQAAABaAFkAWwAwAFwAWwAxADAA"),
 "lods": [0.0379151, PackedByteArray("AAABAAIAAAADAAEAAAACAAQABQAGAAcABQAIAAYACQAKAAsACgAJAAwACgAMAA0ADgAJAAsADgALAA8AEAARABIAEgATABAAEAAUABEAFQASABEAFQARABYAFwAYABkAFwAaABgAGwAcAB0AGwAeABwAHwAeABsAHwAgAB4AHwAhACAAIgAjACQAIgAlACMAJgAnACgAJwAmACkAKgArACwALQAuAC8ALgAwAC8ALgAxADAA")],
-"material": SubResource("StandardMaterial3D_skot7"),
+"material": ExtResource("1_cdrmv"),
 "name": "MarbleMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

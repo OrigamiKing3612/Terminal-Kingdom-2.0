@@ -1,54 +1,41 @@
-[gd_scene load_steps=7 format=4 uid="uid://ds27ckjfphkov"]
+[gd_scene load_steps=5 format=4 uid="uid://ds27ckjfphkov"]
 
-[ext_resource type="Texture2D" uid="uid://b1uapv7jpid4k" path="res://assets/models/StaticTiles_marble-albedo.png" id="1_tsove"]
-[ext_resource type="Texture2D" uid="uid://g0usgnc7o14v" path="res://assets/models/StaticTiles_marble-normal.png" id="2_geawr"]
+[ext_resource type="Material" uid="uid://dn0kmvohcngqx" path="res://assets/resources/materials/MarbleMaterial.tres" id="1_07m1v"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skot7"]
-resource_name = "MarbleMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_tsove")
-roughness = 0.25
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource("2_geawr")
-texture_filter = 2
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_35vya"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lb32l"]
 _surfaces = [{
 "aabb": AABB(0, -1, -1, 1, 2, 2),
 "format": 34896613377,
-"index_count": 108,
-"index_data": PackedByteArray("AAAOAAIACAACAA4AAgAEAAAACAAGAAIAAgAGAAQABQAGAAgADgAFAAgABgAPAAQAAAAEAA8AAAAQAA4ADgAQAAEADgABAAUAAQAMAAUAAQAQAAwAEQAFAAwAEAARAAwABwAGAAUABgAHAA8ABwAFABEAAAAPAAoAEgAAAAoAEgAKAA8AEAAAABIAEgAPAAkADwAHAAkAAwASAAkAAwAJAAcAEwASAAMAEAASABMAEwADAAcAEAATAAsAEAALABEAEwARAAsAEwANABEABwARAA0AEwAHAA0A"),
-"lods": [0.00961616, PackedByteArray("AAABAAIAAgAEAAAACAACAAEAAgAGAAQACAAGAAIABgAJAAQAAAAEAAkABQAGAAgAAQAFAAgAAAAJAAoAAwAAAAoAAwAKAAkAAQAAAAMABgAHAAkABwAGAAUAAwAJAAcAAQADAAsAAQAMAAUAAQALAAwABwAFAAwAAwAMAAsABwAMAA0AAwANAAwAAwAHAA0A"), 0.0332557, PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAAAwAFAAEABQACAAEAAgAGAAQABQAGAAIAAAAEAAcAAAAHAAMABgAHAAQAAwAHAAUABwAGAAUA")],
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwACAAQABAACAAEABQAAAAMABQADAAQABQAGAAAAAAAGAAEAAQAGAAUAAQAFAAcABQAEAAcABAABAAcA"),
 "name": "MarbleMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 20,
-"vertex_data": PackedByteArray("//8AAAAAAAC+AuD6AAAAAAAAAAAAAAAAwfWf/gAAAAD//wAA//8AAL4C4Pr//wAAAAAAAP//AADB9Z/+//8AAAAAwfX//wAAQP3g+v//AAD//8H1AAAAAHoU//8AAAAAPQqf/v//AACE6/////8AAAAAwfUAAAAA///B9f//AAA9Cp/+AAAAAHoU/////wAAQP3g+gAAAACE6///AAAAAA==")
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAP//AAAAAP////8AAP///////wAA//8AAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAP//AAAAAP//AAAAAA==")
 }]
 blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1b0b4"]
-resource_name = "StaticTiles_Cube_071"
+resource_name = "NewStaticTiles_Cube_071"
 _surfaces = [{
 "aabb": AABB(0, -1, -1, 1, 2, 2),
-"attribute_data": PackedByteArray("/////16BHgX/f///4PpfAf9/AAD///////8AAP9///8AAAAA////////AAAAAP///3///+D6XwH/////XoEeBf////8AAAAA//8AAAAA/////////3////9/AAD//z0KPIoAAAAAPQqf/h4F/389Ch6FXwHB9QAAAAAeBf//PQrB9f//HoX//zyKAAD/fz0KHoVfAZ/+HgXB9QAAAAA9Cv//PQr//z0KPIoAAAAAPQr//z0KwfUAAMH1/////wAA//8eBf//HgUAAD0KAAAeBf//PQoehf//HoUAAB6FAAA8iv//PIoAAMH1AAA8iv//"),
+"attribute_data": PackedByteArray("//////9/AAD//wAA/3////9/AAD///////8AAP9/////f/////8AAP9/AAD//////////wAAAAD//wAAAAD//wAAAAD///////8AAAAA/////wAA/3////9/AAD/////"),
 "format": 34896613399,
-"index_count": 108,
-"index_data": PackedByteArray("AAAjAAIAAAAkACMAIwAkAAEAJAAAACUAJQAAABcAJAAlACYAJgAlAAMAJAAmABgABAAFAAYABAAHAAUAJwAJACgAJwALAAkADAApAA4ADAANACkAKQANABoADQAMAA8ADwAMABsADQAPACoAKgAPABwADQAqAB0AEAArACwAEAATACsALQAUAC4ALQASABQALwAeABEALwAwAB4AMQAyADMAMQAfADIANAAIABkANAAKAAgAFgA1ABUAFgA2ADUANwA4ACEANwA5ADgAOgA7ACIAOgAgADsA"),
-"lods": [0.00961616, PackedByteArray("AAABAAIAAQAAAAMAAwAAABcAAQADABgABAAFAAYABAAHAAUAGQAJAAoAGQALAAkACgAIABkADAAaAA4ADAANABoADQAMAA8ADwAMABsADQAPABwADQAcAB0AEAAeAB8AEAATAB4AEgAfAB4AEgAeABEAEgAUACAAEgAgACEAEgAhACIAFgAiACEAFgAhABUA"), 0.0332557, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADQAMAA8AEAARABIAEAATABEAEgAUABUAEgAVABYA")],
-"material": SubResource("StandardMaterial3D_skot7"),
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("1_07m1v"),
 "name": "MarbleMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 60,
-"vertex_data": PackedByteArray("//8AAAAAAAC+AuD6AAAAAAAAAAAAAAAAwfWf/gAAAAAAAAAAAAD/P///AAD///8///8AAAAA/z8AAAAA////P74C4Pr//4cHAAAAAAAAAAC+AuD6AACHBwAAAAD//wAAAAAAAP//AIDB9Z/+//8AgP//AAD//wCAvgLg+v//AID//wAAAAD/v8H1n/7///zFwfWf/gAAsMD//wAA////v8H1n/7//7DAvgLg+v///MW+AuD6AAD8xf//wfUAAAAAehT//wAAAAAAAMH1//+HB0D94Pr//wCAAADB9f//AIA9Cp/+//8AgITr/////wCAQP3g+v///MX//8H1AACwwITr//////+/PQqf/v//sMB6FP//AAD/vwAAwfUAAAAAPQqf/gAAAABA/eD6AAAAAITr//8AAAAAAADB9f//AAAAAMH1AAAAAP//wfX//wCAehT/////AID//8H1////v///wfUAAP+/hOv//wAAsMCE6/////+wwMH1n/4AAPzFQP3g+gAA/MVA/eD6AACwwP//wfX//7DAQP3g+v//sMAAAMH1AACHBz0Kn/7///zFPQqf/gAA/MU9Cp/+AACwwHoU/////7DAehT//wAAsMCE6///AAD/v3oU//////+/////f/7//3////9//v//fwAA/38AAP9/AAD/fwAA/38X+As8/z//fxf4Czz/P/9//3////9/////f////3////9/AAD9uf8cUeWocv9/AABR5ahy/+L9uf/i/bn+//9/////fxf4Czz/f/////////9/////f////bn/HKyaVg3///9/qPKsmv///3/+//9//v//f/7//3/+//9//z//f/8//3//f////3////9/AAD/fwAAUeWoclHlqHL9uf8c/bn/HKyaVg2smlYNrJpWDRf4Czz/4v25/+L9uajyrJqo8qyaqPKsmv///3////9/")
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAP//AIAAAP////8AgP///////wCAAAAAAP//AIAAAAAAAAD/P///AAD///8///8AAAAA/z8AAAAA////PwAAAAAAAAAA/////wAAAAAAAP//AAAAAP//AAAAAAAA//8AAAAA/7//////////v/////8AAP+///8AAP///78AAP////8AAAAAAAAAAAAAAAD//wAAAAAAAAAA//8AAP////8AAP+/AAD//////78AAP//AAD/v/////////+//3////9/////f////3///wAA/38AAP9/AAD/fwAA/3////9/////f////3////9//38AAP9/AAD/fwAA/38AAP8//3//P/9//z//f/8//3////9/////f////3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_35vya")
+shadow_mesh = SubResource("ArrayMesh_lb32l")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_na7rr"]
-data = PackedVector3Array(1, -1, -1, 0, 0.92, -1, 0, -1, -1, 0, 0.92, -1, 0.04, 0.989282, -1, 0.010718, 0.96, -1, 0.04, 0.989282, -1, 0.92, 1, -1, 0.08, 1, -1, 0.92, 1, -1, 0.989282, 0.96, -1, 0.96, 0.989282, -1, 0.989282, 0.96, -1, 1, -1, -1, 1, 0.92, -1, 1, -1, -1, 0.04, 0.989282, -1, 0, 0.92, -1, 0.04, 0.989282, -1, 0.989282, 0.96, -1, 0.92, 1, -1, 0.04, 0.989282, -1, 1, -1, -1, 0.989282, 0.96, -1, 0, -1, -1, 1, -1, 1, 1, -1, -1, 0, -1, -1, 0, -1, 1, 1, -1, 1, 0, 0.92, 1, 0, -1, -1, 0, 0.92, -1, 0, 0.92, 1, 0, -1, 1, 0, -1, -1, 0, -1, 1, 1, 0.92, 1, 1, -1, 1, 1, 0.92, 1, 0.96, 0.989282, 1, 0.989282, 0.96, 1, 0.96, 0.989282, 1, 0.08, 1, 1, 0.92, 1, 1, 0.08, 1, 1, 0.010718, 0.96, 1, 0.04, 0.989282, 1, 0.010718, 0.96, 1, 0, -1, 1, 0, 0.92, 1, 0, -1, 1, 0.96, 0.989282, 1, 1, 0.92, 1, 0.96, 0.989282, 1, 0.010718, 0.96, 1, 0.08, 1, 1, 0.96, 0.989282, 1, 0, -1, 1, 0.010718, 0.96, 1, 1, -1, -1, 1, 0.92, 1, 1, 0.92, -1, 1, -1, -1, 1, -1, 1, 1, 0.92, 1, 0.92, 1, -1, 0.96, 0.989282, 1, 0.92, 1, 1, 0.92, 1, -1, 0.96, 0.989282, -1, 0.96, 0.989282, 1, 0.96, 0.989282, -1, 0.989282, 0.96, 1, 0.96, 0.989282, 1, 0.96, 0.989282, -1, 0.989282, 0.96, -1, 0.989282, 0.96, 1, 0.989282, 0.96, -1, 1, 0.92, 1, 0.989282, 0.96, 1, 0.989282, 0.96, -1, 1, 0.92, -1, 1, 0.92, 1, 0, 0.92, -1, 0.010718, 0.96, 1, 0, 0.92, 1, 0, 0.92, -1, 0.010718, 0.96, -1, 0.010718, 0.96, 1, 0.010718, 0.96, -1, 0.04, 0.989282, 1, 0.010718, 0.96, 1, 0.010718, 0.96, -1, 0.04, 0.989282, -1, 0.04, 0.989282, 1, 0.04, 0.989282, -1, 0.08, 1, 1, 0.04, 0.989282, 1, 0.04, 0.989282, -1, 0.08, 1, -1, 0.08, 1, 1, 0.92, 1, -1, 0.08, 1, 1, 0.08, 1, -1, 0.92, 1, -1, 0.92, 1, 1, 0.08, 1, 1)
+data = PackedVector3Array(1, -1, 1, 0, 1, 1, 1, 1, 1, 1, -1, 1, 0, -1, 1, 0, 1, 1, 0, -1, -1, 1, -1, 1, 1, -1, -1, 0, -1, -1, 0, -1, 1, 1, -1, 1, 0, -1, -1, 1, 1, -1, 0, 1, -1, 0, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, 1, 1, 0, -1, 1, 0, -1, -1, 1, 1, -1, 0, 1, 1, 0, 1, -1, 1, 1, -1, 1, 1, 1, 0, 1, 1)
 
 [node name="MarbleWallTile" type="Node3D"]
 

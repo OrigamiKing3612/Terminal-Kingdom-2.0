@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://chy6lrhps0hx8"]
+
+[ext_resource type="Texture2D" uid="uid://bt3dqfwpu32k" path="res://assets/models/textures/extra/dirt-normal.png" id="1_sohlx"]
+
+[resource]
+resource_name = "stone.003"
+cull_mode = 2
+albedo_color = Color(0.424886, 0.478093, 0.512657, 1)
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("1_sohlx")

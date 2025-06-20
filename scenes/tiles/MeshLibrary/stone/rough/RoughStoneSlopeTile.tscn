@@ -1,15 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://dkr2j8uguowy1"]
+[gd_scene load_steps=5 format=4 uid="uid://dkr2j8uguowy1"]
 
-[ext_resource type="Texture2D" uid="uid://ctj6waod5a14c" path="res://assets/models/StaticTiles_rough-stone-albedo.png" id="1_1vchk"]
-[ext_resource type="Texture2D" uid="uid://dfhd8xdbi78mt" path="res://assets/models/StaticTiles_rough-stone-normal.png" id="2_6xyce"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ywge"]
-resource_name = "RoughStoneMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_1vchk")
-normal_enabled = true
-normal_texture = ExtResource("2_6xyce")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://5gc8ej7a8p7o" path="res://assets/resources/materials/RoughStoneMaterial.tres" id="1_2fefp"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_krj2b"]
 _surfaces = [{
@@ -33,7 +24,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 48,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABwAEAAgACQAKAAsACQAMAAoADAAJAA0ADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsA"),
-"material": SubResource("StandardMaterial3D_7ywge"),
+"material": ExtResource("1_2fefp"),
 "name": "RoughStoneMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

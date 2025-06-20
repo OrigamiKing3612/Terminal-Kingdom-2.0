@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://cbf08sgwslm3d"]
 
-[ext_resource type="Texture2D" uid="uid://neakljul5f7n" path="res://assets/models/StaticTiles_log-albedo.png" id="1_7vkyk"]
-[ext_resource type="Texture2D" uid="uid://64p4xoqorinl" path="res://assets/models/StaticTiles_log-normal.png" id="2_j4idl"]
+[ext_resource type="Texture2D" uid="uid://d11eyapm86pfx" path="res://assets/models/textures/log/log-albedo.png" id="1_7vkyk"]
+[ext_resource type="Texture2D" uid="uid://dttb3dq2e2ys8" path="res://assets/models/textures/log/log-normal.png" id="2_j4idl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckxrt"]
 resource_name = "LogMaterial"

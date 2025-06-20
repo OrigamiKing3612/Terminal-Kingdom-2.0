@@ -1,16 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://dl7dqcj65nmx1"]
+[gd_scene load_steps=5 format=4 uid="uid://dl7dqcj65nmx1"]
 
-[ext_resource type="Texture2D" uid="uid://b3d7jha35salb" path="res://assets/models/StaticTiles_polished-stone-albedo.png" id="1_0swab"]
-[ext_resource type="Texture2D" uid="uid://dxu3wq4pmd5a5" path="res://assets/models/StaticTiles_polished-stone-normal.png" id="2_drvlc"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo46t"]
-resource_name = "PolishedStoneMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_0swab")
-normal_enabled = true
-normal_scale = 0.2
-normal_texture = ExtResource("2_drvlc")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://c7s8sqjilwof6" path="res://assets/resources/materials/PolishedStoneMaterial.tres" id="1_fcwff"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_o8gpp"]
 _surfaces = [{
@@ -36,7 +26,7 @@ _surfaces = [{
 "index_count": 264,
 "index_data": PackedByteArray("NQA2AAwACwA2ADUANgALADcANwALACEANgA3ADgAOQA1AAwAOQAKADUADAA6ADkAOQA6AA0AOgAMADsAOwAMACIAOgA7ADwABQA9AD4ABQAEAD0APwAIAEAAPwBBAAgAQgA/AEAAQgBAAAkABgA/AEIABgBDAD8AQwBBAD8AQwAHAEEAAAAoAAIAAAAnACgAIAAeAEQAHQBEAB4AHQAeAEUAKQAeACAAHgAfAEUAHgApAEYARgApAEcAHgBGAEgAKgAfAB4AHwAqACsAKwAqAEkAHwArAEoALAAPABAALAAtAA8ASwAsABAASwAQAEwATQBOABAATQAQABYATwBQAFEATwAOAFAAEgBPAFEAEgBRAFIAGQBTADIAGQBUAFMAVAAzAFMAVAAaADMAVQABAFYAVQAlAAEAMAAVABMAMAAUABUAHABXABsAHABYAFcAWQBaAFgAWQBYABcAGABbADQAGABcAFsAXQBcABgAXQBeAFwAXwBgAGEAXwBiAGAAYwBkAGUAYwBmAGQAZwBoAGkAZwAjAGgAagBrACQAagBsAGsAJgBtAAMAJgBuAG0AbwBwAHEAbwByAHAAcwB0AHUAcwB2AHQAdwB2AHMAdwARAHYAeAB5AHoAeAB7AHkAfAB7AHgAfAAuAHsAfQB+AH8AfQCAAH4AgQCAAH0AgQAvAIAAggCDADEAggCEAIMA"),
 "lods": [0.371336, PackedByteArray("DAALACEACgALAAwADAANAAoADQAMACIABQAEACMAAwAjAAQAJAADAAQAJAAEACUAJAAlAAEAJAABACYAJgADACQAJgAnAAMAJgAoACcAAAAnACgAAAAoAAIAKQAeACAAHQAgAB4AHQAeAB8AKgAfAB4AHwAqACsABgAHAAgABgAIAAkALAAPABAALAAtAA8ALAAOAC0AEwAsABAALAARAA4AEwARACwAEQAuAA4ALgAvAA4AEgAOAC8AEwAQADAAMAAVABMAMAAUABUAFgAxABAAFgAXADEAFgAYABcAFgAyABgAGAAyADMAGQAzADIAGQAaADMAGAAzADQAHAAYADQAHAA0ABsA"), 0.86037, PackedByteArray("AAABAAIAAQAAAAMAAwAEAAEAAwAFAAQABgAHAAgABgAIAAkACgALAAwADAANAAoADgAPABAAEQASAA4AEwARAA4AEwAOABAAEwAQABQAFAAVABMAFgAXABAAFgAYABcAFgAZABgAGAAZABoAGAAaABsAHAAYABsAHQAeAB8AHQAgAB4A")],
-"material": SubResource("StandardMaterial3D_eo46t"),
+"material": ExtResource("1_fcwff"),
 "name": "PolishedStoneMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

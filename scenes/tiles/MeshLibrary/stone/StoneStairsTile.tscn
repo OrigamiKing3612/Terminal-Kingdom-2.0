@@ -1,16 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://8ro0vf77ukgl"]
+[gd_scene load_steps=5 format=4 uid="uid://8ro0vf77ukgl"]
 
-[ext_resource type="Texture2D" uid="uid://wi3m8ywitndr" path="res://assets/models/StaticTiles_stone-albedo.png" id="1_x5l38"]
-[ext_resource type="Texture2D" uid="uid://dvcn5rt80gsut" path="res://assets/models/StaticTiles_stone-normal.png" id="2_kn0bj"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w61d"]
-resource_name = "StoneMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_x5l38")
-normal_enabled = true
-normal_scale = 0.4
-normal_texture = ExtResource("2_kn0bj")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://bud4a2wtcwsxs" path="res://assets/resources/materials/StoneMaterial.tres" id="1_oe152"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hj5l8"]
 _surfaces = [{
@@ -36,7 +26,7 @@ _surfaces = [{
 "index_count": 246,
 "index_data": PackedByteArray("NQA2AC0ANQA3ADYANwAuADYAKwA3ADUAKwAsADcAOAA5AAIAOAA6ADkAOgABADkAOgADAAEAOwA8AD0AOwAKADwACQA7AD0ACQA9AD4APwBAAB8APwBBAEAAQQAeAEAAHQBBAD8AHQAgAEEAQgAMAA0ADABCAA4ADAAOAA8AQwBCAA0AQwALAEIAEQBDAA0AQwARABAAEQANABIARAASABQAEwASAEQAFQAWAEUAFwAVAEUAFwBGABUAGAAVAEYAFQAYABkAFgAVABsAFgAbAEcAFQAZABoASAAaAEkASgAaAEgARwBLAEwATABLABwATQAiAE4ATQAhACIAJABNAE4AJABOACMAJAAmAE8AUABRAFIAUwBSAFEAUQBQAFQAVABQAFUAVABVAFYAVwBYAFkAVwAqAFgAKQBXAFkAKQBZAFoALwAwADEAWwBcAAUAMgAzAF0AXQAzADQAXgBfAGAAXgBhAF8AYgBhAF4AYgBjAGEAZABlAGYAZAAEAGUAZwAEAGQAZwAAAAQAaAAGAAcAaABpAAYAagBpAGgAagAIAGkAawAlAGwAawBtACUAbgBtAGsAbgBvAG0AcABxAHIAcABzAHEAdABzAHAAdAB1AHMAdgAoAHcAdgB4ACgAeQB4AHYAeQAnAHgA"),
 "lods": [0.0332415, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAwAEAAUAAAAGAAQABAAGAAcAAAAIAAYACQAGAAgACQAKAAYACwAMAA0ADAALAA4ADAAOAA8AEAALAA0AEQAQAA0AEQANABIAEwASABQAFQAWABcAFwAYABUAFQAYABkAFQAZABoAFgAVABsAFgAbABwAHQAeAB8AHQAgAB4AIQAiACMAJAAhACMAJAAlACEAJAAmACUAJgAnACUAJQAnACgAKQAoACcAKQAqACgAKwAsAC0ALAAuAC0ALwAwADEAMgAzADQA")],
-"material": SubResource("StandardMaterial3D_6w61d"),
+"material": ExtResource("1_oe152"),
 "name": "StoneMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

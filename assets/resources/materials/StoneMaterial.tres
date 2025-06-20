@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bud4a2wtcwsxs"]
+
+[ext_resource type="Texture2D" uid="uid://c00ivkqo8a1kn" path="res://assets/models/textures/stone/stone-albedo.png" id="1_svfya"]
+[ext_resource type="Texture2D" uid="uid://8x2iaxmqm4h8" path="res://assets/models/textures/stone/stone-normal.png" id="2_2bvum"]
+
+[resource]
+resource_name = "StoneMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_svfya")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("2_2bvum")
+texture_filter = 2

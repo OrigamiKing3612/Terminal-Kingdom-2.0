@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dr1jxewab2gnp"]
+
+[ext_resource type="Texture2D" uid="uid://dw2urijlgg7ui" path="res://assets/models/textures/bricks/bricks-albedo.png" id="1_i1lf4"]
+[ext_resource type="Texture2D" uid="uid://c8eieroie5yur" path="res://assets/models/textures/bricks/bricks-normal.png" id="2_gvv3x"]
+
+[resource]
+resource_name = "BrickMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_i1lf4")
+metallic = 0.0634921
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("2_gvv3x")
+texture_filter = 2

@@ -1,16 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://bokucn4ad0ycl"]
+[gd_scene load_steps=5 format=4 uid="uid://bokucn4ad0ycl"]
 
-[ext_resource type="Texture2D" uid="uid://wi3m8ywitndr" path="res://assets/models/StaticTiles_stone-albedo.png" id="1_66f06"]
-[ext_resource type="Texture2D" uid="uid://dvcn5rt80gsut" path="res://assets/models/StaticTiles_stone-normal.png" id="2_sha46"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w61d"]
-resource_name = "StoneMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_66f06")
-normal_enabled = true
-normal_scale = 0.4
-normal_texture = ExtResource("2_sha46")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://bud4a2wtcwsxs" path="res://assets/resources/materials/StoneMaterial.tres" id="1_4efs3"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0p7d0"]
 _surfaces = [{
@@ -36,7 +26,7 @@ _surfaces = [{
 "index_count": 201,
 "index_data": PackedByteArray("OgABADsAOgADAAEAPAASABMAFQA8ABMAFQATABYAPAARABIAEQAUABIAEgAUAD0AFAAXAD0AFAAYABcAEgA+AD8APwA+AEAADwBBAEIADwAQAEEAQwApAEQAQwBFACkARgBDAEQARgBEACoAJwBDAEYAJwBHAEMARwBFAEMARwAoAEUASAAaABsAGgBIABkAGgAZABwASQBIABsASQAdAEgAHgBJABsAHgAbAB8ASgBLAEwASwBKAE0ATQBKAE4AIwAgAE8AJAAjAE8AIAAjACEAIAAhACIAJABQACMAUAAmACMAUAAlACYAUQAsAC0AUQAuACwAKwBRAC0AKwAtAC8AUgAyAFMAUgAxADIAMABSAFMAMABTADMANAA1AFQAVAA1ADYAVQBWAFcAWABZAAQANwA4AFoAWgA4ADkAWwBcAF0AWwBeAFwAXwBgAGEAXwAGAGAAYgAMAA0AYgAOAAwAAgBjAGQAAgBlAGMAZgBnAAAAZgBoAGcABQBpAAcABQBqAGkACgAJAAsACgAIAAkA"),
 "lods": [0.0150053, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAgAFAAAAAAAGAAQABQAHAAAABQAIAAcABQAJAAgACgAIAAkACgAJAAsABgAMAA0ABgAOAAwADwAMAA4ADwAQAAwAEQASABMAEQAUABIAEgAUABMAFQARABMAFQATABYAFAAXABMAFAAYABcAGQAaABsAGgAZABwAHQAZABsAHgAdABsAHgAbAB8AIAAhACIAIAAjACEAJAAjACAAJAAlACMAJQAmACMAJwAoACkAJwApACoAKwAsAC0AKwAuACwAKwAtAC8AMAAxADIAMAAyADMANAA1ADYANwA4ADkA")],
-"material": SubResource("StandardMaterial3D_6w61d"),
+"material": ExtResource("1_4efs3"),
 "name": "StoneMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

@@ -1,17 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://dt75ww2b487cj"]
+[gd_scene load_steps=5 format=4 uid="uid://dt75ww2b487cj"]
 
-[ext_resource type="Texture2D" uid="uid://denix1pgj26uu" path="res://assets/models/StaticTiles_bricks-albedo.png" id="1_qigmy"]
-[ext_resource type="Texture2D" uid="uid://bknnpe6dinwyu" path="res://assets/models/StaticTiles_bricks-normal.png" id="2_ag7s0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wgpc"]
-resource_name = "BrickMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_qigmy")
-metallic = 0.0634921
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource("2_ag7s0")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://dr1jxewab2gnp" path="res://assets/resources/materials/BrickMaterial.tres" id="1_r7067"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_snvpv"]
 _surfaces = [{
@@ -37,7 +26,7 @@ _surfaces = [{
 "index_count": 174,
 "index_data": PackedByteArray("AAAsAAIAAAAtACwALgAMAC8ALgAwAAwAMQAuAC8AMQAvAA0ACgAuADEACgAyAC4AMgAwAC4AMgALADAAMwA0AAYACAAGAAkACAA1AAYANQAzAAYANQAHADMABAA0ADMANAAEADYANgAEADcANAA2AAUAOAAPADkAOAARAA8ADgA4ADkADgA5ABAAOgAUADsAOgATABQAEgA6ADsAEgA7ABUAPAAXABgAPAAWABcAGQA8ABgAGQAYAD0AGAAaAD0APgAaABgAGgA+AD8APwA+ABsAGgA/AEAAQQBCAB4AQQAdAEIAHQAgAEIAHQAhACAAHAAdAEEAHAAfAB0AQwAjAEQAQwBFACMARgBHAEgARgBJAEcASgAmAEsASgAnACYAKQBMACsAKQBNAEwATgBPAFAATgBRAE8AUgAlACIAUgAkACUAAQBTAAMAAQBUAFMAKABVACoAKABWAFUA"),
 "lods": [0.030631, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABwAEAAYACAAHAAYACAAGAAkACgALAAwACgAMAA0ADgAPABAADgARAA8AEgATABQAEgAUABUAFgAXABgAGQAWABgAGQAYABoAGwAaABgAHAAdAB4AHAAfAB0AHQAgAB4AHQAhACAAIgAjACQAJAAlACIAIgAmACMAIgAnACYAKAApACoAKAArACkA")],
-"material": SubResource("StandardMaterial3D_3wgpc"),
+"material": ExtResource("1_r7067"),
 "name": "BrickMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

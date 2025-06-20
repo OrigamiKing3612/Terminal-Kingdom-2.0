@@ -1,22 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://ca2ro6qgj7qf2"]
+[gd_scene load_steps=5 format=4 uid="uid://ca2ro6qgj7qf2"]
 
-[ext_resource type="Texture2D" uid="uid://c4gwn8ux2vef4" path="res://assets/models/StaticTiles_coin-albedo.png" id="1_6joew"]
-[ext_resource type="Texture2D" uid="uid://dhxcn1qb5pfpe" path="res://assets/models/StaticTiles_handy_noise.png" id="2_etkae"]
-[ext_resource type="Texture2D" uid="uid://bj5krawmsu4eq" path="res://assets/models/StaticTiles_dirt-normal.png" id="3_1yfb2"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qlln"]
-resource_name = "gold.007"
-cull_mode = 2
-albedo_texture = ExtResource("1_6joew")
-metallic = 0.601036
-metallic_texture = ExtResource("2_etkae")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("2_etkae")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_scale = 0.4
-normal_texture = ExtResource("3_1yfb2")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://dat6a83mbenef" path="res://assets/resources/materials/item/IronItemMaterial.tres" id="1_y8dpl"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7h6d3"]
 _surfaces = [{
@@ -42,7 +26,7 @@ _surfaces = [{
 "index_count": 240,
 "index_data": PackedByteArray("AAAnACgAKAABAAAAJwAaACgAAAABACkAAQAEACkAKQAEACoAAAApACsAAAArACcAKQAqABkAKQAZACsAKgAFABkAKwAZABsAGQAsABsAKwAbAC0AKwAtACcAGwACAC0AAgAcAC0AJwAtAC4ALQAcAC4AJwAuABoALgAcAAMALgADABoALwAwADEAMQAdAC8AMAAGADEAMAAyAAYABgAyAAoAMAAIADIAMgAIADMANAAIADAALwA0ADAANAA1AAgAHQA2AC8ALwA2ADQABwA2AB0ANAA3ADUANgA3ADQANgA4ADcANwAeADUACQAeADcAOQA6ABMAOgA7ABMAEwA7ADwAPAA7ABQAOwA9ABQAFAA9ACEAPQA+ACEAOwAgAD0AOgAgADsAPwA+AD0AIAA/AD0APwARAD4AOgBAACAAQAA/ACAAEgBAADoAEgBBAEAAQQAfAEAAHwA/AEAAHwARAD8AEAARAB8AJABCABUAGABCACUAGAAiAEIAQgAjABUAQgAiACMAFQAjABcAIgBDACMAIwBEABcAQwBEACMAQwAWAEQARQAMAEYARwALAAwARwAMAEgASAAMAEUADQBHAEgADgBIAEUADgBFAEkAJgBIAA4AJgANAEgADwANACYA"),
 "lods": [0.373926, PackedByteArray("AAABABkAAQAEABkAGQAEAAUAAAAaAAEAAAAZABsAAAAbABoAGwAcABoAGgAcAAMAAgAcABsABgAHAAgAHQAHAAYABgAIAAoABwAJAAgACQAeAAgAEgAfACAAEgAgABMAEwAgABQAFAAgACEAHwAhACAAHwARACEAEAARAB8AIgAWACMAIwAWABcAFQAjABcAJAAjABUAJAAiACMAGAAiACQAGAAkACUACwAMAA0ADgANAAwAJgANAA4ADwANACYA"), 0.864863, PackedByteArray("CgAHAAkAEAARABMAEwARABQADgALAAwADwALAA4AGAAWABUAAgAEAAUAAgADAAQA"), 1.00711, PackedByteArray("AAABAAIAAAADAAEAAAACAAMAAQAEAAIAAgAEAAUABgAHAAgABwAJAAgABgAIAAoACwAMAA0ADgANAAwADwANAA4AEAARABIAEgARABMAEwARABQAFQAWABcAGAAWABUA")],
-"material": SubResource("StandardMaterial3D_8qlln"),
+"material": ExtResource("1_y8dpl"),
 "name": "gold.007",
 "primitive": 3,
 "uv_scale": Vector4(4.43172, 4.15424, 0, 0),

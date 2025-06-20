@@ -1,19 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://dr5ygp5jif6eo"]
+[gd_scene load_steps=5 format=4 uid="uid://dr5ygp5jif6eo"]
 
-[ext_resource type="Texture2D" uid="uid://dhxcn1qb5pfpe" path="res://assets/models/StaticTiles_handy_noise.png" id="1_i8yok"]
-[ext_resource type="Texture2D" uid="uid://bj5krawmsu4eq" path="res://assets/models/StaticTiles_dirt-normal.png" id="2_ce74h"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sshf"]
-resource_name = "coal.003"
-cull_mode = 2
-albedo_color = Color(0.10126, 0.10126, 0.10126, 1)
-metallic_texture = ExtResource("1_i8yok")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("1_i8yok")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_scale = 0.2
-normal_texture = ExtResource("2_ce74h")
+[ext_resource type="Material" uid="uid://b2dihx8cdmw1g" path="res://assets/resources/materials/item/CoalItemMaterial.tres" id="1_ppiw1"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_788gm"]
 _surfaces = [{
@@ -39,7 +26,7 @@ _surfaces = [{
 "index_count": 240,
 "index_data": PackedByteArray("IwAcACQAIwAAABwAAAAbABwAAAAlABsAJQADABsAAwAmABsAAwAnACYAHAAbACgAGwAmACgAHAAoACkAKAAmABIAKAASACkAEgACACkAEgABAAIAKgAaACsAKgAsABoAKgAPACwALQAPACoAKwAtACoAGAAtACsAGgAuACsAKwAuAC8AGgAwAC4ALwAuABkALwAZABEAGQAxABEALgAyABkALgAwADIAGQAyADMAMAAXADIAMgAQADMAFwAQADIANAA1ADYAHgA0ADYANAALADUACwA3ADUANQA3ADgANwAMADgAOAAMADkANQA4AB0AHQA4ADkANQAdADYAHQA5AA0AOgAdAA0ANgAdADoADgA2ADoAOwAgABQAIQAgADsAPAAgACEAIAA9ABQAPAA+ACAAIAA+AD0APAAiAD4ABwAiADwABwAEACIABAA/ACIAIgATAD4APwATACIAPgATAD0APwBAABMAEwBAAEEAEwBBAD0AFAA9AEIAPQBBAEIAFABCAAYABgBCAEMAQgBBAEMAQQAFAEMARAAVAB8ARQBEAB8ARQAfABYAFgAfAAgAHwBGAAgAFQBGAB8AFQBHAEYASAAVAEQACQBIAEQACgAVAEgACgBHABUASQBHAAoA"),
 "lods": [0.357521, PackedByteArray("GAAZABEAGAAaABkAGAAPABoAGgAXABkAFwAQABkAGwASABwAEgACABwAEgABAAIAAAAbABwAGwADABIAAAADABsADgAdAA0AHQAMAA0ACwAMAB0ACwAdAA4AHgALAA4ACQAVAB8ACgAVAAkACQAfABYAFQAKAAgAFgAfAAgAFQAIAB8AFAAFAAYAIAAFABQAIQAgABQAEwAFACAABAAFABMAIQAiACAAIgATACAABAATACIABwAiACEABwAEACIA"), 0.439613, PackedByteArray("AAASAAIAEgABAAIAAwASAAAAEwAFABQAFAAFAAYABAAFABMABwATABQABwAEABMACgAVAAkAFgAJABUAFQAKAAgAFgAVAAgACwAMAA0ACwANAA4ADwAXABAADwAQABEA"), 0.634345, PackedByteArray("AAABAAIAAwABAAAABAAFAAYABwAEAAYACAAJAAoACwAMAA0ACwANAA4ADwAQABEA")],
-"material": SubResource("StandardMaterial3D_8sshf"),
+"material": ExtResource("1_ppiw1"),
 "name": "coal.003",
 "primitive": 3,
 "uv_scale": Vector4(4.63963, 4.45938, 0, 0),
@@ -59,6 +46,7 @@ mesh = SubResource("ArrayMesh_je7of")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CoalItemTile"]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoalItemTile/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_iljo4")

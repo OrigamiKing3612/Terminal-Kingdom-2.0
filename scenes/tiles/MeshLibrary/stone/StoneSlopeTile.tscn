@@ -1,16 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://bahfrv0we0cv8"]
+[gd_scene load_steps=5 format=4 uid="uid://bahfrv0we0cv8"]
 
-[ext_resource type="Texture2D" uid="uid://wi3m8ywitndr" path="res://assets/models/StaticTiles_stone-albedo.png" id="1_8aohv"]
-[ext_resource type="Texture2D" uid="uid://dvcn5rt80gsut" path="res://assets/models/StaticTiles_stone-normal.png" id="2_ggg56"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w61d"]
-resource_name = "StoneMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_8aohv")
-normal_enabled = true
-normal_scale = 0.4
-normal_texture = ExtResource("2_ggg56")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://bud4a2wtcwsxs" path="res://assets/resources/materials/StoneMaterial.tres" id="1_0tvdy"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xp353"]
 _surfaces = [{
@@ -34,7 +24,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 48,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABwAEAAgACQAKAAsACQAMAAoADAAJAA0ADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsA"),
-"material": SubResource("StandardMaterial3D_6w61d"),
+"material": ExtResource("1_0tvdy"),
 "name": "StoneMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
