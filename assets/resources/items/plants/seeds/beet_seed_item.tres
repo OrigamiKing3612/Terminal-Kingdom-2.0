@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dac1jg5ly8rn3"]
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_tvkhp"]
-[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="2_2r1qa"]
+[ext_resource type="Texture2D" uid="uid://cydb1qtkqjjod" path="res://assets/models/icons/plants/seeds/beet_seed.png" id="2_h2dp1"]
 
 [resource]
 script = ExtResource("1_tvkhp")
@@ -9,12 +9,7 @@ name = &"Beet Seed"
 price = 4
 can_be_sold = true
 is_buildable = false
-texture_2d = ExtResource("2_2r1qa")
+texture_2d = ExtResource("2_h2dp1")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 0
-generate_item = true
-generate_preview = false
-preview_file = ""
-override_name = false
-overriden_name = ""
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

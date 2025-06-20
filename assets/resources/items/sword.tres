@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ToolItem" load_steps=3 format=3 uid="uid://dtbikuwi2rvgv"]
 
 [ext_resource type="Script" uid="uid://cqsvdpbt83m3i" path="res://scripts/resources/items/tool_item.gd" id="1_a06f2"]
-[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="2_u6m2m"]
+[ext_resource type="Texture2D" uid="uid://dimwxjqd6hima" path="res://assets/models/icons/tools/sword.png" id="2_a06f2"]
 
 [resource]
 script = ExtResource("1_a06f2")
@@ -10,12 +10,7 @@ name = &"Sword"
 price = 5
 can_be_sold = true
 is_buildable = false
-texture_2d = ExtResource("2_u6m2m")
+texture_2d = ExtResource("2_a06f2")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 0
-generate_item = true
-generate_preview = false
-preview_file = ""
-override_name = false
-overriden_name = ""
 metadata/_custom_type_script = "uid://cqsvdpbt83m3i"

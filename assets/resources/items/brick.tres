@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d1dpbs2gmell6"]
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_xlyfo"]
-[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="2_imu3y"]
+[ext_resource type="Texture2D" uid="uid://dkovty0yr7kqq" path="res://assets/models/icons/items/brick.png" id="2_xlyfo"]
 
 [resource]
 script = ExtResource("1_xlyfo")
@@ -9,7 +9,7 @@ name = "Brick"
 price = 1
 can_be_sold = true
 is_buildable = false
-texture_2d = ExtResource("2_imu3y")
+texture_2d = ExtResource("2_xlyfo")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 0
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

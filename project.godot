@@ -42,7 +42,6 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://add
 
 folder_colors={
 "res://scenes/tiles/": "purple",
-"res://scenes/ui/equipment/": "red",
 "res://scenes/ui/hotbar/": "red"
 }
 
