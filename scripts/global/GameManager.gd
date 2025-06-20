@@ -142,8 +142,8 @@ func _on_remove_item(item: Item) -> void:
 	show_message.emit(value)
 	inventory_update.emit()
 	
-func _on_dialogue_started(resource: DialogueResource):
+func _on_dialogue_started(_resource: DialogueResource):
 	mode = Mode.Speaking
 	
-func _on_dialogue_ended(resource: DialogueResource):
+func _on_dialogue_ended(_resource: DialogueResource):
 	mode = Mode.Normal

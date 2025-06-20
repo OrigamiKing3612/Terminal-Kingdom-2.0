@@ -13,8 +13,8 @@ func physics_process(delta: float) -> NPCState:
 	if character.velocity.y > 0:
 		return fall_state
 	
-	var movement = get_movement_input() * move_speed
-	if movement != 0:
+	var move = get_movement_input() * move_speed
+	if move != 0:
 		# look at direction
 		pass
 	
@@ -22,7 +22,7 @@ func physics_process(delta: float) -> NPCState:
 	character.move_and_slide()
 	
 	if character.is_on_floor():
-		if movement != 0:
+		if move != 0:
 			return move_state
 		return idle_state
 	

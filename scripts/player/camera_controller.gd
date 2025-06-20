@@ -24,7 +24,7 @@ func _input(event: InputEvent) -> void:
 		yaw += -event.relative.x * yaw_sensitivity
 		pitch += event.relative.y * pitch_sensitivity
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	pitch = clamp(pitch, pitch_min, pitch_max)
 	
 	#camera_yaw.rotation_degrees.y = lerp(camera_yaw.rotation_degrees.y, yaw, yaw_acceleration * delta)

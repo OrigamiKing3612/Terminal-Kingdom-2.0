@@ -23,7 +23,6 @@ func collectItems(items: Array[Item]) -> void:
 	if not items:
 		push_warning("Tried to collect null items")
 		return
-	var messages: Dictionary[Item, int] = {}
 	for item in items:
 		self.items.append(item)
 		collect_item.emit(item, 1)

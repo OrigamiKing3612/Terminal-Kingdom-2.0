@@ -2,7 +2,7 @@ extends Node
 
 @export var dialogue: DialogueResource
 
-func talk(data: NPCData):
+func talk(_data: NPCData):
 	if GameManager.player.skill.building.stage == 4:
 		var quest = QuestManager.get_quest("builder1")
 		if quest.quest_status == quest.QuestStatus.started:

@@ -31,8 +31,8 @@ runtime/balloon_path="res://scenes/ui/dialogue/balloon.tscn"
 
 [display]
 
-window/size/viewport_width=2304
-window/size/viewport_height=1296
+window/size/viewport_width=1728
+window/size/viewport_height=972
 
 [editor_plugins]
 
@@ -47,7 +47,6 @@ folder_colors={
 
 [global_group]
 
-can_use_doors=""
 Player="The player"
 
 [input]

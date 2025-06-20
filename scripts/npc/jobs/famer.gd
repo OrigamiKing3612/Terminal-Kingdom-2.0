@@ -13,7 +13,7 @@ extends Node
 @export var stage1_axe: Item  = null
 @export var stage1_tree_seed: Item  = null
 
-func talk(data: NPCData):
+func talk(_data: NPCData):
 	getStage()
 
 func getStage():

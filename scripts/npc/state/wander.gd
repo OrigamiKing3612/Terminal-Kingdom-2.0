@@ -28,7 +28,7 @@ func process(delta: float) -> NPCState:
 		_wait_timer = wait_time
 	return null
 
-func physics_process(delta: float) -> NPCState:
+func physics_process(_delta: float) -> NPCState:
 	if navigation.is_navigation_finished():
 		return null
 
@@ -52,5 +52,5 @@ func pick_new_destination():
 	
 	_wait_timer = wait_time
 
-func _on_area_3d_area_entered(area: Area3D) -> void:
+func _on_area_3d_area_entered(_area: Area3D) -> void:
 	area_entered = true

@@ -34,14 +34,14 @@ func update_quest_list() -> void:
 			
 			quest.show()
 
-static func register_quest(name: String, quest: QuestManager) -> void:
-	_active_quests[name] = quest
+static func register_quest(id: String, quest: QuestManager) -> void:
+	_active_quests[id] = quest
 	
-static func get_quest(name: String) -> QuestManager:
-	return _active_quests[name]
+static func get_quest(id: String) -> QuestManager:
+	return _active_quests[id]
 	
-static func update_quest(name: String, quest: QuestManager) -> void:
-	_active_quests[name] = quest
+static func update_quest(id: String, quest: QuestManager) -> void:
+	_active_quests[id] = quest
 	quest.update_quest_list()
 
 enum QuestStatus{available, started, reached_goal, finished, step_two}

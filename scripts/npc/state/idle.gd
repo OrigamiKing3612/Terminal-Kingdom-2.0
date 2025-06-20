@@ -12,7 +12,7 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
-func process_input(event: InputEvent) -> NPCState:
+func process_input(_event: InputEvent) -> NPCState:
 	if get_jump() and character.is_on_floor():
 		return jump_state
 	return null

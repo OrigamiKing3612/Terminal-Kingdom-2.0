@@ -21,5 +21,6 @@ price = 0
 can_be_sold = false
 is_buildable = true
 texture_2d = SubResource("ImageTexture_jkkde")
-position_in_inventory = Vector2(100, 100)
+max_amount_per_stack = 50
 gridmap_id = 64
+seed = 0

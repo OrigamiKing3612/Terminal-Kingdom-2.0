@@ -22,13 +22,13 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
-func process_input(event: InputEvent) -> NPCState:
+func process_input(_event: InputEvent) -> NPCState:
 	return null
 
-func process(delta: float) -> NPCState:
+func process(_delta: float) -> NPCState:
 	return null
 	
-func physics_process(delta: float) -> NPCState:
+func physics_process(_delta: float) -> NPCState:
 	return null
 
 # Used for overriding the input

@@ -29,8 +29,6 @@ func connect_slots():
 		slot.pressed.connect(func(): _on_slot_clicked(slot))
 	
 func _update():
-	for i in slots.size():
-		slots[i].clear()
 	var inventory_items: Dictionary[Item, int] = {}
 	for item in GameManager.player.items:
 		if item in inventory_items:
@@ -38,21 +36,40 @@ func _update():
 		else:
 			inventory_items[item] = 1
 
-	var inventory_item_slots: Array[InventoryItemSlot]
+	var inventory_item_slots: Array[InventoryItemSlot] = []
 	for item in inventory_items.keys():
 		var s := InventoryItemSlot.new()
 		s.item = item
 		s.count = inventory_items[item]
 		inventory_item_slots.append(s)
 
-	for i in range(min(inventory_item_slots.size(), slots.size())):
-		var slot := inventory_item_slots[i]
-		if not slot.item: continue
-		
-		var inventory_item: InventoryItem = INVENTORY_ITEM.instantiate()
-		inventory_item.item_slot = slot
-		slots[i].insert(inventory_item)
-		inventory_item.update()
+	for i in range(slots.size()):
+		var slot = slots[i]
+
+		if i >= inventory_item_slots.size():
+			if slot.inventory_item and not slot is ToolbeltInventorySlot:
+				slot.clear()
+			continue
+
+		var desired = inventory_item_slots[i]
+
+		if slot.inventory_item:
+			if slot.inventory_item.item_slot.item == desired.item:
+				slot.inventory_item.item_slot.count = desired.count
+				slot.inventory_item.update()
+			else:
+				if not slot is ToolbeltInventorySlot:
+					slot.clear()
+					var inventory_item = INVENTORY_ITEM.instantiate()
+					inventory_item.item_slot = desired
+					slot.insert(inventory_item)
+					inventory_item.update()
+		else:
+			if not slot is ToolbeltInventorySlot:
+				var inventory_item = INVENTORY_ITEM.instantiate()
+				inventory_item.item_slot = desired
+				slot.insert(inventory_item)
+				inventory_item.update()
 
 func _on_slot_clicked(slot: InventorySlot):
 	if slot.is_empty():
@@ -66,6 +83,7 @@ func _on_slot_clicked(slot: InventorySlot):
 	
 	if slot.inventory_item.item_slot.item.name == itemInHand.item_slot.item.name:
 		stack_items(slot)
+		return
 	
 	swap_items(slot)
 
@@ -112,5 +130,5 @@ func update_item_in_hand():
 	if not itemInHand: return
 	itemInHand.global_position = get_global_mouse_position() - itemInHand.size / 2
 	
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	update_item_in_hand()

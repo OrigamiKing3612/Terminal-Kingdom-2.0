@@ -62,11 +62,11 @@ func run():
 		
 	print("Done! Time: ", Time.get_datetime_string_from_system())
 
-func generate_preview(mesh: Mesh, item: Item, size: Vector2 = Vector2(128, 128)) -> Texture2D:
+func generate_preview(mesh: Mesh, item: Item, image_size: Vector2 = Vector2(128, 128)) -> Texture2D:
 	print("Generating Preview for ", item.name)
 	
 	var sub_viewport := SubViewport.new()
-	sub_viewport.size = size
+	sub_viewport.size = image_size
 	sub_viewport.transparent_bg = true
 	sub_viewport.disable_3d = false
 	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
@@ -86,7 +86,6 @@ func generate_preview(mesh: Mesh, item: Item, size: Vector2 = Vector2(128, 128))
 	var max_dim = max(aabb.size.x, aabb.size.y, aabb.size.z)
 	var distance = max_dim * 3
 	var pos = Vector3(distance, 1.6, distance)
-	var rotate = Vector3(0, 0, 0)
 	
 	var light := DirectionalLight3D.new()
 	light.light_energy = 1.0
@@ -118,19 +117,19 @@ func generate_preview(mesh: Mesh, item: Item, size: Vector2 = Vector2(128, 128))
 
 	return texure
 
-func add_spaces_to_camel_case(text: String) -> String:
+func add_spaces_to_camel_case(value: String) -> String:
 	var result := ""
-	for i in text.length():
-		var char = text[i]
-		if i > 0 and is_upper(char):
+	for i in value.length():
+		var ch = value[i]
+		if i > 0 and is_upper(ch):
 			result += " "
-		result += char
+		result += ch
 	return result.replace(" Tile", "")
 
-func is_upper(char: String) -> bool:
+func is_upper(ch: String) -> bool:
 	var uppers = "QWERTYUIOPASDFGHJKLZXCVBNM"
 	for upper in uppers:
-		if char == upper:
+		if ch == upper:
 			return true
 	return false
 

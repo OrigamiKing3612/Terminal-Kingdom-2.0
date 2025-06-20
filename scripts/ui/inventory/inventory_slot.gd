@@ -11,6 +11,9 @@ func clear():
 	inventory_item = null
 
 func insert(item: InventoryItem):
+	if not item: 
+		push_warning("item is null")
+		return
 	inventory_item = item
 	container.add_child(inventory_item)
 

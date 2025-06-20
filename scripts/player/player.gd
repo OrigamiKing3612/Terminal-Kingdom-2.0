@@ -31,9 +31,6 @@ func _input(event: InputEvent) -> void:
 			change_movement_state("stand")
 	if event.is_action_pressed("jump") and GameManager.mode != GameManager.Mode.Speaking and GameManager.mode != GameManager.Mode.InPopUp:
 		if air_jump_counter <= max_air_jump:
-			var jump_name = "ground_jump"
-			if air_jump_counter > 0:
-				jump_name = "air_jump"
 			pressed_jump.emit()
 			air_jump_counter += 1
 
@@ -46,7 +43,7 @@ func _ready() -> void:
 		GameManager.left_click.connect(_on_left_click)
 		GameManager.right_click.connect(_on_right_click)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if is_movement_ongoing():
 		set_movement_direction.emit(movement_direction)
 		
@@ -64,8 +61,9 @@ func change_movement_state(state: String) -> void:
 func _on_left_click():
 	if ray_cast_3d.is_colliding():
 		var collider = ray_cast_3d.get_collider()
-		var path = collider.get_path()
-		var type = collider.get_class()
+		#var path = collider.get_path()
+		#var type = collider.get_class()
+		#print("> Ray hit: ", path, " (", type, ")")
 		if collider is GridMap:
 			collider.destroy_tile(ray_cast_3d.get_collision_point())
 		elif collider.has_method("destroy"):
