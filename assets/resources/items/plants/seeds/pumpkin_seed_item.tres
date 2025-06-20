@@ -12,4 +12,5 @@ is_buildable = false
 texture_2d = ExtResource("2_our2x")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 0
+seed = 4
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

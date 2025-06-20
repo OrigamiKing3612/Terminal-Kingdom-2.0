@@ -12,7 +12,7 @@ func _process(delta):
 	if plant == null:
 		return
 	growth_timer += delta
-	var progress = growth_timer / plant.growth_time
+	var progress = clamp(growth_timer / plant.growth_time, 0, 1)
 	if progress < 0.33:
 		set_stage(Plant.Stage.seed)
 	elif progress < 0.66:
@@ -20,26 +20,30 @@ func _process(delta):
 	else:
 		set_stage(Plant.Stage.mature)
 
-func plant_seed(seed: Plant):
-	if plant != null:
-		if stage == Plant.Stage.mature:
-			harvest()
+func plant_seed(new_seed: Plant):
+	if plant_instance:
+		remove_child(plant_instance)
+		plant_instance.queue_free()
+
+	plant = new_seed.duplicate()
+	if plant.scene:
+		plant_instance = plant.scene.instantiate()
+		add_child(plant_instance)
 	else:
-		plant = seed.duplicate()
-		if plant.scene:
-			plant_instance = plant.scene.instantiate()
-			add_child(plant_instance)
-		else:
-			push_error("No plant scene")
-		growth_timer = 0.0
+		push_error("No plant scene")
+	growth_timer = 0.0
+	_stage = Plant.Stage.seed
 
 func harvest() -> void:
 	if plant.harvest_item:
-		var count := plant.max if (plant.max == plant.min) else randi_range(plant.min, plant.max)
+		var count := plant.max_amount if (plant.max_amount == plant.min_amount) else randi_range(plant.min_amount, plant.max_amount)
 		Utils.givePlayerCountOfItem(plant.harvest_item, count)
+
 	plant = null
 	growth_timer = 0.0
-	set_stage(Plant.Stage.seed)
+	_stage = Plant.Stage.seed
+	remove_child(plant_instance)
+	plant_instance.queue_free()
 
 func set_stage(new_stage: Plant.Stage):
 	_stage = new_stage
@@ -52,6 +56,17 @@ func _on_interacted() -> void:
 			quest.reached_goal()
 			QuestManager.update_quest("farm1", quest)
 			return
-	# remove the seed
-	#plant_seed(load("res://assets/resources/plants/cabbage_plant.tres"))
-	pass
+	
+	if plant != null:
+		if stage == Plant.Stage.mature:
+			harvest()
+			return
+	if GameManager.selectedItem:
+		match GameManager.selectedItem.seed:
+			Utils.SeedType.Beet: plant_seed(load("res://assets/resources/plants/beet_plant.tres"))
+			Utils.SeedType.Cabbage: plant_seed(load("res://assets/resources/plants/cabbage_plant.tres"))
+			Utils.SeedType.Carrot: plant_seed(load("res://assets/resources/plants/carrot_plant.tres"))
+			Utils.SeedType.Onion: plant_seed(load("res://assets/resources/plants/onion_plant.tres"))
+			Utils.SeedType.Pumpkin: plant_seed(load("res://assets/resources/plants/pumpkin_plant.tres"))
+			Utils.SeedType.TreeSeed: print_debug("tree seed needs implementing")
+		#plant_seed()

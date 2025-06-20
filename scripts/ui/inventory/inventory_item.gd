@@ -9,15 +9,14 @@ var item_slot: InventoryItemSlot
 func _ready():
 	hide()
 
-func update(slot: InventoryItemSlot):
-	item_slot = slot
-	if slot:
-		item_texture.texture = slot.item.texture_2d
-		if slot.count > 1:
-			count_label.text = "x" + str(slot.count)
+func update():
+	if item_slot:
+		item_texture.texture = item_slot.item.texture_2d
+		if item_slot.count > 1:
+			count_label.text = "x" + str(item_slot.count)
 		else:
 			count_label.text = ""
-		tooltip_text = slot.item.name
+		tooltip_text = item_slot.item.name
 		show()
 	else:
 		item_texture.texture = null

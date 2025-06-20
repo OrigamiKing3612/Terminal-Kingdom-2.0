@@ -3,6 +3,7 @@ extends Node
 @onready var inventory_box: CanvasLayer = $InventoryBox
 @onready var building_box: CanvasLayer = $BuildingBox
 @onready var toolbelt_box: CanvasLayer = $ToolbeltBox
+@onready var toolbelt: ToolbeltNode = $ToolbeltBox/ToolbeltNode
 
 @export var selected_item_index: int = 0
 @export var selected_gridmap_id: int = 0
@@ -35,6 +36,10 @@ signal show_message(text: String)
 var move: bool = true
 var mode: Mode = Mode.Normal
 var random: RandomNumberGenerator
+
+var selectedItem: Item:
+	get:
+		return toolbelt.selected_item
 
 enum Mode{Normal, Inventory, Build, Mining, Speaking, InPopUp}
 
@@ -127,7 +132,7 @@ func hide_buildable_items() -> void:
 func _on_collect_item(item: Item, count: int) -> void:
 	var value := "+ " + item.name + " x" + str(count)
 	show_message.emit(value)
-	inventory_update.emit()	
+	inventory_update.emit()
 	
 func _on_remove_item(item: Item) -> void:
 	if not item:

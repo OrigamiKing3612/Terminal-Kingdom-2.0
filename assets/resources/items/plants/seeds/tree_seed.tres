@@ -5,11 +5,12 @@
 
 [resource]
 script = ExtResource("1_ahq8q")
-name = "Tree Seed"
+name = &"Tree Seed"
 price = 1
 can_be_sold = true
 is_buildable = false
 texture_2d = ExtResource("2_x1b2w")
 position_in_inventory = Vector2(100, 100)
 gridmap_id = 0
+seed = 5
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

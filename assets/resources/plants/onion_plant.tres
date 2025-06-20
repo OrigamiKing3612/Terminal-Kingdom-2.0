@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Plant" load_steps=3 format=3 uid="uid://svrdqe2lvlhx"]
+[gd_resource type="Resource" script_class="Plant" load_steps=4 format=3 uid="uid://svrdqe2lvlhx"]
 
+[ext_resource type="Resource" uid="uid://b8is5w7b2wrs6" path="res://assets/resources/items/plants/onion_item.tres" id="1_mn5qx"]
 [ext_resource type="Script" uid="uid://brsxe72uas17j" path="res://scripts/resources/tiles/pot/Plant.gd" id="1_uopbq"]
 [ext_resource type="PackedScene" uid="uid://j1hrgd54bf2i" path="res://scenes/plants/onion_plant.tscn" id="1_uvkgp"]
 
@@ -7,6 +8,7 @@
 script = ExtResource("1_uopbq")
 scene = ExtResource("1_uvkgp")
 growth_time = 10.0
+harvest_item = ExtResource("1_mn5qx")
 min = 1
 max = 1
 metadata/_custom_type_script = "uid://brsxe72uas17j"

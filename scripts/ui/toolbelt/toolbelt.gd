@@ -8,6 +8,14 @@ const INVENTORY_ITEM = preload("res://scenes/ui/inventory/inventory_item.tscn")
 var selected_toolbelt_slot: int = 0
 var toolbelt_slots: Array[ToolbeltInventorySlot] = []
 
+var selected_item: Item:
+	get:
+		var item := toolbelt_slots[selected_toolbelt_slot].inventory_item
+		if item:
+			if item.item_slot:
+				return item.item_slot.item
+		return null
+
 func _ready() -> void:
 	for child in grid_container.get_children():
 		if child is ToolbeltInventorySlot:
@@ -28,7 +36,7 @@ func _on_hide_inventory() -> void:
 		hide()
 
 func _update_slots() -> void:
-	selected_toolbelt_slot = clamp(selected_toolbelt_slot, 0, toolbelt_slots.size() - 1)
+	selected_toolbelt_slot = clampi(selected_toolbelt_slot, 0, toolbelt_slots.size() - 1)
 
 	for i in toolbelt_slots.size():
 		if i == selected_toolbelt_slot:

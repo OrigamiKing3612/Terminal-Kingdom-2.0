@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerData" load_steps=8 format=3 uid="uid://v0x75ukrrln7"]
+[gd_resource type="Resource" script_class="PlayerData" load_steps=9 format=3 uid="uid://v0x75ukrrln7"]
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_mddin"]
 [ext_resource type="Script" uid="uid://c65bq1qpv6cyp" path="res://scripts/resources/data/player.gd" id="2_kflsk"]
@@ -7,13 +7,14 @@
 [ext_resource type="Resource" uid="uid://1150jny3axqx" path="res://assets/resources/player/skill.tres" id="3_pomgq"]
 [ext_resource type="Resource" uid="uid://bep3af3osttsk" path="res://assets/resources/items/tiles/gold_item.tres" id="4_nx8ai"]
 [ext_resource type="Resource" uid="uid://d0p5yutbxrj38" path="res://assets/resources/items/pickaxe.tres" id="5_4ec3n"]
+[ext_resource type="Resource" uid="uid://dac1jg5ly8rn3" path="res://assets/resources/items/plants/seeds/beet_seed_item.tres" id="6_nx8ai"]
 
 [resource]
 script = ExtResource("2_kflsk")
 name = "DEFAULT_NAME"
 can_build = true
 position = Vector3(0, 0, 0)
-items = Array[ExtResource("1_mddin")]([ExtResource("4_nx8ai"), ExtResource("2_sn836"), ExtResource("4_nx8ai"), ExtResource("3_4ec3n"), ExtResource("5_4ec3n")])
+items = Array[ExtResource("1_mddin")]([ExtResource("4_nx8ai"), ExtResource("2_sn836"), ExtResource("4_nx8ai"), ExtResource("3_4ec3n"), ExtResource("5_4ec3n"), ExtResource("6_nx8ai")])
 skill = ExtResource("3_pomgq")
 mining_level = 1
 metadata/_custom_type_script = "uid://c65bq1qpv6cyp"

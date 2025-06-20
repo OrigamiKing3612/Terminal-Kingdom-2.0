@@ -50,8 +50,9 @@ func _update():
 		if not slot.item: continue
 		
 		var inventory_item: InventoryItem = INVENTORY_ITEM.instantiate()
+		inventory_item.item_slot = slot
 		slots[i].insert(inventory_item)
-		inventory_item.update(slot)
+		inventory_item.update()
 
 func _on_slot_clicked(slot: InventorySlot):
 	if slot.is_empty():
@@ -61,6 +62,12 @@ func _on_slot_clicked(slot: InventorySlot):
 	
 	if not itemInHand:
 		take_item_from_slot(slot)
+		return
+	
+	if slot.inventory_item.item_slot.item.name == itemInHand.item_slot.item.name:
+		stack_items(slot)
+	
+	swap_items(slot)
 
 func take_item_from_slot(slot: InventorySlot):
 	itemInHand = slot.take_item()
@@ -72,6 +79,34 @@ func insert_item_in_slot(slot: InventorySlot):
 	remove_child(itemInHand)
 	itemInHand = null
 	slot.insert(item)
+	
+func swap_items(slot: InventorySlot):
+	var item = slot.take_item()
+	insert_item_in_slot(slot)
+	itemInHand = item
+	add_child(itemInHand)
+	update_item_in_hand()
+
+func stack_items(slot: InventorySlot):
+	var slotItem := slot.inventory_item
+	var maxAmount = slotItem.item_slot.item.max_amount_per_stack
+	var totalAmount = slotItem.item_slot.count + itemInHand.item_slot.count
+	
+	if slotItem.item_slot.count == maxAmount:
+		swap_items(slot)
+		return
+		
+	if totalAmount <= maxAmount:
+		slotItem.item_slot.count = totalAmount
+		remove_child(itemInHand)
+		itemInHand = null
+	else:
+		slotItem.item_slot.count = maxAmount
+		itemInHand.item_slot.count = totalAmount - maxAmount
+		
+	slotItem.update()
+	if itemInHand: itemInHand.update()
+
 
 func update_item_in_hand():
 	if not itemInHand: return

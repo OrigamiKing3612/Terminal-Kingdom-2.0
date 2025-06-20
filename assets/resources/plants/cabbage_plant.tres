@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="Plant" load_steps=3 format=3 uid="uid://eo707frs1d5x"]
+[gd_resource type="Resource" script_class="Plant" load_steps=4 format=3 uid="uid://eo707frs1d5x"]
 
 [ext_resource type="PackedScene" uid="uid://bbilfg6madmgi" path="res://scenes/plants/cabbage_plant.tscn" id="1_3gljq"]
+[ext_resource type="Resource" uid="uid://cwhdyhkeacvdc" path="res://assets/resources/items/plants/cabbage_item.tres" id="1_brlbl"]
 [ext_resource type="Script" uid="uid://brsxe72uas17j" path="res://scripts/resources/tiles/pot/Plant.gd" id="1_k44bt"]
 
 [resource]
 script = ExtResource("1_k44bt")
 scene = ExtResource("1_3gljq")
 growth_time = 10.0
-stage = 0
+harvest_item = ExtResource("1_brlbl")
 min = 1
 max = 1
 metadata/_custom_type_script = "uid://brsxe72uas17j"
