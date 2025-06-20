@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dgy27c0tsi8d2"]
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_t1uo7"]
-[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="2_ynkck"]
+[ext_resource type="Texture2D" uid="uid://dp26ae3kqi83d" path="res://assets/models/icons/lumber_item_one_preview.tres" id="2_ynkck"]
 
 [resource]
 script = ExtResource("1_t1uo7")
@@ -10,11 +10,7 @@ price = 2
 can_be_sold = true
 is_buildable = false
 texture_2d = ExtResource("2_ynkck")
-position_in_inventory = Vector2(100, 100)
+max_amount_per_stack = 50
 gridmap_id = 0
-generate_item = true
-generate_preview = false
-preview_file = ""
-override_name = false
-overriden_name = ""
+seed = 0
 metadata/_custom_type_script = "uid://cn074wlyew4kj"
