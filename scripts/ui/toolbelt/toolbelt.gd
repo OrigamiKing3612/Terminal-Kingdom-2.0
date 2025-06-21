@@ -13,7 +13,7 @@ var selected_item: Item:
 		var item := toolbelt_slots[selected_toolbelt_slot].inventory_item
 		if item:
 			if item.item_slot:
-				return item.item_slot.item
+				return item.item_slot.items[0]
 		return null
 
 func _ready() -> void:
