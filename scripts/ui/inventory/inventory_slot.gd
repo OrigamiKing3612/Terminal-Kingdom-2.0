@@ -13,8 +13,8 @@ func insert(item: InventoryItem):
 		return
 	inventory_item = item
 	if item.item_slot:
-		if item.item_slot.item:
-			tooltip_text = item.item_slot.item.name
+		if item.item_slot.items:
+			tooltip_text = item.item_slot.item_name
 	container.add_child(inventory_item)
 	
 	if not inventory_item.item_slot or GameManager.player.inventory.slots[index] == inventory_item.item_slot:

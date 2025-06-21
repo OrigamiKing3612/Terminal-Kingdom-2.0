@@ -60,7 +60,7 @@ func _on_slot_clicked(slot: InventorySlot):
 		take_item_from_slot(slot)
 		return
 	
-	if slot.inventory_item.item_slot.item.name == itemInHand.item_slot.item.name:
+	if slot.inventory_item.item_slot.item_name == itemInHand.item_slot.item_name:
 		stack_items(slot)
 		return
 	
