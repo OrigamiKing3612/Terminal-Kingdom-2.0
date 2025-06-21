@@ -1,156 +1,187 @@
-[gd_resource type="Resource" script_class="PlayerInventory" load_steps=33 format=3 uid="uid://dbxkqvn5cl5e1"]
+[gd_resource type="Resource" script_class="PlayerInventory" load_steps=34 format=3 uid="uid://dbxkqvn5cl5e1"]
 
 [ext_resource type="Script" uid="uid://b11mo6jiwamn1" path="res://scripts/resources/inventory/inventory_item_slot.gd" id="1_gl1d4"]
 [ext_resource type="Script" uid="uid://cxababo30780e" path="res://scripts/resources/data/player_inventory.gd" id="2_4jbox"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="3_4jbox"]
 
 [sub_resource type="Resource" id="Resource_gl1d4"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_4jbox"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_82ygl"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_aeuji"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_6xllt"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_o612r"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_k5x0l"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_2wy18"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_qmple"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_urqtr"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_bc1bm"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_8jcug"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_s548t"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_2alpb"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_yudnm"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_wqehq"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_0myd7"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_whr85"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_gbu1g"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_dltby"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_usdia"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_0vjyv"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_yb0hj"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_ua6e1"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_21hgx"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_3tkow"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_31787"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_dwf7d"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_bbbmj"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [sub_resource type="Resource" id="Resource_06ft4"]
 script = ExtResource("1_gl1d4")
-count = 1
+item_name = ""
+items = Array[ExtResource("3_4jbox")]([])
 metadata/_custom_type_script = "uid://b11mo6jiwamn1"
 
 [resource]

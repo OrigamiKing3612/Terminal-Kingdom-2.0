@@ -54,7 +54,7 @@ func getID(id: String) -> Item:
 
 ## Returns [String, int]: (item.name, count)
 func get_items() -> Dictionary[String, int]:
-	var result := {}
+	var result: Dictionary[String, int] = {}
 	for slot in slots:
 		if not slot.is_empty():
 			if slot.item_name in result:

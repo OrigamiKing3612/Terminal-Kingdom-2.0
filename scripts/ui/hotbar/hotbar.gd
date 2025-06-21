@@ -13,7 +13,7 @@ var selected_item_index: int:
 		print("Done settings selected_item_index: new value: " , value)
 
 func show_hot_bar():	
-	if GameManager.player.items.values().size() == 0:
+	if GameManager.player.inventory.get_items().size() == 0:
 		print("No items")
 		return
 	if buildable_items.size() == 0:

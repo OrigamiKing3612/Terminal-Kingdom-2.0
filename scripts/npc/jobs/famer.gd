@@ -21,14 +21,10 @@ func getStage():
 		0:
 			DialogueManager.show_dialogue_balloon(dialogue, "first_time")
 			SceneManager.free_cursor()
-		1:
-			stage1()
-		2:
-			stage2()
-		3: 
-			stage3()
-		#4: 
-			#stage4()
+		1: stage1()
+		2: stage2()
+		3: stage3()
+		4: stage4()
 		_:
 			print("Unknown Stage")
 
@@ -92,3 +88,24 @@ func stage3():
 			quest.finish_quest()
 			QuestManager.update_quest(stage3_ID, quest)
 			GameManager.player.skill.farming.stage = 4
+
+func stage4():
+	var quest = QuestManager.get_quest(stage4_ID)
+	if quest == null:
+		return
+	match quest.quest_status:
+		quest.QuestStatus.available:
+			quest.start_quest()
+			DialogueManager.show_dialogue_balloon(dialogue, "stage4_available")
+			QuestManager.update_quest(stage4_ID, quest)
+		quest.QuestStatus.started:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage4_started")
+			QuestManager.update_quest(stage4_ID, quest)
+		quest.QuestStatus.reached_goal:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage4_reached_goal")
+			var ids = quest.data["materials"]
+			GameManager.player.removeItems(ids)
+			quest.data["materials"] = []
+			quest.finish_quest()
+			QuestManager.update_quest(stage4_ID, quest)
+			GameManager.player.skill.farming.stage = 5

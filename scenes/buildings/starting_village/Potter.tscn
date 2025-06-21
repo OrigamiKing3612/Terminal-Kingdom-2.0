@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctjf0vxybm3ss"]
+
+[ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_eunk6"]
+[ext_resource type="Resource" uid="uid://bwmybjtgxrh8g" path="res://assets/resources/npc/potter.tres" id="2_eunk6"]
+[ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="3_0ntrc"]
+[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_fn4aw"]
+
+[node name="Potter" type="Node3D"]
+
+[node name="PotterNPC" parent="." instance=ExtResource("1_eunk6")]
+data = ExtResource("2_eunk6")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_0ntrc")
+script = ExtResource("4_fn4aw")

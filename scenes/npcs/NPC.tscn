@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=54 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -27,6 +27,7 @@
 [ext_resource type="Resource" uid="uid://bmsty40egoq0k" path="res://assets/dialogue/npcs/starting_village/farmer.dialogue" id="16_e8lh1"]
 [ext_resource type="Resource" uid="uid://b0u3phfaheom6" path="res://assets/dialogue/npcs/starting_village/carpenter.dialogue" id="19_1tn1w"]
 [ext_resource type="Resource" uid="uid://s487byr8tlmh" path="res://assets/resources/items/tiles/stone_item.tres" id="19_tvxlg"]
+[ext_resource type="Resource" uid="uid://03ftaxfyp1o0" path="res://assets/resources/items/clay.tres" id="20_l4wxn"]
 [ext_resource type="Script" uid="uid://cqsvdpbt83m3i" path="res://scripts/resources/items/tool_item.gd" id="24_w1xlh"]
 [ext_resource type="Script" uid="uid://y66ehscqfnn8" path="res://scripts/npc/jobs/hunter.gd" id="25_al60k"]
 [ext_resource type="Resource" uid="uid://bd3lfkdnqrn35" path="res://assets/resources/items/plants/seeds/tree_seed.tres" id="25_jk6lc"]
@@ -41,6 +42,8 @@
 [ext_resource type="Script" uid="uid://gs16mgiour7u" path="res://scripts/npc/state/jump.gd" id="34_s3c0h"]
 [ext_resource type="Script" uid="uid://bvhyxu005gh5e" path="res://scripts/npc/state/fall.gd" id="35_5q6h2"]
 [ext_resource type="Script" uid="uid://dvhwvjh7so7u1" path="res://scripts/npc/movement/npc_movement.gd" id="36_kxny1"]
+[ext_resource type="Script" uid="uid://bbuv5reu72d4a" path="res://scripts/npc/jobs/potter.gd" id="37_in5ox"]
+[ext_resource type="Resource" uid="uid://dbue8hsvrop8p" path="res://assets/dialogue/npcs/starting_village/potter.dialogue" id="38_rr88e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ak68"]
 size = Vector3(10, 2, 10)
@@ -194,6 +197,7 @@ dialogue = ExtResource("9_yh8il")
 blacksmith_stage1_iron = ExtResource("12_e8lh1")
 miner_stage1_iron = ExtResource("12_e8lh1")
 miner_stage1_stone = ExtResource("19_tvxlg")
+farm_stage4_clay = ExtResource("20_l4wxn")
 
 [node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Miner"]
 script = ExtResource("4_i3n4k")
@@ -290,6 +294,10 @@ quest_name = "Decorate the house"
 quest_description = "Add the stuff to the house"
 reached_goal_text = "Return to the builder"
 metadata/_custom_type_script = "uid://b2dlvmlibqar4"
+
+[node name="Potter" type="Node" parent="StartingVillageJobs"]
+script = ExtResource("37_in5ox")
+dialogue = ExtResource("38_rr88e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_mhefn")

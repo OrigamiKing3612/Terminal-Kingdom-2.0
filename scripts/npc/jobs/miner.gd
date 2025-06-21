@@ -13,6 +13,7 @@ extends Node
 @export var blacksmith_stage1_iron: Item  = null
 @export var miner_stage1_iron: Item
 @export var miner_stage1_stone: Item
+@export var farm_stage4_clay: Item
 
 func _ready() -> void:
 	QuestManager.register_quest(stage1_ID, $Stage1Quest)
@@ -41,6 +42,14 @@ func talk(data: NPCData) -> void:
 			quest.data["materials"].append(Utils.givePlayerCountOfItem(miner_stage1_stone, 20))
 			quest.reached_goal()
 			QuestManager.update_quest("builder1", quest)
+			return
+	elif GameManager.player.skill.farming.stage == 4:
+		var quest = QuestManager.get_quest("farm1")
+		if quest.quest_status == quest.QuestStatus.started:
+			DialogueManager.show_dialogue_balloon(dialogue, "farm_stage4")
+			quest.data["materials"] = Utils.givePlayerCountOfItem(farm_stage4_clay, 10)
+			quest.reached_goal()
+			QuestManager.update_quest("farm1", quest)
 			return
 	getStage()
 func getStage():

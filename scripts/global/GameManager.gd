@@ -72,7 +72,7 @@ func _input(event: InputEvent) -> void:
 				if inventory_box.visible == false:
 					show_inventory_box()
 			elif player.can_build && event.is_action_released("build"):
-				if player.items.values().size() < 0:
+				if player.inventory.get_items().size() < 0:
 					return
 				if building_box.visible == false:
 					show_buildable_items()
