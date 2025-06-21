@@ -8,9 +8,7 @@ var buildable_items: Array[InventoryItemSlot]
 var selected_item_index: int:
 	get: return GameManager.selected_item_index
 	set(value): 
-		print("Setting selected_item_index: old value: ", GameManager.selected_item_index)
 		GameManager.selected_item_index = value
-		print("Done settings selected_item_index: new value: " , value)
 
 func show_hot_bar():	
 	if GameManager.player.inventory.get_items().size() == 0:
@@ -75,15 +73,15 @@ func refresh_buildable_items():
 func _on_game_manager_inventory_update() -> void:
 	refresh_buildable_items()
 
-
 func _on_build_next() -> void:
+	if not buildable_items.size() > 1: return
 	var index = selected_item_index
 	index = (index + 1) % buildable_items.size()
 	selected_item_index = index
 	show_hot_bar()
 
-
 func _on_build_back() -> void:
+	if not buildable_items.size() > 1: return
 	var index = selected_item_index
 	index = (index - 1 + buildable_items.size()) % buildable_items.size()
 	selected_item_index = index

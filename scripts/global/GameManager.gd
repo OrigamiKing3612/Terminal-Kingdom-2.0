@@ -5,7 +5,10 @@ extends Node
 @onready var toolbelt_box: CanvasLayer = $ToolbeltBox
 @onready var toolbelt: ToolbeltNode = $ToolbeltBox/ToolbeltNode
 
-@export var selected_item_index: int = 0
+@export var selected_item_index: int = 0:
+	set(value):
+		rotation = Vector3i(0,0,0)
+		selected_item_index = value
 @export var selected_gridmap_id: int = 0
 @export var player: PlayerData
 @export var kingdom: Kingdom
@@ -40,6 +43,7 @@ var random: RandomNumberGenerator
 var selectedItem: Item:
 	get:
 		return toolbelt.selected_item
+var rotation: Vector3i = Vector3i(0,0,0)
 
 enum Mode{Normal, Inventory, Build, Mining, Speaking, InPopUp}
 
@@ -90,6 +94,12 @@ func _input(event: InputEvent) -> void:
 				build_back.emit()
 			elif event.is_action_released("next_option"):
 				build_next.emit()
+			elif event.is_action_released("rotate_x"):
+				rotation.x += 90
+			elif event.is_action_released("rotate_y"):
+				rotation.y += 90
+			elif event.is_action_released("rotate_z"):
+				rotation.z += 90
 			elif event.is_action_released("build"):
 				hide_buildable_items()
 		Mode.Inventory:

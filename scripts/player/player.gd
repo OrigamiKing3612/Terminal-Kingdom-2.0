@@ -29,7 +29,7 @@ func _input(event: InputEvent) -> void:
 					change_movement_state("run")
 		else:
 			change_movement_state("stand")
-	if event.is_action_pressed("jump") and (GameManager.mode == GameManager.Mode.Normal or GameManager.mode == GameManager.Mode.Mining):
+	if event.is_action_pressed("jump") and (GameManager.mode != GameManager.Mode.InPopUp and GameManager.mode != GameManager.Mode.Inventory and GameManager.mode != GameManager.Mode.Speaking):
 		if air_jump_counter <= max_air_jump:
 			pressed_jump.emit()
 			air_jump_counter += 1
