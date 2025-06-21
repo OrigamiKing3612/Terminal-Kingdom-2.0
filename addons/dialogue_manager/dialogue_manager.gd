@@ -65,6 +65,8 @@ var _method_info_cache: Dictionary = {}
 
 var _dotnet_dialogue_manager: RefCounted
 
+var _expression_parser: DMExpressionParser = DMExpressionParser.new()
+
 
 func _ready() -> void:
 	# Cache the known Node2D properties
@@ -291,7 +293,14 @@ func get_resolved_line_data(data: Dictionary, extra_game_states: Array = []) -> 
 	var text: String = translate(data)
 
 	# Resolve variables
-	for replacement in data.get(&"text_replacements", [] as Array[Dictionary]):
+	var text_replacements: Array[Dictionary] = data.get(&"text_replacements", [] as Array[Dictionary])
+	if text_replacements.size() == 0 and "{{" in text:
+		# This line is translated but has expressions that didn't exist in the base text.
+		text_replacements = _expression_parser.extract_replacements(text, 0)
+
+	for replacement in text_replacements:
+		assert(not replacement.has("error"), "%s \"%s\"" % [DMConstants.get_error_message(replacement.get("error")), text])
+
 		var value = await _resolve(replacement.expression.duplicate(true), extra_game_states)
 		var index: int = text.find(replacement.value_in_text)
 		if index == -1:
@@ -563,6 +572,7 @@ func translate(data: Dictionary) -> String:
 
 	return tr(translation_key)
 
+
 # Create a line of dialogue
 func create_dialogue_line(data: Dictionary, extra_game_states: Array) -> DialogueLine:
 	match data.type:
@@ -696,6 +706,7 @@ func _check_case_value(match_value: Variant, data: Dictionary, extra_game_states
 			return true
 
 	return false
+
 
 
 # Make a change to game state or run a method

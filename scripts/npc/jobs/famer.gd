@@ -13,6 +13,9 @@ extends Node
 @export var stage1_axe: Item  = null
 @export var stage1_tree_seed: Item  = null
 
+@export_group("Stage 6")
+@export var stage1_clay: Item
+
 func talk(_data: NPCData):
 	getStage()
 
@@ -25,6 +28,7 @@ func getStage():
 		2: stage2()
 		3: stage3()
 		4: stage4()
+		5: stage5()
 		_:
 			print("Unknown Stage")
 
@@ -109,3 +113,34 @@ func stage4():
 			quest.finish_quest()
 			QuestManager.update_quest(stage4_ID, quest)
 			GameManager.player.skill.farming.stage = 5
+
+func stage5():
+	var quest = QuestManager.get_quest(stage5_ID)
+	if quest == null:
+		return
+		
+	if quest.quest_status == quest.QuestStatus.started:
+		quest.start_quest()
+		DialogueManager.show_dialogue_balloon(dialogue, "stage5_available")
+		QuestManager.update_quest(stage5_ID, quest)
+		Utils.givePlayerCountOfItem(stage1_clay, 10)
+		return
+	var _hasCount = GameManager.player.has_count("Pot", 10)
+	var has_enough: bool  = _hasCount[0]
+	var actual_count: int = _hasCount[1]
+
+	if not has_enough:
+		var vars = [
+			{ "amount_left": (20 - actual_count) }
+		]
+		DialogueManager.show_dialogue_balloon(dialogue, "stage5_started", vars)
+		return
+	else:
+		DialogueManager.show_dialogue_balloon(dialogue, "stage5_reached_goal")
+		var ids = quest.data["pot_ids"]
+		GameManager.player.removeItems(ids)
+		quest.data["pot_ids"] = []
+		quest.finish_quest()
+		QuestManager.update_quest(stage5_ID, quest)
+		GameManager.player.skill.farming.stage = 6
+		return

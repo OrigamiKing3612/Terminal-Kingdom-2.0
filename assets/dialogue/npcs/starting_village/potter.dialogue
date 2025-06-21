@@ -1,5 +1,6 @@
 ~ start
-Potter: Hello {{GameManager.player.name}}! What would you like to do?
+% Potter: [Hello|Hi] {{GameManager.player.name}}! What would you like?
+% Potter: [Hello|Hi], how are you? What would you like?
 - Buy a pot for 2 clay
 	set option = "clay"
 - Buy a pot for 5 coins
