@@ -125,6 +125,7 @@ func stage5():
 		QuestManager.update_quest(stage5_ID, quest)
 		Utils.givePlayerCountOfItem(stage1_clay, 10)
 		return
+	
 	var _hasCount = GameManager.player.has_count("Pot", 10)
 	var has_enough: bool  = _hasCount[0]
 	var actual_count: int = _hasCount[1]

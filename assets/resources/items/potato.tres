@@ -5,11 +5,12 @@
 
 [resource]
 script = ExtResource("1_crdpy")
-name = &""
+name = &"Potato"
 price = 1
 can_be_sold = true
 is_buildable = false
 texture_2d = ExtResource("2_70n3i")
-position_in_inventory = Vector2(100, 100)
+max_amount_per_stack = 50
 gridmap_id = 0
+seed = 0
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

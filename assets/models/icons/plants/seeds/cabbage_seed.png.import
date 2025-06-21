@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk2penfvw86y4"
-path="res://.godot/imported/Main.png-7475f274c60ca22fdc8e2dbf07d80bb6.ctex"
+uid="uid://dbw45ihyyectq"
+path="res://.godot/imported/cabbage_seed.png-460d4d90e54be1b7b094b3c3f48768bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/models/workbench/Main.png"
-dest_files=["res://.godot/imported/Main.png-7475f274c60ca22fdc8e2dbf07d80bb6.ctex"]
+source_file="res://assets/models/icons/plants/seeds/cabbage_seed.png"
+dest_files=["res://.godot/imported/cabbage_seed.png-460d4d90e54be1b7b094b3c3f48768bd.ctex"]
 
 [params]
 

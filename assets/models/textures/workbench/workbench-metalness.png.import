@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sbdm2n74bnt3"
-path.s3tc="res://.godot/imported/Workbench_0.png-d7949a3b2887a0aa68dcdcda0c1e55e2.s3tc.ctex"
-path.etc2="res://.godot/imported/Workbench_0.png-d7949a3b2887a0aa68dcdcda0c1e55e2.etc2.ctex"
+uid="uid://d4foavip7t5ec"
+path.s3tc="res://.godot/imported/workbench-metalness.png-db9a15b777fea4c9d061a73dc64d22c9.s3tc.ctex"
+path.etc2="res://.godot/imported/workbench-metalness.png-db9a15b777fea4c9d061a73dc64d22c9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "ba6ff4c6cb2f6249d8103c4456f7bfe3"
-}
 
 [deps]
 
-source_file="res://assets/models/Workbench_0.png"
-dest_files=["res://.godot/imported/Workbench_0.png-d7949a3b2887a0aa68dcdcda0c1e55e2.s3tc.ctex", "res://.godot/imported/Workbench_0.png-d7949a3b2887a0aa68dcdcda0c1e55e2.etc2.ctex"]
+source_file="res://assets/models/textures/workbench/workbench-metalness.png"
+dest_files=["res://.godot/imported/workbench-metalness.png-db9a15b777fea4c9d061a73dc64d22c9.s3tc.ctex", "res://.godot/imported/workbench-metalness.png-db9a15b777fea4c9d061a73dc64d22c9.etc2.ctex"]
 
 [params]
 

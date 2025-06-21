@@ -10,6 +10,7 @@ price = 10
 can_be_sold = true
 is_buildable = false
 texture_2d = ExtResource("2_tg5f3")
+max_amount_per_stack = 50
 gridmap_id = 0
 seed = 4
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

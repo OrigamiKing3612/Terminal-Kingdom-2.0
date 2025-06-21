@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blsjib75u0xpe"
-path.s3tc="res://.godot/imported/Workbench_0.png-8ed5e8ac4d45e0171f85e6405ea19e81.s3tc.ctex"
-path.etc2="res://.godot/imported/Workbench_0.png-8ed5e8ac4d45e0171f85e6405ea19e81.etc2.ctex"
+uid="uid://ckokcl4tpkgdc"
+path.s3tc="res://.godot/imported/workbench-normal.png-0fc102ee783d7dbfcab1409f661c6c3c.s3tc.ctex"
+path.etc2="res://.godot/imported/workbench-normal.png-0fc102ee783d7dbfcab1409f661c6c3c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "ba6ff4c6cb2f6249d8103c4456f7bfe3"
-}
 
 [deps]
 
-source_file="res://assets/models/workbench/Workbench_0.png"
-dest_files=["res://.godot/imported/Workbench_0.png-8ed5e8ac4d45e0171f85e6405ea19e81.s3tc.ctex", "res://.godot/imported/Workbench_0.png-8ed5e8ac4d45e0171f85e6405ea19e81.etc2.ctex"]
+source_file="res://assets/models/textures/workbench/workbench-normal.png"
+dest_files=["res://.godot/imported/workbench-normal.png-0fc102ee783d7dbfcab1409f661c6c3c.s3tc.ctex", "res://.godot/imported/workbench-normal.png-0fc102ee783d7dbfcab1409f661c6c3c.etc2.ctex"]
 
 [params]
 
@@ -24,7 +21,7 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
