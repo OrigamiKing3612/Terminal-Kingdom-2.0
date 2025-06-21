@@ -20,7 +20,7 @@
 [node name="Environment" parent="." instance=ExtResource("1_7c4bj")]
 
 [node name="Player" parent="." instance=ExtResource("5_1lgw5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 2, 113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 2, 89)
 
 [node name="NoJobNPC" parent="." instance=ExtResource("7_0uv0p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160, 3, 23)

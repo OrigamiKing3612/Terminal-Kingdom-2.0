@@ -32,9 +32,12 @@ func _on_stop_mining():
 func destroy_tile(collision_point: Vector3) -> void:
 	var local_point = to_local(collision_point)
 	var grid_pos = local_to_map(local_point)
-	if grid_pos.y == 0:
+	grid_pos.y = int(floor((local_point.y - 0.01) / cell_size.y))
+	if grid_pos.y <= 0:
 		return
 	var id = get_cell_item(grid_pos)
+	if id < 0:
+		return
 	var can_replace = Utils.break_tile(id)
 	if can_replace:
 		set_cell_item(grid_pos, -1)
