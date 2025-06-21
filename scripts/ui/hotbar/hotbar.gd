@@ -3,7 +3,7 @@ class_name HotBar
 
 @export var template_item: PackedScene = preload("res://scenes/ui/hotbar/template_item.tscn")
 @onready var container: Node = $Items
-var buildable_items: Array[HotBarItem]
+var buildable_items: Array[InventoryItemSlot]
 
 var selected_item_index: int:
 	get: return GameManager.selected_item_index
@@ -33,7 +33,7 @@ func show_hot_bar():
 	for display_index in range(indices.size()):
 		var item_index = indices[display_index]
 		var new_item: HotbarTemplateItem = template_item.instantiate()
-		new_item.item = buildable_items[item_index].item
+		new_item.item = buildable_items[item_index].items[0]
 		new_item.count = buildable_items[item_index].count
 		new_item.anchor_left = 0
 		new_item.anchor_top = 1
@@ -47,7 +47,7 @@ func show_hot_bar():
 
 		if display_index == 2:  # always select the middle one in the visible list
 			new_item.selected()
-			GameManager.selected_gridmap_id = buildable_items[item_index].item.gridmap_id
+			GameManager.selected_gridmap_id = buildable_items[item_index].items[0].gridmap_id
 		else:
 			new_item.deselected()
 
@@ -61,25 +61,16 @@ func clear_children():
 
 func refresh_buildable_items():
 	buildable_items.clear()
-	var buildable_count: Dictionary[String, HotBarItem] = {}
+	var buildable_count: Array[InventoryItemSlot] = []
 
-	#for item in GameManager.player.items.values():
-		#if item.is_buildable:
-			#if item.name in buildable_count:
-				#buildable_count[item.name].count += 1
-			#else:
-				#var hotbar_item = HotBarItem.new()
-				#hotbar_item.item = item
-				#hotbar_item.count = 1
-				#buildable_count[item.name] = hotbar_item
+	for slot in GameManager.player.inventory.slots:
+		if slot:
+			if not slot.items.is_empty():
+				if slot.items[0].is_buildable:
+					buildable_items.append(slot)
 
-	for b in buildable_count.values():
+	for b in buildable_count:
 		buildable_items.append(b)
-
-class HotBarItem:
-	var count: int
-	var item: Item
-
 
 func _on_game_manager_inventory_update() -> void:
 	refresh_buildable_items()

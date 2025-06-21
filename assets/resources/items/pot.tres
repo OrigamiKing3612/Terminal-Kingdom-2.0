@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_1m6gv")
-name = "Pot"
+name = &"Pot"
 price = 0
 can_be_sold = false
 is_buildable = true

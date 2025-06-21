@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=55 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -12,12 +12,11 @@
 [ext_resource type="Script" uid="uid://0gx1d8pnmjgd" path="res://scripts/quests/use_station_quest.gd" id="6_cmg02"]
 [ext_resource type="Script" uid="uid://6ldywjhmi7eq" path="res://scripts/npc/jobs/miner.gd" id="6_fnw6m"]
 [ext_resource type="Resource" uid="uid://bhaou6qgiqkhi" path="res://assets/resources/items/tiles/coal_item.tres" id="8_x2tpa"]
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="9_slejn"]
+[ext_resource type="Resource" uid="uid://cxq0s5prgh160" path="res://assets/resources/items/steel.tres" id="9_rr88e"]
 [ext_resource type="Resource" uid="uid://b8f3mjwiclhxv" path="res://assets/dialogue/npcs/starting_village/miner.dialogue" id="9_yh8il"]
-[ext_resource type="Texture2D" uid="uid://cbdddkrt0yhhp" path="res://assets/tiles/Water.png" id="10_4ofek"]
+[ext_resource type="Resource" uid="uid://83niltrh6tky" path="res://assets/resources/items/stick.tres" id="10_c4iby"]
 [ext_resource type="Script" uid="uid://djgnsr3pi86wr" path="res://scripts/npc/jobs/king.gd" id="10_t7167"]
 [ext_resource type="Resource" uid="uid://bcpb4yg01b5v6" path="res://assets/dialogue/npcs/starting_village/king.dialogue" id="11_3j6ye"]
-[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="11_4ofek"]
 [ext_resource type="Resource" uid="uid://d0p5yutbxrj38" path="res://assets/resources/items/pickaxe.tres" id="12_b34ur"]
 [ext_resource type="Resource" uid="uid://bu7fdkkvvrka3" path="res://assets/resources/items/tiles/iron_item.tres" id="12_e8lh1"]
 [ext_resource type="Script" uid="uid://c87ocgpcffw31" path="res://scripts/npc/jobs/famer.gd" id="12_qvc14"]
@@ -29,8 +28,10 @@
 [ext_resource type="Resource" uid="uid://s487byr8tlmh" path="res://assets/resources/items/tiles/stone_item.tres" id="19_tvxlg"]
 [ext_resource type="Resource" uid="uid://03ftaxfyp1o0" path="res://assets/resources/items/clay.tres" id="20_l4wxn"]
 [ext_resource type="Script" uid="uid://cqsvdpbt83m3i" path="res://scripts/resources/items/tool_item.gd" id="24_w1xlh"]
+[ext_resource type="Texture2D" uid="uid://tk0r6mhla21x" path="res://assets/models/icons/items/axe_broken.png" id="24_w8k3m"]
 [ext_resource type="Script" uid="uid://y66ehscqfnn8" path="res://scripts/npc/jobs/hunter.gd" id="25_al60k"]
 [ext_resource type="Resource" uid="uid://bd3lfkdnqrn35" path="res://assets/resources/items/plants/seeds/tree_seed.tres" id="25_jk6lc"]
+[ext_resource type="Texture2D" uid="uid://bobgpt6d2fsqk" path="res://assets/models/icons/items/axe.png" id="26_32nht"]
 [ext_resource type="Script" uid="uid://yowyetbl3pg" path="res://scripts/quests/plant_quest.gd" id="26_d51r5"]
 [ext_resource type="Resource" uid="uid://dia1v0snlaxek" path="res://assets/dialogue/npcs/starting_village/hunter.dialogue" id="26_nyq5k"]
 [ext_resource type="Script" uid="uid://r5sgf6w7orpd" path="res://scripts/npc/jobs/builder.gd" id="29_arads"]
@@ -61,41 +62,17 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yq5wv"]
 material = SubResource("StandardMaterial3D_k75in")
 
-[sub_resource type="Resource" id="Resource_al60k"]
-script = ExtResource("9_slejn")
-name = &"Steel"
-price = 3
-can_be_sold = false
-is_buildable = false
-texture_2d = ExtResource("10_4ofek")
-max_amount_per_stack = 50
-gridmap_id = 0
-seed = 0
-metadata/_custom_type_script = "uid://cn074wlyew4kj"
-
-[sub_resource type="Resource" id="Resource_nyq5k"]
-script = ExtResource("9_slejn")
-name = &""
-price = 1
-can_be_sold = false
-is_buildable = false
-texture_2d = ExtResource("11_4ofek")
-max_amount_per_stack = 50
-gridmap_id = 0
-seed = 0
-metadata/_custom_type_script = "uid://cn074wlyew4kj"
-
-[sub_resource type="Resource" id="Resource_jk6lc"]
+[sub_resource type="Resource" id="Resource_trpir"]
 script = ExtResource("24_w1xlh")
 durability = 1
-broken_texture_2d = ExtResource("11_4ofek")
-tool_type = 2
-name = &""
+broken_texture_2d = ExtResource("24_w8k3m")
+tool_type = 1
+name = &"Axe"
 price = 10
 can_be_sold = true
 is_buildable = false
-texture_2d = ExtResource("11_4ofek")
-max_amount_per_stack = 50
+texture_2d = ExtResource("26_32nht")
+max_amount_per_stack = 1
 gridmap_id = 0
 seed = 0
 metadata/_custom_type_script = "uid://cqsvdpbt83m3i"
@@ -139,8 +116,8 @@ stage2_axe = ExtResource("5_hsw7l")
 stage3_lumber_item = ExtResource("6_1tn1w")
 stage5_iron_item = ExtResource("12_e8lh1")
 stage5_coal_item = ExtResource("8_x2tpa")
-stage6_steel_item = SubResource("Resource_al60k")
-stage6_stick_item = SubResource("Resource_nyq5k")
+stage6_steel_item = ExtResource("9_rr88e")
+stage6_stick_item = ExtResource("10_c4iby")
 mine_stage1_pickaxe = ExtResource("12_b34ur")
 
 [node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Blacksmith"]
@@ -215,7 +192,7 @@ dialogue = ExtResource("11_3j6ye")
 [node name="Famer" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("12_qvc14")
 dialogue = ExtResource("16_e8lh1")
-stage1_axe = SubResource("Resource_jk6lc")
+stage1_axe = SubResource("Resource_trpir")
 stage1_tree_seed = ExtResource("25_jk6lc")
 stage1_clay = ExtResource("20_l4wxn")
 
@@ -248,6 +225,8 @@ dialogue = ExtResource("26_nyq5k")
 [node name="Builder" type="Node" parent="StartingVillageJobs"]
 script = ExtResource("29_arads")
 dialogue = ExtResource("30_o3k02")
+stage2_axe = ExtResource("5_hsw7l")
+stage3_lumber_item = ExtResource("6_1tn1w")
 
 [node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Builder"]
 script = ExtResource("4_i3n4k")

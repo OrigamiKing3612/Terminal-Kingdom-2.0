@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_sxb1u")
-name = "Stick"
+name = &"Stick"
 price = 1
 can_be_sold = true
 is_buildable = false

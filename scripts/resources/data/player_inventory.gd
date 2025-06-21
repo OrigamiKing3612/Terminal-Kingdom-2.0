@@ -62,3 +62,10 @@ func get_items() -> Dictionary[String, int]:
 			else:
 				result[slot.item_name] = slot.count
 	return result
+
+func get_all_items() -> Array[Item]:
+	var result: Array[Item] = []
+	for slot in slots:
+		if not slot.is_empty():
+			result.append(slot.items)
+	return result
