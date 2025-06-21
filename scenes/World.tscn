@@ -32,33 +32,35 @@ data = ExtResource("12_nrtoj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67462, 0)
 navigation_mesh = ExtResource("5_i4b1j")
 
-[node name="Buildings" type="Node3D" parent="NavigationRegion3D"]
+[node name="Buildings" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67462, 0)
 
-[node name="Castle" parent="NavigationRegion3D/Buildings" instance=ExtResource("11_7c4bj")]
+[node name="Castle" parent="Buildings" instance=ExtResource("11_7c4bj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -40)
 
-[node name="Blacksmith" parent="NavigationRegion3D/Buildings" instance=ExtResource("8_h1bdy")]
+[node name="Blacksmith" parent="Buildings" instance=ExtResource("8_h1bdy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 2, 79)
 
-[node name="Farm" parent="NavigationRegion3D/Buildings" instance=ExtResource("10_nrtoj")]
+[node name="Farm" parent="Buildings" instance=ExtResource("10_nrtoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104, 2, -102)
 
-[node name="Carpentery" parent="NavigationRegion3D/Buildings" instance=ExtResource("10_h1bdy")]
+[node name="Carpentery" parent="Buildings" instance=ExtResource("10_h1bdy")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 147.75, 2, 124)
 
-[node name="Builder" parent="NavigationRegion3D/Buildings" instance=ExtResource("5_h1bdy")]
+[node name="Builder" parent="Buildings" instance=ExtResource("5_h1bdy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222, 4.76837e-07, 6)
 
-[node name="Mine" parent="NavigationRegion3D/Buildings" instance=ExtResource("9_7c4bj")]
+[node name="Mine" parent="Buildings" instance=ExtResource("9_7c4bj")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 99, 2, 76)
 
-[node name="HuntingArea" parent="NavigationRegion3D/Buildings" instance=ExtResource("11_nrtoj")]
+[node name="HuntingArea" parent="Buildings" instance=ExtResource("11_nrtoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75, 3, 197)
 
-[node name="Potter" parent="NavigationRegion3D/Buildings" instance=ExtResource("13_c0d7e")]
+[node name="Potter" parent="Buildings" instance=ExtResource("13_c0d7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -182, 0, -83)
 
-[node name="Ground" type="GridMap" parent="NavigationRegion3D"]
+[node name="Ground" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67462, 0)
 mesh_library = ExtResource("13_i4b1j")
 collision_mask = 0
 bake_navigation = true

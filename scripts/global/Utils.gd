@@ -59,3 +59,10 @@ static func load_all_from_path(path: String) -> Array:
 
 static func _push_must_override_error(method: String):
 	push_error("%s must be overridden in a subclass." % method)
+	
+static func vector_to_orientation(rotation: Vector3i) -> Basis:
+	var basis = Basis()
+	basis = basis.rotated(Vector3.RIGHT, deg_to_rad(rotation.x))
+	basis = basis.rotated(Vector3.UP, deg_to_rad(rotation.y))
+	basis = basis.rotated(Vector3.FORWARD, deg_to_rad(rotation.z))
+	return basis
