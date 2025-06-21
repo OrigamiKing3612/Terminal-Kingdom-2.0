@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var raycast: RayCast3D
+@export var player: CharacterBody3D
 @export var gridmap: GridMap
 @export var meshlib: MeshLibrary
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
@@ -10,7 +10,7 @@ var ghost_material: StandardMaterial3D
 
 func _ready():
 	ghost_material = StandardMaterial3D.new()
-	ghost_material.albedo_color.a = 0.3
+	ghost_material.albedo_color.a = 0.2
 	ghost_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	ghost_material.flags_transparent = true
 	ghost_material.flags_unshaded = true
@@ -29,7 +29,7 @@ func _process(delta):
 			mesh_instance_3d.mesh = mesh
 			last_selected_id = selected_id
 
-	var hit = raycast.get_collision_point()
+	var hit = player.ray_cast_3d.get_collision_point()
 	update_ghost_position(hit)
 
 func update_ghost_position(world_point: Vector3):
@@ -37,3 +37,4 @@ func update_ghost_position(world_point: Vector3):
 	var grid_pos = gridmap.local_to_map(local)
 	grid_pos.y = int(round(local.y / gridmap.cell_size.y))
 	global_position = gridmap.to_global(gridmap.map_to_local(grid_pos))
+	rotation_degrees = GameManager.rotation

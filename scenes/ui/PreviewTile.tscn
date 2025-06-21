@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d01yc6fepy5dc"]
+
+[ext_resource type="Script" uid="uid://dafjd1nrhyigp" path="res://scripts/ui/build_preview_tile.gd" id="1_gl7lq"]
+
+[node name="PreviewTile" type="Node3D"]
+script = ExtResource("1_gl7lq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
