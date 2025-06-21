@@ -21,55 +21,34 @@ func _ready() -> void:
 			slots.append(child)
 
 	connect_slots()
-	GameManager.inventory_update.connect(_update)
-	_update()
+	GameManager.inventory_update.connect(_on_update)
+	_on_update()
 	
 func connect_slots():
-	for slot in slots:
-		slot.pressed.connect(func(): _on_slot_clicked(slot))
-	
-func _update():
-	var inventory_items: Dictionary[Item, int] = {}
-	for item in GameManager.player.items.values():
-		if item in inventory_items:
-			inventory_items[item] += 1
-		else:
-			inventory_items[item] = 1
-
-	var inventory_item_slots: Array[InventoryItemSlot] = []
-	for item in inventory_items.keys():
-		var s := InventoryItemSlot.new()
-		s.item = item
-		s.count = inventory_items[item]
-		inventory_item_slots.append(s)
-
 	for i in range(slots.size()):
 		var slot = slots[i]
+		slot.index = i
+		slot.pressed.connect(func(): _on_slot_clicked(slot))
+	
+func _on_update():
+	#for slot in slots:
+		#slot.clear()
 
-		if i >= inventory_item_slots.size():
-			if slot.inventory_item and not slot is ToolbeltInventorySlot:
-				slot.clear()
+	var player_slots = GameManager.player.inventory.slots
+	for i in range(min(player_slots.size(), slots.size())):
+		var inv_slot: InventoryItemSlot = player_slots[i]
+		if inv_slot.is_empty():
 			continue
 
-		var desired_item = inventory_item_slots[i]
+		var slot = slots[i]
+		var inv_item: InventoryItem = slot.inventory_item
 
-		if slot.inventory_item:
-			if slot.inventory_item.item_slot.item == desired_item.item:
-				slot.inventory_item.item_slot.count = desired_item.count
-				slot.inventory_item.update()
-			else:
-				if not slot is ToolbeltInventorySlot:
-					slot.clear()
-					var inventory_item = INVENTORY_ITEM.instantiate()
-					inventory_item.item_slot = desired_item
-					slot.insert(inventory_item)
-					inventory_item.update()
-		else:
-			if not slot is ToolbeltInventorySlot:
-				var inventory_item = INVENTORY_ITEM.instantiate()
-				inventory_item.item_slot = desired_item
-				slot.insert(inventory_item)
-				inventory_item.update()
+		if inv_item == null:
+			inv_item = INVENTORY_ITEM.instantiate()
+			slot.insert(inv_item)
+
+		inv_item.item_slot = inv_slot
+		inv_item.update()
 
 func _on_slot_clicked(slot: InventorySlot):
 	if slot.is_empty():

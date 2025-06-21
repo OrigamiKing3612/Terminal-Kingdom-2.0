@@ -63,15 +63,15 @@ func refresh_buildable_items():
 	buildable_items.clear()
 	var buildable_count: Dictionary[String, HotBarItem] = {}
 
-	for item in GameManager.player.items.values():
-		if item.is_buildable:
-			if item.name in buildable_count:
-				buildable_count[item.name].count += 1
-			else:
-				var hotbar_item = HotBarItem.new()
-				hotbar_item.item = item
-				hotbar_item.count = 1
-				buildable_count[item.name] = hotbar_item
+	#for item in GameManager.player.items.values():
+		#if item.is_buildable:
+			#if item.name in buildable_count:
+				#buildable_count[item.name].count += 1
+			#else:
+				#var hotbar_item = HotBarItem.new()
+				#hotbar_item.item = item
+				#hotbar_item.count = 1
+				#buildable_count[item.name] = hotbar_item
 
 	for b in buildable_count.values():
 		buildable_items.append(b)

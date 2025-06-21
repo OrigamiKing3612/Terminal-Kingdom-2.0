@@ -11,9 +11,9 @@ func _ready():
 
 func update():
 	if item_slot:
-		item_texture.texture = item_slot.item.texture_2d
-		if item_slot.item is ToolItem:
-			count_label.text = str((item_slot.item as ToolItem).durability)
+		item_texture.texture = item_slot.items[0].texture_2d
+		if item_slot.items[0] is ToolItem:
+			count_label.text = str((item_slot.items[0] as ToolItem).durability)
 		elif item_slot.count > 1:
 			count_label.text = "x" + str(item_slot.count)
 		else:

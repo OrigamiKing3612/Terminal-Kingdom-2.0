@@ -45,6 +45,7 @@ enum Mode{Normal, Inventory, Build, Mining, Speaking, InPopUp}
 
 func _ready() -> void:
 	player = player.duplicate(true)
+	player.inventory = player.inventory.duplicate(true)
 	inventory_update.emit()
 	random = RandomNumberGenerator.new()
 	player.collect_item.connect(_on_collect_item)

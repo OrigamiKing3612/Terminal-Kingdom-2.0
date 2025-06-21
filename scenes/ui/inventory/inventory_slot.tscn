@@ -12,7 +12,7 @@ size_flags_vertical = 6
 script = ExtResource("1_gbfhx")
 metadata/_custom_type_script = "uid://cefm3dpak5wtk"
 
-[node name="TextureRect" type="Sprite2D" parent="."]
+[node name="Backgroud" type="Sprite2D" parent="."]
 position = Vector2(50, 50)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("1_wle7a")

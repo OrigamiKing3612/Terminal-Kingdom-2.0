@@ -3,9 +3,6 @@ class_name ToolbeltInventorySlot
 
 @onready var texture_rect: Sprite2D = $TextureRect
 
-func clear(): 
-	super()
-
 func insert(item: InventoryItem):
 	super(item)
 
