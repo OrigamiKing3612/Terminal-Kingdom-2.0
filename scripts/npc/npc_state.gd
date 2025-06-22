@@ -33,4 +33,4 @@ func get_movement_input() -> Vector3:
 	return movement.get_movement_direction()
 
 func get_jump() -> bool:
-	return movement.wants_jump()
+	return movement.wants_jump

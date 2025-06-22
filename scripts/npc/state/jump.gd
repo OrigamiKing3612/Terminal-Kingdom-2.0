@@ -7,6 +7,7 @@ func enter() -> void:
 	character.velocity.y = jump_force
 
 func physics_process(delta: float) -> NPCState:
+	movement.wants_jump = false
 	character.velocity.y += -gravity * delta
 
 	if not character.is_on_floor() and character.velocity.y < 0:

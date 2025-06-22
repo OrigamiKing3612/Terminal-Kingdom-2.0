@@ -2,6 +2,9 @@ extends Node
 class_name NPCBrain
 
 @export var state_machine: Node
+@export var raycast_lower: RayCast3D
+@export var raycast_upper: RayCast3D
+@export var movement_controller: MovementController
 
 @onready var idle_state: Node = $"../State/Idle"
 @onready var wander_state: Node = $"../State/Wander"
@@ -22,6 +25,17 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	pass
+	
+func _physics_process(delta: float) -> void:
+	var lower_hit = raycast_lower.is_colliding()
+	var upper_hit = raycast_upper.is_colliding()
+
+	if lower_hit and not upper_hit and current_goal == follow_state:
+		movement_controller.set_wants_jump()
+	elif upper_hit:
+		movement_controller.wants_jump = false
+	else:
+		movement_controller.wants_jump = false
 
 # return null if can not jump
 func jump() -> NPCState:

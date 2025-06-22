@@ -25,9 +25,8 @@ func physics_process(_delta: float) -> NPCState:
 		return brain.fall()
 
 	var next_position = navigation.get_next_path_position()
-	var y_difference = next_position.y - character.global_position.y
 	
-	if y_difference > step_threshold:
+	if get_jump():
 		return brain.jump()
 	
 

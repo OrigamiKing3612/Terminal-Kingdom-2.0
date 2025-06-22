@@ -299,6 +299,14 @@ debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(0, 1, 0.870588, 1)
 
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
+target_position = Vector3(0, 0, -3)
+
+[node name="RayCast3D2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0, -3)
+
 [node name="State" type="Node" parent="." node_paths=PackedStringArray("character", "mesh", "default_state", "movement", "brain")]
 script = ExtResource("32_fri4o")
 character = NodePath("..")
@@ -337,9 +345,12 @@ state_name = "Follow"
 [node name="NPCMovementController" type="Node" parent="."]
 script = ExtResource("36_kxny1")
 
-[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("state_machine")]
+[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("state_machine", "raycast_lower", "raycast_upper", "movement_controller")]
 script = ExtResource("49_trpir")
 state_machine = NodePath("../State")
+raycast_lower = NodePath("../RayCast3D")
+raycast_upper = NodePath("../RayCast3D2")
+movement_controller = NodePath("../NPCMovementController")
 metadata/_custom_type_script = "uid://4kig3wewccmi"
 
 [connection signal="set_movement_direction" from="." to="State" method="_on_set_movement_direction"]
