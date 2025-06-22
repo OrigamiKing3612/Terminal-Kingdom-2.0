@@ -4,6 +4,7 @@ extends Node
 @onready var building_box: CanvasLayer = $BuildingBox
 @onready var toolbelt_box: CanvasLayer = $ToolbeltBox
 @onready var toolbelt: ToolbeltNode = $ToolbeltBox/ToolbeltNode
+@onready var debug: CanvasLayer = $Debug
 
 @export var selected_item_index: int = 0:
 	set(value):
@@ -12,8 +13,6 @@ extends Node
 @export var selected_gridmap_id: int = 0
 @export var player: PlayerData
 @export var kingdom: Kingdom
-
-@export var testing_items: Array[Item] = []
 
 signal show_inventory
 signal hide_inventory
@@ -57,10 +56,12 @@ func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	inventory_box.hide()
+	debug.hide()
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("left_click") or event.is_action_pressed("right_click")) and move == false and mode != Mode.Inventory and mode != Mode.InPopUp:
-		SceneManager.steal_cursor()
+		if not debug.visible:
+			SceneManager.steal_cursor()
 	if event.is_action_pressed("esc") and mode != Mode.InPopUp:
 		SceneManager.free_cursor()
 		
@@ -85,10 +86,7 @@ func _input(event: InputEvent) -> void:
 			elif event.is_action_released("next_option"):
 				toolbelt_next.emit()
 			elif event.is_action_pressed("testing"):
-				var items: Array[Item] = []
-				for ti in testing_items:
-					items.append(ti.copy() as Item)
-				player.collectItems(items)
+				debug.visible = !debug.visible
 		Mode.Build:
 			if event.is_action_released("back_option"):
 				build_back.emit()

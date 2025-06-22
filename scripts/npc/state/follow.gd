@@ -11,13 +11,11 @@ func enter() -> void:
 
 func physics_process(_delta: float) -> NPCState:
 	character.velocity = Vector3.ZERO
-	print(state_name)
 	
 	var target_pos = character_to_follow.global_position
 	navigation.set_target_position(target_pos)
 
 	if navigation.is_navigation_finished():
-		print("Finished")
 		return null
 	
 	if not character.is_on_floor():

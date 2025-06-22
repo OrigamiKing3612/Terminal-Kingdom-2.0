@@ -4,7 +4,6 @@ var landing_timer := 0.0
 var landing_grace := 0.2 # seconds
 
 func physics_process(delta: float) -> NPCState:
-	print(state_name)
 	character.velocity.y += -gravity * delta
 	character.move_and_slide()
 	
