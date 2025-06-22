@@ -2,8 +2,9 @@ extends Node
 class_name NPCState
 
 @export var animation_name: String
-@export var move_speed: float = 400
+@export var move_speed: float = 4
 @export var state_name: String
+@export var step_threshold := 1
 
 var gravity: int = ProjectSettings.get_setting("physics/3d/default_gravity")
 var character: CharacterBody3D

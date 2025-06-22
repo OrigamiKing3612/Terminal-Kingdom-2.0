@@ -82,7 +82,7 @@ metadata/_custom_type_script = "uid://cqsvdpbt83m3i"
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
 size = Vector3(1.6, 2, 1.6)
 
-[node name="NPC" type="CharacterBody3D"]
+[node name="NPC" type="CharacterBody3D" groups=["Entity", "NPC"]]
 collision_layer = 8
 script = ExtResource("1_k75in")
 metadata/_custom_type_script = "uid://b0t1cg5rsfjuu"
@@ -95,6 +95,7 @@ collision_mask = 2
 shape = SubResource("BoxShape3D_3ak68")
 
 [node name="Mesh" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh"]
 mesh = SubResource("BoxMesh_yq5wv")
@@ -291,6 +292,8 @@ coin_item = ExtResource("40_w8k3m")
 shape = SubResource("BoxShape3D_mhefn")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 5.0
+path_height_offset = 0.1
 keep_y_velocity = false
 debug_enabled = true
 debug_use_custom = true
@@ -300,6 +303,7 @@ debug_path_custom_color = Color(0, 1, 0.870588, 1)
 script = ExtResource("32_fri4o")
 character = NodePath("..")
 mesh = NodePath("../Mesh")
+fall_gravity = 9.81
 default_state = NodePath("Follow")
 movement = NodePath("../NPCMovementController")
 brain = NodePath("../NPCBrain")
@@ -328,8 +332,6 @@ state_name = "Fall"
 [node name="Follow" type="Node" parent="State" node_paths=PackedStringArray("navigation")]
 script = ExtResource("47_32nht")
 navigation = NodePath("../../NavigationAgent3D")
-desired_distance = 4.0
-move_speed = 4.0
 state_name = "Follow"
 
 [node name="NPCMovementController" type="Node" parent="."]

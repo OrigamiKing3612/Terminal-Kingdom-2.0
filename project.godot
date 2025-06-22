@@ -48,6 +48,8 @@ folder_colors={
 [global_group]
 
 Player="The player"
+NPC=""
+Entity=""
 
 [input]
 
