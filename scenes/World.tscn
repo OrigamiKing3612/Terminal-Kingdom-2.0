@@ -23,11 +23,10 @@
 [node name="Environment" parent="." instance=ExtResource("1_7c4bj")]
 
 [node name="Player" parent="." instance=ExtResource("5_1lgw5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 2, 89)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 2, 27)
 
 [node name="NoJobNPC" parent="." instance=ExtResource("7_0uv0p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160, 3, 23)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2, 23)
 data = ExtResource("12_nrtoj")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]

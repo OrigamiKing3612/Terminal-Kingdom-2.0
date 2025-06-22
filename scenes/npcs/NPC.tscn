@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=57 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -47,6 +47,8 @@
 [ext_resource type="Resource" uid="uid://dbue8hsvrop8p" path="res://assets/dialogue/npcs/starting_village/potter.dialogue" id="38_rr88e"]
 [ext_resource type="Resource" uid="uid://d2fgn7hftxltc" path="res://assets/resources/items/pot.tres" id="39_c4iby"]
 [ext_resource type="Resource" uid="uid://qlvgonuwhpnq" path="res://assets/resources/items/tiles/coin_item.tres" id="40_w8k3m"]
+[ext_resource type="Script" uid="uid://vrx5lumj4hkn" path="res://scripts/npc/state/follow.gd" id="47_32nht"]
+[ext_resource type="Script" uid="uid://4kig3wewccmi" path="res://scripts/npc/npc_brain.gd" id="49_trpir"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ak68"]
 size = Vector3(10, 2, 10)
@@ -81,6 +83,7 @@ metadata/_custom_type_script = "uid://cqsvdpbt83m3i"
 size = Vector3(1.6, 2, 1.6)
 
 [node name="NPC" type="CharacterBody3D"]
+collision_layer = 8
 script = ExtResource("1_k75in")
 metadata/_custom_type_script = "uid://b0t1cg5rsfjuu"
 
@@ -288,50 +291,57 @@ coin_item = ExtResource("40_w8k3m")
 shape = SubResource("BoxShape3D_mhefn")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+keep_y_velocity = false
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0, 1, 0.870588, 1)
 
-[node name="State" type="Node" parent="." node_paths=PackedStringArray("player", "mesh", "default_state", "movement")]
+[node name="State" type="Node" parent="." node_paths=PackedStringArray("character", "mesh", "default_state", "movement", "brain")]
 script = ExtResource("32_fri4o")
-player = NodePath("..")
+character = NodePath("..")
 mesh = NodePath("../Mesh")
-default_state = NodePath("Wander")
+default_state = NodePath("Follow")
 movement = NodePath("../NPCMovementController")
+brain = NodePath("../NPCBrain")
 
-[node name="Idle" type="Node" parent="State" node_paths=PackedStringArray("fall_state", "idle_state", "jump_state")]
+[node name="Idle" type="Node" parent="State"]
 script = ExtResource("33_fri4o")
 state_name = "Idle"
-fall_state = NodePath("../Fall")
-idle_state = NodePath(".")
-jump_state = NodePath("../Jump")
 
-[node name="Wander" type="Node" parent="State" node_paths=PackedStringArray("navigation", "fall_state", "idle_state", "jump_state")]
+[node name="Wander" type="Node" parent="State" node_paths=PackedStringArray("navigation")]
 script = ExtResource("34_jjats")
 navigation = NodePath("../../NavigationAgent3D")
 state_name = "Wander"
-fall_state = NodePath("../Fall")
-idle_state = NodePath("../Idle")
-jump_state = NodePath("../Jump")
 
 [node name="Work" type="Node" parent="State"]
 
 [node name="Defend" type="Node" parent="State"]
 
-[node name="Jump" type="Node" parent="State" node_paths=PackedStringArray("fall_state", "idle_state", "jump_state")]
+[node name="Jump" type="Node" parent="State"]
 script = ExtResource("34_s3c0h")
 state_name = "Jump"
-fall_state = NodePath("../Fall")
-idle_state = NodePath("../Idle")
-jump_state = NodePath(".")
 
-[node name="Fall" type="Node" parent="State" node_paths=PackedStringArray("fall_state", "idle_state", "jump_state")]
+[node name="Fall" type="Node" parent="State"]
 script = ExtResource("35_5q6h2")
 state_name = "Fall"
-fall_state = NodePath(".")
-idle_state = NodePath("../Idle")
-jump_state = NodePath("../Jump")
+
+[node name="Follow" type="Node" parent="State" node_paths=PackedStringArray("navigation")]
+script = ExtResource("47_32nht")
+navigation = NodePath("../../NavigationAgent3D")
+desired_distance = 4.0
+move_speed = 4.0
+state_name = "Follow"
 
 [node name="NPCMovementController" type="Node" parent="."]
 script = ExtResource("36_kxny1")
 
+[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("state_machine")]
+script = ExtResource("49_trpir")
+state_machine = NodePath("../State")
+metadata/_custom_type_script = "uid://4kig3wewccmi"
+
 [connection signal="set_movement_direction" from="." to="State" method="_on_set_movement_direction"]
 [connection signal="set_movement_state" from="." to="State" method="_on_set_movement_state"]
 [connection signal="area_entered" from="Area3D" to="State/Wander" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Area3D" to="NPCBrain" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="NPCBrain" method="_on_area_3d_area_exited"]

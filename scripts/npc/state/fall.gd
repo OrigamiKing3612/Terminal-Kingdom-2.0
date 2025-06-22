@@ -1,19 +1,18 @@
 extends NPCState
 
-@export var move_state: NPCState
+var landing_timer := 0.0
+var landing_grace := 0.2 # seconds
 
 func physics_process(delta: float) -> NPCState:
-	character.velocity.y += gravity * delta
-
-	var move = get_movement_input() * move_speed
-	#
-	#if move != 0:
-		#character.animations.flip_h = movement < 0
-	character.velocity.x = move
+	print(state_name)
+	character.velocity.y += -gravity * delta
 	character.move_and_slide()
 	
 	if character.is_on_floor():
-		if move != 0:
-			return move_state
-		return idle_state
+		landing_timer += delta
+		if landing_timer > landing_grace:
+			landing_timer = 0.0
+			return brain.current_goal
+	else:
+		landing_timer = 0.0
 	return null

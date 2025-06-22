@@ -18,8 +18,8 @@ func exit() -> void:
 	_wait_timer = 0.0
 
 func process(delta: float) -> NPCState:
-	if area_entered:
-		return idle_state
+	#if area_entered:
+		#return idle_state
 	if _wait_timer > 0.0:
 		_wait_timer -= delta
 		if _wait_timer <= 0.0:
@@ -29,6 +29,7 @@ func process(delta: float) -> NPCState:
 	return null
 
 func physics_process(_delta: float) -> NPCState:
+	print(state_name)
 	if navigation.is_navigation_finished():
 		return null
 

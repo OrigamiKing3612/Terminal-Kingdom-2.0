@@ -3,7 +3,7 @@ class_name Utils
 
 enum Job{None, Blacksmith, King, Miner, Farmer, Docter, Salesman, Potter, Stablemaster, Carpenter, Builder, Hunter, Inventor, Chef}
 enum SkillLevel{None, Novice, Apprentice, Journeyman, Expert, Master}
-enum BehaviorType{Idle, Wander, Stand, Work}
+enum BehaviorType{Idle, Wander, Stand, Work, Follow}
 enum Gender{Male, Female}
 enum StationTypes{Anvil, Furnace, Workbench}
 enum ToolType{None, Axe, Pickaxe, Sword}

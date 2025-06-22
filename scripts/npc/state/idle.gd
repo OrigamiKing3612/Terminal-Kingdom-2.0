@@ -14,13 +14,14 @@ func exit() -> void:
 
 func process_input(_event: InputEvent) -> NPCState:
 	if get_jump() and character.is_on_floor():
-		return jump_state
+		return brain.jump()
 	return null
 	
 func physics_process(delta: float) -> NPCState:
+	print(state_name)
 	character.velocity.y += gravity * delta
 	character.move_and_slide()
 	
 	if not character.is_on_floor():
-		return fall_state
+		return brain.fall()
 	return null

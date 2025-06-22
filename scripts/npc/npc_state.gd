@@ -5,15 +5,11 @@ class_name NPCState
 @export var move_speed: float = 400
 @export var state_name: String
 
-@export_group("Common States")
-@export var fall_state: NPCState
-@export var idle_state: NPCState
-@export var jump_state: NPCState
-
 var gravity: int = ProjectSettings.get_setting("physics/3d/default_gravity")
 var character: CharacterBody3D
 var animations: AnimatedSprite3D
 var movement: NPCMovement
+var brain: NPCBrain
 
 func enter() -> void:
 	#animations.play(animation_name)

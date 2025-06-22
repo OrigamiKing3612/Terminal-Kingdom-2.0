@@ -9,9 +9,10 @@ func enter() -> void:
 	character.velocity.y = -jump_force
 	
 func physics_process(delta: float) -> NPCState:
+	print(state_name)
 	character.velocity.y += gravity * delta
 	if character.velocity.y > 0:
-		return fall_state
+		return brain.fall()
 	
 	var move = get_movement_input() * move_speed
 	if move != 0:
@@ -22,8 +23,5 @@ func physics_process(delta: float) -> NPCState:
 	character.move_and_slide()
 	
 	if character.is_on_floor():
-		if move != 0:
-			return move_state
-		return idle_state
-	
+		return brain.current_goal
 	return null

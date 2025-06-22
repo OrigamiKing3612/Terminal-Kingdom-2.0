@@ -1,6 +1,7 @@
 extends Resource
 class_name NPCData
 
+
 var id = UUID.string()
 
 @export_group("NPC Settings")
