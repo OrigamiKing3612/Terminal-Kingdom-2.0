@@ -42,6 +42,7 @@ data = PackedVector3Array(0.1846, 0.1307, 0.0156, 0.1846, 0.1307, -0.0156, 0.148
 [node name="MugTile" type="Node3D"]
 
 [node name="MugTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 mesh = SubResource("ArrayMesh_3sq86")
 skeleton = NodePath("")
 

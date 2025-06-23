@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_jms1m"]
 [ext_resource type="Resource" uid="uid://fojnpcn5sobk" path="res://assets/resources/npc/hunter.tres" id="2_b0vrp"]
-[ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="3_415s6"]
+[ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="3_415s6"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="3_b0vrp"]
 
 [node name="HuntingArea" type="Node3D"]

@@ -107,6 +107,7 @@ shadow_mesh = SubResource("ArrayMesh_lvhsx")
 [node name="TurkeyTile" type="Node3D"]
 
 [node name="TurkeyTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 mesh = SubResource("ArrayMesh_2nac4")
 skeleton = NodePath("")
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvro2skwyhiau"]
 
-[ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="3_i66db"]
+[ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="1_12amb"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_1u40d"]
 
 [node name="HuntingArea" type="Node3D"]
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("3_i66db")
+mesh_library = ExtResource("1_12amb")
 script = ExtResource("4_1u40d")

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_0wxec"]
 [ext_resource type="Resource" uid="uid://7nfvxmsq5oa2" path="res://assets/resources/npc/doctor.tres" id="3_0myj2"]
 [ext_resource type="Resource" uid="uid://dv4op2m1hctm3" path="res://assets/resources/npc/nurse.tres" id="3_cugsr"]
-[ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="3_gukx3"]
+[ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="4_0myj2"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_cugsr"]
 
 [node name="HuntingArea" type="Node3D"]
@@ -15,5 +15,5 @@ data = ExtResource("3_0myj2")
 data = ExtResource("3_cugsr")
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("3_gukx3")
+mesh_library = ExtResource("4_0myj2")
 script = ExtResource("4_cugsr")

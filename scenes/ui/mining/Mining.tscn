@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dol8dws64fqi8" path="res://scripts/ui/mining/mining.gd" id="1_a50of"]
 [ext_resource type="PackedScene" uid="uid://cpamh1gadlcks" path="res://scenes/Player.tscn" id="2_l8ev6"]
-[ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="2_lpcuf"]
+[ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="2_lpcuf"]
 [ext_resource type="Script" uid="uid://c81udlyqluvl" path="res://scripts/ui/mining/grid_map.gd" id="3_0vdk2"]
 [ext_resource type="Resource" uid="uid://3v17cscqxu7m" path="res://assets/resources/items/tiles/dirt.tres" id="4_ne8fo"]
 [ext_resource type="Resource" uid="uid://b5xnrh116pxsg" path="res://assets/resources/items/tiles/stone.tres" id="5_miscj"]

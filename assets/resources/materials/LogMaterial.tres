@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dfbdvmdaolm77"]
+
+[ext_resource type="Texture2D" uid="uid://d11eyapm86pfx" path="res://assets/models/textures/log/log-albedo.png" id="1_q1sy8"]
+[ext_resource type="Texture2D" uid="uid://dttb3dq2e2ys8" path="res://assets/models/textures/log/log-normal.png" id="2_gv1m0"]
+
+[resource]
+resource_name = "LogMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_q1sy8")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_gv1m0")
+texture_filter = 2

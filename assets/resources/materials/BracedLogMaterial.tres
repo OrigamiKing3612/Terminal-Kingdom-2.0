@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://de0657bfdct3n"]
+
+[ext_resource type="Texture2D" uid="uid://b425p3w02mn3t" path="res://assets/models/textures/log/braced/braced-log-albedo.png" id="1_jo75r"]
+[ext_resource type="Texture2D" uid="uid://du1x1qf74aerh" path="res://assets/models/textures/log/braced/braced-log-normal.png" id="2_e74gj"]
+
+[resource]
+resource_name = "BracedLogMaterial"
+albedo_texture = ExtResource("1_jo75r")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_e74gj")
+texture_filter = 0

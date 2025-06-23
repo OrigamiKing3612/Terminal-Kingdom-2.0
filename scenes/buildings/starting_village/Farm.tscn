@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_fiueb"]
 [ext_resource type="Resource" uid="uid://djjk3okjgb42q" path="res://assets/resources/npc/farmer.tres" id="2_fdgc7"]
-[ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="3_v7s8p"]
+[ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="3_v7s8p"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_fdgc7"]
 [ext_resource type="PackedScene" uid="uid://dfkt11r6dih32" path="res://scenes/tiles/PotTile.tscn" id="5_x5wys"]
 [ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/MeshLibrary/decoration/LanternTile.tscn" id="6_v7s8p"]

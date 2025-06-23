@@ -42,6 +42,7 @@ data = PackedVector3Array(0.1016, 0.1753, 0.3126, 0.0823, 0.0266, 0.2532, 0.0852
 [node name="PanStewTile" type="Node3D"]
 
 [node name="PanStewTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 mesh = SubResource("ArrayMesh_sqvap")
 skeleton = NodePath("")
 

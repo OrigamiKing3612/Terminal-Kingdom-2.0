@@ -42,6 +42,7 @@ data = PackedVector3Array(0.2392, 0.0645, 0.2196, 0.2392, 0, 0.2196, 0.1213, 0, 
 [node name="CookedMeatTile" type="Node3D"]
 
 [node name="CookedMeatTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("ArrayMesh_2ygi4")
 skeleton = NodePath("")
 

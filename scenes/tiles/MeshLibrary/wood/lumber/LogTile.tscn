@@ -1,16 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://b4i06qcsqtnkp"]
+[gd_scene load_steps=5 format=4 uid="uid://b4i06qcsqtnkp"]
 
-[ext_resource type="Texture2D" uid="uid://d11eyapm86pfx" path="res://assets/models/textures/log/log-albedo.png" id="1_qlewe"]
-[ext_resource type="Texture2D" uid="uid://dttb3dq2e2ys8" path="res://assets/models/textures/log/log-normal.png" id="2_mmduw"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckxrt"]
-resource_name = "LogMaterial"
-cull_mode = 2
-albedo_texture = ExtResource("1_qlewe")
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource("2_mmduw")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://dfbdvmdaolm77" path="res://assets/resources/materials/LogMaterial.tres" id="1_bsm5w"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_u45c8"]
 _surfaces = [{
@@ -36,7 +26,7 @@ _surfaces = [{
 "index_count": 324,
 "index_data": PackedByteArray("AAAkADwAAAA9ACQAPgA/AEAAPgBBAD8AQgAsAEMALAAKAEQAQgAKACwACgAqAEUACgBGACoAQgBGAAoAKgBGAAwARwBCAC0ASABCAEcASABHAA0ASABGAEIARgBJACsASgBIAC8ARgBLAEkASQBLAAsARgBIAC4ARgAuAEsATABIAEoATABKADAALgBIAEwASwAuAA8ASwAPAE0ADwAuAE4ALgBMAA4ADgBMAE8ALgAOAFAAUQBSAFMAUQBUAFIAMwAXAFUAMwBWABcAVwBYAFkAVwAmAFgAWgBbAFwAWgBdAFsAXgADAF8AXgABAAMAEwBgABIAEwBhAGAAYgAxAGMAYgAyADEAZABlAGYAZABnAGUAaAA1AGkAaAA0ADUAagBrAGwAagBtAGsAbgAZAG8AbgAYABkAFABwABUAFABxAHAAcgAQAHMAcgB0ABAAdQB2AHcAdQARAHYAeAB5AAUAeAB6AHkAKAB7AHwAKAB9AHsAfgAJAH8AfgAHAAkAGgCAABsAGgCBAIAAggCDAIQAggCFAIMANgCGABYANgCHAIYAiACJAIoAiAAlAIkAiwCMAI0AiwCOAIwAjwAEAJAAjwACAAQACACRAAYACACSAJEAkwAnAJQAkwApACcAlQCWAJcAlQCYAJYAmQAgAJoAIAAhAJsAmQAhACAAIQA3AJwAIQCdADcAmQCdACEANwCdADgAngCZADkAnwCZAJ4AnwCeAB0AnwCdAJkAnQCgAB8AoQCfADsAnQCiAKAAoACiACIAnQCfADoAnQA6AKIAowCfAKEAowChAB4AOgCfAKMAogA6ACMAogAjAKQAIwA6AKUAOgCjABwAHACjAKYAOgAcAKcA"),
 "lods": [0.0539051, PackedByteArray("AAAkACUAJQAEAAAAJQACAAQAAAAmACQAJgADACQAJgABAAMABQAnACgAKAAJAAUAKAAHAAkAKQAoACcAKQAnAAYACAApAAYAKgArAAwACgArACoALAArAAoADQArACwADQAsAC0AKwANAC4AKwAuAAsACwAuAA8ALgANAA4ADgANAC8ADgAvADAAEAARADEAFAARABAAFAAQABUAMgAQADEAMgAxABIAEwAyABIAMwAXADQAMwAWABcANAA1ADMANAAYADUAGAAZADUANgAXABYANgAWABsAGgA2ABsANwAfADgAIQAfADcAIAAfACEAHQAfACAAHQAgADkAHwAdADoAHwA6ACIAIgA6ACMAOgAdABwAHAAdADsAHAA7AB4A"), 0.150344, PackedByteArray("AAABAAIAAQADAAIAAgAEAAAABQAGAAcACAAHAAYABwAJAAUACgALAAwADQALAAoACwANAA4ACwAOAA8AEAARABIAEwAQABIAFAARABAAFAAQABUAFgAXABgAGAAZABYAGgAXABYAGgAWABsAHAAdAB4AHwAdABwAHQAfACAAIAAfACEAHwAcACIAIgAcACMA")],
-"material": SubResource("StandardMaterial3D_ckxrt"),
+"material": ExtResource("1_bsm5w"),
 "name": "LogMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

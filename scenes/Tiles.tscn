@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://b6vi2yjsymsnb"]
+[gd_scene load_steps=94 format=3 uid="uid://b6vi2yjsymsnb"]
 
 [ext_resource type="PackedScene" uid="uid://dcaxtrrv5km1d" path="res://scenes/tiles/MeshLibrary/dirt/DirtSlopeTile.tscn" id="1_17u1s"]
 [ext_resource type="PackedScene" uid="uid://car1pebfw4r3b" path="res://scenes/tiles/MeshLibrary/dirt/DirtStairExteriorCornerTile.tscn" id="2_t7arw"]
@@ -82,6 +82,17 @@
 [ext_resource type="PackedScene" uid="uid://cb6rj8v73n4j7" path="res://scenes/tiles/MeshLibrary/decoration/FlowersTile.tscn" id="80_eqysm"]
 [ext_resource type="PackedScene" uid="uid://cbxhyjcol5pt5" path="res://scenes/tiles/MeshLibrary/decoration/RocksTile.tscn" id="81_yq66o"]
 [ext_resource type="PackedScene" uid="uid://tao4i7jriyw2" path="res://scenes/tiles/MeshLibrary/decoration/StonesTile.tscn" id="82_i1kll"]
+[ext_resource type="PackedScene" uid="uid://1innn45ad8dt" path="res://scenes/tiles/MeshLibrary/wood/lumber/SmallLogTile.tscn" id="83_aecj4"]
+[ext_resource type="PackedScene" uid="uid://oiyork11fhyp" path="res://scenes/tiles/MeshLibrary/wood/lumber/braced/BracedLogSlopeTile.tscn" id="84_okn1m"]
+[ext_resource type="PackedScene" uid="uid://dht8lhekk2uxi" path="res://scenes/tiles/MeshLibrary/wood/lumber/braced/BracedLogTile.tscn" id="85_eqysm"]
+[ext_resource type="PackedScene" uid="uid://xw4dt0ch7f50" path="res://scenes/tiles/MeshLibrary/decoration/tavern/TurkeyTile.tscn" id="86_0pwat"]
+[ext_resource type="PackedScene" uid="uid://cj1fvdxi72l6t" path="res://scenes/tiles/MeshLibrary/decoration/tavern/PotStewTile.tscn" id="87_147me"]
+[ext_resource type="PackedScene" uid="uid://ds1c8d3yxbvj4" path="res://scenes/tiles/MeshLibrary/decoration/tavern/PotLidTile.tscn" id="88_gn2yw"]
+[ext_resource type="PackedScene" uid="uid://cjatvnar1nrph" path="res://scenes/tiles/MeshLibrary/decoration/tavern/PanTile.tscn" id="89_hi6ip"]
+[ext_resource type="PackedScene" uid="uid://t7on164tpvdo" path="res://scenes/tiles/MeshLibrary/decoration/tavern/PanStewTile.tscn" id="90_bbpdw"]
+[ext_resource type="PackedScene" uid="uid://bp08k1ehanxp6" path="res://scenes/tiles/MeshLibrary/decoration/tavern/MugTile.tscn" id="91_0tvqu"]
+[ext_resource type="PackedScene" uid="uid://76qjmytaekd2" path="res://scenes/tiles/MeshLibrary/decoration/tavern/CookingPotTile.tscn" id="92_unvt5"]
+[ext_resource type="PackedScene" uid="uid://dwwwh40lek6kb" path="res://scenes/tiles/MeshLibrary/decoration/tavern/BarrelTile.tscn" id="93_4aqs4"]
 
 [node name="Tiles" type="Node3D"]
 
@@ -331,4 +342,37 @@ visible = false
 visible = false
 
 [node name="StonesTile" parent="StaticTiles" instance=ExtResource("82_i1kll")]
+visible = false
+
+[node name="SmallLogTile" parent="StaticTiles" instance=ExtResource("83_aecj4")]
+visible = false
+
+[node name="BracedLogSlopeTile" parent="StaticTiles" instance=ExtResource("84_okn1m")]
+visible = false
+
+[node name="BracedLogTile" parent="StaticTiles" instance=ExtResource("85_eqysm")]
+visible = false
+
+[node name="TurkeyTile" parent="StaticTiles" instance=ExtResource("86_0pwat")]
+visible = false
+
+[node name="PotStewTile" parent="StaticTiles" instance=ExtResource("87_147me")]
+visible = false
+
+[node name="PotLidTile" parent="StaticTiles" instance=ExtResource("88_gn2yw")]
+visible = false
+
+[node name="PanTile" parent="StaticTiles" instance=ExtResource("89_hi6ip")]
+visible = false
+
+[node name="PanStewTile" parent="StaticTiles" instance=ExtResource("90_bbpdw")]
+visible = false
+
+[node name="MugTile" parent="StaticTiles" instance=ExtResource("91_0tvqu")]
+visible = false
+
+[node name="CookingPotTile" parent="StaticTiles" instance=ExtResource("92_unvt5")]
+visible = false
+
+[node name="BarrelTile" parent="StaticTiles" instance=ExtResource("93_4aqs4")]
 visible = false

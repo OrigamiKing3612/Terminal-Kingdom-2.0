@@ -42,7 +42,7 @@ data = PackedVector3Array(0.35, 0.15, -0.0143, 0.35, 0.13, -0.0143, 0.38, 0.13, 
 [node name="BarrelTile" type="Node3D"]
 
 [node name="BarrelTile" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.5, 0)
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, -1, 0)
 mesh = SubResource("ArrayMesh_50rfp")
 skeleton = NodePath("")
 

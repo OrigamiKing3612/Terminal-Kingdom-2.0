@@ -39,5 +39,6 @@ shadow_mesh = SubResource("ArrayMesh_bomb1")
 [node name="PotLidTile" type="Node3D"]
 
 [node name="PotLidTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 mesh = SubResource("ArrayMesh_tbg13")
 skeleton = NodePath("")

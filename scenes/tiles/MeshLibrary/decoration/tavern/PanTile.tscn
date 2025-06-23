@@ -42,6 +42,7 @@ data = PackedVector3Array(0.1016, 0.1808, 0.3126, 0.0823, 0.032, 0.2532, 0.0852,
 [node name="PanTile" type="Node3D"]
 
 [node name="PanTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 mesh = SubResource("ArrayMesh_t581s")
 skeleton = NodePath("")
 

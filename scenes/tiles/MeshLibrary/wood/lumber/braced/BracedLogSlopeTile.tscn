@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=4 uid="uid://cbf08sgwslm3d"]
+[gd_scene load_steps=5 format=4 uid="uid://oiyork11fhyp"]
 
-[ext_resource type="Material" uid="uid://dfbdvmdaolm77" path="res://assets/resources/materials/LogMaterial.tres" id="1_6tasu"]
+[ext_resource type="Material" uid="uid://de0657bfdct3n" path="res://assets/resources/materials/BracedLogMaterial.tres" id="1_oenpc"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8wnj0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_2s28c"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
 "format": 34896613377,
 "index_count": 48,
 "index_data": PackedByteArray("AAABAAIAAgAAAAIAAQACAAEAAQACAAIAAwAAAAIAAQADAAIAAAADAAMAAAAEAAEABAAAAAMABAABAAEABAAFAAEAAQAFAAMABAADAAUABQAEAAUABQADAAMABQADAAUA"),
-"name": "LogMaterial",
+"name": "BracedLogMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 6,
@@ -16,34 +16,34 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4ewpu"]
-resource_name = "StaticTiles_Cube_033"
+[sub_resource type="ArrayMesh" id="ArrayMesh_mnixr"]
+resource_name = "StaticTiles_Cube_051"
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
 "attribute_data": PackedByteArray("AAD//////38AAP9//////wAA/////////////wAA/38AAP9/AAD//wAA/38AAP9///////////8AAAAA////f///AAAAAP9//////wAA////////AAD//wAAAAD///9/AAD/f///AAAAAAAAAAD/fwAAAAAAAP9/"),
 "format": 34896613399,
 "index_count": 48,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABwAEAAgACQAKAAsACQAMAAoADAAJAA0ADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsA"),
-"material": ExtResource("1_6tasu"),
-"name": "LogMaterial",
+"material": ExtResource("1_oenpc"),
+"name": "BracedLogMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 30,
 "vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAAAAAAA//8AgP//AAD//wCA//8AAP//AIAAAP////8AgAAA/////wCAAAAAAAAAAAAAAP//AAAAAAAA//8AAAAA//8AAAAAAAD//wAAAAAAAAAAAAAAAP8///8AAP///z///wAAAAD/PwAAAAD///8///8AAAAA/7///wAA////v///AAAAAP+///8AAP///78AAP//AAD8xf//AAD///zFAAD//////MX//wAAAAD8xQAA//8AAP+/AAD//////78AAP//AAD/vwAA//////+//z//f/8//3//P/9//z//f/9/////f////3////9/////f///////f////3////9/////f////38AAP9/AAD/fwAA/38AAP9/////f////3////9/////fwDGAGMAxgBjAMYAYwDGAGP///9/////f////3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_8wnj0")
+shadow_mesh = SubResource("ArrayMesh_2s28c")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nsx5x"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3cwvr"]
 data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, 1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, 1, -1, -1, 1, -1, 1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -1, 1, 1)
 
-[node name="LogSlopeTile" type="Node3D"]
+[node name="BracedLogSlopeTile" type="Node3D"]
 
-[node name="LogSlopeTile" type="MeshInstance3D" parent="."]
-mesh = SubResource("ArrayMesh_4ewpu")
+[node name="BracedLogSlopeTile" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_mnixr")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LogSlopeTile"]
+[node name="StaticBody3D" type="StaticBody3D" parent="BracedLogSlopeTile"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LogSlopeTile/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_nsx5x")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BracedLogSlopeTile/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_3cwvr")
