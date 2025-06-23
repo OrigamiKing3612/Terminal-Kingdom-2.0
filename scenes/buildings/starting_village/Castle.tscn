@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="2_rgvqe"]
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="3_2jpfu"]
 [ext_resource type="Resource" uid="uid://8106ceomlnsr" path="res://assets/resources/npc/king.tres" id="4_rgvqe"]
-[ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/LanternTile.tscn" id="5_rgvqe"]
+[ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/MeshLibrary/decoration/LanternTile.tscn" id="5_rgvqe"]
 
 [node name="Castle" type="Node3D"]
 

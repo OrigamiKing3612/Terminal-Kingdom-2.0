@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6a2npwvvoeim"]
+
+[ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_l1jae"]
+[ext_resource type="Resource" uid="uid://duewa642utrpa" path="res://assets/resources/npc/chef.tres" id="2_dd4vy"]
+[ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="3_efbnc"]
+[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_dumqe"]
+
+[node name="HuntingArea" type="Node3D"]
+
+[node name="ChefNPC" parent="." instance=ExtResource("1_l1jae")]
+data = ExtResource("2_dd4vy")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_efbnc")
+script = ExtResource("4_dumqe")

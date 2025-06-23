@@ -5,7 +5,7 @@
 [ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="3_p8ruf"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_p8ruf"]
 [ext_resource type="PackedScene" uid="uid://c3fc7stx78m1" path="res://scenes/tiles/MineEntranceTile.tscn" id="4_s1wi8"]
-[ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/LanternTile.tscn" id="5_56oy1"]
+[ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/MeshLibrary/decoration/LanternTile.tscn" id="5_56oy1"]
 
 [node name="Mine" type="Node3D"]
 

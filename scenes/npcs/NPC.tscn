@@ -370,7 +370,7 @@ jump_state = NodePath("../State/Jump")
 fall_state = NodePath("../State/Fall")
 follow_state = NodePath("../State/Follow")
 talk_to_player = NodePath("../State/TalkToPlayer")
-current_goal = NodePath("../State/Wander")
+current_goal = NodePath("../State/Follow")
 metadata/_custom_type_script = "uid://4kig3wewccmi"
 
 [connection signal="set_movement_direction" from="." to="State" method="_on_set_movement_direction"]

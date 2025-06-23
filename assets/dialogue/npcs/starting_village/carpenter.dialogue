@@ -5,7 +5,7 @@ Carpenter: Here are your sticks.
 ~ talk
 % Carpenter: [[Hi|Hello|Howdy|Yo]]
 % Carpenter: Why are you talking to me?
-% Carpenter: I'm the carpenter
+% Carpenter: I'm the carpenter...
 % Carpenter: I don't have anything to teach you right now.
-% Carpenter: Talk to someone else
+% Carpenter: Talk to someone else....
 => END

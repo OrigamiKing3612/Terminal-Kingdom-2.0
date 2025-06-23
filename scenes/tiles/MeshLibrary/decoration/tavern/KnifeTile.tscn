@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=4 uid="uid://dffufpogw1lf"]
+
+[ext_resource type="Material" uid="uid://cx1nfhvrbikew" path="res://assets/resources/materials/FoodMaterial.tres" id="1_1bj6t"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_40k45"]
+_surfaces = [{
+"aabb": AABB(-0.300384, 0, -0.0389, 0.600768, 0.0178, 0.0778),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("AAACAAYAAgAAAAYAAgAHAAAABwACAAAACAAAAAcAAAAIAAcABAAHAAgABwAEAAgACAAFAAQABQAIAAQABAAJAAUACQAEAAUAAQAFAAkABQABAAkACgABAAkAAQAKAAkACgADAAkAAwAKAAkA"),
+"lods": [0.0175612, PackedByteArray("BAACAAAAAgAEAAAABQAAAAQAAAAFAAQABAADAAUAAwAEAAUABQABAAMAAQAFAAMA"), 0.021071, PackedByteArray("AAABAAIAAQAAAAIAAgADAAEAAwACAAEA")],
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 11,
+"vertex_data": PackedByteArray("AvcAAOTKAABgPQAA//8AAAL3AAAAAAAAAAAAAHtgAAAucwAAkToAAC5zAABSkAAA//8AAHJlAAD4zv//tQ0AAPjO//8uvQAAAAAAAJE6AAC1GgAAo84AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_a1jiw"]
+resource_name = "utensil-knife_utensil-knife"
+_surfaces = [{
+"aabb": AABB(-0.300384, 0, -0.0389, 0.600768, 0.0178, 0.0778),
+"attribute_data": PackedByteArray("//eY+f/3mPn/95j5//eY+f/3mPn/95j5//eY+f/3mPn/95j5//eY+f/3mPn/95j5//eY+f/3mPn/92XG//eY+f/3mPn/92XG//eY+f/3Zcb/95j5//dlxv/3Zcb/92XG//dlxv/3Zcb/95j5//eY+f/3mPn/95j5//eY+f/3mPn/95j5//eY+Q=="),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("AAACAAwABgAFAA0ADgAPABAAEAARAA4AEgATABQAFQAUABMACAAWABcAFwAJAAgAGAAKABkACwAZAAoAGgAbABwAHAABABoAAQAdABoAHQADABoAHgAfACAABAAgAB8AIQAEAB8ABwAhAB8A"),
+"lods": [0.0175612, PackedByteArray("CAACAAAAAAAJAAgAAwAIAAkACQABAAMABgAKAAUACwAFAAoACgAHAAsABAALAAcA"), 0.021071, PackedByteArray("AAABAAIAAwACAAEABAAFAAYABgAHAAQA")],
+"material": ExtResource("1_1bj6t"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("AvcAAOTKH/xgPQAA/////wL3AAAAAB/8AAAAAHtg//9gPQAA//8AAAL3AADkyt8DAvcAAAAA3wMAAAAAe2AAAC5zAACROlnULnMAAFKQbNQucwAAkTqrKS5zAABSkL8p//8AAHJl/////wAAcmUAAPjO//+1DQDUAvcAAAAAPdIC9wAA5Mo90vjO//8uvQDUAvcAAAAAbyf4zv//tQ1PKQL3AADkym8n+M7//y69Tyn4zv//tQ2v1vjO//8uva/W+M7//7UN/iv4zv//Lr3+KwAAAACROv//LnMAAJE6yP4ucwAAUpDg/rUaAACjzv//LnMAAJE6NgEAAAAAkToAAC5zAABSkB4BtRoAAKPOAADpPSsE/3//v+k9KwT/f/+//3//PxXC0/sVwtP7/3//Pw+q3qsbqsareim81JEpx9T/f/+//3//P7HT2Clp0bQoadG0KLHT2Cl1UxRZh1TwVnVTFFmHVPBWd6sOqXerDqlNLCbWTSwm1v9//7+qflS/xH5hv/9//79UgapA/3//PzqBnUD/f/8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_40k45")
+
+[node name="KnifeTile" type="Node3D"]
+
+[node name="KnifeTile" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_a1jiw")
+skeleton = NodePath("")

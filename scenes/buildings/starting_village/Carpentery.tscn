@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bmgtij1tv55dc" path="res://assets/resources/npc/carpenter.tres" id="2_tfhhj"]
 [ext_resource type="MeshLibrary" uid="uid://bks62ytbem681" path="res://assets/tiles.tres" id="3_tfhhj"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_tfhhj"]
-[ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/LanternTile.tscn" id="5_gaysg"]
+[ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/MeshLibrary/decoration/LanternTile.tscn" id="5_gaysg"]
 
 [node name="Carpentery" type="Node3D"]
 

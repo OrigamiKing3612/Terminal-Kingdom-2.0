@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkseq54fylkak"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_la4lc"]
+albedo_color = Color(0.2, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vramr"]
+material = SubResource("StandardMaterial3D_la4lc")
+size = Vector3(2, 4, 2)
+
+[node name="ChairTile" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_vramr")
