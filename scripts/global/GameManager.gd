@@ -38,6 +38,7 @@ signal show_message(text: String)
 var move: bool = true
 var mode: Mode = Mode.Normal
 var random: RandomNumberGenerator
+var random_data: Dictionary
 
 var selectedItem: Item:
 	get:

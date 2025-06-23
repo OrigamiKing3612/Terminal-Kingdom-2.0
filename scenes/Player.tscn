@@ -68,6 +68,7 @@ spring_length = 3.0
 [node name="RayCast3D" type="RayCast3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47383e-19, 0.25, 8.2423e-13)
 target_position = Vector3(0, -1, -12)
+collision_mask = 9
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D"]
 transform = Transform3D(1, 1.04216e-14, -2.98023e-07, -1.04216e-14, 1, 1.42109e-14, 2.98023e-07, -1.42109e-14, 1, 8.94068e-08, -0.25, -0.5)

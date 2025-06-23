@@ -9,7 +9,6 @@ job = 10
 skill_level = 0
 experience = 0.0
 workplace = Vector3(0, 0, 0)
-behavior_type = 0
 age = 18
 gender = 0
 hunger = 100.0

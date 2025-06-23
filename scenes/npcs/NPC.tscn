@@ -229,9 +229,10 @@ dialogue = ExtResource("19_1tn1w")
 script = ExtResource("25_al60k")
 dialogue = ExtResource("26_nyq5k")
 
-[node name="Builder" type="Node" parent="StartingVillageJobs"]
+[node name="Builder" type="Node" parent="StartingVillageJobs" node_paths=PackedStringArray("brain")]
 script = ExtResource("29_arads")
 dialogue = ExtResource("30_o3k02")
+brain = NodePath("../../NPCBrain")
 stage2_axe = ExtResource("5_hsw7l")
 stage3_lumber_item = ExtResource("6_1tn1w")
 
@@ -310,12 +311,11 @@ target_position = Vector3(0, 0, -3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 0, -3)
 
-[node name="State" type="Node" parent="." node_paths=PackedStringArray("character", "mesh", "default_state", "movement", "brain")]
+[node name="State" type="Node" parent="." node_paths=PackedStringArray("character", "mesh", "movement", "brain")]
 script = ExtResource("32_fri4o")
 character = NodePath("..")
 mesh = NodePath("../Mesh")
 fall_gravity = 9.81
-default_state = NodePath("Wander")
 movement = NodePath("../NPCMovementController")
 brain = NodePath("../NPCBrain")
 
@@ -348,6 +348,7 @@ state_name = "Fall"
 [node name="Follow" type="Node" parent="State" node_paths=PackedStringArray("navigation")]
 script = ExtResource("47_32nht")
 navigation = NodePath("../../NavigationAgent3D")
+move_speed = 6.0
 state_name = "Follow"
 
 [node name="TalkToPlayer" type="Node" parent="State"]
@@ -356,8 +357,9 @@ script = ExtResource("48_hce30")
 [node name="NPCMovementController" type="Node" parent="."]
 script = ExtResource("36_kxny1")
 
-[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("state_machine", "raycast_lower", "raycast_upper", "movement_controller", "idle_state", "wander_state", "work_state", "defend_state", "jump_state", "fall_state", "follow_state", "talk_to_player", "current_goal")]
+[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("npc", "state_machine", "raycast_lower", "raycast_upper", "movement_controller", "idle_state", "wander_state", "work_state", "defend_state", "jump_state", "fall_state", "follow_state", "talk_to_player", "current_goal")]
 script = ExtResource("49_trpir")
+npc = NodePath("..")
 state_machine = NodePath("../State")
 raycast_lower = NodePath("../RayCast3D")
 raycast_upper = NodePath("../RayCast3D2")
@@ -370,7 +372,7 @@ jump_state = NodePath("../State/Jump")
 fall_state = NodePath("../State/Fall")
 follow_state = NodePath("../State/Follow")
 talk_to_player = NodePath("../State/TalkToPlayer")
-current_goal = NodePath("../State/Follow")
+current_goal = NodePath("../State/Idle")
 metadata/_custom_type_script = "uid://4kig3wewccmi"
 
 [connection signal="set_movement_direction" from="." to="State" method="_on_set_movement_direction"]

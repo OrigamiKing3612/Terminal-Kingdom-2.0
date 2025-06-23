@@ -5,7 +5,6 @@ extends Node
 @export var mesh: Node3D
 @export var rotation_speed: float = 8
 @export var fall_gravity: float = 45
-@export var default_state: NPCState
 @export var movement: NPCMovement
 
 @export var brain: NPCBrain
@@ -20,7 +19,7 @@ func init() -> void:
 			child.movement = movement
 			child.brain = brain
 		
-	change_state(default_state)
+	change_state(brain.current_goal)
 	
 func change_state(new_state: NPCState) -> void:
 	if current_state:

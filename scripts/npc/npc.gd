@@ -68,15 +68,15 @@ func _on_body_exited(body: Node3D) -> void:
 	marker.visible = false
 
 func _process(delta: float) -> void:
-	if not data.is_starting_village_npc:
-		var new_state = state.current_state.process(delta)
-		if new_state and new_state != state.current_state:
-			state.change_state(new_state)
+	#if not data.is_starting_village_npc:
+	var new_state = state.current_state.process(delta)
+	if new_state and new_state != state.current_state:
+		state.change_state(new_state)
 
 func _physics_process(delta: float) -> void:
-	if not data.is_starting_village_npc:
-		var new_state = state.current_state.physics_process(delta)
-		if new_state and new_state != state.current_state:
-			state.change_state(new_state)
+	#if not data.is_starting_village_npc:
+	var new_state = state.current_state.physics_process(delta)
+	if new_state and new_state != state.current_state:
+		state.change_state(new_state)
 	if marker.visible:
 		look_at(GameManager.player.position, Vector3.UP)

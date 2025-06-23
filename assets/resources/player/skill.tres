@@ -1,7 +1,14 @@
-[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://1150jny3axqx"]
+[gd_resource type="Resource" script_class="Skill" load_steps=5 format=3 uid="uid://1150jny3axqx"]
 
 [ext_resource type="Resource" uid="uid://b0m23aoykkwa7" path="res://assets/resources/player/skill/default_skill_progress.tres" id="1_pmfbq"]
 [ext_resource type="Script" uid="uid://di73pft3tur7l" path="res://scripts/resources/data/skill.gd" id="2_0pgp7"]
+[ext_resource type="Script" uid="uid://qqgmw1smifce" path="res://scripts/resources/data/skill_progress.gd" id="2_gi4u0"]
+
+[sub_resource type="Resource" id="Resource_hg862"]
+script = ExtResource("2_gi4u0")
+stage = 5
+level = 0
+metadata/_custom_type_script = "uid://qqgmw1smifce"
 
 [resource]
 script = ExtResource("2_0pgp7")
@@ -9,7 +16,7 @@ blacksmithing = ExtResource("1_pmfbq")
 mining = ExtResource("1_pmfbq")
 carpentry = ExtResource("1_pmfbq")
 farming = ExtResource("1_pmfbq")
-building = ExtResource("1_pmfbq")
+building = SubResource("Resource_hg862")
 sales = ExtResource("1_pmfbq")
 hunting = ExtResource("1_pmfbq")
 inventing = ExtResource("1_pmfbq")

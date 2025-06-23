@@ -11,7 +11,7 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
-func process_input(_event: InputEvent) -> NPCState:
+func process_input(event: InputEvent) -> NPCState:
 	return null
 	
 func physics_process(delta: float) -> NPCState:

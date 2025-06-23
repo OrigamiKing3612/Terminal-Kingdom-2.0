@@ -1,6 +1,7 @@
 extends Node
 class_name NPCBrain
 
+@export var npc: NPC
 @export var state_machine: Node
 @export var raycast_lower: RayCast3D
 @export var raycast_upper: RayCast3D

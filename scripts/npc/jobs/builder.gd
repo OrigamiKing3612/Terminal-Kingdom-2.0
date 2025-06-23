@@ -1,6 +1,7 @@
 extends Node
 
 @export var dialogue: DialogueResource
+@export var brain: NPCBrain
 
 @export_group("Quest IDs")
 @export var stage1_ID: String = "builder1"
@@ -38,7 +39,7 @@ func getStage():
 		2: stage2()
 		3: stage3()
 		4: stage4()
-		#5: stage5()
+		5: stage5()
 		
 		8: stage8()
 		9: stage9()
@@ -135,21 +136,36 @@ func stage4():
 			
 func stage5():
 	var quest = QuestManager.get_quest(stage5_ID)
+	if quest.quest_status != quest.QuestStatus.available:
+		if GameManager.random_data["builder5_done_building"]:
+			quest.reached_goal()
 	if quest == null:
 		return
 	match quest.quest_status:
 		quest.QuestStatus.available:
 			DialogueManager.show_dialogue_balloon(dialogue, "stage5_available")
+			quest.data["data"] = {"ready": false}
 			quest.start_quest()
 			QuestManager.update_quest(stage5_ID, quest)
+			brain.current_goal = brain.follow_state
+			GameManager.random_data["builder5_ready"] = false
+			GameManager.random_data["builder5_done_building"] = false
 		quest.QuestStatus.started:
-			DialogueManager.show_dialogue_balloon(dialogue, "stage5_started")
+			quest.data["data"]["ready"] = GameManager.random_data["builder5_ready"]
+			if not quest.data["data"]["ready"]:
+				var vars = [
+					{"ready": false}
+				]
+				await DialogueManager.show_dialogue_balloon(dialogue, "stage5_start", vars)
+				brain.current_goal = brain.idle_state
+			else:
+				DialogueManager.show_dialogue_balloon(dialogue, "stage5_started")
 		quest.QuestStatus.reached_goal:
 			GameManager.player.skill.blacksmithing.stage = 6
 			DialogueManager.show_dialogue_balloon(dialogue, "stage5_reached_goal")
 			quest.finish_quest()
+			print("Set to go back")
 			QuestManager.update_quest(stage5_ID, quest)
-	
 
 func stage8():
 	DialogueManager.show_dialogue_balloon(dialogue, "stage8_available")
