@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=59 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -48,6 +48,7 @@
 [ext_resource type="Resource" uid="uid://d2fgn7hftxltc" path="res://assets/resources/items/pot.tres" id="39_c4iby"]
 [ext_resource type="Resource" uid="uid://qlvgonuwhpnq" path="res://assets/resources/items/tiles/coin_item.tres" id="40_w8k3m"]
 [ext_resource type="Script" uid="uid://vrx5lumj4hkn" path="res://scripts/npc/state/follow.gd" id="47_32nht"]
+[ext_resource type="Script" uid="uid://u4ys1lqstct5" path="res://scripts/npc/state/walk_to_position.gd" id="48_1xj4w"]
 [ext_resource type="Script" uid="uid://cex8qu51w8jas" path="res://scripts/npc/state/talk_to_player.gd" id="48_hce30"]
 [ext_resource type="Script" uid="uid://4kig3wewccmi" path="res://scripts/npc/npc_brain.gd" id="49_trpir"]
 
@@ -229,10 +230,11 @@ dialogue = ExtResource("19_1tn1w")
 script = ExtResource("25_al60k")
 dialogue = ExtResource("26_nyq5k")
 
-[node name="Builder" type="Node" parent="StartingVillageJobs" node_paths=PackedStringArray("brain")]
+[node name="Builder" type="Node" parent="StartingVillageJobs" node_paths=PackedStringArray("brain", "npc")]
 script = ExtResource("29_arads")
 dialogue = ExtResource("30_o3k02")
 brain = NodePath("../../NPCBrain")
+npc = NodePath("../..")
 stage2_axe = ExtResource("5_hsw7l")
 stage3_lumber_item = ExtResource("6_1tn1w")
 
@@ -348,16 +350,22 @@ state_name = "Fall"
 [node name="Follow" type="Node" parent="State" node_paths=PackedStringArray("navigation")]
 script = ExtResource("47_32nht")
 navigation = NodePath("../../NavigationAgent3D")
-move_speed = 6.0
 state_name = "Follow"
+
+[node name="WalkToPosition" type="Node" parent="State" node_paths=PackedStringArray("navigation")]
+script = ExtResource("48_1xj4w")
+navigation = NodePath("../../NavigationAgent3D")
+state_name = "Walk To Position"
 
 [node name="TalkToPlayer" type="Node" parent="State"]
 script = ExtResource("48_hce30")
+state_name = "Talk to Player"
 
-[node name="NPCMovementController" type="Node" parent="."]
+[node name="NPCMovementController" type="Node" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("36_kxny1")
+character = NodePath("..")
 
-[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("npc", "state_machine", "raycast_lower", "raycast_upper", "movement_controller", "idle_state", "wander_state", "work_state", "defend_state", "jump_state", "fall_state", "follow_state", "talk_to_player", "current_goal")]
+[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("npc", "state_machine", "raycast_lower", "raycast_upper", "movement_controller", "idle_state", "wander_state", "work_state", "defend_state", "jump_state", "fall_state", "follow_state", "talk_to_player", "walk_to_position", "current_goal")]
 script = ExtResource("49_trpir")
 npc = NodePath("..")
 state_machine = NodePath("../State")
@@ -372,6 +380,7 @@ jump_state = NodePath("../State/Jump")
 fall_state = NodePath("../State/Fall")
 follow_state = NodePath("../State/Follow")
 talk_to_player = NodePath("../State/TalkToPlayer")
+walk_to_position = NodePath("../State/WalkToPosition")
 current_goal = NodePath("../State/Idle")
 metadata/_custom_type_script = "uid://4kig3wewccmi"
 

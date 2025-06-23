@@ -15,6 +15,7 @@ func process_input(event: InputEvent) -> NPCState:
 	return null
 	
 func physics_process(delta: float) -> NPCState:
+	print(state_name)
 	character.velocity.y += gravity * delta
 	character.move_and_slide()
 	
@@ -23,4 +24,4 @@ func physics_process(delta: float) -> NPCState:
 	
 	if not character.is_on_floor():
 		return brain.fall()
-	return null
+	return brain.current_goal

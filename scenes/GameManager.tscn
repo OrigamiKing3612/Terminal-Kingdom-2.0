@@ -90,9 +90,10 @@ script = ExtResource("13_55cbs")
 [node name="TabContainer" type="TabContainer" parent="Debug"]
 offset_right = 243.0
 offset_bottom = 976.0
-current_tab = 0
+current_tab = 1
 
 [node name="Items" type="ScrollContainer" parent="Debug/TabContainer"]
+visible = false
 layout_mode = 2
 horizontal_scroll_mode = 0
 metadata/_tab_index = 0
@@ -102,6 +103,13 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="Debug/TabContainer/Items/VBoxContainer"]
 visible = false
+layout_mode = 2
+
+[node name="Data" type="VBoxContainer" parent="Debug/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="Debug/TabContainer/Data"]
 layout_mode = 2
 
 [connection signal="build_back" from="." to="BuildingBox/HotBar" method="_on_build_back"]

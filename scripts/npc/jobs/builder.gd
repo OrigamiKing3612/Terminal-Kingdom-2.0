@@ -2,6 +2,7 @@ extends Node
 
 @export var dialogue: DialogueResource
 @export var brain: NPCBrain
+@export var npc: NPC
 
 @export_group("Quest IDs")
 @export var stage1_ID: String = "builder1"
@@ -27,7 +28,7 @@ func _ready() -> void:
 	QuestManager.register_quest(stage6_ID, $Stage6Quest)
 	QuestManager.register_quest(stage7_ID, $Stage7Quest)
 
-func talk(_data: NPCData) -> void:
+func talk() -> void:
 	getStage()
 
 func getStage():
@@ -136,8 +137,8 @@ func stage4():
 			
 func stage5():
 	var quest = QuestManager.get_quest(stage5_ID)
-	if quest.quest_status != quest.QuestStatus.available:
-		if GameManager.random_data["builder5_done_building"]:
+	if quest.quest_status != quest.QuestStatus.available and quest.quest_status != quest.QuestStatus.finished:
+		if GameManager.random_data["builder5"]["done_building"]:
 			quest.reached_goal()
 	if quest == null:
 		return
@@ -147,11 +148,11 @@ func stage5():
 			quest.data["data"] = {"ready": false}
 			quest.start_quest()
 			QuestManager.update_quest(stage5_ID, quest)
+			npc.data.workplace = brain.current_goal.character.position
 			brain.current_goal = brain.follow_state
-			GameManager.random_data["builder5_ready"] = false
-			GameManager.random_data["builder5_done_building"] = false
+			GameManager.random_data["builder5"] = {"ready": false, "done_building": false}
 		quest.QuestStatus.started:
-			quest.data["data"]["ready"] = GameManager.random_data["builder5_ready"]
+			quest.data["data"]["ready"] = GameManager.random_data["builder5"]["ready"]
 			if not quest.data["data"]["ready"]:
 				var vars = [
 					{"ready": false}
@@ -164,8 +165,10 @@ func stage5():
 			GameManager.player.skill.blacksmithing.stage = 6
 			DialogueManager.show_dialogue_balloon(dialogue, "stage5_reached_goal")
 			quest.finish_quest()
-			print("Set to go back")
+			brain.walk_to_position.position = npc.data.workplace
+			brain.current_goal = brain.walk_to_position
 			QuestManager.update_quest(stage5_ID, quest)
+			GameManager.random_data.erase("builder5")
 
 func stage8():
 	DialogueManager.show_dialogue_balloon(dialogue, "stage8_available")

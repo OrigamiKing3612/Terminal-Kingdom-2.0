@@ -16,6 +16,7 @@ class_name NPCBrain
 @export var fall_state: NPCState
 @export var follow_state: NPCState
 @export var talk_to_player: NPCState
+@export var walk_to_position: NPCState
 
 var previous_goal: NPCState
 @export_group("")
@@ -34,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	var lower_hit = raycast_lower.is_colliding()
 	var upper_hit = raycast_upper.is_colliding()
 
-	if lower_hit and not upper_hit and current_goal == follow_state:
+	if lower_hit and not upper_hit and (current_goal == follow_state or current_goal == walk_to_position):
 		movement_controller.set_wants_jump()
 	elif upper_hit:
 		movement_controller.wants_jump = false
@@ -53,6 +54,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	current_goal = talk_to_player
 	state_machine.current_state = talk_to_player
 
-
 func _on_area_3d_body_exited(body: Node3D) -> void:
+	state_machine.current_state = previous_goal
 	current_goal = previous_goal

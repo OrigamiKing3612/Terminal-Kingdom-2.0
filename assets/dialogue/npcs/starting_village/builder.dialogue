@@ -65,14 +65,14 @@ Builder: Now that we have permission, we can start building immediately! Can you
 ~ stage5_start
 Builder: Is here a good spot?
 - Yes
-	set GameManager.random_data["builder5_ready"] = true
+	set GameManager.random_data["builder5"]["ready"] = true
 - I'll keep looking
 	Builder: Ok just let me know!
 => END
 ~ stage5_started
 Builder: Are you finished? 
 - Yes 
-	set GameManager.random_data["builder5_done_building"] = true
+	set GameManager.random_data["builder5"]["done_building"] = true
 - No
 	Builder: Do you want to hear the instructions again?
 	- Yes
