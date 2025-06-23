@@ -66,6 +66,9 @@ Builder: Now that we have permission, we can start building immediately! Can you
 Builder: Is here a good spot?
 - Yes
 	set GameManager.random_data["builder5"]["ready"] = true
+	Builder: Here, take this stuff. This might be useful.
+	Builder: Let me know when you are done!
+
 - I'll keep looking
 	Builder: Ok just let me know!
 => END

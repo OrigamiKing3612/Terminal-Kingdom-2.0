@@ -70,6 +70,8 @@ func _on_body_exited(body: Node3D) -> void:
 func _process(delta: float) -> void:
 	#if not data.is_starting_village_npc:
 	var new_state = state.current_state.process(delta)
+	if data.job == Utils.Job.Builder:
+		print("Builder State: ", state.current_state.state_name)
 	if new_state and new_state != state.current_state:
 		state.change_state(new_state)
 

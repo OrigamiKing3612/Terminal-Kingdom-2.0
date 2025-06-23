@@ -90,10 +90,9 @@ script = ExtResource("13_55cbs")
 [node name="TabContainer" type="TabContainer" parent="Debug"]
 offset_right = 243.0
 offset_bottom = 976.0
-current_tab = 1
+current_tab = 0
 
 [node name="Items" type="ScrollContainer" parent="Debug/TabContainer"]
-visible = false
 layout_mode = 2
 horizontal_scroll_mode = 0
 metadata/_tab_index = 0
@@ -106,6 +105,7 @@ visible = false
 layout_mode = 2
 
 [node name="Data" type="VBoxContainer" parent="Debug/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

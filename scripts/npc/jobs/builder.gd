@@ -19,6 +19,9 @@ extends Node
 @export_group("Stage 3")
 @export var stage3_lumber_item: Item
 
+@export_group("Stage 5")
+@export var stage5_items: Array[Item]
+
 func _ready() -> void:
 	QuestManager.register_quest(stage1_ID, $Stage1Quest)
 	QuestManager.register_quest(stage2_ID, $Stage2Quest)
@@ -154,11 +157,17 @@ func stage5():
 		quest.QuestStatus.started:
 			quest.data["data"]["ready"] = GameManager.random_data["builder5"]["ready"]
 			if not quest.data["data"]["ready"]:
-				var vars = [
-					{"ready": false}
-				]
-				await DialogueManager.show_dialogue_balloon(dialogue, "stage5_start", vars)
-				brain.current_goal = brain.idle_state
+				print("balloon")
+				await DialogueManager.show_dialogue_balloon(dialogue, "stage5_start")
+				DialogueManager.dialogue_ended.connect(func(resource: DialogueResource):
+					if GameManager.random_data["builder5"]["ready"]:
+						print("after balloon, ")
+						quest.data["ids"] = []
+						for item in stage5_items:
+							quest.data["ids"].append(Utils.givePlayerCountOfItem(item, 30))
+						brain.current_goal = brain.idle_state
+					, CONNECT_ONE_SHOT
+				)
 			else:
 				DialogueManager.show_dialogue_balloon(dialogue, "stage5_started")
 		quest.QuestStatus.reached_goal:
