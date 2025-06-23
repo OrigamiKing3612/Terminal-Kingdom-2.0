@@ -2,41 +2,42 @@ extends NPCState
 
 @export var navigation: NavigationAgent3D
 @export var wander_radius: float = 10.0
-@export var wait_time: float = 1.5  # How long to pause before new target
+@export var timer: Timer
 
 var area_entered: bool = false
-
-var _wait_timer: float = 0.0
 
 func enter() -> void:
 	super()
 	area_entered = false
-	_wait_timer = 0.0
+	timer.one_shot = true
+	timer.timeout.connect(_on_timeout)
 	pick_new_destination()
 
 func exit() -> void:
-	_wait_timer = 0.0
+	timer.stop()
 
 func process(delta: float) -> NPCState:
-	#if area_entered:
-		#return idle_state
-	if _wait_timer > 0.0:
-		_wait_timer -= delta
-		if _wait_timer <= 0.0:
-			pick_new_destination()
-	else:
-		_wait_timer = wait_time
 	return null
 
 func physics_process(_delta: float) -> NPCState:
-	print(state_name)
 	if navigation.is_navigation_finished():
+		if not timer.is_stopped():
+			return null
+		timer.start()
 		return null
 
+	if not character.is_on_floor():
+		return brain.fall()
+		
+	if get_jump():
+		return brain.jump()
+	
 	var next_position = navigation.get_next_path_position()
 	var direction = (next_position - character.position).normalized()
 
 	character.velocity = direction * move_speed
+	character.look_at(Vector3(next_position.x, character.global_position.y, next_position.z), Vector3.UP)
+	
 	character.move_and_slide()
 	
 	return null
@@ -51,7 +52,5 @@ func pick_new_destination():
 	var target_position = character.position + random_offset
 	navigation.set_target_position(target_position)
 	
-	_wait_timer = wait_time
-
-func _on_area_3d_area_entered(_area: Area3D) -> void:
-	area_entered = true
+func _on_timeout():
+	pick_new_destination()

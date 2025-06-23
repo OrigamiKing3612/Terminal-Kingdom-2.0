@@ -15,6 +15,7 @@ signal set_movement_direction(_movement_state: Vector3)
 @onready var state: Node = $State
 @onready var npc_movement_controller: NPCMovement = $NPCMovementController
 @onready var npc_brain: NPCBrain = $NPCBrain
+@onready var area_3d: Area3D = $Area3D
 
 func _ready() -> void:
 	if data != null:

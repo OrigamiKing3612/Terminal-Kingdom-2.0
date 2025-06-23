@@ -22,7 +22,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and GameManager.move:
 		yaw += -event.relative.x * yaw_sensitivity
-		pitch += event.relative.y * pitch_sensitivity
+		pitch += -event.relative.y * pitch_sensitivity
 
 func _physics_process(_delta: float) -> void:
 	pitch = clamp(pitch, pitch_min, pitch_max)

@@ -20,7 +20,7 @@ radius = 0.07
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
 collision_layer = 2
-collision_mask = 13
+collision_mask = 65533
 floor_snap_length = 0.0
 script = ExtResource("1_onrkg")
 max_air_jump = 0

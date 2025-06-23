@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=58 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -48,6 +48,7 @@
 [ext_resource type="Resource" uid="uid://d2fgn7hftxltc" path="res://assets/resources/items/pot.tres" id="39_c4iby"]
 [ext_resource type="Resource" uid="uid://qlvgonuwhpnq" path="res://assets/resources/items/tiles/coin_item.tres" id="40_w8k3m"]
 [ext_resource type="Script" uid="uid://vrx5lumj4hkn" path="res://scripts/npc/state/follow.gd" id="47_32nht"]
+[ext_resource type="Script" uid="uid://cex8qu51w8jas" path="res://scripts/npc/state/talk_to_player.gd" id="48_hce30"]
 [ext_resource type="Script" uid="uid://4kig3wewccmi" path="res://scripts/npc/npc_brain.gd" id="49_trpir"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ak68"]
@@ -90,6 +91,8 @@ metadata/_custom_type_script = "uid://b0t1cg5rsfjuu"
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 4
 collision_mask = 2
+collision_priority = 2.0
+priority = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_3ak68")
@@ -312,7 +315,7 @@ script = ExtResource("32_fri4o")
 character = NodePath("..")
 mesh = NodePath("../Mesh")
 fall_gravity = 9.81
-default_state = NodePath("Follow")
+default_state = NodePath("Wander")
 movement = NodePath("../NPCMovementController")
 brain = NodePath("../NPCBrain")
 
@@ -320,10 +323,15 @@ brain = NodePath("../NPCBrain")
 script = ExtResource("33_fri4o")
 state_name = "Idle"
 
-[node name="Wander" type="Node" parent="State" node_paths=PackedStringArray("navigation")]
+[node name="Wander" type="Node" parent="State" node_paths=PackedStringArray("navigation", "timer")]
 script = ExtResource("34_jjats")
 navigation = NodePath("../../NavigationAgent3D")
+timer = NodePath("Timer")
 state_name = "Wander"
+
+[node name="Timer" type="Timer" parent="State/Wander"]
+wait_time = 1.5
+one_shot = true
 
 [node name="Work" type="Node" parent="State"]
 
@@ -342,19 +350,30 @@ script = ExtResource("47_32nht")
 navigation = NodePath("../../NavigationAgent3D")
 state_name = "Follow"
 
+[node name="TalkToPlayer" type="Node" parent="State"]
+script = ExtResource("48_hce30")
+
 [node name="NPCMovementController" type="Node" parent="."]
 script = ExtResource("36_kxny1")
 
-[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("state_machine", "raycast_lower", "raycast_upper", "movement_controller")]
+[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("state_machine", "raycast_lower", "raycast_upper", "movement_controller", "idle_state", "wander_state", "work_state", "defend_state", "jump_state", "fall_state", "follow_state", "talk_to_player", "current_goal")]
 script = ExtResource("49_trpir")
 state_machine = NodePath("../State")
 raycast_lower = NodePath("../RayCast3D")
 raycast_upper = NodePath("../RayCast3D2")
 movement_controller = NodePath("../NPCMovementController")
+idle_state = NodePath("../State/Idle")
+wander_state = NodePath("../State/Wander")
+work_state = NodePath("../State/Work")
+defend_state = NodePath("../State/Defend")
+jump_state = NodePath("../State/Jump")
+fall_state = NodePath("../State/Fall")
+follow_state = NodePath("../State/Follow")
+talk_to_player = NodePath("../State/TalkToPlayer")
+current_goal = NodePath("../State/Wander")
 metadata/_custom_type_script = "uid://4kig3wewccmi"
 
 [connection signal="set_movement_direction" from="." to="State" method="_on_set_movement_direction"]
 [connection signal="set_movement_state" from="." to="State" method="_on_set_movement_state"]
-[connection signal="area_entered" from="Area3D" to="State/Wander" method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="Area3D" to="NPCBrain" method="_on_area_3d_area_entered"]
-[connection signal="area_exited" from="Area3D" to="NPCBrain" method="_on_area_3d_area_exited"]
+[connection signal="body_entered" from="Area3D" to="NPCBrain" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="NPCBrain" method="_on_area_3d_body_exited"]
