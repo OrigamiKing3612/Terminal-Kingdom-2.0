@@ -93,8 +93,10 @@ Builder: This is what you need to do: Go pick an area and press 'b'. This will p
 Builder: Now that we have a house, we need to decorate the interior. Can you collect 30 lumber and bring it back to me?
 => END
 ~ stage6_started
-Builder: Uh oh, looks like you lost your axe, here is a new one.
-Builder: You are almost there, you you still need to get {{30}} lumber.
+if not has_axe:
+	Builder: Uh oh, looks like you lost your axe, here is a new one.
+else:
+	Builder: You are almost there, you you still need to get {{amount_left}} lumber.
 => END
 ~ stage6_reached_goal
 Builder: Great! You have collected the lumber! Now we can start decorating the inside.

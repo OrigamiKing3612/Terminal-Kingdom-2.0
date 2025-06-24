@@ -22,6 +22,12 @@ extends Node
 @export_group("Stage 5")
 @export var stage5_items: Array[Item]
 
+@export_group("Stage 6")
+@export var stage6_axe: Item
+
+@export_group("Stage 7")
+@export var stage7_items: Array[Item]
+
 func _ready() -> void:
 	QuestManager.register_quest(stage1_ID, $Stage1Quest)
 	QuestManager.register_quest(stage2_ID, $Stage2Quest)
@@ -44,7 +50,8 @@ func getStage():
 		3: stage3()
 		4: stage4()
 		5: stage5()
-		
+		6: stage6()
+		7: stage7()
 		8: stage8()
 		9: stage9()
 		_: push_warning("Unknown Stage")
@@ -117,7 +124,7 @@ func stage3():
 		quest.QuestStatus.started:
 			DialogueManager.show_dialogue_balloon(dialogue, "stage3_started")
 		quest.QuestStatus.reached_goal:
-			GameManager.player.skill.blacksmithing.stage = 4
+			GameManager.player.skill.building.stage = 4
 			DialogueManager.show_dialogue_balloon(dialogue, "stage3_reached_goal")
 			quest.finish_quest()
 			QuestManager.update_quest(stage3_ID, quest)
@@ -133,7 +140,7 @@ func stage4():
 		quest.QuestStatus.started:
 			DialogueManager.show_dialogue_balloon(dialogue, "stage4_started")
 		quest.QuestStatus.reached_goal:
-			GameManager.player.skill.blacksmithing.stage = 5
+			GameManager.player.skill.building.stage = 5
 			DialogueManager.show_dialogue_balloon(dialogue, "stage4_reached_goal")
 			quest.finish_quest()
 			QuestManager.update_quest(stage4_ID, quest)
@@ -157,7 +164,7 @@ func stage5():
 		quest.QuestStatus.started:
 			quest.data["data"]["ready"] = GameManager.random_data["builder5"]["ready"]
 			if not quest.data["data"]["ready"]:
-				await DialogueManager.show_dialogue_balloon(dialogue, "stage5_start")
+				DialogueManager.show_dialogue_balloon(dialogue, "stage5_start")
 				DialogueManager.dialogue_ended.connect(func(resource: DialogueResource):
 					if GameManager.random_data["builder5"]["ready"]:
 						quest.data["ids"] = []
@@ -169,14 +176,89 @@ func stage5():
 			else:
 				DialogueManager.show_dialogue_balloon(dialogue, "stage5_started")
 		quest.QuestStatus.reached_goal:
-			GameManager.player.skill.blacksmithing.stage = 6
+			GameManager.player.skill.building.stage = 6
 			DialogueManager.show_dialogue_balloon(dialogue, "stage5_reached_goal")
 			quest.finish_quest()
+			for id in quest.data["ids"]:
+				GameManager.player.removeItem(id)
+			quest.data["ids"] = []
+			quest.data.erase("data")
 			brain.walk_to_position.position = npc.data.workplace
 			brain.current_goal = brain.walk_to_position
 			QuestManager.update_quest(stage5_ID, quest)
 			GameManager.random_data.erase("builder5")
 
+func stage6():
+	var quest = QuestManager.get_quest(stage6_ID)
+	if quest == null:
+		return
+	if quest.quest_status == quest.QuestStatus.available:
+		DialogueManager.show_dialogue_balloon(dialogue, "stage6_available")
+		var id = Utils.givePlayerCountOfItem(stage6_axe, 1)
+		quest.data["axe_id"] = id
+		quest.start_quest()
+		QuestManager.update_quest(stage6_ID, quest)
+		return
+
+	var _hasCount = GameManager.player.has_count("Lumber", 30)
+	var has_enough: bool  = _hasCount[0]
+	var actual_count: int = _hasCount[1]
+
+	if not has_enough:
+		var axe_id = quest.data["axe_id"]
+		var has_axe := GameManager.player.hasID(axe_id)
+		var vars = [
+			{ "has_axe": has_axe },
+			{ "amount_left": (30 - actual_count) }
+		]
+		DialogueManager.show_dialogue_balloon(dialogue, "stage6_started", vars)
+		return
+	else:
+		quest.reached_goal()
+		GameManager.player.skill.building.stage = 6
+		DialogueManager.show_dialogue_balloon(dialogue, "stage6_reached_goal")
+		quest.finish_quest()
+		QuestManager.update_quest(stage6_ID, quest)
+		return
+
+func stage7():
+	var quest = QuestManager.get_quest(stage7_ID)
+	if quest.quest_status != quest.QuestStatus.available and quest.quest_status != quest.QuestStatus.finished:
+		if GameManager.random_data["builder7"]["done_building"]:
+			quest.reached_goal()
+	if quest == null:
+		return
+	match quest.quest_status:
+		quest.QuestStatus.available:
+			DialogueManager.show_dialogue_balloon(dialogue, "stage7_available")
+			quest.data["data"] = {"ready": false}
+			quest.start_quest()
+			QuestManager.update_quest(stage7_ID, quest)
+			GameManager.random_data["builder5"] = {"ready": false, "done_building": false}
+		quest.QuestStatus.started:
+			quest.data["data"]["ready"] = GameManager.random_data["builder7"]["ready"]
+			if not quest.data["data"]["ready"]:
+				DialogueManager.show_dialogue_balloon(dialogue, "stage5_start")
+				DialogueManager.dialogue_ended.connect(func(resource: DialogueResource):
+					if GameManager.random_data["builder7"]["ready"]:
+						quest.data["ids"] = []
+						for item in stage7_items:
+							quest.data["ids"].append(Utils.givePlayerCountOfItem(item, 1))
+					, CONNECT_ONE_SHOT
+				)
+			else:
+				DialogueManager.show_dialogue_balloon(dialogue, "stage7_started")
+		quest.QuestStatus.reached_goal:
+			GameManager.player.skill.building.stage = 8
+			DialogueManager.show_dialogue_balloon(dialogue, "stage7_reached_goal")
+			quest.finish_quest()
+			for id in quest.data["ids"]:
+				GameManager.player.removeItem(id)
+			quest.data["ids"] = []
+			quest.data.erase("data")
+			QuestManager.update_quest(stage7_ID, quest)
+			GameManager.random_data.erase("builder7")
+	
 func stage8():
 	DialogueManager.show_dialogue_balloon(dialogue, "stage8_available")
 	GameManager.player.skill.building.stage = 9

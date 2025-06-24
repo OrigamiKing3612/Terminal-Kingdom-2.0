@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=73 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
@@ -45,8 +45,11 @@
 [ext_resource type="Script" uid="uid://dvhwvjh7so7u1" path="res://scripts/npc/movement/npc_movement.gd" id="36_kxny1"]
 [ext_resource type="Script" uid="uid://bbuv5reu72d4a" path="res://scripts/npc/jobs/potter.gd" id="37_in5ox"]
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="37_ku4y3"]
+[ext_resource type="Resource" uid="uid://cks46e1silgmv" path="res://assets/resources/items/bed.tres" id="38_5e71h"]
 [ext_resource type="Resource" uid="uid://dbue8hsvrop8p" path="res://assets/dialogue/npcs/starting_village/potter.dialogue" id="38_rr88e"]
+[ext_resource type="Resource" uid="uid://bkefr1djc12ha" path="res://assets/resources/items/chest.tres" id="39_0vihe"]
 [ext_resource type="Resource" uid="uid://d2fgn7hftxltc" path="res://assets/resources/items/pot.tres" id="39_c4iby"]
+[ext_resource type="Resource" uid="uid://da7h6g8vb1drb" path="res://assets/resources/items/desk.tres" id="40_srj83"]
 [ext_resource type="Resource" uid="uid://qlvgonuwhpnq" path="res://assets/resources/items/tiles/coin_item.tres" id="40_w8k3m"]
 [ext_resource type="Script" uid="uid://vrx5lumj4hkn" path="res://scripts/npc/state/follow.gd" id="47_32nht"]
 [ext_resource type="Script" uid="uid://u4ys1lqstct5" path="res://scripts/npc/state/walk_to_position.gd" id="48_1xj4w"]
@@ -150,6 +153,21 @@ texture_2d = SubResource("ImageTexture_pppuw")
 max_amount_per_stack = 50
 gridmap_id = 26
 seed = 0
+
+[sub_resource type="Resource" id="Resource_ku4y3"]
+script = ExtResource("24_w1xlh")
+durability = 30
+broken_texture_2d = ExtResource("24_w8k3m")
+tool_type = 1
+name = &"Axe"
+price = 10
+can_be_sold = true
+is_buildable = false
+texture_2d = ExtResource("26_32nht")
+max_amount_per_stack = 1
+gridmap_id = 0
+seed = 0
+metadata/_custom_type_script = "uid://cqsvdpbt83m3i"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
 size = Vector3(1.6, 2, 1.6)
@@ -308,6 +326,8 @@ npc = NodePath("../..")
 stage2_axe = ExtResource("5_hsw7l")
 stage3_lumber_item = ExtResource("6_1tn1w")
 stage5_items = Array[ExtResource("37_ku4y3")]([SubResource("Resource_s46wf"), SubResource("Resource_0vihe"), SubResource("Resource_p7g8q")])
+stage6_axe = SubResource("Resource_ku4y3")
+stage7_items = Array[ExtResource("37_ku4y3")]([ExtResource("38_5e71h"), ExtResource("39_0vihe"), ExtResource("40_srj83")])
 
 [node name="Stage1Quest" type="Node" parent="StartingVillageJobs/Builder"]
 script = ExtResource("4_i3n4k")
