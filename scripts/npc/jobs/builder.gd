@@ -28,6 +28,9 @@ extends Node
 @export_group("Stage 7")
 @export var stage7_items: Array[Item]
 
+@export_group("Stage 9")
+@export var stage9_item_courthouse_tile: Item
+
 func _ready() -> void:
 	QuestManager.register_quest(stage1_ID, $Stage1Quest)
 	QuestManager.register_quest(stage2_ID, $Stage2Quest)
@@ -165,7 +168,7 @@ func stage5():
 			quest.data["data"]["ready"] = GameManager.random_data["builder5"]["ready"]
 			if not quest.data["data"]["ready"]:
 				DialogueManager.show_dialogue_balloon(dialogue, "stage5_start")
-				DialogueManager.dialogue_ended.connect(func(resource: DialogueResource):
+				DialogueManager.dialogue_ended.connect(func(_resource: DialogueResource):
 					if GameManager.random_data["builder5"]["ready"]:
 						quest.data["ids"] = []
 						for item in stage5_items:
@@ -234,12 +237,12 @@ func stage7():
 			quest.data["data"] = {"ready": false}
 			quest.start_quest()
 			QuestManager.update_quest(stage7_ID, quest)
-			GameManager.random_data["builder5"] = {"ready": false, "done_building": false}
+			GameManager.random_data["builder7"] = {"ready": false, "done_building": false}
 		quest.QuestStatus.started:
 			quest.data["data"]["ready"] = GameManager.random_data["builder7"]["ready"]
 			if not quest.data["data"]["ready"]:
-				DialogueManager.show_dialogue_balloon(dialogue, "stage5_start")
-				DialogueManager.dialogue_ended.connect(func(resource: DialogueResource):
+				DialogueManager.show_dialogue_balloon(dialogue, "stage7_start")
+				DialogueManager.dialogue_ended.connect(func(_resource: DialogueResource):
 					if GameManager.random_data["builder7"]["ready"]:
 						quest.data["ids"] = []
 						for item in stage7_items:
@@ -266,4 +269,5 @@ func stage8():
 func stage9():
 	DialogueManager.show_dialogue_balloon(dialogue, "stage9_available")
 	GameManager.player.skill.building.stage = 10
+	Utils.givePlayerCountOfItem(stage9_item_courthouse_tile, 1)
 	
