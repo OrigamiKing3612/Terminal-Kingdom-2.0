@@ -19,14 +19,19 @@ class_name NPCBrain
 @export var walk_to_position: NPCState
 
 @export_group("")
-@export var current_goal: NPCState
+@export var current_goal: NPCState:
+	set(newValue):
+		previous_goal = current_goal
+		current_goal = newValue
 var previous_goal: NPCState
 
 func _ready() -> void:
-	pass
+	state_machine.current_state = current_goal
+	state_machine.init()
 
 func _process(_delta: float) -> void:
-	pass
+	if npc.data.job == Utils.Job.Builder:
+		print("Builder State: current state: %s, current goal: %s" % [state_machine.current_state.state_name, current_goal.state_name])
 	
 func _physics_process(delta: float) -> void:
 	var lower_hit = raycast_lower.is_colliding()
@@ -38,6 +43,11 @@ func _physics_process(delta: float) -> void:
 		movement_controller.wants_jump = false
 	else:
 		movement_controller.wants_jump = false
+	
+	if not npc.is_on_floor() and current_goal != jump_state:
+		current_goal = fall_state
+	elif npc.is_on_floor() and current_goal == fall_state:
+		current_goal = previous_goal
 
 # return null if can not jump
 func jump() -> NPCState:
@@ -50,8 +60,8 @@ func fall() -> NPCState:
 func _on_area_3d_body_entered(_body: Node3D) -> void:
 	previous_goal = current_goal
 	current_goal = talk_to_player
-	state_machine.current_state = talk_to_player
+	state_machine.change_state(talk_to_player)
 
 func _on_area_3d_body_exited(_body: Node3D) -> void:
-	state_machine.current_state = previous_goal
+	state_machine.change_state(previous_goal)
 	current_goal = previous_goal

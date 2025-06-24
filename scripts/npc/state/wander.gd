@@ -16,15 +16,12 @@ func enter() -> void:
 func exit() -> void:
 	timer.stop()
 
-func process(delta: float) -> NPCState:
-	return null
-
-func physics_process(_delta: float) -> NPCState:
+func physics_process(_delta: float) -> void:
 	if navigation.is_navigation_finished():
 		if not timer.is_stopped():
-			return null
+			return
 		timer.start()
-		return null
+		return
 
 	if not character.is_on_floor():
 		return brain.fall()
@@ -39,8 +36,6 @@ func physics_process(_delta: float) -> NPCState:
 	character.look_at(Vector3(next_position.x, character.global_position.y, next_position.z), Vector3.UP)
 	
 	character.move_and_slide()
-	
-	return null
 
 
 func pick_new_destination():

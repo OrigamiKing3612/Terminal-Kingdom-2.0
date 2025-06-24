@@ -157,11 +157,9 @@ func stage5():
 		quest.QuestStatus.started:
 			quest.data["data"]["ready"] = GameManager.random_data["builder5"]["ready"]
 			if not quest.data["data"]["ready"]:
-				print("balloon")
 				await DialogueManager.show_dialogue_balloon(dialogue, "stage5_start")
 				DialogueManager.dialogue_ended.connect(func(resource: DialogueResource):
 					if GameManager.random_data["builder5"]["ready"]:
-						print("after balloon, ")
 						quest.data["ids"] = []
 						for item in stage5_items:
 							quest.data["ids"].append(Utils.givePlayerCountOfItem(item, 30))

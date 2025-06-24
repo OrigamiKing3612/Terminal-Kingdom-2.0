@@ -19,14 +19,11 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
-func process_input(_event: InputEvent) -> NPCState:
-	return null
-
-func process(_delta: float) -> NPCState:
-	return null
+func process(_delta: float) -> void:
+	pass
 	
-func physics_process(_delta: float) -> NPCState:
-	return null
+func physics_process(_delta: float) -> void:
+	pass
 
 # Used for overriding the input
 func get_movement_input() -> Vector3:

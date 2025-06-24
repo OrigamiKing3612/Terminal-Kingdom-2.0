@@ -7,13 +7,13 @@ func enter() -> void:
 	super()
 	character_to_follow = get_tree().get_first_node_in_group("Player")
 
-func physics_process(_delta: float) -> NPCState:
+func physics_process(_delta: float) -> void:
 	if not character_to_follow:
 		print("No character to follow")
-		return null
+		return
 	if not character:
 		print("No character to move")
-		return null
+		return
 	var distance_to_player := character.global_position.distance_to(character_to_follow.global_position)
 
 	if distance_to_player > navigation.path_desired_distance:
@@ -25,16 +25,9 @@ func physics_process(_delta: float) -> NPCState:
 		character.velocity.z = 0.0
 
 	if navigation.is_navigation_finished():
-		return null
-	
-	if not character.is_on_floor():
-		return brain.fall()
+		return
 
 	var next_position = navigation.get_next_path_position()
-	
-	if get_jump():
-		return brain.jump()
-	
 
 	var new_velocity = (next_position - character.global_position).normalized() * move_speed
 	character.velocity.x = new_velocity.x
@@ -42,5 +35,3 @@ func physics_process(_delta: float) -> NPCState:
 	character.look_at(Vector3(character_to_follow.global_position.x, character.global_position.y, character_to_follow.global_position.z), Vector3.UP)
 	#character.look_at(next_position)
 	character.move_and_slide()
-	
-	return null

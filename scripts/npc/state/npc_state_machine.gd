@@ -18,13 +18,28 @@ func init() -> void:
 			child.animations = animations
 			child.movement = movement
 			child.brain = brain
-		
-	change_state(brain.current_goal)
 	
 func change_state(new_state: NPCState) -> void:
+	if not new_state:
+		return
 	if current_state:
 		current_state.exit()
 	
 	current_state = new_state
-	current_state.enter()
+	if current_state:
+		current_state.enter()
+		
+func _process(delta: float) -> void:
+	if not current_state:
+		push_warning("No current state")
+		return
+	if current_state != brain.current_goal:
+		change_state(brain.current_goal)
 	
+	current_state.process(delta)
+
+func _physics_process(delta: float) -> void:
+	if not current_state:
+		push_warning("No current state")
+		return
+	current_state.physics_process(delta)

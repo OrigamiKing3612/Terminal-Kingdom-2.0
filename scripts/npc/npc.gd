@@ -25,7 +25,6 @@ func _ready() -> void:
 	var shape = BoxShape3D.new()
 	shape.size = talkable_area
 	collision_shape_3d.shape = shape
-	state.init()
 
 func interact() -> void:
 	if data == null:
@@ -66,19 +65,3 @@ func _on_body_exited(body: Node3D) -> void:
 	if not body.is_in_group("Player"):
 		return
 	marker.visible = false
-
-func _process(delta: float) -> void:
-	#if not data.is_starting_village_npc:
-	var new_state = state.current_state.process(delta)
-	if data.job == Utils.Job.Builder:
-		print("Builder State: ", state.current_state.state_name)
-	if new_state and new_state != state.current_state:
-		state.change_state(new_state)
-
-func _physics_process(delta: float) -> void:
-	#if not data.is_starting_village_npc:
-	var new_state = state.current_state.physics_process(delta)
-	if new_state and new_state != state.current_state:
-		state.change_state(new_state)
-	if marker.visible:
-		look_at(GameManager.player.position, Vector3.UP)
