@@ -1,26 +1,18 @@
-[gd_scene load_steps=5 format=4 uid="uid://bkseq54fylkak"]
+[gd_scene load_steps=6 format=4 uid="uid://bkseq54fylkak"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_la4lc"]
-load_path = "res://.godot/imported/StaticTiles_chair-albedo.png-4223ce81ee363b0313b798086cbf84e2.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhj88"]
-resource_name = "WorkbenchMaterial"
-transparency = 4
-cull_mode = 2
-albedo_texture = SubResource("CompressedTexture2D_la4lc")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://bg645irsg2san" path="res://assets/resources/materials/decoration/ChairMaterial.tres" id="1_vramr"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_uwvgp"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 3.7, 2),
 "format": 34896613377,
-"index_count": 66,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABQABAAMAAgAGAAQAAQAHAAIAAgAHAAYAAQAIAAcABwAJAAYABwAIAAkABAAGAAkACgAIAAEACgAJAAgAAQAFAAoABAAJAAoACgAFAAsACwAEAAoABQAMAAsACwAMAAQADAAAAAQABQANAAwAAAAMAA0A"),
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAABAAMABQAAAAIABgAAAAUAAAAGAAcABAAHAAYABAAGAAgACAAGAAUACQAEAAgAAQAEAAkACAAFAAkAAgABAAkAAgAJAAUACQAKAAEAAgALAAUABQAMAAkACQAMAAoABQALAAwAAQAKAA0AAQANAAIADQAKAAwAAgANAAsADQAMAAsADgAPABAADgARAA8AEgATABQAEgAVABMA"),
 "name": "WorkbenchMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 14,
-"vertex_data": PackedByteArray("AAAAAP//AAAAAGCKAAAAAAAAYIr//wAAAAAAAAAAAAD/P2CK//8AAP//AAAAAAAA/z//////AAAAAP////8AAAAA//8AAAAA/z///wAAAAD/P2CKAAAAAP//YIoAAAAA//9giv//AAD//wAA//8AAA==")
+"vertex_count": 22,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAGCKAAAAAAAAYIr//wAAAAAAAAAAAAD//wAAAAAAAP8/YIr//wAA//9giv//AAD//wAA//8AAP//YIoAAAAA/z9gigAAAAAAAP//AAAAAP8//////wAA/z///wAAAAAAAP////8AAAAA+7H//wAA/z/7sQAAAAD/P/ux//8AAAAA+7EAAAAAAABiw///AAD/P2LDAAAAAP8/YsP//wAAAABiwwAAAAA=")
 }]
 blend_shape_mode = 0
 
@@ -28,23 +20,39 @@ blend_shape_mode = 0
 resource_name = "StaticTiles_Cube_077"
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 3.7, 2),
-"attribute_data": PackedByteArray("AAD/////qqoAAKqq//////////8AAKqqAAD///8/qqr//6qq/////wAAqqr//6qqAAD//wAA/////6qq//////8/qqoAAKqq/5+Eq/9f/GL/X4Sr/5/8YsmyAAABS2CKAUsAAMmyYIr/X6qq/59VVf+fqqr/X1VV//+EqwAA/GIAAISr///8YgAAhKv///xi//+EqwAA/GL/X4Sr/5/8Yv+fhKv/X/xi"),
+"attribute_data": PackedByteArray("AAD/////qqoAAKqq//////////8AAKqqAAD///8/qqr//6qq/////wAAqqr//6qqAAD//wAA/////6qq//////8/qqoAAKqq//+Eq/+//GL/v4Sr///8YgAA/1////+fAAD/n/7//1//X6qq/59VVf+fqqr/X1VV//+ISAAAAAAAAIhI//8AAAAAiEj//wAA//+ISAAAAAAAAISr/z/8Yv8/hKsAAPxi/1+qqv+fVVX/n6qq/19VVf9fqqr/n1VV/5+qqv9fVVX/X6qq/59VVf+fqqr/X1VV"),
 "format": 34896613399,
-"index_count": 66,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABwAEAAgACQAKAAsACQAMAAoADQAOAA8ADgANABAAEAANABEAEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsAHgAfACAAHgAhAB8AIgAjACQAIgAlACMAJgAnACgAJgApACcA"),
-"material": SubResource("StandardMaterial3D_mhj88"),
-"name": "WorkbenchMaterial",
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABwAEAAgACQAKAAsACQAMAAoADQAOAA8ADgANABAAEAANABEAEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsAHgAfACAAHgAhAB8AIgAjACQAIgAlACMAJgAnACgAJgApACcAKgArACwAKgAtACsALgAvADAALgAxAC8AMgAzADQAMgA1ADMA"),
+"material": ExtResource("1_vramr"),
+"name": "ChairMaterial",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 42,
-"vertex_data": PackedByteArray("AAAAAP//AAAAAGCKAAAAAAAAYIr//wAAAAAAAAAAAAD//wAAAAAAAAAAYIoAAAAAAAAAAAAAAAD/P2CKAAAAAP//YIoAAAAA//8AAAAA/7///2CK////v///YIoAAP+///8AAP///78AAAAA//8AgP//YIr//wCA//8AAP//AID/P2CK//8AgAAAYIr//wCA/z9gigAAAAAAAP//AAAAAAAAYIoAAAAA/z///wAAAAD//2CKAAD/v/8/YIr///+//z9gigAA/7///2CK////vwAA//////+//z///wAA/7//P///////vwAA//8AAP+/AABgigAAAAAAAP////8AAAAAYIr//wAAAAD//wAAAAD/P2CK////v/8///8AAP+//z9gigAA/7//P///////vwAAYIr//wCA/z//////AID/P2CK//8AgAAA/////wCA/z//f/8//3//P/9//z//f////3////9/////f////3////9//38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f///////f////3////9/////f////3////9/////f////3////9/////f////3////9//z//f/8//3//P/9//z//f/9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///")
+"vertex_count": 54,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAGCKAAAAAAAAYIr//wAAAAAAAAAAAAD//wAAAAAAAAAAYIoAAAAAAAAAAAAAAAD/P2CKAAAAAP//YIoAAAAA//8AAAAA/7///2CK////v///YIoAAP+///8AAP///78AAAAA//8AgP//YIr//wCA//8AAP//AID/P2CK//8AgAAAYIr//wCA/z9gigAAAAAAAP//AAAAAAAAYIoAAAAA/z///wAAAAD//2CKAABU1f8/YIr//1TV/z9gigAAVNX//2CK//9U1QAA//////+//z///wAA/7//P///////vwAA//8AAP+/AABgigAAAAAAAP////8AAAAAYIr//wAAAAD//wAAAAD/P2CK////v/8///8AAP+//z9gigAA/7//P///////vwAAYIr//wCA/z//////AID/P2CK//8AgAAA/////wCAAABgiv///7//P2CKAAD/v/8/YIr///+/AABgigAA/78AAPux////v/8/+7EAAP+//z/7sf///78AAPuxAAD/vwAAYsP///+//z9iwwAA/7//P2LD////vwAAYsMAAP+//z//f/8//3//P/9//z//f////3////9/////f////3////9//38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f///////f////3////9/////f6qqqqqqqqqqqqqqqqqqqqr///9/////f////3////9//z//f/8//3//P/9//z//f/9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///////f////3////9/////f////3////9/////f////3////9/////f////3////9/")
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_uwvgp")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vramr"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eran1"]
+size = Vector3(0.5, 2.4, 2)
+
 [node name="ChairTile" type="Node3D"]
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("ArrayMesh_3i1fg")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_vramr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 1.7, 0)
+shape = SubResource("BoxShape3D_eran1")

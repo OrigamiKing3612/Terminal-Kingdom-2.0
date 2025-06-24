@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bg645irsg2san"]
+
+[resource]
+resource_name = "WorkbenchMaterial"
+transparency = 4
+cull_mode = 2
+texture_filter = 2

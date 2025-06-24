@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=4 uid="uid://biusngccco6e0"]
 
 [ext_resource type="Texture2D" uid="uid://dduxon30vpfg2" path="res://assets/models/FurnaceTile_small-log.png" id="1_0bckp"]
-[ext_resource type="Script" uid="uid://7dggtv6j2chd" path="res://scripts/tiles/furnace/furnace_tile.gd" id="1_2vxjl"]
 [ext_resource type="Script" uid="uid://d0nfaymvottcp" path="res://scripts/tiles/furnace/FurnaceTile.gd" id="1_a25ud"]
 [ext_resource type="PackedScene" uid="uid://ctajdwqvt83xr" path="res://scenes/ui/workstations/WorkstationScreen.tscn" id="2_n8osn"]
+[ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/interactable.gd" id="3_a25ud"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cg444"]
 size = Vector3(2, 4, 2)
@@ -92,7 +92,7 @@ script = ExtResource("1_a25ud")
 furnace_screen = ExtResource("2_n8osn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-script = ExtResource("1_2vxjl")
+script = ExtResource("3_a25ud")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
