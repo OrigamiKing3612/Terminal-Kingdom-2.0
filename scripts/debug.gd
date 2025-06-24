@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var tab_container: TabContainer = $TabContainer
 @onready var items_container: VBoxContainer = $TabContainer/Items/VBoxContainer
 @onready var button: Button = $TabContainer/Items/VBoxContainer/Button
+@onready var debug_postion_label: Label = $TabContainer/Data/Label
 
 const items_dir := "res://assets/resources/items/"
 
@@ -18,9 +19,8 @@ func _ready() -> void:
 func _on_item_button_pressed(item: Item):
 	Utils.givePlayerCountOfItem(item, 1)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	debug_postion_label.text = "Position: %s" % GameManager.player.position
 
 func get_all_resources_from_folder(path: String) -> Array:
 	var dir = DirAccess.open(path)

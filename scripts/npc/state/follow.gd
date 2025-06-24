@@ -8,6 +8,12 @@ func enter() -> void:
 	character_to_follow = get_tree().get_first_node_in_group("Player")
 
 func physics_process(_delta: float) -> NPCState:
+	if not character_to_follow:
+		print("No character to follow")
+		return null
+	if not character:
+		print("No character to move")
+		return null
 	var distance_to_player := character.global_position.distance_to(character_to_follow.global_position)
 
 	if distance_to_player > navigation.path_desired_distance:

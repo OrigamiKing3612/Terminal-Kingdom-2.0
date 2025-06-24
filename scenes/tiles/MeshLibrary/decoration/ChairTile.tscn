@@ -1,13 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkseq54fylkak"]
+[gd_scene load_steps=5 format=4 uid="uid://bkseq54fylkak"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_la4lc"]
-albedo_color = Color(0.2, 1, 1, 1)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_la4lc"]
+load_path = "res://.godot/imported/StaticTiles_chair-albedo.png-4223ce81ee363b0313b798086cbf84e2.s3tc.ctex"
 
-[sub_resource type="BoxMesh" id="BoxMesh_vramr"]
-material = SubResource("StandardMaterial3D_la4lc")
-size = Vector3(2, 4, 2)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhj88"]
+resource_name = "WorkbenchMaterial"
+transparency = 4
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_la4lc")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uwvgp"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 3.7, 2),
+"format": 34896613377,
+"index_count": 66,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABQABAAMAAgAGAAQAAQAHAAIAAgAHAAYAAQAIAAcABwAJAAYABwAIAAkABAAGAAkACgAIAAEACgAJAAgAAQAFAAoABAAJAAoACgAFAAsACwAEAAoABQAMAAsACwAMAAQADAAAAAQABQANAAwAAAAMAA0A"),
+"name": "WorkbenchMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAGCKAAAAAAAAYIr//wAAAAAAAAAAAAD/P2CK//8AAP//AAAAAAAA/z//////AAAAAP////8AAAAA//8AAAAA/z///wAAAAD/P2CKAAAAAP//YIoAAAAA//9giv//AAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3i1fg"]
+resource_name = "StaticTiles_Cube_077"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 3.7, 2),
+"attribute_data": PackedByteArray("AAD/////qqoAAKqq//////////8AAKqqAAD///8/qqr//6qq/////wAAqqr//6qqAAD//wAA/////6qq//////8/qqoAAKqq/5+Eq/9f/GL/X4Sr/5/8YsmyAAABS2CKAUsAAMmyYIr/X6qq/59VVf+fqqr/X1VV//+EqwAA/GIAAISr///8YgAAhKv///xi//+EqwAA/GL/X4Sr/5/8Yv+fhKv/X/xi"),
+"format": 34896613399,
+"index_count": 66,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABwAEAAgACQAKAAsACQAMAAoADQAOAA8ADgANABAAEAANABEAEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsAHgAfACAAHgAhAB8AIgAjACQAIgAlACMAJgAnACgAJgApACcA"),
+"material": SubResource("StandardMaterial3D_mhj88"),
+"name": "WorkbenchMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 42,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAGCKAAAAAAAAYIr//wAAAAAAAAAAAAD//wAAAAAAAAAAYIoAAAAAAAAAAAAAAAD/P2CKAAAAAP//YIoAAAAA//8AAAAA/7///2CK////v///YIoAAP+///8AAP///78AAAAA//8AgP//YIr//wCA//8AAP//AID/P2CK//8AgAAAYIr//wCA/z9gigAAAAAAAP//AAAAAAAAYIoAAAAA/z///wAAAAD//2CKAAD/v/8/YIr///+//z9gigAA/7///2CK////vwAA//////+//z///wAA/7//P///////vwAA//8AAP+/AABgigAAAAAAAP////8AAAAAYIr//wAAAAD//wAAAAD/P2CK////v/8///8AAP+//z9gigAA/7//P///////vwAAYIr//wCA/z//////AID/P2CK//8AgAAA/////wCA/z//f/8//3//P/9//z//f////3////9/////f////3////9//38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f///////f////3////9/////f////3////9/////f////3////9/////f////3////9//z//f/8//3//P/9//z//f/9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_uwvgp")
 
 [node name="ChairTile" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_vramr")
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("ArrayMesh_3i1fg")
+skeleton = NodePath("")

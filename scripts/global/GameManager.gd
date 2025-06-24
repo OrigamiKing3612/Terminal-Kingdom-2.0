@@ -5,7 +5,6 @@ extends Node
 @onready var toolbelt_box: CanvasLayer = $ToolbeltBox
 @onready var toolbelt: ToolbeltNode = $ToolbeltBox/ToolbeltNode
 @onready var debug: CanvasLayer = $Debug
-@onready var debug_postion_label: Label = $Debug/TabContainer/Data/Label
 
 @export var selected_item_index: int = 0:
 	set(value):
@@ -47,9 +46,6 @@ var selectedItem: Item:
 var rotation: Vector3i = Vector3i(0,0,0)
 
 enum Mode{Normal, Inventory, Build, Mining, Speaking, InPopUp}
-
-func _process(_delta: float) -> void:
-	debug_postion_label.text = "Position: %s" % player.position
 
 func _ready() -> void:
 	player = player.duplicate(true)

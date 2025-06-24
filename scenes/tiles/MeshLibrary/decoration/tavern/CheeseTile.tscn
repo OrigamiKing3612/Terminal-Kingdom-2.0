@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://depjx22ti1kfa"]
+[gd_scene load_steps=27 format=4 uid="uid://depjx22ti1kfa"]
 
 [ext_resource type="Material" uid="uid://cx1nfhvrbikew" path="res://assets/resources/materials/FoodMaterial.tres" id="1_n6bb7"]
 
@@ -66,11 +66,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_md5hc")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5kou"]
-resource_name = "colormap"
-cull_mode = 2
-texture_filter = 2
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_5ljgn"]
 _surfaces = [{
 "aabb": AABB(-0.294449, 4.08895e-17, -0.294449, 0.294449, 0.22, 0.294449),
@@ -85,7 +80,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_uysow"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_fyd27"]
 resource_name = "cheese_wedge3"
 _surfaces = [{
 "aabb": AABB(-0.294449, 4.08895e-17, -0.294449, 0.294449, 0.22, 0.294449),
@@ -93,7 +88,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEQASAA8AEwAUABUAFQAWABMAFwAWABUAFQAYABcAEwAWABkAFQAaABgAGgAbABgAGgAcABsAGQAdABMAHQAeABMAGQAfAB0AHwAgAB0AHwAhACAAIQAiACAAIQAjACIAIQAkACMAJAAlACMAJgAjACUAJQAnACYAJwAlACgAKAApACcAJQAqACgAKAAqABsAHAAoABsAKwAsAC0ALQAuACsALwAwADEAMQAyAC8AMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPQA+ADoAPgA/ADoAQABBAEIAQgBDAEAAQwBEAEAAQwBFAEQARgBHAEgASQBIAEcA"),
-"material": SubResource("StandardMaterial3D_h5kou"),
+"material": ExtResource("1_n6bb7"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -117,7 +112,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_3vwh7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_08mvd"]
 resource_name = "cheese_wedge4"
 _surfaces = [{
 "aabb": AABB(8.79947e-16, 4.51195e-17, 6.55331e-15, 0.17, 0.22, 0.34),
@@ -125,7 +120,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEQASAA8AEwAUABUAFgATABUAFgAXABMAFwAYABMAFQAZABYAFwAaABgAGgAbABgAGgAcABsAGgAdABwAHQAeABwAHwAcAB4AHgAgAB8AIQAZABUAFQAiACEAIwAZACEAIQAkACMAIQAlACQAJQAmACQAJQAnACYAJwAoACYAIAAeACgAKAApACAAHgAqACgAKAAqACYAKwAsAC0ALQAuACsALwAwADEAMQAyAC8AMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPQA+ADoAPgA/ADoAQABBAEIAQgBDAEAAQwBEAEAAQwBFAEQARgBHAEgASQBIAEcA"),
-"material": SubResource("StandardMaterial3D_h5kou"),
+"material": ExtResource("1_n6bb7"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -149,7 +144,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_um4wu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jkw43"]
 resource_name = "cheese_wedge5"
 _surfaces = [{
 "aabb": AABB(1.06991e-15, 4.08895e-17, 1.03451e-15, 0.294449, 0.22, 0.294449),
@@ -157,7 +152,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEQASAA8AEwAUABUAFQAWABMAFwAWABUAFQAYABcAEwAWABkAFQAaABgAGgAbABgAGgAcABsAGQAdABMAHQAeABMAGQAfAB0AHwAgAB0AHwAhACAAIQAiACAAIQAjACIAIQAkACMAJAAlACMAJgAjACUAJQAnACYAJwAlACgAKAApACcAJQAqACgAKAAqABsAHAAoABsAKwAsAC0ALQAuACsALwAwADEAMQAyAC8AMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPQA+ADoAPgA/ADoAQABBAEIAQgBDAEAAQwBEAEAAQwBFAEQARgBHAEgASQBIAEcA"),
-"material": SubResource("StandardMaterial3D_h5kou"),
+"material": ExtResource("1_n6bb7"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -181,7 +176,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cu3we"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_16ule"]
 resource_name = "cheese_wedge6"
 _surfaces = [{
 "aabb": AABB(0, -4.22995e-18, -0.17, 0.34, 0.22, 0.17),
@@ -189,7 +184,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEQASAA8AEwASABEAEQAUABMADwASABUAEQAWABQAFgAXABQAFgAYABcAFQAZAA8AGQAaAA8AFQAbABkAGwAcABkAGwAdABwAHQAeABwAHQAfAB4AHQAgAB8AIAAhAB8AIgAfACEAIQAjACIAIwAhACQAJAAlACMAIQAmACQAJAAmABcAGAAkABcAJwAoACkAKQAqACcAKwAsAC0ALQAuACsALwAwADEAMQAyAC8AMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPQA+ADoAPgA/ADoAQABBAEIAQgBDAEAAQwBEAEAAQwBFAEQARgBHAEgASQBIAEcA"),
-"material": SubResource("StandardMaterial3D_h5kou"),
+"material": ExtResource("1_n6bb7"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -221,7 +216,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgAPABEAEgATAA8AEwAUAA8AEQAVABIAEwAWABQAFgAXABQAFgAYABcAFgAZABgAGQAaABgAGwAYABoAGgAcABsAHQAVABEAEQAeAB0AHwAVAB0AHQAgAB8AHQAhACAAIQAiACAAIQAjACIAIwAkACIAHAAaACQAJAAlABwAGgAmACQAJAAmACIAJwAoACkAKQAqACcAKwAsAC0ALQAuACsALwAwADEAMQAyAC8AMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPQA+ADoAPgA/ADoAQABBAEIAQgBDAEAAQwBEAEAAQwBFAEQARgBHAEgASQBIAEcA"),
-"material": SubResource("StandardMaterial3D_h5kou"),
+"material": ExtResource("1_n6bb7"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -245,7 +240,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_03s1l"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_007ci"]
 resource_name = "cheese_wedge8"
 _surfaces = [{
 "aabb": AABB(-9.68575e-08, 0, -0.34, 0.17, 0.22, 0.34),
@@ -253,7 +248,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEQASAA8AEwAUABUAFQAWABMAFwAYABkAGQAaABcAGwAcAB0AHQAeABsAHwAeAB0AHQAgAB8AGwAeACEAHQAiACAAIgAjACAAIgAkACMAIQAlABsAJQAmABsAIQAnACUAJwAoACUAJwApACgAKQAqACgAKQArACoAKQAsACsALAAtACsALgArAC0ALQAvAC4ALwAtADAAMAAxAC8ALQAyADAAMAAyACMAJAAwACMAMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPQA+ADoAPgA/ADoAQABBAEIAQgBDAEAAQwBEAEAAQwBFAEQARgBHAEgASQBIAEcA"),
-"material": SubResource("StandardMaterial3D_h5kou"),
+"material": ExtResource("1_n6bb7"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -285,7 +280,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEQASAA8AEwAUABUAFQAWABMAFwAYABkAGQAaABcAGwAcAB0AHQAeABsAHwAeAB0AHQAgAB8AGwAeACEAHQAiACAAIgAjACAAIgAkACMAIQAlABsAJQAmABsAIQAnACUAJwAoACUAJwApACgAKQAqACgAKQArACoAKQAsACsALAAtACsALgArAC0ALQAvAC4ALwAtADAAMAAxAC8ALQAyADAAMAAyACMAJAAwACMAMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPQA+ADoAPgA/ADoAQABBAEIAQgBDAEAAQwBEAEAAQwBFAEQARgBHAEgASQBIAEcA"),
-"material": SubResource("StandardMaterial3D_h5kou"),
+"material": ExtResource("1_n6bb7"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -317,7 +312,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgAPABEAEgATAA8AEwAUAA8AEQAVABIAEwAWABQAFgAXABQAFgAYABcAFgAZABgAGQAaABgAGwAYABoAGgAcABsAHQAVABEAEQAeAB0AHwAVAB0AHQAgAB8AHQAhACAAIQAiACAAIQAjACIAIwAkACIAHAAaACQAJAAlABwAGgAmACQAJAAmACIAJwAoACkAKQAqACcAKwAsAC0ALQAuACsALwAwADEAMQAyAC8AMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPQA+ADoAPgA/ADoAQABBAEIAQgBDAEAAQwBEAEAAQwBFAEQARgBHAEgASQBIAEcA"),
-"material": SubResource("StandardMaterial3D_h5kou"),
+"material": ExtResource("1_n6bb7"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -349,7 +344,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEQASAA8AEwAUABUAFQAWABMAFwAYABkAGQAaABcAGwAaABkAGQAcABsAFwAaAB0AGQAeABwAHgAfABwAHgAgAB8AHQAhABcAIQAiABcAHQAjACEAIwAkACEAIwAlACQAJQAmACQAJQAnACYAJQAoACcAKAApACcAKgAnACkAKQArACoAKwApACwALAAtACsAKQAuACwALAAuAB8AIAAsAB8ALwAwADEAMQAyAC8AMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPQA+ADoAPgA/ADoAQABBAEIAQgBDAEAAQwBEAEAAQwBFAEQARgBHAEgASQBIAEcA"),
-"material": SubResource("StandardMaterial3D_h5kou"),
+"material": ExtResource("1_n6bb7"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -381,7 +376,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEQASAA8AEwAUABUAFQAWABMAFwAYABkAGQAaABcAGwAcAB0AHQAeABsAHwAeAB0AHQAgAB8AGwAeACEAHQAiACAAIgAjACAAIgAkACMAIQAlABsAJQAmABsAIQAnACUAJwAoACUAJwApACgAKQAqACgAKQArACoAKQAsACsALAAtACsALgArAC0ALQAvAC4ALwAtADAAMAAxAC8ALQAyADAAMAAyACMAJAAwACMAMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPQA+ADoAPgA/ADoAQABBAEIAQgBDAEAAQwBEAEAAQwBFAEQARgBHAEgASQBIAEcA"),
-"material": SubResource("StandardMaterial3D_h5kou"),
+"material": ExtResource("1_n6bb7"),
 "name": "colormap",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -392,72 +387,73 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hoqil")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_n6bb7"]
-height = 0.2
-radius = 0.35
+height = 0.4
+radius = 0.7
 
 [node name="CheeseTile" type="Node3D"]
 
 [node name="wedge" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44382e-15, -4.93494e-17, -4.33147e-15)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.44382e-15, -1, -4.33147e-15)
 mesh = SubResource("ArrayMesh_8ov21")
 skeleton = NodePath("")
 
 [node name="wedge2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 mesh = SubResource("ArrayMesh_n6bb7")
 skeleton = NodePath("")
 
 [node name="wedge3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60956e-15, 0, -2.88765e-15)
-mesh = SubResource("ArrayMesh_uysow")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.60956e-15, -1, -2.88765e-15)
+mesh = SubResource("ArrayMesh_fyd27")
 skeleton = NodePath("")
 
 [node name="wedge4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16573e-15, -4.22995e-18, -3.97051e-15)
-mesh = SubResource("ArrayMesh_3vwh7")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.16573e-15, -1, -3.97051e-15)
+mesh = SubResource("ArrayMesh_08mvd")
 skeleton = NodePath("")
 
 [node name="wedge5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88765e-15, -4.22995e-18, -2.88765e-15)
-mesh = SubResource("ArrayMesh_um4wu")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.88765e-15, -1, -2.88765e-15)
+mesh = SubResource("ArrayMesh_jkw43")
 skeleton = NodePath("")
 
 [node name="wedge6" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16573e-15, -2.67897e-17, 3.60956e-15)
-mesh = SubResource("ArrayMesh_cu3we")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.16573e-15, -1, 3.60956e-15)
+mesh = SubResource("ArrayMesh_16ule")
 skeleton = NodePath("")
 
 [node name="wedge7" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88765e-15, 0, -1.80478e-15)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.88765e-15, -1, -1.80478e-15)
 mesh = SubResource("ArrayMesh_x6xxv")
 skeleton = NodePath("")
 
 [node name="wedge8" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44382e-15, -4.22995e-18, 4.33147e-15)
-mesh = SubResource("ArrayMesh_03s1l")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.44382e-15, -1, 4.33147e-15)
+mesh = SubResource("ArrayMesh_007ci")
 skeleton = NodePath("")
 
 [node name="wedge9" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44382e-15, 0, 4.33147e-15)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.44382e-15, -1, 4.33147e-15)
 mesh = SubResource("ArrayMesh_8tr18")
 skeleton = NodePath("")
 
 [node name="wedge10" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44382e-15, -4.22995e-18, 5.41434e-15)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.44382e-15, -1, 5.41434e-15)
 mesh = SubResource("ArrayMesh_bb05l")
 skeleton = NodePath("")
 
 [node name="wedge11" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16573e-15, 0, -4.69242e-15)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.16573e-15, -1, -4.69242e-15)
 mesh = SubResource("ArrayMesh_4oe1o")
 skeleton = NodePath("")
 
 [node name="wedge12" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16573e-15, -4.22995e-18, -4.69242e-15)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.16573e-15, -1, -4.69242e-15)
 mesh = SubResource("ArrayMesh_mmn2c")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 shape = SubResource("CylinderShape3D_n6bb7")

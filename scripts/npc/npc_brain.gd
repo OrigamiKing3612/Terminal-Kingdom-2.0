@@ -18,12 +18,9 @@ class_name NPCBrain
 @export var talk_to_player: NPCState
 @export var walk_to_position: NPCState
 
-var previous_goal: NPCState
 @export_group("")
-@export var current_goal: NPCState:
-	set(value):
-		previous_goal = current_goal
-		current_goal = value
+@export var current_goal: NPCState
+var previous_goal: NPCState
 
 func _ready() -> void:
 	pass
@@ -50,10 +47,11 @@ func jump() -> NPCState:
 func fall() -> NPCState:
 	return fall_state
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func _on_area_3d_body_entered(_body: Node3D) -> void:
+	previous_goal = current_goal
 	current_goal = talk_to_player
 	state_machine.current_state = talk_to_player
 
-func _on_area_3d_body_exited(body: Node3D) -> void:
+func _on_area_3d_body_exited(_body: Node3D) -> void:
 	state_machine.current_state = previous_goal
 	current_goal = previous_goal
