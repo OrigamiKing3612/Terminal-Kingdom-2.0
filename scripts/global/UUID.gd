@@ -6,7 +6,6 @@ func string() -> String:
 	var hex = "0123456789abcdef"
 	var parts = [8, 4, 4, 4, 12]
 	var uuid = ""
-
 	for i in parts:
 		for j in i:
 			uuid += hex[randi() % hex.length()]

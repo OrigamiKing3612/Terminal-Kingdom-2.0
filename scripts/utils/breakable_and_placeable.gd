@@ -3,13 +3,13 @@ class_name BreakableGridMap
 
 # Only called on gridmap, so this does not need to handle non gridmap ids
 func destroy_tile(collision_point: Vector3) -> void:
-	var local_point := to_local(collision_point)
-	var grid_pos := local_to_map(local_point)
+	var adjusted_point = collision_point - transform.basis.y * 0.1 # push slightly inside the block
+	var local_point = to_local(adjusted_point)
+	var grid_pos = local_to_map(local_point)
 	if grid_pos.y <= 0:
 		return
 	var id = get_cell_item(grid_pos)
 	if id < 0:
-		print_debug("Not a gridmap tile: ", id)
 		return
 
 	var tile_id := TileDB.get_tile_id_from_gridmap_id(id)
@@ -20,7 +20,6 @@ func destroy_tile(collision_point: Vector3) -> void:
 	var can_break = Utils.break_tile(tile_id)
 	if can_break:
 		set_cell_item(grid_pos, -1) # Clear tile
-		print_debug("can break so broke")
 
 func place_tile(collision_point: Vector3, tile_id: int) -> void:
 	var tile_data := TileDB.get_tile(tile_id)
