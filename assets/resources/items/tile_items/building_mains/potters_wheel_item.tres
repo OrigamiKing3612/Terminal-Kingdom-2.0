@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_2bd1b"]
 [ext_resource type="PackedScene" uid="uid://c6d3eltii7ct7" path="res://scenes/tiles/building_mains/PottersWheelTile.tscn" id="1_klftq"]
-[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="2_klftq"]
+[ext_resource type="Texture2D" uid="uid://dbsdsj3rheajq" path="res://assets/models/icons/potters_wheel_preview.tres" id="3_klftq"]
 
 [resource]
 script = ExtResource("1_2bd1b")
@@ -10,7 +10,7 @@ name = &"Potters Wheel"
 price = 10
 can_be_sold = true
 is_buildable = true
-texture_2d = ExtResource("2_klftq")
+texture_2d = ExtResource("3_klftq")
 max_amount_per_stack = 1
 tile_id = 71
 scene_to_place = ExtResource("1_klftq")

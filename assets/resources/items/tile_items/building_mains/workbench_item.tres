@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djd335f6v4ioq" path="res://scenes/tiles/building_mains/WorkbenchTile.tscn" id="1_klm4g"]
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="2_3gffp"]
-[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="3_jo0jn"]
+[ext_resource type="Texture2D" uid="uid://c4keila6qk8bq" path="res://assets/models/icons/workbench_preview.tres" id="3_klm4g"]
 
 [resource]
 script = ExtResource("2_3gffp")
@@ -10,7 +10,7 @@ name = &"Workbench"
 price = 10
 can_be_sold = true
 is_buildable = true
-texture_2d = ExtResource("3_jo0jn")
+texture_2d = ExtResource("3_klm4g")
 max_amount_per_stack = 1
 tile_id = 77
 scene_to_place = ExtResource("1_klm4g")

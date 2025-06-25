@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_85fjh"]
 [ext_resource type="PackedScene" uid="uid://dxfaeinhy2yxw" path="res://scenes/tiles/building_mains/GovernorsDeskTile.tscn" id="1_h7alc"]
-[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="2_h7alc"]
+[ext_resource type="Texture2D" uid="uid://bew4q5ie2m4j0" path="res://assets/models/icons/governors_desk_preview.tres" id="3_h7alc"]
 
 [resource]
 script = ExtResource("1_85fjh")
@@ -10,7 +10,7 @@ name = &"Governors Desk"
 price = 10
 can_be_sold = true
 is_buildable = true
-texture_2d = ExtResource("2_h7alc")
+texture_2d = ExtResource("3_h7alc")
 max_amount_per_stack = 1
 tile_id = 68
 scene_to_place = ExtResource("1_h7alc")

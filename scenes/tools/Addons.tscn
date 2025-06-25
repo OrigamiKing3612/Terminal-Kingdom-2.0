@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://8ochyecpefpf"]
+[gd_scene load_steps=4 format=3 uid="uid://8ochyecpefpf"]
 
 [ext_resource type="Script" uid="uid://djprjo3jie0lq" path="res://scripts/tools/CreateItemFromMeshLibrary.gd" id="1_lkbxe"]
-[ext_resource type="MeshLibrary" uid="uid://bg77eu6w4exqp" path="res://assets/tiles.tres" id="2_gv0fn"]
+[ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="2_gv0fn"]
+[ext_resource type="Script" uid="uid://d8x76noo4s64" path="res://scripts/tools/GeneratePreviewFromMesh.gd" id="3_g7qjm"]
 
 [node name="Addons" type="VBoxContainer"]
 anchors_preset = 15
@@ -16,4 +17,10 @@ text = "Generate Item From Mesh Library"
 script = ExtResource("1_lkbxe")
 mesh_library = ExtResource("2_gv0fn")
 
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+text = "Create mesh preivew"
+script = ExtResource("3_g7qjm")
+
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d02ndyvuh2vew" path="res://scenes/tiles/building_mains/ScarecrowTile.tscn" id="1_1lahq"]
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_y6u6n"]
-[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="2_1lahq"]
+[ext_resource type="Texture2D" uid="uid://boivjov65gd58" path="res://assets/models/icons/scarecrow_preview.tres" id="3_1lahq"]
 
 [resource]
 script = ExtResource("1_y6u6n")
@@ -10,7 +10,7 @@ name = &"Scarecrow"
 price = 10
 can_be_sold = true
 is_buildable = true
-texture_2d = ExtResource("2_1lahq")
+texture_2d = ExtResource("3_1lahq")
 max_amount_per_stack = 1
 tile_id = 73
 scene_to_place = ExtResource("1_1lahq")

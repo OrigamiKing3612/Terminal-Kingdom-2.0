@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d2176iq7a0bxk" path="res://scenes/tiles/building_mains/MinersCrateTile.tscn" id="1_kk4j2"]
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_qhr86"]
-[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="2_kk4j2"]
+[ext_resource type="Texture2D" uid="uid://pyjg3c0yfo6x" path="res://assets/models/icons/miners_crate_preview.tres" id="3_kk4j2"]
 
 [resource]
 script = ExtResource("1_qhr86")
@@ -10,7 +10,7 @@ name = &"Miners Crate"
 price = 10
 can_be_sold = true
 is_buildable = true
-texture_2d = ExtResource("2_kk4j2")
+texture_2d = ExtResource("3_kk4j2")
 max_amount_per_stack = 1
 tile_id = 70
 scene_to_place = ExtResource("1_kk4j2")

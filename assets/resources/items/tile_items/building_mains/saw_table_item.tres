@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_8xqcn"]
 [ext_resource type="PackedScene" uid="uid://si5nmckw7qki" path="res://scenes/tiles/building_mains/SawTableTile.tscn" id="1_nfuwt"]
-[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="2_nfuwt"]
+[ext_resource type="Texture2D" uid="uid://duayr44n5s3q3" path="res://assets/models/icons/saw_table_preview.tres" id="3_nfuwt"]
 
 [resource]
 script = ExtResource("1_8xqcn")
@@ -10,7 +10,7 @@ name = &"Saw Table"
 price = 10
 can_be_sold = true
 is_buildable = true
-texture_2d = ExtResource("2_nfuwt")
+texture_2d = ExtResource("3_nfuwt")
 max_amount_per_stack = 1
 tile_id = 72
 scene_to_place = ExtResource("1_nfuwt")
