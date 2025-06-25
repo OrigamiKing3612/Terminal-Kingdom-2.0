@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=4 format=3 uid="uid://b3r8w4sayr34i"]
+
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/building/TileDropData.gd" id="1_ntm8t"]
+[ext_resource type="Resource" uid="uid://b51btlxa0imu7" path="res://assets/resources/items/tile_items/building_mains/scarecrow_item.tres" id="1_r0f15"]
+[ext_resource type="PackedScene" uid="uid://d02ndyvuh2vew" path="res://scenes/tiles/building_mains/ScarecrowTile.tscn" id="2_4uitm"]
+
+[resource]
+script = ExtResource("1_ntm8t")
+tile_id = 73
+gridmap_id = -1
+scene_to_place = ExtResource("2_4uitm")
+drop_item = ExtResource("1_r0f15")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 2
+second_min_drop_count = 1
+second_max_drop_count = 1
+metadata/_custom_type_script = "uid://by8ga2ngxb20j"

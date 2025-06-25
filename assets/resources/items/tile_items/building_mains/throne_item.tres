@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://chg5paak5g2pg"]
+
+[ext_resource type="PackedScene" uid="uid://cce0p7d54d7nn" path="res://scenes/tiles/building_mains/ThroneTile.tscn" id="1_dpelk"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_vbg43"]
+[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="2_dpelk"]
+
+[resource]
+script = ExtResource("1_vbg43")
+name = &"Throne"
+price = 10
+can_be_sold = true
+is_buildable = true
+texture_2d = ExtResource("2_dpelk")
+max_amount_per_stack = 50
+tile_id = 76
+scene_to_place = ExtResource("1_dpelk")
+seed = 0
+metadata/_custom_type_script = "uid://cn074wlyew4kj"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=4 format=3 uid="uid://cimrk04o0pjcb"]
+
+[ext_resource type="Resource" uid="uid://df086jlor2hun" path="res://assets/resources/items/tile_items/building_mains/saw_table_item.tres" id="1_bj1be"]
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/building/TileDropData.gd" id="1_ro86v"]
+[ext_resource type="PackedScene" uid="uid://si5nmckw7qki" path="res://scenes/tiles/building_mains/SawTableTile.tscn" id="2_odvm4"]
+
+[resource]
+script = ExtResource("1_ro86v")
+tile_id = 72
+gridmap_id = -1
+scene_to_place = ExtResource("2_odvm4")
+drop_item = ExtResource("1_bj1be")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 2
+second_min_drop_count = 1
+second_max_drop_count = 1
+metadata/_custom_type_script = "uid://by8ga2ngxb20j"

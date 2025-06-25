@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=4 format=3 uid="uid://cg5bxtmsj5vtu"]
+
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/building/TileDropData.gd" id="1_bmvbb"]
+[ext_resource type="Resource" uid="uid://d3f1att25tvsu" path="res://assets/resources/items/tile_items/building_mains/miners_crate_item.tres" id="1_wykc2"]
+[ext_resource type="PackedScene" uid="uid://d2176iq7a0bxk" path="res://scenes/tiles/building_mains/MinersCrateTile.tscn" id="2_af5kh"]
+
+[resource]
+script = ExtResource("1_bmvbb")
+tile_id = 70
+gridmap_id = -1
+scene_to_place = ExtResource("2_af5kh")
+drop_item = ExtResource("1_wykc2")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 1
+second_min_drop_count = 1
+second_max_drop_count = 1
+metadata/_custom_type_script = "uid://by8ga2ngxb20j"

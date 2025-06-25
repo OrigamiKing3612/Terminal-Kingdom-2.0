@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=4 format=3 uid="uid://dnobgya1jpo0c"]
+
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/building/TileDropData.gd" id="1_3wix1"]
+[ext_resource type="Resource" uid="uid://4w3ijlksadk5" path="res://assets/resources/items/tile_items/extra/anvil_item.tres" id="1_e0go4"]
+[ext_resource type="PackedScene" uid="uid://dd7248mgtv2gu" path="res://scenes/tiles/extra/AnvilTile.tscn" id="2_037ay"]
+
+[resource]
+script = ExtResource("1_3wix1")
+tile_id = 79
+gridmap_id = -1
+scene_to_place = ExtResource("2_037ay")
+drop_item = ExtResource("1_e0go4")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 2
+second_min_drop_count = 1
+second_max_drop_count = 1
+metadata/_custom_type_script = "uid://by8ga2ngxb20j"

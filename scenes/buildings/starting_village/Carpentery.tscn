@@ -5,7 +5,7 @@
 [ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="3_gaysg"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/utils/breakable_and_placeable.gd" id="4_tfhhj"]
 [ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/MeshLibrary/decoration/LanternTile.tscn" id="5_gaysg"]
-[ext_resource type="PackedScene" uid="uid://si5nmckw7qki" path="res://scenes/tiles/building_mains/SawTile.tscn" id="6_pch48"]
+[ext_resource type="PackedScene" uid="uid://si5nmckw7qki" path="res://scenes/tiles/building_mains/SawTableTile.tscn" id="6_pch48"]
 
 [node name="Carpentery" type="Node3D"]
 

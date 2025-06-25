@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dr7y56c7ymvq6"]
+
+[ext_resource type="PackedScene" uid="uid://d2ekht6aghysd" path="res://scenes/tiles/building_mains/TavernTile.tscn" id="1_u0duc"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="2_wk1tc"]
+[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="3_210yp"]
+
+[resource]
+script = ExtResource("2_wk1tc")
+name = &"Tavern Tile"
+price = 10
+can_be_sold = true
+is_buildable = true
+texture_2d = ExtResource("3_210yp")
+max_amount_per_stack = 1
+tile_id = 75
+scene_to_place = ExtResource("1_u0duc")
+seed = 0
+metadata/_custom_type_script = "uid://cn074wlyew4kj"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=4 format=3 uid="uid://bis2h6embv3ns"]
+
+[ext_resource type="Resource" uid="uid://chg5paak5g2pg" path="res://assets/resources/items/tile_items/building_mains/throne_item.tres" id="1_3s4ad"]
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/building/TileDropData.gd" id="1_m7cav"]
+[ext_resource type="PackedScene" uid="uid://cce0p7d54d7nn" path="res://scenes/tiles/building_mains/ThroneTile.tscn" id="2_e47eo"]
+
+[resource]
+script = ExtResource("1_m7cav")
+tile_id = 76
+gridmap_id = -1
+scene_to_place = ExtResource("2_e47eo")
+drop_item = ExtResource("1_3s4ad")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 2
+second_min_drop_count = 1
+second_max_drop_count = 1
+metadata/_custom_type_script = "uid://by8ga2ngxb20j"

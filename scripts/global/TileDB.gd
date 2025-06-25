@@ -81,7 +81,20 @@ func _ready():
 	tiles[64] = MESH_LIBRARY + "mud/mud_drop.tres"
 	tiles[65] = MESH_LIBRARY + "tree/tree_drop.tres"
 	tiles[66] = MESH_LIBRARY + "tree/tree_small_drop.tres"
-	tiles[67] = FOLDER_PATH + "tile_drops/building_mains/furnace_tile.tres"
+	tiles[67] = FOLDER_PATH + "tile_drops/building_mains/furnace_drop.tres"
+	tiles[68] = FOLDER_PATH + "tile_drops/building_mains/governors_desk_drop.tres"
+	tiles[69] = FOLDER_PATH + "tile_drops/building_mains/medical_table_drop.tres"
+	tiles[70] = FOLDER_PATH + "tile_drops/building_mains/miners_crate_drop.tres"
+	tiles[71] = FOLDER_PATH + "tile_drops/building_mains/potters_wheel_drop.tres"
+	tiles[72] = FOLDER_PATH + "tile_drops/building_mains/saw_table_drop.tres"
+	tiles[73] = FOLDER_PATH + "tile_drops/building_mains/scarecrow_drop.tres"
+	tiles[74] = FOLDER_PATH + "tile_drops/building_mains/target_drop.tres"
+	tiles[75] = FOLDER_PATH + "tile_drops/building_mains/tavern_tile_drop.tres"
+	tiles[76] = FOLDER_PATH + "tile_drops/building_mains/throne_drop.tres"
+	tiles[77] = FOLDER_PATH + "tile_drops/building_mains/workbench_drop.tres"
+	tiles[78] = FOLDER_PATH + "tile_drops/extra/pot_drop.tres"
+	tiles[79] = FOLDER_PATH + "tile_drops/extra/anvil_drop.tres"
+	tiles[80] = FOLDER_PATH + "tile_drops/extra/mine_entrance_drop.tres"
 	
 func get_tile_id_from_gridmap_id(gridmap_id: int) -> int:
 	for i in TileDB.tiles.size():
