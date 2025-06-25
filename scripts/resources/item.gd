@@ -11,6 +11,7 @@ var id: String
 
 @export_group("Buildable Settings")
 @export var gridmap_id: int = 0
+@export var scene_to_place: PackedScene = null
 
 @export_group("Tags")
 @export var seed: Utils.SeedType = Utils.SeedType.None

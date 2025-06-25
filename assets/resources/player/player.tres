@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlayerData" load_steps=4 format=3 uid="uid://v0x75ukrrln7"]
 
 [ext_resource type="Resource" uid="uid://dbxkqvn5cl5e1" path="res://assets/resources/player/player_inventory.tres" id="1_mddin"]
-[ext_resource type="Script" uid="uid://c65bq1qpv6cyp" path="res://scripts/resources/data/player_data.gd" id="2_kflsk"]
+[ext_resource type="Script" uid="uid://c65bq1qpv6cyp" path="res://scripts/data/player_data.gd" id="2_kflsk"]
 [ext_resource type="Resource" uid="uid://1150jny3axqx" path="res://assets/resources/player/skill.tres" id="3_pomgq"]
 
 [resource]

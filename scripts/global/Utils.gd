@@ -24,7 +24,7 @@ static func givePlayerCountOfItem(itemToDuplicate: Item, count: int) -> Array[St
 	
 static func break_tile(id: int) -> bool:
 	if id < 0: return false
-	var tile_data := TileDB.get_tile(id)
+	var tile_data := TileDB.get_tile(id) # drop tile
 	if tile_data == null:
 		push_error("No tile data for ID: %s" % id)
 		return false
@@ -68,3 +68,33 @@ static func vector_to_orientation(rotation: Vector3i) -> Basis:
 	basis = basis.rotated(Vector3.UP, deg_to_rad(rotation.y))
 	basis = basis.rotated(Vector3.FORWARD, deg_to_rad(rotation.z))
 	return basis
+
+func get_all_resources_from_folder(path: String) -> Array:
+	var dir = DirAccess.open(path)
+	if dir == null:
+		push_error("Could not open directory: %s" % path)
+		return []
+	
+	var resources := []
+	dir.list_dir_begin()
+
+	while true:
+		var file_name = dir.get_next()
+		if file_name == "":
+			break
+		if dir.current_is_dir():
+			if file_name != "." and file_name != "..":
+				var subfolder = path + "/" + file_name
+				resources += get_all_resources_from_folder(subfolder)
+				continue
+		if file_name.ends_with(".import"):
+			continue
+
+		var file_path = path + "/" + file_name
+		var res = ResourceLoader.load(file_path)
+		if res and res is Resource:
+			resources.append(res)
+
+	dir.list_dir_end()
+
+	return resources

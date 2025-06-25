@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://211derjh3jig" path="res://scripts/resources/recipes/RecipeItem.gd" id="1_6bma8"]
 [ext_resource type="Script" uid="uid://b7ge8id26jsbu" path="res://scripts/resources/recipes/AnvilRecipe.gd" id="2_nhmpo"]
-[ext_resource type="Resource" uid="uid://cxq0s5prgh160" path="res://assets/resources/items/steel.tres" id="2_yip8c"]
-[ext_resource type="Resource" uid="uid://83niltrh6tky" path="res://assets/resources/items/stick.tres" id="3_hpuf1"]
-[ext_resource type="Resource" uid="uid://dtbikuwi2rvgv" path="res://assets/resources/items/sword.tres" id="4_fpbm8"]
+[ext_resource type="Resource" uid="uid://cxq0s5prgh160" path="res://assets/resources/items/generic/steel.tres" id="2_yip8c"]
+[ext_resource type="Resource" uid="uid://83niltrh6tky" path="res://assets/resources/items/generic/stick.tres" id="3_hpuf1"]
+[ext_resource type="Resource" uid="uid://dtbikuwi2rvgv" path="res://assets/resources/items/tools/sword.tres" id="4_fpbm8"]
 
 [sub_resource type="Resource" id="Resource_5tcrx"]
 script = ExtResource("1_6bma8")

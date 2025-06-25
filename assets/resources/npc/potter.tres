@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="NPCData" load_steps=2 format=3 uid="uid://bwmybjtgxrh8g"]
 
-[ext_resource type="Script" uid="uid://nj3ok2spwf66" path="res://scripts/resources/npc_data.gd" id="1_5ww4e"]
+[ext_resource type="Script" uid="uid://nj3ok2spwf66" path="res://scripts/resources/npcs/npc_data.gd" id="1_5ww4e"]
 
 [resource]
 script = ExtResource("1_5ww4e")

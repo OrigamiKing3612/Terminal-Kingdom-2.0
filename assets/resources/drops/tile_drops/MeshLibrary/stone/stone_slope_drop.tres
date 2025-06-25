@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=3 format=3 uid="uid://cvr4ceotxh3td"]
+
+[ext_resource type="Resource" uid="uid://cm6b1my1kk1qe" path="res://assets/resources/items/tile_items/MeshLibrary/stone/stone_slope.tres" id="1_kykgc"]
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/building/TileDropData.gd" id="2_jvgsj"]
+
+[resource]
+script = ExtResource("2_jvgsj")
+id = 27
+drop_item = ExtResource("1_kykgc")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 2

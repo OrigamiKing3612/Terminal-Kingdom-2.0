@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="FurnaceRecipe" load_steps=9 format=3 uid="uid://dnjdhsfkpm2js"]
 
 [ext_resource type="Script" uid="uid://211derjh3jig" path="res://scripts/resources/recipes/RecipeItem.gd" id="1_pntyt"]
-[ext_resource type="Resource" uid="uid://bu7fdkkvvrka3" path="res://assets/resources/items/tiles/iron_item.tres" id="2_2rgex"]
+[ext_resource type="Resource" uid="uid://bu7fdkkvvrka3" path="res://assets/resources/items/tile_items/MeshLibrary/item/iron_item.tres" id="2_2rgex"]
 [ext_resource type="Script" uid="uid://cch7usyguax67" path="res://scripts/resources/recipes/FurnaceRecipe.gd" id="2_elf3e"]
-[ext_resource type="Resource" uid="uid://bhaou6qgiqkhi" path="res://assets/resources/items/tiles/coal_item.tres" id="3_dh6j1"]
-[ext_resource type="Resource" uid="uid://cxq0s5prgh160" path="res://assets/resources/items/steel.tres" id="4_dh6j1"]
+[ext_resource type="Resource" uid="uid://bhaou6qgiqkhi" path="res://assets/resources/items/tile_items/MeshLibrary/item/coal_item.tres" id="3_dh6j1"]
+[ext_resource type="Resource" uid="uid://cxq0s5prgh160" path="res://assets/resources/items/generic/steel.tres" id="4_dh6j1"]
 
 [sub_resource type="Resource" id="Resource_hmexc"]
 script = ExtResource("1_pntyt")

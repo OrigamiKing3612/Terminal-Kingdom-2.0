@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://cpamh1gadlcks" path="res://scenes/Player.tscn" id="2_l8ev6"]
 [ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="2_lpcuf"]
 [ext_resource type="Script" uid="uid://c81udlyqluvl" path="res://scripts/ui/mining/grid_map.gd" id="3_0vdk2"]
-[ext_resource type="Resource" uid="uid://3v17cscqxu7m" path="res://assets/resources/items/tiles/dirt.tres" id="4_ne8fo"]
-[ext_resource type="Resource" uid="uid://b5xnrh116pxsg" path="res://assets/resources/items/tiles/stone.tres" id="5_miscj"]
-[ext_resource type="Resource" uid="uid://bep3af3osttsk" path="res://assets/resources/items/tiles/gold_item.tres" id="5_olvme"]
-[ext_resource type="Resource" uid="uid://bhaou6qgiqkhi" path="res://assets/resources/items/tiles/coal_item.tres" id="6_miscj"]
-[ext_resource type="Resource" uid="uid://bu7fdkkvvrka3" path="res://assets/resources/items/tiles/iron_item.tres" id="7_lpcuf"]
-[ext_resource type="Resource" uid="uid://53k0i3kh8dns" path="res://assets/resources/items/tiles/mud.tres" id="9_lpcuf"]
+[ext_resource type="Resource" uid="uid://3v17cscqxu7m" path="res://assets/resources/items/tile_items/MeshLibrary/dirt/dirt.tres" id="4_ne8fo"]
+[ext_resource type="Resource" uid="uid://b5xnrh116pxsg" path="res://assets/resources/items/tile_items/MeshLibrary/stone/stone.tres" id="5_miscj"]
+[ext_resource type="Resource" uid="uid://bep3af3osttsk" path="res://assets/resources/items/tile_items/MeshLibrary/item/gold_item.tres" id="5_olvme"]
+[ext_resource type="Resource" uid="uid://bhaou6qgiqkhi" path="res://assets/resources/items/tile_items/MeshLibrary/item/coal_item.tres" id="6_miscj"]
+[ext_resource type="Resource" uid="uid://bu7fdkkvvrka3" path="res://assets/resources/items/tile_items/MeshLibrary/item/iron_item.tres" id="7_lpcuf"]
+[ext_resource type="Resource" uid="uid://53k0i3kh8dns" path="res://assets/resources/items/tile_items/MeshLibrary/mud/mud.tres" id="9_lpcuf"]
 
 [sub_resource type="Environment" id="Environment_l8ev6"]
 background_mode = 1

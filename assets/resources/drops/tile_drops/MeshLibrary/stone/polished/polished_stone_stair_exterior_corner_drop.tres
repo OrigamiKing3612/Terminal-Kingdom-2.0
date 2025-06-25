@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=3 format=3 uid="uid://gu2mu6c1sg2o"]
+
+[ext_resource type="Resource" uid="uid://c4kdbxnoq42fq" path="res://assets/resources/items/tile_items/MeshLibrary/stone/polished/polished_stone_stair_exterior_corner.tres" id="1_t0prx"]
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/building/TileDropData.gd" id="2_itlxf"]
+
+[resource]
+script = ExtResource("2_itlxf")
+id = 59
+drop_item = ExtResource("1_t0prx")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 2

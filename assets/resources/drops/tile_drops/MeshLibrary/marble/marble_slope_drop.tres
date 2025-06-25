@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileDropData" load_steps=3 format=3 uid="uid://cpqr12ynrnyea"]
+
+[ext_resource type="Resource" uid="uid://bmfs7m3j064b6" path="res://assets/resources/items/tile_items/MeshLibrary/marble/marble_slope.tres" id="1_dhtxg"]
+[ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/building/TileDropData.gd" id="2_w3kuh"]
+
+[resource]
+script = ExtResource("2_w3kuh")
+id = 13
+drop_item = ExtResource("1_dhtxg")
+min_drop_count = 1
+max_drop_count = 1
+tool_required = 2
