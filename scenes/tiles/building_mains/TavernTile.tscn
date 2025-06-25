@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2ekht6aghysd"]
+[gd_scene load_steps=7 format=3 uid="uid://d2ekht6aghysd"]
 
 [ext_resource type="Script" uid="uid://bhj2hujvwit3e" path="res://scripts/tiles/building_mains/tavern_main_tile.gd" id="1_hmpbp"]
-[ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/utils/interactable.gd" id="1_oktpb"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="2_wcl2s"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="3_c30c1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xtcm"]
 albedo_color = Color(1, 0, 1, 1)
@@ -20,9 +21,19 @@ script = ExtResource("1_hmpbp")
 mesh = SubResource("BoxMesh_ag77t")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-script = ExtResource("1_oktpb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hmpbp")
 
-[connection signal="interacted" from="StaticBody3D" to="." method="_on_interacted"]
+[node name="InteractableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+script = ExtResource("2_wcl2s")
+static_body = NodePath("../StaticBody3D")
+metadata/_custom_type_script = "uid://cle5risojhhkj"
+
+[node name="DestroyableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+script = ExtResource("3_c30c1")
+static_body = NodePath("../StaticBody3D")
+tile_id = 75
+metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

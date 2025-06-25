@@ -11,6 +11,6 @@ can_be_sold = true
 is_buildable = false
 texture_2d = ExtResource("2_x1b2w")
 max_amount_per_stack = 50
-gridmap_id = 0
+tile_id = -1
 seed = 6
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://djd335f6v4ioq"]
+[gd_scene load_steps=8 format=4 uid="uid://djd335f6v4ioq"]
 
 [ext_resource type="Material" uid="uid://clqbrphys3s54" path="res://assets/resources/materials/WorkbenchMaterial.tres" id="1_ia7li"]
 [ext_resource type="Script" uid="uid://tvubbp5x1mur" path="res://scripts/tiles/building_mains/workbench_tile.gd" id="1_xtrnq"]
-[ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/utils/interactable.gd" id="2_q4nav"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="3_6jog4"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="4_wiedm"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_23wqd"]
 _surfaces = [{
@@ -47,9 +48,19 @@ mesh = SubResource("ArrayMesh_qv5fl")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-script = ExtResource("2_q4nav")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_g0qxn")
 
-[connection signal="interacted" from="StaticBody3D" to="." method="_on_interacted"]
+[node name="InteractableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+script = ExtResource("3_6jog4")
+static_body = NodePath("../StaticBody3D")
+metadata/_custom_type_script = "uid://cle5risojhhkj"
+
+[node name="DestroyableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+script = ExtResource("4_wiedm")
+static_body = NodePath("../StaticBody3D")
+tile_id = 77
+metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

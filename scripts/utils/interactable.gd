@@ -3,4 +3,4 @@ extends StaticBody3D
 signal interacted
 
 func interact():
-	interacted.emit()
+	push_error("Used interacted.gd remove")

@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3fc7stx78m1"]
+[gd_scene load_steps=7 format=3 uid="uid://c3fc7stx78m1"]
 
 [ext_resource type="Script" uid="uid://p8fbaohmhf2c" path="res://scripts/tiles/extra/MineEntranceTile.gd" id="1_lov8x"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6rtxt"]
-size = Vector3(2, 4, 2)
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="2_vs1kw"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="3_opu0q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kneda"]
 
@@ -11,14 +10,29 @@ size = Vector3(2, 4, 2)
 material = SubResource("StandardMaterial3D_kneda")
 size = Vector3(2, 4, 2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6rtxt"]
+size = Vector3(2, 4, 2)
+
 [node name="MineEntranceTile" type="Node3D"]
+script = ExtResource("1_lov8x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_lov8x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-script = ExtResource("1_lov8x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_6rtxt")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_lov8x")
-skeleton = NodePath("../..")
+[node name="InteractableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+script = ExtResource("2_vs1kw")
+static_body = NodePath("../StaticBody3D")
+metadata/_custom_type_script = "uid://cle5risojhhkj"
+
+[node name="DestroyableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+script = ExtResource("3_opu0q")
+static_body = NodePath("../StaticBody3D")
+tile_id = 80
+metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interact"]

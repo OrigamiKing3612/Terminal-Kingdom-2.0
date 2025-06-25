@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://si5nmckw7qki"]
+[gd_scene load_steps=7 format=3 uid="uid://si5nmckw7qki"]
 
 [ext_resource type="Script" uid="uid://d0nfihqrpx35s" path="res://scripts/tiles/building_mains/saw_tile.gd" id="1_wq3eg"]
-[ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/utils/interactable.gd" id="1_xhida"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="2_aqc1v"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="3_ylshc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_meann"]
 albedo_color = Color(1, 0, 1, 1)
@@ -20,9 +21,19 @@ script = ExtResource("1_wq3eg")
 mesh = SubResource("BoxMesh_xhida")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-script = ExtResource("1_xhida")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wq3eg")
 
-[connection signal="interacted" from="StaticBody3D" to="." method="_on_interacted"]
+[node name="InteractableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+script = ExtResource("2_aqc1v")
+static_body = NodePath("../StaticBody3D")
+metadata/_custom_type_script = "uid://cle5risojhhkj"
+
+[node name="DestroyableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+script = ExtResource("3_ylshc")
+static_body = NodePath("../StaticBody3D")
+tile_id = 72
+metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://biusngccco6e0"]
+[gd_scene load_steps=12 format=4 uid="uid://biusngccco6e0"]
 
 [ext_resource type="Script" uid="uid://d0nfaymvottcp" path="res://scripts/tiles/building_mains/furnace_tile.gd" id="1_a25ud"]
 [ext_resource type="PackedScene" uid="uid://ctajdwqvt83xr" path="res://scenes/ui/workstations/WorkstationScreen.tscn" id="2_n8osn"]
-[ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/utils/interactable.gd" id="3_a25ud"]
 [ext_resource type="Material" uid="uid://d28860csitmj4" path="res://assets/resources/materials/item/LumberItemMaterial.tres" id="4_eaeku"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="4_mtig7"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="5_2u651"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mgaw"]
 resource_name = "FurnaceMaterial"
@@ -91,7 +92,6 @@ mesh = SubResource("ArrayMesh_xtewt")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-script = ExtResource("3_a25ud")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -110,4 +110,15 @@ light_specular = 5.0
 omni_range = 6.0
 omni_attenuation = 2.0
 
-[connection signal="interacted" from="StaticBody3D" to="." method="_on_interacted"]
+[node name="InteractableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+script = ExtResource("4_mtig7")
+static_body = NodePath("../StaticBody3D")
+metadata/_custom_type_script = "uid://cle5risojhhkj"
+
+[node name="DestroyableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+script = ExtResource("5_2u651")
+static_body = NodePath("../StaticBody3D")
+tile_id = 67
+metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

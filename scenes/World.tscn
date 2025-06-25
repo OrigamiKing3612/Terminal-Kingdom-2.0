@@ -4333,12 +4333,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57, 3, 79)
 start_position = Vector3(1, -1.32538, 2)
 end_position = Vector3(0, 1.67462, 7)
 
-[node name="GovernorsDeskTile" parent="NavigationRegion3D" instance=ExtResource("41_yd118")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 3, 0)
-
 [node name="PreviewTile" parent="." node_paths=PackedStringArray("player", "gridmap") instance=ExtResource("16_o1tcx")]
 player = NodePath("../Player")
 gridmap = NodePath("../NavigationRegion3D/Ground")
 meshlib = SubResource("MeshLibrary_ovuqc")
 
 [node name="SpawnedNPCs" type="Node3D" parent="." groups=["NPCsGroup"]]
+
+[node name="GovernorsDeskTile" parent="." instance=ExtResource("41_yd118")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 1, 0)

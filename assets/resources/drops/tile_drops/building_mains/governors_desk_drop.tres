@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TileDropData" load_steps=4 format=3 uid="uid://c0s524pact4kp"]
+[gd_resource type="Resource" script_class="TileDropData" load_steps=4 format=3 uid="uid://b0sjuwy67r1od"]
 
 [ext_resource type="Resource" uid="uid://b3kr38m3iut1" path="res://assets/resources/items/tile_items/building_mains/governors_desk_item.tres" id="1_81ppv"]
 [ext_resource type="Script" uid="uid://by8ga2ngxb20j" path="res://scripts/resources/building/TileDropData.gd" id="1_ql48c"]

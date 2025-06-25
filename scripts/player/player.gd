@@ -66,8 +66,9 @@ func _on_left_click():
 		#print("> Ray hit: ", path, " (", type, ")")
 		if collider is GridMap:
 			collider.destroy_tile(ray_cast_3d.get_collision_point())
-		elif collider.has_method("destroy"):
-			collider.destroy()
+		elif collider and collider.has_meta("destroyable_component"):
+			var component = collider.get_meta("destroyable_component")
+			component.destroy()
 			
 func _on_right_click():
 	if ray_cast_3d.is_colliding():
@@ -83,7 +84,8 @@ func _on_right_click():
 					push_warning("Tried to place a tile with -1 as GameManager.selected_tile_id")
 					return
 				collider.place_tile(pos + normal * 0.5, GameManager.selected_tile_id)
-		elif collider.has_method("interact"):
-			collider.interact()
+		elif collider.has_meta("interactable_component"):
+			var component = collider.get_meta("interactable_component")
+			component.interact()
 			
 	
