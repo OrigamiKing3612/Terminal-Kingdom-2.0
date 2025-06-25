@@ -6,7 +6,11 @@
 [resource]
 script = ExtResource("2_8lcjw")
 id = 41
+tile_id = 41
+gridmap_id = 41
 drop_item = ExtResource("1_tl3ml")
 min_drop_count = 1
 max_drop_count = 1
 tool_required = 2
+second_min_drop_count = 1
+second_max_drop_count = 1

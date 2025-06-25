@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dpyg100pv1545"]
 
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_tg40k"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_ev5mx"]
 
 [sub_resource type="Image" id="Image_tg40k"]
 data = {
@@ -15,7 +15,7 @@ data = {
 image = SubResource("Image_tg40k")
 
 [resource]
-script = ExtResource("1_tg40k")
+script = ExtResource("1_ev5mx")
 name = &"Bricks"
 price = 0
 can_be_sold = false
@@ -23,4 +23,5 @@ is_buildable = true
 texture_2d = SubResource("ImageTexture_spm51")
 max_amount_per_stack = 50
 gridmap_id = 11
+tile_id = 11
 seed = 0

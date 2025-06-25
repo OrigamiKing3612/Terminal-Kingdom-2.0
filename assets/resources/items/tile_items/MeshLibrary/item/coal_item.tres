@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bhaou6qgiqkhi"]
 
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_7yeux"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_7pdwg"]
 
 [sub_resource type="Image" id="Image_7yeux"]
 data = {
@@ -15,7 +15,7 @@ data = {
 image = SubResource("Image_7yeux")
 
 [resource]
-script = ExtResource("1_7yeux")
+script = ExtResource("1_7pdwg")
 name = &"Coal Item"
 price = 0
 can_be_sold = false
@@ -23,4 +23,5 @@ is_buildable = true
 texture_2d = SubResource("ImageTexture_7yeux")
 max_amount_per_stack = 50
 gridmap_id = 43
+tile_id = 43
 seed = 0

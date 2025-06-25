@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://b5xnrh116pxsg"]
 
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_jt1om"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_qa0g2"]
 
 [sub_resource type="Image" id="Image_jt1om"]
 data = {
@@ -15,7 +15,7 @@ data = {
 image = SubResource("Image_jt1om")
 
 [resource]
-script = ExtResource("1_jt1om")
+script = ExtResource("1_qa0g2")
 name = &"Stone"
 price = 0
 can_be_sold = false
@@ -23,4 +23,5 @@ is_buildable = true
 texture_2d = SubResource("ImageTexture_jt1om")
 max_amount_per_stack = 50
 gridmap_id = 31
+tile_id = 31
 seed = 0

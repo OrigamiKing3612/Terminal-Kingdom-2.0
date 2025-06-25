@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://qlvgonuwhpnq"]
 
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_ar632"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_6ey1p"]
 
 [sub_resource type="Image" id="Image_ar632"]
 data = {
@@ -15,7 +15,7 @@ data = {
 image = SubResource("Image_ar632")
 
 [resource]
-script = ExtResource("1_ar632")
+script = ExtResource("1_6ey1p")
 name = &"Coin Item"
 price = 0
 can_be_sold = false
@@ -23,4 +23,5 @@ is_buildable = true
 texture_2d = SubResource("ImageTexture_25jjh")
 max_amount_per_stack = 50
 gridmap_id = 42
+tile_id = 42
 seed = 0

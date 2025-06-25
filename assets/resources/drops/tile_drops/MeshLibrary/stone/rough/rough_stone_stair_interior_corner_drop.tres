@@ -6,7 +6,11 @@
 [resource]
 script = ExtResource("2_sompy")
 id = 53
+tile_id = 53
+gridmap_id = 53
 drop_item = ExtResource("1_jwfpc")
 min_drop_count = 1
 max_drop_count = 1
 tool_required = 2
+second_min_drop_count = 1
+second_max_drop_count = 1

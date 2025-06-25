@@ -5,16 +5,13 @@
 
 [resource]
 script = ExtResource("1_8ttie")
-name = "Workbench"
+name = &""
 price = 0
 can_be_sold = false
 is_buildable = true
 texture_2d = ExtResource("2_aki4f")
-position_in_inventory = Vector2(100, 100)
+max_amount_per_stack = 50
 gridmap_id = 0
-generate_item = true
-generate_preview = false
-preview_file = ""
-override_name = false
-overriden_name = ""
+tile_id = -1
+seed = 0
 metadata/_custom_type_script = "uid://cn074wlyew4kj"

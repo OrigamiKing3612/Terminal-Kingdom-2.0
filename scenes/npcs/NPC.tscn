@@ -82,6 +82,7 @@ is_buildable = false
 texture_2d = ExtResource("26_32nht")
 max_amount_per_stack = 1
 gridmap_id = 0
+tile_id = -1
 seed = 0
 metadata/_custom_type_script = "uid://cqsvdpbt83m3i"
 
@@ -106,6 +107,7 @@ is_buildable = true
 texture_2d = SubResource("ImageTexture_spm51")
 max_amount_per_stack = 50
 gridmap_id = 11
+tile_id = -1
 seed = 0
 
 [sub_resource type="Image" id="Image_0vihe"]
@@ -129,6 +131,7 @@ is_buildable = true
 texture_2d = SubResource("ImageTexture_kfvuk")
 max_amount_per_stack = 50
 gridmap_id = 17
+tile_id = -1
 seed = 0
 
 [sub_resource type="Image" id="Image_srj83"]
@@ -152,6 +155,7 @@ is_buildable = true
 texture_2d = SubResource("ImageTexture_pppuw")
 max_amount_per_stack = 50
 gridmap_id = 26
+tile_id = -1
 seed = 0
 
 [sub_resource type="Resource" id="Resource_ku4y3"]
@@ -166,6 +170,7 @@ is_buildable = false
 texture_2d = ExtResource("26_32nht")
 max_amount_per_stack = 1
 gridmap_id = 0
+tile_id = -1
 seed = 0
 metadata/_custom_type_script = "uid://cqsvdpbt83m3i"
 
