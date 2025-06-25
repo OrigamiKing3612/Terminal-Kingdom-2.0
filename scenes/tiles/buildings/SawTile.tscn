@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://si5nmckw7qki"]
+[gd_scene load_steps=6 format=3 uid="uid://si5nmckw7qki"]
+
+[ext_resource type="Script" uid="uid://d0nfihqrpx35s" path="res://scripts/tiles/buildings/saw_tile.gd" id="1_wq3eg"]
+[ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/interactable.gd" id="1_xhida"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_meann"]
 albedo_color = Color(1, 0, 1, 1)
@@ -11,11 +14,15 @@ size = Vector3(2, 2, 2)
 data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1)
 
 [node name="SawTile" type="Node3D"]
+script = ExtResource("1_wq3eg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_xhida")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("1_xhida")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wq3eg")
+
+[connection signal="interacted" from="StaticBody3D" to="." method="_on_interacted"]

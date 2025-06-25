@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://67y5cb0skn3k"]
+[gd_scene load_steps=8 format=3 uid="uid://67y5cb0skn3k"]
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_fiueb"]
 [ext_resource type="Resource" uid="uid://djjk3okjgb42q" path="res://assets/resources/npc/farmer.tres" id="2_fdgc7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_fdgc7"]
 [ext_resource type="PackedScene" uid="uid://dfkt11r6dih32" path="res://scenes/tiles/PotTile.tscn" id="5_x5wys"]
 [ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/MeshLibrary/decoration/LanternTile.tscn" id="6_v7s8p"]
+[ext_resource type="PackedScene" uid="uid://d02ndyvuh2vew" path="res://scenes/tiles/buildings/ScarecrowTile.tscn" id="7_b5qdg"]
 
 [node name="Farm" type="Node3D"]
 
@@ -150,3 +151,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 10, -17)
 
 [node name="LanternTile6" parent="Lanterns" instance=ExtResource("6_v7s8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 10, -17.5)
+
+[node name="ScarecrowTile" parent="." instance=ExtResource("7_b5qdg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -20)

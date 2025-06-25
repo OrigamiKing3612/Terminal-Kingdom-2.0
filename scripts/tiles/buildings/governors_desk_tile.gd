@@ -1,16 +1,6 @@
 extends Node3D
 
-const GOVERNORS_DESK_SCREEN = preload("res://scenes/ui/screens/GovernorsDeskScreen.tscn")
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+const GOVERNORS_DESK_SCREEN = preload("res://scenes/ui/screens/GovernorsDesk/GovernorsDeskScreen.tscn")
 
 func _on_interacted() -> void:
 	var popup = GOVERNORS_DESK_SCREEN.instantiate()

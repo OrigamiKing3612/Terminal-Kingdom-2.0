@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://djd335f6v4ioq"]
+[gd_scene load_steps=7 format=4 uid="uid://djd335f6v4ioq"]
 
 [ext_resource type="Material" uid="uid://clqbrphys3s54" path="res://assets/resources/materials/WorkbenchMaterial.tres" id="1_ia7li"]
+[ext_resource type="Script" uid="uid://tvubbp5x1mur" path="res://scripts/tiles/buildings/workbench_tile.gd" id="1_xtrnq"]
+[ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/interactable.gd" id="2_q4nav"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_23wqd"]
 _surfaces = [{
@@ -38,12 +40,16 @@ shadow_mesh = SubResource("ArrayMesh_23wqd")
 data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1)
 
 [node name="WorkbenchTile" type="Node3D"]
+script = ExtResource("1_xtrnq")
 
 [node name="WorkbenchTile" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_qv5fl")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorkbenchTile"]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("2_q4nav")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorkbenchTile/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_g0qxn")
+
+[connection signal="interacted" from="StaticBody3D" to="." method="_on_interacted"]

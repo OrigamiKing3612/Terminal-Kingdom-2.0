@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dd7248mgtv2gu"]
 
-[ext_resource type="Script" uid="uid://nxqftwtkwxy" path="res://scripts/tiles/anvil/anvil_tile.gd" id="1_dyo5c"]
 [ext_resource type="Script" uid="uid://dyqd354fmav1a" path="res://scripts/tiles/anvil/AnvilTile.gd" id="1_qgmwl"]
 [ext_resource type="PackedScene" uid="uid://ctajdwqvt83xr" path="res://scenes/ui/workstations/WorkstationScreen.tscn" id="2_pvmdq"]
+[ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/interactable.gd" id="3_pvmdq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_48esm"]
 size = Vector3(2, 2, 2)
@@ -18,7 +18,7 @@ anvil_screen = ExtResource("2_pvmdq")
 mesh = SubResource("BoxMesh_48esm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-script = ExtResource("1_dyo5c")
+script = ExtResource("3_pvmdq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_dyo5c")

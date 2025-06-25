@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://biusngccco6e0"]
 
 [ext_resource type="Texture2D" uid="uid://dduxon30vpfg2" path="res://assets/models/FurnaceTile_small-log.png" id="1_0bckp"]
-[ext_resource type="Script" uid="uid://d0nfaymvottcp" path="res://scripts/tiles/furnace/FurnaceTile.gd" id="1_a25ud"]
+[ext_resource type="Script" uid="uid://d0nfaymvottcp" path="res://scripts/tiles/buildings/furnace_tile.gd" id="1_a25ud"]
 [ext_resource type="PackedScene" uid="uid://ctajdwqvt83xr" path="res://scenes/ui/workstations/WorkstationScreen.tscn" id="2_n8osn"]
 [ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/interactable.gd" id="3_a25ud"]
 

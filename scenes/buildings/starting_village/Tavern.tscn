@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://cmqd8ld1mq276" path="res://scenes/tiles/MeshLibrary/decoration/tavern/SpoonTile.tscn" id="31_p5na1"]
 [ext_resource type="PackedScene" uid="uid://cploarehk5jdx" path="res://scenes/tiles/MeshLibrary/decoration/tavern/WineGlassTile.tscn" id="33_l1wdh"]
 [ext_resource type="PackedScene" uid="uid://0exdtnyssxpi" path="res://scenes/tiles/MeshLibrary/decoration/ChairBTile.tscn" id="34_4otmp"]
-[ext_resource type="PackedScene" uid="uid://d2ekht6aghysd" path="res://scenes/tiles/buildings/TavernMainTile.tscn" id="35_lxsbm"]
+[ext_resource type="PackedScene" uid="uid://d2ekht6aghysd" path="res://scenes/tiles/buildings/TavernTile.tscn" id="35_lxsbm"]
 [ext_resource type="PackedScene" uid="uid://bkseq54fylkak" path="res://scenes/tiles/MeshLibrary/decoration/ChairTile.tscn" id="35_vk3tv"]
 
 [node name="Tavern" type="Node3D"]
@@ -260,5 +260,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 13.7584)
 [node name="BarrelTile29" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 9.25835)
 
-[node name="TavernMainTile" parent="." instance=ExtResource("35_lxsbm")]
+[node name="TavernTile" parent="." instance=ExtResource("35_lxsbm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 3, 12)

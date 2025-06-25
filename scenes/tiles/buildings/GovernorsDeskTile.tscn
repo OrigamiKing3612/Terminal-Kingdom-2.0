@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://d1xf67hnbwfyq" path="res://scripts/tiles/buildings/governors_desk_tile.gd" id="1_1mafe"]
 [ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/interactable.gd" id="2_t88r7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xtcm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mafe"]
 albedo_color = Color(1, 0, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2xtcm"]
-material = SubResource("StandardMaterial3D_2xtcm")
+material = SubResource("StandardMaterial3D_1mafe")
 size = Vector3(2, 2, 6)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5hqyc"]

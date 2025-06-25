@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6d3eltii7ct7"]
+[gd_scene load_steps=6 format=3 uid="uid://c6d3eltii7ct7"]
 
+[ext_resource type="Script" uid="uid://y7xjarkmo3nh" path="res://scripts/tiles/buildings/potters_wheel_tile.gd" id="1_dq4ke"]
 [ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/interactable.gd" id="1_nrke5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vtvp"]
@@ -13,6 +14,7 @@ size = Vector3(2, 2, 2)
 data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1)
 
 [node name="PottersWheel" type="Node3D"]
+script = ExtResource("1_dq4ke")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_u5npu")
@@ -22,3 +24,5 @@ script = ExtResource("1_nrke5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_2wn8l")
+
+[connection signal="interacted" from="StaticBody3D" to="." method="_on_interacted"]

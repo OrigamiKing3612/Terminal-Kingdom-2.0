@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cce0p7d54d7nn"]
+[gd_scene load_steps=6 format=3 uid="uid://cce0p7d54d7nn"]
 
 [ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/interactable.gd" id="1_l377w"]
+[ext_resource type="Script" uid="uid://huibhc1yix0v" path="res://scripts/tiles/buildings/throne_tile.gd" id="1_oxhoy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxhoy"]
 albedo_color = Color(1, 0, 1, 1)
@@ -13,6 +14,7 @@ size = Vector3(2, 4, 2)
 data = PackedVector3Array(-1, 2, 1, 1, 2, 1, -1, -2, 1, 1, 2, 1, 1, -2, 1, -1, -2, 1, 1, 2, -1, -1, 2, -1, 1, -2, -1, -1, 2, -1, -1, -2, -1, 1, -2, -1, 1, 2, 1, 1, 2, -1, 1, -2, 1, 1, 2, -1, 1, -2, -1, 1, -2, 1, -1, 2, -1, -1, 2, 1, -1, -2, -1, -1, 2, 1, -1, -2, 1, -1, -2, -1, 1, 2, 1, -1, 2, 1, 1, 2, -1, -1, 2, 1, -1, 2, -1, 1, 2, -1, -1, -2, 1, 1, -2, 1, -1, -2, -1, 1, -2, 1, 1, -2, -1, -1, -2, -1)
 
 [node name="ThroneTile" type="Node3D"]
+script = ExtResource("1_oxhoy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_s42i3")
@@ -22,3 +24,5 @@ script = ExtResource("1_l377w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7vtvp")
+
+[connection signal="interacted" from="StaticBody3D" to="." method="_on_interacted"]
