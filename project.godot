@@ -50,6 +50,7 @@ folder_colors={
 Player="The player"
 NPC=""
 Entity=""
+NPCsGroup=""
 
 [input]
 

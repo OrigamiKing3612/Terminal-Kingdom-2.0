@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource("1_ohxgf")
 name = "Craiggory"
-job = 0
-skill_level = 0
+last_name = ""
+current_job = 16
+skills = Dictionary[int, int]({})
 experience = 0.0
 age = 18
 gender = 0
@@ -15,5 +16,5 @@ happiness = 100.0
 positionToWalkTo = Vector3(0, 0, 0)
 home = Vector3(0, 0, 0)
 workplace = Vector3(0, 0, 0)
-is_starting_village_npc = false
+is_starting_village_npc = true
 metadata/_custom_type_script = "uid://nj3ok2spwf66"

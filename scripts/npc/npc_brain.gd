@@ -30,9 +30,9 @@ func _ready() -> void:
 	state_machine.init()
 
 func _process(_delta: float) -> void:
-	#if npc.data.job == Utils.Job.Builder:
-		#print("Builder State: current state: %s, current goal: %s" % [state_machine.current_state.state_name, current_goal.state_name])
-		pass
+	if not npc.data.is_starting_village_npc:
+		print("None State: current state: %s, current goal: %s" % [state_machine.current_state.state_name, current_goal.state_name])
+		#pass
 	
 func _physics_process(delta: float) -> void:
 	var lower_hit = raycast_lower.is_colliding()
@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	
 	if not npc.is_on_floor() and current_goal != jump_state:
 		current_goal = fall_state
-	elif npc.is_on_floor() and current_goal == fall_state:
+	elif npc.is_on_floor() and current_goal.name == fall_state.name:
 		current_goal = previous_goal
 
 # return null if can not jump

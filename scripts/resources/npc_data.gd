@@ -7,10 +7,9 @@ var id = UUID.string()
 @export_group("NPC Settings")
 @export var name: String = ""
 @export var last_name: String = ""
-@export var job: Utils.Job = Utils.Job.None
-@export var skill_level: Utils.SkillLevel = Utils.SkillLevel.None
+@export var current_job: Utils.Job = Utils.Job.None
+@export var skills: Dictionary[Utils.Job, Utils.SkillLevel] = {}
 @export var experience: float = 0.0
-#@export var behavior_type: Utils.BehaviorType = Utils.BehaviorType.Idle
 @export var age: int = 18 # ?
 @export var gender: Utils.Gender = Utils.Gender.Male
 @export var hunger: float = 100.0
@@ -31,6 +30,24 @@ static func create_new() -> NPCData:
 	data.age = GameManager.random.randi_range(18, 60)
 	data.gender = gender
 	data.is_starting_village_npc = false
+	var has_job := GameManager.random.randi_range(0, 1)
+	if has_job == 1:
+		var job_count := GameManager.random.randi_range(1, 3)
+		var available_jobs := Utils.Job.keys()
+		available_jobs.erase(Utils.Job.King)
+		available_jobs.shuffle()
+
+		var skill_levels := ["Apprentice", "Novice", "Advanced", "Expert"]
+		if GameManager.random.randf_range(0, 2) == 1:
+			skill_levels.append("Master")
+
+		for job_name in available_jobs:
+			if data.skills.size() >= job_count:
+				break
+
+			var skill_level_name = skill_levels[GameManager.random.randi_range(0, skill_levels.size() - 1)]
+			if Utils.Job[job_name] != Utils.Job.King:
+				data.skills[Utils.Job[job_name]] = Utils.SkillLevel[skill_level_name]
 	
 	return data
 

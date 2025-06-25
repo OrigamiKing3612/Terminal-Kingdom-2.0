@@ -1,8 +1,10 @@
 extends Node
 class_name Utils
 
-enum Job{None, Blacksmith, King, Miner, Farmer, Docter, Salesman, Potter, Stablemaster, Carpenter, Builder, Hunter, Inventor, Chef}
-enum SkillLevel{None, Novice, Apprentice, Journeyman, Expert, Master}
+# if this is changed make sure to add it to npc_data.gd
+enum Job{None, Blacksmith, King, Miner, Farmer, Doctor, Salesman, Potter, Stablemaster, Carpenter, 
+	Builder, Hunter, Inventor, Chef, Governor, Judge, Bartender}
+enum SkillLevel{None, Apprentice, Novice, Advanced, Expert, Master}
 enum BehaviorType{Idle, Wander, Stand, Work, Follow}
 enum Gender{Male, Female}
 enum StationTypes{Anvil, Furnace, Workbench}

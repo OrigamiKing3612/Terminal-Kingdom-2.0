@@ -22,12 +22,6 @@ func physics_process(_delta: float) -> void:
 			return
 		timer.start()
 		return
-
-	if not character.is_on_floor():
-		return brain.fall()
-		
-	if get_jump():
-		return brain.jump()
 	
 	var next_position = navigation.get_next_path_position()
 	var direction = (next_position - character.position).normalized()

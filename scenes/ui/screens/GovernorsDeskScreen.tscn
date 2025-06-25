@@ -59,3 +59,10 @@ vertical_alignment = 1
 
 [node name="NPCsContainer" type="HBoxContainer" parent="TabContainer/Add NPC/VBoxContainer"]
 layout_mode = 2
+
+[node name="ApproveButton" type="Button" parent="TabContainer/Add NPC/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Approve"
+
+[connection signal="pressed" from="TabContainer/Add NPC/VBoxContainer/ApproveButton" to="." method="_on_approved"]
