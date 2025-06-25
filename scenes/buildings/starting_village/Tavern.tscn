@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_iefn4"]
 [ext_resource type="Resource" uid="uid://6027d13mrgog" path="res://assets/resources/npc/bartender.tres" id="2_iefn4"]
 [ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="3_lxsbm"]
-[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_2g1rf"]
+[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/utils/breakable_and_placeable.gd" id="4_2g1rf"]
 [ext_resource type="PackedScene" uid="uid://b75j2wvhm4mps" path="res://scenes/tiles/MeshLibrary/decoration/TorchTile.tscn" id="5_6044s"]
 [ext_resource type="PackedScene" uid="uid://b8ym7hqm2t1xk" path="res://scenes/tiles/MeshLibrary/decoration/CandleTile.tscn" id="6_lxsbm"]
 [ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/MeshLibrary/decoration/LanternTile.tscn" id="7_i32fm"]
@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://cmqd8ld1mq276" path="res://scenes/tiles/MeshLibrary/decoration/tavern/SpoonTile.tscn" id="31_p5na1"]
 [ext_resource type="PackedScene" uid="uid://cploarehk5jdx" path="res://scenes/tiles/MeshLibrary/decoration/tavern/WineGlassTile.tscn" id="33_l1wdh"]
 [ext_resource type="PackedScene" uid="uid://0exdtnyssxpi" path="res://scenes/tiles/MeshLibrary/decoration/ChairBTile.tscn" id="34_4otmp"]
-[ext_resource type="PackedScene" uid="uid://d2ekht6aghysd" path="res://scenes/tiles/buildings/TavernTile.tscn" id="35_lxsbm"]
+[ext_resource type="PackedScene" uid="uid://d2ekht6aghysd" path="res://scenes/tiles/building_mains/TavernTile.tscn" id="35_lxsbm"]
 [ext_resource type="PackedScene" uid="uid://bkseq54fylkak" path="res://scenes/tiles/MeshLibrary/decoration/ChairTile.tscn" id="35_vk3tv"]
 
 [node name="Tavern" type="Node3D"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d2efcd4bv0fph"
+path="res://.godot/imported/farmer.dialogue-73d7b29cf32ebbb0bf3c61fdb6464038.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/job/farmer.dialogue"
+dest_files=["res://.godot/imported/farmer.dialogue-73d7b29cf32ebbb0bf3c61fdb6464038.tres"]
+
+[params]
+
+defaults=true

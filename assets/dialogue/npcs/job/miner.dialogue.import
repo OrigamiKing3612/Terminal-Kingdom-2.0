@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://2qgbaj1l282n"
+path="res://.godot/imported/miner.dialogue-8a4a08e3670eb0349efa12741416c627.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/job/miner.dialogue"
+dest_files=["res://.godot/imported/miner.dialogue-8a4a08e3670eb0349efa12741416c627.tres"]
+
+[params]
+
+defaults=true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://7dmlnxnfq8k5"]
 
-[ext_resource type="Script" uid="uid://beqtkh5uixf0o" path="res://scripts/plant_node.gd" id="1_ff4m0"]
+[ext_resource type="Script" uid="uid://beqtkh5uixf0o" path="res://scripts/tiles/extra/plant_node.gd" id="1_ff4m0"]
 [ext_resource type="Texture2D" uid="uid://daknthk7mj7cm" path="res://assets/models/plants/Textures/colormap.png" id="2_f7kn1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_q4isf"]

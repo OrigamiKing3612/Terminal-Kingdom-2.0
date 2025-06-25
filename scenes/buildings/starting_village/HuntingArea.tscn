@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_jms1m"]
 [ext_resource type="Resource" uid="uid://fojnpcn5sobk" path="res://assets/resources/npc/hunter.tres" id="2_b0vrp"]
 [ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="3_415s6"]
-[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="3_b0vrp"]
-[ext_resource type="PackedScene" uid="uid://duf2oiawqtu1u" path="res://scenes/tiles/buildings/TargetTile.tscn" id="5_415s6"]
+[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/utils/breakable_and_placeable.gd" id="3_b0vrp"]
+[ext_resource type="PackedScene" uid="uid://duf2oiawqtu1u" path="res://scenes/tiles/building_mains/TargetTile.tscn" id="5_415s6"]
 
 [node name="HuntingArea" type="Node3D"]
 

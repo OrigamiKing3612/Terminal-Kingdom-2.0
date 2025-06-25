@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b1ax1nh25mcoa"
+path="res://.godot/imported/inventor.dialogue-0db721b66ede745f75e154f1c2450cfd.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/job/inventor.dialogue"
+dest_files=["res://.godot/imported/inventor.dialogue-0db721b66ede745f75e154f1c2450cfd.tres"]
+
+[params]
+
+defaults=true

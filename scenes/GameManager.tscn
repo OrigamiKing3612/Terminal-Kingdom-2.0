@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://emqvl3xrerc8" path="res://scripts/ui/buildable_items.gd" id="6_jg7te"]
 [ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="7_2uts2"]
 [ext_resource type="Texture2D" uid="uid://c7im14pt3acjp" path="res://assets/models/icons/dirt_slope_preview.tres" id="8_2chjq"]
-[ext_resource type="Script" uid="uid://bcjlebgfecmc6" path="res://scripts/ui/message_box.gd" id="9_1jauj"]
+[ext_resource type="Script" uid="uid://bcjlebgfecmc6" path="res://scripts/ui/message/message_box.gd" id="9_1jauj"]
 [ext_resource type="PackedScene" uid="uid://cstkdjjdwrtap" path="res://scenes/ui/hotbar/hotbar.tscn" id="9_2chjq"]
 [ext_resource type="PackedScene" uid="uid://dvx3o21r0xrym" path="res://scenes/ui/inventory/inventory_box.tscn" id="9_440lp"]
-[ext_resource type="Script" uid="uid://dlsxye2uonmwl" path="res://scripts/debug.gd" id="13_55cbs"]
+[ext_resource type="Script" uid="uid://dlsxye2uonmwl" path="res://scripts/ui/debug/debug.gd" id="13_55cbs"]
 [ext_resource type="PackedScene" uid="uid://04xqp7ntm7b4" path="res://scenes/ui/toolbelt/toolbelt.tscn" id="16_3lvuv"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1jauj"]

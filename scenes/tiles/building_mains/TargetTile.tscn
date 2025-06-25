@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://duf2oiawqtu1u"]
+
+[ext_resource type="Script" uid="uid://xgaycqxn8ll1" path="res://scripts/utils/interactable.gd" id="1_57qbd"]
+[ext_resource type="Script" uid="uid://biwiyjawh6nuj" path="res://scripts/tiles/building_mains/target_tile.gd" id="1_x1eef"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvo4m"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_57qbd"]
+material = SubResource("StandardMaterial3D_rvo4m")
+size = Vector3(2, 2, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x1eef"]
+data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1)
+
+[node name="TargetTile" type="Node3D"]
+script = ExtResource("1_x1eef")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_57qbd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("1_57qbd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x1eef")
+
+[connection signal="interacted" from="StaticBody3D" to="." method="_on_interacted"]

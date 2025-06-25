@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c2hpnv4br66nh"
+path="res://.godot/imported/sv_blacksmith.dialogue-a50da803e1d48ed0a65ffc382b119ca1.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/starting_village/sv_blacksmith.dialogue"
+dest_files=["res://.godot/imported/sv_blacksmith.dialogue-a50da803e1d48ed0a65ffc382b119ca1.tres"]
+
+[params]
+
+defaults=true

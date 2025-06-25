@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dbue8hsvrop8p"
+path="res://.godot/imported/sv_potter.dialogue-fb5920cda68f78e01d318e965f0c17a9.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/starting_village/sv_potter.dialogue"
+dest_files=["res://.godot/imported/sv_potter.dialogue-fb5920cda68f78e01d318e965f0c17a9.tres"]
+
+[params]
+
+defaults=true

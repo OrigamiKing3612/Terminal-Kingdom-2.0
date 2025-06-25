@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b8f3mjwiclhxv"
+path="res://.godot/imported/sv_miner.dialogue-e643070f15ed130dfff550522e29d96f.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/starting_village/sv_miner.dialogue"
+dest_files=["res://.godot/imported/sv_miner.dialogue-e643070f15ed130dfff550522e29d96f.tres"]
+
+[params]
+
+defaults=true

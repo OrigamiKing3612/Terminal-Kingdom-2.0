@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b0u3phfaheom6"
+path="res://.godot/imported/sv_carpenter.dialogue-0cca685cf25b2a1f74eb8addee869922.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/starting_village/sv_carpenter.dialogue"
+dest_files=["res://.godot/imported/sv_carpenter.dialogue-0cca685cf25b2a1f74eb8addee869922.tres"]
+
+[params]
+
+defaults=true

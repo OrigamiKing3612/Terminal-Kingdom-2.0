@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bcpb4yg01b5v6"
+path="res://.godot/imported/sv_king.dialogue-35508a6cebfd7dfb5416f6a283b77dc2.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/starting_village/sv_king.dialogue"
+dest_files=["res://.godot/imported/sv_king.dialogue-35508a6cebfd7dfb5416f6a283b77dc2.tres"]
+
+[params]
+
+defaults=true

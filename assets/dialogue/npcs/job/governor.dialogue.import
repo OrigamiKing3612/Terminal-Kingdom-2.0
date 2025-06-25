@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dv0g5xytpfgol"
+path="res://.godot/imported/governor.dialogue-651c929f605457248b622d953cf0e7ab.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/job/governor.dialogue"
+dest_files=["res://.godot/imported/governor.dialogue-651c929f605457248b622d953cf0e7ab.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cs4pbeo756cha"
+path="res://.godot/imported/carpenter.dialogue-b9e2e9af35134750ccd8b042cc76d5ca.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/job/carpenter.dialogue"
+dest_files=["res://.godot/imported/carpenter.dialogue-b9e2e9af35134750ccd8b042cc76d5ca.tres"]
+
+[params]
+
+defaults=true

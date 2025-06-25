@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d3045oxeai3eb"
+path="res://.godot/imported/chef.dialogue-5cfffe7643f7adabc196d5128a464234.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/job/chef.dialogue"
+dest_files=["res://.godot/imported/chef.dialogue-5cfffe7643f7adabc196d5128a464234.tres"]
+
+[params]
+
+defaults=true

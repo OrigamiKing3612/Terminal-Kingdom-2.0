@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="3_4qvxm"]
 [ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="3_vh2he"]
-[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_4qvxm"]
+[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/utils/breakable_and_placeable.gd" id="4_4qvxm"]
 [ext_resource type="Resource" uid="uid://di5s55nhjp0e5" path="res://assets/resources/npc/builder.tres" id="4_ekqpq"]
 [ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/MeshLibrary/decoration/LanternTile.tscn" id="4_mu1hj"]
-[ext_resource type="PackedScene" uid="uid://djd335f6v4ioq" path="res://scenes/tiles/buildings/WorkbenchTile.tscn" id="6_4qvxm"]
+[ext_resource type="PackedScene" uid="uid://djd335f6v4ioq" path="res://scenes/tiles/building_mains/WorkbenchTile.tscn" id="6_4qvxm"]
 
 [node name="Builder" type="Node3D"]
 

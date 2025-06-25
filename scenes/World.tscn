@@ -1,6 +1,6 @@
 [gd_scene load_steps=422 format=4 uid="uid://1gukb1yqks51"]
 
-[ext_resource type="PackedScene" uid="uid://bt8p520js50i3" path="res://scenes/ui/Environment.tscn" id="1_7c4bj"]
+[ext_resource type="PackedScene" uid="uid://bt8p520js50i3" path="res://scenes/ui/environment/Environment.tscn" id="1_7c4bj"]
 [ext_resource type="PackedScene" uid="uid://cpamh1gadlcks" path="res://scenes/Player.tscn" id="5_1lgw5"]
 [ext_resource type="PackedScene" uid="uid://b15ufnwgdjvf7" path="res://scenes/buildings/starting_village/Builder.tscn" id="5_h1bdy"]
 [ext_resource type="NavigationMesh" uid="uid://chw4cxgkk8gyo" path="res://assets/resources/navigation/world_navigation_mesh.tres" id="5_i4b1j"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://67y5cb0skn3k" path="res://scenes/buildings/starting_village/Farm.tscn" id="10_nrtoj"]
 [ext_resource type="PackedScene" uid="uid://rt35jrh3xbfd" path="res://scenes/buildings/starting_village/Castle.tscn" id="11_7c4bj"]
 [ext_resource type="PackedScene" uid="uid://bcm8bqqo5jyy1" path="res://scenes/buildings/starting_village/HuntingArea.tscn" id="11_nrtoj"]
-[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="12_7c4bj"]
+[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/utils/breakable_and_placeable.gd" id="12_7c4bj"]
 [ext_resource type="Resource" uid="uid://bddkrgugao34a" path="res://assets/resources/npc/no_job.tres" id="12_nrtoj"]
 [ext_resource type="PackedScene" uid="uid://ctjf0vxybm3ss" path="res://scenes/buildings/starting_village/Potter.tscn" id="13_c0d7e"]
 [ext_resource type="PackedScene" uid="uid://82iisqb3vgkp" path="res://scenes/buildings/starting_village/Tavern.tscn" id="14_nthub"]
@@ -40,7 +40,7 @@
 [ext_resource type="Material" uid="uid://dndvw557xcjfo" path="res://assets/resources/materials/MudMaterial.tres" id="38_004xm"]
 [ext_resource type="Material" uid="uid://4j82j07f5lkr" path="res://assets/resources/materials/SimpleMaterial.tres" id="39_1q6f7"]
 [ext_resource type="Material" uid="uid://c536gj7nxdaqp" path="res://assets/resources/materials/WoodPannelMaterial.tres" id="40_3bo0u"]
-[ext_resource type="PackedScene" uid="uid://dxfaeinhy2yxw" path="res://scenes/tiles/buildings/GovernorsDeskTile.tscn" id="41_yd118"]
+[ext_resource type="PackedScene" uid="uid://dxfaeinhy2yxw" path="res://scenes/tiles/building_mains/GovernorsDeskTile.tscn" id="41_yd118"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_pncuk"]
 _surfaces = [{

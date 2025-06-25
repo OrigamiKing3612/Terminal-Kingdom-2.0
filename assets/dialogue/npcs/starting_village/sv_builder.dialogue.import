@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ca60ph2lskf52"
+path="res://.godot/imported/sv_builder.dialogue-9f0941c977d29492514dcc45c8b38c41.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/starting_village/sv_builder.dialogue"
+dest_files=["res://.godot/imported/sv_builder.dialogue-9f0941c977d29492514dcc45c8b38c41.tres"]
+
+[params]
+
+defaults=true

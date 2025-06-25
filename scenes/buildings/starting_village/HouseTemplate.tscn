@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvro2skwyhiau"]
 
 [ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="1_12amb"]
-[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/breakable_and_placeable.gd" id="4_1u40d"]
+[ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/utils/breakable_and_placeable.gd" id="4_1u40d"]
 
 [node name="HuntingArea" type="Node3D"]
 

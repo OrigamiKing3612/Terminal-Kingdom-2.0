@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dia1v0snlaxek"
+path="res://.godot/imported/sv_hunter.dialogue-ad80ef41298d7f0e3d2317be33270a8e.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/starting_village/sv_hunter.dialogue"
+dest_files=["res://.godot/imported/sv_hunter.dialogue-ad80ef41298d7f0e3d2317be33270a8e.tres"]
+
+[params]
+
+defaults=true

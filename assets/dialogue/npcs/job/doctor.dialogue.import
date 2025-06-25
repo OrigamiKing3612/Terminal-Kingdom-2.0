@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://n22dp2v8uo4b"
+path="res://.godot/imported/doctor.dialogue-ff8ac131cbe9e38a3eb9a0eb3e5acae2.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/job/doctor.dialogue"
+dest_files=["res://.godot/imported/doctor.dialogue-ff8ac131cbe9e38a3eb9a0eb3e5acae2.tres"]
+
+[params]
+
+defaults=true
