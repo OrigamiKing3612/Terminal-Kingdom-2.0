@@ -46,7 +46,7 @@ static func _generate_name(gender: Utils.Gender) -> Dictionary[String, String]:
 			"Dominic", "Derek", "Damien", "Gideon", "Paul", 
 			"Robert", "Edmund", "Charles", "Quinn", "Caleb", 
 			"Ulysses", "Simon", "Patrick", "Terrence", "Harry", 
-			"Milton", "David", "Tom", "Haymitch", "Jack", 
+			"Milton", "David", "Tom", "Bob", "Jack", 
 			"Chad", "Kieran", "Fred", "Henry", "Edward", 
 			"Louis", "Ryan", "Alfred", "Nikolai", "Percy", 
 			"Michael", "Kyle", "Mark", "Hugo", "Adam", 
@@ -61,7 +61,7 @@ static func _generate_name(gender: Utils.Gender) -> Dictionary[String, String]:
 			"Garrett", "Sebastian", "Nathan", "Finn", "Chief",
 			"Json", "Jason", "Zachary", "Tyler", "Shepard"
 		]
-		var index = GameManager.random.randi_range(0, male_names.size())
+		var index = GameManager.random.randi_range(0, male_names.size() - 1)
 		first_name = male_names[index]
 	else:
 		var female_names := [
@@ -86,14 +86,14 @@ static func _generate_name(gender: Utils.Gender) -> Dictionary[String, String]:
 			"Elizabeth", "Tyler"
 		]
 
-		var index = GameManager.random.randi_range(0, female_names.size())
+		var index = GameManager.random.randi_range(0, female_names.size() - 1)
 		first_name = female_names[index]
 	
 	var last_names := [
 		"Thompson", "White", "Smith", "Dove", "Prince", 
 		"King", "Williams", "Gumbolliak", "Nobell", "Starfin",
 		"Jackson", "Martin", "Ellis","Price","Blackwood",
-		"Brightblade", "Dawnsworn", "Duskbane", "Emberly", "Farrow",
+		"Graves", "Dawnsworn", "Duskbane", "Emberly", "Farrow",
 		"Greythorn", "Hawke", "Ironhart", "Kingsley", "Locke",
 		"Nightshade","Thornfield","Windmere", "Sigma", "Pennyworth",
 		"Kingsman", "Blackwell", "Burlow", "Carver", "Chandler", 
@@ -113,9 +113,11 @@ static func _generate_name(gender: Utils.Gender) -> Dictionary[String, String]:
 		"Shepard", "Swann", "Crane", "Dunn", "Eaton",
 		"Fleming", "Flynn", "Gates", "Goodwin", "Reeves",
 		"Perry", "Holt", "Oakes", "Nash", "Marin",
-		"Lang", "Mann", "Graves",
+		"Lang", "Mann",
 	]
-	var index = GameManager.random.randi_range(0, last_names.size())
+	var index = GameManager.random.randi_range(0, last_names.size() - 1)
 	var last_name = last_names[index]
+	if GameManager.random.randi_range(1, 100) == 71:
+		last_name = "Gumbolliak"
 	
 	return {"first": first_name, "last": last_name}

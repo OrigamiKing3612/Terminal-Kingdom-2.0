@@ -23,4 +23,4 @@ func deselect() -> void:
 	selected_panel.hide()
 
 func _on_button_pressed() -> void:
-	selected.emit()
+	selected.emit(index)

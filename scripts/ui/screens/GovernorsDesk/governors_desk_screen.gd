@@ -12,10 +12,12 @@ func init() -> void:
 		var data := NPCData.create_new()
 		npcs.append(data)
 		
-	for npc in npcs:
+	for index in npcs.size():
 		var npc_display = NPC_TEMPLATE.instantiate()
 		npcs_container.add_child(npc_display)
-		npc_display.set_data(npc)
+		npc_display.selected.connect(_on_selected)
+		npc_display.index = index
+		npc_display.set_data(npcs[index])
 
 func _on_selected(index: int):
 	var children = npcs_container.get_children()
