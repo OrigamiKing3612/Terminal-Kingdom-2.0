@@ -5,16 +5,16 @@ class_name BreakableGridMap
 func destroy_tile(collision_point: Vector3) -> void:
 	var local_point := to_local(collision_point)
 	var grid_pos := local_to_map(local_point)
-
-	var mesh_id := get_cell_item(grid_pos)
-	print_debug("mesh_id: ", mesh_id)
-	if mesh_id < 0:
-		print_debug("Not a gridmap tile")
+	if grid_pos.y <= 0:
+		return
+	var id = get_cell_item(grid_pos)
+	if id < 0:
+		print_debug("Not a gridmap tile: ", id)
 		return
 
-	var tile_id := TileDB.get_tile_id_from_gridmap_id(mesh_id)
+	var tile_id := TileDB.get_tile_id_from_gridmap_id(id)
 	if tile_id == -1:
-		push_error("No TileDropData found for mesh_id %s" % mesh_id)
+		push_error("No TileDropData found for mesh_id %s" % tile_id)
 		return
 
 	var can_break = Utils.break_tile(tile_id)
@@ -28,8 +28,8 @@ func place_tile(collision_point: Vector3, tile_id: int) -> void:
 		push_error("No tile for ID %s" % tile_id)
 		return
 
-	var local_point = to_local(collision_point)
-	var grid_pos = local_to_map(local_point)
+	var local_point := to_local(collision_point)
+	var grid_pos := local_to_map(local_point)
 	if grid_pos.y <= 0:
 		return
 

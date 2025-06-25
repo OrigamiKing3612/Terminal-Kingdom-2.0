@@ -88,7 +88,7 @@ func get_tile_id_from_gridmap_id(gridmap_id: int) -> int:
 		var tile = TileDB.get_tile(i)
 		if not tile:
 			push_warning("no tile data found for gridmap_id: ", gridmap_id)
-			return -1
+			continue
 		if tile.gridmap_id == gridmap_id:
 			return tile.tile_id
 	return -1
