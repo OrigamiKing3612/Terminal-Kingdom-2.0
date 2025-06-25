@@ -79,7 +79,10 @@ func _on_right_click():
 			var pos = ray_cast_3d.get_collision_point()
 			var normal = ray_cast_3d.get_collision_normal()
 			if GameManager.mode == GameManager.Mode.Build:
-				collider.place_tile(pos + normal * 0.5, GameManager.selected_gridmap_id)
+				if GameManager.selected_tile_id == -1:
+					push_warning("Tried to place a tile with -1 as GameManager.selected_tile_id")
+					return
+				collider.place_tile(pos + normal * 0.5, GameManager.selected_tile_id)
 		elif collider.has_method("interact"):
 			collider.interact()
 			

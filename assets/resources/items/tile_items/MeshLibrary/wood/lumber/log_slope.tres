@@ -22,6 +22,5 @@ can_be_sold = false
 is_buildable = true
 texture_2d = SubResource("ImageTexture_g78pn")
 max_amount_per_stack = 50
-gridmap_id = 25
 tile_id = 25
 seed = 0

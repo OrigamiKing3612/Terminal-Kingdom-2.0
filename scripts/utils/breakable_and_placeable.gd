@@ -1,20 +1,26 @@
 extends GridMap
 class_name BreakableGridMap
 
+# Only called on gridmap, so this does not need to handle non gridmap ids
 func destroy_tile(collision_point: Vector3) -> void:
-	var local_point = to_local(collision_point)
-	var grid_pos = local_to_map(local_point)
-	if grid_pos.y <= 0:
-		return
-	var id = get_cell_item(grid_pos)
-	var can_replace = Utils.break_tile(id)
-	if can_replace:
-		set_cell_item(grid_pos, -1)
+	var local_point := to_local(collision_point)
+	var grid_pos := local_to_map(local_point)
 
-func destroy_tile_scene(tile_id: int) -> void:
-	var can_replace = Utils.break_tile(tile_id)
-	if can_replace:
-		queue_free()
+	var mesh_id := get_cell_item(grid_pos)
+	print_debug("mesh_id: ", mesh_id)
+	if mesh_id < 0:
+		print_debug("Not a gridmap tile")
+		return
+
+	var tile_id := TileDB.get_tile_id_from_gridmap_id(mesh_id)
+	if tile_id == -1:
+		push_error("No TileDropData found for mesh_id %s" % mesh_id)
+		return
+
+	var can_break = Utils.break_tile(tile_id)
+	if can_break:
+		set_cell_item(grid_pos, -1) # Clear tile
+		print_debug("can break so broke")
 
 func place_tile(collision_point: Vector3, tile_id: int) -> void:
 	var tile_data := TileDB.get_tile(tile_id)
@@ -27,9 +33,9 @@ func place_tile(collision_point: Vector3, tile_id: int) -> void:
 	if grid_pos.y <= 0:
 		return
 
-	if tile_data.id >= 0:
-		set_cell_item(grid_pos, tile_data.id, get_orthogonal_index_from_basis(Utils.vector_to_orientation(GameManager.rotation)))
-	elif tile_data.id == -2 and tile_data.tile_to_place:
-		var inst = tile_data.tile_to_place.instantiate()
+	if tile_data.gridmap_id >= 0:
+		set_cell_item(grid_pos, tile_data.gridmap_id, get_orthogonal_index_from_basis(Utils.vector_to_orientation(GameManager.rotation)))
+	elif tile_data.scene_to_place:
+		var inst = tile_data.scene_to_place.instantiate()
 		inst.global_position = map_to_local(grid_pos)
 		get_parent().add_child(inst)

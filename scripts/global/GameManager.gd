@@ -10,7 +10,7 @@ extends Node
 	set(value):
 		rotation = Vector3i(0,0,0)
 		selected_item_index = value
-@export var selected_gridmap_id: int = 0
+@export var selected_tile_id: int = 0
 @export var player: PlayerData
 @export var kingdom: Kingdom
 

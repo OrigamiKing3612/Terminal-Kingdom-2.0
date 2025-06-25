@@ -22,7 +22,7 @@ func _process(delta):
 		return
 	mesh_instance_3d.visible = true
 
-	var selected_id = GameManager.selected_gridmap_id
+	var selected_id = GameManager.selected_tile_id
 	if selected_id != last_selected_id:
 		var mesh = meshlib.get_item_mesh(selected_id)
 		if mesh:

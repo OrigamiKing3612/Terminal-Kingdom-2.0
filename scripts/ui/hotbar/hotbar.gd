@@ -45,7 +45,7 @@ func show_hot_bar():
 
 		if display_index == 2:  # always select the middle one in the visible list
 			new_item.selected()
-			GameManager.selected_gridmap_id = buildable_items[item_index].items[0].gridmap_id
+			GameManager.selected_tile_id = buildable_items[item_index].items[0].tile_id
 		else:
 			new_item.deselected()
 

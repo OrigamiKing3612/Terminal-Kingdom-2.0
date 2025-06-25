@@ -1,8 +1,6 @@
 extends Resource
 class_name TileDropData
 
-## Gridmap ID to place REMOVE THIS FOR tile_id
-@export var id: int
 @export var tile_id: int = -1
 @export var gridmap_id: int = -1
 @export var scene_to_place: PackedScene
