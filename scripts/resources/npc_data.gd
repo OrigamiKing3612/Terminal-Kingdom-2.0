@@ -38,30 +38,82 @@ static func _generate_name(gender: Utils.Gender) -> Dictionary[String, String]:
 	var first_name: String
 	if gender == Utils.Gender.Male:
 		var male_names := [
-			"Alexander", "Fred", "Geophrey", "Haymitch", "Louis", 
-			"Craig", "Harry", "Garrett", "Jack", "Eli", 
-			"Isaac", "Charles", "Charlie", "Dominic", "Hugo", 
-			"John", "Adam", "Ryan", "Mark", "Samuel", 
-			"Jim", "Nathaniel", "Cornelius", "William", "James", 
-			"Ethan", "Patrick", "Peter", "Josh", "Quinn", 
-			"Luke", "Jimmy", "Xavier", "Bartholomew", "Chad"
+			"Stanley", "Geophrey", "Cornelius", "Wyatt", "Ben", 
+			"Isaac", "Craig", "George", "Nate", "Frank", 
+			"James", "Arthur", "Nigel", "John", "Winston", 
+			"Curtis", "Julian", "Leo", "Alexander", "Walter", 
+			"William", "Kenrick", "Orville", "Harold", "Felix", 
+			"Dominic", "Derek", "Damien", "Gideon", "Paul", 
+			"Robert", "Edmund", "Charles", "Quinn", "Caleb", 
+			"Ulysses", "Simon", "Patrick", "Terrence", "Harry", 
+			"Milton", "David", "Tom", "Haymitch", "Jack", 
+			"Chad", "Kieran", "Fred", "Henry", "Edward", 
+			"Louis", "Ryan", "Alfred", "Nikolai", "Percy", 
+			"Michael", "Kyle", "Mark", "Hugo", "Adam", 
+			"Franklin", "Sam", "Percival", "Matt", "Greg", 
+			"Peter", "Luke", "Reginald", "Quentin", "Daniel", 
+			"Bartholomew", "Malachi", "Zach", "Randolph", "Vernon", 
+			"Owen", "Eric", "Liam", "Victor", "Theodore", 
+			"Roland", "Xavier", "Irwin", "Marius", "Samuel", 
+			"Josh", "Joseph", "Bernard", "Eli", "Leon", 
+			"Nathaniel", "Randall", "Ethan", "Jim", "Jimmy", 
+			"Oscar", "Clive", "Theo", "Thomas", "Charlie", 
+			"Garrett", "Sebastian", "Nathan", "Finn", "Chief",
+			"Json", "Jason", "Zachary", "Tyler", "Shepard"
 		]
 		var index = GameManager.random.randi_range(0, male_names.size())
 		first_name = male_names[index]
 	else:
 		var female_names := [
-			"Luna", "Luella", "Hope", "Hannah", "Caroline", 
-			"Alice", "Lily", "Petunia", "Taylor", "Jessica", 
-			"Lucy", "Willow", "Susanna", "Sarah", "Dawn",
-			"Mary", "Anna", "Karren", "Zoe"
+			"Jordan", "Beth", "Ava", "Vivian", "Zoey", 
+			"Piper", "Sophie", "Esther", "Rosalind", "Iris", 
+			"Emily", "Jasmine", "Margret", "Luella", "Florence", 
+			"Nellie", "Emma", "Olivia", "Willow", "Rachel", 
+			"Victoria", "Petunia", "Beatrice", "Diana", "Julia", 
+			"Mary", "Amelia", "Mabel", "Bernice", "Karren", 
+			"Wendy", "Edith", "Faith", "Nora", "Evelyn", 
+			"Grace", "Judith", "Sylvia", "Maggie", "Lila", 
+			"Natalie", "Tara", "Alice", "Fiona", "Tabitha", 
+			"Haley", "Sarah", "Hope", "Katherine", "Megan", 
+			"Celeste", "Rebecca", "Ellie", "Claire", "Daisy", 
+			"Martha", "Taylor", "Dawn", "Anna", "Mia", 
+			"Irene", "Isabel", "Katie", "Layla", "Ruth", 
+			"Lisa", "Ivy", "Sophia", "Pearl", "Violet", 
+			"Kate", "Harper", "Caroline", "Jessica", "Zoe", 
+			"Luna", "Paige", "Tessa", "Susanna", "Lily", 
+			"Hazel", "Gertrude", "Matilda", "Agnes", "Clara", 
+			"Dorothy", "Penelope", "Chloe", "Lucy", "Hannah",
+			"Elizabeth", "Tyler"
 		]
+
 		var index = GameManager.random.randi_range(0, female_names.size())
 		first_name = female_names[index]
 	
 	var last_names := [
 		"Thompson", "White", "Smith", "Dove", "Prince", 
 		"King", "Williams", "Gumbolliak", "Nobell", "Starfin",
-		"Jackson", "Martin", "Ellis"
+		"Jackson", "Martin", "Ellis","Price","Blackwood",
+		"Brightblade", "Dawnsworn", "Duskbane", "Emberly", "Farrow",
+		"Greythorn", "Hawke", "Ironhart", "Kingsley", "Locke",
+		"Nightshade","Thornfield","Windmere", "Sigma", "Pennyworth",
+		"Kingsman", "Blackwell", "Burlow", "Carver", "Chandler", 
+		"Driftwood", "Fenwick", "Halloway", "Rookwood", "Wicker", 
+		"Smith", "Jones", "Brown", "Snow", "Black", 
+		"Green", "Gray", "Stone", "Hill", "Wood", 
+		"Page", "Knight", "Reed", "Lane", "Ford", 
+		"Cook", "Chase", "Wells", "Shaw", "Hart", 
+		"Clark", "Grant", "Cole", "Ray", "West", 
+		"Hale", "Pope", "Dale", "Knox", "Cobb",
+		"Short", "Bell", "May", "Sharp", "Young",
+		"Long", "Blake", "Brooks", "Wade", "Keene",
+		"Baird", "Summers", "Firth", "Pike", "Rowe",
+		"Sparks", "Go", "Swift", "Portland", "Landery",
+		"Abbott", "Baker", "Vance", "Tyler", "York",
+		"Boone", "Todd", "Briggs", "Burke", "Tate",
+		"Shepard", "Swann", "Crane", "Dunn", "Eaton",
+		"Fleming", "Flynn", "Gates", "Goodwin", "Reeves",
+		"Perry", "Holt", "Oakes", "Nash", "Marin",
+		"Lang", "Mann", "Graves",
 	]
 	var index = GameManager.random.randi_range(0, last_names.size())
 	var last_name = last_names[index]

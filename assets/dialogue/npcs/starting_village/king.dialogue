@@ -1,11 +1,11 @@
 ~ builder_stage4
 {{GameManager.player.name}}: Hello King, I am the builders apprentice, we were wondering if we could build a new house in the village?
-King: Oh {{GameManager.player.name}}! Yes that is a good idea.
+King Randolph: Oh {{GameManager.player.name}}! Yes that is a good idea.
 {{GameManager.player.name}}: Ok! Thank you! I'll go let him know
 => END
 
 ~ first_dialogue
-King: Welcome to the village, {{GameManager.player.name}}. I am the king of this village. I have heard of your arrival and I am glad you are here. I am here to help you navigate this village. Seems like you figured out how to walk. Your goal is to learn how to create your own village and go make your own kingdom! You can learn different skills by talking to different people in the buildings. 
-King: Now you might be wondering what buttons to press. TODO. If you have any questions, feel free to ask me.
-King: Good luck!
+King Randolph: Welcome to the village, {{GameManager.player.name}}. I am the king of this village. I have heard of your arrival and I am glad you are here. I am here to help you navigate this village. Seems like you figured out how to walk. Your goal is to learn how to create your own village and go make your own kingdom! You can learn different skills by talking to different people in the buildings. 
+King Randolph: Now you might be wondering what buttons to press. TODO. If you have any questions, feel free to ask me.
+King Randolph: Good luck!
 => END
