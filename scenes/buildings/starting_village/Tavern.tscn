@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://82iisqb3vgkp"]
+[gd_scene load_steps=36 format=3 uid="uid://82iisqb3vgkp"]
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_iefn4"]
 [ext_resource type="Resource" uid="uid://6027d13mrgog" path="res://assets/resources/npc/bartender.tres" id="2_iefn4"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://cmqd8ld1mq276" path="res://scenes/tiles/MeshLibrary/decoration/tavern/SpoonTile.tscn" id="31_p5na1"]
 [ext_resource type="PackedScene" uid="uid://cploarehk5jdx" path="res://scenes/tiles/MeshLibrary/decoration/tavern/WineGlassTile.tscn" id="33_l1wdh"]
 [ext_resource type="PackedScene" uid="uid://0exdtnyssxpi" path="res://scenes/tiles/MeshLibrary/decoration/ChairBTile.tscn" id="34_4otmp"]
+[ext_resource type="PackedScene" uid="uid://d2ekht6aghysd" path="res://scenes/tiles/buildings/TavernMainTile.tscn" id="35_lxsbm"]
 [ext_resource type="PackedScene" uid="uid://bkseq54fylkak" path="res://scenes/tiles/MeshLibrary/decoration/ChairTile.tscn" id="35_vk3tv"]
 
 [node name="Tavern" type="Node3D"]
@@ -176,85 +177,88 @@ transform = Transform3D(-2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, 33, 4,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 4, 5.5)
 
 [node name="BarrelTile" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 7.5)
 
 [node name="BarrelTile2" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 9.5)
 
 [node name="BarrelTile3" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 11.5)
 
 [node name="BarrelTile4" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 13.5)
 
 [node name="BarrelTile5" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 15.5)
 
 [node name="BarrelTile6" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.29321, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.29321, 14.5)
 
 [node name="BarrelTile7" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.29321, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.29321, 14.5)
 
 [node name="BarrelTile8" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.29321, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.29321, 12.5)
 
 [node name="BarrelTile9" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.29321, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.29321, 10.5)
 
 [node name="BarrelTile10" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.29321, 9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.29321, 8.5)
 
 [node name="BarrelTile11" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, -1.02203, 10.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, -1.02203, 10)
 
 [node name="BarrelTile16" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, -26, -1.02203, 18.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, -26, -1.02203, 18)
 
 [node name="BarrelTile12" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, -1.02203, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, -1.02203, 11.5)
 
 [node name="BarrelTile13" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, -1.02203, 13.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, -1.02203, 13)
 
 [node name="BarrelTile14" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.97797, 10.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.97797, 10)
 
 [node name="BarrelTile20" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.97797, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.97797, 11.5)
 
 [node name="BarrelTile21" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.97797, 13.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.97797, 13)
 
 [node name="BarrelTile15" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 4.97797, 10.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 4.97797, 10)
 
 [node name="BarrelTile30" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 4.97797, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 4.97797, 11.5)
 
 [node name="BarrelTile31" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 4.97797, 13.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 4.97797, 13)
 
 [node name="BarrelTile22" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 3.47797, 11.2584)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 3.47797, 10.7584)
 
 [node name="BarrelTile23" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 3.47797, 12.7584)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 3.47797, 12.2584)
 
 [node name="BarrelTile24" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 3.47797, 14.2584)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 3.47797, 13.7584)
 
 [node name="BarrelTile25" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 3.47797, 9.75835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 3.47797, 9.25835)
 
 [node name="BarrelTile26" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 11.2584)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 10.7584)
 
 [node name="BarrelTile27" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 12.7584)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 12.2584)
 
 [node name="BarrelTile28" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 14.2584)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 13.7584)
 
 [node name="BarrelTile29" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 9.75835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 9.25835)
+
+[node name="TavernMainTile" parent="." instance=ExtResource("35_lxsbm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 3, 12)

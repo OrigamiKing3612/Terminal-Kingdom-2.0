@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource("1_fdvqr")
 name = "Builder"
-job = 10
-skill_level = 0
+last_name = ""
+current_job = 0
+skills = Dictionary[int, int]({})
 experience = 0.0
 age = 18
 gender = 0
