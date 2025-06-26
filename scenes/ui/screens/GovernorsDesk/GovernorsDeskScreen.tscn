@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dia88vntf81qk"]
+[gd_scene load_steps=4 format=3 uid="uid://dia88vntf81qk"]
 
 [ext_resource type="Script" uid="uid://gmk2d1iuy8gr" path="res://scripts/ui/screens/GovernorsDesk/governors_desk_screen.gd" id="1_kgsrr"]
+[ext_resource type="Script" uid="uid://b8uk1tq2juiks" path="res://scripts/ui/screens/GovernorsDesk/edit_village.gd" id="2_8xcpb"]
+[ext_resource type="PackedScene" uid="uid://ur5n1tiyu2ei" path="res://scenes/ui/screens/GovernorsDesk/EditVillageNPCTemplate.tscn" id="2_nbsle"]
 
 [node name="GovernorsDeskScreen" type="Control"]
 custom_minimum_size = Vector2(1182, 642)
@@ -33,7 +35,9 @@ offset_right = 591.0
 offset_bottom = 321.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 2
+tabs_position = 1
+clip_tabs = false
 
 [node name="Settings" type="HBoxContainer" parent="TabContainer"]
 visible = false
@@ -80,14 +84,22 @@ layout_mode = 2
 text = "Save"
 
 [node name="Add NPC" type="HBoxContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Add NPC"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Add NPC"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Add NPC/MarginContainer"]
 custom_minimum_size = Vector2(1182, 0)
 layout_mode = 2
 
-[node name="Title" type="RichTextLabel" parent="TabContainer/Add NPC/VBoxContainer"]
+[node name="Title" type="RichTextLabel" parent="TabContainer/Add NPC/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 30
@@ -96,12 +108,56 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NPCsContainer" type="HBoxContainer" parent="TabContainer/Add NPC/VBoxContainer"]
+[node name="NPCsContainer" type="HBoxContainer" parent="TabContainer/Add NPC/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ApproveButton" type="Button" parent="TabContainer/Add NPC/VBoxContainer"]
+[node name="ApproveButton" type="Button" parent="TabContainer/Add NPC/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Approve"
 
-[connection signal="pressed" from="TabContainer/Add NPC/VBoxContainer/ApproveButton" to="." method="_on_approved"]
+[node name="Edit Village" type="VBoxContainer" parent="TabContainer"]
+layout_mode = 2
+script = ExtResource("2_8xcpb")
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Edit Village"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Edit Village/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="TabContainer/Edit Village/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 30
+text = "Edit Village"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Edit Village/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 561)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Edit Village/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="NPCTemplate" parent="TabContainer/Edit Village/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_nbsle")]
+layout_mode = 2
+show_edit_button = false
+
+[connection signal="pressed" from="TabContainer/Add NPC/MarginContainer/VBoxContainer/ApproveButton" to="." method="_on_approved"]

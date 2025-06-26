@@ -3,8 +3,9 @@ class_name GovernorsScreen
 
 @export var position_to_spawn_npcs: Vector3
 
-@onready var npcs_container: HBoxContainer = $"TabContainer/Add NPC/VBoxContainer/NPCsContainer"
-@onready var approve_button: Button = $"TabContainer/Add NPC/VBoxContainer/ApproveButton"
+@onready var npcs_container: HBoxContainer = $"TabContainer/Add NPC/MarginContainer/VBoxContainer/NPCsContainer"
+@onready var approve_button: Button = $"TabContainer/Add NPC/MarginContainer/VBoxContainer/ApproveButton"
+
 const NPC_SCENE = preload("res://scenes/npcs/NPC.tscn")
 const NPC_TEMPLATE = preload("res://scenes/ui/screens/GovernorsDesk/NPCTemplate.tscn")
 

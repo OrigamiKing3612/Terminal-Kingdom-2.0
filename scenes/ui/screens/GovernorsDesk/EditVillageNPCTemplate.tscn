@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://ur5n1tiyu2ei"]
+
+[ext_resource type="Script" uid="uid://glevg2hmoa3r" path="res://scripts/ui/screens/GovernorsDesk/edit_village_npc_template.gd" id="1_xfidb"]
+
+[node name="NPCTemplate" type="HBoxContainer"]
+custom_minimum_size = Vector2(1142, 0)
+size_flags_vertical = 3
+script = ExtResource("1_xfidb")
+
+[node name="Name" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Job" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Job"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Age" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Age"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Home" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Home"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Workplace" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Workplace"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Placeholder" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Edit"

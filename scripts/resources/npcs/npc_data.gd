@@ -17,6 +17,7 @@ var id = UUID.string()
 @export var positionToWalkTo: Vector3 = Vector3.ZERO
 @export var home: Vector3 = Vector3.ZERO # location of home door (or bed?)
 @export var workplace: Vector3 = Vector3.ZERO # location of work
+@export var village_id: String = ""
 
 @export_group("Starting NPC Settings")
 @export var is_starting_village_npc: bool = false
