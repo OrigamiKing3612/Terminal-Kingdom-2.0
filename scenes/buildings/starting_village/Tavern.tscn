@@ -55,48 +55,63 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="CandleTile" parent="Decoration" instance=ExtResource("6_lxsbm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, 8.5)
+visible = false
 
 [node name="BaguetteTile" parent="Decoration" instance=ExtResource("8_ynww7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="BowlTile" parent="Decoration" instance=ExtResource("10_jvsux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="BreadLoafTile" parent="Decoration" instance=ExtResource("11_1nwsy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 6, 8.5)
+visible = false
 
 [node name="BreadSliceTile" parent="Decoration" instance=ExtResource("12_6ix1q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="CheeseTile" parent="Decoration" instance=ExtResource("13_4rnvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="CookedMeatTile" parent="Decoration" instance=ExtResource("14_an3w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 6, 8.5)
+visible = false
 
 [node name="CookingPotTile" parent="Decoration" instance=ExtResource("15_u0a7i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="FishTile" parent="Decoration" instance=ExtResource("16_ey8bs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="ForkTile" parent="Decoration" instance=ExtResource("17_7petl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="GlassCupTile" parent="Decoration" instance=ExtResource("18_8i07u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="HamHalfTile" parent="Decoration" instance=ExtResource("19_s7uij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="HamTile" parent="Decoration" instance=ExtResource("20_0xq78")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, 8.5)
+visible = false
 
 [node name="KnifeTile" parent="Decoration" instance=ExtResource("21_w7wl3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="MuffinTile" parent="Decoration" instance=ExtResource("22_r33re")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 4, 10)
+visible = false
 
 [node name="MugTile" parent="Decoration" instance=ExtResource("23_0yt30")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 15, 5, 10.5)
@@ -106,33 +121,43 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 15, 5, 11.
 
 [node name="MugTile3" parent="Decoration" instance=ExtResource("23_0yt30")]
 transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 15, 5, 20)
+visible = false
 
 [node name="PanStewTile" parent="Decoration" instance=ExtResource("24_6d1vf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 6, 8.5)
+visible = false
 
 [node name="PanTile" parent="Decoration" instance=ExtResource("25_27sfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 6, 8.5)
+visible = false
 
 [node name="PotLidTile" parent="Decoration" instance=ExtResource("26_85qxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, 8.5)
+visible = false
 
 [node name="PotStewTile" parent="Decoration" instance=ExtResource("27_8rq6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 6, 8.5)
+visible = false
 
 [node name="RoundLoafTile" parent="Decoration" instance=ExtResource("28_g7ndp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="SausageTile" parent="Decoration" instance=ExtResource("29_lr3u7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 6, 8.5)
+visible = false
 
 [node name="SlicedCheeseTile" parent="Decoration" instance=ExtResource("30_wb0nr")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 6.5, 5, 12)
+visible = false
 
 [node name="SpoonTile" parent="Decoration" instance=ExtResource("31_p5na1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 6, 8.5)
+visible = false
 
 [node name="WineGlassTile" parent="Decoration" instance=ExtResource("33_l1wdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 6, 8.5)
+visible = false
 
 [node name="Lanterns" type="Node3D" parent="Decoration"]
 

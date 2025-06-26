@@ -1,7 +1,7 @@
 extends Node3D
 
-@onready var fire: MeshInstance3D = $Fire
 @export var furnace_screen: PackedScene
+@onready var fire: Node3D = $Fire
 
 @export var recipes: Array[FurnaceRecipe]
 @export var state: FurnaceState = FurnaceState.unused:
