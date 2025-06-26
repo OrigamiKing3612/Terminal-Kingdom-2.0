@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d0nfaymvottcp" path="res://scripts/tiles/building_mains/furnace_tile.gd" id="1_a25ud"]
 [ext_resource type="PackedScene" uid="uid://ctajdwqvt83xr" path="res://scenes/ui/workstations/WorkstationScreen.tscn" id="2_n8osn"]
-[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="4_mtig7"]
-[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="5_2u651"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="4_mtig7"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="5_2u651"]
 [ext_resource type="PackedScene" uid="uid://bl0qt73ryudtp" path="res://scenes/tiles/MeshLibrary/item/LumberItemTileOne.tscn" id="5_ot47l"]
 [ext_resource type="PackedScene" uid="uid://7nfrcdt56yox" path="res://scenes/tiles/MeshLibrary/item/LumberItemTileThree.tscn" id="6_78837"]
 [ext_resource type="Material" uid="uid://bpn0wsexyobq3" path="res://assets/resources/materials/FireMaterial.tres" id="7_jgx2l"]

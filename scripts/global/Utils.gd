@@ -10,6 +10,8 @@ enum Gender{Male, Female}
 enum StationTypes{Anvil, Furnace, Workbench}
 enum ToolType{None, Axe, Pickaxe, Sword}
 enum SeedType{None, Beet, Cabbage, Carrot, Onion, Pumpkin, TreeSeed}
+enum BuildingType { Blacksmith, Mine, Farm, Hospital, Store, Pottery, Stable, Carpentry, Builder, 
+	HuntingArea, Inventor, Restruant, Courthouse, Tavern }
 
 ## Returns ids of the items
 static func givePlayerCountOfItem(itemToDuplicate: Item, count: int) -> Array[String]:

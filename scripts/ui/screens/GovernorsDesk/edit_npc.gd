@@ -22,8 +22,14 @@ func _ready() -> void:
 	
 func set_data(data: NPCData, id: String):
 	self.village_id = id
-	village = GameManager.kingdom.villages[village_id]
-	title.text = "Edit %s %s (Village %s)" % [data.name, data.last_name, village.name]
+	village = GameManager.kingdom.get_village(village_id)
+	title.text = "Edit %s %s (%s)" % [data.name, data.last_name, village.village_name]
+	
+	for building in village.get_buildings():
+		var hiring: HiresComponent = building.get_node_or_null("HiresComponent") as HiresComponent
+		if hiring:
+			var jobs = hiring.is_hiring()
+			print_debug("Jobs at %s: %s" % [building.building_name, jobs])
 
 func _on_save_button_pressed() -> void:
 	back.emit()

@@ -2,8 +2,8 @@
 
 [ext_resource type="Material" uid="uid://clqbrphys3s54" path="res://assets/resources/materials/WorkbenchMaterial.tres" id="1_ia7li"]
 [ext_resource type="Script" uid="uid://tvubbp5x1mur" path="res://scripts/tiles/building_mains/workbench_tile.gd" id="1_xtrnq"]
-[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="3_6jog4"]
-[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="4_wiedm"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="3_6jog4"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="4_wiedm"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_23wqd"]
 _surfaces = [{

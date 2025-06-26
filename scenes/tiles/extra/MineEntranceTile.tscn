@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c3fc7stx78m1"]
 
 [ext_resource type="Script" uid="uid://p8fbaohmhf2c" path="res://scripts/tiles/extra/MineEntranceTile.gd" id="1_lov8x"]
-[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="2_vs1kw"]
-[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="3_opu0q"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_vs1kw"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_opu0q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kneda"]
 

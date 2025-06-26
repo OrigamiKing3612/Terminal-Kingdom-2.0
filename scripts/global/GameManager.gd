@@ -12,7 +12,8 @@ extends Node
 		selected_item_index = value
 @export var selected_tile_id: int = 0
 @export var player: PlayerData
-@export var kingdom: Kingdom
+
+@onready var kingdom: Kingdom = $Kingdom
 
 signal show_inventory
 signal hide_inventory
@@ -49,7 +50,6 @@ enum Mode{Normal, Inventory, Build, Mining, Speaking, InPopUp}
 
 func _ready() -> void:
 	player = player.duplicate(true)
-	kingdom = kingdom.duplicate(true)
 	player.inventory = player.inventory.duplicate(true)
 	inventory_update.emit()
 	random = RandomNumberGenerator.new()

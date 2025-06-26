@@ -26,8 +26,8 @@ func set_data(data: NPCData):
 			job.text = job_name
 			break
 	age.text = str(data.age)
-	home.text = str(data.home)
-	workplace.text = str(data.workplace)
+	home.text = str(data.home) if data.has_home else "None"
+	workplace.text = str(data.workplace) if data.has_workplace else "None"
 
 func _on_button_pressed() -> void:
 	edit.emit(npc_data)

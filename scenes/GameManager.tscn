@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ndmr52dllwad" path="res://scripts/global/GameManager.gd" id="1_34tde"]
 [ext_resource type="Resource" uid="uid://v0x75ukrrln7" path="res://assets/resources/player/player.tres" id="2_3dus2"]
-[ext_resource type="Resource" uid="uid://befliksktihyd" path="res://assets/resources/kingdom.tres" id="3_1jauj"]
+[ext_resource type="Script" uid="uid://coq8x5m3gaaub" path="res://scripts/resources/kingdom/kingdom.gd" id="3_biy4i"]
 [ext_resource type="Script" uid="uid://emqvl3xrerc8" path="res://scripts/ui/buildable_items.gd" id="6_jg7te"]
 [ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="7_2uts2"]
 [ext_resource type="Texture2D" uid="uid://c7im14pt3acjp" path="res://assets/models/icons/dirt_slope_preview.tres" id="8_2chjq"]
@@ -18,7 +18,10 @@ blend_mode = 4
 [node name="GameManager" type="Node"]
 script = ExtResource("1_34tde")
 player = ExtResource("2_3dus2")
-kingdom = ExtResource("3_1jauj")
+
+[node name="Kingdom" type="Node" parent="."]
+script = ExtResource("3_biy4i")
+metadata/_custom_type_script = "uid://coq8x5m3gaaub"
 
 [node name="QuestBox" type="CanvasLayer" parent="."]
 

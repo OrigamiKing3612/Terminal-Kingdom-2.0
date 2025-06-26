@@ -21,7 +21,7 @@ class_name NPCBrain
 @export_group("")
 @export var current_goal: NPCState:
 	set(newValue):
-		if previous_goal and current_goal.state_name != fall_state.state_name and current_goal.state_name != jump_state.name and current_goal.state_name != talk_to_player.state_name:
+		if current_goal and not current_goal.state_name in [fall_state.state_name, jump_state.state_name, talk_to_player.state_name]:
 			previous_goal = current_goal
 		current_goal = newValue
 var previous_goal: NPCState

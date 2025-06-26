@@ -38,5 +38,5 @@ func place_tile(collision_point: Vector3, tile_id: int) -> void:
 		var inst = tile_data.scene_to_place.instantiate()
 		inst.global_position = map_to_local(grid_pos)
 		get_parent().add_child(inst)
-		if inst.has_method("when_placed"):
+		if inst is BuildingMainTile:
 			inst.when_placed()

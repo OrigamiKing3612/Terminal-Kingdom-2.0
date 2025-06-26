@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://calvsmtfdeyoc"]
 
 [ext_resource type="Script" uid="uid://cqx7ai05xh6m" path="res://scripts/tiles/building_mains/medical_table_tile.gd" id="1_de2es"]
-[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="2_6xdpn"]
-[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="3_8c6lp"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_6xdpn"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_8c6lp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_np14t"]
 albedo_color = Color(1, 0, 1, 1)

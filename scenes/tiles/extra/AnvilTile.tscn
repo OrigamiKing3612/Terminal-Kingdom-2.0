@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dyqd354fmav1a" path="res://scripts/tiles/anvil/AnvilTile.gd" id="1_qgmwl"]
 [ext_resource type="PackedScene" uid="uid://ctajdwqvt83xr" path="res://scenes/ui/workstations/WorkstationScreen.tscn" id="2_pvmdq"]
-[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="3_vj73g"]
-[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="4_nasrr"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="3_vj73g"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="4_nasrr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_48esm"]
 size = Vector3(2, 2, 2)

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Kingdom" load_steps=3 format=3 uid="uid://befliksktihyd"]
 
-[ext_resource type="Script" uid="uid://coq8x5m3gaaub" path="res://scripts/resources/kingdom.gd" id="1_fhof6"]
-[ext_resource type="Script" uid="uid://ch3se5rjxbkrq" path="res://scripts/resources/village.gd" id="2_hs2aa"]
+[ext_resource type="Script" uid="uid://coq8x5m3gaaub" path="res://scripts/resources/kingdom/kingdom.gd" id="1_fhof6"]
+[ext_resource type="Script" uid="uid://ch3se5rjxbkrq" path="res://scripts/resources/kingdom/village/village.gd" id="2_hs2aa"]
 
 [resource]
 script = ExtResource("1_fhof6")

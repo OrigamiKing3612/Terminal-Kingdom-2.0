@@ -18,7 +18,7 @@ var npcs: Array[NPCData]
 var village: Village
 
 func init(village_id: String) -> void:
-	village = GameManager.kingdom.villages[village_id]
+	village = GameManager.kingdom.get_village(village_id)
 	self.village_id = village_id
 	approve_button.hide()
 	for i in range(3):
@@ -31,7 +31,7 @@ func init(village_id: String) -> void:
 		npc_display.selected.connect(_on_selected)
 		npc_display.index = index
 		npc_display.set_data(npcs[index])
-	edit_village.village_id = village_id
+	edit_village.init(village_id)
 	line_edit.placeholder_text = village.name
 	save_button.hide()
 
@@ -49,8 +49,7 @@ func _on_approved() -> void:
 	var npc = NPC_SCENE.instantiate()
 	npc.data = npcs[selected_index]
 	npc.position = position_to_spawn_npcs + Vector3(2, 0, 0)
-	GameManager.kingdom.villages[village_id].add_npc(npc)
-	get_tree().get_first_node_in_group("NPCsGroup").add_child(npc)
+	GameManager.kingdom.get_village(village_id).add_npc(npc)
 	npc.npc_brain.current_goal = npc.npc_brain.follow_state
 	npc.npc_brain.previous_goal = npc.npc_brain.follow_state
 	#npc.velocity = Vector3(2, 0, 0)
@@ -63,4 +62,4 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 
 
 func _on_save_button_pressed() -> void:
-	GameManager.kingdom.villages[village_id].name = line_edit.text
+	GameManager.kingdom.get_village(village_id).name = line_edit.text

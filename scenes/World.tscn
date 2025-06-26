@@ -4346,5 +4346,3 @@ end_position = Vector3(0, 1.67462, 7)
 player = NodePath("../Player")
 gridmap = NodePath("../NavigationRegion3D/Ground")
 meshlib = SubResource("MeshLibrary_ovuqc")
-
-[node name="SpawnedNPCs" type="Node3D" parent="." groups=["NPCsGroup"]]

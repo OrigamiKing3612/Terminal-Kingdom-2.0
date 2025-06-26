@@ -4,10 +4,11 @@ extends VBoxContainer
 @onready var npc_list: VBoxContainer = $MarginContainer/NPCList
 @onready var npc: VBoxContainer = $MarginContainer/NPC
 
-func _ready() -> void:
+func init(id: String) -> void:
+	village_id = id
 	npc_list.show()
 	npc.hide()
-	npc_list.village_id = village_id
+	npc_list.init(village_id)
 	npc.village_id = village_id
 
 func _on_npc_list_goto(data: NPCData) -> void:

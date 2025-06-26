@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6d3eltii7ct7"]
 
 [ext_resource type="Script" uid="uid://y7xjarkmo3nh" path="res://scripts/tiles/building_mains/potters_wheel_tile.gd" id="1_dq4ke"]
-[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="2_fiw6w"]
-[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="3_bi0w6"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_fiw6w"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_bi0w6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vtvp"]
 albedo_color = Color(1, 0, 1, 1)

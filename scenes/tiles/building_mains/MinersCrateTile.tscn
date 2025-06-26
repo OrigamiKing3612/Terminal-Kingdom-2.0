@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://d2176iq7a0bxk"]
 
 [ext_resource type="Script" uid="uid://b5jblc8p4y2bq" path="res://scripts/tiles/building_mains/miners_crate_tile.gd" id="1_ss2bb"]
-[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/utils/interactable_component.gd" id="2_xdbg4"]
-[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/utils/destroyable_component.gd" id="3_tim1i"]
+[ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_xdbg4"]
+[ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_tim1i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glgrh"]
 albedo_color = Color(1, 0, 1, 1)

@@ -7,15 +7,14 @@ const EDIT_VILLAGE_NPC_TEMPLATE = preload("res://scenes/ui/screens/GovernorsDesk
 
 @export var village_id: String = ""
 var npcs: Array[NPC] = []
+var village: Village
 
-func _ready() -> void:
-	var npcs_group = get_tree().get_first_node_in_group("NPCsGroup")
-	if npcs_group:
-		for npc_child in npcs_group.get_children():
-			if npc_child is NPC:
-				if npc_child.data.village_id == village_id:
-					npcs.append(npc_child)
-					
+func init(id: String) -> void:
+	village_id = id
+	village = GameManager.kingdom.get_village(village_id)
+	if village:
+		npcs = village.get_npcs()
+
 		for npc in npcs:
 			var npc_template = EDIT_VILLAGE_NPC_TEMPLATE.instantiate()
 			v_box_container.add_child(npc_template)
