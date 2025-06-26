@@ -1,10 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://82iisqb3vgkp"]
+[gd_scene load_steps=37 format=3 uid="uid://82iisqb3vgkp"]
 
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="1_iefn4"]
 [ext_resource type="Resource" uid="uid://6027d13mrgog" path="res://assets/resources/npc/bartender.tres" id="2_iefn4"]
 [ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="3_lxsbm"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/utils/breakable_and_placeable.gd" id="4_2g1rf"]
-[ext_resource type="PackedScene" uid="uid://b75j2wvhm4mps" path="res://scenes/tiles/MeshLibrary/decoration/TorchTile.tscn" id="5_6044s"]
+[ext_resource type="PackedScene" uid="uid://ca3ntfqwx51ny" path="res://scenes/tiles/MeshLibrary/decoration/TorchTile.tscn" id="5_6044s"]
 [ext_resource type="PackedScene" uid="uid://b8ym7hqm2t1xk" path="res://scenes/tiles/MeshLibrary/decoration/CandleTile.tscn" id="6_lxsbm"]
 [ext_resource type="PackedScene" uid="uid://d1423i0apxkoa" path="res://scenes/tiles/MeshLibrary/decoration/LanternTile.tscn" id="7_i32fm"]
 [ext_resource type="PackedScene" uid="uid://tko72d42f2uy" path="res://scenes/tiles/MeshLibrary/decoration/tavern/BaguetteTile.tscn" id="8_ynww7"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://0exdtnyssxpi" path="res://scenes/tiles/MeshLibrary/decoration/ChairBTile.tscn" id="34_4otmp"]
 [ext_resource type="PackedScene" uid="uid://d2ekht6aghysd" path="res://scenes/tiles/building_mains/TavernTile.tscn" id="35_lxsbm"]
 [ext_resource type="PackedScene" uid="uid://bkseq54fylkak" path="res://scenes/tiles/MeshLibrary/decoration/ChairTile.tscn" id="35_vk3tv"]
+[ext_resource type="PackedScene" uid="uid://du54wwbcwfrng" path="res://scenes/tiles/MeshLibrary/decoration/CampfireTile.tscn" id="36_i32fm"]
 
 [node name="Tavern" type="Node3D"]
 
@@ -51,9 +52,6 @@ script = ExtResource("4_2g1rf")
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Decoration" type="Node3D" parent="."]
-
-[node name="TorchTile" parent="Decoration" instance=ExtResource("5_6044s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 6, 9.5)
 
 [node name="CandleTile" parent="Decoration" instance=ExtResource("6_lxsbm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, 8.5)
@@ -260,5 +258,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 13.7584)
 [node name="BarrelTile29" parent="Decoration/Barrels" instance=ExtResource("9_0ytl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.477966, 9.25835)
 
+[node name="Campfire" parent="Decoration" instance=ExtResource("36_i32fm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 3.5, 12)
+
+[node name="TorchTile" parent="Decoration" instance=ExtResource("5_6044s")]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 15, 6, 10.5)
+
 [node name="TavernTile" parent="." instance=ExtResource("35_lxsbm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 3, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 3, 14)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://du54wwbcwfrng"]
+
+[ext_resource type="PackedScene" uid="uid://bl0qt73ryudtp" path="res://scenes/tiles/MeshLibrary/item/LumberItemTileOne.tscn" id="1_uywfs"]
+[ext_resource type="PackedScene" uid="uid://7nfrcdt56yox" path="res://scenes/tiles/MeshLibrary/item/LumberItemTileThree.tscn" id="2_l2a0p"]
+[ext_resource type="Material" uid="uid://ckhcicm2khwpn" path="res://assets/resources/materials/FireProcessMaterial.tres" id="3_56u2m"]
+[ext_resource type="Material" uid="uid://bpn0wsexyobq3" path="res://assets/resources/materials/FireMaterial.tres" id="4_k4xy5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4a65d"]
+material = ExtResource("4_k4xy5")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="CampfireTile" type="Node3D"]
+
+[node name="LumberItemTileOne" parent="." instance=ExtResource("1_uywfs")]
+transform = Transform3D(0.0901938, -0.870913, 0.48309, -0.175097, 0.463644, 0.868548, -0.980411, -0.162925, -0.110676, -1.34833, 0, -0.503856)
+
+[node name="LumberItemTileThree" parent="." instance=ExtResource("2_l2a0p")]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19086, 0.459008, 0)
+visibility_range_begin_margin = 10.0
+visibility_range_end = 20.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+amount = 1600
+lifetime = 0.8
+fixed_fps = 0
+process_material = ExtResource("3_56u2m")
+draw_pass_1 = SubResource("BoxMesh_4a65d")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.297443, 0)
+light_color = Color(0.69, 0.483, 0, 1)
+light_energy = 4.0
+light_indirect_energy = 2.0
+light_size = 0.69
+omni_range = 20.0

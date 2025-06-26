@@ -6,7 +6,7 @@
 [ext_resource type="MeshLibrary" uid="uid://mon227joir7x" path="res://assets/tiles_newest.tres" id="4_0myj2"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/utils/breakable_and_placeable.gd" id="4_cugsr"]
 
-[node name="HuntingArea" type="Node3D"]
+[node name="Hospital" type="Node3D"]
 
 [node name="DoctorNPC" parent="." instance=ExtResource("1_0wxec")]
 data = ExtResource("3_0myj2")

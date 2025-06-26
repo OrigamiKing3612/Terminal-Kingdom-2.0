@@ -1,13 +1,107 @@
-[gd_scene load_steps=3 format=3 uid="uid://b75j2wvhm4mps"]
+[gd_scene load_steps=13 format=4 uid="uid://ca3ntfqwx51ny"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3vln"]
-albedo_color = Color(0.966935, 0.543751, 0.104091, 1)
+[ext_resource type="Material" uid="uid://d28860csitmj4" path="res://assets/resources/materials/item/LumberItemMaterial.tres" id="1_8hnav"]
+[ext_resource type="Material" uid="uid://bpn0wsexyobq3" path="res://assets/resources/materials/FireMaterial.tres" id="4_erpor"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_u3vln"]
-material = SubResource("StandardMaterial3D_u3vln")
-size = Vector3(0.2, 0.7, 0.2)
+[sub_resource type="ArrayMesh" id="ArrayMesh_m81ir"]
+_surfaces = [{
+"aabb": AABB(-0.375, -0.375, -1, 0.75, 0.75, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "wood log.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP7/AAD//wAA/v//////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qnwlj"]
+resource_name = "StaticTiles_Cube_004"
+_surfaces = [{
+"aabb": AABB(-0.375, -0.375, -1, 0.75, 0.75, 2),
+"attribute_data": PackedByteArray("/3////+/qer/v////3+p6v9/qer/v1TV/7+p6v9/VNX/f1TV/79Ulf+/VNX/f1SV/39Ulf+//3//v1SV/3//f/8/VNX/f1SV/39U1f8/VJX/v1TV//9Ulf//VNX/v1SV"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("1_8hnav"),
+"name": "wood log.003",
+"primitive": 3,
+"uv_scale": Vector4(4, 3, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV/v//////VNX/////AABU1f7/AAD//1TV/v8AAP///78AAP//////v/7///////+/AAAAAP///78AAAAAAAD/v/7/AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD///7/////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_m81ir")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_er1c4"]
+data = PackedVector3Array(-0.375, -0.375, 0.999999, -0.375, 0.375, -1, -0.375, 0.375, 0.999999, -0.375, -0.375, 0.999999, -0.375, -0.375, -1, -0.375, 0.375, -1, -0.375, -0.375, -1, 0.375, 0.375, -1, -0.375, 0.375, -1, -0.375, -0.375, -1, 0.375, -0.375, -1, 0.375, 0.375, -1, 0.375, -0.375, -1, 0.375, 0.375, 0.999999, 0.375, 0.375, -1, 0.375, -0.375, -1, 0.375, -0.375, 0.999999, 0.375, 0.375, 0.999999, 0.375, -0.375, 0.999999, -0.375, 0.375, 0.999999, 0.375, 0.375, 0.999999, 0.375, -0.375, 0.999999, -0.375, -0.375, 0.999999, -0.375, 0.375, 0.999999, -0.375, -0.375, -1, 0.375, -0.375, 0.999999, 0.375, -0.375, -1, -0.375, -0.375, -1, -0.375, -0.375, 0.999999, 0.375, -0.375, 0.999999, 0.375, 0.375, -1, -0.375, 0.375, 0.999999, -0.375, 0.375, -1, 0.375, 0.375, -1, 0.375, 0.375, 0.999999, -0.375, 0.375, 0.999999)
+
+[sub_resource type="Gradient" id="Gradient_q7t1y"]
+offsets = PackedFloat32Array(0, 0.211039, 0.542208, 0.659794)
+colors = PackedColorArray(1, 0, 0, 1, 0.88976, 0.373303, 0, 1, 0.817555, 0.524828, 1.92523e-07, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qu826"]
+gradient = SubResource("Gradient_q7t1y")
+
+[sub_resource type="CurveTexture" id="CurveTexture_1boxc"]
+
+[sub_resource type="Curve" id="Curve_5wrfj"]
+_data = [Vector2(0.147059, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.396625), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_y32om"]
+curve = SubResource("Curve_5wrfj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8hnav"]
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 0.4
+gravity = Vector3(0, 15, 0)
+radial_accel_min = -6.28
+radial_accel_max = -6.28
+scale_min = 0.5
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_y32om")
+color_ramp = SubResource("GradientTexture1D_qu826")
+emission_curve = SubResource("CurveTexture_1boxc")
+
+[sub_resource type="BoxMesh" id="BoxMesh_5psax"]
+material = ExtResource("4_erpor")
+size = Vector3(0.1, 0.1, 0.1)
 
 [node name="TorchTile" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_u3vln")
+[node name="LumberItemTileOne" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34833, 0, -0.503856)
+
+[node name="LumberItemTileOne" type="MeshInstance3D" parent="LumberItemTileOne"]
+transform = Transform3D(0.499963, -0.0061085, 5.34022e-10, 0, -2.18557e-08, -1, 0.0061085, 0.499963, -4.37081e-08, 1.5, -1, 0)
+mesh = SubResource("ArrayMesh_qnwlj")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LumberItemTileOne/LumberItemTileOne"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LumberItemTileOne/LumberItemTileOne/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_er1c4")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19086, 0.0290482, -0.5)
+visibility_range_begin_margin = 10.0
+visibility_range_end = 20.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+amount = 500
+lifetime = 0.8
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_8hnav")
+draw_pass_1 = SubResource("BoxMesh_5psax")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.297443, 0)
+light_color = Color(0.69, 0.483, 0, 1)
+light_energy = 4.0
+light_indirect_energy = 2.0
+light_size = 0.69
+omni_range = 20.0

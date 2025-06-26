@@ -8,5 +8,6 @@
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -644, 1376, 804)
 light_indirect_energy = 0.5
 shadow_enabled = true
+sky_mode = 1
 
 [node name="NormalWorldEnvironment" parent="." instance=ExtResource("1_g7k3l")]

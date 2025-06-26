@@ -16,5 +16,6 @@ happiness = 100.0
 positionToWalkTo = Vector3(0, 0, 0)
 home = Vector3(0, 0, 0)
 workplace = Vector3(0, 0, 0)
+village_id = ""
 is_starting_village_npc = true
 metadata/_custom_type_script = "uid://nj3ok2spwf66"
