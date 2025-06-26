@@ -31,9 +31,9 @@ static func create_new() -> NPCData:
 	data.age = GameManager.random.randi_range(18, 60)
 	data.gender = gender
 	data.is_starting_village_npc = false
-	var has_job := GameManager.random.randi_range(0, 1)
+	var has_job: int = GameManager.random.randi_range(0, 1)
 	if has_job == 1:
-		var job_count := GameManager.random.randi_range(1, 3)
+		var job_count: int = GameManager.random.randi_range(1, 3)
 		var available_jobs := Utils.Job.keys()
 		available_jobs.erase(Utils.Job.King)
 		available_jobs.shuffle()

@@ -30,9 +30,9 @@ func _ready() -> void:
 	state_machine.init()
 
 func _process(_delta: float) -> void:
-	if not npc.data.is_starting_village_npc:
-		print("None State: current state: %s, current goal: %s" % [state_machine.current_state.state_name, current_goal.state_name])
-		#pass
+	#if not npc.data.is_starting_village_npc:
+		#print("None State: current state: %s, current goal: %s" % [state_machine.current_state.state_name, current_goal.state_name])
+		pass
 	
 func _physics_process(delta: float) -> void:
 	var lower_hit = raycast_lower.is_colliding()

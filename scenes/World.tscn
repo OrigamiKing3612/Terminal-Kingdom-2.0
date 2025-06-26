@@ -1,4 +1,4 @@
-[gd_scene load_steps=425 format=4 uid="uid://1gukb1yqks51"]
+[gd_scene load_steps=424 format=4 uid="uid://1gukb1yqks51"]
 
 [ext_resource type="PackedScene" uid="uid://bt8p520js50i3" path="res://scenes/ui/environment/Environment.tscn" id="1_7c4bj"]
 [ext_resource type="PackedScene" uid="uid://cpamh1gadlcks" path="res://scenes/Player.tscn" id="5_1lgw5"]
@@ -43,7 +43,6 @@
 [ext_resource type="Material" uid="uid://dndvw557xcjfo" path="res://assets/resources/materials/MudMaterial.tres" id="38_004xm"]
 [ext_resource type="Material" uid="uid://4j82j07f5lkr" path="res://assets/resources/materials/SimpleMaterial.tres" id="39_1q6f7"]
 [ext_resource type="Material" uid="uid://c536gj7nxdaqp" path="res://assets/resources/materials/WoodPannelMaterial.tres" id="40_3bo0u"]
-[ext_resource type="PackedScene" uid="uid://dxfaeinhy2yxw" path="res://scenes/tiles/building_mains/GovernorsDeskTile.tscn" id="41_yd118"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_pncuk"]
 _surfaces = [{
@@ -4349,6 +4348,3 @@ gridmap = NodePath("../NavigationRegion3D/Ground")
 meshlib = SubResource("MeshLibrary_ovuqc")
 
 [node name="SpawnedNPCs" type="Node3D" parent="." groups=["NPCsGroup"]]
-
-[node name="GovernorsDeskTile" parent="." instance=ExtResource("41_yd118")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 1, 0)

@@ -20,14 +20,14 @@ func set_data(data: NPCData) -> void:
 		for skill in data.skills.keys():
 			var level_value = data.skills[skill]
 			var level_name = "Unknown Skill Level"
-			for name in Utils.SkillLevel.keys():
-				if Utils.SkillLevel[name] == level_value:
-					level_name = name
+			for skname in Utils.SkillLevel.keys():
+				if Utils.SkillLevel[skname] == level_value:
+					level_name = skname
 					break
 			var job_name = "Unknown Job"
-			for name in Utils.Job.keys():
-				if Utils.Job[name] == level_value:
-					job_name = name
+			for jname in Utils.Job.keys():
+				if Utils.Job[jname] == level_value:
+					job_name = jname
 					break
 			skill_text += "%s: %s\n" % [job_name, level_name]
 		skill.text = skill_text

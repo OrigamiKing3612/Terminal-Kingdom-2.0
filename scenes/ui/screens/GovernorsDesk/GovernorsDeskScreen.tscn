@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dia88vntf81qk"]
+[gd_scene load_steps=5 format=3 uid="uid://dia88vntf81qk"]
 
 [ext_resource type="Script" uid="uid://gmk2d1iuy8gr" path="res://scripts/ui/screens/GovernorsDesk/governors_desk_screen.gd" id="1_kgsrr"]
-[ext_resource type="Script" uid="uid://b8uk1tq2juiks" path="res://scripts/ui/screens/GovernorsDesk/edit_village.gd" id="2_8xcpb"]
-[ext_resource type="PackedScene" uid="uid://ur5n1tiyu2ei" path="res://scenes/ui/screens/GovernorsDesk/EditVillageNPCTemplate.tscn" id="2_nbsle"]
+[ext_resource type="Script" uid="uid://bm78jkvh6j1ne" path="res://scripts/ui/screens/GovernorsDesk/edit_village_main.gd" id="2_2axn8"]
+[ext_resource type="PackedScene" uid="uid://65kpxi05n6kj" path="res://scenes/ui/screens/GovernorsDesk/NPCList.tscn" id="3_2axn8"]
+[ext_resource type="PackedScene" uid="uid://dts8nd70qccs1" path="res://scenes/ui/screens/GovernorsDesk/EditNPC.tscn" id="4_2axn8"]
 
 [node name="GovernorsDeskScreen" type="Control"]
 custom_minimum_size = Vector2(1182, 642)
@@ -118,10 +119,11 @@ text = "Approve"
 
 [node name="Edit Village" type="VBoxContainer" parent="TabContainer"]
 layout_mode = 2
-script = ExtResource("2_8xcpb")
+script = ExtResource("2_2axn8")
 metadata/_tab_index = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Edit Village"]
+custom_minimum_size = Vector2(0, 611)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -130,34 +132,16 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Edit Village/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Title" type="RichTextLabel" parent="TabContainer/Edit Village/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/normal_font_size = 30
-text = "Edit Village"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Edit Village/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 561)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Edit Village/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="NPCList" parent="TabContainer/Edit Village/MarginContainer" instance=ExtResource("3_2axn8")]
+visible = true
 layout_mode = 2
 
-[node name="NPCTemplate" parent="TabContainer/Edit Village/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_nbsle")]
+[node name="NPC" parent="TabContainer/Edit Village/MarginContainer" instance=ExtResource("4_2axn8")]
+visible = false
 layout_mode = 2
-show_edit_button = false
 
+[connection signal="text_changed" from="TabContainer/Settings/MarginContainer/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="TabContainer/Settings/MarginContainer/VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="TabContainer/Add NPC/MarginContainer/VBoxContainer/ApproveButton" to="." method="_on_approved"]
+[connection signal="goto" from="TabContainer/Edit Village/MarginContainer/NPCList" to="TabContainer/Edit Village" method="_on_npc_list_goto"]
+[connection signal="back" from="TabContainer/Edit Village/MarginContainer/NPC" to="TabContainer/Edit Village" method="_on_npc_back"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://65kpxi05n6kj"]
+
+[ext_resource type="PackedScene" uid="uid://ur5n1tiyu2ei" path="res://scenes/ui/screens/GovernorsDesk/EditVillageNPCTemplate.tscn" id="1_fdea7"]
+[ext_resource type="Script" uid="uid://cpqr5c1wksxjd" path="res://scripts/ui/screens/GovernorsDesk/npc_list.gd" id="1_ujx4s"]
+
+[node name="NPCList" type="VBoxContainer"]
+visible = false
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ujx4s")
+
+[node name="Title" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 30
+text = "Edit Village"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(0, 561)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="NPCTemplate" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_fdea7")]
+layout_mode = 2
+show_edit_button = false

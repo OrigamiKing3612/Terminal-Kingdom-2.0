@@ -1,7 +1,9 @@
 extends VBoxContainer
 
+signal goto(data: NPCData)
+
 const EDIT_VILLAGE_NPC_TEMPLATE = preload("res://scenes/ui/screens/GovernorsDesk/EditVillageNPCTemplate.tscn")
-@onready var v_box_container: VBoxContainer = $MarginContainer/NPCList/ScrollContainer/VBoxContainer
+@onready var v_box_container: VBoxContainer = $ScrollContainer/VBoxContainer
 
 @export var village_id: String = ""
 var npcs: Array[NPC] = []
@@ -21,4 +23,4 @@ func _ready() -> void:
 			npc_template.edit.connect(_on_edit_button_pressed)
 
 func _on_edit_button_pressed(data: NPCData):
-	print(data.name)
+	goto.emit(data)

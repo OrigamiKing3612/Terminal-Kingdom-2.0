@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://dts8nd70qccs1"]
+
+[ext_resource type="Script" uid="uid://bl2um55srbpcy" path="res://scripts/ui/screens/GovernorsDesk/edit_npc.gd" id="1_20ice"]
+
+[node name="NPC" type="VBoxContainer"]
+alignment = 1
+script = ExtResource("1_20ice")
+
+[node name="Title" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Edit"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCTemplate" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1142, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WorkplaceSelect" type="VBoxContainer" parent="NPCTemplate"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Workplace" type="RichTextLabel" parent="NPCTemplate/WorkplaceSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Workpace"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NPCTemplate/WorkplaceSelect"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WorkplaceContainer" type="VBoxContainer" parent="NPCTemplate/WorkplaceSelect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WorkplaceTemplateButton" type="Button" parent="NPCTemplate/WorkplaceSelect/ScrollContainer/WorkplaceContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="JobSelect" type="VBoxContainer" parent="NPCTemplate"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Job" type="RichTextLabel" parent="NPCTemplate/JobSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Job"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NPCTemplate/JobSelect"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="JobContainer" type="VBoxContainer" parent="NPCTemplate/JobSelect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="JobTemplateButton" type="Button" parent="NPCTemplate/JobSelect/ScrollContainer/JobContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="Home" type="RichTextLabel" parent="NPCTemplate"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Home"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveButton" type="Button" parent="."]
+layout_mode = 2
+text = "Save"
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]

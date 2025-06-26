@@ -1,5 +1,7 @@
 extends HBoxContainer
 
+signal edit(data: NPCData)
+
 @export var show_edit_button: bool = true
 
 @onready var npc_name: RichTextLabel = $Name
@@ -9,11 +11,14 @@ extends HBoxContainer
 @onready var workplace: RichTextLabel = $Workplace
 @onready var placeholder: RichTextLabel = $Placeholder
 @onready var edit_button: Button = $Button
+var npc_data: NPCData
 
 func _ready() -> void:
 	placeholder.visible = !show_edit_button
 	edit_button.visible = show_edit_button
+	
 func set_data(data: NPCData):
+	npc_data = data
 	npc_name.text = "%s %s" % [data.name, data.last_name]
 	job.text = "Unknown"
 	for job_name in Utils.Job.keys():
@@ -23,4 +28,6 @@ func set_data(data: NPCData):
 	age.text = str(data.age)
 	home.text = str(data.home)
 	workplace.text = str(data.workplace)
-	
+
+func _on_button_pressed() -> void:
+	edit.emit(npc_data)

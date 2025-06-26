@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_fhof6")
 name = "Default Kingdom Name"
-villages = Array[ExtResource("2_hs2aa")]([])
+castle_location = Vector3(0, 0, 0)
+villages = Dictionary[String, ExtResource("2_hs2aa")]({})
 metadata/_custom_type_script = "uid://coq8x5m3gaaub"
