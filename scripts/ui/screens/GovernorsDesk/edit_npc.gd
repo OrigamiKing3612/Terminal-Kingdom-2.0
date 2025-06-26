@@ -23,7 +23,7 @@ func _ready() -> void:
 func set_data(data: NPCData, id: String):
 	self.village_id = id
 	village = GameManager.kingdom.villages[village_id]
-	title.text = "Edit %s %s (%s)" % [data.name, data.last_name, village.name]
+	title.text = "Edit %s %s (Village %s)" % [data.name, data.last_name, village.name]
 
 func _on_save_button_pressed() -> void:
 	back.emit()

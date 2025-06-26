@@ -8,6 +8,7 @@ func enter() -> void:
 	navigation.set_target_position(position)
 
 func physics_process(_delta: float) -> void:
+	navigation.set_target_position(position)
 	if navigation.is_navigation_finished():
 		return
 
@@ -16,6 +17,6 @@ func physics_process(_delta: float) -> void:
 	var new_velocity = (next_position - character.global_position).normalized() * move_speed
 	character.velocity.x = new_velocity.x
 	character.velocity.z = new_velocity.z
-	#character.look_at(Vector3(next_position.x, character.global_position.y, next_position.z), Vector3.UP)
-	character.look_at(next_position, Vector3.UP)
+	character.look_at(Vector3(next_position.x, character.global_position.y, next_position.z), Vector3.UP)
+	#character.look_at(next_position, Vector3.UP)
 	character.move_and_slide()

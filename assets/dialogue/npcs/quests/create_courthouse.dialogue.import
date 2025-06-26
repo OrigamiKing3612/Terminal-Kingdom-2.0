@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://yni5eocp8f56"
+path="res://.godot/imported/create_courthouse.dialogue-896465e3b6f427d58adcd3fad3df5f4c.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/quests/create_courthouse.dialogue"
+dest_files=["res://.godot/imported/create_courthouse.dialogue-896465e3b6f427d58adcd3fad3df5f4c.tres"]
+
+[params]
+
+defaults=true

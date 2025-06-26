@@ -1,0 +1,18 @@
+~ avalible
+{{data.name}}: Hello, I'm {{data.name}}! I can help you with building. Let's start! Go get all of the materials you need and then we can build your castle!
+=> END
+~ started
+{{data.name}}: You are back! Would you like to start working on your castle?
+- Yes lets start!
+	{{data.name}}: Ok! Let me know when you are done!
+- No not yet
+	{{data.name}}: Ok, let me know when you are ready to start building!
+=> END
+~ reached_goal
+{{data.name}}: You are back! Are you finished building your castle!
+- I'm done!
+	{{data.name}}: Great! Your Castle is now complete! Coem back to me when you want to build your courthouse! 
+	{{data.name}}: After that you are free to do what ever you want!
+- I'm still working
+	{{data.name}}: Ok! let me know when you are done!
+=> END

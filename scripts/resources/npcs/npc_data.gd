@@ -77,7 +77,9 @@ static func _generate_name(gender: Utils.Gender) -> Dictionary[String, String]:
 			"Nathaniel", "Randall", "Ethan", "Jim", "Jimmy", 
 			"Oscar", "Clive", "Theo", "Thomas", "Charlie", 
 			"Garrett", "Sebastian", "Nathan", "Finn", "Chief",
-			"Json", "Jason", "Zachary", "Tyler", "Shepard"
+			"Json", "Jason", "Zachary", "Tyler", "Shepard",
+			"Herbert", "Will", "Billy", "Dave", "Leonardo",
+			"Alex", "Joe", "Jackson", "Craiggory", "Greggory"
 		]
 		var index = GameManager.random.randi_range(0, male_names.size() - 1)
 		first_name = male_names[index]

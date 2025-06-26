@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://couxflo6i41u2"
+path="res://.godot/imported/create_castle.dialogue-dcd83b498ea72ae3ac58f2c84a877dc5.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/npcs/quests/create_castle.dialogue"
+dest_files=["res://.godot/imported/create_castle.dialogue-dcd83b498ea72ae3ac58f2c84a877dc5.tres"]
+
+[params]
+
+defaults=true
