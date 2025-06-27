@@ -15,3 +15,6 @@ func fire(npcID: String):
 
 func is_hiring() -> bool:
 	return workers.size() < max_workers
+
+func get_jobs() -> Dictionary[Utils.Job, bool]:
+	return jobs

@@ -37,8 +37,10 @@ func add_building_to_closest_village(building: BuildingMainTile) -> String:
 		nearby_villages[0].add_building(building)
 		return nearby_villages[0].id
 	elif nearby_villages.size() > 1:
-		#show_village_picker(nearby_villages)\
-		push_error("Implement this!")
+		#show_village_picker(nearby_villages)
+		nearby_villages[0].add_building(building)
+		return nearby_villages[0].id
+		push_warning("Implement this!")
 	else:
 		push_warning("No nearby villages found.")
 	return ""

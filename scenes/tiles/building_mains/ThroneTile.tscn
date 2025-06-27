@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cce0p7d54d7nn"]
+[gd_scene load_steps=7 format=3 uid="uid://cce0p7d54d7nn"]
 
 [ext_resource type="Script" uid="uid://huibhc1yix0v" path="res://scripts/tiles/building_mains/throne_tile.gd" id="1_oxhoy"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="3_vhm04"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="4_t42uk"]
-[ext_resource type="Script" uid="uid://cdpcminp8wskc" path="res://scripts/components/buildings/hires_component.gd" id="4_vhm04"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxhoy"]
 albedo_color = Color(1, 0, 1, 1)
@@ -39,9 +38,5 @@ script = ExtResource("4_t42uk")
 static_body = NodePath("../StaticBody3D")
 tile_id = 76
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
-
-[node name="HiresComponent" type="Node" parent="."]
-script = ExtResource("4_vhm04")
-metadata/_custom_type_script = "uid://cdpcminp8wskc"
 
 [connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

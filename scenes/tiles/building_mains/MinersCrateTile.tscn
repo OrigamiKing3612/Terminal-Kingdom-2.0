@@ -42,6 +42,9 @@ metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
 
 [node name="HiresComponent" type="Node" parent="."]
 script = ExtResource("4_tim1i")
+jobs = Dictionary[int, bool]({
+3: false
+})
 metadata/_custom_type_script = "uid://cdpcminp8wskc"
 
 [connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

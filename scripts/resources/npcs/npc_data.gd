@@ -16,9 +16,11 @@ var id = UUID.string()
 @export var happiness: float = 100.0
 @export var positionToWalkTo: Vector3 = Vector3.ZERO
 @export var has_home: bool = false
-@export var home: Vector3 = Vector3.ZERO # location of home door (or bed?)
+## location of home door (or bed?)
+@export var home: Vector3 = Vector3.ZERO
 @export var has_workplace: bool = false
-@export var workplace: Vector3 = Vector3.ZERO # location of work
+## location of work
+@export var workplace: Vector3 = Vector3.ZERO
 @export var village_id: String = ""
 
 @export_group("Starting NPC Settings")
