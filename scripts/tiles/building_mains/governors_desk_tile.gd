@@ -6,6 +6,7 @@ const NPC_SCENE = preload("res://scenes/npcs/NPC.tscn")
 
 func when_placed():
 	var village = Village.new()
+	village.init(position)
 	GameManager.kingdom.add_village(village)
 	village_id = village.id
 	village.add_building(self)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://si5nmckw7qki"]
+[gd_scene load_steps=8 format=3 uid="uid://si5nmckw7qki"]
 
 [ext_resource type="Script" uid="uid://d0nfihqrpx35s" path="res://scripts/tiles/building_mains/saw_tile.gd" id="1_wq3eg"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_aqc1v"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_ylshc"]
+[ext_resource type="Script" uid="uid://cdpcminp8wskc" path="res://scripts/components/buildings/hires_component.gd" id="4_ylshc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_meann"]
 albedo_color = Color(1, 0, 1, 1)
@@ -16,6 +17,9 @@ data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -
 
 [node name="SawTile" type="Node3D"]
 script = ExtResource("1_wq3eg")
+building_name = "Carptenry"
+type = 7
+metadata/_custom_type_script = "uid://d0nfihqrpx35s"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_xhida")
@@ -35,5 +39,9 @@ script = ExtResource("3_ylshc")
 static_body = NodePath("../StaticBody3D")
 tile_id = 72
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[node name="HiresComponent" type="Node" parent="."]
+script = ExtResource("4_ylshc")
+metadata/_custom_type_script = "uid://cdpcminp8wskc"
 
 [connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

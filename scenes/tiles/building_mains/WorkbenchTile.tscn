@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://djd335f6v4ioq"]
+[gd_scene load_steps=9 format=4 uid="uid://djd335f6v4ioq"]
 
 [ext_resource type="Material" uid="uid://clqbrphys3s54" path="res://assets/resources/materials/WorkbenchMaterial.tres" id="1_ia7li"]
 [ext_resource type="Script" uid="uid://tvubbp5x1mur" path="res://scripts/tiles/building_mains/workbench_tile.gd" id="1_xtrnq"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="3_6jog4"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="4_wiedm"]
+[ext_resource type="Script" uid="uid://cdpcminp8wskc" path="res://scripts/components/buildings/hires_component.gd" id="5_wiedm"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_23wqd"]
 _surfaces = [{
@@ -42,6 +43,9 @@ data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1,
 
 [node name="WorkbenchTile" type="Node3D"]
 script = ExtResource("1_xtrnq")
+building_name = "Builder"
+type = 8
+metadata/_custom_type_script = "uid://tvubbp5x1mur"
 
 [node name="WorkbenchTile" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_qv5fl")
@@ -62,5 +66,9 @@ script = ExtResource("4_wiedm")
 static_body = NodePath("../StaticBody3D")
 tile_id = 77
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[node name="HiresComponent" type="Node" parent="."]
+script = ExtResource("5_wiedm")
+metadata/_custom_type_script = "uid://cdpcminp8wskc"
 
 [connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

@@ -87,6 +87,8 @@ size = Vector3(0.1, 0.1, 0.1)
 [node name="FurnaceTile" type="Node3D"]
 script = ExtResource("1_a25ud")
 furnace_screen = ExtResource("2_n8osn")
+building_name = "Blacksmith"
+metadata/_custom_type_script = "uid://d0nfaymvottcp"
 
 [node name="FurnaceTile" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_wv522")

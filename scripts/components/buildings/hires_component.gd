@@ -1,10 +1,10 @@
 extends Node
 class_name HiresComponent
 
-# npc ids
+## npc ids
 @export var workers: Array[String] = []
 @export var max_workers: int = 2
-# job and is full
+## job and is full
 @export var jobs: Dictionary[Utils.Job, bool]
 
 func hire(npcID: String):

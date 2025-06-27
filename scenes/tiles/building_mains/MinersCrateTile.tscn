@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2176iq7a0bxk"]
+[gd_scene load_steps=8 format=3 uid="uid://d2176iq7a0bxk"]
 
 [ext_resource type="Script" uid="uid://b5jblc8p4y2bq" path="res://scripts/tiles/building_mains/miners_crate_tile.gd" id="1_ss2bb"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_xdbg4"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_tim1i"]
+[ext_resource type="Script" uid="uid://cdpcminp8wskc" path="res://scripts/components/buildings/hires_component.gd" id="4_tim1i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glgrh"]
 albedo_color = Color(1, 0, 1, 1)
@@ -16,6 +17,9 @@ data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -
 
 [node name="MinersCrateTile" type="Node3D"]
 script = ExtResource("1_ss2bb")
+building_name = "Mine"
+type = 1
+metadata/_custom_type_script = "uid://b5jblc8p4y2bq"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_wafwg")
@@ -35,5 +39,9 @@ script = ExtResource("3_tim1i")
 static_body = NodePath("../StaticBody3D")
 tile_id = 69
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[node name="HiresComponent" type="Node" parent="."]
+script = ExtResource("4_tim1i")
+metadata/_custom_type_script = "uid://cdpcminp8wskc"
 
 [connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

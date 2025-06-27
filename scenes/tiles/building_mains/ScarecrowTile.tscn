@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d02ndyvuh2vew"]
+[gd_scene load_steps=8 format=3 uid="uid://d02ndyvuh2vew"]
 
 [ext_resource type="Script" uid="uid://fy0nkg8dsr7j" path="res://scripts/tiles/building_mains/scarecrow_tile.gd" id="1_b8ap1"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_pnbqm"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_nscbb"]
+[ext_resource type="Script" uid="uid://cdpcminp8wskc" path="res://scripts/components/buildings/hires_component.gd" id="4_nscbb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vtvp"]
 albedo_color = Color(1, 0, 1, 1)
@@ -16,6 +17,9 @@ data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -
 
 [node name="ScarecrowTile" type="Node3D"]
 script = ExtResource("1_b8ap1")
+building_name = "Farm"
+type = 2
+metadata/_custom_type_script = "uid://fy0nkg8dsr7j"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_6uyc8")
@@ -35,5 +39,9 @@ script = ExtResource("3_nscbb")
 static_body = NodePath("../StaticBody3D")
 tile_id = 73
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[node name="HiresComponent" type="Node" parent="."]
+script = ExtResource("4_nscbb")
+metadata/_custom_type_script = "uid://cdpcminp8wskc"
 
 [connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://calvsmtfdeyoc"]
+[gd_scene load_steps=8 format=3 uid="uid://calvsmtfdeyoc"]
 
 [ext_resource type="Script" uid="uid://cqx7ai05xh6m" path="res://scripts/tiles/building_mains/medical_table_tile.gd" id="1_de2es"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_6xdpn"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_8c6lp"]
+[ext_resource type="Script" uid="uid://cdpcminp8wskc" path="res://scripts/components/buildings/hires_component.gd" id="4_8c6lp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_np14t"]
 albedo_color = Color(1, 0, 1, 1)
@@ -16,6 +17,9 @@ data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -
 
 [node name="MedicalTableTile" type="Node3D"]
 script = ExtResource("1_de2es")
+building_name = "Hospital"
+type = 3
+metadata/_custom_type_script = "uid://cqx7ai05xh6m"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_1es1m")
@@ -35,5 +39,9 @@ script = ExtResource("3_8c6lp")
 static_body = NodePath("../StaticBody3D")
 tile_id = 69
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[node name="HiresComponent" type="Node" parent="."]
+script = ExtResource("4_8c6lp")
+metadata/_custom_type_script = "uid://cdpcminp8wskc"
 
 [connection signal="interacted" from="InteractableComponent" to="." method="_on_interacted"]

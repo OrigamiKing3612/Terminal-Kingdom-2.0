@@ -1,4 +1,5 @@
-extends Node3D
+extends BuildingMainTile
+class_name FurnaceTile
 
 @export var furnace_screen: PackedScene
 @onready var fire: Node3D = $Fire
@@ -13,6 +14,9 @@ extends Node3D
 					fire.hide()
 				FurnaceState.running:
 					fire.show()
+
+func when_placed():
+	village_id = GameManager.kingdom.add_building_to_closest_village(self)
 
 func _ready() -> void:
 	fire.hide()
