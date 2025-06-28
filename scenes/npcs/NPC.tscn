@@ -452,7 +452,7 @@ fall_state = NodePath("../State/Fall")
 follow_state = NodePath("../State/Follow")
 talk_to_player = NodePath("../State/TalkToPlayer")
 walk_to_position = NodePath("../State/WalkToPosition")
-current_goal = NodePath("../State/Idle")
+current_goal = NodePath("../State/Wander")
 metadata/_custom_type_script = "uid://4kig3wewccmi"
 
 [connection signal="body_entered" from="Area2D" to="NPCBrain" method="_on_area_2d_body_entered"]

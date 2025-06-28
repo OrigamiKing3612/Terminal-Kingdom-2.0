@@ -8,7 +8,7 @@ func enter() -> void:
 
 func physics_process(delta: float) -> void:
 	movement.wants_jump = false
-	character.velocity.y += -gravity * delta
+	#character.velocity.y += -gravity * delta
 
 	#if not character.is_on_floor() and character.velocity.y < 0:
 		#return brain.fall()

@@ -15,7 +15,7 @@ func process_input(event: InputEvent) -> NPCState:
 	return null
 	
 func physics_process(delta: float) -> void:
-	character.velocity.y += -gravity * delta
+	#character.velocity.y += -gravity * delta
 	character.move_and_slide()
 	
 	if player:
