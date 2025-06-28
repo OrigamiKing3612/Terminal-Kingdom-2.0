@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://ci5amistndx3a"]
+
+[ext_resource type="Texture2D" uid="uid://bqujelrgh6xg3" path="res://assets/art/player/Player_Blue.png" id="1_0qrjd"]
+[ext_resource type="Script" uid="uid://c60o6s88xjeag" path="res://scripts/2D/player/player.gd" id="1_t2exb"]
+[ext_resource type="Script" uid="uid://bug8ogo4i8sc6" path="res://scripts/2D/player/movement_controller.gd" id="2_ilpbq"]
+[ext_resource type="Resource" uid="uid://5pep0pjlel1w" path="res://assets/resources/player/movement_states/run.tres" id="2_sjrfr"]
+[ext_resource type="Resource" uid="uid://cejp3n82mvcbv" path="res://assets/resources/player/movement_states/sprint.tres" id="3_efh0x"]
+[ext_resource type="Resource" uid="uid://dlb2bsv8aw60t" path="res://assets/resources/player/movement_states/stand.tres" id="4_jvrdh"]
+[ext_resource type="Resource" uid="uid://c00pgu5buionk" path="res://assets/resources/player/movement_states/walk.tres" id="5_qrttu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ju82"]
+size = Vector2(10, 13)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_t2exb")
+movement_states = {
+"run": ExtResource("2_sjrfr"),
+"sprint": ExtResource("3_efh0x"),
+"stand": ExtResource("4_jvrdh"),
+"walk": ExtResource("5_qrttu")
+}
+
+[node name="Movement Controller" type="Node" parent="." node_paths=PackedStringArray("player", "sprites")]
+script = ExtResource("2_ilpbq")
+player = NodePath("..")
+sprites = NodePath("../Sprites")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_0qrjd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_4ju82")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(7, 7)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[connection signal="pressed_jump" from="." to="Movement Controller" method="_jump"]
+[connection signal="set_movement_direction" from="." to="Movement Controller" method="_on_set_movement_direction"]
+[connection signal="set_movement_state" from="." to="Movement Controller" method="_on_set_movement_state"]
