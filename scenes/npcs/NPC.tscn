@@ -1,5 +1,6 @@
-[gd_scene load_steps=73 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=70 format=3 uid="uid://dptgi81hyimlb"]
 
+[ext_resource type="Texture2D" uid="uid://42feg23bykp2" path="res://assets/art/player/Player_Red.png" id="1_5e71h"]
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
 [ext_resource type="Script" uid="uid://du5mtwnmpjcs2" path="res://scripts/npc/jobs/blacksmith.gd" id="2_yq5wv"]
@@ -56,19 +57,7 @@
 [ext_resource type="Script" uid="uid://cex8qu51w8jas" path="res://scripts/npc/state/talk_to_player.gd" id="48_hce30"]
 [ext_resource type="Script" uid="uid://4kig3wewccmi" path="res://scripts/npc/npc_brain.gd" id="49_trpir"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3ak68"]
-size = Vector3(10, 2, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_yq5wv"]
-size = Vector3(1.6, 2, 1.6)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_k75in"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k75in"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_yq5wv"]
-material = SubResource("StandardMaterial3D_k75in")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srj83"]
 
 [sub_resource type="Resource" id="Resource_trpir"]
 script = ExtResource("24_w1xlh")
@@ -169,38 +158,30 @@ tile_id = -1
 seed = 0
 metadata/_custom_type_script = "uid://cqsvdpbt83m3i"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mhefn"]
-size = Vector3(1.6, 2, 1.6)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vihe"]
+size = Vector2(10, 13)
 
-[node name="NPC" type="CharacterBody3D" groups=["Entity", "NPC"]]
+[node name="NPC" type="CharacterBody2D" groups=["Entity", "NPC"]]
 collision_layer = 8
+up_direction = Vector2(0, 1)
+max_slides = 6
+floor_snap_length = 0.1
+safe_margin = 0.001
 script = ExtResource("1_k75in")
-metadata/_custom_type_script = "uid://b0t1cg5rsfjuu"
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 collision_priority = 2.0
 priority = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("BoxShape3D_3ak68")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_srj83")
 
-[node name="Mesh" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+[node name="Sprites" type="Node2D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh"]
-mesh = SubResource("BoxMesh_yq5wv")
-skeleton = NodePath("")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 1.5, 0.5)
-mesh = SubResource("CapsuleMesh_k75in")
-
-[node name="Marker" type="MeshInstance3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 2.5, 0)
-visible = false
-mesh = SubResource("CapsuleMesh_yq5wv")
+[node name="Sprite2D" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_5e71h")
 
 [node name="StartingVillageJobs" type="Node" parent="."]
 script = ExtResource("2_3ak68")
@@ -385,29 +366,28 @@ clay_item = ExtResource("20_l4wxn")
 pot_item = ExtResource("39_c4iby")
 coin_item = ExtResource("40_w8k3m")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_mhefn")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_0vihe")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 5.0
-path_height_offset = 0.1
-keep_y_velocity = false
 debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(0, 1, 0.870588, 1)
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
-target_position = Vector3(0, 0, -3)
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(-15, 0)
 
-[node name="RayCast3D2" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-target_position = Vector3(0, 0, -3)
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(-15, 0)
 
-[node name="State" type="Node" parent="." node_paths=PackedStringArray("character", "mesh", "movement", "brain")]
+[node name="State" type="Node" parent="." node_paths=PackedStringArray("character", "sprites", "movement", "brain")]
 script = ExtResource("32_fri4o")
 character = NodePath("..")
-mesh = NodePath("../Mesh")
+sprites = NodePath("../Sprites")
 fall_gravity = 9.81
 movement = NodePath("../NPCMovementController")
 brain = NodePath("../NPCBrain")
@@ -418,7 +398,7 @@ state_name = "Idle"
 
 [node name="Wander" type="Node" parent="State" node_paths=PackedStringArray("navigation", "timer")]
 script = ExtResource("34_jjats")
-navigation = NodePath("../../NavigationAgent3D")
+navigation = NodePath("../../NavigationAgent2D")
 timer = NodePath("Timer")
 state_name = "Wander"
 
@@ -440,12 +420,12 @@ state_name = "Fall"
 
 [node name="Follow" type="Node" parent="State" node_paths=PackedStringArray("navigation")]
 script = ExtResource("47_32nht")
-navigation = NodePath("../../NavigationAgent3D")
+navigation = NodePath("../../NavigationAgent2D")
 state_name = "Follow"
 
 [node name="WalkToPosition" type="Node" parent="State" node_paths=PackedStringArray("navigation")]
 script = ExtResource("48_1xj4w")
-navigation = NodePath("../../NavigationAgent3D")
+navigation = NodePath("../../NavigationAgent2D")
 state_name = "Walk To Position"
 
 [node name="TalkToPlayer" type="Node" parent="State"]
@@ -460,8 +440,8 @@ character = NodePath("..")
 script = ExtResource("49_trpir")
 npc = NodePath("..")
 state_machine = NodePath("../State")
-raycast_lower = NodePath("../RayCast3D")
-raycast_upper = NodePath("../RayCast3D2")
+raycast_lower = NodePath("../RayCast2D")
+raycast_upper = NodePath("../RayCast2D2")
 movement_controller = NodePath("../NPCMovementController")
 idle_state = NodePath("../State/Idle")
 wander_state = NodePath("../State/Wander")
@@ -475,7 +455,5 @@ walk_to_position = NodePath("../State/WalkToPosition")
 current_goal = NodePath("../State/Idle")
 metadata/_custom_type_script = "uid://4kig3wewccmi"
 
-[connection signal="set_movement_direction" from="." to="State" method="_on_set_movement_direction"]
-[connection signal="set_movement_state" from="." to="State" method="_on_set_movement_state"]
-[connection signal="body_entered" from="Area3D" to="NPCBrain" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="NPCBrain" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Area2D" to="NPCBrain" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="NPCBrain" method="_on_area_2d_body_exited"]

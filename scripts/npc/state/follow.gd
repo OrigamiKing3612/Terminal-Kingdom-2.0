@@ -1,7 +1,7 @@
 extends NPCState
 
-@export var navigation: NavigationAgent3D
-var character_to_follow: CharacterBody3D
+@export var navigation: NavigationAgent2D
+var character_to_follow: CharacterBody2D
 
 func enter() -> void:
 	super()
@@ -22,7 +22,7 @@ func physics_process(_delta: float) -> void:
 	else:
 		navigation.set_target_position(character.global_position)
 		character.velocity.x = 0.0
-		character.velocity.z = 0.0
+		character.velocity.y = 0.0
 
 	if navigation.is_navigation_finished():
 		return
@@ -31,7 +31,7 @@ func physics_process(_delta: float) -> void:
 
 	var new_velocity = (next_position - character.global_position).normalized() * move_speed
 	character.velocity.x = new_velocity.x
-	character.velocity.z = new_velocity.z
-	character.look_at(Vector3(character_to_follow.global_position.x, character.global_position.y, character_to_follow.global_position.z), Vector3.UP)
+	character.velocity.y = new_velocity.y
+	character.look_at(Vector2(character_to_follow.global_position.x, character_to_follow.global_position.y))
 	#character.look_at(next_position)
 	character.move_and_slide()

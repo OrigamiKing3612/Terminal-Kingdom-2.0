@@ -5,16 +5,19 @@
 [resource]
 script = ExtResource("1_s67vy")
 name = "Blacksmith"
-job = 1
-skill_level = 0
+last_name = ""
+current_job = 0
+skills = Dictionary[int, int]({})
 experience = 0.0
-workplace = Vector3(0, 0, 0)
-behavior_type = 0
 age = 18
 gender = 0
 hunger = 100.0
 happiness = 100.0
-positionToWalkTo = Vector3(0, 0, 0)
-home = Vector3(0, 0, 0)
+positionToWalkTo = Vector2(0, 0)
+has_home = false
+home = Vector2(0, 0)
+has_workplace = false
+workplace = Vector2(0, 0)
+village_id = ""
 is_starting_village_npc = true
 metadata/_custom_type_script = "uid://nj3ok2spwf66"

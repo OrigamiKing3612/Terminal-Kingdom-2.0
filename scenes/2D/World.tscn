@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://drqq8n1hhfewy"]
+[gd_scene load_steps=6 format=4 uid="uid://drqq8n1hhfewy"]
 
 [ext_resource type="PackedScene" uid="uid://ci5amistndx3a" path="res://scenes/2D/Player.tscn" id="1_6dh8e"]
 [ext_resource type="TileSet" uid="uid://6ru0h4siet1j" path="res://assets/2D/main_tileset.tres" id="2_r41bg"]
+[ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="3_b63y0"]
+[ext_resource type="Resource" uid="uid://cbto4o8wytoxs" path="res://assets/resources/npc/blacksmith.tres" id="4_g5co3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_r41bg"]
 
@@ -15,3 +17,7 @@ tile_map_data = PackedByteArray("AAD9//3/AAAEAAAAAAD8//3/AAAEAAAAAAD9//7/AAAEAAA
 tile_set = ExtResource("2_r41bg")
 
 [node name="Player" parent="." instance=ExtResource("1_6dh8e")]
+
+[node name="NPC" parent="." instance=ExtResource("3_b63y0")]
+position = Vector2(29, 0)
+data = ExtResource("4_g5co3")

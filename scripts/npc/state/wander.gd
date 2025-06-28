@@ -1,6 +1,6 @@
 extends NPCState
 
-@export var navigation: NavigationAgent3D
+@export var navigation: NavigationAgent2D
 @export var wander_radius: float = 10.0
 @export var timer: Timer
 
@@ -27,15 +27,14 @@ func physics_process(_delta: float) -> void:
 	var direction = (next_position - character.position).normalized()
 
 	character.velocity = direction * move_speed
-	character.look_at(Vector3(next_position.x, character.global_position.y, next_position.z), Vector3.UP)
+	character.look_at(Vector2(next_position.x, next_position.y))
 	
 	character.move_and_slide()
 
 
 func pick_new_destination():
-	var random_offset = Vector3(
+	var random_offset = Vector2(
 		randf_range(-wander_radius, wander_radius),
-		0.0,
 		randf_range(-wander_radius, wander_radius)
 	)
 	var target_position = character.position + random_offset

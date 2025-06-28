@@ -3,7 +3,7 @@ extends NPCState
 func enter() -> void:
 	super()
 	character.velocity.x = 0
-	character.velocity.z = 0
+	character.velocity.y = 0
 
 func exit() -> void:
 	pass

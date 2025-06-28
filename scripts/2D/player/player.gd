@@ -17,7 +17,6 @@ func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("movement") or event.is_action_released("movement")) and GameManager.move and GameManager.mode != GameManager.Mode.Speaking and GameManager.mode != GameManager.Mode.InPopUp:
 		movement_direction.y = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
 		movement_direction.x = Input.get_action_strength("move_forward") - Input.get_action_strength("move_back")
-		print("H")
 		
 		if is_movement_ongoing():
 			if Input.is_action_pressed("sprint"):

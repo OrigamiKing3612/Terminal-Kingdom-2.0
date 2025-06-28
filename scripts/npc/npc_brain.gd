@@ -3,8 +3,8 @@ class_name NPCBrain
 
 @export var npc: NPC
 @export var state_machine: Node
-@export var raycast_lower: RayCast3D
-@export var raycast_upper: RayCast3D
+@export var raycast_lower: RayCast2D
+@export var raycast_upper: RayCast2D
 @export var movement_controller: MovementController
 
 @export_group("States")
@@ -64,11 +64,11 @@ func jump() -> NPCState:
 func fall() -> NPCState:
 	return fall_state
 
-func _on_area_3d_body_entered(_body: Node3D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	previous_goal = current_goal
 	current_goal = talk_to_player
 	state_machine.change_state(talk_to_player)
 
-func _on_area_3d_body_exited(_body: Node3D) -> void:
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	state_machine.change_state(previous_goal)
 	current_goal = previous_goal

@@ -1,30 +1,26 @@
-extends CharacterBody3D
+extends CharacterBody2D
 class_name NPC
 
-signal pressed_jump()
-signal set_movement_state(_movement_state: MovementState)
-signal set_movement_direction(_movement_state: Vector3)
-
 @export var data: NPCData
-@export var talkable_area: Vector3 = Vector3(10, 2, 10)
+@export var talkable_area: Vector2i = Vector2i(4, 4)
 
-@onready var marker: MeshInstance3D = $Mesh/Marker
-@onready var navigation: NavigationAgent3D = $NavigationAgent3D
+#@onready var marker: MeshInstance2D = $Mesh/Marker
+@onready var navigation: NavigationAgent2D = $NavigationAgent2D
 @onready var svjobs: StartingVillageJobs = $StartingVillageJobs
-@onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
+@onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var state: Node = $State
 @onready var npc_movement_controller: NPCMovement = $NPCMovementController
 @onready var npc_brain: NPCBrain = $NPCBrain
-@onready var area_3d: Area3D = $Area3D
+@onready var area: Area2D = $Area2D
 
 func _ready() -> void:
 	if data != null:
 		data = data.duplicate()
-	marker.visible = false
+	#marker.visible = false
 	
-	var shape = BoxShape3D.new()
+	var shape = RectangleShape2D.new()
 	shape.size = talkable_area
-	collision_shape_3d.shape = shape
+	collision_shape.shape = shape
 
 func interact() -> void:
 	if data == null:
@@ -56,12 +52,12 @@ func talk_to_starting_village_npc():
 		_:
 			print("Unknown job: ", data.job)
 
-func _on_body_entered(body: Node3D) -> void:
+func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("Player"):
 		return
-	marker.visible = true
+	#marker.visible = true
 
-func _on_body_exited(body: Node3D) -> void:
+func _on_body_exited(body: Node2D) -> void:
 	if not body.is_in_group("Player"):
 		return
-	marker.visible = false
+	#marker.visible = false
