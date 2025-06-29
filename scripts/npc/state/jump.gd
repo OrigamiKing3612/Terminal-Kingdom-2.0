@@ -4,7 +4,7 @@ extends NPCState
 
 func enter() -> void:
 	super()
-	character.velocity.y = jump_force
+	#character.velocity.y = jump_force
 
 func physics_process(delta: float) -> void:
 	movement.wants_jump = false

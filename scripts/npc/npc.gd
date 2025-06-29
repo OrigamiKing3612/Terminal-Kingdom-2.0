@@ -12,14 +12,15 @@ class_name NPC
 @onready var npc_movement_controller: NPCMovement = $NPCMovementController
 @onready var npc_brain: NPCBrain = $NPCBrain
 @onready var area: Area2D = $Area2D
+@onready var marker: AnimatedSprite2D = $Marker
 
 func _ready() -> void:
 	if data != null:
 		data = data.duplicate()
-	#marker.visible = false
+	marker.visible = false
 	
 	var shape = RectangleShape2D.new()
-	shape.size = talkable_area
+	shape.size = talkable_area * 16
 	collision_shape.shape = shape
 
 func interact() -> void:
@@ -32,7 +33,7 @@ func interact() -> void:
 	print("Talk!")
 
 func talk_to_starting_village_npc():
-	match data.job:
+	match data.current_job:
 		Utils.Job.None:
 			svjobs.none.talk(data)
 		Utils.Job.Blacksmith:
@@ -55,9 +56,9 @@ func talk_to_starting_village_npc():
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("Player"):
 		return
-	#marker.visible = true
+	marker.visible = true
 
 func _on_body_exited(body: Node2D) -> void:
 	if not body.is_in_group("Player"):
 		return
-	#marker.visible = false
+	marker.visible = false

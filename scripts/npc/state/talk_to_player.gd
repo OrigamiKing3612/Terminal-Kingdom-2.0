@@ -18,5 +18,5 @@ func physics_process(delta: float) -> void:
 	#character.velocity.y += -gravity * delta
 	character.move_and_slide()
 	
-	if player:
-		character.look_at(Vector2(player.global_position.x, player.global_position.y))
+	#if player:
+		#character.look_at(Vector2(player.global_position.x, player.global_position.y))

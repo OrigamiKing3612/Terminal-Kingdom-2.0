@@ -1,4 +1,5 @@
 extends Node
+## TODO: Rename to EntityState
 class_name NPCState
 
 @export var animation_name: String

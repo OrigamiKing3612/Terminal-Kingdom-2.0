@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource("1_oxylw")
 id = 2
-movement_speed = 20.0
+movement_speed = 80.0
 acceleration = 5.0
 camera_fov = 75.0
 animation_speed = 1.0
+animation_name = &"walk"
 metadata/_custom_type_script = "uid://nx0yyc5txa13"

@@ -15,10 +15,9 @@ var movement_direction: Vector2
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("movement") or event.is_action_released("movement")) and GameManager.move and GameManager.mode != GameManager.Mode.Speaking and GameManager.mode != GameManager.Mode.InPopUp:
-		movement_direction.y = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
-		movement_direction.x = Input.get_action_strength("move_forward") - Input.get_action_strength("move_back")
+		movement_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 		
-		if is_movement_ongoing():
+		if is_moving():
 			if Input.is_action_pressed("sprint"):
 				change_movement_state("sprint")
 			else:
@@ -28,10 +27,10 @@ func _input(event: InputEvent) -> void:
 					change_movement_state("run")
 		else:
 			change_movement_state("stand")
-	if event.is_action_pressed("jump") and (GameManager.mode != GameManager.Mode.InPopUp and GameManager.mode != GameManager.Mode.Inventory and GameManager.mode != GameManager.Mode.Speaking):
-		if air_jump_counter <= max_air_jump:
-			pressed_jump.emit()
-			air_jump_counter += 1
+	#if event.is_action_pressed("jump") and (GameManager.mode != GameManager.Mode.InPopUp and GameManager.mode != GameManager.Mode.Inventory and GameManager.mode != GameManager.Mode.Speaking):
+		#if air_jump_counter <= max_air_jump:
+			#pressed_jump.emit()
+			#air_jump_counter += 1
 
 
 func _ready() -> void:
@@ -41,9 +40,10 @@ func _ready() -> void:
 	else:
 		GameManager.left_click.connect(_on_left_click)
 		GameManager.right_click.connect(_on_right_click)
+
 	
 func _physics_process(_delta: float) -> void:
-	if is_movement_ongoing():
+	if is_moving():
 		set_movement_direction.emit(movement_direction)
 		
 	if is_on_floor():
@@ -51,11 +51,11 @@ func _physics_process(_delta: float) -> void:
 	elif air_jump_counter == 0:
 		air_jump_counter = 1
 	
-func is_movement_ongoing() -> bool:
-	return abs(movement_direction.x) > 0
-	
 func change_movement_state(state: String) -> void:
 	set_movement_state.emit(movement_states[state])
+	
+func is_moving() -> bool:
+	return movement_direction.x != 0 or movement_direction.y != 0
 	
 func _on_left_click():
 	if ray_cast.is_colliding():

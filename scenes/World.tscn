@@ -1,7 +1,6 @@
-[gd_scene load_steps=424 format=4 uid="uid://1gukb1yqks51"]
+[gd_scene load_steps=423 format=4 uid="uid://1gukb1yqks51"]
 
 [ext_resource type="PackedScene" uid="uid://bt8p520js50i3" path="res://scenes/ui/environment/Environment.tscn" id="1_7c4bj"]
-[ext_resource type="PackedScene" uid="uid://cpamh1gadlcks" path="res://scenes/Player.tscn" id="5_1lgw5"]
 [ext_resource type="PackedScene" uid="uid://b15ufnwgdjvf7" path="res://scenes/buildings/starting_village/Builder.tscn" id="5_h1bdy"]
 [ext_resource type="NavigationMesh" uid="uid://chw4cxgkk8gyo" path="res://assets/resources/navigation/world_navigation_mesh.tres" id="5_i4b1j"]
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="7_0uv0p"]
@@ -4280,11 +4279,8 @@ item/73/preview = SubResource("ImageTexture_a5rpl")
 
 [node name="Environment" parent="." instance=ExtResource("1_7c4bj")]
 
-[node name="Player" parent="." instance=ExtResource("5_1lgw5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.813, 2, -1.177)
-
 [node name="NoJobNPC" parent="." instance=ExtResource("7_0uv0p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2, 23)
+position = Vector2(-38, 2)
 data = ExtResource("12_nrtoj")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -4347,6 +4343,6 @@ start_position = Vector3(1, -1.32538, 2)
 end_position = Vector3(0, 1.67462, 7)
 
 [node name="PreviewTile" parent="." node_paths=PackedStringArray("player", "gridmap") instance=ExtResource("16_o1tcx")]
-player = NodePath("../Player")
-gridmap = NodePath("../NavigationRegion3D/Ground")
 meshlib = SubResource("MeshLibrary_ovuqc")
+player = NodePath("")
+gridmap = NodePath("../NavigationRegion3D/Ground")

@@ -6,3 +6,4 @@ class_name MovementState
 @export var acceleration: float = 6
 @export var camera_fov: float = 75
 @export var animation_speed: float = 1
+@export var animation_name: StringName = ""

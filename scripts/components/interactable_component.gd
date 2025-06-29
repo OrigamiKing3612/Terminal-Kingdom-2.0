@@ -1,15 +1,15 @@
-extends Node3D
+extends Node2D
 class_name InteractableComponent
 
 signal interacted
 
-@export var static_body: StaticBody3D
+@export var node: Node2D
 
 func _ready():
-	if static_body:
-		static_body.set_meta("interactable_component", self)
+	if node:
+		node.set_meta("interactable_component", self)
 	else:
-		push_warning("No StaticBody3D assigned to InteractableComponent")
+		push_warning("No StaticBody2D assigned to InteractableComponent")
 
 func interact():
 	interacted.emit()

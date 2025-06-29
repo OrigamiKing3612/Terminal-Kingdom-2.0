@@ -1,7 +1,7 @@
 extends NPCState
 
 @export var navigation: NavigationAgent2D
-@export var wander_radius: float = 10.0
+@export var wander_radius: float = 16 * 10
 @export var timer: Timer
 
 var area_entered: bool = false
@@ -27,7 +27,7 @@ func physics_process(_delta: float) -> void:
 	var direction = (next_position - character.position).normalized()
 
 	character.velocity = direction * move_speed
-	character.look_at(Vector2(next_position.x, next_position.y))
+	#character.look_at(Vector2(next_position.x, next_position.y))
 	
 	character.move_and_slide()
 
