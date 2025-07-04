@@ -1,14 +1,14 @@
-extends Node3D
+extends Node2D
 class_name DestroyableComponent
 
-@export var static_body: StaticBody3D
+@export var static_body: StaticBody2D
 @export var tile_id: int = -1
 
 func _ready():
 	if static_body:
 		static_body.set_meta("destroyable_component", self)
 	else:
-		push_warning("No StaticBody3D assigned to DestroyableComponent")
+		push_warning("No StaticBody2D assigned to DestroyableComponent")
 
 	if tile_id == -1:
 		push_error("Missing a valid tile_id")

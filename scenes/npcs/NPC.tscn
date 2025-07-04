@@ -1,8 +1,8 @@
 [gd_scene load_steps=72 format=3 uid="uid://dptgi81hyimlb"]
 
-[ext_resource type="Texture2D" uid="uid://42feg23bykp2" path="res://assets/art/player/Player_Red.png" id="1_5e71h"]
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
+[ext_resource type="Texture2D" uid="uid://bfgre482bbp56" path="res://assets/art/testing4.png" id="2_p7g8q"]
 [ext_resource type="Script" uid="uid://du5mtwnmpjcs2" path="res://scripts/npc/jobs/blacksmith.gd" id="2_yq5wv"]
 [ext_resource type="Resource" uid="uid://c2hpnv4br66nh" path="res://assets/dialogue/npcs/starting_village/sv_blacksmith.dialogue" id="4_bycv4"]
 [ext_resource type="Script" uid="uid://vb40usgxql0s" path="res://scripts/quests/get_something_quest.gd" id="4_i3n4k"]
@@ -63,7 +63,7 @@
 size = Vector2(42, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vihe"]
-size = Vector2(10, 13)
+size = Vector2(14, 28.5)
 
 [sub_resource type="Resource" id="Resource_trpir"]
 script = ExtResource("24_w1xlh")
@@ -172,7 +172,6 @@ max_slides = 6
 floor_snap_length = 0.1
 safe_margin = 0.001
 script = ExtResource("1_k75in")
-talkable_area = Vector2i(2, 2)
 
 [node name="Area2D" type="Area2D" parent="."]
 disable_mode = 2
@@ -187,10 +186,10 @@ shape = SubResource("RectangleShape2D_srj83")
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("1_5e71h")
+texture = ExtResource("2_p7g8q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, -0.75)
 shape = SubResource("RectangleShape2D_0vihe")
 
 [node name="StartingVillageJobs" type="Node" parent="."]
@@ -467,7 +466,7 @@ node = NodePath("..")
 metadata/_custom_type_script = "uid://cle5risojhhkj"
 
 [node name="Marker" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(0, -22)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("58_p7g8q")
 animation = &"urgent_red"

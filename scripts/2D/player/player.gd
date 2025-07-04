@@ -1,62 +1,15 @@
 extends CharacterBody2D
 
-signal pressed_jump()
-signal set_movement_state(_movement_state: MovementState)
-signal set_movement_direction(_movement_state: Vector2)
-
-@export var max_air_jump : int = 1
-var air_jump_counter : int = 0
-
-@export var movement_states: Dictionary
-var movement_direction: Vector2
-
 @onready var camera: Camera2D = $Camera2D
 @onready var ray_cast: RayCast2D = $RayCast2D
 
-func _input(event: InputEvent) -> void:
-	if (event.is_action_pressed("movement") or event.is_action_released("movement")) and GameManager.move and GameManager.mode != GameManager.Mode.Speaking and GameManager.mode != GameManager.Mode.InPopUp:
-		movement_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-		
-		if is_moving():
-			if Input.is_action_pressed("sprint"):
-				change_movement_state("sprint")
-			else:
-				if Input.is_action_pressed("walk"):
-					change_movement_state("walk")
-				else:
-					change_movement_state("run")
-		else:
-			change_movement_state("stand")
-	#if event.is_action_pressed("jump") and (GameManager.mode != GameManager.Mode.InPopUp and GameManager.mode != GameManager.Mode.Inventory and GameManager.mode != GameManager.Mode.Speaking):
-		#if air_jump_counter <= max_air_jump:
-			#pressed_jump.emit()
-			#air_jump_counter += 1
-
-
 func _ready() -> void:
-	change_movement_state("stand")
 	if GameManager.mode == GameManager.Mode.Mining:
 		GameManager.mine_left_click.connect(_on_left_click)
 	else:
 		GameManager.left_click.connect(_on_left_click)
 		GameManager.right_click.connect(_on_right_click)
 
-	
-func _physics_process(_delta: float) -> void:
-	if is_moving():
-		set_movement_direction.emit(movement_direction)
-		
-	if is_on_floor():
-		air_jump_counter = 0
-	elif air_jump_counter == 0:
-		air_jump_counter = 1
-	
-func change_movement_state(state: String) -> void:
-	set_movement_state.emit(movement_states[state])
-	
-func is_moving() -> bool:
-	return movement_direction.x != 0 or movement_direction.y != 0
-	
 func _on_left_click():
 	if ray_cast.is_colliding():
 		var collider = ray_cast.get_collider()

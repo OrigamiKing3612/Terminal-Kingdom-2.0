@@ -1,12 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://ci5amistndx3a"]
+[gd_scene load_steps=23 format=3 uid="uid://ci5amistndx3a"]
 
 [ext_resource type="Script" uid="uid://c60o6s88xjeag" path="res://scripts/2D/player/player.gd" id="1_t2exb"]
-[ext_resource type="Script" uid="uid://bug8ogo4i8sc6" path="res://scripts/2D/player/movement_controller.gd" id="2_ilpbq"]
+[ext_resource type="Script" uid="uid://bug8ogo4i8sc6" path="res://scripts/2D/player/movement.gd" id="2_ilpbq"]
 [ext_resource type="Resource" uid="uid://5pep0pjlel1w" path="res://assets/resources/player/movement_states/run.tres" id="2_sjrfr"]
 [ext_resource type="Resource" uid="uid://cejp3n82mvcbv" path="res://assets/resources/player/movement_states/sprint.tres" id="3_efh0x"]
+[ext_resource type="Script" uid="uid://nx0yyc5txa13" path="res://scripts/resources/player/movement_state.gd" id="3_jvrdh"]
 [ext_resource type="Resource" uid="uid://dlb2bsv8aw60t" path="res://assets/resources/player/movement_states/stand.tres" id="4_jvrdh"]
 [ext_resource type="Resource" uid="uid://c00pgu5buionk" path="res://assets/resources/player/movement_states/walk.tres" id="5_qrttu"]
 [ext_resource type="Texture2D" uid="uid://evnhgd0dikd" path="res://assets/art/player/animated_test3.png" id="7_sjrfr"]
+[ext_resource type="Texture2D" uid="uid://bfgre482bbp56" path="res://assets/art/testing4.png" id="8_jvrdh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ju82"]
+size = Vector2(14, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efh0x"]
 atlas = ExtResource("7_sjrfr")
@@ -154,44 +159,47 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ju82"]
-size = Vector2(10, 16)
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 65533
 script = ExtResource("1_t2exb")
-movement_states = {
+
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2_ilpbq")
+player = NodePath("..")
+movement_states = Dictionary[String, ExtResource("3_jvrdh")]({
 "run": ExtResource("2_sjrfr"),
 "sprint": ExtResource("3_efh0x"),
 "stand": ExtResource("4_jvrdh"),
 "walk": ExtResource("5_qrttu")
-}
-
-[node name="Movement Controller" type="Node" parent="." node_paths=PackedStringArray("player", "animated_sprite")]
-script = ExtResource("2_ilpbq")
-player = NodePath("..")
-animated_sprite = NodePath("../Sprites/AnimatedSprite2D")
+})
 
 [node name="Sprites" type="Node2D" parent="."]
+position = Vector2(0, -8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprites"]
-sprite_frames = SubResource("SpriteFrames_da50l")
-animation = &"walk_down"
-autoplay = "idle"
+[node name="Testing4" type="Sprite2D" parent="Sprites"]
+position = Vector2(0, -5)
+texture = ExtResource("8_jvrdh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_4ju82")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -8)
 zoom = Vector2(8, 8)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -21)
 target_position = Vector2(30, 0)
 collision_mask = 9
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
 
-[connection signal="pressed_jump" from="." to="Movement Controller" method="_jump"]
-[connection signal="set_movement_direction" from="." to="Movement Controller" method="_on_set_movement_direction"]
-[connection signal="set_movement_state" from="." to="Movement Controller" method="_on_set_movement_state"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_da50l")
+animation = &"walk_down"
+autoplay = "idle"
