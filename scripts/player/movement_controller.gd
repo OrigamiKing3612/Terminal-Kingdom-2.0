@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y -= fall_gravity * delta
 	
 	player.velocity = player.velocity.lerp(velocity, acceleration * delta)
-	GameManager.player.position = player.global_position
+	#GameManager.player.position = player.global_position
 	player.move_and_slide()
 	
 	var target_rotation = atan2(direction.x, direction.z) - player_init_rotation

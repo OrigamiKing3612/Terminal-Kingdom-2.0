@@ -2,7 +2,6 @@ extends Node
 
 #var world_scene: Node = null
 var overlay_scene: Node = null
-
 var current_popup: Control = null
 
 #func _ready():

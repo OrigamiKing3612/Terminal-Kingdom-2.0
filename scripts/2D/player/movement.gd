@@ -32,7 +32,8 @@ func _physics_process(delta: float) -> void:
 	velocity = speed * direction.normalized()
 	
 	player.velocity = player.velocity.lerp(velocity, acceleration * delta)
-	#GameManager.player.position = player.global_position
+	if get_tree().root.get_node("Game").visible == true:
+		GameManager.player.position = player.global_position
 	player.move_and_slide()
 
 func _input(event: InputEvent) -> void:
