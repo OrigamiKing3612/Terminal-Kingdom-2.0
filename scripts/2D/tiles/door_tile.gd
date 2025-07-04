@@ -12,7 +12,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			get_tree().get_first_node_in_group("Player").get_node("Camera2D").enabled = false
 	elif mode == DoorMode.go_outside:
 		SceneManager.go_back()
-		get_tree().get_first_node_in_group("Player").global_position = GameManager.player.position + Vector2(0, 16)
+		get_tree().get_first_node_in_group("Player").global_position = GameManager.player.position
 		get_tree().get_first_node_in_group("Player").get_node("Camera2D").enabled = true
 
 enum DoorMode{go_inside,go_outside}

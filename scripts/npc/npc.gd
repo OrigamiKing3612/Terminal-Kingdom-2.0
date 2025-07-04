@@ -21,8 +21,12 @@ func _ready() -> void:
 		data = data.duplicate()
 		if data.is_starting_village_npc:
 			starting_village_sprite.texture = data.body.starting_village_body
+			random_sprites.hide()
+			starting_village_sprite.show()
 		else:
 			random_sprites.set_images(data.body)
+			starting_village_sprite.hide()
+			random_sprites.show()
 	marker.visible = false
 	
 	var shape = RectangleShape2D.new()
