@@ -33,6 +33,7 @@ metadata/_custom_type_script = "uid://cle5risojhhkj"
 [node name="DestroyableComponent" type="Node2D" parent="." node_paths=PackedStringArray("static_body")]
 script = ExtResource("4_wiedm")
 static_body = NodePath("../StaticBody2D")
+tile_id = 77
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
 
 [node name="HiresComponent" type="Node" parent="."]
