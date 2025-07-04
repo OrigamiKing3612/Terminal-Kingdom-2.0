@@ -6,6 +6,7 @@ extends Node
 @export var fall_gravity: float = 45
 @export var movement_states: Dictionary[String, MovementState]
 @export var max_air_jump : int = 1
+@export var raycast: RayCast2D
 var air_jump_counter : int = 0
 var movement_direction: Vector2
 var jump_gravity: float = fall_gravity
@@ -16,9 +17,16 @@ var acceleration: float
 var speed: float
 var camera_rotation: float = 0
 var player_init_rotation: float
+var current_state: MovementState
+var direction_type: Utils.Direction
+var raycast_distance: int
 
 func _ready() -> void:
 	change_movement_state("stand")
+	raycast_distance = raycast.target_position.x
+
+func _process(delta: float) -> void:
+	set_animations()
 
 func _physics_process(delta: float) -> void:
 	if is_moving():
@@ -59,23 +67,44 @@ func change_movement_state(state: String) -> void:
 	var _movement_state = movement_states[state]
 	speed = _movement_state.movement_speed
 	acceleration = _movement_state.acceleration
+	current_state = _movement_state
 
-	var sprite_direction := "down"
-	if player.velocity.x < 0: sprite_direction = "left"
-	elif player.velocity.x > 0: sprite_direction = "right"
-	elif player.velocity.y < 0: sprite_direction = "up"
+func set_animations():
+	var sprite_direction := "forward"
+	if direction.x < -0.1:
+		sprite_direction = "left"
+		direction_type = Utils.Direction.Left
+	elif direction.x > 0.1:
+		sprite_direction = "right"
+		direction_type = Utils.Direction.Right
+	elif direction.y < -0.1:
+		sprite_direction = "back"
+		direction_type = Utils.Direction.Back
+	elif direction.y > 0.1:
+		sprite_direction = "forward"
+		direction_type = Utils.Direction.Forward
+		
+	match direction_type:
+		Utils.Direction.Left:
+			raycast.target_position = Vector2(-raycast_distance, 0)
+		Utils.Direction.Right:
+			raycast.target_position = Vector2(raycast_distance, 0)
+		Utils.Direction.Back:
+			raycast.target_position = Vector2(0, -raycast_distance)
+		Utils.Direction.Forward:
+			raycast.target_position = Vector2(0, raycast_distance)
 	
 	if animated_sprite:
 		if player.velocity == Vector2.ZERO:
 			if animated_sprite.is_playing():
 				animated_sprite.stop()
 			return
-		if _movement_state.animation_name == "idle":
-			animated_sprite.play(_movement_state.animation_name + "_" + sprite_direction)
+		if current_state.animation_name == "idle":
+			animated_sprite.play(current_state.animation_name + "_" + sprite_direction)
 		else:
-			animated_sprite.play(_movement_state.animation_name + "_" + sprite_direction)
-		animated_sprite.speed_scale = _movement_state.animation_speed
-	
+			animated_sprite.play(current_state.animation_name + "_" + sprite_direction)
+		animated_sprite.speed_scale = current_state.animation_speed
+
 func is_moving() -> bool:
 	return movement_direction.x != 0 or movement_direction.y != 0
 
