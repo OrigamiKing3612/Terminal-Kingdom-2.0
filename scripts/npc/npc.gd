@@ -13,10 +13,16 @@ class_name NPC
 @onready var npc_brain: NPCBrain = $NPCBrain
 @onready var area: Area2D = $Area2D
 @onready var marker: AnimatedSprite2D = $Marker
+@onready var starting_village_sprite: Sprite2D = $Sprites/StartingVillage
+@onready var random_sprites: Node2D = $Sprites/Random
 
 func _ready() -> void:
 	if data != null:
 		data = data.duplicate()
+		if data.is_starting_village_npc:
+			starting_village_sprite.texture = data.body.starting_village_body
+		else:
+			random_sprites.set_images(data.body)
 	marker.visible = false
 	
 	var shape = RectangleShape2D.new()

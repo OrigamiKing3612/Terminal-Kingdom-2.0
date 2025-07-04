@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=18 format=3 uid="uid://b1rhwxtr2byfg"]
 
-[ext_resource type="Texture2D" uid="uid://db2u3rmdiden5" path="res://assets/art/grass_dirt_cliff_tileset.png" id="2_su1wv"]
+[ext_resource type="Texture2D" uid="uid://db2u3rmdiden5" path="res://assets/art/tilesets/dual_grid/grass_dirt_cliff_tileset.png" id="1_tpbt0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tpbt0"]
 vertices = PackedVector2Array(2, 8, -8, 8, -8, -8, 2, -8)
@@ -93,7 +93,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 2, -8, 2, -2, -
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yy831"]
-texture = ExtResource("2_su1wv")
+texture = ExtResource("1_tpbt0")
 separation = Vector2i(1, 1)
 0:3/0 = 0
 0:3/0/terrain_set = 0

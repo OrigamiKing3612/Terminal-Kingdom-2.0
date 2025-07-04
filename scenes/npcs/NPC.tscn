@@ -1,9 +1,13 @@
-[gd_scene load_steps=72 format=3 uid="uid://dptgi81hyimlb"]
+[gd_scene load_steps=78 format=3 uid="uid://dptgi81hyimlb"]
 
 [ext_resource type="Script" uid="uid://b0t1cg5rsfjuu" path="res://scripts/npc/npc.gd" id="1_k75in"]
 [ext_resource type="Script" uid="uid://bnjdbc04lee2u" path="res://scripts/npc/jobs.gd" id="2_3ak68"]
 [ext_resource type="Texture2D" uid="uid://bfgre482bbp56" path="res://assets/art/testing4.png" id="2_p7g8q"]
 [ext_resource type="Script" uid="uid://du5mtwnmpjcs2" path="res://scripts/npc/jobs/blacksmith.gd" id="2_yq5wv"]
+[ext_resource type="Texture2D" uid="uid://cpmijvfalcu7e" path="res://assets/art/npc/random_options/eyes/eyes_0.png" id="3_5ejfi"]
+[ext_resource type="Script" uid="uid://bx68f5l1toja7" path="res://scripts/npc/body_sprites.gd" id="3_bmso4"]
+[ext_resource type="Texture2D" uid="uid://c2siib2nys4lv" path="res://assets/art/npc/random_options/hair/hair_0.png" id="3_mvsms"]
+[ext_resource type="Texture2D" uid="uid://dnr1nw3ehsmus" path="res://assets/art/npc/random_options/head/head_0.png" id="4_bmso4"]
 [ext_resource type="Resource" uid="uid://c2hpnv4br66nh" path="res://assets/dialogue/npcs/starting_village/sv_blacksmith.dialogue" id="4_bycv4"]
 [ext_resource type="Script" uid="uid://vb40usgxql0s" path="res://scripts/quests/get_something_quest.gd" id="4_i3n4k"]
 [ext_resource type="Script" uid="uid://d3yh5vbtrdxp0" path="res://scripts/npc/none.gd" id="4_se8i8"]
@@ -11,7 +15,9 @@
 [ext_resource type="Resource" uid="uid://bl24ijs603hmr" path="res://assets/resources/items/tools/axe.tres" id="5_hsw7l"]
 [ext_resource type="Resource" uid="uid://dgy27c0tsi8d2" path="res://assets/resources/items/tile_items/MeshLibrary/item/lumber.tres" id="6_1tn1w"]
 [ext_resource type="Script" uid="uid://0gx1d8pnmjgd" path="res://scripts/quests/use_station_quest.gd" id="6_cmg02"]
+[ext_resource type="Texture2D" uid="uid://tyf30pi2brh8" path="res://assets/art/npc/random_options/torso/torso_0.png" id="6_d4b3y"]
 [ext_resource type="Script" uid="uid://6ldywjhmi7eq" path="res://scripts/npc/jobs/miner.gd" id="6_fnw6m"]
+[ext_resource type="Texture2D" uid="uid://3ygt3s64iuib" path="res://assets/art/npc/random_options/legs/legs_0.png" id="7_rn4gm"]
 [ext_resource type="Resource" uid="uid://bhaou6qgiqkhi" path="res://assets/resources/items/tile_items/MeshLibrary/item/coal_item.tres" id="8_x2tpa"]
 [ext_resource type="Resource" uid="uid://cxq0s5prgh160" path="res://assets/resources/items/generic/steel.tres" id="9_rr88e"]
 [ext_resource type="Resource" uid="uid://b8f3mjwiclhxv" path="res://assets/dialogue/npcs/starting_village/sv_miner.dialogue" id="9_yh8il"]
@@ -185,8 +191,27 @@ shape = SubResource("RectangleShape2D_srj83")
 
 [node name="Sprites" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprites"]
+[node name="StartingVillage" type="Sprite2D" parent="Sprites"]
+visible = false
 texture = ExtResource("2_p7g8q")
+
+[node name="Random" type="Node2D" parent="Sprites"]
+script = ExtResource("3_bmso4")
+
+[node name="Hair" type="Sprite2D" parent="Sprites/Random"]
+texture = ExtResource("3_mvsms")
+
+[node name="Head" type="Sprite2D" parent="Sprites/Random"]
+texture = ExtResource("4_bmso4")
+
+[node name="Eyes" type="Sprite2D" parent="Sprites/Random"]
+texture = ExtResource("3_5ejfi")
+
+[node name="Torso" type="Sprite2D" parent="Sprites/Random"]
+texture = ExtResource("6_d4b3y")
+
+[node name="Legs" type="Sprite2D" parent="Sprites/Random"]
+texture = ExtResource("7_rn4gm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.75)
@@ -458,7 +483,7 @@ fall_state = NodePath("../State/Fall")
 follow_state = NodePath("../State/Follow")
 talk_to_player = NodePath("../State/TalkToPlayer")
 walk_to_position = NodePath("../State/WalkToPosition")
-current_goal = NodePath("../State/Wander")
+current_goal = NodePath("../State/Follow")
 metadata/_custom_type_script = "uid://4kig3wewccmi"
 
 [node name="InteractableComponent" type="Node2D" parent="." node_paths=PackedStringArray("node")]

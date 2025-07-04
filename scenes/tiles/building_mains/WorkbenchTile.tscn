@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://djd335f6v4ioq"]
 
 [ext_resource type="Script" uid="uid://tvubbp5x1mur" path="res://scripts/tiles/building_mains/workbench_tile.gd" id="1_xtrnq"]
-[ext_resource type="Texture2D" uid="uid://qwwx4dr5jbqk" path="res://assets/art/workbench.png" id="2_wiedm"]
+[ext_resource type="Texture2D" uid="uid://qwwx4dr5jbqk" path="res://assets/art/tilesets/workbench.png" id="2_wiedm"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="3_6jog4"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="4_wiedm"]
 [ext_resource type="Script" uid="uid://cdpcminp8wskc" path="res://scripts/components/buildings/hires_component.gd" id="5_wiedm"]

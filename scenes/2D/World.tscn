@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ci5amistndx3a" path="res://scenes/2D/Player.tscn" id="1_6dh8e"]
 [ext_resource type="TileSet" uid="uid://b1rhwxtr2byfg" path="res://assets/2D/dual_grid_tileset.tres" id="1_cq3oc"]
-[ext_resource type="Texture2D" uid="uid://diilly2wn24qy" path="res://assets/art/path_grass_tileset.png" id="2_8wwyq"]
+[ext_resource type="Texture2D" uid="uid://diilly2wn24qy" path="res://assets/art/tilesets/dual_grid/path_grass_tileset.png" id="2_8wwyq"]
 [ext_resource type="TileSet" uid="uid://6ru0h4siet1j" path="res://assets/2D/main_tileset.tres" id="2_r41bg"]
 [ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="3_b63y0"]
 [ext_resource type="Resource" uid="uid://cbto4o8wytoxs" path="res://assets/resources/npc/blacksmith.tres" id="4_g5co3"]

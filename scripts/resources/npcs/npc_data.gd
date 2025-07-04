@@ -24,15 +24,10 @@ var id = UUID.string()
 @export var village_id: String = ""
 
 @export_group("Display")
-@export var hair: Texture2D
-@export var eyes: Texture2D
-@export var head: Texture2D
-@export var torso: Texture2D
-@export var legs: Texture2D
+@export var body: NPCBody
 
 @export_group("Starting NPC Settings")
 @export var is_starting_village_npc: bool = false
-@export var npc_sprite: Texture2D
 
 static func create_new() -> NPCData:
 	var data := NPCData.new()
@@ -61,7 +56,7 @@ static func create_new() -> NPCData:
 			var skill_level_name = skill_levels[GameManager.random.randi_range(0, skill_levels.size() - 1)]
 			if Utils.Job[job_name] != Utils.Job.King:
 				data.skills[Utils.Job[job_name]] = Utils.SkillLevel[skill_level_name]
-	
+	push_warning("Implement the body stuff here.")
 	return data
 
 static func _generate_name(gender: Utils.Gender) -> Dictionary[String, String]:
