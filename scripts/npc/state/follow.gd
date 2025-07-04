@@ -32,6 +32,6 @@ func physics_process(_delta: float) -> void:
 	var new_velocity = (next_position - character.global_position).normalized() * move_speed
 	character.velocity.x = new_velocity.x
 	character.velocity.y = new_velocity.y
-	character.look_at(Vector2(character_to_follow.global_position.x, character_to_follow.global_position.y))
+	#character.look_at(Vewwctor2(character_to_follow.global_position.x, character_to_follow.global_position.y))
 	#character.look_at(next_position)
 	character.move_and_slide()

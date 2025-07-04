@@ -376,7 +376,7 @@ pot_item = ExtResource("39_c4iby")
 coin_item = ExtResource("40_w8k3m")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 5.0
+navigation_layers = 3
 debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(0, 1, 0.870588, 1)
@@ -389,11 +389,12 @@ target_position = Vector2(18, 0)
 position = Vector2(0, 6)
 target_position = Vector2(18, 0)
 
-[node name="State" type="Node" parent="." node_paths=PackedStringArray("character", "sprites", "brain")]
+[node name="State" type="Node" parent="." node_paths=PackedStringArray("character", "sprites", "movement", "brain")]
 script = ExtResource("32_fri4o")
 character = NodePath("..")
 sprites = NodePath("../Sprites")
 fall_gravity = 9.81
+movement = NodePath("../NPCMovementController")
 brain = NodePath("../NPCBrain")
 
 [node name="Idle" type="Node" parent="State"]

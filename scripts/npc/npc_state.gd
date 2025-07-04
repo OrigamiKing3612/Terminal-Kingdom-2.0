@@ -3,7 +3,7 @@ extends Node
 class_name NPCState
 
 @export var animation_name: String
-@export var move_speed: float = 6
+@export var move_speed: float = 16
 @export var state_name: String
 @export var step_threshold := 1
 

@@ -1,7 +1,7 @@
 extends NPCState
 
 @export var navigation: NavigationAgent2D
-@export var wander_radius: float = 16 * 10
+@export var wander_radius: float = 16 * 20
 @export var timer: Timer
 
 var area_entered: bool = false
