@@ -1,7 +1,7 @@
 extends Node
 
 @export var player: CharacterBody2D
-@export var animated_sprite: AnimatedSprite2D
+@export var animations: Node2D
 @export var rotation_speed: float = 8
 @export var fall_gravity: float = 45
 @export var movement_states: Dictionary[String, MovementState]
@@ -94,16 +94,16 @@ func set_animations():
 		Utils.Direction.Forward:
 			raycast.target_position = Vector2(0, raycast_distance)
 	
-	if animated_sprite:
+	if animations:
 		if player.velocity == Vector2.ZERO:
-			if animated_sprite.is_playing():
-				animated_sprite.stop()
+			if animations.is_playing():
+				animations.stop_all()
 			return
 		if current_state.animation_name == "idle":
-			animated_sprite.play(current_state.animation_name + "_" + sprite_direction)
+			animations.play_all(current_state.animation_name + "_" + sprite_direction)
 		else:
-			animated_sprite.play(current_state.animation_name + "_" + sprite_direction)
-		animated_sprite.speed_scale = current_state.animation_speed
+			animations.play_all(current_state.animation_name + "_" + sprite_direction)
+		animations.speed_scale(current_state.animation_speed)
 
 func is_moving() -> bool:
 	return movement_direction.x != 0 or movement_direction.y != 0
