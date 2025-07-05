@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource("1_gpwog")
 id = 3
-movement_speed = 12.0
+movement_speed = 192.0
 acceleration = 4.0
 camera_fov = 85.0
 animation_speed = 1.5
+animation_name = &"walk"
 metadata/_custom_type_script = "uid://nx0yyc5txa13"

@@ -5,7 +5,7 @@ signal remove_item(item: Item)
 
 @export var name: String = "DEFAULT_NAME"
 @export var can_build: bool = true
-@export var position: Vector3 = Vector3.ZERO
+@export var position: Vector2 = Vector2.ZERO
 # [Item.id, Item]
 @export var inventory: PlayerInventory
 

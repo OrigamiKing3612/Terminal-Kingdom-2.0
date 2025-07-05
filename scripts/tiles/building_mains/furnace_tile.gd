@@ -2,24 +2,23 @@ extends BuildingMainTile
 class_name FurnaceTile
 
 @export var furnace_screen: PackedScene
-@onready var fire: Node3D = $Fire
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var recipes: Array[FurnaceRecipe]
 @export var state: FurnaceState = FurnaceState.unused:
 	set(value):
 		state = value
-		if fire:
-			match state:
-				FurnaceState.unused:
-					fire.hide()
-				FurnaceState.running:
-					fire.show()
+		match state:
+			FurnaceState.unused:
+				animated_sprite.play("unused")
+			FurnaceState.running:
+				animated_sprite.play("running")
 
 func when_placed():
 	village_id = GameManager.kingdom.add_building_to_closest_village(self)
 
 func _ready() -> void:
-	fire.hide()
+	animated_sprite.play("unused")
 	if GameManager.player.skill.blacksmithing.stage == 5:
 		recipes = [load("res://assets/resources/recipes/furnace/steel.tres") as FurnaceRecipe]
 		return
@@ -35,8 +34,9 @@ func _on_interacted() -> void:
 		#state = FurnaceState.unused
 	#print("furnace: " + str(state))
 	var popup = furnace_screen.instantiate()
-	popup.set_recipes(recipes)
-	popup.start_creating.connect(_on_start_creating)
+	#TODO: fix this its bad
+	popup.get_node("TabContainer").get_node("WorkstationScreen").set_recipes(recipes)
+	popup.get_node("TabContainer").get_node("WorkstationScreen").start_creating.connect(_on_start_creating)
 	SceneManager.show_popup(popup)
 
 enum FurnaceState{

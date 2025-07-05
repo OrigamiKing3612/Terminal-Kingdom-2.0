@@ -1,20 +1,31 @@
-[gd_resource type="Resource" script_class="NPCData" load_steps=2 format=3 uid="uid://dhbvn8ylg7er0"]
+[gd_resource type="Resource" script_class="NPCData" load_steps=5 format=3 uid="uid://dhbvn8ylg7er0"]
 
 [ext_resource type="Script" uid="uid://nj3ok2spwf66" path="res://scripts/resources/npcs/npc_data.gd" id="1_n06wh"]
+[ext_resource type="Script" uid="uid://cmkjsslpxj6g4" path="res://scripts/resources/npcs/npc_body.gd" id="1_uil3r"]
+[ext_resource type="Texture2D" uid="uid://oyem0yr8fjg8" path="res://assets/art/npc/starting_village/MinerNPC.png" id="2_rc3p2"]
+
+[sub_resource type="Resource" id="Resource_6yg7l"]
+script = ExtResource("1_uil3r")
+starting_village_body = ExtResource("2_rc3p2")
+metadata/_custom_type_script = "uid://cmkjsslpxj6g4"
 
 [resource]
 script = ExtResource("1_n06wh")
 name = "Miner"
-job = 3
-skill_level = 0
+last_name = ""
+current_job = 0
+skills = Dictionary[int, int]({})
 experience = 0.0
-workplace = Vector3(0, 0, 0)
-behavior_type = 0
 age = 30
 gender = 0
 hunger = 100.0
 happiness = 100.0
-positionToWalkTo = Vector3(0, 0, 0)
-home = Vector3(0, 0, 0)
+positionToWalkTo = Vector2(0, 0)
+has_home = false
+home = Vector2(0, 0)
+has_workplace = false
+workplace = Vector2(0, 0)
+village_id = ""
+body = SubResource("Resource_6yg7l")
 is_starting_village_npc = true
 metadata/_custom_type_script = "uid://nj3ok2spwf66"

@@ -8,7 +8,7 @@
 script = ExtResource("2_kflsk")
 name = "DEFAULT_NAME"
 can_build = true
-position = Vector3(0, 0, 0)
+position = Vector2(0, 0)
 inventory = ExtResource("1_mddin")
 skill = ExtResource("3_pomgq")
 mining_level = 1

@@ -3,12 +3,12 @@ class_name Village
 
 var id: String  = UUID.string()
 @export var village_name: String = "Default Village Name"
-@export var courthouse_location: Vector3i
+@export var courthouse_location: Vector2i
 @export var _buildings: Dictionary[String, BuildingMainTile] = {}
 @export var _npcs: Dictionary[String, NPC] = {}
 
 ## Called before _ready
-func init(governors_desk_position: Vector3i):
+func init(governors_desk_position: Vector2i):
 	courthouse_location = governors_desk_position
 
 func add_npc(npc: NPC):

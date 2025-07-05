@@ -2,7 +2,7 @@ extends Node
 class_name Kingdom
 
 @export var kingdom_name: String = "Default Kingdom Name"
-@export var castle_location: Vector3
+@export var castle_location: Vector2
 var _villages: Dictionary[String, Village] = {}
 
 func add_village(village: Village):
@@ -22,7 +22,7 @@ func remove_village(id: String):
 		_villages.erase(id)
 
 ## Looks with a radius of 80 (40 tiles)
-func find_nearby_villages(position: Vector3i, radius: float = 80.0) -> Array[Village]:
+func find_nearby_villages(position: Vector2i, radius: float = 80.0) -> Array[Village]:
 	var found: Array[Village] = []
 	for village in GameManager.kingdom.get_villages():
 		if position.distance_to(village.courthouse_location) < radius:

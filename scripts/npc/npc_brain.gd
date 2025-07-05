@@ -3,8 +3,8 @@ class_name NPCBrain
 
 @export var npc: NPC
 @export var state_machine: Node
-@export var raycast_lower: RayCast3D
-@export var raycast_upper: RayCast3D
+@export var raycast_lower: RayCast2D
+@export var raycast_upper: RayCast2D
 @export var movement_controller: MovementController
 
 @export_group("States")
@@ -32,8 +32,8 @@ func _ready() -> void:
 	state_machine.init()
 
 func _process(_delta: float) -> void:
-	#if not npc.data.is_starting_village_npc:
-		#print("None State: current state: %s, current goal: %s, previous_goal: %s" % [state_machine.current_state.state_name, current_goal.state_name, previous_goal.state_name])
+	#if npc.data.is_starting_village_npc:
+		#print("State: current state: %s, current goal: %s, previous_goal: %s" % [state_machine.current_state.state_name, current_goal.state_name, previous_goal.state_name])
 	pass
 	
 func _physics_process(delta: float) -> void:
@@ -47,10 +47,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		movement_controller.wants_jump = false
 	
-	if not npc.is_on_floor():# and current_goal != jump_state:
-		current_goal = fall_state
-	elif npc.is_on_floor():# and current_goal.name == fall_state.name:
-		current_goal = previous_goal
+	#if not npc.is_on_floor():# and current_goal != jump_state:
+		#current_goal = fall_state
+	#elif npc.is_on_floor():# and current_goal.name == fall_state.name:
+		#current_goal = previous_goal
 		
 	if current_goal == walk_to_position:
 		if (walk_to_position.navigation as NavigationAgent3D).is_navigation_finished():
@@ -64,11 +64,11 @@ func jump() -> NPCState:
 func fall() -> NPCState:
 	return fall_state
 
-func _on_area_3d_body_entered(_body: Node3D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	previous_goal = current_goal
 	current_goal = talk_to_player
 	state_machine.change_state(talk_to_player)
 
-func _on_area_3d_body_exited(_body: Node3D) -> void:
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	state_machine.change_state(previous_goal)
 	current_goal = previous_goal

@@ -60,4 +60,4 @@ func _on_button_press(id: String) -> void:
 func _on_create_button_pressed() -> void:
 	create_button.disabled = true
 	start_creating.emit(selected_recipe)
-	queue_free()
+	SceneManager.hide_popup()
