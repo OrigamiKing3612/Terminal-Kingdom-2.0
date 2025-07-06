@@ -1,9 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://1gukb1yqks51"]
+[gd_scene load_steps=15 format=3 uid="uid://1gukb1yqks51"]
 
-[ext_resource type="PackedScene" uid="uid://bt8p520js50i3" path="res://scenes/ui/environment/Environment.tscn" id="1_7c4bj"]
 [ext_resource type="PackedScene" uid="uid://b15ufnwgdjvf7" path="res://scenes/buildings/starting_village/Builder.tscn" id="5_h1bdy"]
-[ext_resource type="NavigationMesh" uid="uid://chw4cxgkk8gyo" path="res://assets/resources/navigation/world_navigation_mesh.tres" id="5_i4b1j"]
-[ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="7_0uv0p"]
 [ext_resource type="PackedScene" uid="uid://bxdpwrk0ydfqq" path="res://scenes/buildings/starting_village/Blacksmith.tscn" id="8_h1bdy"]
 [ext_resource type="PackedScene" uid="uid://cofx01hlxmhcy" path="res://scenes/buildings/starting_village/Mine.tscn" id="9_7c4bj"]
 [ext_resource type="PackedScene" uid="uid://bd4cyrf8vo2sb" path="res://scenes/buildings/starting_village/Carpentery.tscn" id="10_h1bdy"]
@@ -11,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://rt35jrh3xbfd" path="res://scenes/buildings/starting_village/Castle.tscn" id="11_7c4bj"]
 [ext_resource type="PackedScene" uid="uid://bcm8bqqo5jyy1" path="res://scenes/buildings/starting_village/HuntingArea.tscn" id="11_nrtoj"]
 [ext_resource type="Script" uid="uid://vnwtd345uny0" path="res://scripts/utils/breakable_and_placeable.gd" id="12_7c4bj"]
-[ext_resource type="Resource" uid="uid://bddkrgugao34a" path="res://assets/resources/npc/no_job.tres" id="12_nrtoj"]
 [ext_resource type="PackedScene" uid="uid://ctjf0vxybm3ss" path="res://scenes/buildings/starting_village/Potter.tscn" id="13_c0d7e"]
 [ext_resource type="PackedScene" uid="uid://82iisqb3vgkp" path="res://scenes/buildings/starting_village/Tavern.tscn" id="14_nthub"]
 [ext_resource type="PackedScene" uid="uid://hh76smofg3qj" path="res://scenes/buildings/starting_village/Hospital.tscn" id="15_cgwb4"]
@@ -21,57 +17,49 @@
 
 [node name="World" type="Node3D"]
 
-[node name="Environment" parent="." instance=ExtResource("1_7c4bj")]
-
-[node name="NoJobNPC" parent="." instance=ExtResource("7_0uv0p")]
-position = Vector2(-38, 2)
-data = ExtResource("12_nrtoj")
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="Buildings" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67462, 0)
-navigation_mesh = ExtResource("5_i4b1j")
 
-[node name="Buildings" type="Node3D" parent="NavigationRegion3D"]
-
-[node name="Castle" parent="NavigationRegion3D/Buildings" instance=ExtResource("11_7c4bj")]
+[node name="Castle" parent="Buildings" instance=ExtResource("11_7c4bj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -40)
 
-[node name="Blacksmith" parent="NavigationRegion3D/Buildings" instance=ExtResource("8_h1bdy")]
+[node name="Blacksmith" parent="Buildings" instance=ExtResource("8_h1bdy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 2, 79)
 
-[node name="Farm" parent="NavigationRegion3D/Buildings" instance=ExtResource("10_nrtoj")]
+[node name="Farm" parent="Buildings" instance=ExtResource("10_nrtoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104, 2, -102)
 
-[node name="Carpentery" parent="NavigationRegion3D/Buildings" instance=ExtResource("10_h1bdy")]
+[node name="Carpentery" parent="Buildings" instance=ExtResource("10_h1bdy")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 147.75, 2, 124)
 
-[node name="Builder" parent="NavigationRegion3D/Buildings" instance=ExtResource("5_h1bdy")]
+[node name="Builder" parent="Buildings" instance=ExtResource("5_h1bdy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222, 4.76837e-07, 6)
 
-[node name="Mine" parent="NavigationRegion3D/Buildings" instance=ExtResource("9_7c4bj")]
+[node name="Mine" parent="Buildings" instance=ExtResource("9_7c4bj")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 99, 2, 76)
 
-[node name="HuntingArea" parent="NavigationRegion3D/Buildings" instance=ExtResource("11_nrtoj")]
+[node name="HuntingArea" parent="Buildings" instance=ExtResource("11_nrtoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75, 3, 197)
 visible = false
 
-[node name="Potter" parent="NavigationRegion3D/Buildings" instance=ExtResource("13_c0d7e")]
+[node name="Potter" parent="Buildings" instance=ExtResource("13_c0d7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -182, 0, -83)
 visible = false
 
-[node name="Tavern" parent="NavigationRegion3D/Buildings" instance=ExtResource("14_nthub")]
+[node name="Tavern" parent="Buildings" instance=ExtResource("14_nthub")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -134, 3.57628e-07, 26)
 
-[node name="Hospital" parent="NavigationRegion3D/Buildings" instance=ExtResource("15_cgwb4")]
+[node name="Hospital" parent="Buildings" instance=ExtResource("15_cgwb4")]
 visible = false
 
-[node name="Restruant" parent="NavigationRegion3D/Buildings" instance=ExtResource("16_tx6do")]
+[node name="Restruant" parent="Buildings" instance=ExtResource("16_tx6do")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 132, 3.57628e-07, -102)
 
-[node name="HouseTemplate" parent="NavigationRegion3D/Buildings" instance=ExtResource("17_tx6do")]
+[node name="HouseTemplate" parent="Buildings" instance=ExtResource("17_tx6do")]
 visible = false
 
-[node name="Ground" type="GridMap" parent="NavigationRegion3D"]
+[node name="Ground" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67462, 0)
 mesh_library = ExtResource("15_nthub")
 collision_mask = 0
 bake_navigation = true
@@ -80,8 +68,3 @@ data = {
 }
 script = ExtResource("12_7c4bj")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
-
-[node name="NavigationLink3D" type="NavigationLink3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57, 3, 79)
-start_position = Vector3(1, -1.32538, 2)
-end_position = Vector3(0, 1.67462, 7)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://17rbtuw0ypyd"]
 
 [ext_resource type="TileSet" uid="uid://6ru0h4siet1j" path="res://assets/2D/main_tileset.tres" id="1_2u62h"]
-[ext_resource type="PackedScene" uid="uid://ci5amistndx3a" path="res://scenes/2D/Player.tscn" id="2_jnuxw"]
+[ext_resource type="PackedScene" uid="uid://ci5amistndx3a" path="res://scenes/Player.tscn" id="2_jnuxw"]
 [ext_resource type="PackedScene" uid="uid://bhtwq1fgcrkvf" path="res://scenes/2D/tiles/door_tile.tscn" id="3_jnuxw"]
 
 [node name="Node2D" type="Node2D"]
