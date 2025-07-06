@@ -28,6 +28,7 @@ metadata/_custom_type_script = "uid://coq8x5m3gaaub"
 [node name="QuestContainer" type="VBoxContainer" parent="QuestBox"]
 offset_right = 552.0
 offset_bottom = 660.0
+mouse_filter = 2
 
 [node name="BuildingBox" type="CanvasLayer" parent="."]
 visible = false

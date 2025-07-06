@@ -1,0 +1,260 @@
+[gd_scene load_steps=15 format=3 uid="uid://bumrtoxsox13g"]
+
+[ext_resource type="TileSet" uid="uid://6ru0h4siet1j" path="res://assets/2D/main_tileset.tres" id="1_f7coa"]
+[ext_resource type="Script" uid="uid://driqccmynia5i" path="res://scripts/ui/screens/Blueprint/blueprint_screen.gd" id="1_h50l8"]
+[ext_resource type="Script" uid="uid://uc2jlnpna4a7" path="res://scripts/ui/screens/Blueprint/tile_option.gd" id="2_pt1ta"]
+[ext_resource type="Script" uid="uid://dod3t16rdm123" path="res://scripts/ui/screens/Blueprint/tile_map_layer.gd" id="3_8vrq8"]
+[ext_resource type="Texture2D" uid="uid://chhicw1knmgsb" path="res://assets/models/icons/sand_preview.tres" id="3_15fm6"]
+[ext_resource type="Script" uid="uid://bcv2ka6mfgcyq" path="res://scripts/ui/screens/Blueprint/blueprint_hotbar.gd" id="4_8vrq8"]
+[ext_resource type="Texture2D" uid="uid://dcduqa82fhmrm" path="res://assets/models/icons/bricks_preview.tres" id="4_pt1ta"]
+[ext_resource type="Texture2D" uid="uid://ccfme4qpe7nbq" path="res://assets/models/icons/mud_preview.tres" id="5_3o7lr"]
+[ext_resource type="Texture2D" uid="uid://ca4r1suj4akhv" path="res://assets/models/icons/marble_preview.tres" id="6_v0i10"]
+[ext_resource type="Script" uid="uid://bfkbmxrbkn6fe" path="res://scripts/ui/screens/Blueprint/select_side_buttons.gd" id="10_5oxdd"]
+
+[sub_resource type="Resource" id="Resource_pt1ta"]
+script = ExtResource("2_pt1ta")
+id = 1
+display_name = "Sand"
+atlas_coordinate = Vector2i(3, 1)
+display_icon = ExtResource("3_15fm6")
+metadata/_custom_type_script = "uid://uc2jlnpna4a7"
+
+[sub_resource type="Resource" id="Resource_15fm6"]
+script = ExtResource("2_pt1ta")
+id = 5
+display_name = "Brick"
+atlas_coordinate = Vector2i(3, 1)
+display_icon = ExtResource("4_pt1ta")
+metadata/_custom_type_script = "uid://uc2jlnpna4a7"
+
+[sub_resource type="Resource" id="Resource_v0i10"]
+script = ExtResource("2_pt1ta")
+id = 1
+display_name = "Mud"
+atlas_coordinate = Vector2i(7, 1)
+display_icon = ExtResource("5_3o7lr")
+metadata/_custom_type_script = "uid://uc2jlnpna4a7"
+
+[sub_resource type="Resource" id="Resource_5oxdd"]
+script = ExtResource("2_pt1ta")
+id = 6
+display_name = "Marble"
+atlas_coordinate = Vector2i(3, 1)
+display_icon = ExtResource("6_v0i10")
+metadata/_custom_type_script = "uid://uc2jlnpna4a7"
+
+[node name="BlueprintScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h50l8")
+tiles = Array[ExtResource("2_pt1ta")]([SubResource("Resource_pt1ta"), SubResource("Resource_15fm6"), SubResource("Resource_v0i10"), SubResource("Resource_5oxdd")])
+metadata/_custom_type_script = "uid://driqccmynia5i"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.288, 0.72, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BlueprintContainer" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("blueprint_screen")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_8vrq8")
+blueprint_screen = NodePath("../..")
+
+[node name="Control" type="CenterContainer" parent="CanvasLayer/BlueprintContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="TileMapLayer" parent="CanvasLayer/BlueprintContainer/Control"]
+visible = false
+z_as_relative = false
+scale = Vector2(4.5, 4.5)
+tile_set = ExtResource("1_f7coa")
+collision_enabled = false
+navigation_enabled = false
+
+[node name="Front" type="TileMapLayer" parent="CanvasLayer/BlueprintContainer/Control"]
+scale = Vector2(4.5, 4.5)
+tile_set = ExtResource("1_f7coa")
+collision_enabled = false
+navigation_enabled = false
+
+[node name="Back" type="TileMapLayer" parent="CanvasLayer/BlueprintContainer/Control"]
+visible = false
+scale = Vector2(4.5, 4.5)
+tile_set = ExtResource("1_f7coa")
+collision_enabled = false
+navigation_enabled = false
+
+[node name="Left" type="TileMapLayer" parent="CanvasLayer/BlueprintContainer/Control"]
+visible = false
+scale = Vector2(4.5, 4.5)
+tile_set = ExtResource("1_f7coa")
+collision_enabled = false
+navigation_enabled = false
+
+[node name="Right" type="TileMapLayer" parent="CanvasLayer/BlueprintContainer/Control"]
+visible = false
+scale = Vector2(4.5, 4.5)
+tile_set = ExtResource("1_f7coa")
+collision_enabled = false
+navigation_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 86.0
+offset_bottom = 66.0
+
+[node name="ZoomInButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Zoom In"
+
+[node name="ZoomOutButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Zoom Out"
+
+[node name="CloseButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Close"
+
+[node name="BlueprintHotbar" type="Panel" parent="." node_paths=PackedStringArray("blueprint_screen")]
+custom_minimum_size = Vector2(128, 640)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -640.0
+offset_right = 128.0
+grow_vertical = 0
+script = ExtResource("4_8vrq8")
+blueprint_screen = NodePath("..")
+metadata/_custom_type_script = "uid://bcv2ka6mfgcyq"
+
+[node name="Items" type="Node" parent="BlueprintHotbar"]
+
+[node name="GridContainer" type="GridContainer" parent="." node_paths=PackedStringArray("blueprint_screen")]
+z_index = 10
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = -66.0
+grow_horizontal = 0
+grow_vertical = 0
+columns = 3
+script = ExtResource("10_5oxdd")
+blueprint_screen = NodePath("..")
+
+[node name="BlankButton" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+
+[node name="BackButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Back"
+
+[node name="BlankButton2" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+
+[node name="LeftButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Left"
+
+[node name="TopButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Top"
+
+[node name="RightButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Right"
+
+[node name="BlankButton3" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+
+[node name="FrontButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Front"
+
+[node name="BlankButton4" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+
+[node name="SelectedSideLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_font_sizes/normal_font_size = 30
+text = "Front"
+horizontal_alignment = 2
+
+[connection signal="back" from="." to="BlueprintHotbar" method="_on_build_back"]
+[connection signal="next" from="." to="BlueprintHotbar" method="_on_build_next"]
+[connection signal="pressed" from="VBoxContainer/ZoomInButton" to="." method="_on_zoom_in_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ZoomOutButton" to="." method="_on_zoom_out_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="GridContainer/BackButton" to="GridContainer" method="_on_back_button_pressed"]
+[connection signal="pressed" from="GridContainer/LeftButton" to="GridContainer" method="_on_left_button_pressed"]
+[connection signal="pressed" from="GridContainer/TopButton" to="GridContainer" method="_on_top_button_pressed"]
+[connection signal="pressed" from="GridContainer/RightButton" to="GridContainer" method="_on_right_button_pressed"]
+[connection signal="pressed" from="GridContainer/FrontButton" to="GridContainer" method="_on_front_button_pressed"]

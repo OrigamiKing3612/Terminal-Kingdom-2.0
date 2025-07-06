@@ -13,6 +13,8 @@ enum ToolType{None, Axe, Pickaxe, Sword}
 enum SeedType{None, Beet, Cabbage, Carrot, Onion, Pumpkin, TreeSeed}
 enum BuildingType { Blacksmith, Mine, Farm, Hospital, Store, Pottery, Stable, Carpentry, Builder, 
 	HuntingArea, Inventor, Restruant, Courthouse, Tavern, Castle }
+## IDs for the main tileset. All caps numbers are no id
+enum TileSetIDs{ZERO,Natural,Wood,THREE,FOUR,Brick,Marble,Stone,EIGHT,Effects,Tiles,Decoration}
 
 ## Returns ids of the items
 static func givePlayerCountOfItem(itemToDuplicate: Item, count: int) -> Array[String]:
