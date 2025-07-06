@@ -1,4 +1,4 @@
-extends Node3D
+extends Node2D
 
 const MINING = preload("res://scenes/ui/mining/Mining.tscn")
 

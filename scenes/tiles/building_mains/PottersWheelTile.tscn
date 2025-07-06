@@ -1,42 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6d3eltii7ct7"]
+[gd_scene load_steps=7 format=3 uid="uid://c6d3eltii7ct7"]
 
 [ext_resource type="Script" uid="uid://y7xjarkmo3nh" path="res://scripts/tiles/building_mains/potters_wheel_tile.gd" id="1_dq4ke"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_fiw6w"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_bi0w6"]
 [ext_resource type="Script" uid="uid://cdpcminp8wskc" path="res://scripts/components/buildings/hires_component.gd" id="4_bi0w6"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vtvp"]
-albedo_color = Color(1, 0, 1, 1)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bi0w6"]
+size = Vector2(32, 32)
 
-[sub_resource type="BoxMesh" id="BoxMesh_u5npu"]
-material = SubResource("StandardMaterial3D_7vtvp")
-size = Vector3(2, 2, 2)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6lys"]
+size = Vector2(32, 32)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2wn8l"]
-data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1)
-
-[node name="PottersWheel" type="Node3D"]
+[node name="PottersWheel" type="Node2D"]
 script = ExtResource("1_dq4ke")
 building_name = "Pottery"
 type = 5
 metadata/_custom_type_script = "uid://y7xjarkmo3nh"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_u5npu")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_bi0w6")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_2wn8l")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_j6lys")
 
-[node name="InteractableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+[node name="InteractableComponent" type="Node2D" parent="." node_paths=PackedStringArray("node")]
 script = ExtResource("2_fiw6w")
-static_body = NodePath("../StaticBody3D")
+node = NodePath("../StaticBody2D")
 metadata/_custom_type_script = "uid://cle5risojhhkj"
 
-[node name="DestroyableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+[node name="DestroyableComponent" type="Node2D" parent="." node_paths=PackedStringArray("static_body")]
 script = ExtResource("3_bi0w6")
-static_body = NodePath("../StaticBody3D")
+static_body = NodePath("../StaticBody2D")
 tile_id = 71
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
 
