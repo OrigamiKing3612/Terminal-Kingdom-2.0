@@ -31,10 +31,17 @@ func play_all(animation_name: String) -> void:
 	else:
 		torso.stop()
 		torso.hide()
-	if eyes.sprite_frames.has_animation(animation_name):
+	
+	if animation_name.contains("forward"):
+		eyes.play("blink_forward")
 		eyes.show()
-		eyes.play(animation_name)
-	else:
+	elif animation_name.contains("left"):
+		eyes.play("blink_left")
+		eyes.show()
+	elif animation_name.contains("right"):
+		eyes.play("blink_right")
+		eyes.show()
+	elif animation_name.contains("back"):
 		eyes.stop()
 		eyes.hide()
 

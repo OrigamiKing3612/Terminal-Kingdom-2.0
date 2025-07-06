@@ -1,16 +1,16 @@
 [gd_resource type="TileSet" load_steps=27 format=3 uid="uid://6ru0h4siet1j"]
 
 [ext_resource type="Texture2D" uid="uid://bnl8vfryi0gue" path="res://assets/art/temp2_tilemap.png" id="1_bqg52"]
-[ext_resource type="Texture2D" uid="uid://p13onxapnd0r" path="res://assets/art/tilesets/dirtlike_tileset.png" id="2_kykud"]
-[ext_resource type="Texture2D" uid="uid://0k3hikms8vra" path="res://assets/art/tilesets/grass_tileset.png" id="3_bqg52"]
+[ext_resource type="Texture2D" uid="uid://p13onxapnd0r" path="res://assets/art/tilesets/dirtlike_tileset.png" id="2_uqjqu"]
+[ext_resource type="Texture2D" uid="uid://bdxo8sufxs4vn" path="res://assets/art/tilesets/tiles_tileset.png" id="3_2r4om"]
 [ext_resource type="Texture2D" uid="uid://ehyvpygygw5m" path="res://assets/art/temp_tilemap.png" id="3_d6mnn"]
-[ext_resource type="Texture2D" uid="uid://bdxo8sufxs4vn" path="res://assets/art/tilesets/tiles_tileset.png" id="3_uqjqu"]
-[ext_resource type="Texture2D" uid="uid://lvu6m2qoiyh7" path="res://assets/art/tilesets/decoration_tileset.png" id="4_2r4om"]
-[ext_resource type="Texture2D" uid="uid://ehxnl25b8lb8" path="res://assets/art/tilesets/wood_tileset.png" id="4_rn8au"]
-[ext_resource type="Texture2D" uid="uid://4skxqrt5vp4y" path="res://assets/art/tilesets/brick_tileset.png" id="6_44na2"]
-[ext_resource type="Texture2D" uid="uid://cjqyy1s1dvb78" path="res://assets/art/tilesets/marble_tileset.png" id="7_a38il"]
-[ext_resource type="Texture2D" uid="uid://f7pyk12sium7" path="res://assets/art/tilesets/stone_tileset.png" id="8_uqjqu"]
-[ext_resource type="Texture2D" uid="uid://dbg2e1k4g3fww" path="res://assets/art/tilesets/effect_tileset.png" id="9_44na2"]
+[ext_resource type="Texture2D" uid="uid://lvu6m2qoiyh7" path="res://assets/art/tilesets/decoration_tileset.png" id="4_3hgi8"]
+[ext_resource type="Texture2D" uid="uid://ehxnl25b8lb8" path="res://assets/art/tilesets/wood_tileset.png" id="5_00wr5"]
+[ext_resource type="Texture2D" uid="uid://0k3hikms8vra" path="res://assets/art/tilesets/grass_tileset.png" id="7_thy6t"]
+[ext_resource type="Texture2D" uid="uid://4skxqrt5vp4y" path="res://assets/art/tilesets/brick_tileset.png" id="8_cdnqu"]
+[ext_resource type="Texture2D" uid="uid://cjqyy1s1dvb78" path="res://assets/art/tilesets/marble_tileset.png" id="9_3y7gs"]
+[ext_resource type="Texture2D" uid="uid://f7pyk12sium7" path="res://assets/art/tilesets/stone_tileset.png" id="10_khaq8"]
+[ext_resource type="Texture2D" uid="uid://dbg2e1k4g3fww" path="res://assets/art/tilesets/effect_tileset.png" id="11_jtg01"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_d6mnn"]
 tile_data = PackedInt32Array(0, 3, 8, 65536, 3, 9, 131072, 3, 10, 1, 65539, 8, 65537, 65539, 9, 131073, 65539, 10, 2, 131075, 8, 65538, 131075, 9, 131074, 131075, 10)
@@ -159,7 +159,7 @@ separation = Vector2i(1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2r4om"]
 resource_name = "Effects"
-texture = ExtResource("2_kykud")
+texture = ExtResource("2_uqjqu")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -196,7 +196,7 @@ separation = Vector2i(1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3y7gs"]
 resource_name = "Tiles"
-texture = ExtResource("3_uqjqu")
+texture = ExtResource("3_2r4om")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -215,16 +215,17 @@ separation = Vector2i(1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_khaq8"]
 resource_name = "Decorations"
-texture = ExtResource("4_2r4om")
+texture = ExtResource("4_3hgi8")
 separation = Vector2i(1, 1)
-0:0/0 = 0
-0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 9)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hgi8"]
 resource_name = "Wood"
-texture = ExtResource("4_rn8au")
+texture = ExtResource("5_00wr5")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -659,7 +660,7 @@ agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8icqp"]
 resource_name = "Grass"
-texture = ExtResource("3_bqg52")
+texture = ExtResource("7_thy6t")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_bqg52")
@@ -708,12 +709,12 @@ separation = Vector2i(1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00wr5"]
 resource_name = "Brick"
-texture = ExtResource("6_44na2")
+texture = ExtResource("8_cdnqu")
 separation = Vector2i(1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thy6t"]
 resource_name = "Marble"
-texture = ExtResource("7_a38il")
+texture = ExtResource("9_3y7gs")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -911,7 +912,7 @@ separation = Vector2i(1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdnqu"]
 resource_name = "Stone"
-texture = ExtResource("8_uqjqu")
+texture = ExtResource("10_khaq8")
 separation = Vector2i(1, 1)
 8:0/0 = 0
 8:0/0/terrain_set = 0
@@ -1372,7 +1373,7 @@ separation = Vector2i(1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a38il"]
 resource_name = "Effects"
-texture = ExtResource("9_44na2")
+texture = ExtResource("11_jtg01")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 0:0/0/terrain_set = 0

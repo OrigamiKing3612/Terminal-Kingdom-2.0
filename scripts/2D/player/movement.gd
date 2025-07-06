@@ -1,6 +1,7 @@
 extends Node
+class_name PlayerMovementController
 
-@export var player: CharacterBody2D
+@export var player: Player
 @export var animations: Node2D
 @export var rotation_speed: float = 8
 @export var fall_gravity: float = 45

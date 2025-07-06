@@ -1,7 +1,8 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var camera: Camera2D = $Camera2D
-@onready var ray_cast: RayCast2D = $RayCast2D
+@onready var raycast: RayCast2D = $RayCast2D
 
 func _ready() -> void:
 	if GameManager.mode == GameManager.Mode.Mining:
@@ -11,26 +12,26 @@ func _ready() -> void:
 		GameManager.right_click.connect(_on_right_click)
 
 func _on_left_click():
-	if ray_cast.is_colliding():
-		var collider = ray_cast.get_collider()
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
 		#var path = collider.get_path()
 		#var type = collider.get_class()
 		#print("> Ray hit: ", path, " (", type, ")")
-		if collider is GridMap:
-			collider.destroy_tile(ray_cast.get_collision_point())
+		if collider is TileMapLayer:
+			collider.destroy_tile(raycast.get_collision_point())
 		elif collider and collider.has_meta("destroyable_component"):
 			var component = collider.get_meta("destroyable_component")
 			component.destroy()
 			
 func _on_right_click():
-	if ray_cast.is_colliding():
-		var collider = ray_cast.get_collider()
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
 		#var path = collider.get_path()
 		#var type = collider.get_class()
 		#print("> Ray hit: ", path, " (", type, ")")
 		if collider is GridMap:
-			var pos = ray_cast.get_collision_point()
-			var normal = ray_cast.get_collision_normal()
+			var pos = raycast.get_collision_point()
+			var normal = raycast.get_collision_normal()
 			if GameManager.mode == GameManager.Mode.Build:
 				if GameManager.selected_tile_id == -1:
 					push_warning("Tried to place a tile with -1 as GameManager.selected_tile_id")

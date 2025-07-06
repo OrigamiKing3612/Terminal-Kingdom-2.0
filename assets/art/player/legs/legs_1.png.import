@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tet27l8pptai"
-path="res://.godot/imported/eyes_0.png-1c312684ad302a06e4d95fadf5d85d34.ctex"
+uid="uid://bjwji73grm1ww"
+path="res://.godot/imported/legs_1.png-241ed772beac792d73365277d9934b21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/player/eyes/eyes_0.png"
-dest_files=["res://.godot/imported/eyes_0.png-1c312684ad302a06e4d95fadf5d85d34.ctex"]
+source_file="res://assets/art/player/legs/legs_1.png"
+dest_files=["res://.godot/imported/legs_1.png-241ed772beac792d73365277d9934b21.ctex"]
 
 [params]
 

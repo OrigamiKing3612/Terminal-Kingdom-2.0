@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=4 uid="uid://drqq8n1hhfewy"]
+[gd_scene load_steps=14 format=4 uid="uid://drqq8n1hhfewy"]
 
 [ext_resource type="PackedScene" uid="uid://ci5amistndx3a" path="res://scenes/2D/Player.tscn" id="1_6dh8e"]
 [ext_resource type="TileSet" uid="uid://b1rhwxtr2byfg" path="res://assets/2D/dual_grid_tileset.tres" id="1_cq3oc"]
 [ext_resource type="Texture2D" uid="uid://diilly2wn24qy" path="res://assets/art/tilesets/dual_grid/path_grass_tileset.png" id="2_8wwyq"]
 [ext_resource type="TileSet" uid="uid://6ru0h4siet1j" path="res://assets/2D/main_tileset.tres" id="2_r41bg"]
-[ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="3_b63y0"]
-[ext_resource type="Resource" uid="uid://cbto4o8wytoxs" path="res://assets/resources/npc/blacksmith.tres" id="4_g5co3"]
 [ext_resource type="Script" path="res://addons/tile_map_dual/TileMapDual.gd" id="5_o2w50"]
 [ext_resource type="PackedScene" uid="uid://bhtwq1fgcrkvf" path="res://scenes/2D/tiles/door_tile.tscn" id="5_o6mxq"]
 [ext_resource type="PackedScene" uid="uid://17rbtuw0ypyd" path="res://scenes/2D/buildings/CastleInside.tscn" id="6_vslat"]
+[ext_resource type="PackedScene" uid="uid://d01yc6fepy5dc" path="res://scenes/ui/PreviewTile.tscn" id="8_o6mxq"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1hryb"]
 light_mode = 2
@@ -137,6 +136,7 @@ cell_size = 16.0
 [node name="TileMap" type="Node2D" parent="."]
 
 [node name="DualTileMaps" type="Node2D" parent="TileMap"]
+y_sort_enabled = true
 
 [node name="Ground" type="TileMapLayer" parent="TileMap/DualTileMaps"]
 material = SubResource("CanvasItemMaterial_1hryb")
@@ -157,10 +157,14 @@ position = Vector2(0, 1)
 tile_map_data = PackedByteArray("AAAKAPf/BwAGAAEAAAAKAPj/BwAGAAIAAAAKAPn/BwAGAAAAAAAKAPr/BwAGAAEAAAAKAPv/BwAGAAEAAAAKAPz/BwAGAAEAAAAKAP3/BwAGAAEAAAAKAP7/BwAGAAEAAAALAPn/BwAEAAAAAAALAPr/BwAEAAEAAAALAPv/BwAEAAEAAAALAPz/BwAEAAEAAAALAP3/BwAEAAEAAAALAP7/BwAEAAEAAAAMAPn/BwAFAAAAAAAMAPr/BwAHAAEAAAAMAPv/BwAHAAEAAAAMAPz/BwAHAAEAAAAMAP3/BwAHAAEAAAAMAP7/BwAHAAEAAAANAPn/BwAGAAAAAAANAPr/BwAGAAEAAAANAPv/BwAGAAEAAAANAPz/BwAGAAEAAAANAP3/BwAGAAEAAAANAP7/BwAGAAEAAAABAPn/BwAEAAAAAAABAPr/BwAEAAEAAAABAPv/BwAEAAEAAAABAPz/BwAEAAEAAAABAP3/BwAEAAEAAAABAP7/BwAEAAEAAAABAP//BwAEAAIAAAABAAAABwABAAMAAAACAPn/BwAFAAAAAAACAPr/BwAHAAEAAAACAPv/BwAHAAEAAAACAPz/BwAHAAEAAAACAP3/BwAHAAEAAAACAP7/BwAHAAEAAAACAP//BwAFAAIAAAACAAAABwADAAIAAAADAPn/BwAFAAAAAAADAPr/BwAHAAEAAAADAPv/BwAHAAEAAAADAPz/BwAHAAEAAAADAP3/BwAHAAEAAAADAP7/BwAHAAEAAAADAP//BwAFAAIAAAADAAAABwACAAMAAAAEAPT/BwAEAAAAAAAEAPX/BwAEAAEAAAAEAPb/BwAEAAEAAAAEAPf/BwAEAAEAAAAEAPj/BwAEAAIAAAAEAPn/BwAEAAAAAAAEAPr/BwAEAAEAAAAEAPv/BwAEAAEAAAAEAPz/BwAEAAEAAAAEAP3/BwAEAAEAAAAEAP7/BwAEAAEAAAAEAP//BwAEAAIAAAAEAAAABwABAAMAAAAFAPT/BwAFAAAAAAAFAPX/BwAHAAEAAAAFAPb/BwAHAAEAAAAFAPf/BwAHAAEAAAAFAPj/BwAFAAIAAAAFAPn/BwAFAAAAAAAFAPr/BwAHAAEAAAAFAPv/BwAHAAEAAAAFAPz/BwAHAAEAAAAFAP3/BwAHAAEAAAAFAP7/BwAHAAEAAAAFAP//BwAFAAIAAAAFAAAABwADAAIAAAAGAPT/BwAFAAAAAAAGAPX/BwAHAAEAAAAGAPb/BwAHAAEAAAAGAPf/BwAHAAEAAAAGAPj/BwAFAAIAAAAGAPn/BwAFAAAAAAAGAPr/BwAHAAEAAAAGAPv/BwAHAAEAAAAGAPz/BwAHAAEAAAAGAP3/BwAHAAEAAAAGAP7/BwAHAAEAAAAGAP//BwAGAAIAAAAGAAAABwACAAMAAAAHAPT/BwAFAAAAAAAHAPX/BwAHAAEAAAAHAPb/BwAHAAEAAAAHAPf/BwAHAAEAAAAHAPj/BwAFAAIAAAAHAPn/BwAFAAAAAAAHAPr/BwAHAAEAAAAHAPv/BwAHAAEAAAAHAPz/BwAHAAEAAAAHAP3/BwAHAAEAAAAHAP7/BwAFAAIAAAAIAPT/BwAFAAAAAAAIAPX/BwAHAAEAAAAIAPb/BwAHAAEAAAAIAPf/BwAHAAEAAAAIAPj/BwAFAAIAAAAIAPn/BwAFAAAAAAAIAPr/BwAHAAEAAAAIAPv/BwAHAAEAAAAIAPz/BwAHAAEAAAAIAP3/BwAHAAEAAAAIAP7/BwAHAAEAAAAIAP//BwAEAAIAAAAIAAAABwABAAMAAAAJAPT/BwAFAAAAAAAJAPX/BwAHAAEAAAAJAPb/BwAHAAEAAAAJAPf/BwAHAAEAAAAJAPj/BwAFAAIAAAAJAPn/BwAFAAAAAAAJAPr/BwAHAAEAAAAJAPv/BwAHAAEAAAAJAPz/BwAHAAEAAAAJAP3/BwAHAAEAAAAJAP7/BwAHAAEAAAAJAP//BwAFAAIAAAAJAAAABwADAAIAAAAKAPT/BwAGAAAAAAAKAPX/BwAGAAEAAAAKAPb/BwAGAAEAAAAKAP//BwAGAAIAAAAKAAAABwACAAMAAAALAP//BwAEAAIAAAALAAAABwABAAMAAAAMAP//BwAFAAIAAAAMAAAABwADAAIAAAANAP//BwAGAAIAAAANAAAABwACAAMAAAA=")
 tile_set = ExtResource("2_r41bg")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
-position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AADx//n/CwAAAAAAAAD0//r/CwABAAEAAAD3//b/CwACAAEAAAD3//f/CwACAAEAAAD4//f/CwACAAEAAAD5//f/CwACAAEAAAD4//b/CwACAAEAAAD5//b/CwACAAEAAAD6//b/CwACAAEAAAD6//f/CwACAAEAAAD3//X/CwACAAEAAAD4//X/CwACAAEAAAD3//j/CwACAAEAAAD4//j/CwACAAEAAAD5//j/CwACAAEAAAD6//j/CwACAAEAAAD5//X/CwACAAEAAAD6//X/CwACAAEAAADx//r/CwAAAAEAAAA=")
+[node name="Decorations" type="TileMapLayer" parent="TileMap"]
+position = Vector2(-5, 3)
+tile_map_data = PackedByteArray("AADx//n/CwAAAAAAAAD0//r/CwABAAEAAAD3//b/CwACAAEAAAD3//f/CwACAAEAAAD4//f/CwACAAEAAAD5//f/CwACAAEAAAD4//b/CwACAAEAAAD5//b/CwACAAEAAAD6//b/CwACAAEAAAD6//f/CwACAAEAAAD3//X/CwACAAEAAAD4//X/CwACAAEAAAD3//j/CwACAAEAAAD4//j/CwACAAEAAAD5//j/CwACAAEAAAD6//j/CwACAAEAAAD5//X/CwACAAEAAAD6//X/CwACAAEAAADz//r/CwAAAAAAAAA=")
 tile_set = ExtResource("2_r41bg")
+
+[node name="Player" parent="TileMap" instance=ExtResource("1_6dh8e")]
+y_sort_enabled = true
+position = Vector2(-38, -3)
 
 [node name="ShadowLayer" type="TileMapLayer" parent="TileMap"]
 position = Vector2(-144, 32)
@@ -175,12 +179,5 @@ inside_scene = ExtResource("6_vslat")
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_r41bg")
 
-[node name="NPC" parent="." instance=ExtResource("3_b63y0")]
-position = Vector2(-73, -49)
-data = ExtResource("4_g5co3")
-
-[node name="Player" parent="." instance=ExtResource("1_6dh8e")]
-position = Vector2(-38, -3)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-32, -59)
+[node name="PreviewTile" parent="." instance=ExtResource("8_o6mxq")]
+tileset = ExtResource("2_r41bg")

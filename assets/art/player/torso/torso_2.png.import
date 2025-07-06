@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tet27l8pptai"
-path="res://.godot/imported/eyes_0.png-1c312684ad302a06e4d95fadf5d85d34.ctex"
+uid="uid://bslojtntgmryx"
+path="res://.godot/imported/torso_2.png-ba10b3b7d81344fa44ef832716bec6e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/player/eyes/eyes_0.png"
-dest_files=["res://.godot/imported/eyes_0.png-1c312684ad302a06e4d95fadf5d85d34.ctex"]
+source_file="res://assets/art/player/torso/torso_2.png"
+dest_files=["res://.godot/imported/torso_2.png-ba10b3b7d81344fa44ef832716bec6e9.ctex"]
 
 [params]
 
