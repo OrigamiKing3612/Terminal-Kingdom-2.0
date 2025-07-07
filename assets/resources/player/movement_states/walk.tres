@@ -8,6 +8,6 @@ id = 1
 movement_speed = 48.0
 acceleration = 7.0
 camera_fov = 72.5
-animation_speed = 1.15
+animation_speed = 1.35
 animation_name = &"walk"
 metadata/_custom_type_script = "uid://nx0yyc5txa13"

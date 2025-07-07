@@ -8,6 +8,13 @@ extends Node
 @onready var left_quests: VBoxContainer = $"../LeftSide/LeftQuests"
 @onready var right_quests: VBoxContainer = $"../RightSide/RightQuests"
 
+@onready var left_blueprints: VBoxContainer = $"../LeftSide/LeftBlueprints"
+@onready var right_blueprints: VBoxContainer = $"../RightSide/RightBlueprints"
+
+@onready var left_stats: VBoxContainer = $"../LeftSide/LeftStats"
+@onready var right_stats: VBoxContainer = $"../RightSide/RightStats"
+
+
 func _ready() -> void:
 	right_info.get_node("PlayerName").text = GameManager.player.name
 
@@ -21,9 +28,11 @@ func _on_journal_screen_changed() -> void:
 			left_quests.show()
 			right_quests.show()
 		JournalScreen.JournalTabs.blueprints:
-			pass
+			left_blueprints.show()
+			right_blueprints.show()
 		JournalScreen.JournalTabs.stats:
-			pass
+			left_stats.show()
+			right_stats.show()
 		JournalScreen.JournalTabs.four:
 			pass
 		JournalScreen.JournalTabs.five:
@@ -37,3 +46,9 @@ func hide_all() -> void:
 	
 	left_quests.show()
 	right_quests.show()
+	
+	left_blueprints.hide()
+	right_blueprints.hide()
+	
+	left_stats.hide()
+	right_stats.hide()

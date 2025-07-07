@@ -70,7 +70,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("esc") and mode != Mode.InPopUp:
 		SceneManager.free_cursor()
 		
-	if mode == Mode.Normal or mode == Mode.Build:
+	if mode in [Mode.Normal, Mode.Build]:
 		if Input.is_action_pressed("left_click") && player.can_build:
 			left_click.emit()
 		if Input.is_action_just_pressed("right_click"):

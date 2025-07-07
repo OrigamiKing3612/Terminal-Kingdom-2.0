@@ -181,6 +181,7 @@ offset_bottom = 299.5
 grow_vertical = 2
 
 [node name="LeftInfo" type="VBoxContainer" parent="LeftSide"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -189,6 +190,29 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LeftQuests" type="VBoxContainer" parent="LeftSide"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftBlueprints" type="VBoxContainer" parent="LeftSide"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftStats" type="VBoxContainer" parent="LeftSide"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -213,6 +237,7 @@ grow_horizontal = 0
 grow_vertical = 2
 
 [node name="RightInfo" type="VBoxContainer" parent="RightSide"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -314,6 +339,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RightQuests" type="VBoxContainer" parent="RightSide"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RightBlueprints" type="VBoxContainer" parent="RightSide"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RightStats" type="VBoxContainer" parent="RightSide"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
