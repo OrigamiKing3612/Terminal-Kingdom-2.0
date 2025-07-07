@@ -14,9 +14,11 @@ extends Node
 @onready var left_stats: VBoxContainer = $"../LeftSide/LeftStats"
 @onready var right_stats: VBoxContainer = $"../RightSide/RightStats"
 
-
 func _ready() -> void:
 	right_info.get_node("PlayerName").text = GameManager.player.name
+	hide_all()
+	left_info.show()
+	right_info.show()
 
 func _on_journal_screen_changed() -> void:
 	hide_all()
@@ -31,6 +33,7 @@ func _on_journal_screen_changed() -> void:
 			left_blueprints.show()
 			right_blueprints.show()
 		JournalScreen.JournalTabs.stats:
+			left_stats.init()
 			left_stats.show()
 			right_stats.show()
 		JournalScreen.JournalTabs.four:

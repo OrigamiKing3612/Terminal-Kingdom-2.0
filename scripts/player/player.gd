@@ -4,6 +4,12 @@ class_name Player
 @onready var camera: Camera2D = $Camera2D
 @onready var raycast: RayCast2D = $RayCast2D
 
+@export var hair_options: Dictionary[String, SpriteFrames] = {}
+@export var eyes_options: Dictionary[String, SpriteFrames] = {}
+@export var head_options: Dictionary[String, SpriteFrames] = {}
+@export var torso_options: Dictionary[String, SpriteFrames] = {}
+@export var legs_options: Dictionary[String, SpriteFrames] = {}
+
 func _ready() -> void:
 	if GameManager.mode == GameManager.Mode.Mining:
 		GameManager.mine_left_click.connect(_on_left_click)

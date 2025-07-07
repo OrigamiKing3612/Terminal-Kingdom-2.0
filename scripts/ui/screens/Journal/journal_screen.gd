@@ -6,6 +6,9 @@ signal changed
 enum JournalTabs{info,quests,blueprints,stats,four,five,six}
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var left_stats: VBoxContainer = $LeftSide/LeftStats
+@onready var left_info: VBoxContainer = $LeftSide/LeftInfo
+@onready var right_info: VBoxContainer = $RightSide/RightInfo
 
 ## Set to zero by default so its always the first tab in the enum that is selected when opened
 @export var selected_tab_index: JournalTabs = 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://drqq8n1hhfewy"]
+[gd_scene load_steps=14 format=4 uid="uid://drqq8n1hhfewy"]
 
 [ext_resource type="PackedScene" uid="uid://ci5amistndx3a" path="res://scenes/Player.tscn" id="1_6dh8e"]
 [ext_resource type="TileSet" uid="uid://b1rhwxtr2byfg" path="res://assets/2D/dual_grid_tileset.tres" id="1_cq3oc"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bhtwq1fgcrkvf" path="res://scenes/2D/tiles/door_tile.tscn" id="5_o6mxq"]
 [ext_resource type="PackedScene" uid="uid://17rbtuw0ypyd" path="res://scenes/2D/buildings/CastleInside.tscn" id="6_vslat"]
 [ext_resource type="PackedScene" uid="uid://d01yc6fepy5dc" path="res://scenes/ui/PreviewTile.tscn" id="8_o6mxq"]
-[ext_resource type="PackedScene" uid="uid://dptgi81hyimlb" path="res://scenes/npcs/NPC.tscn" id="9_8wwyq"]
-[ext_resource type="Resource" uid="uid://6027d13mrgog" path="res://assets/resources/npc/bartender.tres" id="10_bnsp5"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1hryb"]
 light_mode = 2
@@ -183,6 +181,3 @@ navigation_polygon = SubResource("NavigationPolygon_r41bg")
 
 [node name="PreviewTile" parent="." instance=ExtResource("8_o6mxq")]
 tileset = ExtResource("2_r41bg")
-
-[node name="NPC" parent="." instance=ExtResource("9_8wwyq")]
-data = ExtResource("10_bnsp5")

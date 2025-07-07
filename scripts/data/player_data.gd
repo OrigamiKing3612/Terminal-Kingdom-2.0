@@ -3,6 +3,8 @@ class_name PlayerData extends Resource
 signal collect_item(item: Item, count: int)
 signal remove_item(item: Item)
 
+signal body_changed
+
 @export var name: String = "DEFAULT_NAME"
 @export var can_build: bool = true
 @export var position: Vector2 = Vector2.ZERO
@@ -11,6 +13,28 @@ signal remove_item(item: Item)
 
 @export var skill: Skill
 @export var mining_level: int = 1
+
+@export_group("Body")
+@export var hair_id: String:
+	set(new_value):
+		hair_id = new_value
+		body_changed.emit()
+@export var eyes_id: String:
+	set(new_value):
+		eyes_id = new_value
+		body_changed.emit()
+@export var head_id: String:
+	set(new_value):
+		head_id = new_value
+		body_changed.emit()
+@export var torso_id: String:
+	set(new_value):
+		torso_id = new_value
+		body_changed.emit()
+@export var legs_id: String:
+	set(new_value):
+		legs_id = new_value
+		body_changed.emit()
 
 func collectItem(item: Item, count: int = 1) -> void:
 	if not item:
