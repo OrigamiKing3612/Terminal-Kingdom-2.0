@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://cfna8e2ipwqfo"]
+[gd_scene load_steps=165 format=3 uid="uid://cfna8e2ipwqfo"]
 
 [ext_resource type="Script" uid="uid://ksdltf4eyq34" path="res://scripts/ui/screens/Journal/journal_screen.gd" id="1_vorax"]
 [ext_resource type="Texture2D" uid="uid://cuw0dwjllpxo0" path="res://assets/ui/journal.png" id="2_jt1r0"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://ofs1sahpu51q" path="res://scripts/ui/screens/Journal/pages/left_stats/head_eyes_selector.gd" id="9_sg6qo"]
 [ext_resource type="Script" uid="uid://dlkvydxdndfpw" path="res://scripts/ui/screens/Journal/pages/left_stats/torso_selector.gd" id="11_gptto"]
 [ext_resource type="Script" uid="uid://dljloxnf7r4j" path="res://scripts/ui/screens/Journal/pages/left_stats/legs_selector.gd" id="12_hqd7v"]
+[ext_resource type="Script" uid="uid://drdv47ej7rscc" path="res://scripts/ui/screens/Journal/pages/right_stats/right_stats.gd" id="13_e1186"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_liltq"]
 atlas = ExtResource("2_jt1r0")
@@ -1267,33 +1268,6 @@ animation = &"0_open"
 autoplay = "0_open"
 centered = false
 
-[node name="ArrowLeft" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 17.0
-offset_top = -5.0
-offset_right = 35.0
-offset_bottom = 6.0
-grow_vertical = 2
-texture_normal = ExtResource("3_h2k74")
-
-[node name="ArrowRight" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -6.0
-offset_right = -28.0
-offset_bottom = 5.0
-grow_horizontal = 0
-grow_vertical = 2
-texture_normal = ExtResource("4_3fys0")
-
 [node name="TabButtons" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 0
@@ -1314,6 +1288,38 @@ offset_left = 734.0
 offset_top = 46.0
 offset_right = 1052.0
 offset_bottom = 85.0
+
+[node name="ArrowButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ArrowLeft" type="TextureButton" parent="ArrowButtons"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = 402.5
+offset_right = 35.0
+offset_bottom = 413.5
+grow_vertical = 2
+texture_normal = ExtResource("3_h2k74")
+
+[node name="ArrowRight" type="TextureButton" parent="ArrowButtons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1057.0
+offset_top = 401.5
+offset_right = 1075.0
+offset_bottom = 412.5
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("4_3fys0")
 
 [node name="LeftSide" type="Control" parent="."]
 layout_mode = 1
@@ -1656,8 +1662,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = 0.5
+offset_right = 0.5
+offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("13_e1186")
 
 [node name="Title" type="RichTextLabel" parent="RightSide/RightStats"]
 layout_mode = 2
@@ -1672,71 +1683,208 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="Blacksmith" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="HBoxContainer" type="HBoxContainer" parent="RightSide/RightStats"]
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "blacksmithing"
-fit_content = true
+size_flags_vertical = 3
 
-[node name="Mining" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="VBoxContainer" type="VBoxContainer" parent="RightSide/RightStats/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "mining"
-fit_content = true
+size_flags_horizontal = 3
 
-[node name="Carpentry" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="Blacksmith" type="HBoxContainer" parent="RightSide/RightStats/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "carpentry"
-fit_content = true
+size_flags_vertical = 4
 
-[node name="Farming" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="TitleLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Blacksmith"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "farming"
+text = "Blacksmithing"
 fit_content = true
+vertical_alignment = 1
 
-[node name="Building" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="ValueLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Blacksmith"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "building"
+text = "Value"
 fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Sales" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="Mining" type="HBoxContainer" parent="RightSide/RightStats/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "sales"
-fit_content = true
+size_flags_vertical = 4
 
-[node name="Hunting" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="TitleLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Mining"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "hunting"
+text = "Mining"
 fit_content = true
+vertical_alignment = 1
 
-[node name="Inventing" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="ValueLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Mining"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "inventing"
+text = "Value"
 fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Caretaking" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="Carpentry" type="HBoxContainer" parent="RightSide/RightStats/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "caretaking"
-fit_content = true
+size_flags_vertical = 4
 
-[node name="Medicine" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="TitleLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Carpentry"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "medicine"
+text = "Carpentry
+"
 fit_content = true
+vertical_alignment = 1
 
-[node name="Cooking" type="RichTextLabel" parent="RightSide/RightStats"]
+[node name="ValueLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Carpentry"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "cooking"
+text = "Value"
 fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Farming" type="HBoxContainer" parent="RightSide/RightStats/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Farming"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Farming"
+fit_content = true
+vertical_alignment = 1
+
+[node name="ValueLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Farming"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Value"
+fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Building" type="HBoxContainer" parent="RightSide/RightStats/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Building"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Building"
+fit_content = true
+vertical_alignment = 1
+
+[node name="ValueLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Building"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Value"
+fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Hunting" type="HBoxContainer" parent="RightSide/RightStats/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Hunting"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Hunting"
+fit_content = true
+vertical_alignment = 1
+
+[node name="ValueLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Hunting"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Value"
+fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Caretaking" type="HBoxContainer" parent="RightSide/RightStats/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Caretaking"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Caretaking"
+fit_content = true
+vertical_alignment = 1
+
+[node name="ValueLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Caretaking"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Value"
+fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Medicine" type="HBoxContainer" parent="RightSide/RightStats/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Medicine"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Medicine"
+fit_content = true
+vertical_alignment = 1
+
+[node name="ValueLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Medicine"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Value"
+fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Cooking" type="HBoxContainer" parent="RightSide/RightStats/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Cooking"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Cooking"
+fit_content = true
+vertical_alignment = 1
+
+[node name="ValueLabel" type="RichTextLabel" parent="RightSide/RightStats/HBoxContainer/VBoxContainer/Cooking"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Value"
+fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="RightSide/RightStats/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
 
 [connection signal="changed" from="." to="Controller" method="_on_journal_screen_changed"]
 [connection signal="pressed" from="TabButtons/BackTab" to="TabButtons" method="_on_back_tab_pressed"]

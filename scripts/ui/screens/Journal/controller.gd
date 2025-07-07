@@ -1,6 +1,7 @@
 extends Node
 
 @onready var journal_screen: JournalScreen = $".."
+@onready var arrow_buttons: Control = $"../ArrowButtons"
 
 @onready var left_info: VBoxContainer = $"../LeftSide/LeftInfo"
 @onready var right_info: VBoxContainer = $"../RightSide/RightInfo"
@@ -17,6 +18,7 @@ extends Node
 func _ready() -> void:
 	right_info.get_node("PlayerName").text = GameManager.player.name
 	hide_all()
+	arrow_buttons.hide()
 	left_info.show()
 	right_info.show()
 
@@ -34,6 +36,7 @@ func _on_journal_screen_changed() -> void:
 			right_blueprints.show()
 		JournalScreen.JournalTabs.stats:
 			left_stats.init()
+			right_stats.init()
 			left_stats.show()
 			right_stats.show()
 		JournalScreen.JournalTabs.four:
