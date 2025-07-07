@@ -18,6 +18,8 @@ scale = Vector2(3.125, 3.125)
 texture = ExtResource("1_wle7a")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 8
@@ -34,4 +36,6 @@ grow_vertical = 2
 mouse_default_cursor_shape = 6
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2

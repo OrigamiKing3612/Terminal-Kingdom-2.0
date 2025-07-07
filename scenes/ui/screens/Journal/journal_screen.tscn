@@ -1,0 +1,326 @@
+[gd_scene load_steps=15 format=3 uid="uid://cfna8e2ipwqfo"]
+
+[ext_resource type="Script" uid="uid://ksdltf4eyq34" path="res://scripts/ui/screens/Journal/journal_screen.gd" id="1_vorax"]
+[ext_resource type="Texture2D" uid="uid://cuw0dwjllpxo0" path="res://assets/ui/journal.png" id="2_jt1r0"]
+[ext_resource type="Script" uid="uid://cpv345pdm2blu" path="res://scripts/ui/screens/Journal/controller.gd" id="2_rv2i0"]
+[ext_resource type="Texture2D" uid="uid://bqq8qh8rt5cdo" path="res://assets/ui/arrow_right.png" id="3_h2k74"]
+[ext_resource type="Texture2D" uid="uid://dqi868rtmrhw" path="res://assets/ui/arrow_left.png" id="4_3fys0"]
+[ext_resource type="Script" uid="uid://b3bxfjj7fbojx" path="res://scripts/ui/screens/Journal/tab_buttons.gd" id="5_3fys0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liltq"]
+atlas = ExtResource("2_jt1r0")
+region = Rect2(0, 191, 254, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2k74"]
+atlas = ExtResource("2_jt1r0")
+region = Rect2(0, 382, 254, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fys0"]
+atlas = ExtResource("2_jt1r0")
+region = Rect2(0, 573, 254, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv2i0"]
+atlas = ExtResource("2_jt1r0")
+region = Rect2(0, 764, 254, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eulbt"]
+atlas = ExtResource("2_jt1r0")
+region = Rect2(0, 955, 254, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2qe6"]
+atlas = ExtResource("2_jt1r0")
+region = Rect2(0, 1146, 254, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xeyq"]
+atlas = ExtResource("2_jt1r0")
+region = Rect2(0, 1337, 254, 190)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sg6qo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liltq")
+}],
+"loop": true,
+"name": &"0_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2k74")
+}],
+"loop": true,
+"name": &"1_quests",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fys0")
+}],
+"loop": true,
+"name": &"2_blueprints",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv2i0")
+}],
+"loop": true,
+"name": &"3_stats",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eulbt")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2qe6")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xeyq")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}]
+
+[node name="JournalScreen" type="Control"]
+custom_minimum_size = Vector2(1143, 855)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -381.0
+offset_top = -285.0
+offset_right = 381.0
+offset_bottom = 285.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vorax")
+metadata/_custom_type_script = "uid://ksdltf4eyq34"
+
+[node name="Controller" type="Node" parent="."]
+script = ExtResource("2_rv2i0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4.49803, 4.49737)
+sprite_frames = SubResource("SpriteFrames_sg6qo")
+animation = &"6"
+autoplay = "0_open"
+centered = false
+
+[node name="ArrowLeft" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -5.0
+offset_right = 35.0
+offset_bottom = 6.0
+grow_vertical = 2
+texture_normal = ExtResource("3_h2k74")
+
+[node name="ArrowRight" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -6.0
+offset_right = -28.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("4_3fys0")
+
+[node name="TabButtons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+script = ExtResource("5_3fys0")
+
+[node name="BackTab" type="Button" parent="TabButtons"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 107.0
+offset_top = 45.0
+offset_right = 401.0
+offset_bottom = 82.0
+
+[node name="NextTab" type="Button" parent="TabButtons"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 734.0
+offset_top = 46.0
+offset_right = 1052.0
+offset_bottom = 85.0
+
+[node name="LeftSide" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -299.5
+offset_right = 558.0
+offset_bottom = 299.5
+grow_vertical = 2
+
+[node name="LeftInfo" type="VBoxContainer" parent="LeftSide"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftQuests" type="VBoxContainer" parent="LeftSide"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RightSide" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -565.0
+offset_top = -305.5
+offset_right = -27.0
+offset_bottom = 293.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="RightInfo" type="VBoxContainer" parent="RightSide"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerName" type="RichTextLabel" parent="RightSide/RightInfo"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "Player Name"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VillageName" type="RichTextLabel" parent="RightSide/RightInfo"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Village Name"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="RightSide/RightInfo"]
+layout_mode = 2
+
+[node name="VillageInfo" type="RichTextLabel" parent="RightSide/RightInfo"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "Info: Value"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VillageInfo2" type="RichTextLabel" parent="RightSide/RightInfo"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "Info: Value"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VillageInfo3" type="RichTextLabel" parent="RightSide/RightInfo"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "Info: Value"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VillageInfo4" type="RichTextLabel" parent="RightSide/RightInfo"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "Info: Value"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VillageInfo5" type="RichTextLabel" parent="RightSide/RightInfo"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "Info: Value"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VillageInfo6" type="RichTextLabel" parent="RightSide/RightInfo"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "Info: Value"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VillageInfo7" type="RichTextLabel" parent="RightSide/RightInfo"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "Info: Value"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VillageInfo8" type="RichTextLabel" parent="RightSide/RightInfo"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "Info: Value"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightQuests" type="VBoxContainer" parent="RightSide"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="changed" from="." to="Controller" method="_on_journal_screen_changed"]
+[connection signal="pressed" from="TabButtons/BackTab" to="TabButtons" method="_on_back_tab_pressed"]
+[connection signal="pressed" from="TabButtons/NextTab" to="TabButtons" method="_on_next_tab_pressed"]
