@@ -2,6 +2,7 @@ extends Item
 class_name ToolItem 
 
 #@export_group("Tool Settings")
+@export var max_durability: int = 55
 @export var durability: int = 55
 @export var broken_texture_2d: Texture2D = preload("res://assets/models/icons/bricks_preview.tres")
 
