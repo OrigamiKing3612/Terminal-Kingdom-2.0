@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cwhdyhkeacvdc"]
 
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_55j5s"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/items/item.gd" id="1_55j5s"]
 [ext_resource type="Texture2D" uid="uid://dgh6uvcahp7am" path="res://assets/models/icons/plants/cabbage.png" id="2_55j5s"]
 
 [resource]

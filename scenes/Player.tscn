@@ -30,7 +30,7 @@
 [ext_resource type="SpriteFrames" uid="uid://j1pfxecwrwq" path="res://assets/resources/player/animations/legs/legs_6.tres" id="20_fq1a3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ju82"]
-size = Vector2(14, 28)
+size = Vector2(14, 7)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
@@ -111,7 +111,7 @@ sprite_frames = ExtResource("13_jfpux")
 animation = &"blink_forward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_4ju82")
 
 [node name="Camera2D" type="Camera2D" parent="."]

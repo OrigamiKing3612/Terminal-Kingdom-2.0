@@ -2,6 +2,7 @@ extends Node
 class_name Utils
 
 enum Direction{Forward,Back,Left,Right}
+enum BuildingSide{Front,Back,Top,Left,Right}
 # if this is changed make sure to add it to npc_data.gd
 enum Job{None, Blacksmith, King, Miner, Farmer, Doctor, Salesman, Potter, Stablemaster, Carpenter, 
 	Builder, Hunter, Inventor, Chef, Governor, Judge, Bartender}

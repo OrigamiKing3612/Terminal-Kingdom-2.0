@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dxuyymgwikxb7"]
 
 [ext_resource type="PackedScene" uid="uid://djd335f6v4ioq" path="res://scenes/tiles/building_mains/WorkbenchTile.tscn" id="1_klm4g"]
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="2_3gffp"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/items/item.gd" id="2_3gffp"]
 [ext_resource type="Texture2D" uid="uid://c4keila6qk8bq" path="res://assets/models/icons/workbench_preview.tres" id="3_klm4g"]
 
 [resource]

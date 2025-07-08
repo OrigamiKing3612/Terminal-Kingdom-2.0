@@ -52,6 +52,7 @@ Player="The player"
 NPC=""
 Entity=""
 NPCsGroup=""
+PopupLayer=""
 
 [input]
 

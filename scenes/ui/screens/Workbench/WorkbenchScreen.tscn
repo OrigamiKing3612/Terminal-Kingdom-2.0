@@ -4,17 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://bumrtoxsox13g" path="res://scenes/ui/screens/Blueprint/blueprint_screen.tscn" id="2_5x276"]
 
 [node name="WorkbenchScreen" type="Control"]
-custom_minimum_size = Vector2(1182, 642)
+custom_minimum_size = Vector2(1209, 697)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -591.0
-offset_top = -321.0
-offset_right = 591.0
-offset_bottom = 321.0
+offset_left = -604.5
+offset_top = -348.5
+offset_right = 604.5
+offset_bottom = 348.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i76k7")

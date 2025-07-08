@@ -51,7 +51,7 @@
 [ext_resource type="Script" uid="uid://bvhyxu005gh5e" path="res://scripts/npc/state/fall.gd" id="35_5q6h2"]
 [ext_resource type="Script" uid="uid://dvhwvjh7so7u1" path="res://scripts/npc/movement/npc_movement.gd" id="36_kxny1"]
 [ext_resource type="Script" uid="uid://bbuv5reu72d4a" path="res://scripts/npc/jobs/potter.gd" id="37_in5ox"]
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="37_ku4y3"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/items/item.gd" id="37_ku4y3"]
 [ext_resource type="Resource" uid="uid://cks46e1silgmv" path="res://assets/resources/items/tile_items/MeshLibrary/decoration/generic/bed.tres" id="38_5e71h"]
 [ext_resource type="Resource" uid="uid://dbue8hsvrop8p" path="res://assets/dialogue/npcs/starting_village/sv_potter.dialogue" id="38_rr88e"]
 [ext_resource type="Resource" uid="uid://bkefr1djc12ha" path="res://assets/resources/items/tile_items/MeshLibrary/decoration/generic/chest.tres" id="39_0vihe"]

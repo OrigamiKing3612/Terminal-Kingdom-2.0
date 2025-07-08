@@ -122,6 +122,8 @@ visible = false
 
 [node name="JournalScreen" parent="JournalScreen" instance=ExtResource("12_4arur")]
 
+[node name="Popups" type="CanvasLayer" parent="." groups=["PopupLayer"]]
+
 [connection signal="build_back" from="." to="BuildingBox/HotBar" method="_on_build_back"]
 [connection signal="build_next" from="." to="BuildingBox/HotBar" method="_on_build_next"]
 [connection signal="hide_building" from="." to="BuildingBox" method="_on_hide_building"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bumrtoxsox13g"]
+[gd_scene load_steps=16 format=3 uid="uid://bumrtoxsox13g"]
 
 [ext_resource type="TileSet" uid="uid://6ru0h4siet1j" path="res://assets/2D/main_tileset.tres" id="1_f7coa"]
 [ext_resource type="Script" uid="uid://driqccmynia5i" path="res://scripts/ui/screens/Blueprint/blueprint_screen.gd" id="1_h50l8"]
+[ext_resource type="Resource" uid="uid://b38e7op3s723h" path="res://assets/resources/items/generic/blueprint_item_template.tres" id="2_8bw0e"]
 [ext_resource type="Script" uid="uid://uc2jlnpna4a7" path="res://scripts/ui/screens/Blueprint/tile_option.gd" id="2_pt1ta"]
 [ext_resource type="Script" uid="uid://dod3t16rdm123" path="res://scripts/ui/screens/Blueprint/tile_map_layer.gd" id="3_8vrq8"]
 [ext_resource type="Texture2D" uid="uid://chhicw1knmgsb" path="res://assets/models/icons/sand_preview.tres" id="3_15fm6"]
@@ -51,6 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h50l8")
+blueprint_item_template = ExtResource("2_8bw0e")
 tiles = Array[ExtResource("2_pt1ta")]([SubResource("Resource_pt1ta"), SubResource("Resource_15fm6"), SubResource("Resource_v0i10"), SubResource("Resource_5oxdd")])
 metadata/_custom_type_script = "uid://driqccmynia5i"
 
@@ -130,6 +132,14 @@ layout_mode = 1
 offset_right = 86.0
 offset_bottom = 66.0
 
+[node name="CloseButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Close"
+
+[node name="DoneButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Done"
+
 [node name="ZoomInButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -140,10 +150,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Zoom Out"
-
-[node name="CloseButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Close"
 
 [node name="BlueprintHotbar" type="Panel" parent="." node_paths=PackedStringArray("blueprint_screen")]
 custom_minimum_size = Vector2(128, 640)
@@ -250,9 +256,10 @@ horizontal_alignment = 2
 
 [connection signal="back" from="." to="BlueprintHotbar" method="_on_build_back"]
 [connection signal="next" from="." to="BlueprintHotbar" method="_on_build_next"]
+[connection signal="pressed" from="VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ZoomInButton" to="." method="_on_zoom_in_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ZoomOutButton" to="." method="_on_zoom_out_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="GridContainer/BackButton" to="GridContainer" method="_on_back_button_pressed"]
 [connection signal="pressed" from="GridContainer/LeftButton" to="GridContainer" method="_on_left_button_pressed"]
 [connection signal="pressed" from="GridContainer/TopButton" to="GridContainer" method="_on_top_button_pressed"]

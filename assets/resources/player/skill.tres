@@ -14,7 +14,6 @@ metadata/_custom_type_script = "uid://qqgmw1smifce"
 script = ExtResource("2_0pgp7")
 blacksmithing = ExtResource("1_pmfbq")
 mining = ExtResource("1_pmfbq")
-carpentry = ExtResource("1_pmfbq")
 farming = ExtResource("1_pmfbq")
 building = SubResource("Resource_hg862")
 hunting = ExtResource("1_pmfbq")

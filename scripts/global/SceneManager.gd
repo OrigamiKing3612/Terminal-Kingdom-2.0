@@ -44,7 +44,7 @@ func show_popup(popup: Control):
 	if current_popup:
 		current_popup.queue_free()
 	current_popup = popup
-	get_tree().current_scene.add_child(popup)
+	get_tree().get_first_node_in_group("PopupLayer").add_child(popup)
 	free_cursor()
 	
 func hide_popup():

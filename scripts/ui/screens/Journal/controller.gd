@@ -26,6 +26,7 @@ func _on_journal_screen_changed() -> void:
 	hide_all()
 	match journal_screen.selected_tab_index:
 		JournalScreen.JournalTabs.info:
+			right_info.init()
 			left_info.show()
 			right_info.show()
 		JournalScreen.JournalTabs.quests:

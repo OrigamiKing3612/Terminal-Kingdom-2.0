@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://gl4t2urmghx7"]
 
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_tg5f3"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/items/item.gd" id="1_tg5f3"]
 [ext_resource type="Texture2D" uid="uid://bij3hqjpmxnum" path="res://assets/models/icons/plants/onion.png" id="2_tg5f3"]
 
 [resource]
