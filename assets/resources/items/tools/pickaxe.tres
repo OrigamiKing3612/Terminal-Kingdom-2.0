@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("1_twced")
+max_durability = 100
 durability = 100
 broken_texture_2d = ExtResource("1_abey6")
 tool_type = 2
@@ -15,6 +16,6 @@ can_be_sold = true
 is_buildable = false
 texture_2d = ExtResource("2_twced")
 max_amount_per_stack = 1
-gridmap_id = 0
+tile_id = -1
 seed = 0
 metadata/_custom_type_script = "uid://cqsvdpbt83m3i"

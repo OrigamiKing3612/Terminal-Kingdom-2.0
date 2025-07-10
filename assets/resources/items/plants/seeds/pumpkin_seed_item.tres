@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dyypixgpwwgr3"]
 
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_j30tn"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/items/item.gd" id="1_j30tn"]
 [ext_resource type="Texture2D" uid="uid://b0gw8658vy0my" path="res://assets/models/icons/plants/seeds/pumpkin_seed.png" id="2_our2x"]
 
 [resource]

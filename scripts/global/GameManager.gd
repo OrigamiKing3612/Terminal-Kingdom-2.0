@@ -1,6 +1,7 @@
 extends Node
 
 @onready var inventory_box: CanvasLayer = $InventoryBox
+@onready var journal_screen: CanvasLayer = $JournalScreen
 @onready var building_box: CanvasLayer = $BuildingBox
 @onready var toolbelt_box: CanvasLayer = $ToolbeltBox
 @onready var toolbelt: ToolbeltNode = $ToolbeltBox/ToolbeltNode
@@ -8,7 +9,7 @@ extends Node
 
 @export var selected_item_index: int = 0:
 	set(value):
-		rotation = Vector3i(0,0,0)
+		rotation = Vector2i(0,0)
 		selected_item_index = value
 @export var selected_tile_id: int = 0
 @export var player: PlayerData
@@ -17,6 +18,8 @@ extends Node
 
 signal show_inventory
 signal hide_inventory
+signal show_journal
+signal hide_journal
 signal show_building
 signal hide_building
 signal inventory_update
@@ -44,9 +47,9 @@ var random_data: Dictionary
 var selectedItem: Item:
 	get:
 		return toolbelt.selected_item
-var rotation: Vector3i = Vector3i(0,0,0)
+var rotation: Vector2i = Vector2i(0,0)
 
-enum Mode{Normal, Inventory, Build, Mining, Speaking, InPopUp}
+enum Mode{Normal, Inventory, Build, Mining, Speaking, InPopUp, Journal}
 
 func _ready() -> void:
 	player = player.duplicate(true)
@@ -61,13 +64,13 @@ func _ready() -> void:
 	debug.hide()
 
 func _input(event: InputEvent) -> void:
-	if (event.is_action_pressed("left_click") or event.is_action_pressed("right_click")) and move == false and mode != Mode.Inventory and mode != Mode.InPopUp:
+	if (event.is_action_pressed("left_click") or event.is_action_pressed("right_click")) and move == false and not mode in [Mode.Inventory, Mode.InPopUp, Mode.Journal]:
 		if not debug.visible:
 			SceneManager.steal_cursor()
 	if event.is_action_pressed("esc") and mode != Mode.InPopUp:
 		SceneManager.free_cursor()
 		
-	if mode == Mode.Normal or mode == Mode.Build:
+	if mode in [Mode.Normal, Mode.Build]:
 		if Input.is_action_pressed("left_click") && player.can_build:
 			left_click.emit()
 		if Input.is_action_just_pressed("right_click"):
@@ -89,6 +92,9 @@ func _input(event: InputEvent) -> void:
 				toolbelt_next.emit()
 			elif event.is_action_pressed("testing"):
 				debug.visible = !debug.visible
+			elif event.is_action_released("open_journal"):
+				if journal_screen.visible == false:
+					show_journal_screen()
 		Mode.Build:
 			if event.is_action_released("back_option"):
 				build_back.emit()
@@ -98,13 +104,14 @@ func _input(event: InputEvent) -> void:
 				rotation.x += 90
 			elif event.is_action_released("rotate_y"):
 				rotation.y += 90
-			elif event.is_action_released("rotate_z"):
-				rotation.z += 90
 			elif event.is_action_released("build"):
 				hide_buildable_items()
 		Mode.Inventory:
 			if event.is_action_released("inventory"):
 				hide_inventory_box()
+		Mode.Journal:
+			if event.is_action_released("open_journal"):
+				hide_journal_screen()
 		Mode.Mining:
 			if event.is_action_released("leave_mine"):
 				stop_mining.emit()
@@ -133,6 +140,18 @@ func show_inventory_box() -> void:
 	inventory_box.visible = true
 	SceneManager.free_cursor()
 	mode = Mode.Inventory
+
+func hide_journal_screen() -> void:
+	hide_journal.emit()
+	journal_screen.visible = false
+	SceneManager.steal_cursor()
+	mode = Mode.Normal
+
+func show_journal_screen() -> void:
+	show_journal.emit()
+	journal_screen.visible = true
+	SceneManager.free_cursor()
+	mode = Mode.Journal
 	
 func show_buildable_items() -> void:
 	show_building.emit()

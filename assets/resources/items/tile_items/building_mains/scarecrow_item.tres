@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://b51btlxa0imu7"]
 
 [ext_resource type="PackedScene" uid="uid://d02ndyvuh2vew" path="res://scenes/tiles/building_mains/ScarecrowTile.tscn" id="1_1lahq"]
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_y6u6n"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/items/item.gd" id="1_y6u6n"]
 [ext_resource type="Texture2D" uid="uid://boivjov65gd58" path="res://assets/models/icons/scarecrow_preview.tres" id="3_1lahq"]
 
 [resource]

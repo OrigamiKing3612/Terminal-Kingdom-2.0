@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cy31wax260wky"]
 
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_wimcb"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/items/item.gd" id="1_wimcb"]
 [ext_resource type="Texture2D" uid="uid://b6q010h46058g" path="res://assets/models/icons/plants/beet.png" id="2_wimcb"]
 
 [resource]

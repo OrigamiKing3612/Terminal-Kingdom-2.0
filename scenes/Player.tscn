@@ -1,84 +1,127 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpamh1gadlcks"]
+[gd_scene load_steps=30 format=3 uid="uid://ci5amistndx3a"]
 
-[ext_resource type="Script" uid="uid://hpwvm5v2xwe1" path="res://scripts/player/player.gd" id="1_onrkg"]
-[ext_resource type="Resource" uid="uid://c00pgu5buionk" path="res://assets/resources/player/movement_states/walk.tres" id="2_cw2d6"]
-[ext_resource type="Resource" uid="uid://dlb2bsv8aw60t" path="res://assets/resources/player/movement_states/stand.tres" id="2_mdl7e"]
-[ext_resource type="Script" uid="uid://c81ryhihtvhrq" path="res://scripts/player/camera_controller.gd" id="2_v6fml"]
-[ext_resource type="Resource" uid="uid://cejp3n82mvcbv" path="res://assets/resources/player/movement_states/sprint.tres" id="3_qu4a1"]
-[ext_resource type="Resource" uid="uid://5pep0pjlel1w" path="res://assets/resources/player/movement_states/run.tres" id="4_70d11"]
-[ext_resource type="Script" uid="uid://blbm6fm2s14i4" path="res://scripts/player/movement_controller.gd" id="5_qu4a1"]
+[ext_resource type="Script" uid="uid://c60o6s88xjeag" path="res://scripts/player/player.gd" id="1_t2exb"]
+[ext_resource type="Script" uid="uid://bug8ogo4i8sc6" path="res://scripts/player/movement.gd" id="2_ilpbq"]
+[ext_resource type="Resource" uid="uid://5pep0pjlel1w" path="res://assets/resources/player/movement_states/run.tres" id="2_sjrfr"]
+[ext_resource type="SpriteFrames" uid="uid://dp0bc7w05cg5" path="res://assets/resources/player/animations/hair/hair_1.tres" id="3_1jpwa"]
+[ext_resource type="Resource" uid="uid://cejp3n82mvcbv" path="res://assets/resources/player/movement_states/sprint.tres" id="3_efh0x"]
+[ext_resource type="Script" uid="uid://nx0yyc5txa13" path="res://scripts/resources/player/movement_state.gd" id="3_jvrdh"]
+[ext_resource type="Resource" uid="uid://dlb2bsv8aw60t" path="res://assets/resources/player/movement_states/stand.tres" id="4_jvrdh"]
+[ext_resource type="Resource" uid="uid://c00pgu5buionk" path="res://assets/resources/player/movement_states/walk.tres" id="5_qrttu"]
+[ext_resource type="SpriteFrames" uid="uid://bxkfctv8m5d4c" path="res://assets/resources/player/animations/torso/torso_2.tres" id="8_pfeki"]
+[ext_resource type="Script" uid="uid://blvhkbpktc5cn" path="res://scripts/player/sprites.gd" id="8_vot46"]
+[ext_resource type="SpriteFrames" uid="uid://cb2kqpxe7sam5" path="res://assets/resources/player/animations/hair/hair_0.tres" id="9_lkdrv"]
+[ext_resource type="SpriteFrames" uid="uid://damfg6gw64odd" path="res://assets/resources/player/animations/torso/torso_4.tres" id="10_axnmu"]
+[ext_resource type="SpriteFrames" uid="uid://7t7x3g7fxfau" path="res://assets/resources/player/animations/head/head_0.tres" id="10_p7iby"]
+[ext_resource type="SpriteFrames" uid="uid://krs23782j7hy" path="res://assets/resources/player/animations/legs/legs_0.tres" id="11_0rnld"]
+[ext_resource type="SpriteFrames" uid="uid://bhow6scrhyvlt" path="res://assets/resources/player/animations/torso/torso_5.tres" id="11_fvsjc"]
+[ext_resource type="SpriteFrames" uid="uid://cpdlt47hjpdmv" path="res://assets/resources/player/animations/legs/legs_7.tres" id="11_lkdrv"]
+[ext_resource type="SpriteFrames" uid="uid://b1oqd7o7l6rhg" path="res://assets/resources/player/animations/torso/torso_6.tres" id="12_hxdpb"]
+[ext_resource type="SpriteFrames" uid="uid://dp7cdc4mdfjwh" path="res://assets/resources/player/animations/torso/torso_3.tres" id="12_lkdrv"]
+[ext_resource type="SpriteFrames" uid="uid://bb2a0tqo34yp3" path="res://assets/resources/player/animations/torso/torso_0.tres" id="12_p7iby"]
+[ext_resource type="SpriteFrames" uid="uid://b4vjng3dajbql" path="res://assets/resources/player/animations/torso/torso_1.tres" id="12_srp4u"]
+[ext_resource type="SpriteFrames" uid="uid://dojmslffmkcvy" path="res://assets/resources/player/animations/torso/torso_7.tres" id="13_agngo"]
+[ext_resource type="SpriteFrames" uid="uid://dggnt6lw8g61q" path="res://assets/resources/player/animations/eyes/eyes_0.tres" id="13_jfpux"]
+[ext_resource type="SpriteFrames" uid="uid://ql1fu4tl03mk" path="res://assets/resources/player/animations/legs/legs_1.tres" id="15_qrixf"]
+[ext_resource type="SpriteFrames" uid="uid://bh1msmsdkrs2o" path="res://assets/resources/player/animations/legs/legs_2.tres" id="16_qmt83"]
+[ext_resource type="SpriteFrames" uid="uid://70c6k3clav6j" path="res://assets/resources/player/animations/legs/legs_3.tres" id="17_m4as6"]
+[ext_resource type="SpriteFrames" uid="uid://pkpe5slbb517" path="res://assets/resources/player/animations/legs/legs_4.tres" id="18_b1r6t"]
+[ext_resource type="SpriteFrames" uid="uid://ckhtgspcf2aaw" path="res://assets/resources/player/animations/legs/legs_5.tres" id="19_c0asu"]
+[ext_resource type="SpriteFrames" uid="uid://j1pfxecwrwq" path="res://assets/resources/player/animations/legs/legs_6.tres" id="20_fq1a3"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_p0vlq"]
-size = Vector3(0.6, 1, 0.6)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ju82"]
+size = Vector2(14, 7)
 
-[sub_resource type="BoxMesh" id="BoxMesh_v6fml"]
-size = Vector3(1.6, 2, 1.6)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_v6fml"]
-radius = 0.07
-
-[node name="Player" type="CharacterBody3D" groups=["Player"]]
-transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 65533
-floor_snap_length = 0.0
-script = ExtResource("1_onrkg")
-max_air_jump = 0
-movement_states = {
-"run": ExtResource("4_70d11"),
-"sprint": ExtResource("3_qu4a1"),
-"stand": ExtResource("2_mdl7e"),
-"walk": ExtResource("2_cw2d6")
-}
+script = ExtResource("1_t2exb")
+hair_options = Dictionary[String, SpriteFrames]({
+"hair_0": ExtResource("9_lkdrv"),
+"hair_1": ExtResource("3_1jpwa")
+})
+eyes_options = Dictionary[String, SpriteFrames]({
+"eyes_0": ExtResource("13_jfpux")
+})
+head_options = Dictionary[String, SpriteFrames]({
+"head_0": ExtResource("10_p7iby")
+})
+torso_options = Dictionary[String, SpriteFrames]({
+"torso_0": ExtResource("12_p7iby"),
+"torso_1": ExtResource("12_srp4u"),
+"torso_2": ExtResource("8_pfeki"),
+"torso_3": ExtResource("12_lkdrv"),
+"torso_4": ExtResource("10_axnmu"),
+"torso_5": ExtResource("11_fvsjc"),
+"torso_6": ExtResource("12_hxdpb"),
+"torso_7": ExtResource("13_agngo")
+})
+legs_options = Dictionary[String, SpriteFrames]({
+"legs_0": ExtResource("11_0rnld"),
+"torso_1": ExtResource("15_qrixf"),
+"torso_2": ExtResource("16_qmt83"),
+"torso_3": ExtResource("17_m4as6"),
+"torso_4": ExtResource("18_b1r6t"),
+"torso_5": ExtResource("19_c0asu"),
+"torso_6": ExtResource("20_fq1a3"),
+"torso_7": ExtResource("11_lkdrv")
+})
+metadata/_custom_type_script = "uid://c60o6s88xjeag"
 
-[node name="MovementController" type="Node" parent="." node_paths=PackedStringArray("player", "mesh")]
-script = ExtResource("5_qu4a1")
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("player", "animations", "raycast")]
+script = ExtResource("2_ilpbq")
 player = NodePath("..")
-mesh = NodePath("../Mesh")
+animations = NodePath("../Sprites")
+movement_states = Dictionary[String, ExtResource("3_jvrdh")]({
+"run": ExtResource("2_sjrfr"),
+"sprint": ExtResource("3_efh0x"),
+"stand": ExtResource("4_jvrdh"),
+"walk": ExtResource("5_qrttu")
+})
+raycast = NodePath("../RayCast2D")
+metadata/_custom_type_script = "uid://bug8ogo4i8sc6"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-shape = SubResource("BoxShape3D_p0vlq")
+[node name="Sprites" type="Node2D" parent="."]
+position = Vector2(0, -8)
+script = ExtResource("8_vot46")
 
-[node name="Mesh" type="Node3D" parent="."]
+[node name="Hair" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(0, -5)
+sprite_frames = ExtResource("9_lkdrv")
+animation = &"idle_back"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh"]
-transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0, 0)
-mesh = SubResource("BoxMesh_v6fml")
+[node name="Head" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(0, -5)
+sprite_frames = ExtResource("10_p7iby")
+animation = &"idle_forward"
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mesh"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.98023e-08, 1, 0.5)
-mesh = SubResource("BoxMesh_v6fml")
+[node name="Legs" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(0, -5)
+sprite_frames = ExtResource("11_0rnld")
+animation = &"idle_forward"
 
-[node name="Camera" type="Node3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(-1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, -1, 0, 1.75, 0)
-script = ExtResource("2_v6fml")
-player = NodePath("..")
+[node name="Torso" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(0, -5)
+sprite_frames = ExtResource("12_p7iby")
+animation = &"idle_forward"
 
-[node name="CameraYawH" type="Node3D" parent="Camera"]
+[node name="Eyes" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(0, -5)
+sprite_frames = ExtResource("13_jfpux")
+animation = &"blink_forward"
 
-[node name="CameraPitchV" type="Node3D" parent="Camera/CameraYawH"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_4ju82")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="Camera/CameraYawH/CameraPitchV"]
-shape = SubResource("SphereShape3D_v6fml")
-spring_length = 3.0
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -8)
+zoom = Vector2(8, 8)
 
-[node name="Camera3D" type="Camera3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D"]
-
-[node name="RayCast3D" type="RayCast3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47383e-19, 0.25, 8.2423e-13)
-target_position = Vector3(0, -1, -12)
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -19)
+target_position = Vector2(30, 0)
 collision_mask = 9
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera/CameraYawH/CameraPitchV/SpringArm3D/Camera3D"]
-transform = Transform3D(1, 1.04216e-14, -2.98023e-07, -1.04216e-14, 1, 1.42109e-14, 2.98023e-07, -1.42109e-14, 1, 8.94068e-08, -0.25, -0.5)
-visible = false
-light_indirect_energy = 0.5
-shadow_enabled = true
-sky_mode = 1
-
-[connection signal="pressed_jump" from="." to="MovementController" method="_jump"]
-[connection signal="set_movement_direction" from="." to="MovementController" method="_on_set_movement_direction"]
-[connection signal="set_movement_state" from="." to="MovementController" method="_on_set_movement_state"]
-[connection signal="set_movement_state" from="." to="Camera" method="_on_set_movement_state"]
-[connection signal="set_camera_rotation" from="Camera" to="MovementController" method="_on_set_camera_rotation"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)

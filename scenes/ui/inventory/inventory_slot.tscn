@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://mbbr4pif300s" path="res://assets/ui/inventory_slot.png" id="1_wle7a"]
 
 [node name="InventorySlot" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 100)
 offset_right = 100.0
 offset_bottom = 100.0
@@ -12,7 +13,7 @@ size_flags_vertical = 6
 script = ExtResource("1_gbfhx")
 metadata/_custom_type_script = "uid://cefm3dpak5wtk"
 
-[node name="Backgroud" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(50, 50)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("1_wle7a")
@@ -32,6 +33,3 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 6
-
-[node name="Panel" type="Panel" parent="CenterContainer"]
-layout_mode = 2

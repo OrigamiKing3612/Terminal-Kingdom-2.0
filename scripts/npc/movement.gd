@@ -1,6 +1,6 @@
 extends Node
 
-var character: CharacterBody3D
+var character: CharacterBody2D
 @export var character_body: NodePath
 
 func _ready() -> void:

@@ -14,14 +14,17 @@ var id = UUID.string()
 @export var gender: Utils.Gender = Utils.Gender.Male
 @export var hunger: float = 100.0
 @export var happiness: float = 100.0
-@export var positionToWalkTo: Vector3 = Vector3.ZERO
+@export var positionToWalkTo: Vector2 = Vector2.ZERO
 @export var has_home: bool = false
 ## location of home door (or bed?)
-@export var home: Vector3 = Vector3.ZERO
+@export var home: Vector2 = Vector2.ZERO
 @export var has_workplace: bool = false
 ## location of work
-@export var workplace: Vector3 = Vector3.ZERO
+@export var workplace: Vector2 = Vector2.ZERO
 @export var village_id: String = ""
+
+@export_group("Display")
+@export var body: NPCBody
 
 @export_group("Starting NPC Settings")
 @export var is_starting_village_npc: bool = false
@@ -53,7 +56,7 @@ static func create_new() -> NPCData:
 			var skill_level_name = skill_levels[GameManager.random.randi_range(0, skill_levels.size() - 1)]
 			if Utils.Job[job_name] != Utils.Job.King:
 				data.skills[Utils.Job[job_name]] = Utils.SkillLevel[skill_level_name]
-	
+	push_warning("Implement the body stuff here.")
 	return data
 
 static func _generate_name(gender: Utils.Gender) -> Dictionary[String, String]:

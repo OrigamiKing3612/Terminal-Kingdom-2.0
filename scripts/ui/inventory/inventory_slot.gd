@@ -2,7 +2,7 @@ extends Button
 class_name InventorySlot
 
 @onready var container: CenterContainer = $CenterContainer
-@onready var backgroud: Sprite2D = $Backgroud
+#@onready var backgroudn: Sprite2D = $Background
 
 var inventory_item: InventoryItem
 var index: int
