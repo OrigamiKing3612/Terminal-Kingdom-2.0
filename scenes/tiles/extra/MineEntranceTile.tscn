@@ -1,20 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3fc7stx78m1"]
 
 [ext_resource type="Script" uid="uid://p8fbaohmhf2c" path="res://scripts/tiles/extra/MineEntranceTile.gd" id="1_lov8x"]
+[ext_resource type="Texture2D" uid="uid://djfqacmtpa4qh" path="res://assets/art/tiles/mine_entrance_tile.png" id="2_opu0q"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_vs1kw"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_opu0q"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vs1kw"]
-size = Vector2(32, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vs1kw"]
-size = Vector2(32, 32)
+size = Vector2(16, 16)
 
 [node name="MineEntranceTile" type="Node2D"]
 script = ExtResource("1_lov8x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_vs1kw")
+texture = ExtResource("2_opu0q")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -31,3 +29,5 @@ script = ExtResource("3_opu0q")
 static_body = NodePath("../StaticBody2D")
 tile_id = 80
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
+
+[connection signal="interacted" from="InteractableComponent" to="." method="_on_interact"]

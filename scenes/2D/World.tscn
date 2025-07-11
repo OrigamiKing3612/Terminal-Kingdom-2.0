@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://drqq8n1hhfewy"]
+[gd_scene load_steps=17 format=4 uid="uid://drqq8n1hhfewy"]
 
 [ext_resource type="PackedScene" uid="uid://ci5amistndx3a" path="res://scenes/Player.tscn" id="1_6dh8e"]
 [ext_resource type="TileSet" uid="uid://b1rhwxtr2byfg" path="res://assets/2D/dual_grid_tileset.tres" id="1_cq3oc"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d01yc6fepy5dc" path="res://scenes/ui/PreviewTile.tscn" id="8_o6mxq"]
 [ext_resource type="PackedScene" uid="uid://djd335f6v4ioq" path="res://scenes/tiles/building_mains/WorkbenchTile.tscn" id="9_vslat"]
 [ext_resource type="PackedScene" uid="uid://biusngccco6e0" path="res://scenes/tiles/building_mains/FurnaceTile.tscn" id="10_8wwyq"]
+[ext_resource type="PackedScene" uid="uid://c3fc7stx78m1" path="res://scenes/tiles/extra/MineEntranceTile.tscn" id="11_bnsp5"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1hryb"]
 light_mode = 2
@@ -177,15 +178,18 @@ position = Vector2(-38, -3)
 position = Vector2(120, 0)
 inside_scene = ExtResource("6_vslat")
 
+[node name="WorkbenchTile" parent="TileMap" instance=ExtResource("9_vslat")]
+position = Vector2(-131, -29)
+
+[node name="FurnaceTile" parent="TileMap" instance=ExtResource("10_8wwyq")]
+position = Vector2(-126, -94)
+
+[node name="MineEntranceTile" parent="TileMap" instance=ExtResource("11_bnsp5")]
+position = Vector2(-42, -58)
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_r41bg")
 
 [node name="PreviewTile" parent="." instance=ExtResource("8_o6mxq")]
 tileset = ExtResource("2_r41bg")
-
-[node name="WorkbenchTile" parent="." instance=ExtResource("9_vslat")]
-position = Vector2(-131, -29)
-
-[node name="FurnaceTile" parent="." instance=ExtResource("10_8wwyq")]
-position = Vector2(-126, -94)

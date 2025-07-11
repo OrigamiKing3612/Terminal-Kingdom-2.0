@@ -14,9 +14,9 @@ func _ready() -> void:
 	GameManager.stop_mining.connect(_on_stop_mining)
 	var size: Vector2i
 	if GameManager.player.mining_level == 1:
-		size = Vector2i(64,3)
+		size = Vector2i(64,64)
 	else:
-		size = Vector2i(64,1)
+		size = Vector2i(64,64)
 	generate_noise_area(Vector2i(-32,0), size)
 	dirt_tile = dirt_tile.copy()
 	stone_tile = stone_tile.copy()
