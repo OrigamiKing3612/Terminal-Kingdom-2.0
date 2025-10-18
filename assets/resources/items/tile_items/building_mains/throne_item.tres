@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://chg5paak5g2pg"]
 
 [ext_resource type="PackedScene" uid="uid://cce0p7d54d7nn" path="res://scenes/tiles/building_mains/ThroneTile.tscn" id="1_dpelk"]
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_vbg43"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/items/item.gd" id="1_vbg43"]
 [ext_resource type="Texture2D" uid="uid://brarjc3c08hao" path="res://assets/models/icons/throne_preview.tres" id="3_dpelk"]
 
 [resource]

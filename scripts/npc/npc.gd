@@ -1,30 +1,37 @@
-extends CharacterBody3D
+extends CharacterBody2D
 class_name NPC
 
-signal pressed_jump()
-signal set_movement_state(_movement_state: MovementState)
-signal set_movement_direction(_movement_state: Vector3)
-
 @export var data: NPCData
-@export var talkable_area: Vector3 = Vector3(10, 2, 10)
+@export var talkable_area: Vector2i = Vector2i(4, 4)
 
-@onready var marker: MeshInstance3D = $Mesh/Marker
-@onready var navigation: NavigationAgent3D = $NavigationAgent3D
+#@onready var marker: MeshInstance2D = $Mesh/Marker
+@onready var navigation: NavigationAgent2D = $NavigationAgent2D
 @onready var svjobs: StartingVillageJobs = $StartingVillageJobs
-@onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
+@onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var state: Node = $State
 @onready var npc_movement_controller: NPCMovement = $NPCMovementController
 @onready var npc_brain: NPCBrain = $NPCBrain
-@onready var area_3d: Area3D = $Area3D
+@onready var area: Area2D = $Area2D
+@onready var marker: AnimatedSprite2D = $Marker
+@onready var starting_village_sprite: Sprite2D = $Sprites/StartingVillage
+@onready var random_sprites: Node2D = $Sprites/Random
 
 func _ready() -> void:
 	if data != null:
 		data = data.duplicate()
+		if data.is_starting_village_npc:
+			starting_village_sprite.texture = data.body.starting_village_body
+			random_sprites.hide()
+			starting_village_sprite.show()
+		else:
+			random_sprites.set_images(data.body)
+			starting_village_sprite.hide()
+			random_sprites.show()
 	marker.visible = false
 	
-	var shape = BoxShape3D.new()
-	shape.size = talkable_area
-	collision_shape_3d.shape = shape
+	var shape = RectangleShape2D.new()
+	shape.size = talkable_area * 16
+	collision_shape.shape = shape
 
 func interact() -> void:
 	if data == null:
@@ -36,7 +43,7 @@ func interact() -> void:
 	print("Talk!")
 
 func talk_to_starting_village_npc():
-	match data.job:
+	match data.current_job:
 		Utils.Job.None:
 			svjobs.none.talk(data)
 		Utils.Job.Blacksmith:
@@ -56,12 +63,12 @@ func talk_to_starting_village_npc():
 		_:
 			print("Unknown job: ", data.job)
 
-func _on_body_entered(body: Node3D) -> void:
+func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("Player"):
 		return
 	marker.visible = true
 
-func _on_body_exited(body: Node3D) -> void:
+func _on_body_exited(body: Node2D) -> void:
 	if not body.is_in_group("Player"):
 		return
 	marker.visible = false

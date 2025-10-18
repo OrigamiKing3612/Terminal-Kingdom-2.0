@@ -8,8 +8,13 @@
 script = ExtResource("2_kflsk")
 name = "DEFAULT_NAME"
 can_build = true
-position = Vector3(0, 0, 0)
+position = Vector2(0, 0)
 inventory = ExtResource("1_mddin")
 skill = ExtResource("3_pomgq")
 mining_level = 1
+hair_id = "hair_0"
+eyes_id = "eyes_0"
+head_id = "head_0"
+torso_id = "torso_0"
+legs_id = "legs_0"
 metadata/_custom_type_script = "uid://c65bq1qpv6cyp"

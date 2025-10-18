@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BlueprintItem" load_steps=3 format=3 uid="uid://b38e7op3s723h"]
+
+[ext_resource type="Script" uid="uid://clmk6joi04e4j" path="res://scripts/resources/items/blueprint_item.gd" id="1_k02fy"]
+[ext_resource type="Texture2D" uid="uid://c5m12bq7luyi6" path="res://assets/models/icons/items/blueprint.png" id="2_k02fy"]
+
+[resource]
+script = ExtResource("1_k02fy")
+name = &"Blueprint Template"
+price = 0
+can_be_sold = false
+is_buildable = true
+texture_2d = ExtResource("2_k02fy")
+max_amount_per_stack = 1
+tile_id = -1
+seed = 0
+metadata/_custom_type_script = "uid://clmk6joi04e4j"

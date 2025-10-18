@@ -1,6 +1,13 @@
-[gd_resource type="Resource" script_class="NPCData" load_steps=2 format=3 uid="uid://7nfvxmsq5oa2"]
+[gd_resource type="Resource" script_class="NPCData" load_steps=5 format=3 uid="uid://7nfvxmsq5oa2"]
 
 [ext_resource type="Script" uid="uid://nj3ok2spwf66" path="res://scripts/resources/npcs/npc_data.gd" id="1_rb6rn"]
+[ext_resource type="Script" uid="uid://cmkjsslpxj6g4" path="res://scripts/resources/npcs/npc_body.gd" id="1_wjdpj"]
+[ext_resource type="Texture2D" uid="uid://bp65vvihflso2" path="res://assets/art/npc/starting_village/DoctorNPC.png" id="2_gon6x"]
+
+[sub_resource type="Resource" id="Resource_f2qp6"]
+script = ExtResource("1_wjdpj")
+starting_village_body = ExtResource("2_gon6x")
+metadata/_custom_type_script = "uid://cmkjsslpxj6g4"
 
 [resource]
 script = ExtResource("1_rb6rn")
@@ -13,11 +20,12 @@ age = 18
 gender = 0
 hunger = 100.0
 happiness = 100.0
-positionToWalkTo = Vector3(0, 0, 0)
+positionToWalkTo = Vector2(0, 0)
 has_home = false
-home = Vector3(0, 0, 0)
+home = Vector2(0, 0)
 has_workplace = false
-workplace = Vector3(0, 0, 0)
+workplace = Vector2(0, 0)
 village_id = ""
+body = SubResource("Resource_f2qp6")
 is_starting_village_npc = true
 metadata/_custom_type_script = "uid://nj3ok2spwf66"

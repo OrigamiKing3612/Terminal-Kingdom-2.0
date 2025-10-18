@@ -4,30 +4,30 @@
 [ext_resource type="Script" uid="uid://cplpb6eqaluqo" path="res://scripts/ui/workstations/recipe_button.gd" id="2_8vtwp"]
 
 [node name="WorkstationScreen" type="Panel"]
+custom_minimum_size = Vector2(1500, 900)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -750.0
-offset_top = -500.0
+offset_top = -450.0
 offset_right = 750.0
-offset_bottom = 500.0
+offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.997568)
 script = ExtResource("1_7245u")
 
 [node name="RecipesContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(750, 900)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -750.0
-offset_top = -500.0
-offset_bottom = 500.0
-grow_horizontal = 2
+offset_top = -450.0
+offset_right = 750.0
+offset_bottom = 450.0
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

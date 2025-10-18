@@ -15,7 +15,7 @@ func _ready() -> void:
 	for child in inventory_grid_container.get_children():
 		if child is InventorySlot:
 			slots.append(child)
-			
+
 	for child in toolbelt.grid_container.get_children(): 
 		if child is ToolbeltInventorySlot:
 			slots.append(child)

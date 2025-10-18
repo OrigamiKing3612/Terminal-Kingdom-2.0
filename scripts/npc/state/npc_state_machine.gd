@@ -1,8 +1,8 @@
 extends Node
 
-@export var character: CharacterBody3D
-@export var animations: AnimatedSprite3D
-@export var mesh: Node3D
+@export var character: CharacterBody2D
+@export var animations: AnimatedSprite2D
+@export var sprites: Node2D
 @export var rotation_speed: float = 8
 @export var fall_gravity: float = 45
 @export var movement: NPCMovement

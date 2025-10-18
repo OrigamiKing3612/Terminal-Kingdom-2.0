@@ -2409,6 +2409,7 @@ script = ExtResource("1_amdar")
 metadata/_custom_type_script = "uid://dq4vo4ta7nlj0"
 
 [node name="TemplateIcon" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
@@ -2418,6 +2419,7 @@ texture = ExtResource("3_n8074")
 stretch_mode = 2
 
 [node name="TemplateLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 72.0
 offset_top = -24.0
 offset_right = 224.0
@@ -2429,6 +2431,7 @@ text = "Item Name"
 fit_content = true
 
 [node name="TemplateCountLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 32.0
 offset_top = -12.0
 offset_right = 73.0

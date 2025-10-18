@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://d01yc6fepy5dc"]
+[gd_scene load_steps=4 format=3 uid="uid://d01yc6fepy5dc"]
 
-[ext_resource type="Script" uid="uid://dafjd1nrhyigp" path="res://scripts/ui/build_preview_tile.gd" id="1_gl7lq"]
+[ext_resource type="Script" uid="uid://bi0vmio0lmc56" path="res://scripts/ui/preview_tile.gd" id="1_gl7lq"]
 
-[node name="PreviewTile" type="Node3D"]
+[sub_resource type="Gradient" id="Gradient_gl7lq"]
+colors = PackedColorArray(1, 1, 1, 0.247059, 1, 1, 1, 0.247059)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j0pmf"]
+gradient = SubResource("Gradient_gl7lq")
+width = 16
+height = 16
+
+[node name="PreviewTile" type="Node2D"]
 script = ExtResource("1_gl7lq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_j0pmf")

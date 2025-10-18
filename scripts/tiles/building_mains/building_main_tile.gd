@@ -1,4 +1,4 @@
-extends Node3D
+extends Node2D
 class_name BuildingMainTile
 
 var id: String = UUID.string()

@@ -10,7 +10,7 @@ var selected_item_index: int:
 	set(value): 
 		GameManager.selected_item_index = value
 
-func show_hot_bar():	
+func show_hot_bar():
 	if GameManager.player.inventory.get_items().size() == 0:
 		print("No items")
 		return

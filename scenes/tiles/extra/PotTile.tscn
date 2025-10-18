@@ -1,36 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfkt11r6dih32"]
+[gd_scene load_steps=5 format=3 uid="uid://dfkt11r6dih32"]
 
 [ext_resource type="Script" uid="uid://cnd1tvaimxm44" path="res://scripts/tiles/extra/pot_tile.gd" id="1_6iirc"]
+[ext_resource type="Texture2D" uid="uid://dfqmlje5g2ehi" path="res://assets/models/icons/items/pot.png" id="2_2xwjt"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_y1hr2"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_2xwjt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t77nq"]
-albedo_color = Color(0.224905, 0.224905, 0.224905, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_t77nq"]
-material = SubResource("StandardMaterial3D_t77nq")
-size = Vector3(2, 1, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6iirc"]
-size = Vector3(2, 1, 2)
-
-[node name="PotTile" type="MeshInstance3D"]
-mesh = SubResource("BoxMesh_t77nq")
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_6iirc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2xwjt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_6iirc")
-
-[node name="InteractableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+[node name="InteractableComponent" type="Node2D" parent="."]
 script = ExtResource("2_y1hr2")
-static_body = NodePath("../StaticBody3D")
 metadata/_custom_type_script = "uid://cle5risojhhkj"
 
-[node name="DestroyableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+[node name="DestroyableComponent" type="Node2D" parent="."]
 script = ExtResource("3_2xwjt")
-static_body = NodePath("../StaticBody3D")
 tile_id = 78
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
 

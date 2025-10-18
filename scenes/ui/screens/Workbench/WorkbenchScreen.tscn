@@ -1,14 +1,26 @@
-[gd_scene format=3 uid="uid://dyxysnju110o8"]
+[gd_scene load_steps=3 format=3 uid="uid://dyxysnju110o8"]
+
+[ext_resource type="Script" uid="uid://bipvu8cwp3wr4" path="res://scripts/ui/screens/Workbench/workbench_screen.gd" id="1_i76k7"]
+[ext_resource type="PackedScene" uid="uid://bumrtoxsox13g" path="res://scenes/ui/screens/Blueprint/blueprint_screen.tscn" id="2_5x276"]
 
 [node name="WorkbenchScreen" type="Control"]
+custom_minimum_size = Vector2(1209, 697)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -604.5
+offset_top = -348.5
+offset_right = 604.5
+offset_bottom = 348.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i76k7")
+create_blueprint_screen = ExtResource("2_5x276")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TabContainer" type="TabContainer" parent="."]
 custom_minimum_size = Vector2(1182, 642)
 layout_mode = 1
 anchors_preset = 8
@@ -16,36 +28,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -591.0
-offset_top = -321.0
-offset_right = 591.0
-offset_bottom = 321.0
+offset_left = -601.0
+offset_top = -346.5
+offset_right = 601.0
+offset_bottom = 346.5
 grow_horizontal = 2
 grow_vertical = 2
+current_tab = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -581.0
-offset_top = -311.0
-offset_right = 581.0
-offset_bottom = 311.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = -10
-theme_override_constants/margin_top = -10
-theme_override_constants/margin_right = -10
-theme_override_constants/margin_bottom = -10
+[node name="Builder" type="BoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Builder"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Builder/MarginContainer"]
 custom_minimum_size = Vector2(1182, 642)
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Builder/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 30
 text = "Builder"
@@ -53,5 +62,39 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Builder/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Create Blueprint" type="BoxContainer" parent="TabContainer"]
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Create Blueprint"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Create Blueprint/MarginContainer"]
+custom_minimum_size = Vector2(1182, 642)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Create Blueprint/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Blueprints"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Create Blueprint/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CreateBlueprintButton" type="Button" parent="TabContainer/Create Blueprint/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Create Blueprint"
+
+[connection signal="pressed" from="TabContainer/Create Blueprint/MarginContainer/VBoxContainer/VBoxContainer/CreateBlueprintButton" to="." method="_on_create_blueprint_button_pressed"]

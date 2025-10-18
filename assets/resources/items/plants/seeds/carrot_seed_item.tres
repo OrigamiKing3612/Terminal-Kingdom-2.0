@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bktct7hmwe46o"]
 
-[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/item.gd" id="1_434vs"]
+[ext_resource type="Script" uid="uid://cn074wlyew4kj" path="res://scripts/resources/items/item.gd" id="1_434vs"]
 [ext_resource type="Texture2D" uid="uid://cgbsyecnoyeo3" path="res://assets/models/icons/plants/seeds/carrot_seed.png" id="2_e3dm6"]
 
 [resource]

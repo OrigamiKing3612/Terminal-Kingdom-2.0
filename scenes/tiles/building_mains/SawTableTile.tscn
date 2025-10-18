@@ -1,42 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://si5nmckw7qki"]
+[gd_scene load_steps=7 format=3 uid="uid://si5nmckw7qki"]
 
 [ext_resource type="Script" uid="uid://d0nfihqrpx35s" path="res://scripts/tiles/building_mains/saw_tile.gd" id="1_wq3eg"]
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="2_aqc1v"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="3_ylshc"]
 [ext_resource type="Script" uid="uid://cdpcminp8wskc" path="res://scripts/components/buildings/hires_component.gd" id="4_ylshc"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_meann"]
-albedo_color = Color(1, 0, 1, 1)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ylshc"]
+size = Vector2(32, 32)
 
-[sub_resource type="BoxMesh" id="BoxMesh_xhida"]
-material = SubResource("StandardMaterial3D_meann")
-size = Vector3(2, 2, 2)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylshc"]
+size = Vector2(32, 32)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wq3eg"]
-data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1)
-
-[node name="SawTile" type="Node3D"]
+[node name="SawTile" type="Node2D"]
 script = ExtResource("1_wq3eg")
 building_name = "Carptenry"
 type = 7
 metadata/_custom_type_script = "uid://d0nfihqrpx35s"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_xhida")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_ylshc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_wq3eg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ylshc")
 
-[node name="InteractableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+[node name="InteractableComponent" type="Node2D" parent="." node_paths=PackedStringArray("node")]
 script = ExtResource("2_aqc1v")
-static_body = NodePath("../StaticBody3D")
+node = NodePath("../StaticBody2D")
 metadata/_custom_type_script = "uid://cle5risojhhkj"
 
-[node name="DestroyableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+[node name="DestroyableComponent" type="Node2D" parent="." node_paths=PackedStringArray("static_body")]
 script = ExtResource("3_ylshc")
-static_body = NodePath("../StaticBody3D")
+static_body = NodePath("../StaticBody2D")
 tile_id = 72
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
 

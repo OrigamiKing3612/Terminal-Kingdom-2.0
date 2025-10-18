@@ -5,32 +5,32 @@
 [ext_resource type="Script" uid="uid://cle5risojhhkj" path="res://scripts/components/interactable_component.gd" id="3_vj73g"]
 [ext_resource type="Script" uid="uid://c1xcxshwbvp5l" path="res://scripts/components/destroyable_component.gd" id="4_nasrr"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_48esm"]
-size = Vector3(2, 2, 2)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nasrr"]
+size = Vector2(32, 32)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dyo5c"]
-size = Vector3(2, 2, 2)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6fv7"]
+size = Vector2(32, 32)
 
-[node name="AnvilTile" type="Node3D"]
+[node name="AnvilTile" type="Node2D"]
 script = ExtResource("1_qgmwl")
 anvil_screen = ExtResource("2_pvmdq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_48esm")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_nasrr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_dyo5c")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_u6fv7")
 
-[node name="InteractableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+[node name="InteractableComponent" type="Node2D" parent="." node_paths=PackedStringArray("node")]
 script = ExtResource("3_vj73g")
-static_body = NodePath("../MeshInstance3D/StaticBody3D")
+node = NodePath("../StaticBody2D")
 metadata/_custom_type_script = "uid://cle5risojhhkj"
 
-[node name="DestroyableComponent" type="Node3D" parent="." node_paths=PackedStringArray("static_body")]
+[node name="DestroyableComponent" type="Node2D" parent="." node_paths=PackedStringArray("static_body")]
 script = ExtResource("4_nasrr")
-static_body = NodePath("../MeshInstance3D/StaticBody3D")
+static_body = NodePath("../StaticBody2D")
 tile_id = 79
 metadata/_custom_type_script = "uid://c1xcxshwbvp5l"
 
