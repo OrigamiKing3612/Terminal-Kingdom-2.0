@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6cbfful0e4j0"]
+
+[ext_resource type="Script" uid="uid://cahufdnxd5lsi" path="res://scripts/ui/messages/add_item.gd" id="1_n3du3"]
+[ext_resource type="Texture2D" uid="uid://bxj0qyydbs04s" path="res://assets/ui/add_item.png" id="2_15fpv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_15fpv"]
+size = Vector2(32, 32)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15fpv"]
+
+[node name="AddItem" type="Control"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 50.0
+script = ExtResource("1_n3du3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_15fpv")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -160.0
+offset_bottom = -10.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 0
+
+[node name="AddItem" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(20, 32)
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/AddItem"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/AddItem/Control"]
+texture = SubResource("PlaceholderTexture2D_15fpv")
+offset = Vector2(16, 16)
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/AddItem"]
+layout_mode = 2
+theme_override_constants/separation = 11
+theme_override_styles/separator = SubResource("StyleBoxEmpty_15fpv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/AddItem"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item Name
+"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1

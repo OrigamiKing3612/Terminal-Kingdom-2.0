@@ -17,7 +17,7 @@ func _ready() -> void:
 		size = Vector2i(64,64)
 	else:
 		size = Vector2i(64,64)
-	generate_noise_area(Vector2i(-32,0), size)
+	generate_noise_area(Vector2i(0,0), size)
 	dirt_tile = dirt_tile.copy()
 	stone_tile = stone_tile.copy()
 	gold_ore = gold_ore.copy()

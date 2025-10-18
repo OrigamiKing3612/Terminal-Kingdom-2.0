@@ -37,7 +37,7 @@ signal stop_mining
 signal mine_left_click
 signal mine_right_click
 
-signal show_message(text: String)
+signal show_message(text: String, type: Utils.CollectedItemType)
 
 var move: bool = true
 var mode: Mode = Mode.Normal
@@ -164,16 +164,14 @@ func hide_buildable_items() -> void:
 	mode = Mode.Normal
 	
 func _on_collect_item(item: Item, count: int) -> void:
-	var value := "+ " + item.name + " x" + str(count)
-	show_message.emit(value)
+	show_message.emit(item, Utils.CollectedItemType.Collected)
 	inventory_update.emit()
 	
 func _on_remove_item(item: Item) -> void:
 	if not item:
 		push_warning("Tried to emit message with null item")
 		return
-	var value := "-" + item.name 
-	show_message.emit(value)
+	show_message.emit(item, Utils.CollectedItemType)
 	inventory_update.emit()
 	
 func _on_dialogue_started(_resource: DialogueResource):
